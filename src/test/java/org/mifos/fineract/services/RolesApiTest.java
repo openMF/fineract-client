@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostRolesRequest;
 import org.mifos.fineract.models.PutRolesRoleIdPermissionsRequest;
 import org.mifos.fineract.models.PutRolesRoleIdRequest;
@@ -16,7 +16,7 @@ public class RolesApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(RolesApi.class);
+        api = new FineractApiClient().createService(RolesApi.class);
     }
 
     /**

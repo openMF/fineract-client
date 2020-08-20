@@ -3,7 +3,7 @@ package org.mifos.fineract.services;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for MixReportApi
@@ -14,7 +14,7 @@ public class MixReportApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MixReportApi.class);
+        api = new FineractApiClient().createService(MixReportApi.class);
     }
 
     /**

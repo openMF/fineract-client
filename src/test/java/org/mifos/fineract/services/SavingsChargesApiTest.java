@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostSavingsAccountsSavingsAccountIdChargesRequest;
 import org.mifos.fineract.models.PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest;
 import org.mifos.fineract.models.PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest;
@@ -16,7 +16,7 @@ public class SavingsChargesApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SavingsChargesApi.class);
+        api = new FineractApiClient().createService(SavingsChargesApi.class);
     }
 
     /**

@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for DomainNameapiv1entitytoentitymappingApi
@@ -13,7 +13,7 @@ public class DomainNameapiv1entitytoentitymappingApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(DomainNameapiv1entitytoentitymappingApi.class);
+        api = new FineractApiClient().createService(DomainNameapiv1entitytoentitymappingApi.class);
     }
 
     /**

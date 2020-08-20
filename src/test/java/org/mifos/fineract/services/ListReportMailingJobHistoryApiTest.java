@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for ListReportMailingJobHistoryApi
@@ -13,7 +13,7 @@ public class ListReportMailingJobHistoryApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(ListReportMailingJobHistoryApi.class);
+        api = new FineractApiClient().createService(ListReportMailingJobHistoryApi.class);
     }
 
     /**

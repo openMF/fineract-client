@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostSelfLoansLoanIdRequest;
 import org.mifos.fineract.models.PostSelfLoansRequest;
 import org.mifos.fineract.models.PutSelfLoansLoanIdRequest;
@@ -16,7 +16,7 @@ public class SelfLoansApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SelfLoansApi.class);
+        api = new FineractApiClient().createService(SelfLoansApi.class);
     }
 
     /**

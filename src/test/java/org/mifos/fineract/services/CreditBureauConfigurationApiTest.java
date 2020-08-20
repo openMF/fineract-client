@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for CreditBureauConfigurationApi
@@ -13,7 +13,7 @@ public class CreditBureauConfigurationApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CreditBureauConfigurationApi.class);
+        api = new FineractApiClient().createService(CreditBureauConfigurationApi.class);
     }
 
     /**

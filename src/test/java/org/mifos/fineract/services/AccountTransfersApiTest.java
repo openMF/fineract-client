@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostAccountTransfersRefundByTransferRequest;
 import org.mifos.fineract.models.PostAccountTransfersRequest;
 
@@ -15,7 +15,7 @@ public class AccountTransfersApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(AccountTransfersApi.class);
+        api = new FineractApiClient().createService(AccountTransfersApi.class);
     }
 
     /**

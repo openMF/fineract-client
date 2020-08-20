@@ -25,19 +25,19 @@ import java.text.DateFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ApiClient {
+public class FineractApiClient {
 
     private Map<String, Interceptor> apiAuthorizations;
     private OkHttpClient.Builder okBuilder;
     private Retrofit.Builder adapterBuilder;
     private JSON json;
 
-    public ApiClient() {
-        apiAuthorizations = new LinkedHashMap<String, Interceptor>();
+    public FineractApiClient() {
+        apiAuthorizations = new LinkedHashMap<>();
         createDefaultAdapter();
     }
 
-    public ApiClient(String[] authNames) {
+    public FineractApiClient(String[] authNames) {
         this();
         for (String authName : authNames) {
             throw new RuntimeException("auth name \"" + authName + "\" not found in available auth names");
@@ -49,7 +49,7 @@ public class ApiClient {
      *
      * @param authName Authentication name
      */
-    public ApiClient(String authName) {
+    public FineractApiClient(String authName) {
         this(new String[]{authName});
     }
 
@@ -59,7 +59,7 @@ public class ApiClient {
      * @param authName Authentication name
      * @param apiKey   API key
      */
-    public ApiClient(String authName, String apiKey) {
+    public FineractApiClient(String authName, String apiKey) {
         this(authName);
         this.setApiKey(apiKey);
     }
@@ -71,7 +71,7 @@ public class ApiClient {
      * @param username Username
      * @param password Password
      */
-    public ApiClient(String authName, String username, String password) {
+    public FineractApiClient(String authName, String username, String password) {
         this(authName);
         this.setCredentials(username, password);
     }
@@ -85,7 +85,7 @@ public class ApiClient {
      * @param username Username
      * @param password Password
      */
-    public ApiClient(String authName, String clientId, String secret, String username, String password) {
+    public FineractApiClient(String authName, String clientId, String secret, String username, String password) {
         this(authName);
         this.getTokenEndPoint()
                 .setClientId(clientId)
@@ -98,9 +98,7 @@ public class ApiClient {
         json = new JSON();
         okBuilder = new OkHttpClient.Builder();
 
-        String baseUrl = "https://demo.mifos.io/fineract-provider/api/v1";
-        if (!baseUrl.endsWith("/"))
-            baseUrl = baseUrl + "/";
+        String baseUrl = "https://demo.mifos.io/fineract-provider/api/v1/";
 
         adapterBuilder = new Retrofit
                 .Builder()
@@ -116,22 +114,22 @@ public class ApiClient {
                 .create(serviceClass);
     }
 
-    public ApiClient setDateFormat(DateFormat dateFormat) {
+    public FineractApiClient setDateFormat(DateFormat dateFormat) {
         this.json.setDateFormat(dateFormat);
         return this;
     }
 
-    public ApiClient setSqlDateFormat(DateFormat dateFormat) {
+    public FineractApiClient setSqlDateFormat(DateFormat dateFormat) {
         this.json.setSqlDateFormat(dateFormat);
         return this;
     }
 
-    public ApiClient setDateTimeFormat(DateTimeFormatter dateFormat) {
+    public FineractApiClient setDateTimeFormat(DateTimeFormatter dateFormat) {
         this.json.setDateTimeFormat(dateFormat);
         return this;
     }
 
-    public ApiClient setLocalDateFormat(DateTimeFormatter dateFormat) {
+    public FineractApiClient setLocalDateFormat(DateTimeFormatter dateFormat) {
         this.json.setLocalDateFormat(dateFormat);
         return this;
     }
@@ -143,7 +141,7 @@ public class ApiClient {
      * @param apiKey API key
      * @return ApiClient
      */
-    public ApiClient setApiKey(String apiKey) {
+    public FineractApiClient setApiKey(String apiKey) {
         for (Interceptor apiAuthorization : apiAuthorizations.values()) {
             if (apiAuthorization instanceof ApiKeyAuth) {
                 ApiKeyAuth keyAuth = (ApiKeyAuth) apiAuthorization;
@@ -161,7 +159,7 @@ public class ApiClient {
      * @param password Password
      * @return ApiClient
      */
-    public ApiClient setCredentials(String username, String password) {
+    public FineractApiClient setCredentials(String username, String password) {
         for (Interceptor apiAuthorization : apiAuthorizations.values()) {
             if (apiAuthorization instanceof HttpBasicAuth) {
                 HttpBasicAuth basicAuth = (HttpBasicAuth) apiAuthorization;
@@ -213,7 +211,7 @@ public class ApiClient {
      * @param accessToken Access token
      * @return ApiClient
      */
-    public ApiClient setAccessToken(String accessToken) {
+    public FineractApiClient setAccessToken(String accessToken) {
         for (Interceptor apiAuthorization : apiAuthorizations.values()) {
             if (apiAuthorization instanceof OAuth) {
                 OAuth oauth = (OAuth) apiAuthorization;
@@ -232,7 +230,7 @@ public class ApiClient {
      * @param redirectURI  Redirect URI
      * @return ApiClient
      */
-    public ApiClient configureAuthorizationFlow(String clientId, String clientSecret, String redirectURI) {
+    public FineractApiClient configureAuthorizationFlow(String clientId, String clientSecret, String redirectURI) {
         for (Interceptor apiAuthorization : apiAuthorizations.values()) {
             if (apiAuthorization instanceof OAuth) {
                 OAuth oauth = (OAuth) apiAuthorization;
@@ -255,7 +253,7 @@ public class ApiClient {
      * @param accessTokenListener Access token listener
      * @return ApiClient
      */
-    public ApiClient registerAccessTokenListener(AccessTokenListener accessTokenListener) {
+    public FineractApiClient registerAccessTokenListener(AccessTokenListener accessTokenListener) {
         for (Interceptor apiAuthorization : apiAuthorizations.values()) {
             if (apiAuthorization instanceof OAuth) {
                 OAuth oauth = (OAuth) apiAuthorization;
@@ -273,7 +271,7 @@ public class ApiClient {
      * @param authorization Authorization interceptor
      * @return ApiClient
      */
-    public ApiClient addAuthorization(String authName, Interceptor authorization) {
+    public FineractApiClient addAuthorization(String authName, Interceptor authorization) {
         if (apiAuthorizations.containsKey(authName)) {
             throw new RuntimeException("auth name \"" + authName + "\" already in api authorizations");
         }
@@ -286,7 +284,7 @@ public class ApiClient {
         return apiAuthorizations;
     }
 
-    public ApiClient setApiAuthorizations(Map<String, Interceptor> apiAuthorizations) {
+    public FineractApiClient setApiAuthorizations(Map<String, Interceptor> apiAuthorizations) {
         this.apiAuthorizations = apiAuthorizations;
         return this;
     }
@@ -295,7 +293,7 @@ public class ApiClient {
         return adapterBuilder;
     }
 
-    public ApiClient setAdapterBuilder(Retrofit.Builder adapterBuilder) {
+    public FineractApiClient setAdapterBuilder(Retrofit.Builder adapterBuilder) {
         this.adapterBuilder = adapterBuilder;
         return this;
     }

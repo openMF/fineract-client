@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostCodesRequest;
 import org.mifos.fineract.models.PutCodesRequest;
 
@@ -15,7 +15,7 @@ public class CodesApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CodesApi.class);
+        api = new FineractApiClient().createService(CodesApi.class);
     }
 
     /**

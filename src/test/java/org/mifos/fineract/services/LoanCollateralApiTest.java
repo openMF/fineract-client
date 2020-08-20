@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostLoansLoanIdCollateralsRequest;
 import org.mifos.fineract.models.PutLoansLoandIdCollateralsCollateralIdRequest;
 
@@ -15,7 +15,7 @@ public class LoanCollateralApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(LoanCollateralApi.class);
+        api = new FineractApiClient().createService(LoanCollateralApi.class);
     }
 
     /**

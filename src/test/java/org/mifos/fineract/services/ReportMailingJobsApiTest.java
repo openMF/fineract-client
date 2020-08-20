@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.DeleteReportMailingJobsRequest;
 import org.mifos.fineract.models.PostReportMailingJobsRequest;
 import org.mifos.fineract.models.PutReportMailingJobsRequest;
@@ -16,7 +16,7 @@ public class ReportMailingJobsApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(ReportMailingJobsApi.class);
+        api = new FineractApiClient().createService(ReportMailingJobsApi.class);
     }
 
     /**

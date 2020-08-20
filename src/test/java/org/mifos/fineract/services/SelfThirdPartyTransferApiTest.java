@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostSelfBeneficiariesTPTRequest;
 import org.mifos.fineract.models.PutSelfBeneficiariesTPTBeneficiaryIdRequest;
 
@@ -15,7 +15,7 @@ public class SelfThirdPartyTransferApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SelfThirdPartyTransferApi.class);
+        api = new FineractApiClient().createService(SelfThirdPartyTransferApi.class);
     }
 
     /**

@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostAccountNumberFormatsRequest;
 import org.mifos.fineract.models.PutAccountNumberFormatsRequest;
 
@@ -15,7 +15,7 @@ public class AccountNumberFormatApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(AccountNumberFormatApi.class);
+        api = new FineractApiClient().createService(AccountNumberFormatApi.class);
     }
 
     /**

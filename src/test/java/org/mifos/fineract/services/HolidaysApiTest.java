@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostHolidaysHolidayIdRequest;
 import org.mifos.fineract.models.PostHolidaysRequest;
 import org.mifos.fineract.models.PutHolidaysHolidayIdRequest;
@@ -16,7 +16,7 @@ public class HolidaysApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(HolidaysApi.class);
+        api = new FineractApiClient().createService(HolidaysApi.class);
     }
 
     /**

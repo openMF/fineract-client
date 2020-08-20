@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for FetchAuthenticatedUserDetailsApi
@@ -13,7 +13,7 @@ public class FetchAuthenticatedUserDetailsApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(FetchAuthenticatedUserDetailsApi.class);
+        api = new FineractApiClient().createService(FetchAuthenticatedUserDetailsApi.class);
     }
 
     /**

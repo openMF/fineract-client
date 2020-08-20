@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostRecurringDepositAccountsAccountIdRequest;
 import org.mifos.fineract.models.PostRecurringDepositAccountsRequest;
 import org.mifos.fineract.models.PutRecurringDepositAccountsAccountIdRequest;
@@ -18,7 +18,7 @@ public class RecurringDepositAccountApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(RecurringDepositAccountApi.class);
+        api = new FineractApiClient().createService(RecurringDepositAccountApi.class);
     }
 
     /**

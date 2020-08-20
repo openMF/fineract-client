@@ -13,8 +13,8 @@ import retrofit2.Response;
  */
 public class Main {
     public static void main(String[] args) {
-        ApiClient apiClient = new ApiClient();
-        AuthenticationHttpBasicApi authApi = apiClient.createService(AuthenticationHttpBasicApi.class);
+        FineractApiClient fineractApiClient = new FineractApiClient();
+        AuthenticationHttpBasicApi authApi = fineractApiClient.createService(AuthenticationHttpBasicApi.class);
         Call<PostAuthenticationResponse> call = authApi.authenticate("mifos", "password");
         call.enqueue(new Callback<PostAuthenticationResponse>() {
             @Override

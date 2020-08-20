@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostGroupsGroupIdCommandUnassignStaffRequest;
 import org.mifos.fineract.models.PostGroupsGroupIdRequest;
 import org.mifos.fineract.models.PostGroupsRequest;
@@ -19,7 +19,7 @@ public class GroupsApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(GroupsApi.class);
+        api = new FineractApiClient().createService(GroupsApi.class);
     }
 
     /**

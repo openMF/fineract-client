@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PutCurrenciesRequest;
 
 /**
@@ -14,7 +14,7 @@ public class CurrencyApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CurrencyApi.class);
+        api = new FineractApiClient().createService(CurrencyApi.class);
     }
 
     /**

@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for MakerCheckerOr4EyeFunctionalityApi
@@ -13,7 +13,7 @@ public class MakerCheckerOr4EyeFunctionalityApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MakerCheckerOr4EyeFunctionalityApi.class);
+        api = new FineractApiClient().createService(MakerCheckerOr4EyeFunctionalityApi.class);
     }
 
     /**

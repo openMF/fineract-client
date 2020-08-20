@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for MixMapping_Api
@@ -13,7 +13,7 @@ public class MixMapping_ApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MixMapping_Api.class);
+        api = new FineractApiClient().createService(MixMapping_Api.class);
     }
 
     /**

@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 
 /**
  * API tests for ProvisioningCategoryApi
@@ -13,7 +13,7 @@ public class ProvisioningCategoryApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(ProvisioningCategoryApi.class);
+        api = new FineractApiClient().createService(ProvisioningCategoryApi.class);
     }
 
     /**

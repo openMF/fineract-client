@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostLoansLoanIdScheduleRequest;
 
 /**
@@ -14,7 +14,7 @@ public class LoanReschedulingApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(LoanReschedulingApi.class);
+        api = new FineractApiClient().createService(LoanReschedulingApi.class);
     }
 
     /**

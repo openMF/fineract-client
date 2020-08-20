@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostPaymentTypesRequest;
 import org.mifos.fineract.models.PutPaymentTypesPaymentTypeIdRequest;
 
@@ -15,7 +15,7 @@ public class PaymentTypeApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(PaymentTypeApi.class);
+        api = new FineractApiClient().createService(PaymentTypeApi.class);
     }
 
     /**

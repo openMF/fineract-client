@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.SurveyData;
 
 /**
@@ -14,7 +14,7 @@ public class SpmSurveysApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SpmSurveysApi.class);
+        api = new FineractApiClient().createService(SpmSurveysApi.class);
     }
 
     /**

@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostResourceTypeResourceIdNotesRequest;
 import org.mifos.fineract.models.PutResourceTypeResourceIdNotesNoteIdRequest;
 
@@ -15,7 +15,7 @@ public class NotesApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(NotesApi.class);
+        api = new FineractApiClient().createService(NotesApi.class);
     }
 
     /**

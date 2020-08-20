@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.JournalEntryCommand;
 import org.mifos.fineract.models.PostJournalEntriesTransactionIdRequest;
 
@@ -17,7 +17,7 @@ public class JournalEntriesApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(JournalEntriesApi.class);
+        api = new FineractApiClient().createService(JournalEntriesApi.class);
     }
 
     /**

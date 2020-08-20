@@ -2,7 +2,7 @@ package org.mifos.fineract.services;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mifos.fineract.ApiClient;
+import org.mifos.fineract.FineractApiClient;
 import org.mifos.fineract.models.PostTaxesGroupRequest;
 import org.mifos.fineract.models.PutTaxesGroupTaxGroupIdRequest;
 
@@ -15,7 +15,7 @@ public class TaxGroupApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(TaxGroupApi.class);
+        api = new FineractApiClient().createService(TaxGroupApi.class);
     }
 
     /**
