@@ -1,0 +1,31 @@
+package org.mifos.fineract.services;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mifos.fineract.ApiClient;
+
+/**
+ * API tests for EntityFieldConfigurationApi
+ */
+public class EntityFieldConfigurationApiTest {
+
+    private EntityFieldConfigurationApi api;
+
+    @Before
+    public void setup() {
+        api = new ApiClient().createService(EntityFieldConfigurationApi.class);
+    }
+
+    /**
+     * Retrieves the Entity Field Configuration
+     * <p>
+     * It retrieves all the Entity Field Configuration
+     */
+    @Test
+    public void getAddressesTest() {
+        String entity = null;
+        // List<GetFieldConfigurationEntityResponse> response = api.getAddresses(entity);
+
+        // TODO: test validations
+    }
+}

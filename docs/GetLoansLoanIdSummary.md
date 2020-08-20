@@ -1,0 +1,52 @@
+
+# GetLoansLoanIdSummary
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**currency** | [**GetLoansLoanIdCurrency**](GetLoansLoanIdCurrency.md) |  |  [optional]
+**principalDisbursed** | **Long** |  |  [optional]
+**principalPaid** | **Long** |  |  [optional]
+**principalWrittenOff** | **Long** |  |  [optional]
+**principalOutstanding** | **Long** |  |  [optional]
+**principalOverdue** | **Double** |  |  [optional]
+**interestCharged** | **Long** |  |  [optional]
+**interestPaid** | **Long** |  |  [optional]
+**interestWaived** | **Long** |  |  [optional]
+**interestWrittenOff** | **Long** |  |  [optional]
+**interestOutstanding** | **Long** |  |  [optional]
+**interestOverdue** | **Long** |  |  [optional]
+**feeChargesCharged** | **Long** |  |  [optional]
+**feeChargesDueAtDisbursementCharged** | **Long** |  |  [optional]
+**feeChargesPaid** | **Long** |  |  [optional]
+**feeChargesWaived** | **Long** |  |  [optional]
+**feeChargesWrittenOff** | **Long** |  |  [optional]
+**feeChargesOutstanding** | **Long** |  |  [optional]
+**feeChargesOverdue** | **Long** |  |  [optional]
+**penaltyChargesCharged** | **Long** |  |  [optional]
+**penaltyChargesPaid** | **Long** |  |  [optional]
+**penaltyChargesWaived** | **Long** |  |  [optional]
+**penaltyChargesWrittenOff** | **Long** |  |  [optional]
+**penaltyChargesOutstanding** | **Long** |  |  [optional]
+**penaltyChargesOverdue** | **Long** |  |  [optional]
+**totalExpectedRepayment** | **Long** |  |  [optional]
+**totalRepayment** | **Long** |  |  [optional]
+**totalExpectedCostOfLoan** | **Long** |  |  [optional]
+**totalCostOfLoan** | **Long** |  |  [optional]
+**totalWaived** | **Long** |  |  [optional]
+**totalWrittenOff** | **Long** |  |  [optional]
+**totalOutstanding** | **Long** |  |  [optional]
+**totalOverdue** | **Double** |  |  [optional]
+**overdueSinceDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**linkedAccount** | [**GetLoansLoanIdLinkedAccount**](GetLoansLoanIdLinkedAccount.md) |  |  [optional]
+**disbursementDetails** | [**List&lt;GetLoansLoanIdDisbursementDetails&gt;**](GetLoansLoanIdDisbursementDetails.md) |  |  [optional]
+**fixedEmiAmount** | **Float** |  |  [optional]
+**maxOutstandingLoanBalance** | **Long** |  |  [optional]
+**canDisburse** | **Boolean** |  |  [optional]
+**emiAmountVariations** | [**List&lt;GetLoansLoanIdEmiVariations&gt;**](GetLoansLoanIdEmiVariations.md) |  |  [optional]
+**inArrears** | **Boolean** |  |  [optional]
+**isNPA** | **Boolean** |  |  [optional]
+**overdueCharges** | [**List&lt;GetLoansLoanIdOverdueCharges&gt;**](GetLoansLoanIdOverdueCharges.md) |  |  [optional]
+
+
+
