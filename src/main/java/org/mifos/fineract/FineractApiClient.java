@@ -85,47 +85,10 @@ public class FineractApiClient {
     // Checker Inbox API
     private static CheckerInboxApi checkerInboxApi;
 
-    {
-        authApi = createService(AuthenticationHttpBasicApi.class);
-        centersApi = createService(CentersApi.class);
-        clientApi = createService(ClientApi.class);
-        clientChargesApi = createService(ClientChargesApi.class);
-        clientTransactionApi = createService(ClientTransactionApi.class);
-        clientsAddressApi = createService(ClientsAddressApi.class);
-        clientIdentifierApi = createService(ClientIdentifierApi.class);
-        dataTablesApi = createService(DataTablesApi.class);
-        loansApi = createService(LoansApi.class);
-        loanChargesApi = createService(LoanChargesApi.class);
-        loanCollateralApi = createService(LoanCollateralApi.class);
-        loanProductsApi = createService(LoanProductsApi.class);
-        loanReschedulingApi = createService(LoanReschedulingApi.class);
-        loanTransactionsApi = createService(LoanTransactionsApi.class);
-        selfLoansApi = createService(SelfLoansApi.class);
-        selfLoanProductsApi = createService(SelfLoanProductsApi.class);
-
-        savingsAccountApi = createService(SavingsAccountApi.class);
-        savingsChargesApi = createService(SavingsChargesApi.class);
-        savingsProductApi = createService(SavingsProductApi.class);
-        selfSavingsAccountApi = createService(SelfSavingsAccountApi.class);
-        chargesApi = createService(ChargesApi.class);
-        searchApi = createService(SearchApi.class);
-        groupsApi = createService(GroupsApi.class);
-        documentsApi = createService(DocumentsApi.class);
-        officesApi = createService(OfficesApi.class);
-        officeTransactionsApi = createService(OfficeTransactionsApi.class);
-        staffApi = createService(StaffApi.class);
-        surveyApi = createService(SurveyApi.class);
-        spmSurveysApi = createService(SpmSurveysApi.class);
-        runReportsApi = createService(RunReportsApi.class);
-        reportsApi = createService(ReportsApi.class);
-        notesApi = createService(NotesApi.class);
-        collectionSheetApi = createService(CollectionSheetApi.class);
-        checkerInboxApi = createService(CheckerInboxApi.class);
-    }
-
     public FineractApiClient() {
         apiAuthorizations = new LinkedHashMap<>();
         createDefaultAdapter();
+        init();
     }
 
     public FineractApiClient(String[] authNames) {
@@ -183,6 +146,44 @@ public class FineractApiClient {
                 .setClientSecret(secret)
                 .setUsername(username)
                 .setPassword(password);
+    }
+
+    private void init() {
+        authApi = createService(AuthenticationHttpBasicApi.class);
+        centersApi = createService(CentersApi.class);
+        clientApi = createService(ClientApi.class);
+        clientChargesApi = createService(ClientChargesApi.class);
+        clientTransactionApi = createService(ClientTransactionApi.class);
+        clientsAddressApi = createService(ClientsAddressApi.class);
+        clientIdentifierApi = createService(ClientIdentifierApi.class);
+        dataTablesApi = createService(DataTablesApi.class);
+        loansApi = createService(LoansApi.class);
+        loanChargesApi = createService(LoanChargesApi.class);
+        loanCollateralApi = createService(LoanCollateralApi.class);
+        loanProductsApi = createService(LoanProductsApi.class);
+        loanReschedulingApi = createService(LoanReschedulingApi.class);
+        loanTransactionsApi = createService(LoanTransactionsApi.class);
+        selfLoansApi = createService(SelfLoansApi.class);
+        selfLoanProductsApi = createService(SelfLoanProductsApi.class);
+
+        savingsAccountApi = createService(SavingsAccountApi.class);
+        savingsChargesApi = createService(SavingsChargesApi.class);
+        savingsProductApi = createService(SavingsProductApi.class);
+        selfSavingsAccountApi = createService(SelfSavingsAccountApi.class);
+        chargesApi = createService(ChargesApi.class);
+        searchApi = createService(SearchApi.class);
+        groupsApi = createService(GroupsApi.class);
+        documentsApi = createService(DocumentsApi.class);
+        officesApi = createService(OfficesApi.class);
+        officeTransactionsApi = createService(OfficeTransactionsApi.class);
+        staffApi = createService(StaffApi.class);
+        surveyApi = createService(SurveyApi.class);
+        spmSurveysApi = createService(SpmSurveysApi.class);
+        runReportsApi = createService(RunReportsApi.class);
+        reportsApi = createService(ReportsApi.class);
+        notesApi = createService(NotesApi.class);
+        collectionSheetApi = createService(CollectionSheetApi.class);
+        checkerInboxApi = createService(CheckerInboxApi.class);
     }
 
     public void createDefaultAdapter() {
