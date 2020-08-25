@@ -22,7 +22,7 @@ Approve Maker Checker Entry | Reject Maker Checker Entry
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MakerCheckerOr4EyeFunctionalityApi;
+//import org.mifos.fineract.services.CheckerInboxApi;
 
 
 MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
@@ -69,7 +69,7 @@ Delete Maker Checker Entry
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MakerCheckerOr4EyeFunctionalityApi;
+//import org.mifos.fineract.services.CheckerInboxApi;
 
 
 MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
@@ -114,7 +114,7 @@ This is a convenience resource. It can be useful when building a Checker Inbox U
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MakerCheckerOr4EyeFunctionalityApi;
+//import org.mifos.fineract.services.CheckerInboxApi;
 
 
 MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
@@ -155,7 +155,7 @@ Get a list of entries that can be checked by the requestor that match the criter
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MakerCheckerOr4EyeFunctionalityApi;
+//import org.mifos.fineract.services.CheckerInboxApi;
 
 
 MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();

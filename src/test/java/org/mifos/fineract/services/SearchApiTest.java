@@ -8,13 +8,13 @@ import org.mifos.fineract.models.PostAdhocQuerySearchRequest;
 /**
  * API tests for SearchApiApi
  */
-public class SearchApiApiTest {
+public class SearchApiTest {
 
-    private SearchApiApi api;
+    private SearchApi api;
 
     @Before
     public void setup() {
-        api = new FineractApiClient().createService(SearchApiApi.class);
+        api = new FineractApiClient().createService(SearchApi.class);
     }
 
     /**

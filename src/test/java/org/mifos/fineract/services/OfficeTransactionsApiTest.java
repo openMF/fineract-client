@@ -7,13 +7,13 @@ import org.mifos.fineract.FineractApiClient;
 /**
  * API tests for OfficetransactionsApi
  */
-public class OfficetransactionsApiTest {
+public class OfficeTransactionsApiTest {
 
-    private OfficetransactionsApi api;
+    private OfficeTransactionsApi api;
 
     @Before
     public void setup() {
-        api = new FineractApiClient().createService(OfficetransactionsApi.class);
+        api = new FineractApiClient().createService(OfficeTransactionsApi.class);
     }
 
     /**
