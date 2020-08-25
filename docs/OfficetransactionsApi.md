@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficetransactionsApi;
+//import org.mifos.fineract.services.OfficeTransactionsApi;
 
 
 OfficetransactionsApi apiInstance = new OfficetransactionsApi();
@@ -63,7 +63,7 @@ No authorization required
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficetransactionsApi;
+//import org.mifos.fineract.services.OfficeTransactionsApi;
 
 
 OfficetransactionsApi apiInstance = new OfficetransactionsApi();
@@ -102,7 +102,7 @@ No authorization required
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficetransactionsApi;
+//import org.mifos.fineract.services.OfficeTransactionsApi;
 
 
 OfficetransactionsApi apiInstance = new OfficetransactionsApi();
@@ -141,7 +141,7 @@ No authorization required
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficetransactionsApi;
+//import org.mifos.fineract.services.OfficeTransactionsApi;
 
 
 OfficetransactionsApi apiInstance = new OfficetransactionsApi();

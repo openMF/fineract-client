@@ -21,7 +21,7 @@ AdHocQuery search has more search options, it is a POST request, it uses request
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApiApi;
+//import org.mifos.fineract.services.SearchApi;
 
 
 SearchApiApi apiInstance = new SearchApiApi();
@@ -68,7 +68,7 @@ Mandatory Fields  search?query&#x3D;000000001
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApiApi;
+//import org.mifos.fineract.services.SearchApi;
 
 
 SearchApiApi apiInstance = new SearchApiApi();
@@ -109,7 +109,7 @@ Example Requests:  search?query&#x3D;000000001   search?query&#x3D;Petra&amp;res
 ```java
 // Import classes:
 //import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApiApi;
+//import org.mifos.fineract.services.SearchApi;
 
 
 SearchApiApi apiInstance = new SearchApiApi();

@@ -7,13 +7,13 @@ import org.mifos.fineract.FineractApiClient;
 /**
  * API tests for MakerCheckerOr4EyeFunctionalityApi
  */
-public class MakerCheckerOr4EyeFunctionalityApiTest {
+public class CheckerInboxApiTest {
 
-    private MakerCheckerOr4EyeFunctionalityApi api;
+    private CheckerInboxApi api;
 
     @Before
     public void setup() {
-        api = new FineractApiClient().createService(MakerCheckerOr4EyeFunctionalityApi.class);
+        api = new FineractApiClient().createService(CheckerInboxApi.class);
     }
 
     /**

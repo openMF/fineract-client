@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 
 import java.util.List;
 
-public interface MakerCheckerOr4EyeFunctionalityApi {
+public interface CheckerInboxApi {
     /**
      * Approve Maker Checker Entry | Reject Maker Checker Entry
      *

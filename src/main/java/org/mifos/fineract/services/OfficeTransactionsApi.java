@@ -6,7 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
-public interface OfficetransactionsApi {
+public interface OfficeTransactionsApi {
     /**
      * @param transactionId (required)
      * @return Call&lt;String&gt;

@@ -13,6 +13,7 @@ import org.mifos.fineract.auth.ApiKeyAuth;
 import org.mifos.fineract.auth.HttpBasicAuth;
 import org.mifos.fineract.auth.OAuth;
 import org.mifos.fineract.auth.OAuth.AccessTokenListener;
+import org.mifos.fineract.services.*;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -32,9 +33,62 @@ public class FineractApiClient {
     private Retrofit.Builder adapterBuilder;
     private JSON json;
 
+    // Authentication API
+    private static AuthenticationHttpBasicApi authApi;
+    // Centers API
+    private static CentersApi centersApi;
+    // Client APIs
+    private static ClientApi clientApi;
+    private static ClientChargesApi clientChargesApi;
+    private static ClientTransactionApi clientTransactionApi;
+    private static ClientsAddressApi clientsAddressApi;
+    private static ClientIdentifierApi clientIdentifierApi;
+    // DataTables API
+    private static DataTablesApi dataTablesApi;
+    // Loans API
+    private static LoansApi loansApi;
+    private static LoanChargesApi loanChargesApi;
+    private static LoanCollateralApi loanCollateralApi;
+    private static LoanProductsApi loanProductsApi;
+    private static LoanReschedulingApi loanReschedulingApi;
+    private static LoanTransactionsApi loanTransactionsApi;
+    private static SelfLoansApi selfLoansApi;
+    private static SelfLoanProductsApi selfLoanProductsApi;
+    // Savings Account API
+    private static SavingsAccountApi savingsAccountApi;
+    private static SavingsChargesApi savingsChargesApi;
+    private static SavingsProductApi savingsProductApi;
+    private static SelfSavingsAccountApi selfSavingsAccountApi;
+    // Charge API
+    private static ChargesApi chargesApi;
+    // Search API
+    private static SearchApi searchApi;
+    // Groups API
+    private static GroupsApi groupsApi;
+    // Documents API
+    private static DocumentsApi documentsApi;
+    // Office API
+    private static OfficesApi officesApi;
+    private static OfficeTransactionsApi officeTransactionsApi;
+    // Staff API
+    private static StaffApi staffApi;
+    // Survey API
+    private static SurveyApi surveyApi;
+    private static SpmSurveysApi spmSurveysApi;
+    // Run Reports API
+    private static RunReportsApi runReportsApi;
+    private static ReportsApi reportsApi;
+    // Notes API
+    private static NotesApi notesApi;
+    // Collection Sheet API
+    private static CollectionSheetApi collectionSheetApi;
+    // Checker Inbox API
+    private static CheckerInboxApi checkerInboxApi;
+
     public FineractApiClient() {
         apiAuthorizations = new LinkedHashMap<>();
         createDefaultAdapter();
+        init();
     }
 
     public FineractApiClient(String[] authNames) {
@@ -92,6 +146,44 @@ public class FineractApiClient {
                 .setClientSecret(secret)
                 .setUsername(username)
                 .setPassword(password);
+    }
+
+    private void init() {
+        authApi = createService(AuthenticationHttpBasicApi.class);
+        centersApi = createService(CentersApi.class);
+        clientApi = createService(ClientApi.class);
+        clientChargesApi = createService(ClientChargesApi.class);
+        clientTransactionApi = createService(ClientTransactionApi.class);
+        clientsAddressApi = createService(ClientsAddressApi.class);
+        clientIdentifierApi = createService(ClientIdentifierApi.class);
+        dataTablesApi = createService(DataTablesApi.class);
+        loansApi = createService(LoansApi.class);
+        loanChargesApi = createService(LoanChargesApi.class);
+        loanCollateralApi = createService(LoanCollateralApi.class);
+        loanProductsApi = createService(LoanProductsApi.class);
+        loanReschedulingApi = createService(LoanReschedulingApi.class);
+        loanTransactionsApi = createService(LoanTransactionsApi.class);
+        selfLoansApi = createService(SelfLoansApi.class);
+        selfLoanProductsApi = createService(SelfLoanProductsApi.class);
+
+        savingsAccountApi = createService(SavingsAccountApi.class);
+        savingsChargesApi = createService(SavingsChargesApi.class);
+        savingsProductApi = createService(SavingsProductApi.class);
+        selfSavingsAccountApi = createService(SelfSavingsAccountApi.class);
+        chargesApi = createService(ChargesApi.class);
+        searchApi = createService(SearchApi.class);
+        groupsApi = createService(GroupsApi.class);
+        documentsApi = createService(DocumentsApi.class);
+        officesApi = createService(OfficesApi.class);
+        officeTransactionsApi = createService(OfficeTransactionsApi.class);
+        staffApi = createService(StaffApi.class);
+        surveyApi = createService(SurveyApi.class);
+        spmSurveysApi = createService(SpmSurveysApi.class);
+        runReportsApi = createService(RunReportsApi.class);
+        reportsApi = createService(ReportsApi.class);
+        notesApi = createService(NotesApi.class);
+        collectionSheetApi = createService(CollectionSheetApi.class);
+        checkerInboxApi = createService(CheckerInboxApi.class);
     }
 
     public void createDefaultAdapter() {
@@ -316,6 +408,145 @@ public class FineractApiClient {
     public void configureFromOkclient(OkHttpClient okClient) {
         this.okBuilder = okClient.newBuilder();
         addAuthsToOkBuilder(this.okBuilder);
+    }
+
+    /**
+     * Getter methods for API service instances
+     */
+    public static AuthenticationHttpBasicApi getAuthApi() {
+        return authApi;
+    }
+
+    public static CentersApi getCentersApi() {
+        return centersApi;
+    }
+
+    public static ClientApi getClientApi() {
+        return clientApi;
+    }
+
+    public static ClientChargesApi getClientChargesApi() {
+        return clientChargesApi;
+    }
+
+    public static ClientTransactionApi getClientTransactionApi() {
+        return clientTransactionApi;
+    }
+
+    public static ClientsAddressApi getClientsAddressApi() {
+        return clientsAddressApi;
+    }
+
+    public static ClientIdentifierApi getClientIdentifierApi() {
+        return clientIdentifierApi;
+    }
+
+    public static DataTablesApi getDataTablesApi() {
+        return dataTablesApi;
+    }
+
+    public static LoansApi getLoansApi() {
+        return loansApi;
+    }
+
+    public static LoanChargesApi getLoanChargesApi() {
+        return loanChargesApi;
+    }
+
+    public static LoanCollateralApi getLoanCollateralApi() {
+        return loanCollateralApi;
+    }
+
+    public static LoanProductsApi getLoanProductsApi() {
+        return loanProductsApi;
+    }
+
+    public static LoanReschedulingApi getLoanReschedulingApi() {
+        return loanReschedulingApi;
+    }
+
+    public static LoanTransactionsApi getLoanTransactionsApi() {
+        return loanTransactionsApi;
+    }
+
+    public static SelfLoansApi getSelfLoansApi() {
+        return selfLoansApi;
+    }
+
+    public static SelfLoanProductsApi getSelfLoanProductsApi() {
+        return selfLoanProductsApi;
+    }
+
+    public static SavingsAccountApi getSavingsAccountApi() {
+        return savingsAccountApi;
+    }
+
+    public static SavingsChargesApi getSavingsChargesApi() {
+        return savingsChargesApi;
+    }
+
+    public static SavingsProductApi getSavingsProductApi() {
+        return savingsProductApi;
+    }
+
+    public static SelfSavingsAccountApi getSelfSavingsAccountApi() {
+        return selfSavingsAccountApi;
+    }
+
+    public static ChargesApi getChargesApi() {
+        return chargesApi;
+    }
+
+    public static SearchApi getSearchApi() {
+        return searchApi;
+    }
+
+    public static GroupsApi getGroupsApi() {
+        return groupsApi;
+    }
+
+    public static DocumentsApi getDocumentsApi() {
+        return documentsApi;
+    }
+
+    public static OfficesApi getOfficesApi() {
+        return officesApi;
+    }
+
+    public static OfficeTransactionsApi getOfficeTransactionsApi() {
+        return officeTransactionsApi;
+    }
+
+    public static StaffApi getStaffApi() {
+        return staffApi;
+    }
+
+    public static SurveyApi getSurveyApi() {
+        return surveyApi;
+    }
+
+    public static SpmSurveysApi getSpmSurveysApi() {
+        return spmSurveysApi;
+    }
+
+    public static RunReportsApi getRunReportsApi() {
+        return runReportsApi;
+    }
+
+    public static ReportsApi getReportsApi() {
+        return reportsApi;
+    }
+
+    public static NotesApi getNotesApi() {
+        return notesApi;
+    }
+
+    public static CollectionSheetApi getCollectionSheetApi() {
+        return collectionSheetApi;
+    }
+
+    public static CheckerInboxApi getCheckerInboxApi() {
+        return checkerInboxApi;
     }
 }
 
