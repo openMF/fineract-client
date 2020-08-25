@@ -4,7 +4,7 @@
     <groupId>org.mifos.fineract</groupId>
     <artifactId>client</artifactId>
     <packaging>jar</packaging>
-    <name>client</name>
+    <name>Fineract Client</name>
     <version>1.0.0</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Fineract Client Library based on Java and Retrofit2</description>
