@@ -16,7 +16,7 @@ lazy val root = (project in file(".")).
       "org.apache.oltu.oauth2" % "org.apache.oltu.oauth2.client" % "1.0.1" % "compile",
       "joda-time" % "joda-time" % "2.10.6" % "compile",
       "io.gsonfire" % "gson-fire" % "1.8.4" % "compile",
-      "junit" % "junit" % "4.12" % "test",
+      "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.11" % "test"
     )
   )
