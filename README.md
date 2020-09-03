@@ -20,7 +20,7 @@ To use library in your gradle project follow the steps below:
 2. Add the dependency
    ```groovy
    dependencies {
-       implementation 'com.github.openMF:fineract-client:1.0.0'
+       implementation 'com.github.openMF:fineract-client:1.0.1'
    }
    ```
 
@@ -42,7 +42,7 @@ To use the library in your Maven project, follow the steps below:
     <dependency>
         <groupId>com.github.openMF</groupId>
         <artifactId>fineract-client</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
     ```
 
