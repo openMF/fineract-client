@@ -6,14 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fineract-client" />
+        <module name="client" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="client" target="1.7" />
-      <module name="client.main" target="1.7" />
-      <module name="client.test" target="1.7" />
-      <module name="out" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

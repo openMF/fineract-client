@@ -34,56 +34,56 @@ public class FineractApiClient {
     private JSON json;
 
     // Authentication API
-    private static AuthenticationHttpBasicApi authApi;
+    private AuthenticationHttpBasicApi authApi;
     // Centers API
-    private static CentersApi centersApi;
+    private CentersApi centersApi;
     // Client APIs
-    private static ClientApi clientApi;
-    private static ClientChargesApi clientChargesApi;
-    private static ClientTransactionApi clientTransactionApi;
-    private static ClientsAddressApi clientsAddressApi;
-    private static ClientIdentifierApi clientIdentifierApi;
+    private ClientApi clientApi;
+    private ClientChargesApi clientChargesApi;
+    private ClientTransactionApi clientTransactionApi;
+    private ClientsAddressApi clientsAddressApi;
+    private ClientIdentifierApi clientIdentifierApi;
     // DataTables API
-    private static DataTablesApi dataTablesApi;
+    private DataTablesApi dataTablesApi;
     // Loans API
-    private static LoansApi loansApi;
-    private static LoanChargesApi loanChargesApi;
-    private static LoanCollateralApi loanCollateralApi;
-    private static LoanProductsApi loanProductsApi;
-    private static LoanReschedulingApi loanReschedulingApi;
-    private static LoanTransactionsApi loanTransactionsApi;
-    private static SelfLoansApi selfLoansApi;
-    private static SelfLoanProductsApi selfLoanProductsApi;
+    private LoansApi loansApi;
+    private LoanChargesApi loanChargesApi;
+    private LoanCollateralApi loanCollateralApi;
+    private LoanProductsApi loanProductsApi;
+    private LoanReschedulingApi loanReschedulingApi;
+    private LoanTransactionsApi loanTransactionsApi;
+    private SelfLoansApi selfLoansApi;
+    private SelfLoanProductsApi selfLoanProductsApi;
     // Savings Account API
-    private static SavingsAccountApi savingsAccountApi;
-    private static SavingsChargesApi savingsChargesApi;
-    private static SavingsProductApi savingsProductApi;
-    private static SelfSavingsAccountApi selfSavingsAccountApi;
+    private SavingsAccountApi savingsAccountApi;
+    private SavingsChargesApi savingsChargesApi;
+    private SavingsProductApi savingsProductApi;
+    private SelfSavingsAccountApi selfSavingsAccountApi;
     // Charge API
-    private static ChargesApi chargesApi;
+    private ChargesApi chargesApi;
     // Search API
-    private static SearchApi searchApi;
+    private SearchApi searchApi;
     // Groups API
-    private static GroupsApi groupsApi;
+    private GroupsApi groupsApi;
     // Documents API
-    private static DocumentsApi documentsApi;
+    private DocumentsApi documentsApi;
     // Office API
-    private static OfficesApi officesApi;
-    private static OfficeTransactionsApi officeTransactionsApi;
+    private OfficesApi officesApi;
+    private OfficeTransactionsApi officeTransactionsApi;
     // Staff API
-    private static StaffApi staffApi;
+    private StaffApi staffApi;
     // Survey API
-    private static SurveyApi surveyApi;
-    private static SpmSurveysApi spmSurveysApi;
+    private SurveyApi surveyApi;
+    private SpmSurveysApi spmSurveysApi;
     // Run Reports API
-    private static RunReportsApi runReportsApi;
-    private static ReportsApi reportsApi;
+    private RunReportsApi runReportsApi;
+    private ReportsApi reportsApi;
     // Notes API
-    private static NotesApi notesApi;
+    private NotesApi notesApi;
     // Collection Sheet API
-    private static CollectionSheetApi collectionSheetApi;
+    private CollectionSheetApi collectionSheetApi;
     // Checker Inbox API
-    private static CheckerInboxApi checkerInboxApi;
+    private CheckerInboxApi checkerInboxApi;
 
     public FineractApiClient() {
         apiAuthorizations = new LinkedHashMap<>();
@@ -413,139 +413,139 @@ public class FineractApiClient {
     /**
      * Getter methods for API service instances
      */
-    public static AuthenticationHttpBasicApi getAuthApi() {
+    public AuthenticationHttpBasicApi getAuthApi() {
         return authApi;
     }
 
-    public static CentersApi getCentersApi() {
+    public CentersApi getCentersApi() {
         return centersApi;
     }
 
-    public static ClientApi getClientApi() {
+    public ClientApi getClientApi() {
         return clientApi;
     }
 
-    public static ClientChargesApi getClientChargesApi() {
+    public ClientChargesApi getClientChargesApi() {
         return clientChargesApi;
     }
 
-    public static ClientTransactionApi getClientTransactionApi() {
+    public ClientTransactionApi getClientTransactionApi() {
         return clientTransactionApi;
     }
 
-    public static ClientsAddressApi getClientsAddressApi() {
+    public ClientsAddressApi getClientsAddressApi() {
         return clientsAddressApi;
     }
 
-    public static ClientIdentifierApi getClientIdentifierApi() {
+    public ClientIdentifierApi getClientIdentifierApi() {
         return clientIdentifierApi;
     }
 
-    public static DataTablesApi getDataTablesApi() {
+    public DataTablesApi getDataTablesApi() {
         return dataTablesApi;
     }
 
-    public static LoansApi getLoansApi() {
+    public LoansApi getLoansApi() {
         return loansApi;
     }
 
-    public static LoanChargesApi getLoanChargesApi() {
+    public LoanChargesApi getLoanChargesApi() {
         return loanChargesApi;
     }
 
-    public static LoanCollateralApi getLoanCollateralApi() {
+    public LoanCollateralApi getLoanCollateralApi() {
         return loanCollateralApi;
     }
 
-    public static LoanProductsApi getLoanProductsApi() {
+    public LoanProductsApi getLoanProductsApi() {
         return loanProductsApi;
     }
 
-    public static LoanReschedulingApi getLoanReschedulingApi() {
+    public LoanReschedulingApi getLoanReschedulingApi() {
         return loanReschedulingApi;
     }
 
-    public static LoanTransactionsApi getLoanTransactionsApi() {
+    public LoanTransactionsApi getLoanTransactionsApi() {
         return loanTransactionsApi;
     }
 
-    public static SelfLoansApi getSelfLoansApi() {
+    public SelfLoansApi getSelfLoansApi() {
         return selfLoansApi;
     }
 
-    public static SelfLoanProductsApi getSelfLoanProductsApi() {
+    public SelfLoanProductsApi getSelfLoanProductsApi() {
         return selfLoanProductsApi;
     }
 
-    public static SavingsAccountApi getSavingsAccountApi() {
+    public SavingsAccountApi getSavingsAccountApi() {
         return savingsAccountApi;
     }
 
-    public static SavingsChargesApi getSavingsChargesApi() {
+    public SavingsChargesApi getSavingsChargesApi() {
         return savingsChargesApi;
     }
 
-    public static SavingsProductApi getSavingsProductApi() {
+    public SavingsProductApi getSavingsProductApi() {
         return savingsProductApi;
     }
 
-    public static SelfSavingsAccountApi getSelfSavingsAccountApi() {
+    public SelfSavingsAccountApi getSelfSavingsAccountApi() {
         return selfSavingsAccountApi;
     }
 
-    public static ChargesApi getChargesApi() {
+    public ChargesApi getChargesApi() {
         return chargesApi;
     }
 
-    public static SearchApi getSearchApi() {
+    public SearchApi getSearchApi() {
         return searchApi;
     }
 
-    public static GroupsApi getGroupsApi() {
+    public GroupsApi getGroupsApi() {
         return groupsApi;
     }
 
-    public static DocumentsApi getDocumentsApi() {
+    public DocumentsApi getDocumentsApi() {
         return documentsApi;
     }
 
-    public static OfficesApi getOfficesApi() {
+    public OfficesApi getOfficesApi() {
         return officesApi;
     }
 
-    public static OfficeTransactionsApi getOfficeTransactionsApi() {
+    public OfficeTransactionsApi getOfficeTransactionsApi() {
         return officeTransactionsApi;
     }
 
-    public static StaffApi getStaffApi() {
+    public StaffApi getStaffApi() {
         return staffApi;
     }
 
-    public static SurveyApi getSurveyApi() {
+    public SurveyApi getSurveyApi() {
         return surveyApi;
     }
 
-    public static SpmSurveysApi getSpmSurveysApi() {
+    public SpmSurveysApi getSpmSurveysApi() {
         return spmSurveysApi;
     }
 
-    public static RunReportsApi getRunReportsApi() {
+    public RunReportsApi getRunReportsApi() {
         return runReportsApi;
     }
 
-    public static ReportsApi getReportsApi() {
+    public ReportsApi getReportsApi() {
         return reportsApi;
     }
 
-    public static NotesApi getNotesApi() {
+    public NotesApi getNotesApi() {
         return notesApi;
     }
 
-    public static CollectionSheetApi getCollectionSheetApi() {
+    public CollectionSheetApi getCollectionSheetApi() {
         return collectionSheetApi;
     }
 
-    public static CheckerInboxApi getCheckerInboxApi() {
+    public CheckerInboxApi getCheckerInboxApi() {
         return checkerInboxApi;
     }
 }

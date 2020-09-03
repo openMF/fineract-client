@@ -11,10 +11,12 @@ import retrofit2.Response;
  * An example to illustrate the usage of consuming Fineract Client Library.
  */
 public class Main {
+
     public static void main(String[] args) {
 
         // Authentication Example
-        FineractApiClient.getAuthApi().authenticate("mifos", "password").enqueue(
+        System.out.println("====== Mifos Fineract Client SDK =======");
+        new FineractApiClient().getAuthApi().authenticate("mifos", "password").enqueue(
                 new Callback<PostAuthenticationResponse>() {
                     @Override
                     public void onResponse(Call<PostAuthenticationResponse> call, Response<PostAuthenticationResponse> response) {

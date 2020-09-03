@@ -48,30 +48,44 @@ To use the library in your Maven project, follow the steps below:
 
 ## Usage
 
-Example code to use the Authentication API:
+Example code to use the **Authentication API**:
 
 ```java
-FineractApiClient apiClient = new FineractApiClient();
+import org.mifos.fineract.models.PostAuthenticationResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-AuthenticationHttpBasicApi authApi = apiClient.createService(AuthenticationHttpBasicApi.class);
+public class Main {
 
-Call<PostAuthenticationResponse> call = authApi.authenticate("mifos", "password");
-call.enqueue(new Callback<PostAuthenticationResponse>() {
-    @Override
-    public void onResponse(Call<PostAuthenticationResponse> call, Response<PostAuthenticationResponse> response) {
-        // Handle Response
+    public static void main(String[] args) {
+
+        new FineractApiClient().getAuthApi().authenticate("mifos", "password").enqueue(
+                new Callback<PostAuthenticationResponse>() {
+                    @Override
+                    public void onResponse(Call<PostAuthenticationResponse> call, Response<PostAuthenticationResponse> response) {
+                        System.out.println(response.toString());
+                        PostAuthenticationResponse body = response.body();
+                        if (body != null) {
+                            System.out.println(body.toString());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<PostAuthenticationResponse> call, Throwable t) {
+                        System.out.println(t.toString());
+                    }
+                }
+        );
     }
-
-    @Override
-    public void onFailure(Call<PostAuthenticationResponse> call, Throwable t) {
-        // Handle Error
-    }
-});
+}
 ```
 
 Refer [Main.java](https://github.com/openMF/fineract-client/blob/master/src/main/java/org/mifos/fineract/Main.java) for full example.
 
 ## Build Project
+
+Clone the repository and import as Maven project in IntelliJ IDEA or Eclipse
 
 Before building the project, make sure you have the following things installed.
 
