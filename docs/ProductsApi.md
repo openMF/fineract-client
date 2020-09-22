@@ -1,6 +1,6 @@
 # ProductsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,27 +22,27 @@ Creates a Share Product  Mandatory Fields: name, shortName, description, currenc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-String type = "type_example"; // String | type
-PostProductsTypeRequest body = new PostProductsTypeRequest(); // PostProductsTypeRequest | body
-try {
-    PostProductsTypeResponse result = apiInstance.createProduct(type, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#createProduct");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostProductsTypeResponse> call = apiService.createProduct(type, body);
+call.enqueue(new Callback<PostProductsTypeResponse>() {
+    @Override
+    public void onResponse(Call<PostProductsTypeResponse> call, Response<PostProductsTypeResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostProductsTypeResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **body** | [**PostProductsTypeRequest**](PostProductsTypeRequest.md)| body |
 
@@ -67,28 +67,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-String type = "type_example"; // String | type
-Long productId = 789L; // Long | productId
-String command = "command_example"; // String | command
-try {
-    String result = apiInstance.handleCommands(type, productId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.handleCommands(type, productId, command);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **productId** | **Long**| productId |
  **command** | **String**| command | [optional]
@@ -116,28 +115,27 @@ Lists Share Products  Mandatory Fields: limit, offset  Example Requests:  sharep
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-String type = "type_example"; // String | type
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    GetProductsTypeResponse result = apiInstance.retrieveAllProducts(type, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#retrieveAllProducts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetProductsTypeResponse> call = apiService.retrieveAllProducts(type, offset, limit);
+call.enqueue(new Callback<GetProductsTypeResponse>() {
+    @Override
+    public void onResponse(Call<GetProductsTypeResponse> call, Response<GetProductsTypeResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetProductsTypeResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -165,27 +163,27 @@ Retrieves a Share Product  Example Requests:  products/share/1   products/share/
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-Long productId = 789L; // Long | productId
-String type = "type_example"; // String | type
-try {
-    GetProductsTypeProductIdResponse result = apiInstance.retrieveProduct(productId, type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#retrieveProduct");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetProductsTypeProductIdResponse> call = apiService.retrieveProduct(productId, type);
+call.enqueue(new Callback<GetProductsTypeProductIdResponse>() {
+    @Override
+    public void onResponse(Call<GetProductsTypeProductIdResponse> call, Response<GetProductsTypeProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetProductsTypeProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
  **type** | **String**| type |
 
@@ -210,26 +208,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-String type = "type_example"; // String | type
-try {
-    String result = apiInstance.retrieveTemplate(type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate(type);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
 
 ### Return type
@@ -255,28 +254,27 @@ Updates a Share Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProductsApi;
 
+ProductsApi apiService = defaultClient.createService(ProductsApi.class);
 
-ProductsApi apiInstance = new ProductsApi();
-String type = "type_example"; // String | type
-Long productId = 789L; // Long | productId
-PutProductsTypeProductIdRequest body = new PutProductsTypeProductIdRequest(); // PutProductsTypeProductIdRequest | body
-try {
-    PutProductsTypeProductIdResponse result = apiInstance.updateProduct(type, productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProductsApi#updateProduct");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutProductsTypeProductIdResponse> call = apiService.updateProduct(type, productId, body);
+call.enqueue(new Callback<PutProductsTypeProductIdResponse>() {
+    @Override
+    public void onResponse(Call<PutProductsTypeProductIdResponse> call, Response<PutProductsTypeProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutProductsTypeProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **productId** | **Long**| productId |
  **body** | [**PutProductsTypeProductIdRequest**](PutProductsTypeProductIdRequest.md)| body |

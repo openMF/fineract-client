@@ -1,6 +1,6 @@
 # FixedDepositAccountApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,27 +26,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long accountId = 789L; // Long | accountId
-String command = "command_example"; // String | command
-try {
-    String result = apiInstance.accountClosureTemplate(accountId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#accountClosureTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.accountClosureTemplate(accountId, command);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **command** | **String**| command | [optional]
 
@@ -73,26 +73,27 @@ At present we support hard delete of fixed deposit application so long as its in
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long accountId = 789L; // Long | accountId
-try {
-    DeleteFixedDepositAccountsAccountIdResponse result = apiInstance.delete(accountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteFixedDepositAccountsAccountIdResponse> call = apiService.delete(accountId);
+call.enqueue(new Callback<DeleteFixedDepositAccountsAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteFixedDepositAccountsAccountIdResponse> call, Response<DeleteFixedDepositAccountsAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteFixedDepositAccountsAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
 
 ### Return type
@@ -116,27 +117,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long officeId = 789L; // Long | 
-Long staffId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getFixedDepositTemplate(officeId, staffId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#getFixedDepositTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getFixedDepositTemplate(officeId, staffId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **staffId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -162,26 +163,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long officeId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getFixedDepositTransactionTemplate(officeId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#getFixedDepositTransactionTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getFixedDepositTransactionTemplate(officeId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
 
@@ -208,28 +210,27 @@ Approve fixed deposit application:  Approves fixed deposit application so long a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long accountId = 789L; // Long | accountId
-PostFixedDepositAccountsAccountIdRequest body = new PostFixedDepositAccountsAccountIdRequest(); // PostFixedDepositAccountsAccountIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostFixedDepositAccountsAccountIdResponse result = apiInstance.handleCommands(accountId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFixedDepositAccountsAccountIdResponse> call = apiService.handleCommands(accountId, body, command);
+call.enqueue(new Callback<PostFixedDepositAccountsAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<PostFixedDepositAccountsAccountIdResponse> call, Response<PostFixedDepositAccountsAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFixedDepositAccountsAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **body** | [**PostFixedDepositAccountsAccountIdRequest**](PostFixedDepositAccountsAccountIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -255,28 +256,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postFixedDepositTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#postFixedDepositTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postFixedDepositTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -302,28 +302,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postFixedDepositTransactionTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#postFixedDepositTransactionTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postFixedDepositTransactionTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -351,30 +350,27 @@ Lists Fixed Deposit Accounts  Example Requests:    fixeddepositaccounts    fixed
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Boolean paged = true; // Boolean | paged
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetFixedDepositAccountsResponse> result = apiInstance.retrieveAll(paged, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFixedDepositAccountsResponse&gt;> call = apiService.retrieveAll(paged, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<List&lt;GetFixedDepositAccountsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFixedDepositAccountsResponse&gt;> call, Response<List&lt;GetFixedDepositAccountsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFixedDepositAccountsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **paged** | **Boolean**| paged | [optional]
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -404,28 +400,27 @@ Retrieves a fixed deposit application/account  Example Requests :    fixeddeposi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long accountId = 789L; // Long | accountId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-String chargeStatus = "all"; // String | chargeStatus
-try {
-    GetFixedDepositAccountsAccountIdResponse result = apiInstance.retrieveOne(accountId, staffInSelectedOfficeOnly, chargeStatus);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFixedDepositAccountsAccountIdResponse> call = apiService.retrieveOne(accountId, staffInSelectedOfficeOnly, chargeStatus);
+call.enqueue(new Callback<GetFixedDepositAccountsAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<GetFixedDepositAccountsAccountIdResponse> call, Response<GetFixedDepositAccountsAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFixedDepositAccountsAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
@@ -453,26 +448,27 @@ Submits a new fixed deposit applicationMandatory Fields: clientId or groupId, pr
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-PostFixedDepositAccountsRequest body = new PostFixedDepositAccountsRequest(); // PostFixedDepositAccountsRequest | body
-try {
-    PostFixedDepositAccountsResponse result = apiInstance.submitApplication(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#submitApplication");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFixedDepositAccountsResponse> call = apiService.submitApplication(body);
+call.enqueue(new Callback<PostFixedDepositAccountsResponse>() {
+    @Override
+    public void onResponse(Call<PostFixedDepositAccountsResponse> call, Response<PostFixedDepositAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFixedDepositAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostFixedDepositAccountsRequest**](PostFixedDepositAccountsRequest.md)| body |
 
 ### Return type
@@ -498,29 +494,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long clientId = 789L; // Long | clientId
-Long groupId = 789L; // Long | groupId
-Long productId = 789L; // Long | productId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetFixedDepositAccountsTemplateResponse result = apiInstance.template(clientId, groupId, productId, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFixedDepositAccountsTemplateResponse> call = apiService.template(clientId, groupId, productId, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetFixedDepositAccountsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetFixedDepositAccountsTemplateResponse> call, Response<GetFixedDepositAccountsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFixedDepositAccountsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId | [optional]
  **groupId** | **Long**| groupId | [optional]
  **productId** | **Long**| productId | [optional]
@@ -549,27 +543,27 @@ Fixed deposit application can only be modified when in &#39;Submitted and pendin
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositAccountApi;
 
+FixedDepositAccountApi apiService = defaultClient.createService(FixedDepositAccountApi.class);
 
-FixedDepositAccountApi apiInstance = new FixedDepositAccountApi();
-Long accountId = 789L; // Long | accountId
-PutFixedDepositAccountsAccountIdRequest body = new PutFixedDepositAccountsAccountIdRequest(); // PutFixedDepositAccountsAccountIdRequest | body
-try {
-    PutFixedDepositAccountsAccountIdResponse result = apiInstance.update(accountId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositAccountApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutFixedDepositAccountsAccountIdResponse> call = apiService.update(accountId, body);
+call.enqueue(new Callback<PutFixedDepositAccountsAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<PutFixedDepositAccountsAccountIdResponse> call, Response<PutFixedDepositAccountsAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutFixedDepositAccountsAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **body** | [**PutFixedDepositAccountsAccountIdRequest**](PutFixedDepositAccountsAccountIdRequest.md)| body |
 

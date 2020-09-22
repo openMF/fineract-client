@@ -2,9 +2,9 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.PostCollectionSheetRequest;
 import org.mifos.fineract.models.PostCollectionSheetResponse;
-import retrofit2.Call;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface CollectionSheetApi {
     /**
@@ -13,13 +13,13 @@ public interface CollectionSheetApi {
      *
      * @param body    body (required)
      * @param command command (optional)
-     * @return Call&lt;PostCollectionSheetResponse&gt;
+     * @return Observable&lt;PostCollectionSheetResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("collectionsheet")
-    Call<PostCollectionSheetResponse> generateCollectionSheet(
+    Observable<PostCollectionSheetResponse> generateCollectionSheet(
             @retrofit2.http.Body PostCollectionSheetRequest body, @retrofit2.http.Query("command") String command
     );
 

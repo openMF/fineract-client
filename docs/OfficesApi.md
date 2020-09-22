@@ -1,6 +1,6 @@
 # OfficesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,26 +23,27 @@ Mandatory Fields name, openingDate, parentId
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-PostOfficesRequest body = new PostOfficesRequest(); // PostOfficesRequest | body
-try {
-    PostOfficesResponse result = apiInstance.createOffice(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#createOffice");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostOfficesResponse> call = apiService.createOffice(body);
+call.enqueue(new Callback<PostOfficesResponse>() {
+    @Override
+    public void onResponse(Call<PostOfficesResponse> call, Response<PostOfficesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostOfficesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostOfficesRequest**](PostOfficesRequest.md)| body |
 
 ### Return type
@@ -66,25 +67,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getOfficeTemplate(dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#getOfficeTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getOfficeTemplate(dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **dateFormat** | **String**|  | [optional]
 
 ### Return type
@@ -108,28 +111,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postOfficeTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#postOfficeTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postOfficeTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -157,26 +159,27 @@ Example Requests:  offices/1   offices/1?template&#x3D;true   offices/1?fields&#
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-Long officeId = 789L; // Long | officeId
-try {
-    GetOfficesResponse result = apiInstance.retreiveOffice(officeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#retreiveOffice");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetOfficesResponse> call = apiService.retreiveOffice(officeId);
+call.enqueue(new Callback<GetOfficesResponse>() {
+    @Override
+    public void onResponse(Call<GetOfficesResponse> call, Response<GetOfficesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetOfficesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId |
 
 ### Return type
@@ -202,19 +205,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-try {
-    GetOfficesTemplateResponse result = apiInstance.retrieveOfficeTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#retrieveOfficeTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetOfficesTemplateResponse> call = apiService.retrieveOfficeTemplate();
+call.enqueue(new Callback<GetOfficesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetOfficesTemplateResponse> call, Response<GetOfficesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetOfficesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -243,28 +250,27 @@ Example Requests:  offices   offices?fields&#x3D;id,name,openingDate
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-Boolean includeAllOffices = false; // Boolean | includeAllOffices
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetOfficesResponse> result = apiInstance.retrieveOffices(includeAllOffices, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#retrieveOffices");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetOfficesResponse&gt;> call = apiService.retrieveOffices(includeAllOffices, orderBy, sortOrder);
+call.enqueue(new Callback<List&lt;GetOfficesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetOfficesResponse&gt;> call, Response<List&lt;GetOfficesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetOfficesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **includeAllOffices** | **Boolean**| includeAllOffices | [optional] [default to false]
  **orderBy** | **String**| orderBy | [optional]
  **sortOrder** | **String**| sortOrder | [optional]
@@ -292,27 +298,27 @@ Update Office
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficesApi;
 
+OfficesApi apiService = defaultClient.createService(OfficesApi.class);
 
-OfficesApi apiInstance = new OfficesApi();
-Long officeId = 789L; // Long | officeId
-PutOfficesOfficeIdRequest body = new PutOfficesOfficeIdRequest(); // PutOfficesOfficeIdRequest | body
-try {
-    PutOfficesOfficeIdResponse result = apiInstance.updateOffice(officeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficesApi#updateOffice");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutOfficesOfficeIdResponse> call = apiService.updateOffice(officeId, body);
+call.enqueue(new Callback<PutOfficesOfficeIdResponse>() {
+    @Override
+    public void onResponse(Call<PutOfficesOfficeIdResponse> call, Response<PutOfficesOfficeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutOfficesOfficeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId |
  **body** | [**PutOfficesOfficeIdRequest**](PutOfficesOfficeIdRequest.md)| body |
 

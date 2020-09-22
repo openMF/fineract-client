@@ -1,6 +1,6 @@
 # AccountingRulesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Define a new Accounting rule.  Mandatory Fields name, officeId, accountToDebit O
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-PostAccountingRulesRequest body = new PostAccountingRulesRequest(); // PostAccountingRulesRequest | body
-try {
-    PostAccountingRulesResponse result = apiInstance.createAccountingRule(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#createAccountingRule");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAccountingRulesResponse> call = apiService.createAccountingRule(body);
+call.enqueue(new Callback<PostAccountingRulesResponse>() {
+    @Override
+    public void onResponse(Call<PostAccountingRulesResponse> call, Response<PostAccountingRulesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAccountingRulesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostAccountingRulesRequest**](PostAccountingRulesRequest.md)| body | [optional]
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a Accounting rule.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-Long accountingRuleId = 789L; // Long | accountingRuleId
-try {
-    DeleteAccountingRulesResponse result = apiInstance.deleteAccountingRule(accountingRuleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#deleteAccountingRule");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteAccountingRulesResponse> call = apiService.deleteAccountingRule(accountingRuleId);
+call.enqueue(new Callback<DeleteAccountingRulesResponse>() {
+    @Override
+    public void onResponse(Call<DeleteAccountingRulesResponse> call, Response<DeleteAccountingRulesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteAccountingRulesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountingRuleId** | **Long**| accountingRuleId |
 
 ### Return type
@@ -112,26 +114,27 @@ Returns the details of a defined Accounting rule.  Example Requests:  accounting
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-Long accountingRuleId = 789L; // Long | accountingRuleId
-try {
-    AccountingRuleData result = apiInstance.retreiveAccountingRule(accountingRuleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#retreiveAccountingRule");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<AccountingRuleData> call = apiService.retreiveAccountingRule(accountingRuleId);
+call.enqueue(new Callback<AccountingRuleData>() {
+    @Override
+    public void onResponse(Call<AccountingRuleData> call, Response<AccountingRuleData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<AccountingRuleData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountingRuleId** | **Long**| accountingRuleId |
 
 ### Return type
@@ -157,19 +160,23 @@ Returns the list of defined accounting rules.  Example Requests:  accountingrule
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-try {
-    List<GetAccountRulesResponse> result = apiInstance.retrieveAllAccountingRules();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#retrieveAllAccountingRules");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetAccountRulesResponse&gt;> call = apiService.retrieveAllAccountingRules();
+call.enqueue(new Callback<List&lt;GetAccountRulesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetAccountRulesResponse&gt;> call, Response<List&lt;GetAccountRulesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetAccountRulesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -198,19 +205,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-try {
-    GetAccountRulesTemplateResponse result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountRulesTemplateResponse> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<GetAccountRulesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountRulesTemplateResponse> call, Response<GetAccountRulesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountRulesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -239,27 +250,27 @@ Updates the details of a Accounting rule.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingRulesApi;
 
+AccountingRulesApi apiService = defaultClient.createService(AccountingRulesApi.class);
 
-AccountingRulesApi apiInstance = new AccountingRulesApi();
-Long accountingRuleId = 789L; // Long | accountingRuleId
-PutAccountingRulesRequest body = new PutAccountingRulesRequest(); // PutAccountingRulesRequest | body
-try {
-    PutAccountingRulesResponse result = apiInstance.updateAccountingRule(accountingRuleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingRulesApi#updateAccountingRule");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutAccountingRulesResponse> call = apiService.updateAccountingRule(accountingRuleId, body);
+call.enqueue(new Callback<PutAccountingRulesResponse>() {
+    @Override
+    public void onResponse(Call<PutAccountingRulesResponse> call, Response<PutAccountingRulesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutAccountingRulesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountingRuleId** | **Long**| accountingRuleId |
  **body** | [**PutAccountingRulesRequest**](PutAccountingRulesRequest.md)| body | [optional]
 

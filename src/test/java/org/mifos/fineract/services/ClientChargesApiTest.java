@@ -45,10 +45,9 @@ public class ClientChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Pay a Client Charge | Waive a Client Charge
-     * <p>
+     *
      * Pay a Client Charge:  Mandatory Fields:transactionDate and amount \&quot;Pay either a part of or the entire due amount for a charge.(command&#x3D;paycharge)  Waive a Client Charge:   This API provides the facility of waiving off the remaining amount on a client charge (command&#x3D;waive)  Showing request/response for &#39;Pay a Client Charge&#39;
      */
     @Test
@@ -61,10 +60,9 @@ public class ClientChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Client Charges
-     * <p>
+     *
      * The list capability of client charges supports pagination.Example Requests: clients/1/charges  clients/1/charges?offset&#x3D;0&amp;limit&#x3D;5
      */
     @Test
@@ -78,10 +76,9 @@ public class ClientChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client Charge
-     * <p>
+     *
      * Example Requests: clients/1/charges/1   clients/1/charges/1?fields&#x3D;name,id
      */
     @Test
@@ -94,6 +91,8 @@ public class ClientChargesApiTest {
     }
 
     /**
+     *
+     *
      *
      */
     @Test

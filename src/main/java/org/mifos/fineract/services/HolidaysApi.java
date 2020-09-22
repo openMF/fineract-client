@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface HolidaysApi {
      * Mandatory Fields: name, description, fromDate, toDate, repaymentsRescheduledTo, offices
      *
      * @param body body (required)
-     * @return Call&lt;PostHolidaysResponse&gt;
+     * @return Observable&lt;PostHolidaysResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("holidays")
-    Call<PostHolidaysResponse> createNewHoliday(
+    Observable<PostHolidaysResponse> createNewHoliday(
             @retrofit2.http.Body PostHolidaysRequest body
     );
 
@@ -27,13 +27,13 @@ public interface HolidaysApi {
      * This API allows to delete a holiday. This is a soft delete the deleted holiday status is marked as deleted.
      *
      * @param holidayId holidayId (required)
-     * @return Call&lt;DeleteHolidaysHolidayIdResponse&gt;
+     * @return Observable&lt;DeleteHolidaysHolidayIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("holidays/{holidayId}")
-    Call<DeleteHolidaysHolidayIdResponse> delete(
+    Observable<DeleteHolidaysHolidayIdResponse> delete(
             @retrofit2.http.Path("holidayId") Long holidayId
     );
 
@@ -44,13 +44,13 @@ public interface HolidaysApi {
      * @param holidayId holidayId (required)
      * @param body      body (required)
      * @param command   command (optional)
-     * @return Call&lt;PostHolidaysHolidayIdResponse&gt;
+     * @return Observable&lt;PostHolidaysHolidayIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("holidays/{holidayId}")
-    Call<PostHolidaysHolidayIdResponse> handleCommands(
+    Observable<PostHolidaysHolidayIdResponse> handleCommands(
             @retrofit2.http.Path("holidayId") Long holidayId, @retrofit2.http.Body PostHolidaysHolidayIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -63,13 +63,13 @@ public interface HolidaysApi {
      * @param toDate     toDate (optional)
      * @param locale     locale (optional)
      * @param dateFormat dateFormat (optional)
-     * @return Call&lt;List&lt;GetHolidaysResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetHolidaysResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("holidays")
-    Call<List<GetHolidaysResponse>> retrieveAllHolidays(
+    Observable<List<GetHolidaysResponse>> retrieveAllHolidays(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("fromDate") String fromDate, @retrofit2.http.Query("toDate") String toDate, @retrofit2.http.Query("locale") String locale, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
@@ -78,24 +78,24 @@ public interface HolidaysApi {
      * Example Requests:  holidays/1
      *
      * @param holidayId holidayId (required)
-     * @return Call&lt;GetHolidaysResponse&gt;
+     * @return Observable&lt;GetHolidaysResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("holidays/{holidayId}")
-    Call<GetHolidaysResponse> retrieveOne(
+    Observable<GetHolidaysResponse> retrieveOne(
             @retrofit2.http.Path("holidayId") Long holidayId
     );
 
     /**
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("holidays/template")
-    Call<String> retrieveRepaymentScheduleUpdationTyeOptions();
+    Observable<String> retrieveRepaymentScheduleUpdationTyeOptions();
 
 
     /**
@@ -104,13 +104,13 @@ public interface HolidaysApi {
      *
      * @param holidayId holidayId (required)
      * @param body      body (required)
-     * @return Call&lt;PutHolidaysHolidayIdResponse&gt;
+     * @return Observable&lt;PutHolidaysHolidayIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("holidays/{holidayId}")
-    Call<PutHolidaysHolidayIdResponse> update(
+    Observable<PutHolidaysHolidayIdResponse> update(
             @retrofit2.http.Path("holidayId") Long holidayId, @retrofit2.http.Body PutHolidaysHolidayIdRequest body
     );
 

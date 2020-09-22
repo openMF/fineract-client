@@ -28,10 +28,9 @@ public class SpmSurveysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create a Survey
-     * <p>
+     *
      * Adds a new survey to collect client related data.  Mandatory Fields  countryCode, key, name, questions, responses, sequenceNo, text, value
      */
     @Test
@@ -53,9 +52,10 @@ public class SpmSurveysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all Surveys
+     *
+     *
      */
     @Test
     public void fetchAllSurveysTest() {
@@ -64,9 +64,10 @@ public class SpmSurveysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Survey
+     *
+     *
      */
     @Test
     public void findSurveyTest() {

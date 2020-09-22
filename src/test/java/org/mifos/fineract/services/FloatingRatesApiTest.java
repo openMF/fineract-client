@@ -20,7 +20,7 @@ public class FloatingRatesApiTest {
 
     /**
      * Create a new Floating Rate
-     * <p>
+     *
      * Creates a new Floating Rate Mandatory Fields: name Optional Fields: isBaseLendingRate, isActive, ratePeriods
      */
     @Test
@@ -30,10 +30,9 @@ public class FloatingRatesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Floating Rates
-     * <p>
+     *
      * Lists Floating Rates
      */
     @Test
@@ -42,10 +41,9 @@ public class FloatingRatesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Floating Rate
-     * <p>
+     *
      * Retrieves Floating Rate
      */
     @Test
@@ -55,10 +53,9 @@ public class FloatingRatesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Floating Rate
-     * <p>
+     *
      * Updates new Floating Rate. Rate Periods in the past cannot be modified. All the future rateperiods would be replaced with the new ratePeriods data sent.
      */
     @Test

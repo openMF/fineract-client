@@ -1,6 +1,6 @@
 # StaffApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a staff member.  Mandatory Fields:  officeId, firstname, lastname  Optio
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-PostStaffRequest body = new PostStaffRequest(); // PostStaffRequest | body
-try {
-    PostStaffResponse result = apiInstance.createStaff(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#createStaff");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostStaffResponse> call = apiService.createStaff(body);
+call.enqueue(new Callback<PostStaffResponse>() {
+    @Override
+    public void onResponse(Call<PostStaffResponse> call, Response<PostStaffResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostStaffResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostStaffRequest**](PostStaffRequest.md)| body |
 
 ### Return type
@@ -65,26 +66,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-Long officeId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getStaffTemplate(officeId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#getStaffTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getStaffTemplate(officeId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
 
@@ -109,28 +111,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postStaffTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#postStaffTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postStaffTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -158,26 +159,27 @@ Returns the details of a Staff Member.  Example Requests:  staff/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-Long staffId = 789L; // Long | staffId
-try {
-    GetStaffResponse result = apiInstance.retreiveStaff(staffId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#retreiveStaff");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStaffResponse> call = apiService.retreiveStaff(staffId);
+call.enqueue(new Callback<GetStaffResponse>() {
+    @Override
+    public void onResponse(Call<GetStaffResponse> call, Response<GetStaffResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStaffResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **staffId** | **Long**| staffId |
 
 ### Return type
@@ -203,30 +205,27 @@ Returns the list of staff members.  Example Requests:  staff     Retrieve a Staf
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-Long officeId = 789L; // Long | officeId
-Boolean staffInOfficeHierarchy = false; // Boolean | staffInOfficeHierarchy
-Boolean loanOfficersOnly = false; // Boolean | loanOfficersOnly
-String status = "active"; // String | status
-try {
-    GetStaffResponse result = apiInstance.retrieveStaff(sqlSearch, officeId, staffInOfficeHierarchy, loanOfficersOnly, status);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#retrieveStaff");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStaffResponse> call = apiService.retrieveStaff(sqlSearch, officeId, staffInOfficeHierarchy, loanOfficersOnly, status);
+call.enqueue(new Callback<GetStaffResponse>() {
+    @Override
+    public void onResponse(Call<GetStaffResponse> call, Response<GetStaffResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStaffResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **officeId** | **Long**| officeId | [optional]
  **staffInOfficeHierarchy** | **Boolean**| staffInOfficeHierarchy | [optional] [default to false]
@@ -256,27 +255,27 @@ Updates the details of a staff member.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StaffApi;
 
+StaffApi apiService = defaultClient.createService(StaffApi.class);
 
-StaffApi apiInstance = new StaffApi();
-Long staffId = 789L; // Long | staffId
-PutStaffRequest body = new PutStaffRequest(); // PutStaffRequest | body
-try {
-    PutStaffResponse result = apiInstance.updateStaff(staffId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StaffApi#updateStaff");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutStaffResponse> call = apiService.updateStaff(staffId, body);
+call.enqueue(new Callback<PutStaffResponse>() {
+    @Override
+    public void onResponse(Call<PutStaffResponse> call, Response<PutStaffResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutStaffResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **staffId** | **Long**| staffId |
  **body** | [**PutStaffRequest**](PutStaffRequest.md)| body |
 

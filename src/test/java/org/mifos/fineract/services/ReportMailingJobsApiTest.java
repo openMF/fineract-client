@@ -21,7 +21,7 @@ public class ReportMailingJobsApiTest {
 
     /**
      * Create a Report Mailing Job
-     * <p>
+     *
      * Mandatory Fields: name, startDateTime, stretchyReportId, emailRecipients, emailSubject, emailMessage, emailAttachmentFileFormatId, recurrence, isActive  Optional Fields: description, stretchyReportParamMap
      */
     @Test
@@ -43,10 +43,9 @@ public class ReportMailingJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Report Mailing Jobs
-     * <p>
+     *
      * Example Requests:  reportmailingjobs
      */
     @Test
@@ -59,10 +58,9 @@ public class ReportMailingJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Report Mailing Job
-     * <p>
+     *
      * Example Requests:  reportmailingjobs/1   reportmailingjobs/1?template&#x3D;true
      */
     @Test
@@ -72,10 +70,9 @@ public class ReportMailingJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Report Mailing Job Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for report mailing job applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  reportmailingjobs/template
      */
     @Test

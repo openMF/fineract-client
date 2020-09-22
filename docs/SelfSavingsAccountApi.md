@@ -1,6 +1,6 @@
 # SelfSavingsAccountApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,28 +21,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long accountId = 789L; // Long | 
-String command = "command_example"; // String | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.modifySavingsAccountApplication(accountId, command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#modifySavingsAccountApplication");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.modifySavingsAccountApplication(accountId, command, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**|  |
  **command** | **String**|  | [optional]
  **body** | **String**|  | [optional]
@@ -70,27 +69,27 @@ Lists Savings Charges  Example Requests:  self/savingsaccounts/1/charges  self/s
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long accountId = 789L; // Long | accountId
-String chargeStatus = "all"; // String | chargeStatus
-try {
-    List<GetSelfSavingsAccountsAccountIdChargesResponse> result = apiInstance.retrieveAllSavingsAccountCharges(accountId, chargeStatus);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#retrieveAllSavingsAccountCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;> call = apiService.retrieveAllSavingsAccountCharges(accountId, chargeStatus);
+call.enqueue(new Callback<List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;> call, Response<List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
 
@@ -117,27 +116,27 @@ Retrieves a savings account  Example Requests :  self/savingsaccounts/1   self/s
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long accountId = 789L; // Long | accountId
-String chargeStatus = "all"; // String | chargeStatus
-try {
-    GetSelfSavingsAccountsResponse result = apiInstance.retrieveSavings(accountId, chargeStatus);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#retrieveSavings");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfSavingsAccountsResponse> call = apiService.retrieveSavings(accountId, chargeStatus);
+call.enqueue(new Callback<GetSelfSavingsAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfSavingsAccountsResponse> call, Response<GetSelfSavingsAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfSavingsAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
 
@@ -164,27 +163,27 @@ Retrieves a Savings account Charge  Example Requests:  self/savingsaccounts/1/ch
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long accountId = 789L; // Long | accountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-try {
-    GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.retrieveSavingsAccountCharge(accountId, savingsAccountChargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#retrieveSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> call = apiService.retrieveSavingsAccountCharge(accountId, savingsAccountChargeId);
+call.enqueue(new Callback<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> call, Response<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
 
@@ -211,27 +210,27 @@ Retrieves Savings Account Transaction  Example Requests:  self/savingsaccounts/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long accountId = 789L; // Long | accountId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse result = apiInstance.retrieveSavingsTransaction(accountId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#retrieveSavingsTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> call = apiService.retrieveSavingsTransaction(accountId, transactionId);
+call.enqueue(new Callback<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> call, Response<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **transactionId** | **Long**| transactionId |
 
@@ -256,27 +255,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-String command = "command_example"; // String | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.submitSavingsAccountApplication(command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#submitSavingsAccountApplication");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.submitSavingsAccountApplication(command, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **command** | **String**|  | [optional]
  **body** | **String**|  | [optional]
 
@@ -301,28 +300,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSavingsAccountApi;
 
+SelfSavingsAccountApi apiService = defaultClient.createService(SelfSavingsAccountApi.class);
 
-SelfSavingsAccountApi apiInstance = new SelfSavingsAccountApi();
-Long clientId = 789L; // Long | 
-Long productId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.template(clientId, productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSavingsAccountApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.template(clientId, productId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  | [optional]
  **productId** | **Long**|  | [optional]
  **body** | **String**|  | [optional]

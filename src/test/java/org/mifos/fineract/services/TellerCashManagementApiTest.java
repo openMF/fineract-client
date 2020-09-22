@@ -19,7 +19,7 @@ public class TellerCashManagementApiTest {
 
     /**
      * Allocate Cash To Cashier
-     * <p>
+     *
      * Mandatory Fields:  Date, Amount, Currency, Notes/Comments
      */
     @Test
@@ -31,10 +31,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create Cashiers
-     * <p>
+     *
      * Mandatory Fields:  Cashier/staff, Fromm Date, To Date, Full Day or From time and To time    Optional Fields:  Description/Notes
      */
     @Test
@@ -45,10 +44,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create teller
-     * <p>
+     *
      * Mandatory Fields Teller name, OfficeId, Description, Start Date, Status Optional Fields End Date
      */
     @Test
@@ -81,9 +79,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a cashier
+     *
+     *
      */
     @Test
     public void findCashierDataTest() {
@@ -93,9 +92,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve tellers
+     *
+     *
      */
     @Test
     public void findTellerTest() {
@@ -104,8 +104,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
+     *
+     *
      *
      */
     @Test
@@ -116,9 +117,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Cashiers
+     *
+     *
      */
     @Test
     public void getCashierDataTest() {
@@ -129,9 +131,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Find Cashiers
+     *
+     *
      */
     @Test
     public void getCashierTemplateTest() {
@@ -140,9 +143,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Cashier Transaction Template
+     *
+     *
      */
     @Test
     public void getCashierTxnTemplateTest() {
@@ -152,8 +156,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
+     *
+     *
      *
      */
     @Test
@@ -165,10 +170,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all tellers
-     * <p>
+     *
      * Retrieves list tellers
      */
     @Test
@@ -178,8 +182,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
+     *
+     *
      *
      */
     @Test
@@ -190,9 +195,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Cashier Transaction
+     *
+     *
      */
     @Test
     public void getTransactionsForCashierTest() {
@@ -207,9 +213,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Transactions Wtih Summary For Cashier
+     *
+     *
      */
     @Test
     public void getTransactionsWtihSummaryForCashierTest() {
@@ -224,10 +231,9 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Settle Cash From Cashier
-     * <p>
+     *
      * Mandatory Fields Date, Amount, Currency, Notes/Comments
      */
     @Test
@@ -239,9 +245,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Cashier
+     *
+     *
      */
     @Test
     public void updateCashierTest() {
@@ -252,9 +259,10 @@ public class TellerCashManagementApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update teller
+     *
+     *
      */
     @Test
     public void updateTellerTest() {

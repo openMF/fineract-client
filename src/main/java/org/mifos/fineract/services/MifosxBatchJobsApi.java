@@ -3,11 +3,11 @@ package org.mifos.fineract.services;
 import org.mifos.fineract.models.GetJobsJobIDJobRunHistoryResponse;
 import org.mifos.fineract.models.GetJobsResponse;
 import org.mifos.fineract.models.PutJobsJobsIDRequest;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 import java.util.List;
 
@@ -18,13 +18,13 @@ public interface MifosxBatchJobsApi {
      *
      * @param jobId   jobId (required)
      * @param command command (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("jobs/{jobId}")
-    Call<Void> executeJob(
+    Observable<Void> executeJob(
             @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Query("command") String command
     );
 
@@ -32,13 +32,13 @@ public interface MifosxBatchJobsApi {
      * Retrieve Scheduler Jobs
      * Returns the list of jobs.  Example Requests:  jobs
      *
-     * @return Call&lt;List&lt;GetJobsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetJobsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("jobs")
-    Call<List<GetJobsResponse>> retrieveAll();
+    Observable<List<GetJobsResponse>> retrieveAll();
 
 
     /**
@@ -50,13 +50,13 @@ public interface MifosxBatchJobsApi {
      * @param limit     limit (optional)
      * @param orderBy   orderBy (optional)
      * @param sortOrder sortOrder (optional)
-     * @return Call&lt;GetJobsJobIDJobRunHistoryResponse&gt;
+     * @return Observable&lt;GetJobsJobIDJobRunHistoryResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("jobs/{jobId}/runhistory")
-    Call<GetJobsJobIDJobRunHistoryResponse> retrieveHistory(
+    Observable<GetJobsJobIDJobRunHistoryResponse> retrieveHistory(
             @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
     );
 
@@ -65,13 +65,13 @@ public interface MifosxBatchJobsApi {
      * Returns the details of a Job.  Example Requests:  jobs/5
      *
      * @param jobId jobId (required)
-     * @return Call&lt;GetJobsResponse&gt;
+     * @return Observable&lt;GetJobsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("jobs/{jobId}")
-    Call<GetJobsResponse> retrieveOne(
+    Observable<GetJobsResponse> retrieveOne(
             @retrofit2.http.Path("jobId") Long jobId
     );
 
@@ -81,13 +81,13 @@ public interface MifosxBatchJobsApi {
      *
      * @param jobId jobId (required)
      * @param body  body (required)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("jobs/{jobId}")
-    Call<Void> updateJobDetail(
+    Observable<Void> updateJobDetail(
             @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Body PutJobsJobsIDRequest body
     );
 

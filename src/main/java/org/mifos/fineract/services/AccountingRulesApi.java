@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface AccountingRulesApi {
      * Define a new Accounting rule.  Mandatory Fields name, officeId, accountToDebit OR debitTags, accountToCredit OR creditTags.  Optional Fields description
      *
      * @param body body (optional)
-     * @return Call&lt;PostAccountingRulesResponse&gt;
+     * @return Observable&lt;PostAccountingRulesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("accountingrules")
-    Call<PostAccountingRulesResponse> createAccountingRule(
+    Observable<PostAccountingRulesResponse> createAccountingRule(
             @retrofit2.http.Body PostAccountingRulesRequest body
     );
 
@@ -27,13 +27,13 @@ public interface AccountingRulesApi {
      * Deletes a Accounting rule.
      *
      * @param accountingRuleId accountingRuleId (required)
-     * @return Call&lt;DeleteAccountingRulesResponse&gt;
+     * @return Observable&lt;DeleteAccountingRulesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("accountingrules/{accountingRuleId}")
-    Call<DeleteAccountingRulesResponse> deleteAccountingRule(
+    Observable<DeleteAccountingRulesResponse> deleteAccountingRule(
             @retrofit2.http.Path("accountingRuleId") Long accountingRuleId
     );
 
@@ -42,13 +42,13 @@ public interface AccountingRulesApi {
      * Returns the details of a defined Accounting rule.  Example Requests:  accountingrules/1
      *
      * @param accountingRuleId accountingRuleId (required)
-     * @return Call&lt;AccountingRuleData&gt;
+     * @return Observable&lt;AccountingRuleData&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accountingrules/{accountingRuleId}")
-    Call<AccountingRuleData> retreiveAccountingRule(
+    Observable<AccountingRuleData> retreiveAccountingRule(
             @retrofit2.http.Path("accountingRuleId") Long accountingRuleId
     );
 
@@ -56,26 +56,26 @@ public interface AccountingRulesApi {
      * Retrieve Accounting Rules
      * Returns the list of defined accounting rules.  Example Requests:  accountingrules
      *
-     * @return Call&lt;List&lt;GetAccountRulesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetAccountRulesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accountingrules")
-    Call<List<GetAccountRulesResponse>> retrieveAllAccountingRules();
+    Observable<List<GetAccountRulesResponse>> retrieveAllAccountingRules();
 
 
     /**
      * Retrieve Accounting Rule Details Template
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  accountingrules/template
      *
-     * @return Call&lt;GetAccountRulesTemplateResponse&gt;
+     * @return Observable&lt;GetAccountRulesTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accountingrules/template")
-    Call<GetAccountRulesTemplateResponse> retrieveTemplate();
+    Observable<GetAccountRulesTemplateResponse> retrieveTemplate();
 
 
     /**
@@ -84,13 +84,13 @@ public interface AccountingRulesApi {
      *
      * @param accountingRuleId accountingRuleId (required)
      * @param body             body (optional)
-     * @return Call&lt;PutAccountingRulesResponse&gt;
+     * @return Observable&lt;PutAccountingRulesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("accountingrules/{accountingRuleId}")
-    Call<PutAccountingRulesResponse> updateAccountingRule(
+    Observable<PutAccountingRulesResponse> updateAccountingRule(
             @retrofit2.http.Path("accountingRuleId") Long accountingRuleId, @retrofit2.http.Body PutAccountingRulesRequest body
     );
 

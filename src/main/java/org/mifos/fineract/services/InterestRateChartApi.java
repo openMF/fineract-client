@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface InterestRateChartApi {
      * Creates a new chart which can be attached to a term deposit products (FD or RD).
      *
      * @param body body (required)
-     * @return Call&lt;PostInterestRateChartsResponse&gt;
+     * @return Observable&lt;PostInterestRateChartsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("interestratecharts")
-    Call<PostInterestRateChartsResponse> create(
+    Observable<PostInterestRateChartsResponse> create(
             @retrofit2.http.Body PostInterestRateChartsRequest body
     );
 
@@ -27,13 +27,13 @@ public interface InterestRateChartApi {
      * It deletes the chart
      *
      * @param chartId chartId (required)
-     * @return Call&lt;DeleteInterestRateChartsChartIdResponse&gt;
+     * @return Observable&lt;DeleteInterestRateChartsChartIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("interestratecharts/{chartId}")
-    Call<DeleteInterestRateChartsChartIdResponse> delete(
+    Observable<DeleteInterestRateChartsChartIdResponse> delete(
             @retrofit2.http.Path("chartId") Long chartId
     );
 
@@ -42,13 +42,13 @@ public interface InterestRateChartApi {
      * Retrieve list of charts associated with a term deposit product(FD or RD). Example Requests:  interestratecharts?productId&#x3D;1
      *
      * @param productId productId (optional)
-     * @return Call&lt;List&lt;GetInterestRateChartsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetInterestRateChartsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts")
-    Call<List<GetInterestRateChartsResponse>> retrieveAll(
+    Observable<List<GetInterestRateChartsResponse>> retrieveAll(
             @retrofit2.http.Query("productId") Long productId
     );
 
@@ -57,13 +57,13 @@ public interface InterestRateChartApi {
      * It retrieves the Interest Rate Chart Example Requests:  interestratecharts/1
      *
      * @param chartId chartId (required)
-     * @return Call&lt;GetInterestRateChartsResponse&gt;
+     * @return Observable&lt;GetInterestRateChartsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts/{chartId}")
-    Call<GetInterestRateChartsResponse> retrieveOne(
+    Observable<GetInterestRateChartsResponse> retrieveOne(
             @retrofit2.http.Path("chartId") Long chartId
     );
 
@@ -71,13 +71,13 @@ public interface InterestRateChartApi {
      * Retrieve Chart Details Template
      * This is a convenience resource. It can be useful when building maintenance user interface screens for creating a chart. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  interestratecharts/template
      *
-     * @return Call&lt;GetInterestRateChartsTemplateResponse&gt;
+     * @return Observable&lt;GetInterestRateChartsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts/template")
-    Call<GetInterestRateChartsTemplateResponse> template();
+    Observable<GetInterestRateChartsTemplateResponse> template();
 
 
     /**
@@ -86,13 +86,13 @@ public interface InterestRateChartApi {
      *
      * @param chartId chartId (required)
      * @param body    body (required)
-     * @return Call&lt;PutInterestRateChartsChartIdResponse&gt;
+     * @return Observable&lt;PutInterestRateChartsChartIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("interestratecharts/{chartId}")
-    Call<PutInterestRateChartsChartIdResponse> update(
+    Observable<PutInterestRateChartsChartIdResponse> update(
             @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Body PutInterestRateChartsChartIdRequest body
     );
 

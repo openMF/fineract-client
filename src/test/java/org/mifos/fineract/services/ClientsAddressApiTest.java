@@ -20,7 +20,7 @@ public class ClientsAddressApiTest {
 
     /**
      * Create an address for a Client
-     * <p>
+     *
      * Mandatory Fields :  type and clientId
      */
     @Test
@@ -32,10 +32,9 @@ public class ClientsAddressApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all addresses for a Client
-     * <p>
+     *
      * Example Requests:  client/1/addresses   clients/1/addresses?status&#x3D;false,true&amp;&amp;type&#x3D;1,2,3
      */
     @Test
@@ -57,10 +56,9 @@ public class ClientsAddressApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update an address for a Client
-     * <p>
+     *
      * All the address fields can be updated by using update client address API  Mandatory Fields type and addressId
      */
     @Test

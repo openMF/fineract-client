@@ -1,6 +1,6 @@
 # MakerCheckerOr4EyeFunctionalityApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,27 +20,27 @@ Approve Maker Checker Entry | Reject Maker Checker Entry
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CheckerInboxApi;
 
+MakerCheckerOr4EyeFunctionalityApi apiService = defaultClient.createService(MakerCheckerOr4EyeFunctionalityApi.class);
 
-MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
-Long auditId = 789L; // Long | auditId
-String command = "command_example"; // String | command
-try {
-    PostMakerCheckersResponse result = apiInstance.approveMakerCheckerEntry(auditId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MakerCheckerOr4EyeFunctionalityApi#approveMakerCheckerEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostMakerCheckersResponse> call = apiService.approveMakerCheckerEntry(auditId, command);
+call.enqueue(new Callback<PostMakerCheckersResponse>() {
+    @Override
+    public void onResponse(Call<PostMakerCheckersResponse> call, Response<PostMakerCheckersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostMakerCheckersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **auditId** | **Long**| auditId |
  **command** | **String**| command | [optional]
 
@@ -67,26 +67,27 @@ Delete Maker Checker Entry
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CheckerInboxApi;
 
+MakerCheckerOr4EyeFunctionalityApi apiService = defaultClient.createService(MakerCheckerOr4EyeFunctionalityApi.class);
 
-MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
-Long auditId = 789L; // Long | auditId
-try {
-    PostMakerCheckersResponse result = apiInstance.deleteMakerCheckerEntry(auditId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MakerCheckerOr4EyeFunctionalityApi#deleteMakerCheckerEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostMakerCheckersResponse> call = apiService.deleteMakerCheckerEntry(auditId);
+call.enqueue(new Callback<PostMakerCheckersResponse>() {
+    @Override
+    public void onResponse(Call<PostMakerCheckersResponse> call, Response<PostMakerCheckersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostMakerCheckersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **auditId** | **Long**| auditId |
 
 ### Return type
@@ -112,19 +113,23 @@ This is a convenience resource. It can be useful when building a Checker Inbox U
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CheckerInboxApi;
 
+MakerCheckerOr4EyeFunctionalityApi apiService = defaultClient.createService(MakerCheckerOr4EyeFunctionalityApi.class);
 
-MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
-try {
-    GetMakerCheckersSearchTemplateResponse result = apiInstance.retrieveAuditSearchTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MakerCheckerOr4EyeFunctionalityApi#retrieveAuditSearchTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetMakerCheckersSearchTemplateResponse> call = apiService.retrieveAuditSearchTemplate();
+call.enqueue(new Callback<GetMakerCheckersSearchTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetMakerCheckersSearchTemplateResponse> call, Response<GetMakerCheckersSearchTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetMakerCheckersSearchTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,36 +158,27 @@ Get a list of entries that can be checked by the requestor that match the criter
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CheckerInboxApi;
 
+MakerCheckerOr4EyeFunctionalityApi apiService = defaultClient.createService(MakerCheckerOr4EyeFunctionalityApi.class);
 
-MakerCheckerOr4EyeFunctionalityApi apiInstance = new MakerCheckerOr4EyeFunctionalityApi();
-String actionName = "actionName_example"; // String | actionName
-String entityName = "entityName_example"; // String | entityName
-Long resourceId = 789L; // Long | resourceId
-Long makerId = 789L; // Long | makerId
-String makerDateTimeFrom = "makerDateTimeFrom_example"; // String | makerDateTimeFrom
-String makerDateTimeTo = "makerDateTimeTo_example"; // String | makerDateTimeTo
-Integer officeId = 56; // Integer | officeId
-Integer groupId = 56; // Integer | groupId
-Integer clientId = 56; // Integer | clientId
-Integer loanid = 56; // Integer | loanid
-Integer savingsAccountId = 56; // Integer | savingsAccountId
-try {
-    List<GetMakerCheckerResponse> result = apiInstance.retrieveCommands(actionName, entityName, resourceId, makerId, makerDateTimeFrom, makerDateTimeTo, officeId, groupId, clientId, loanid, savingsAccountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MakerCheckerOr4EyeFunctionalityApi#retrieveCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetMakerCheckerResponse&gt;> call = apiService.retrieveCommands(actionName, entityName, resourceId, makerId, makerDateTimeFrom, makerDateTimeTo, officeId, groupId, clientId, loanid, savingsAccountId);
+call.enqueue(new Callback<List&lt;GetMakerCheckerResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetMakerCheckerResponse&gt;> call, Response<List&lt;GetMakerCheckerResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetMakerCheckerResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **actionName** | **String**| actionName | [optional]
  **entityName** | **String**| entityName | [optional]
  **resourceId** | **Long**| resourceId | [optional]

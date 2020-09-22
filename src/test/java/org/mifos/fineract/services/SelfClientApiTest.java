@@ -30,7 +30,6 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */
@@ -41,10 +40,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Clients associated to the user
-     * <p>
+     *
      * The list capability of clients can support pagination and sorting.  Example Requests:  self/clients  self/clients?fields&#x3D;displayName,officeName  self/clients?offset&#x3D;10&amp;limit&#x3D;50  self/clients?orderBy&#x3D;displayName&amp;sortOrder&#x3D;DESC
      */
     @Test
@@ -60,10 +58,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Client Charges
-     * <p>
+     *
      * The list capability of client charges supports pagination.  Example Requests:  self/clients/1/charges  self/clients/1/charges?offset&#x3D;0&amp;limit&#x3D;5
      */
     @Test
@@ -77,10 +74,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Client Transactions
-     * <p>
+     *
      * The list capability of client transaction can support pagination.  Example Requests:  self/clients/189/transactions  self/clients/189/transactions?offset&#x3D;10&amp;limit&#x3D;50
      */
     @Test
@@ -92,10 +88,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve client accounts overview
-     * <p>
+     *
      * An example of how a loan portfolio summary can be provided. This is requested in a specific use case of the community application. It is quite reasonable to add resources like this to simplify User Interface development.  Example Requests:  self/clients/1/accounts   self/clients/1/accounts?fields&#x3D;loanAccounts,savingsAccounts
      */
     @Test
@@ -105,10 +100,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client Charge
-     * <p>
+     *
      * Retrieves a Client Charge  Example Requests:  self/clients/1/charges/1   self/clients/1/charges/1?fields&#x3D;name,id
      */
     @Test
@@ -119,10 +113,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client Transaction
-     * <p>
+     *
      * Retrieves a Client TransactionExample Requests:  self/clients/1/transactions/1   self/clients/1/transactions/1?fields&#x3D;id,officeName
      */
     @Test
@@ -133,10 +126,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Client Image
-     * <p>
+     *
      * Optional arguments are identical to those of Get Image associated with an Entity (Binary file)  Example Requests:  self/clients/1/images
      */
     @Test
@@ -149,8 +141,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -160,10 +153,9 @@ public class SelfClientApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client
-     * <p>
+     *
      * Retrieves a Client  Example Requests:  self/clients/1  self/clients/1?fields&#x3D;id,displayName,officeName
      */
     @Test

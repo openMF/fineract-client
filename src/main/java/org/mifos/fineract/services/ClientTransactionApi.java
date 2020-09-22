@@ -3,10 +3,10 @@ package org.mifos.fineract.services;
 import org.mifos.fineract.models.GetClientsClientIdTransactionsResponse;
 import org.mifos.fineract.models.GetClientsClientIdTransactionsTransactionIdResponse;
 import org.mifos.fineract.models.PostClientsClientIdTransactionsTransactionIdResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface ClientTransactionApi {
     /**
@@ -16,13 +16,13 @@ public interface ClientTransactionApi {
      * @param clientId clientId (required)
      * @param offset   offset (optional)
      * @param limit    limit (optional)
-     * @return Call&lt;GetClientsClientIdTransactionsResponse&gt;
+     * @return Observable&lt;GetClientsClientIdTransactionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}/transactions")
-    Call<GetClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
+    Observable<GetClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
     );
 
@@ -32,13 +32,13 @@ public interface ClientTransactionApi {
      *
      * @param clientId      clientId (required)
      * @param transactionId transactionId (required)
-     * @return Call&lt;GetClientsClientIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetClientsClientIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}/transactions/{transactionId}")
-    Call<GetClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
+    Observable<GetClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
@@ -49,13 +49,13 @@ public interface ClientTransactionApi {
      * @param clientId      clientId (required)
      * @param transactionId transactionId (required)
      * @param command       command (optional)
-     * @return Call&lt;PostClientsClientIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;PostClientsClientIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("clients/{clientId}/transactions/{transactionId}")
-    Call<PostClientsClientIdTransactionsTransactionIdResponse> undoClientTransaction(
+    Observable<PostClientsClientIdTransactionsTransactionIdResponse> undoClientTransaction(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Query("command") String command
     );
 

@@ -1,6 +1,6 @@
 # SpmApiLookUpTableApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,26 +19,27 @@ Add a new entry to a survey.  Mandatory Fields key, score, validFrom, validTo
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmApiLookUpTableApi;
 
+SpmApiLookUpTableApi apiService = defaultClient.createService(SpmApiLookUpTableApi.class);
 
-SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi();
-Long surveyId = 789L; // Long | Enter surveyId
-LookupTableData body = new LookupTableData(); // LookupTableData | 
-try {
-    apiInstance.createLookupTable(surveyId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmApiLookUpTableApi#createLookupTable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.createLookupTable(surveyId, body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
  **body** | [**LookupTableData**](LookupTableData.md)|  | [optional]
 
@@ -65,26 +66,27 @@ List all Lookup Table entries for a survey.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmApiLookUpTableApi;
 
+SpmApiLookUpTableApi apiService = defaultClient.createService(SpmApiLookUpTableApi.class);
 
-SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi();
-Long surveyId = 789L; // Long | Enter surveyId
-try {
-    List<LookupTableData> result = apiInstance.fetchLookupTables(surveyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmApiLookUpTableApi#fetchLookupTables");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;LookupTableData&gt;> call = apiService.fetchLookupTables(surveyId);
+call.enqueue(new Callback<List&lt;LookupTableData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;LookupTableData&gt;> call, Response<List&lt;LookupTableData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;LookupTableData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
 
 ### Return type
@@ -110,27 +112,27 @@ Retrieve a Lookup Table entry for a survey.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmApiLookUpTableApi;
 
+SpmApiLookUpTableApi apiService = defaultClient.createService(SpmApiLookUpTableApi.class);
 
-SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi();
-Long surveyId = 789L; // Long | Enter surveyId
-String key = "key_example"; // String | Enter key
-try {
-    LookupTableData result = apiInstance.findLookupTable(surveyId, key);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmApiLookUpTableApi#findLookupTable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<LookupTableData> call = apiService.findLookupTable(surveyId, key);
+call.enqueue(new Callback<LookupTableData>() {
+    @Override
+    public void onResponse(Call<LookupTableData> call, Response<LookupTableData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<LookupTableData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
  **key** | **String**| Enter key |
 

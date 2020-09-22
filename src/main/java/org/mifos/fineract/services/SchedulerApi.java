@@ -1,10 +1,10 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.GetSchedulerResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface SchedulerApi {
     /**
@@ -12,13 +12,13 @@ public interface SchedulerApi {
      * Activates the scheduler job service. | Suspends the scheduler job service.
      *
      * @param command command (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("scheduler")
-    Call<Void> changeSchedulerStatus(
+    Observable<Void> changeSchedulerStatus(
             @retrofit2.http.Query("command") String command
     );
 
@@ -26,13 +26,13 @@ public interface SchedulerApi {
      * Retrieve Scheduler Status
      * Returns the scheduler status.  Example Requests:  scheduler
      *
-     * @return Call&lt;GetSchedulerResponse&gt;
+     * @return Observable&lt;GetSchedulerResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("scheduler")
-    Call<GetSchedulerResponse> retrieveStatus();
+    Observable<GetSchedulerResponse> retrieveStatus();
 
 
 }

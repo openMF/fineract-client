@@ -1,6 +1,6 @@
 # ClientTransactionApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,28 +19,27 @@ The list capability of client transaction can support pagination.  Example Reque
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientTransactionApi;
 
+ClientTransactionApi apiService = defaultClient.createService(ClientTransactionApi.class);
 
-ClientTransactionApi apiInstance = new ClientTransactionApi();
-Long clientId = 789L; // Long | clientId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    GetClientsClientIdTransactionsResponse result = apiInstance.retrieveAllClientTransactions(clientId, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientTransactionApi#retrieveAllClientTransactions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdTransactionsResponse> call = apiService.retrieveAllClientTransactions(clientId, offset, limit);
+call.enqueue(new Callback<GetClientsClientIdTransactionsResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdTransactionsResponse> call, Response<GetClientsClientIdTransactionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdTransactionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -68,27 +67,27 @@ Example Requests: clients/1/transactions/1   clients/1/transactions/1?fields&#x3
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientTransactionApi;
 
+ClientTransactionApi apiService = defaultClient.createService(ClientTransactionApi.class);
 
-ClientTransactionApi apiInstance = new ClientTransactionApi();
-Long clientId = 789L; // Long | clientId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetClientsClientIdTransactionsTransactionIdResponse result = apiInstance.retrieveClientTransaction(clientId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientTransactionApi#retrieveClientTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdTransactionsTransactionIdResponse> call = apiService.retrieveClientTransaction(clientId, transactionId);
+call.enqueue(new Callback<GetClientsClientIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdTransactionsTransactionIdResponse> call, Response<GetClientsClientIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **transactionId** | **Long**| transactionId |
 
@@ -115,28 +114,27 @@ Undoes a Client Transaction
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientTransactionApi;
 
+ClientTransactionApi apiService = defaultClient.createService(ClientTransactionApi.class);
 
-ClientTransactionApi apiInstance = new ClientTransactionApi();
-Long clientId = 789L; // Long | clientId
-Long transactionId = 789L; // Long | transactionId
-String command = "command_example"; // String | command
-try {
-    PostClientsClientIdTransactionsTransactionIdResponse result = apiInstance.undoClientTransaction(clientId, transactionId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientTransactionApi#undoClientTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsClientIdTransactionsTransactionIdResponse> call = apiService.undoClientTransaction(clientId, transactionId, command);
+call.enqueue(new Callback<PostClientsClientIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsClientIdTransactionsTransactionIdResponse> call, Response<PostClientsClientIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsClientIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **transactionId** | **Long**| transactionId |
  **command** | **String**| command | [optional]

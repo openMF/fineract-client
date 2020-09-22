@@ -20,7 +20,7 @@ public class HooksApiTest {
 
     /**
      * Create a Hook
-     * <p>
+     *
      * The following parameters can be passed for the creation of a hook :-  name - string - Required. The name of the template that is being called. (See /hooks/template for the list of valid hook names.)  isActive - boolean - Determines whether the hook is actually triggered.  events - array - Determines what events the hook is triggered for.  config - hash - Required. Key/value pairs to provide settings for this hook. These settings vary between the templates.  templateId - Optional. The UGD template ID associated with the same entity (client or loan).
      */
     @Test
@@ -30,10 +30,9 @@ public class HooksApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Hook
-     * <p>
+     *
      * Deletes a hook.
      */
     @Test
@@ -43,10 +42,9 @@ public class HooksApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Hook
-     * <p>
+     *
      * Returns the details of a Hook.  Example Requests:  hooks/1
      */
     @Test
@@ -56,10 +54,9 @@ public class HooksApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Hooks
-     * <p>
+     *
      * Returns the list of hooks.  Example Requests:  hooks
      */
     @Test
@@ -68,10 +65,9 @@ public class HooksApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Hooks Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  hooks/template
      */
     @Test
@@ -80,10 +76,9 @@ public class HooksApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Hook
-     * <p>
+     *
      * Updates the details of a hook.
      */
     @Test

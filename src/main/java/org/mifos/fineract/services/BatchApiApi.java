@@ -2,9 +2,9 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.BatchResponse;
 import org.mifos.fineract.models.PostBatchesRequest;
-import retrofit2.Call;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface BatchApiApi {
     /**
@@ -13,13 +13,13 @@ public interface BatchApiApi {
      *
      * @param body                 request body (required)
      * @param enclosingTransaction enclosingTransaction (optional, default to false)
-     * @return Call&lt;BatchResponse&gt;
+     * @return Observable&lt;BatchResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("batches")
-    Call<BatchResponse> handleBatchRequests(
+    Observable<BatchResponse> handleBatchRequests(
             @retrofit2.http.Body PostBatchesRequest body, @retrofit2.http.Query("enclosingTransaction") Boolean enclosingTransaction
     );
 

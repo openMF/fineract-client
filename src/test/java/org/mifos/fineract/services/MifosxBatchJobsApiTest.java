@@ -19,7 +19,7 @@ public class MifosxBatchJobsApiTest {
 
     /**
      * Run a Job
-     * <p>
+     *
      * Manually Execute Specific Job.
      */
     @Test
@@ -30,10 +30,9 @@ public class MifosxBatchJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Scheduler Jobs
-     * <p>
+     *
      * Returns the list of jobs.  Example Requests:  jobs
      */
     @Test
@@ -42,10 +41,9 @@ public class MifosxBatchJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Job Run History
-     * <p>
+     *
      * Example Requests:  jobs/5/runhistory?offset&#x3D;0&amp;limit&#x3D;200
      */
     @Test
@@ -59,10 +57,9 @@ public class MifosxBatchJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Job
-     * <p>
+     *
      * Returns the details of a Job.  Example Requests:  jobs/5
      */
     @Test
@@ -72,10 +69,9 @@ public class MifosxBatchJobsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Job
-     * <p>
+     *
      * Updates the details of a job.
      */
     @Test

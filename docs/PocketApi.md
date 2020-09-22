@@ -1,6 +1,6 @@
 # PocketApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,27 +18,27 @@ Pockets behave as favourites. An user can link his/her Loan, Savings and Share a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PocketApi;
 
+PocketApi apiService = defaultClient.createService(PocketApi.class);
 
-PocketApi apiInstance = new PocketApi();
-String command = "command_example"; // String | command
-String body = "body_example"; // String | 
-try {
-    PostLinkDelinkAccountsToFromPocketResponse result = apiInstance.handleCommands(command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PocketApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLinkDelinkAccountsToFromPocketResponse> call = apiService.handleCommands(command, body);
+call.enqueue(new Callback<PostLinkDelinkAccountsToFromPocketResponse>() {
+    @Override
+    public void onResponse(Call<PostLinkDelinkAccountsToFromPocketResponse> call, Response<PostLinkDelinkAccountsToFromPocketResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLinkDelinkAccountsToFromPocketResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **command** | **String**| command | [optional]
  **body** | **String**|  | [optional]
 
@@ -65,19 +65,23 @@ All linked loan  Example Requests:   self/pockets
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PocketApi;
 
+PocketApi apiService = defaultClient.createService(PocketApi.class);
 
-PocketApi apiInstance = new PocketApi();
-try {
-    GetAccountsLinkedToPocketResponse result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PocketApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountsLinkedToPocketResponse> call = apiService.retrieveAll();
+call.enqueue(new Callback<GetAccountsLinkedToPocketResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountsLinkedToPocketResponse> call, Response<GetAccountsLinkedToPocketResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountsLinkedToPocketResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

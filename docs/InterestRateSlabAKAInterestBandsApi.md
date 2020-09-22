@@ -1,6 +1,6 @@
 # InterestRateSlabAKAInterestBandsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,27 +22,27 @@ Creates a new interest rate slab for an interest rate chart. Mandatory Fields pe
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-PostInterestRateChartsChartIdChartSlabsRequest body = new PostInterestRateChartsChartIdChartSlabsRequest(); // PostInterestRateChartsChartIdChartSlabsRequest | body
-try {
-    PostInterestRateChartsChartIdChartSlabsResponse result = apiInstance.create(chartId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostInterestRateChartsChartIdChartSlabsResponse> call = apiService.create(chartId, body);
+call.enqueue(new Callback<PostInterestRateChartsChartIdChartSlabsResponse>() {
+    @Override
+    public void onResponse(Call<PostInterestRateChartsChartIdChartSlabsResponse> call, Response<PostInterestRateChartsChartIdChartSlabsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostInterestRateChartsChartIdChartSlabsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **body** | [**PostInterestRateChartsChartIdChartSlabsRequest**](PostInterestRateChartsChartIdChartSlabsRequest.md)| body |
 
@@ -69,27 +69,27 @@ Delete a Slab from a chart
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-try {
-    DeleteInterestRateChartsChartIdChartSlabsResponse result = apiInstance.delete(chartId, chartSlabId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteInterestRateChartsChartIdChartSlabsResponse> call = apiService.delete(chartId, chartSlabId);
+call.enqueue(new Callback<DeleteInterestRateChartsChartIdChartSlabsResponse>() {
+    @Override
+    public void onResponse(Call<DeleteInterestRateChartsChartIdChartSlabsResponse> call, Response<DeleteInterestRateChartsChartIdChartSlabsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteInterestRateChartsChartIdChartSlabsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **chartSlabId** | **Long**| chartSlabId |
 
@@ -116,26 +116,27 @@ Retrieve list of slabs associated with a chart  Example Requests:  interestratec
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-try {
-    List<GetInterestRateChartsChartIdChartSlabsResponse> result = apiInstance.retrieveAll(chartId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;> call = apiService.retrieveAll(chartId);
+call.enqueue(new Callback<List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;> call, Response<List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
 
 ### Return type
@@ -161,27 +162,27 @@ Retrieve a slab associated with an Interest rate chart  Example Requests:  inter
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-try {
-    GetInterestRateChartsChartIdChartSlabsResponse result = apiInstance.retrieveOne(chartId, chartSlabId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetInterestRateChartsChartIdChartSlabsResponse> call = apiService.retrieveOne(chartId, chartSlabId);
+call.enqueue(new Callback<GetInterestRateChartsChartIdChartSlabsResponse>() {
+    @Override
+    public void onResponse(Call<GetInterestRateChartsChartIdChartSlabsResponse> call, Response<GetInterestRateChartsChartIdChartSlabsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetInterestRateChartsChartIdChartSlabsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **chartSlabId** | **Long**| chartSlabId |
 
@@ -206,19 +207,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-try {
-    String result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.template();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -247,28 +252,27 @@ It updates the Slab from chart
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
 
+InterestRateSlabAKAInterestBandsApi apiService = defaultClient.createService(InterestRateSlabAKAInterestBandsApi.class);
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest body = new PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest(); // PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest | body
-try {
-    PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse result = apiInstance.update(chartId, chartSlabId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> call = apiService.update(chartId, chartSlabId, body);
+call.enqueue(new Callback<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse>() {
+    @Override
+    public void onResponse(Call<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> call, Response<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **chartSlabId** | **Long**| chartSlabId |
  **body** | [**PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest**](PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest.md)| body |

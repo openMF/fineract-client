@@ -1,6 +1,6 @@
 # ProvisioningCategoryApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,26 +18,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCategoryApi;
 
+ProvisioningCategoryApi apiService = defaultClient.createService(ProvisioningCategoryApi.class);
 
-ProvisioningCategoryApi apiInstance = new ProvisioningCategoryApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.createProvisioningCategory(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCategoryApi#createProvisioningCategory");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createProvisioningCategory(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -61,26 +62,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCategoryApi;
 
+ProvisioningCategoryApi apiService = defaultClient.createService(ProvisioningCategoryApi.class);
 
-ProvisioningCategoryApi apiInstance = new ProvisioningCategoryApi();
-Long categoryId = 789L; // Long | 
-try {
-    String result = apiInstance.deleteProvisioningCategory(categoryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCategoryApi#deleteProvisioningCategory");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteProvisioningCategory(categoryId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **categoryId** | **Long**|  |
 
 ### Return type
@@ -104,19 +106,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCategoryApi;
 
+ProvisioningCategoryApi apiService = defaultClient.createService(ProvisioningCategoryApi.class);
 
-ProvisioningCategoryApi apiInstance = new ProvisioningCategoryApi();
-try {
-    String result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCategoryApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -143,27 +149,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCategoryApi;
 
+ProvisioningCategoryApi apiService = defaultClient.createService(ProvisioningCategoryApi.class);
 
-ProvisioningCategoryApi apiInstance = new ProvisioningCategoryApi();
-Long categoryId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateProvisioningCategory(categoryId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCategoryApi#updateProvisioningCategory");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateProvisioningCategory(categoryId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **categoryId** | **Long**|  |
  **body** | **String**|  | [optional]
 

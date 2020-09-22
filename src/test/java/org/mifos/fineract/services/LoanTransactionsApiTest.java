@@ -20,7 +20,7 @@ public class LoanTransactionsApiTest {
 
     /**
      * Adjust a Transaction
-     * <p>
+     *
      * Note: there is no need to specify command&#x3D;{transactionType} parameter.  Mandatory Fields: transactionDate, transactionAmount
      */
     @Test
@@ -32,10 +32,9 @@ public class LoanTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Make a Repayment | Make a Refund of an Active Loan by Cash | Foreclosure of an Active Loan | Waive Interest | Write-off Loan | Make Recovery Payment | Undo Loan Write-off Transaction
-     * <p>
+     *
      * Make Recovery Payment:  This API allows collecting recovery payments for written-off loans
      */
     @Test
@@ -47,10 +46,9 @@ public class LoanTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Transaction Details
-     * <p>
+     *
      * Retrieves a Transaction Details  Example Request:  loans/5/transactions/3
      */
     @Test
@@ -61,10 +59,9 @@ public class LoanTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Loan Transaction Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists  Example Request:  loans/1/transactions/template?command&#x3D;repayment
      */
     @Test

@@ -1,6 +1,6 @@
 # HooksApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ The following parameters can be passed for the creation of a hook :-  name - str
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-PostHookRequest body = new PostHookRequest(); // PostHookRequest | 
-try {
-    PostHookResponse result = apiInstance.createHook(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#createHook");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostHookResponse> call = apiService.createHook(body);
+call.enqueue(new Callback<PostHookResponse>() {
+    @Override
+    public void onResponse(Call<PostHookResponse> call, Response<PostHookResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostHookResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostHookRequest**](PostHookRequest.md)|  |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a hook.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-Long hookId = 789L; // Long | hookId
-try {
-    DeleteHookResponse result = apiInstance.deleteHook(hookId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#deleteHook");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteHookResponse> call = apiService.deleteHook(hookId);
+call.enqueue(new Callback<DeleteHookResponse>() {
+    @Override
+    public void onResponse(Call<DeleteHookResponse> call, Response<DeleteHookResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteHookResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **hookId** | **Long**| hookId |
 
 ### Return type
@@ -112,26 +114,27 @@ Returns the details of a Hook.  Example Requests:  hooks/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-Long hookId = 789L; // Long | hookId
-try {
-    GetHookResponse result = apiInstance.retrieveHook(hookId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#retrieveHook");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetHookResponse> call = apiService.retrieveHook(hookId);
+call.enqueue(new Callback<GetHookResponse>() {
+    @Override
+    public void onResponse(Call<GetHookResponse> call, Response<GetHookResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetHookResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **hookId** | **Long**| hookId |
 
 ### Return type
@@ -157,19 +160,23 @@ Returns the list of hooks.  Example Requests:  hooks
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-try {
-    List<GetHookResponse> result = apiInstance.retrieveHooks();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#retrieveHooks");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetHookResponse&gt;> call = apiService.retrieveHooks();
+call.enqueue(new Callback<List&lt;GetHookResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetHookResponse&gt;> call, Response<List&lt;GetHookResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetHookResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -198,19 +205,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-try {
-    GetHookTemplateResponse result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetHookTemplateResponse> call = apiService.template();
+call.enqueue(new Callback<GetHookTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetHookTemplateResponse> call, Response<GetHookTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetHookTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -239,27 +250,27 @@ Updates the details of a hook.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HooksApi;
 
+HooksApi apiService = defaultClient.createService(HooksApi.class);
 
-HooksApi apiInstance = new HooksApi();
-Long hookId = 789L; // Long | hookId
-PutHookRequest body = new PutHookRequest(); // PutHookRequest | 
-try {
-    PutHookResponse result = apiInstance.updateHook(hookId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HooksApi#updateHook");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutHookResponse> call = apiService.updateHook(hookId, body);
+call.enqueue(new Callback<PutHookResponse>() {
+    @Override
+    public void onResponse(Call<PutHookResponse> call, Response<PutHookResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutHookResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **hookId** | **Long**| hookId |
  **body** | [**PutHookRequest**](PutHookRequest.md)|  |
 

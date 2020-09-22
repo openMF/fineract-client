@@ -18,7 +18,7 @@ public class ListReportMailingJobHistoryApiTest {
 
     /**
      * List Report Mailing Job History
-     * <p>
+     *
      * The list capability of report mailing job history can support pagination and sorting.  Example Requests:  reportmailingjobrunhistory/1
      */
     @Test

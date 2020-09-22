@@ -1,6 +1,6 @@
 # MifosxBatchJobsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Manually Execute Specific Job.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MifosxBatchJobsApi;
 
+MifosxBatchJobsApi apiService = defaultClient.createService(MifosxBatchJobsApi.class);
 
-MifosxBatchJobsApi apiInstance = new MifosxBatchJobsApi();
-Long jobId = 789L; // Long | jobId
-String command = "command_example"; // String | command
-try {
-    apiInstance.executeJob(jobId, command);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MifosxBatchJobsApi#executeJob");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.executeJob(jobId, command);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **jobId** | **Long**| jobId |
  **command** | **String**| command | [optional]
 
@@ -67,19 +68,23 @@ Returns the list of jobs.  Example Requests:  jobs
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MifosxBatchJobsApi;
 
+MifosxBatchJobsApi apiService = defaultClient.createService(MifosxBatchJobsApi.class);
 
-MifosxBatchJobsApi apiInstance = new MifosxBatchJobsApi();
-try {
-    List<GetJobsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MifosxBatchJobsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetJobsResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetJobsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetJobsResponse&gt;> call, Response<List&lt;GetJobsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetJobsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -108,30 +113,27 @@ Example Requests:  jobs/5/runhistory?offset&#x3D;0&amp;limit&#x3D;200
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MifosxBatchJobsApi;
 
+MifosxBatchJobsApi apiService = defaultClient.createService(MifosxBatchJobsApi.class);
 
-MifosxBatchJobsApi apiInstance = new MifosxBatchJobsApi();
-Long jobId = 789L; // Long | jobId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    GetJobsJobIDJobRunHistoryResponse result = apiInstance.retrieveHistory(jobId, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MifosxBatchJobsApi#retrieveHistory");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetJobsJobIDJobRunHistoryResponse> call = apiService.retrieveHistory(jobId, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<GetJobsJobIDJobRunHistoryResponse>() {
+    @Override
+    public void onResponse(Call<GetJobsJobIDJobRunHistoryResponse> call, Response<GetJobsJobIDJobRunHistoryResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetJobsJobIDJobRunHistoryResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **jobId** | **Long**| jobId |
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -161,26 +163,27 @@ Returns the details of a Job.  Example Requests:  jobs/5
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MifosxBatchJobsApi;
 
+MifosxBatchJobsApi apiService = defaultClient.createService(MifosxBatchJobsApi.class);
 
-MifosxBatchJobsApi apiInstance = new MifosxBatchJobsApi();
-Long jobId = 789L; // Long | jobId
-try {
-    GetJobsResponse result = apiInstance.retrieveOne(jobId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MifosxBatchJobsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetJobsResponse> call = apiService.retrieveOne(jobId);
+call.enqueue(new Callback<GetJobsResponse>() {
+    @Override
+    public void onResponse(Call<GetJobsResponse> call, Response<GetJobsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetJobsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **jobId** | **Long**| jobId |
 
 ### Return type
@@ -206,26 +209,27 @@ Updates the details of a job.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MifosxBatchJobsApi;
 
+MifosxBatchJobsApi apiService = defaultClient.createService(MifosxBatchJobsApi.class);
 
-MifosxBatchJobsApi apiInstance = new MifosxBatchJobsApi();
-Long jobId = 789L; // Long | jobId
-PutJobsJobsIDRequest body = new PutJobsJobsIDRequest(); // PutJobsJobsIDRequest | body
-try {
-    apiInstance.updateJobDetail(jobId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MifosxBatchJobsApi#updateJobDetail");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.updateJobDetail(jobId, body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **jobId** | **Long**| jobId |
  **body** | [**PutJobsJobsIDRequest**](PutJobsJobsIDRequest.md)| body |
 

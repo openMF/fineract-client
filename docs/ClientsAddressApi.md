@@ -1,6 +1,6 @@
 # ClientsAddressApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,28 +20,27 @@ Mandatory Fields :  type and clientId
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientsAddressApi;
 
+ClientsAddressApi apiService = defaultClient.createService(ClientsAddressApi.class);
 
-ClientsAddressApi apiInstance = new ClientsAddressApi();
-Long clientid = 789L; // Long | clientId
-PostClientClientIdAddressesRequest body = new PostClientClientIdAddressesRequest(); // PostClientClientIdAddressesRequest | body
-Long type = 789L; // Long | type
-try {
-    PostClientClientIdAddressesResponse result = apiInstance.addClientAddress(clientid, body, type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientsAddressApi#addClientAddress");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientClientIdAddressesResponse> call = apiService.addClientAddress(clientid, body, type);
+call.enqueue(new Callback<PostClientClientIdAddressesResponse>() {
+    @Override
+    public void onResponse(Call<PostClientClientIdAddressesResponse> call, Response<PostClientClientIdAddressesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientClientIdAddressesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientid** | **Long**| clientId |
  **body** | [**PostClientClientIdAddressesRequest**](PostClientClientIdAddressesRequest.md)| body |
  **type** | **Long**| type | [optional]
@@ -69,28 +68,27 @@ Example Requests:  client/1/addresses   clients/1/addresses?status&#x3D;false,tr
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientsAddressApi;
 
+ClientsAddressApi apiService = defaultClient.createService(ClientsAddressApi.class);
 
-ClientsAddressApi apiInstance = new ClientsAddressApi();
-Long clientid = 789L; // Long | clientId
-String status = "status_example"; // String | status
-Long type = 789L; // Long | type
-try {
-    List<GetClientClientIdAddressesResponse> result = apiInstance.getAddresses(clientid, status, type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientsAddressApi#getAddresses");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetClientClientIdAddressesResponse&gt;> call = apiService.getAddresses(clientid, status, type);
+call.enqueue(new Callback<List&lt;GetClientClientIdAddressesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetClientClientIdAddressesResponse&gt;> call, Response<List&lt;GetClientClientIdAddressesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetClientClientIdAddressesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientid** | **Long**| clientId |
  **status** | **String**| status | [optional]
  **type** | **Long**| type | [optional]
@@ -116,19 +114,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientsAddressApi;
 
+ClientsAddressApi apiService = defaultClient.createService(ClientsAddressApi.class);
 
-ClientsAddressApi apiInstance = new ClientsAddressApi();
-try {
-    String result = apiInstance.getAddressesTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientsAddressApi#getAddressesTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getAddressesTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -157,27 +159,27 @@ All the address fields can be updated by using update client address API  Mandat
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientsAddressApi;
 
+ClientsAddressApi apiService = defaultClient.createService(ClientsAddressApi.class);
 
-ClientsAddressApi apiInstance = new ClientsAddressApi();
-Long clientid = 789L; // Long | clientId
-PutClientClientIdAddressesRequest body = new PutClientClientIdAddressesRequest(); // PutClientClientIdAddressesRequest | body
-try {
-    PutClientClientIdAddressesResponse result = apiInstance.updateClientAddress(clientid, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientsAddressApi#updateClientAddress");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutClientClientIdAddressesResponse> call = apiService.updateClientAddress(clientid, body);
+call.enqueue(new Callback<PutClientClientIdAddressesResponse>() {
+    @Override
+    public void onResponse(Call<PutClientClientIdAddressesResponse> call, Response<PutClientClientIdAddressesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutClientClientIdAddressesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientid** | **Long**| clientId |
  **body** | [**PutClientClientIdAddressesRequest**](PutClientClientIdAddressesRequest.md)| body |
 

@@ -20,7 +20,7 @@ public class TaxGroupApiTest {
 
     /**
      * Create a new Tax Group
-     * <p>
+     *
      * Create a new Tax Group Mandatory Fields: name and taxComponents Mandatory Fields in taxComponents: taxComponentId Optional Fields in taxComponents: id, startDate and endDate
      */
     @Test
@@ -30,10 +30,9 @@ public class TaxGroupApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Tax Group
-     * <p>
+     *
      * List Tax Group
      */
     @Test
@@ -42,10 +41,9 @@ public class TaxGroupApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Tax Group
-     * <p>
+     *
      * Retrieve Tax Group
      */
     @Test
@@ -65,10 +63,9 @@ public class TaxGroupApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Tax Group
-     * <p>
+     *
      * Updates Tax Group. Only end date can be up-datable and can insert new tax components.
      */
     @Test

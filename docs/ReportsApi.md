@@ -1,6 +1,6 @@
 # ReportsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Create a Report
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-PostRepostRequest body = new PostRepostRequest(); // PostRepostRequest | body
-try {
-    PostReportsResponse result = apiInstance.createReport(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#createReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostReportsResponse> call = apiService.createReport(body);
+call.enqueue(new Callback<PostReportsResponse>() {
+    @Override
+    public void onResponse(Call<PostReportsResponse> call, Response<PostReportsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostReportsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostRepostRequest**](PostRepostRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Only non-core reports can be deleted.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-Long id = 789L; // Long | id
-try {
-    DeleteReportsResponse result = apiInstance.deleteReport(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#deleteReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteReportsResponse> call = apiService.deleteReport(id);
+call.enqueue(new Callback<DeleteReportsResponse>() {
+    @Override
+    public void onResponse(Call<DeleteReportsResponse> call, Response<DeleteReportsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteReportsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**| id |
 
 ### Return type
@@ -112,19 +114,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-try {
-    GetReportsTemplateResponse result = apiInstance.retrieveOfficeTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#retrieveOfficeTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetReportsTemplateResponse> call = apiService.retrieveOfficeTemplate();
+call.enqueue(new Callback<GetReportsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetReportsTemplateResponse> call, Response<GetReportsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetReportsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Example Requests:  reports/1   reports/1?template&#x3D;true
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-Long id = 789L; // Long | id
-try {
-    GetReportsResponse result = apiInstance.retrieveReport(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#retrieveReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetReportsResponse> call = apiService.retrieveReport(id);
+call.enqueue(new Callback<GetReportsResponse>() {
+    @Override
+    public void onResponse(Call<GetReportsResponse> call, Response<GetReportsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetReportsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**| id |
 
 ### Return type
@@ -198,18 +205,23 @@ Lists all reports and their parameters.  Example Request:  reports
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-try {
-    apiInstance.retrieveReportList();
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#retrieveReportList");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.retrieveReportList();
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -238,27 +250,27 @@ Only the useReport value can be updated for core reports.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportsApi;
 
+ReportsApi apiService = defaultClient.createService(ReportsApi.class);
 
-ReportsApi apiInstance = new ReportsApi();
-Long id = 789L; // Long | id
-PutReportRequest body = new PutReportRequest(); // PutReportRequest | body
-try {
-    PutReportResponse result = apiInstance.updateReport(id, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportsApi#updateReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutReportResponse> call = apiService.updateReport(id, body);
+call.enqueue(new Callback<PutReportResponse>() {
+    @Override
+    public void onResponse(Call<PutReportResponse> call, Response<PutReportResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutReportResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**| id |
  **body** | [**PutReportRequest**](PutReportRequest.md)| body |
 

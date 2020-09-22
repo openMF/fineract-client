@@ -1,6 +1,6 @@
 # CurrencyApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,19 +18,23 @@ Returns the list of currencies permitted for use AND the list of currencies not 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CurrencyApi;
 
+CurrencyApi apiService = defaultClient.createService(CurrencyApi.class);
 
-CurrencyApi apiInstance = new CurrencyApi();
-try {
-    GetCurrenciesResponse result = apiInstance.retrieveCurrencies();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CurrencyApi#retrieveCurrencies");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCurrenciesResponse> call = apiService.retrieveCurrencies();
+call.enqueue(new Callback<GetCurrenciesResponse>() {
+    @Override
+    public void onResponse(Call<GetCurrenciesResponse> call, Response<GetCurrenciesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCurrenciesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -59,26 +63,27 @@ Updates the list of currencies permitted for use.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CurrencyApi;
 
+CurrencyApi apiService = defaultClient.createService(CurrencyApi.class);
 
-CurrencyApi apiInstance = new CurrencyApi();
-PutCurrenciesRequest body = new PutCurrenciesRequest(); // PutCurrenciesRequest | body
-try {
-    PutCurrenciesResponse result = apiInstance.updateCurrencies(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CurrencyApi#updateCurrencies");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutCurrenciesResponse> call = apiService.updateCurrencies(body);
+call.enqueue(new Callback<PutCurrenciesResponse>() {
+    @Override
+    public void onResponse(Call<PutCurrenciesResponse> call, Response<PutCurrenciesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutCurrenciesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutCurrenciesRequest**](PutCurrenciesRequest.md)| body |
 
 ### Return type

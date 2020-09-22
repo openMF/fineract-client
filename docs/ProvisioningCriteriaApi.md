@@ -1,6 +1,6 @@
 # ProvisioningCriteriaApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a new Provisioning Criteria  Mandatory Fields:  criteriaName provisionin
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-PostProvisioningCriteriaRequest body = new PostProvisioningCriteriaRequest(); // PostProvisioningCriteriaRequest | body
-try {
-    PostProvisioningCriteriaResponse result = apiInstance.createProvisioningCriteria(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#createProvisioningCriteria");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostProvisioningCriteriaResponse> call = apiService.createProvisioningCriteria(body);
+call.enqueue(new Callback<PostProvisioningCriteriaResponse>() {
+    @Override
+    public void onResponse(Call<PostProvisioningCriteriaResponse> call, Response<PostProvisioningCriteriaResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostProvisioningCriteriaResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostProvisioningCriteriaRequest**](PostProvisioningCriteriaRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes Provisioning Criteria
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-Long criteriaId = 789L; // Long | criteriaId
-try {
-    DeleteProvisioningCriteriaResponse result = apiInstance.deleteProvisioningCriteria(criteriaId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#deleteProvisioningCriteria");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteProvisioningCriteriaResponse> call = apiService.deleteProvisioningCriteria(criteriaId);
+call.enqueue(new Callback<DeleteProvisioningCriteriaResponse>() {
+    @Override
+    public void onResponse(Call<DeleteProvisioningCriteriaResponse> call, Response<DeleteProvisioningCriteriaResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteProvisioningCriteriaResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **criteriaId** | **Long**| criteriaId |
 
 ### Return type
@@ -112,19 +114,23 @@ Retrieves all created Provisioning Criterias
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-try {
-    List<GetProvisioningCriteriaResponse> result = apiInstance.retrieveAllProvisioningCriterias();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#retrieveAllProvisioningCriterias");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetProvisioningCriteriaResponse&gt;> call = apiService.retrieveAllProvisioningCriterias();
+call.enqueue(new Callback<List&lt;GetProvisioningCriteriaResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetProvisioningCriteriaResponse&gt;> call, Response<List&lt;GetProvisioningCriteriaResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetProvisioningCriteriaResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Retrieves a Provisioning Criteria
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-Long criteriaId = 789L; // Long | criteriaId
-try {
-    GetProvisioningCriteriaCriteriaIdResponse result = apiInstance.retrieveProvisioningCriteria(criteriaId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#retrieveProvisioningCriteria");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetProvisioningCriteriaCriteriaIdResponse> call = apiService.retrieveProvisioningCriteria(criteriaId);
+call.enqueue(new Callback<GetProvisioningCriteriaCriteriaIdResponse>() {
+    @Override
+    public void onResponse(Call<GetProvisioningCriteriaCriteriaIdResponse> call, Response<GetProvisioningCriteriaCriteriaIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetProvisioningCriteriaCriteriaIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **criteriaId** | **Long**| criteriaId |
 
 ### Return type
@@ -196,19 +203,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -237,27 +248,27 @@ Updates a new Provisioning Criteria  Optional Fields criteriaName, loanProducts,
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningCriteriaApi;
 
+ProvisioningCriteriaApi apiService = defaultClient.createService(ProvisioningCriteriaApi.class);
 
-ProvisioningCriteriaApi apiInstance = new ProvisioningCriteriaApi();
-Long criteriaId = 789L; // Long | criteriaId
-PutProvisioningCriteriaRequest body = new PutProvisioningCriteriaRequest(); // PutProvisioningCriteriaRequest | body
-try {
-    PutProvisioningCriteriaResponse result = apiInstance.updateProvisioningCriteria(criteriaId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningCriteriaApi#updateProvisioningCriteria");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutProvisioningCriteriaResponse> call = apiService.updateProvisioningCriteria(criteriaId, body);
+call.enqueue(new Callback<PutProvisioningCriteriaResponse>() {
+    @Override
+    public void onResponse(Call<PutProvisioningCriteriaResponse> call, Response<PutProvisioningCriteriaResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutProvisioningCriteriaResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **criteriaId** | **Long**| criteriaId |
  **body** | [**PutProvisioningCriteriaRequest**](PutProvisioningCriteriaRequest.md)| body |
 

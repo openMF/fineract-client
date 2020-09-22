@@ -1,6 +1,6 @@
 # SelfUserDetailsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ Checks the Authentication and returns the set roles and permissions allowed  For
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfUserDetailsApi;
 
+SelfUserDetailsApi apiService = defaultClient.createService(SelfUserDetailsApi.class);
 
-SelfUserDetailsApi apiInstance = new SelfUserDetailsApi();
-String accessToken = "accessToken_example"; // String | äccess_token
-try {
-    GetSelfUserDetailsResponse result = apiInstance.fetchAuthenticatedUserData(accessToken);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfUserDetailsApi#fetchAuthenticatedUserData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfUserDetailsResponse> call = apiService.fetchAuthenticatedUserData(accessToken);
+call.enqueue(new Callback<GetSelfUserDetailsResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfUserDetailsResponse> call, Response<GetSelfUserDetailsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfUserDetailsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| äccess_token | [optional]
 
 ### Return type

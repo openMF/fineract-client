@@ -20,7 +20,7 @@ public class PaymentTypeApiTest {
 
     /**
      * Create a Payment Type
-     * <p>
+     *
      * Creates a new Payment type  Mandatory Fields: name  Optional Fields: Description, isCashPayment,Position
      */
     @Test
@@ -30,10 +30,9 @@ public class PaymentTypeApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Payment Type
-     * <p>
+     *
      * Deletes payment type
      */
     @Test
@@ -43,10 +42,9 @@ public class PaymentTypeApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve all Payment Types
-     * <p>
+     *
      * Retrieve list of payment types
      */
     @Test
@@ -55,10 +53,9 @@ public class PaymentTypeApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Payment Type
-     * <p>
+     *
      * Retrieves a payment type
      */
     @Test
@@ -68,10 +65,9 @@ public class PaymentTypeApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Payment Type
-     * <p>
+     *
      * Updates a Payment Type
      */
     @Test

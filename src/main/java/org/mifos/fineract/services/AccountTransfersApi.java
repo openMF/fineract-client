@@ -1,10 +1,10 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface AccountTransfersApi {
     /**
@@ -12,13 +12,13 @@ public interface AccountTransfersApi {
      * Ability to create new transfer of monetary funds from one account to another.
      *
      * @param body body (required)
-     * @return Call&lt;PostAccountTransfersResponse&gt;
+     * @return Observable&lt;PostAccountTransfersResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("accounttransfers")
-    Call<PostAccountTransfersResponse> create(
+    Observable<PostAccountTransfersResponse> create(
             @retrofit2.http.Body PostAccountTransfersRequest body
     );
 
@@ -33,13 +33,13 @@ public interface AccountTransfersApi {
      * @param orderBy         orderBy (optional)
      * @param sortOrder       sortOrder (optional)
      * @param accountDetailId accountDetailId (optional)
-     * @return Call&lt;GetAccountTransfersResponse&gt;
+     * @return Observable&lt;GetAccountTransfersResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accounttransfers")
-    Call<GetAccountTransfersResponse> retrieveAll(
+    Observable<GetAccountTransfersResponse> retrieveAll(
             @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("accountDetailId") Long accountDetailId
     );
 
@@ -48,13 +48,13 @@ public interface AccountTransfersApi {
      * Retrieves account transfer  Example Requests :    accounttransfers/1
      *
      * @param transferId transferId (required)
-     * @return Call&lt;GetAccountTransfersPageItems&gt;
+     * @return Observable&lt;GetAccountTransfersPageItems&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accounttransfers/{transferId}")
-    Call<GetAccountTransfersPageItems> retrieveOne(
+    Observable<GetAccountTransfersPageItems> retrieveOne(
             @retrofit2.http.Path("transferId") Long transferId
     );
 
@@ -70,13 +70,13 @@ public interface AccountTransfersApi {
      * @param toClientId      toClientId (optional)
      * @param toAccountId     toAccountId (optional)
      * @param toAccountType   toAccountType (optional)
-     * @return Call&lt;GetAccountTransfersTemplateResponse&gt;
+     * @return Observable&lt;GetAccountTransfersTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accounttransfers/template")
-    Call<GetAccountTransfersTemplateResponse> template(
+    Observable<GetAccountTransfersTemplateResponse> template(
             @retrofit2.http.Query("fromOfficeId") Long fromOfficeId, @retrofit2.http.Query("fromClientId") Long fromClientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType, @retrofit2.http.Query("toOfficeId") Long toOfficeId, @retrofit2.http.Query("toClientId") Long toClientId, @retrofit2.http.Query("toAccountId") Long toAccountId, @retrofit2.http.Query("toAccountType") Integer toAccountType
     );
 
@@ -92,13 +92,13 @@ public interface AccountTransfersApi {
      * @param toClientId      toClientId (optional)
      * @param toAccountId     toAccountId (optional)
      * @param toAccountType   toAccountType (optional)
-     * @return Call&lt;GetAccountTransfersTemplateRefundByTransferResponse&gt;
+     * @return Observable&lt;GetAccountTransfersTemplateRefundByTransferResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("accounttransfers/templateRefundByTransfer")
-    Call<GetAccountTransfersTemplateRefundByTransferResponse> templateRefundByTransfer(
+    Observable<GetAccountTransfersTemplateRefundByTransferResponse> templateRefundByTransfer(
             @retrofit2.http.Query("fromOfficeId") Long fromOfficeId, @retrofit2.http.Query("fromClientId") Long fromClientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType, @retrofit2.http.Query("toOfficeId") Long toOfficeId, @retrofit2.http.Query("toClientId") Long toClientId, @retrofit2.http.Query("toAccountId") Long toAccountId, @retrofit2.http.Query("toAccountType") Integer toAccountType
     );
 
@@ -107,13 +107,13 @@ public interface AccountTransfersApi {
      * Ability to refund an active loan by transferring to a savings account.
      *
      * @param body body (required)
-     * @return Call&lt;PostAccountTransfersRefundByTransferResponse&gt;
+     * @return Observable&lt;PostAccountTransfersRefundByTransferResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("accounttransfers/refundByTransfer")
-    Call<PostAccountTransfersRefundByTransferResponse> templateRefundByTransferPost(
+    Observable<PostAccountTransfersRefundByTransferResponse> templateRefundByTransferPost(
             @retrofit2.http.Body PostAccountTransfersRefundByTransferRequest body
     );
 

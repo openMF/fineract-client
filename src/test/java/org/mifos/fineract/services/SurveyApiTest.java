@@ -48,6 +48,8 @@ public class SurveyApiTest {
 
     /**
      *
+     *
+     *
      */
     @Test
     public void getClientSurveyOverviewTest() {
@@ -59,6 +61,8 @@ public class SurveyApiTest {
     }
 
     /**
+     *
+     *
      *
      */
     @Test
@@ -73,6 +77,8 @@ public class SurveyApiTest {
 
     /**
      *
+     *
+     *
      */
     @Test
     public void registerTest() {
@@ -83,10 +89,9 @@ public class SurveyApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve survey
-     * <p>
+     *
      * Lists a registered survey table details and the Apache Fineract Core application table they are registered to.
      */
     @Test
@@ -96,10 +101,9 @@ public class SurveyApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve surveys
-     * <p>
+     *
      * Retrieve surveys. This allows to retrieve the list of survey tables registered .
      */
     @Test

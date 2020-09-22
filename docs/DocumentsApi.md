@@ -1,6 +1,6 @@
 # DocumentsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,31 +22,27 @@ Note: A document is created using a Multi-part form upload   Body Parts  name : 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-Long contentLength = 789L; // Long | Content-Length
-File file = new File("/path/to/file.txt"); // File | file
-String name = "name_example"; // String | name
-String description = "description_example"; // String | description
-try {
-    PostEntityTypeEntityIdDocumentsResponse result = apiInstance.createDocument(entityType, entityId, contentLength, file, name, description);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#createDocument");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostEntityTypeEntityIdDocumentsResponse> call = apiService.createDocument(entityType, entityId, contentLength, file, name, description);
+call.enqueue(new Callback<PostEntityTypeEntityIdDocumentsResponse>() {
+    @Override
+    public void onResponse(Call<PostEntityTypeEntityIdDocumentsResponse> call, Response<PostEntityTypeEntityIdDocumentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostEntityTypeEntityIdDocumentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
  **contentLength** | **Long**| Content-Length | [optional]
@@ -77,28 +73,27 @@ Remove a Document
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-Long documentId = 789L; // Long | documentId
-try {
-    DeleteEntityTypeEntityIdDocumentsResponse result = apiInstance.deleteDocument(entityType, entityId, documentId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#deleteDocument");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteEntityTypeEntityIdDocumentsResponse> call = apiService.deleteDocument(entityType, entityId, documentId);
+call.enqueue(new Callback<DeleteEntityTypeEntityIdDocumentsResponse>() {
+    @Override
+    public void onResponse(Call<DeleteEntityTypeEntityIdDocumentsResponse> call, Response<DeleteEntityTypeEntityIdDocumentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteEntityTypeEntityIdDocumentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
  **documentId** | **Long**| documentId |
@@ -126,27 +121,27 @@ Request used to download the file associated with the document  Example Requests
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-Long documentId = 789L; // Long | documentId
-try {
-    apiInstance.downloadFile(entityType, entityId, documentId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#downloadFile");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.downloadFile(entityType, entityId, documentId);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
  **documentId** | **Long**| documentId |
@@ -174,28 +169,27 @@ Example Requests:  clients/1/documents/1   loans/1/documents/1   client_identifi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-Long documentId = 789L; // Long | documentId
-try {
-    GetEntityTypeEntityIdDocumentsResponse result = apiInstance.getDocument(entityType, entityId, documentId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#getDocument");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetEntityTypeEntityIdDocumentsResponse> call = apiService.getDocument(entityType, entityId, documentId);
+call.enqueue(new Callback<GetEntityTypeEntityIdDocumentsResponse>() {
+    @Override
+    public void onResponse(Call<GetEntityTypeEntityIdDocumentsResponse> call, Response<GetEntityTypeEntityIdDocumentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetEntityTypeEntityIdDocumentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
  **documentId** | **Long**| documentId |
@@ -223,27 +217,27 @@ Example Requests:  clients/1/documents  client_identifiers/1/documents  loans/1/
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-try {
-    List<GetEntityTypeEntityIdDocumentsResponse> result = apiInstance.retreiveAllDocuments(entityType, entityId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#retreiveAllDocuments");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;> call = apiService.retreiveAllDocuments(entityType, entityId);
+call.enqueue(new Callback<List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;> call, Response<List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
 
@@ -270,32 +264,27 @@ Note: A document is updated using a Multi-part form upload  Body Parts name Name
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DocumentsApi;
 
+DocumentsApi apiService = defaultClient.createService(DocumentsApi.class);
 
-DocumentsApi apiInstance = new DocumentsApi();
-String entityType = "entityType_example"; // String | entityType
-Long entityId = 789L; // Long | entityId
-Long documentId = 789L; // Long | documentId
-Long contentLength = 789L; // Long | Content-Length
-File file = new File("/path/to/file.txt"); // File | file
-String name = "name_example"; // String | name
-String description = "description_example"; // String | description
-try {
-    PutEntityTypeEntityIdDocumentsResponse result = apiInstance.updateDocument(entityType, entityId, documentId, contentLength, file, name, description);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#updateDocument");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutEntityTypeEntityIdDocumentsResponse> call = apiService.updateDocument(entityType, entityId, documentId, contentLength, file, name, description);
+call.enqueue(new Callback<PutEntityTypeEntityIdDocumentsResponse>() {
+    @Override
+    public void onResponse(Call<PutEntityTypeEntityIdDocumentsResponse> call, Response<PutEntityTypeEntityIdDocumentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutEntityTypeEntityIdDocumentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityType** | **String**| entityType |
  **entityId** | **Long**| entityId |
  **documentId** | **Long**| documentId |

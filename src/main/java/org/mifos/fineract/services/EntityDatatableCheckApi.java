@@ -1,11 +1,11 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ public interface EntityDatatableCheckApi {
      * Mandatory Fields :  entity, status, datatableName  Non-Mandatory Fields :  productId
      *
      * @param body body (required)
-     * @return Call&lt;PostEntityDatatableChecksTemplateResponse&gt;
+     * @return Observable&lt;PostEntityDatatableChecksTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("entityDatatableChecks")
-    Call<PostEntityDatatableChecksTemplateResponse> createEntityDatatableCheck(
+    Observable<PostEntityDatatableChecksTemplateResponse> createEntityDatatableCheck(
             @retrofit2.http.Body PostEntityDatatableChecksTemplateRequest body
     );
 
@@ -31,13 +31,13 @@ public interface EntityDatatableCheckApi {
      *
      * @param entityDatatableCheckId entityDatatableCheckId (required)
      * @param body                   (optional)
-     * @return Call&lt;DeleteEntityDatatableChecksTemplateResponse&gt;
+     * @return Observable&lt;DeleteEntityDatatableChecksTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("entityDatatableChecks/{entityDatatableCheckId}")
-    Call<DeleteEntityDatatableChecksTemplateResponse> deleteDatatable(
+    Observable<DeleteEntityDatatableChecksTemplateResponse> deleteDatatable(
             @retrofit2.http.Path("entityDatatableCheckId") Long entityDatatableCheckId, @retrofit2.http.Body String body
     );
 
@@ -45,13 +45,13 @@ public interface EntityDatatableCheckApi {
      * Retrieve Entity-Datatable Checks Template
      * This is a convenience resource useful for building maintenance user interface screens for Entity-Datatable Checks applications. The template data returned consists of:  Allowed Value Lists Example Request:  entityDatatableChecks/template
      *
-     * @return Call&lt;GetEntityDatatableChecksTemplateResponse&gt;
+     * @return Observable&lt;GetEntityDatatableChecksTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("entityDatatableChecks/template")
-    Call<GetEntityDatatableChecksTemplateResponse> getTemplate();
+    Observable<GetEntityDatatableChecksTemplateResponse> getTemplate();
 
 
     /**
@@ -63,13 +63,13 @@ public interface EntityDatatableCheckApi {
      * @param productId productId (optional)
      * @param offset    offset (optional)
      * @param limit     limit (optional)
-     * @return Call&lt;List&lt;GetEntityDatatableChecksResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetEntityDatatableChecksResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("entityDatatableChecks")
-    Call<List<GetEntityDatatableChecksResponse>> retrieveAll(
+    Observable<List<GetEntityDatatableChecksResponse>> retrieveAll(
             @retrofit2.http.Query("status") Long status, @retrofit2.http.Query("entity") String entity, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
     );
 

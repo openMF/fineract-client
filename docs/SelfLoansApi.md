@@ -1,6 +1,6 @@
 # SelfLoansApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,27 +25,27 @@ Calculate Loan Repayment Schedule:  Calculates Loan Repayment Schedule  Mandator
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-PostSelfLoansRequest body = new PostSelfLoansRequest(); // PostSelfLoansRequest | body
-String command = "command_example"; // String | command
-try {
-    PostSelfLoansResponse result = apiInstance.calculateLoanScheduleOrSubmitLoanApplication(body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#calculateLoanScheduleOrSubmitLoanApplication");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSelfLoansResponse> call = apiService.calculateLoanScheduleOrSubmitLoanApplication(body, command);
+call.enqueue(new Callback<PostSelfLoansResponse>() {
+    @Override
+    public void onResponse(Call<PostSelfLoansResponse> call, Response<PostSelfLoansResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSelfLoansResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostSelfLoansRequest**](PostSelfLoansRequest.md)| body |
  **command** | **String**| command | [optional]
 
@@ -72,27 +72,27 @@ Loan application can only be modified when in &#39;Submitted and pending approva
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-PutSelfLoansLoanIdRequest body = new PutSelfLoansLoanIdRequest(); // PutSelfLoansLoanIdRequest | body
-try {
-    PutSelfLoansLoanIdResponse result = apiInstance.modifyLoanApplication(loanId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#modifyLoanApplication");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutSelfLoansLoanIdResponse> call = apiService.modifyLoanApplication(loanId, body);
+call.enqueue(new Callback<PutSelfLoansLoanIdResponse>() {
+    @Override
+    public void onResponse(Call<PutSelfLoansLoanIdResponse> call, Response<PutSelfLoansLoanIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutSelfLoansLoanIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PutSelfLoansLoanIdRequest**](PutSelfLoansLoanIdRequest.md)| body |
 
@@ -119,26 +119,27 @@ Lists loan Charges  Example Requests:  self/loans/1/charges   self/loans/1/charg
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-try {
-    List<GetSelfLoansLoanIdChargesResponse> result = apiInstance.retrieveAllLoanCharges(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#retrieveAllLoanCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSelfLoansLoanIdChargesResponse&gt;> call = apiService.retrieveAllLoanCharges(loanId);
+call.enqueue(new Callback<List&lt;GetSelfLoansLoanIdChargesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSelfLoansLoanIdChargesResponse&gt;> call, Response<List&lt;GetSelfLoansLoanIdChargesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSelfLoansLoanIdChargesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
 
 ### Return type
@@ -162,26 +163,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveGuarantorDetails(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#retrieveGuarantorDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveGuarantorDetails(loanId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**|  |
 
 ### Return type
@@ -207,26 +209,27 @@ Retrieves a Loan  Example Requests:  self/loans/1   self/loans/1?fields&#x3D;id,
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-try {
-    GetSelfLoansLoanIdResponse result = apiInstance.retrieveLoan(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#retrieveLoan");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfLoansLoanIdResponse> call = apiService.retrieveLoan(loanId);
+call.enqueue(new Callback<GetSelfLoansLoanIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfLoansLoanIdResponse> call, Response<GetSelfLoansLoanIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfLoansLoanIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
 
 ### Return type
@@ -252,27 +255,27 @@ Retrieves a Loan Charge  Example Requests:  self/loans/1/charges/1   self/loans/
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetSelfLoansLoanIdChargesResponse result = apiInstance.retrieveLoanCharge(loanId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#retrieveLoanCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfLoansLoanIdChargesResponse> call = apiService.retrieveLoanCharge(loanId, chargeId);
+call.enqueue(new Callback<GetSelfLoansLoanIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfLoansLoanIdChargesResponse> call, Response<GetSelfLoansLoanIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfLoansLoanIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **chargeId** | **Long**| chargeId |
 
@@ -299,27 +302,27 @@ Retrieves a Loan Transaction DetailsExample Request:  self/loans/5/transactions/
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetSelfLoansLoanIdTransactionsTransactionIdResponse result = apiInstance.retrieveTransaction(loanId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#retrieveTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfLoansLoanIdTransactionsTransactionIdResponse> call = apiService.retrieveTransaction(loanId, transactionId);
+call.enqueue(new Callback<GetSelfLoansLoanIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfLoansLoanIdTransactionsTransactionIdResponse> call, Response<GetSelfLoansLoanIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfLoansLoanIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **transactionId** | **Long**| transactionId |
 
@@ -346,28 +349,27 @@ Applicant Withdraws from Loan Application  Mandatory Fields: withdrawnOnDate
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long loanId = 789L; // Long | loanId
-PostSelfLoansLoanIdRequest body = new PostSelfLoansLoanIdRequest(); // PostSelfLoansLoanIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostSelfLoansLoanIdResponse result = apiInstance.stateTransitions(loanId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#stateTransitions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSelfLoansLoanIdResponse> call = apiService.stateTransitions(loanId, body, command);
+call.enqueue(new Callback<PostSelfLoansLoanIdResponse>() {
+    @Override
+    public void onResponse(Call<PostSelfLoansLoanIdResponse> call, Response<PostSelfLoansLoanIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSelfLoansLoanIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PostSelfLoansLoanIdRequest**](PostSelfLoansLoanIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -395,28 +397,27 @@ Retrieves Loan Details Template  This is a convenience resource. It can be usefu
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoansApi;
 
+SelfLoansApi apiService = defaultClient.createService(SelfLoansApi.class);
 
-SelfLoansApi apiInstance = new SelfLoansApi();
-Long clientId = 789L; // Long | clientId
-Long productId = 789L; // Long | productId
-String templateType = "templateType_example"; // String | templateType
-try {
-    GetSelfLoansTemplateResponse result = apiInstance.template(clientId, productId, templateType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoansApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfLoansTemplateResponse> call = apiService.template(clientId, productId, templateType);
+call.enqueue(new Callback<GetSelfLoansTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfLoansTemplateResponse> call, Response<GetSelfLoansTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfLoansTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId | [optional]
  **productId** | **Long**| productId | [optional]
  **templateType** | **String**| templateType | [optional]

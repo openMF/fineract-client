@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -29,79 +29,79 @@ public class GetSavingsChargeCalculationType {
   @SerializedName("id")
   private Integer id = null;
 
-  @SerializedName("value")
-  private String value = null;
+    @SerializedName("value")
+    private String value = null;
 
-  public GetSavingsChargeCalculationType code(String code) {
-    this.code = code;
-    return this;
-  }
+    public GetSavingsChargeCalculationType code(String code) {
+        this.code = code;
+        return this;
+    }
 
-  /**
-   * Get code
-   *
-   * @return code
-   **/
-  @ApiModelProperty(example = "chargeCalculationType.flat", value = "")
-  public String getCode() {
-    return code;
-  }
+    /**
+     * Get code
+     *
+     * @return code
+     **/
+    @ApiModelProperty(example = "chargeCalculationType.flat", value = "")
+    public String getCode() {
+        return code;
+    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-  public GetSavingsChargeCalculationType id(Integer id) {
-    this.id = id;
-    return this;
-  }
+    public GetSavingsChargeCalculationType id(Integer id) {
+        this.id = id;
+        return this;
+    }
 
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getId() {
-    return id;
-  }
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getId() {
+        return id;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public GetSavingsChargeCalculationType value(String value) {
-    this.value = value;
-    return this;
-  }
+    public GetSavingsChargeCalculationType value(String value) {
+        this.value = value;
+        return this;
+    }
 
-  /**
-   * Get value
-   *
-   * @return value
-   **/
-  @ApiModelProperty(example = "Flat", value = "")
-  public String getValue() {
-    return value;
-  }
+    /**
+     * Get value
+     *
+     * @return value
+     **/
+    @ApiModelProperty(example = "Flat", value = "")
+    public String getValue() {
+        return value;
+    }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
+    public void setValue(String value) {
+        this.value = value;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsChargeCalculationType getSavingsChargeCalculationType = (GetSavingsChargeCalculationType) o;
-    return Objects.equals(this.code, getSavingsChargeCalculationType.code) &&
-            Objects.equals(this.id, getSavingsChargeCalculationType.id) &&
-            Objects.equals(this.value, getSavingsChargeCalculationType.value);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsChargeCalculationType getSavingsChargeCalculationType = (GetSavingsChargeCalculationType) o;
+      return Objects.equals(this.code, getSavingsChargeCalculationType.code) &&
+              Objects.equals(this.id, getSavingsChargeCalculationType.id) &&
+              Objects.equals(this.value, getSavingsChargeCalculationType.value);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class GetSavingsChargeCalculationType {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsChargeCalculationType {\n");
-
+    
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");

@@ -1,6 +1,6 @@
 # EntityDatatableCheckApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Mandatory Fields :  entity, status, datatableName  Non-Mandatory Fields :  produ
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.EntityDatatableCheckApi;
 
+EntityDatatableCheckApi apiService = defaultClient.createService(EntityDatatableCheckApi.class);
 
-EntityDatatableCheckApi apiInstance = new EntityDatatableCheckApi();
-PostEntityDatatableChecksTemplateRequest body = new PostEntityDatatableChecksTemplateRequest(); // PostEntityDatatableChecksTemplateRequest | body
-try {
-    PostEntityDatatableChecksTemplateResponse result = apiInstance.createEntityDatatableCheck(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntityDatatableCheckApi#createEntityDatatableCheck");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostEntityDatatableChecksTemplateResponse> call = apiService.createEntityDatatableCheck(body);
+call.enqueue(new Callback<PostEntityDatatableChecksTemplateResponse>() {
+    @Override
+    public void onResponse(Call<PostEntityDatatableChecksTemplateResponse> call, Response<PostEntityDatatableChecksTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostEntityDatatableChecksTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostEntityDatatableChecksTemplateRequest**](PostEntityDatatableChecksTemplateRequest.md)| body |
 
 ### Return type
@@ -65,27 +66,27 @@ Deletes an existing Entity-Datatable Check
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.EntityDatatableCheckApi;
 
+EntityDatatableCheckApi apiService = defaultClient.createService(EntityDatatableCheckApi.class);
 
-EntityDatatableCheckApi apiInstance = new EntityDatatableCheckApi();
-Long entityDatatableCheckId = 789L; // Long | entityDatatableCheckId
-String body = "body_example"; // String | 
-try {
-    DeleteEntityDatatableChecksTemplateResponse result = apiInstance.deleteDatatable(entityDatatableCheckId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntityDatatableCheckApi#deleteDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteEntityDatatableChecksTemplateResponse> call = apiService.deleteDatatable(entityDatatableCheckId, body);
+call.enqueue(new Callback<DeleteEntityDatatableChecksTemplateResponse>() {
+    @Override
+    public void onResponse(Call<DeleteEntityDatatableChecksTemplateResponse> call, Response<DeleteEntityDatatableChecksTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteEntityDatatableChecksTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityDatatableCheckId** | **Long**| entityDatatableCheckId |
  **body** | **String**|  | [optional]
 
@@ -112,19 +113,23 @@ This is a convenience resource useful for building maintenance user interface sc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.EntityDatatableCheckApi;
 
+EntityDatatableCheckApi apiService = defaultClient.createService(EntityDatatableCheckApi.class);
 
-EntityDatatableCheckApi apiInstance = new EntityDatatableCheckApi();
-try {
-    GetEntityDatatableChecksTemplateResponse result = apiInstance.getTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntityDatatableCheckApi#getTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetEntityDatatableChecksTemplateResponse> call = apiService.getTemplate();
+call.enqueue(new Callback<GetEntityDatatableChecksTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetEntityDatatableChecksTemplateResponse> call, Response<GetEntityDatatableChecksTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetEntityDatatableChecksTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,30 +158,27 @@ The list capability of Entity-Datatable Checks can support pagination.  OPTIONAL
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.EntityDatatableCheckApi;
 
+EntityDatatableCheckApi apiService = defaultClient.createService(EntityDatatableCheckApi.class);
 
-EntityDatatableCheckApi apiInstance = new EntityDatatableCheckApi();
-Long status = 789L; // Long | status
-String entity = "entity_example"; // String | entity
-Long productId = 789L; // Long | productId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    List<GetEntityDatatableChecksResponse> result = apiInstance.retrieveAll(status, entity, productId, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntityDatatableCheckApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetEntityDatatableChecksResponse&gt;> call = apiService.retrieveAll(status, entity, productId, offset, limit);
+call.enqueue(new Callback<List&lt;GetEntityDatatableChecksResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetEntityDatatableChecksResponse&gt;> call, Response<List&lt;GetEntityDatatableChecksResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetEntityDatatableChecksResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **status** | **Long**| status | [optional]
  **entity** | **String**| entity | [optional]
  **productId** | **Long**| productId | [optional]

@@ -1,6 +1,6 @@
 # SmsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.create(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -63,26 +64,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-Long resourceId = 789L; // Long | 
-try {
-    String result = apiInstance.delete(resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.delete(resourceId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceId** | **Long**|  |
 
 ### Return type
@@ -106,19 +108,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-try {
-    String result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -145,36 +151,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-Long campaignId = 789L; // Long | 
-Long status = 789L; // Long | 
-String fromDate = "fromDate_example"; // String | 
-String toDate = "toDate_example"; // String | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-String sqlSearch = "sqlSearch_example"; // String | 
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-String orderBy = "orderBy_example"; // String | 
-String sortOrder = "sortOrder_example"; // String | 
-try {
-    String result = apiInstance.retrieveAllSmsByStatus(campaignId, status, fromDate, toDate, locale, dateFormat, sqlSearch, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#retrieveAllSmsByStatus");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAllSmsByStatus(campaignId, status, fromDate, toDate, locale, dateFormat, sqlSearch, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **campaignId** | **Long**|  |
  **status** | **Long**|  | [optional]
  **fromDate** | **String**|  | [optional]
@@ -208,26 +205,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-Long resourceId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveOne(resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveOne(resourceId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceId** | **Long**|  |
 
 ### Return type
@@ -251,27 +249,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsApi;
 
+SmsApi apiService = defaultClient.createService(SmsApi.class);
 
-SmsApi apiInstance = new SmsApi();
-Long resourceId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.update(resourceId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.update(resourceId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceId** | **Long**|  |
  **body** | **String**|  | [optional]
 

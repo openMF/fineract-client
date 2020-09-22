@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -88,475 +88,475 @@ public class GetRecurringDepositProductsProductIdResponse {
   @SerializedName("maxDepositTermType")
   private GetRecurringDepositProductsProductIdMaxDepositTermType maxDepositTermType = null;
 
-  @SerializedName("activeChart")
-  private GetRecurringDepositProductsProductIdActiveChart activeChart = null;
+    @SerializedName("activeChart")
+    private GetRecurringDepositProductsProductIdActiveChart activeChart = null;
 
-  public GetRecurringDepositProductsProductIdResponse id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   *
-   * @return name
-   **/
-  @ApiModelProperty(example = "Recurring deposit product", value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse shortName(String shortName) {
-    this.shortName = shortName;
-    return this;
-  }
-
-  /**
-   * Get shortName
-   *
-   * @return shortName
-   **/
-  @ApiModelProperty(example = "RD01", value = "")
-  public String getShortName() {
-    return shortName;
-  }
-
-  public void setShortName(String shortName) {
-    this.shortName = shortName;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse description(String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   *
-   * @return description
-   **/
-  @ApiModelProperty(example = "Daily compounding using Daily Balance, 5% per year, 365 days in year", value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse currency(GetRecurringDepositProductsProductIdCurrency currency) {
-    this.currency = currency;
-    return this;
-  }
-
-  /**
-   * Get currency
-   *
-   * @return currency
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdCurrency getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(GetRecurringDepositProductsProductIdCurrency currency) {
-    this.currency = currency;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse interestCompoundingPeriodType(GetRecurringDepositProductsProductIdInterestCompoundingPeriodType interestCompoundingPeriodType) {
-    this.interestCompoundingPeriodType = interestCompoundingPeriodType;
-    return this;
-  }
-
-  /**
-   * Get interestCompoundingPeriodType
-   *
-   * @return interestCompoundingPeriodType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdInterestCompoundingPeriodType getInterestCompoundingPeriodType() {
-    return interestCompoundingPeriodType;
-  }
-
-  public void setInterestCompoundingPeriodType(GetRecurringDepositProductsProductIdInterestCompoundingPeriodType interestCompoundingPeriodType) {
-    this.interestCompoundingPeriodType = interestCompoundingPeriodType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse interestPostingPeriodType(GetRecurringDepositProductsInterestPostingPeriodType interestPostingPeriodType) {
-    this.interestPostingPeriodType = interestPostingPeriodType;
-    return this;
-  }
-
-  /**
-   * Get interestPostingPeriodType
-   *
-   * @return interestPostingPeriodType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsInterestPostingPeriodType getInterestPostingPeriodType() {
-    return interestPostingPeriodType;
-  }
-
-  public void setInterestPostingPeriodType(GetRecurringDepositProductsInterestPostingPeriodType interestPostingPeriodType) {
-    this.interestPostingPeriodType = interestPostingPeriodType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse interestCalculationType(GetRecurringDepositProductsInterestCalculationType interestCalculationType) {
-    this.interestCalculationType = interestCalculationType;
-    return this;
-  }
-
-  /**
-   * Get interestCalculationType
-   *
-   * @return interestCalculationType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsInterestCalculationType getInterestCalculationType() {
-    return interestCalculationType;
-  }
-
-  public void setInterestCalculationType(GetRecurringDepositProductsInterestCalculationType interestCalculationType) {
-    this.interestCalculationType = interestCalculationType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse interestCalculationDaysInYearType(GetRecurringDepositProductsInterestCalculationDaysInYearType interestCalculationDaysInYearType) {
-    this.interestCalculationDaysInYearType = interestCalculationDaysInYearType;
-    return this;
-  }
-
-  /**
-   * Get interestCalculationDaysInYearType
-   *
-   * @return interestCalculationDaysInYearType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsInterestCalculationDaysInYearType getInterestCalculationDaysInYearType() {
-    return interestCalculationDaysInYearType;
-  }
-
-  public void setInterestCalculationDaysInYearType(GetRecurringDepositProductsInterestCalculationDaysInYearType interestCalculationDaysInYearType) {
-    this.interestCalculationDaysInYearType = interestCalculationDaysInYearType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse accountingMappings(GetRecurringDepositProductsProductIdAccountingMappings accountingMappings) {
-    this.accountingMappings = accountingMappings;
-    return this;
-  }
-
-  /**
-   * Get accountingMappings
-   *
-   * @return accountingMappings
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdAccountingMappings getAccountingMappings() {
-    return accountingMappings;
-  }
-
-  public void setAccountingMappings(GetRecurringDepositProductsProductIdAccountingMappings accountingMappings) {
-    this.accountingMappings = accountingMappings;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse feeToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> feeToIncomeAccountMappings) {
-    this.feeToIncomeAccountMappings = feeToIncomeAccountMappings;
-    return this;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse addFeeToIncomeAccountMappingsItem(GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings feeToIncomeAccountMappingsItem) {
-    if (this.feeToIncomeAccountMappings == null) {
-      this.feeToIncomeAccountMappings = new ArrayList<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings>();
+    public GetRecurringDepositProductsProductIdResponse id(Integer id) {
+        this.id = id;
+        return this;
     }
-    this.feeToIncomeAccountMappings.add(feeToIncomeAccountMappingsItem);
-    return this;
-  }
 
-  /**
-   * Get feeToIncomeAccountMappings
-   *
-   * @return feeToIncomeAccountMappings
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> getFeeToIncomeAccountMappings() {
-    return feeToIncomeAccountMappings;
-  }
-
-  public void setFeeToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> feeToIncomeAccountMappings) {
-    this.feeToIncomeAccountMappings = feeToIncomeAccountMappings;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse penaltyToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> penaltyToIncomeAccountMappings) {
-    this.penaltyToIncomeAccountMappings = penaltyToIncomeAccountMappings;
-    return this;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse addPenaltyToIncomeAccountMappingsItem(GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings penaltyToIncomeAccountMappingsItem) {
-    if (this.penaltyToIncomeAccountMappings == null) {
-      this.penaltyToIncomeAccountMappings = new ArrayList<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings>();
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getId() {
+        return id;
     }
-    this.penaltyToIncomeAccountMappings.add(penaltyToIncomeAccountMappingsItem);
-    return this;
-  }
 
-  /**
-   * Get penaltyToIncomeAccountMappings
-   *
-   * @return penaltyToIncomeAccountMappings
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> getPenaltyToIncomeAccountMappings() {
-    return penaltyToIncomeAccountMappings;
-  }
-
-  public void setPenaltyToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> penaltyToIncomeAccountMappings) {
-    this.penaltyToIncomeAccountMappings = penaltyToIncomeAccountMappings;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse recurringDepositFrequency(Integer recurringDepositFrequency) {
-    this.recurringDepositFrequency = recurringDepositFrequency;
-    return this;
-  }
-
-  /**
-   * Get recurringDepositFrequency
-   *
-   * @return recurringDepositFrequency
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getRecurringDepositFrequency() {
-    return recurringDepositFrequency;
-  }
-
-  public void setRecurringDepositFrequency(Integer recurringDepositFrequency) {
-    this.recurringDepositFrequency = recurringDepositFrequency;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse recurringDepositFrequencyType(GetRecurringDepositProductsRecurringDepositFrequencyType recurringDepositFrequencyType) {
-    this.recurringDepositFrequencyType = recurringDepositFrequencyType;
-    return this;
-  }
-
-  /**
-   * Get recurringDepositFrequencyType
-   *
-   * @return recurringDepositFrequencyType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsRecurringDepositFrequencyType getRecurringDepositFrequencyType() {
-    return recurringDepositFrequencyType;
-  }
-
-  public void setRecurringDepositFrequencyType(GetRecurringDepositProductsRecurringDepositFrequencyType recurringDepositFrequencyType) {
-    this.recurringDepositFrequencyType = recurringDepositFrequencyType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse preClosurePenalApplicable(Boolean preClosurePenalApplicable) {
-    this.preClosurePenalApplicable = preClosurePenalApplicable;
-    return this;
-  }
-
-  /**
-   * Get preClosurePenalApplicable
-   *
-   * @return preClosurePenalApplicable
-   **/
-  @ApiModelProperty(example = "true", value = "")
-  public Boolean isPreClosurePenalApplicable() {
-    return preClosurePenalApplicable;
-  }
-
-  public void setPreClosurePenalApplicable(Boolean preClosurePenalApplicable) {
-    this.preClosurePenalApplicable = preClosurePenalApplicable;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse preClosurePenalInterest(Double preClosurePenalInterest) {
-    this.preClosurePenalInterest = preClosurePenalInterest;
-    return this;
-  }
-
-  /**
-   * Get preClosurePenalInterest
-   *
-   * @return preClosurePenalInterest
-   **/
-  @ApiModelProperty(example = "1.75", value = "")
-  public Double getPreClosurePenalInterest() {
-    return preClosurePenalInterest;
-  }
-
-  public void setPreClosurePenalInterest(Double preClosurePenalInterest) {
-    this.preClosurePenalInterest = preClosurePenalInterest;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse preClosurePenalInterestOnType(GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType preClosurePenalInterestOnType) {
-    this.preClosurePenalInterestOnType = preClosurePenalInterestOnType;
-    return this;
-  }
-
-  /**
-   * Get preClosurePenalInterestOnType
-   *
-   * @return preClosurePenalInterestOnType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType getPreClosurePenalInterestOnType() {
-    return preClosurePenalInterestOnType;
-  }
-
-  public void setPreClosurePenalInterestOnType(GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType preClosurePenalInterestOnType) {
-    this.preClosurePenalInterestOnType = preClosurePenalInterestOnType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse minDepositTerm(Integer minDepositTerm) {
-    this.minDepositTerm = minDepositTerm;
-    return this;
-  }
-
-  /**
-   * Get minDepositTerm
-   *
-   * @return minDepositTerm
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getMinDepositTerm() {
-    return minDepositTerm;
-  }
-
-  public void setMinDepositTerm(Integer minDepositTerm) {
-    this.minDepositTerm = minDepositTerm;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse minDepositTermType(GetRecurringDepositProductsProductIdMinDepositTermType minDepositTermType) {
-    this.minDepositTermType = minDepositTermType;
-    return this;
-  }
-
-  /**
-   * Get minDepositTermType
-   *
-   * @return minDepositTermType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdMinDepositTermType getMinDepositTermType() {
-    return minDepositTermType;
-  }
-
-  public void setMinDepositTermType(GetRecurringDepositProductsProductIdMinDepositTermType minDepositTermType) {
-    this.minDepositTermType = minDepositTermType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse maxDepositTerm(Integer maxDepositTerm) {
-    this.maxDepositTerm = maxDepositTerm;
-    return this;
-  }
-
-  /**
-   * Get maxDepositTerm
-   *
-   * @return maxDepositTerm
-   **/
-  @ApiModelProperty(example = "5", value = "")
-  public Integer getMaxDepositTerm() {
-    return maxDepositTerm;
-  }
-
-  public void setMaxDepositTerm(Integer maxDepositTerm) {
-    this.maxDepositTerm = maxDepositTerm;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse maxDepositTermType(GetRecurringDepositProductsProductIdMaxDepositTermType maxDepositTermType) {
-    this.maxDepositTermType = maxDepositTermType;
-    return this;
-  }
-
-  /**
-   * Get maxDepositTermType
-   *
-   * @return maxDepositTermType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdMaxDepositTermType getMaxDepositTermType() {
-    return maxDepositTermType;
-  }
-
-  public void setMaxDepositTermType(GetRecurringDepositProductsProductIdMaxDepositTermType maxDepositTermType) {
-    this.maxDepositTermType = maxDepositTermType;
-  }
-
-  public GetRecurringDepositProductsProductIdResponse activeChart(GetRecurringDepositProductsProductIdActiveChart activeChart) {
-    this.activeChart = activeChart;
-    return this;
-  }
-
-  /**
-   * Get activeChart
-   *
-   * @return activeChart
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdActiveChart getActiveChart() {
-    return activeChart;
-  }
-
-  public void setActiveChart(GetRecurringDepositProductsProductIdActiveChart activeChart) {
-    this.activeChart = activeChart;
-  }
-
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public void setId(Integer id) {
+        this.id = id;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public GetRecurringDepositProductsProductIdResponse name(String name) {
+        this.name = name;
+        return this;
     }
-    GetRecurringDepositProductsProductIdResponse getRecurringDepositProductsProductIdResponse = (GetRecurringDepositProductsProductIdResponse) o;
-    return Objects.equals(this.id, getRecurringDepositProductsProductIdResponse.id) &&
-            Objects.equals(this.name, getRecurringDepositProductsProductIdResponse.name) &&
-            Objects.equals(this.shortName, getRecurringDepositProductsProductIdResponse.shortName) &&
-            Objects.equals(this.description, getRecurringDepositProductsProductIdResponse.description) &&
-            Objects.equals(this.currency, getRecurringDepositProductsProductIdResponse.currency) &&
-            Objects.equals(this.interestCompoundingPeriodType, getRecurringDepositProductsProductIdResponse.interestCompoundingPeriodType) &&
-            Objects.equals(this.interestPostingPeriodType, getRecurringDepositProductsProductIdResponse.interestPostingPeriodType) &&
-            Objects.equals(this.interestCalculationType, getRecurringDepositProductsProductIdResponse.interestCalculationType) &&
-            Objects.equals(this.interestCalculationDaysInYearType, getRecurringDepositProductsProductIdResponse.interestCalculationDaysInYearType) &&
-            Objects.equals(this.accountingMappings, getRecurringDepositProductsProductIdResponse.accountingMappings) &&
-            Objects.equals(this.feeToIncomeAccountMappings, getRecurringDepositProductsProductIdResponse.feeToIncomeAccountMappings) &&
-            Objects.equals(this.penaltyToIncomeAccountMappings, getRecurringDepositProductsProductIdResponse.penaltyToIncomeAccountMappings) &&
-            Objects.equals(this.recurringDepositFrequency, getRecurringDepositProductsProductIdResponse.recurringDepositFrequency) &&
-            Objects.equals(this.recurringDepositFrequencyType, getRecurringDepositProductsProductIdResponse.recurringDepositFrequencyType) &&
-            Objects.equals(this.preClosurePenalApplicable, getRecurringDepositProductsProductIdResponse.preClosurePenalApplicable) &&
-            Objects.equals(this.preClosurePenalInterest, getRecurringDepositProductsProductIdResponse.preClosurePenalInterest) &&
-            Objects.equals(this.preClosurePenalInterestOnType, getRecurringDepositProductsProductIdResponse.preClosurePenalInterestOnType) &&
-            Objects.equals(this.minDepositTerm, getRecurringDepositProductsProductIdResponse.minDepositTerm) &&
-            Objects.equals(this.minDepositTermType, getRecurringDepositProductsProductIdResponse.minDepositTermType) &&
-            Objects.equals(this.maxDepositTerm, getRecurringDepositProductsProductIdResponse.maxDepositTerm) &&
-            Objects.equals(this.maxDepositTermType, getRecurringDepositProductsProductIdResponse.maxDepositTermType) &&
-            Objects.equals(this.activeChart, getRecurringDepositProductsProductIdResponse.activeChart);
+
+    /**
+     * Get name
+     *
+     * @return name
+     **/
+    @ApiModelProperty(example = "Recurring deposit product", value = "")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse shortName(String shortName) {
+        this.shortName = shortName;
+        return this;
+    }
+
+    /**
+     * Get shortName
+     *
+     * @return shortName
+     **/
+    @ApiModelProperty(example = "RD01", value = "")
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse description(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return description
+     **/
+    @ApiModelProperty(example = "Daily compounding using Daily Balance, 5% per year, 365 days in year", value = "")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse currency(GetRecurringDepositProductsProductIdCurrency currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return currency
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdCurrency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(GetRecurringDepositProductsProductIdCurrency currency) {
+        this.currency = currency;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse interestCompoundingPeriodType(GetRecurringDepositProductsProductIdInterestCompoundingPeriodType interestCompoundingPeriodType) {
+        this.interestCompoundingPeriodType = interestCompoundingPeriodType;
+        return this;
+    }
+
+    /**
+     * Get interestCompoundingPeriodType
+     *
+     * @return interestCompoundingPeriodType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdInterestCompoundingPeriodType getInterestCompoundingPeriodType() {
+        return interestCompoundingPeriodType;
+    }
+
+    public void setInterestCompoundingPeriodType(GetRecurringDepositProductsProductIdInterestCompoundingPeriodType interestCompoundingPeriodType) {
+        this.interestCompoundingPeriodType = interestCompoundingPeriodType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse interestPostingPeriodType(GetRecurringDepositProductsInterestPostingPeriodType interestPostingPeriodType) {
+        this.interestPostingPeriodType = interestPostingPeriodType;
+        return this;
+    }
+
+    /**
+     * Get interestPostingPeriodType
+     *
+     * @return interestPostingPeriodType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsInterestPostingPeriodType getInterestPostingPeriodType() {
+        return interestPostingPeriodType;
+    }
+
+    public void setInterestPostingPeriodType(GetRecurringDepositProductsInterestPostingPeriodType interestPostingPeriodType) {
+        this.interestPostingPeriodType = interestPostingPeriodType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse interestCalculationType(GetRecurringDepositProductsInterestCalculationType interestCalculationType) {
+        this.interestCalculationType = interestCalculationType;
+        return this;
+    }
+
+    /**
+     * Get interestCalculationType
+     *
+     * @return interestCalculationType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsInterestCalculationType getInterestCalculationType() {
+        return interestCalculationType;
+    }
+
+    public void setInterestCalculationType(GetRecurringDepositProductsInterestCalculationType interestCalculationType) {
+        this.interestCalculationType = interestCalculationType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse interestCalculationDaysInYearType(GetRecurringDepositProductsInterestCalculationDaysInYearType interestCalculationDaysInYearType) {
+        this.interestCalculationDaysInYearType = interestCalculationDaysInYearType;
+        return this;
+    }
+
+    /**
+     * Get interestCalculationDaysInYearType
+     *
+     * @return interestCalculationDaysInYearType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsInterestCalculationDaysInYearType getInterestCalculationDaysInYearType() {
+        return interestCalculationDaysInYearType;
+    }
+
+    public void setInterestCalculationDaysInYearType(GetRecurringDepositProductsInterestCalculationDaysInYearType interestCalculationDaysInYearType) {
+        this.interestCalculationDaysInYearType = interestCalculationDaysInYearType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse accountingMappings(GetRecurringDepositProductsProductIdAccountingMappings accountingMappings) {
+        this.accountingMappings = accountingMappings;
+        return this;
+    }
+
+    /**
+     * Get accountingMappings
+     *
+     * @return accountingMappings
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdAccountingMappings getAccountingMappings() {
+        return accountingMappings;
+    }
+
+    public void setAccountingMappings(GetRecurringDepositProductsProductIdAccountingMappings accountingMappings) {
+        this.accountingMappings = accountingMappings;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse feeToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> feeToIncomeAccountMappings) {
+        this.feeToIncomeAccountMappings = feeToIncomeAccountMappings;
+        return this;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse addFeeToIncomeAccountMappingsItem(GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings feeToIncomeAccountMappingsItem) {
+        if (this.feeToIncomeAccountMappings == null) {
+            this.feeToIncomeAccountMappings = new ArrayList<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings>();
+        }
+        this.feeToIncomeAccountMappings.add(feeToIncomeAccountMappingsItem);
+        return this;
+    }
+
+    /**
+     * Get feeToIncomeAccountMappings
+     *
+     * @return feeToIncomeAccountMappings
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> getFeeToIncomeAccountMappings() {
+        return feeToIncomeAccountMappings;
+    }
+
+    public void setFeeToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdFeeToIncomeAccountMappings> feeToIncomeAccountMappings) {
+        this.feeToIncomeAccountMappings = feeToIncomeAccountMappings;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse penaltyToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> penaltyToIncomeAccountMappings) {
+        this.penaltyToIncomeAccountMappings = penaltyToIncomeAccountMappings;
+        return this;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse addPenaltyToIncomeAccountMappingsItem(GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings penaltyToIncomeAccountMappingsItem) {
+        if (this.penaltyToIncomeAccountMappings == null) {
+            this.penaltyToIncomeAccountMappings = new ArrayList<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings>();
+        }
+        this.penaltyToIncomeAccountMappings.add(penaltyToIncomeAccountMappingsItem);
+        return this;
+    }
+
+    /**
+     * Get penaltyToIncomeAccountMappings
+     *
+     * @return penaltyToIncomeAccountMappings
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> getPenaltyToIncomeAccountMappings() {
+        return penaltyToIncomeAccountMappings;
+    }
+
+    public void setPenaltyToIncomeAccountMappings(List<GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings> penaltyToIncomeAccountMappings) {
+        this.penaltyToIncomeAccountMappings = penaltyToIncomeAccountMappings;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse recurringDepositFrequency(Integer recurringDepositFrequency) {
+        this.recurringDepositFrequency = recurringDepositFrequency;
+        return this;
+    }
+
+    /**
+     * Get recurringDepositFrequency
+     *
+     * @return recurringDepositFrequency
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getRecurringDepositFrequency() {
+        return recurringDepositFrequency;
+    }
+
+    public void setRecurringDepositFrequency(Integer recurringDepositFrequency) {
+        this.recurringDepositFrequency = recurringDepositFrequency;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse recurringDepositFrequencyType(GetRecurringDepositProductsRecurringDepositFrequencyType recurringDepositFrequencyType) {
+        this.recurringDepositFrequencyType = recurringDepositFrequencyType;
+        return this;
+    }
+
+    /**
+     * Get recurringDepositFrequencyType
+     *
+     * @return recurringDepositFrequencyType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsRecurringDepositFrequencyType getRecurringDepositFrequencyType() {
+        return recurringDepositFrequencyType;
+    }
+
+    public void setRecurringDepositFrequencyType(GetRecurringDepositProductsRecurringDepositFrequencyType recurringDepositFrequencyType) {
+        this.recurringDepositFrequencyType = recurringDepositFrequencyType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse preClosurePenalApplicable(Boolean preClosurePenalApplicable) {
+        this.preClosurePenalApplicable = preClosurePenalApplicable;
+        return this;
+    }
+
+    /**
+     * Get preClosurePenalApplicable
+     *
+     * @return preClosurePenalApplicable
+     **/
+    @ApiModelProperty(example = "true", value = "")
+    public Boolean isPreClosurePenalApplicable() {
+        return preClosurePenalApplicable;
+    }
+
+    public void setPreClosurePenalApplicable(Boolean preClosurePenalApplicable) {
+        this.preClosurePenalApplicable = preClosurePenalApplicable;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse preClosurePenalInterest(Double preClosurePenalInterest) {
+        this.preClosurePenalInterest = preClosurePenalInterest;
+        return this;
+    }
+
+    /**
+     * Get preClosurePenalInterest
+     *
+     * @return preClosurePenalInterest
+     **/
+    @ApiModelProperty(example = "1.75", value = "")
+    public Double getPreClosurePenalInterest() {
+        return preClosurePenalInterest;
+    }
+
+    public void setPreClosurePenalInterest(Double preClosurePenalInterest) {
+        this.preClosurePenalInterest = preClosurePenalInterest;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse preClosurePenalInterestOnType(GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType preClosurePenalInterestOnType) {
+        this.preClosurePenalInterestOnType = preClosurePenalInterestOnType;
+        return this;
+    }
+
+    /**
+     * Get preClosurePenalInterestOnType
+     *
+     * @return preClosurePenalInterestOnType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType getPreClosurePenalInterestOnType() {
+        return preClosurePenalInterestOnType;
+    }
+
+    public void setPreClosurePenalInterestOnType(GetRecurringDepositProductsProductIdPreClosurePenalInterestOnType preClosurePenalInterestOnType) {
+        this.preClosurePenalInterestOnType = preClosurePenalInterestOnType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse minDepositTerm(Integer minDepositTerm) {
+        this.minDepositTerm = minDepositTerm;
+        return this;
+    }
+
+    /**
+     * Get minDepositTerm
+     *
+     * @return minDepositTerm
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getMinDepositTerm() {
+        return minDepositTerm;
+    }
+
+    public void setMinDepositTerm(Integer minDepositTerm) {
+        this.minDepositTerm = minDepositTerm;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse minDepositTermType(GetRecurringDepositProductsProductIdMinDepositTermType minDepositTermType) {
+        this.minDepositTermType = minDepositTermType;
+        return this;
+    }
+
+    /**
+     * Get minDepositTermType
+     *
+     * @return minDepositTermType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdMinDepositTermType getMinDepositTermType() {
+        return minDepositTermType;
+    }
+
+    public void setMinDepositTermType(GetRecurringDepositProductsProductIdMinDepositTermType minDepositTermType) {
+        this.minDepositTermType = minDepositTermType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse maxDepositTerm(Integer maxDepositTerm) {
+        this.maxDepositTerm = maxDepositTerm;
+        return this;
+    }
+
+    /**
+     * Get maxDepositTerm
+     *
+     * @return maxDepositTerm
+     **/
+    @ApiModelProperty(example = "5", value = "")
+    public Integer getMaxDepositTerm() {
+        return maxDepositTerm;
+    }
+
+    public void setMaxDepositTerm(Integer maxDepositTerm) {
+        this.maxDepositTerm = maxDepositTerm;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse maxDepositTermType(GetRecurringDepositProductsProductIdMaxDepositTermType maxDepositTermType) {
+        this.maxDepositTermType = maxDepositTermType;
+        return this;
+    }
+
+    /**
+     * Get maxDepositTermType
+     *
+     * @return maxDepositTermType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdMaxDepositTermType getMaxDepositTermType() {
+        return maxDepositTermType;
+    }
+
+    public void setMaxDepositTermType(GetRecurringDepositProductsProductIdMaxDepositTermType maxDepositTermType) {
+        this.maxDepositTermType = maxDepositTermType;
+    }
+
+    public GetRecurringDepositProductsProductIdResponse activeChart(GetRecurringDepositProductsProductIdActiveChart activeChart) {
+        this.activeChart = activeChart;
+        return this;
+    }
+
+    /**
+     * Get activeChart
+     *
+     * @return activeChart
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdActiveChart getActiveChart() {
+        return activeChart;
+    }
+
+    public void setActiveChart(GetRecurringDepositProductsProductIdActiveChart activeChart) {
+        this.activeChart = activeChart;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GetRecurringDepositProductsProductIdResponse getRecurringDepositProductsProductIdResponse = (GetRecurringDepositProductsProductIdResponse) o;
+        return Objects.equals(this.id, getRecurringDepositProductsProductIdResponse.id) &&
+                Objects.equals(this.name, getRecurringDepositProductsProductIdResponse.name) &&
+                Objects.equals(this.shortName, getRecurringDepositProductsProductIdResponse.shortName) &&
+                Objects.equals(this.description, getRecurringDepositProductsProductIdResponse.description) &&
+                Objects.equals(this.currency, getRecurringDepositProductsProductIdResponse.currency) &&
+                Objects.equals(this.interestCompoundingPeriodType, getRecurringDepositProductsProductIdResponse.interestCompoundingPeriodType) &&
+                Objects.equals(this.interestPostingPeriodType, getRecurringDepositProductsProductIdResponse.interestPostingPeriodType) &&
+                Objects.equals(this.interestCalculationType, getRecurringDepositProductsProductIdResponse.interestCalculationType) &&
+                Objects.equals(this.interestCalculationDaysInYearType, getRecurringDepositProductsProductIdResponse.interestCalculationDaysInYearType) &&
+                Objects.equals(this.accountingMappings, getRecurringDepositProductsProductIdResponse.accountingMappings) &&
+                Objects.equals(this.feeToIncomeAccountMappings, getRecurringDepositProductsProductIdResponse.feeToIncomeAccountMappings) &&
+                Objects.equals(this.penaltyToIncomeAccountMappings, getRecurringDepositProductsProductIdResponse.penaltyToIncomeAccountMappings) &&
+                Objects.equals(this.recurringDepositFrequency, getRecurringDepositProductsProductIdResponse.recurringDepositFrequency) &&
+                Objects.equals(this.recurringDepositFrequencyType, getRecurringDepositProductsProductIdResponse.recurringDepositFrequencyType) &&
+                Objects.equals(this.preClosurePenalApplicable, getRecurringDepositProductsProductIdResponse.preClosurePenalApplicable) &&
+                Objects.equals(this.preClosurePenalInterest, getRecurringDepositProductsProductIdResponse.preClosurePenalInterest) &&
+                Objects.equals(this.preClosurePenalInterestOnType, getRecurringDepositProductsProductIdResponse.preClosurePenalInterestOnType) &&
+                Objects.equals(this.minDepositTerm, getRecurringDepositProductsProductIdResponse.minDepositTerm) &&
+                Objects.equals(this.minDepositTermType, getRecurringDepositProductsProductIdResponse.minDepositTermType) &&
+                Objects.equals(this.maxDepositTerm, getRecurringDepositProductsProductIdResponse.maxDepositTerm) &&
+                Objects.equals(this.maxDepositTermType, getRecurringDepositProductsProductIdResponse.maxDepositTermType) &&
+              Objects.equals(this.activeChart, getRecurringDepositProductsProductIdResponse.activeChart);
   }
 
   @Override
@@ -569,7 +569,7 @@ public class GetRecurringDepositProductsProductIdResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositProductsProductIdResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    shortName: ").append(toIndentedString(shortName)).append("\n");

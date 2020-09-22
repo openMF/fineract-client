@@ -25,7 +25,6 @@ public class MixMapping_ApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

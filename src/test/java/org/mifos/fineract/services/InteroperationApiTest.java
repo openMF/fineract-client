@@ -30,7 +30,6 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Allow Interoperation Transaction Request
      */
@@ -41,9 +40,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Allow Interoperation Identifier registration
+     *
+     *
      */
     @Test
     public void deleteAccountIdentifierTest() {
@@ -54,9 +54,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Allow Interoperation Identifier registration
+     *
+     *
      */
     @Test
     public void deleteAccountIdentifier_0Test() {
@@ -68,9 +69,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Account by secondary identifier
+     *
+     *
      */
     @Test
     public void getAccountByIdentifierTest() {
@@ -80,9 +82,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Account by secondary identifier
+     *
+     *
      */
     @Test
     public void getAccountByIdentifier_0Test() {
@@ -93,9 +96,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Account details
+     *
+     *
      */
     @Test
     public void getAccountDetailsTest() {
@@ -104,9 +108,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation secondary identifiers by Account Id
+     *
+     *
      */
     @Test
     public void getAccountIdentifiersTest() {
@@ -115,9 +120,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query transactions by Account Id
+     *
+     *
      */
     @Test
     public void getAccountTransactionsTest() {
@@ -130,9 +136,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Quote
+     *
+     *
      */
     @Test
     public void getQuoteTest() {
@@ -142,9 +149,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Transaction Request
+     *
+     *
      */
     @Test
     public void getTransactionRequestTest() {
@@ -154,9 +162,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Transfer
+     *
+     *
      */
     @Test
     public void getTransferTest() {
@@ -166,9 +175,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Query Interoperation Health Request
+     *
+     *
      */
     @Test
     public void healthTest() {
@@ -176,9 +186,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Prepare Interoperation Transfer
+     *
+     *
      */
     @Test
     public void performTransferTest() {
@@ -188,9 +199,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Interoperation Identifier registration
+     *
+     *
      */
     @Test
     public void registerAccountIdentifierTest() {
@@ -201,9 +213,10 @@ public class InteroperationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Interoperation Identifier registration
+     *
+     *
      */
     @Test
     public void registerAccountIdentifier_0Test() {

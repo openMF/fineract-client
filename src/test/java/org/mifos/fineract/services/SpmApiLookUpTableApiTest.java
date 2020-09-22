@@ -19,7 +19,7 @@ public class SpmApiLookUpTableApiTest {
 
     /**
      * Create a Lookup Table entry
-     * <p>
+     *
      * Add a new entry to a survey.  Mandatory Fields key, score, validFrom, validTo
      */
     @Test
@@ -30,10 +30,9 @@ public class SpmApiLookUpTableApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all Lookup Table entries
-     * <p>
+     *
      * List all Lookup Table entries for a survey.
      */
     @Test
@@ -43,10 +42,9 @@ public class SpmApiLookUpTableApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Lookup Table entry
-     * <p>
+     *
      * Retrieve a Lookup Table entry for a survey.
      */
     @Test

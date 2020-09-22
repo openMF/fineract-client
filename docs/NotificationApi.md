@@ -1,6 +1,6 @@
 # NotificationApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,30 +16,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotificationApi;
 
+NotificationApi apiService = defaultClient.createService(NotificationApi.class);
 
-NotificationApi apiInstance = new NotificationApi();
-String orderBy = "orderBy_example"; // String | 
-Integer limit = 56; // Integer | 
-Integer offset = 56; // Integer | 
-String sortOrder = "sortOrder_example"; // String | 
-Boolean isRead = true; // Boolean | 
-try {
-    String result = apiInstance.getAllNotifications(orderBy, limit, offset, sortOrder, isRead);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotificationApi#getAllNotifications");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getAllNotifications(orderBy, limit, offset, sortOrder, isRead);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **orderBy** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **offset** | **Integer**|  | [optional]
@@ -67,18 +64,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotificationApi;
 
+NotificationApi apiService = defaultClient.createService(NotificationApi.class);
 
-NotificationApi apiInstance = new NotificationApi();
-try {
-    apiInstance.update();
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotificationApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.update();
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

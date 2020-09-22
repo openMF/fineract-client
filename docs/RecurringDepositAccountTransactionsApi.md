@@ -1,6 +1,6 @@
 # RecurringDepositAccountTransactionsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,29 +20,27 @@ Adjust Transaction:  This command modifies the given transaction.  Undo transact
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositAccountTransactionsApi;
 
+RecurringDepositAccountTransactionsApi apiService = defaultClient.createService(RecurringDepositAccountTransactionsApi.class);
 
-RecurringDepositAccountTransactionsApi apiInstance = new RecurringDepositAccountTransactionsApi();
-Long recurringDepositAccountId = 789L; // Long | recurringDepositAccountId
-Long transactionId = 789L; // Long | transactionId
-PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest body = new PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest(); // PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest | body
-String command = "command_example"; // String | command
-try {
-    PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse result = apiInstance.handleTransactionCommands(recurringDepositAccountId, transactionId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositAccountTransactionsApi#handleTransactionCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call = apiService.handleTransactionCommands(recurringDepositAccountId, transactionId, body, command);
+call.enqueue(new Callback<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call, Response<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **recurringDepositAccountId** | **Long**| recurringDepositAccountId |
  **transactionId** | **Long**| transactionId |
  **body** | [**PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest**](PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest.md)| body |
@@ -71,27 +69,27 @@ Retrieves Recurring Deposit Account Transaction  Example Requests:  recurringdep
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositAccountTransactionsApi;
 
+RecurringDepositAccountTransactionsApi apiService = defaultClient.createService(RecurringDepositAccountTransactionsApi.class);
 
-RecurringDepositAccountTransactionsApi apiInstance = new RecurringDepositAccountTransactionsApi();
-Long recurringDepositAccountId = 789L; // Long | recurringDepositAccountId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse result = apiInstance.retrieveOne(recurringDepositAccountId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositAccountTransactionsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call = apiService.retrieveOne(recurringDepositAccountId, transactionId);
+call.enqueue(new Callback<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call, Response<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **recurringDepositAccountId** | **Long**| recurringDepositAccountId |
  **transactionId** | **Long**| transactionId |
 
@@ -118,27 +116,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositAccountTransactionsApi;
 
+RecurringDepositAccountTransactionsApi apiService = defaultClient.createService(RecurringDepositAccountTransactionsApi.class);
 
-RecurringDepositAccountTransactionsApi apiInstance = new RecurringDepositAccountTransactionsApi();
-Long recurringDepositAccountId = 789L; // Long | recurringDepositAccountId
-String command = "command_example"; // String | command
-try {
-    GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse result = apiInstance.retrieveTemplate(recurringDepositAccountId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositAccountTransactionsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> call = apiService.retrieveTemplate(recurringDepositAccountId, command);
+call.enqueue(new Callback<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> call, Response<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **recurringDepositAccountId** | **Long**| recurringDepositAccountId |
  **command** | **String**| command | [optional]
 
@@ -165,28 +163,27 @@ Deposit Transaction:  Used for a deposit transaction  Withdrawal Transaction:  U
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositAccountTransactionsApi;
 
+RecurringDepositAccountTransactionsApi apiService = defaultClient.createService(RecurringDepositAccountTransactionsApi.class);
 
-RecurringDepositAccountTransactionsApi apiInstance = new RecurringDepositAccountTransactionsApi();
-Long recurringDepositAccountId = 789L; // Long | recurringDepositAccountId
-PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest body = new PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest(); // PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest | body
-String command = "command_example"; // String | command
-try {
-    PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse result = apiInstance.transaction(recurringDepositAccountId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositAccountTransactionsApi#transaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> call = apiService.transaction(recurringDepositAccountId, body, command);
+call.enqueue(new Callback<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse>() {
+    @Override
+    public void onResponse(Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> call, Response<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **recurringDepositAccountId** | **Long**| recurringDepositAccountId |
  **body** | [**PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest**](PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest.md)| body |
  **command** | **String**| command | [optional]

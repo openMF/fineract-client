@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -42,123 +42,123 @@ public class GetSavingsProductsAccountingMappingOptions {
     return this;
   }
 
-  public GetSavingsProductsAccountingMappingOptions addLiabilityAccountOptionsItem(GetSavingsProductsLiabilityAccountOptions liabilityAccountOptionsItem) {
-    if (this.liabilityAccountOptions == null) {
-      this.liabilityAccountOptions = new ArrayList<GetSavingsProductsLiabilityAccountOptions>();
+    public GetSavingsProductsAccountingMappingOptions addLiabilityAccountOptionsItem(GetSavingsProductsLiabilityAccountOptions liabilityAccountOptionsItem) {
+        if (this.liabilityAccountOptions == null) {
+            this.liabilityAccountOptions = new ArrayList<GetSavingsProductsLiabilityAccountOptions>();
+        }
+        this.liabilityAccountOptions.add(liabilityAccountOptionsItem);
+        return this;
     }
-    this.liabilityAccountOptions.add(liabilityAccountOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get liabilityAccountOptions
-   *
-   * @return liabilityAccountOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetSavingsProductsLiabilityAccountOptions> getLiabilityAccountOptions() {
-    return liabilityAccountOptions;
-  }
+    /**
+     * Get liabilityAccountOptions
+     *
+     * @return liabilityAccountOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetSavingsProductsLiabilityAccountOptions> getLiabilityAccountOptions() {
+        return liabilityAccountOptions;
+    }
 
-  public void setLiabilityAccountOptions(List<GetSavingsProductsLiabilityAccountOptions> liabilityAccountOptions) {
-    this.liabilityAccountOptions = liabilityAccountOptions;
-  }
+    public void setLiabilityAccountOptions(List<GetSavingsProductsLiabilityAccountOptions> liabilityAccountOptions) {
+        this.liabilityAccountOptions = liabilityAccountOptions;
+    }
 
-  public GetSavingsProductsAccountingMappingOptions assetAccountOptions(List<GetSavingsProductsAssetAccountOptions> assetAccountOptions) {
+    public GetSavingsProductsAccountingMappingOptions assetAccountOptions(List<GetSavingsProductsAssetAccountOptions> assetAccountOptions) {
     this.assetAccountOptions = assetAccountOptions;
     return this;
-  }
-
-  public GetSavingsProductsAccountingMappingOptions addAssetAccountOptionsItem(GetSavingsProductsAssetAccountOptions assetAccountOptionsItem) {
-    if (this.assetAccountOptions == null) {
-      this.assetAccountOptions = new ArrayList<GetSavingsProductsAssetAccountOptions>();
     }
-    this.assetAccountOptions.add(assetAccountOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get assetAccountOptions
-   *
-   * @return assetAccountOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetSavingsProductsAssetAccountOptions> getAssetAccountOptions() {
-    return assetAccountOptions;
-  }
+    public GetSavingsProductsAccountingMappingOptions addAssetAccountOptionsItem(GetSavingsProductsAssetAccountOptions assetAccountOptionsItem) {
+        if (this.assetAccountOptions == null) {
+            this.assetAccountOptions = new ArrayList<GetSavingsProductsAssetAccountOptions>();
+        }
+        this.assetAccountOptions.add(assetAccountOptionsItem);
+        return this;
+    }
 
-  public void setAssetAccountOptions(List<GetSavingsProductsAssetAccountOptions> assetAccountOptions) {
-    this.assetAccountOptions = assetAccountOptions;
-  }
+    /**
+     * Get assetAccountOptions
+     *
+     * @return assetAccountOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetSavingsProductsAssetAccountOptions> getAssetAccountOptions() {
+        return assetAccountOptions;
+    }
 
-  public GetSavingsProductsAccountingMappingOptions expenseAccountOptions(List<GetSavingsProductsExpenseAccountOptions> expenseAccountOptions) {
+    public void setAssetAccountOptions(List<GetSavingsProductsAssetAccountOptions> assetAccountOptions) {
+        this.assetAccountOptions = assetAccountOptions;
+    }
+
+    public GetSavingsProductsAccountingMappingOptions expenseAccountOptions(List<GetSavingsProductsExpenseAccountOptions> expenseAccountOptions) {
     this.expenseAccountOptions = expenseAccountOptions;
     return this;
-  }
-
-  public GetSavingsProductsAccountingMappingOptions addExpenseAccountOptionsItem(GetSavingsProductsExpenseAccountOptions expenseAccountOptionsItem) {
-    if (this.expenseAccountOptions == null) {
-      this.expenseAccountOptions = new ArrayList<GetSavingsProductsExpenseAccountOptions>();
     }
-    this.expenseAccountOptions.add(expenseAccountOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get expenseAccountOptions
-   *
-   * @return expenseAccountOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetSavingsProductsExpenseAccountOptions> getExpenseAccountOptions() {
-    return expenseAccountOptions;
-  }
-
-  public void setExpenseAccountOptions(List<GetSavingsProductsExpenseAccountOptions> expenseAccountOptions) {
-    this.expenseAccountOptions = expenseAccountOptions;
-  }
-
-  public GetSavingsProductsAccountingMappingOptions incomeAccountOptions(List<GetSavingsProductsIncomeAccountOptions> incomeAccountOptions) {
-    this.incomeAccountOptions = incomeAccountOptions;
-    return this;
-  }
-
-  public GetSavingsProductsAccountingMappingOptions addIncomeAccountOptionsItem(GetSavingsProductsIncomeAccountOptions incomeAccountOptionsItem) {
-    if (this.incomeAccountOptions == null) {
-      this.incomeAccountOptions = new ArrayList<GetSavingsProductsIncomeAccountOptions>();
+    public GetSavingsProductsAccountingMappingOptions addExpenseAccountOptionsItem(GetSavingsProductsExpenseAccountOptions expenseAccountOptionsItem) {
+        if (this.expenseAccountOptions == null) {
+            this.expenseAccountOptions = new ArrayList<GetSavingsProductsExpenseAccountOptions>();
+        }
+        this.expenseAccountOptions.add(expenseAccountOptionsItem);
+        return this;
     }
-    this.incomeAccountOptions.add(incomeAccountOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get incomeAccountOptions
-   *
-   * @return incomeAccountOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetSavingsProductsIncomeAccountOptions> getIncomeAccountOptions() {
-    return incomeAccountOptions;
-  }
+    /**
+     * Get expenseAccountOptions
+     *
+     * @return expenseAccountOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetSavingsProductsExpenseAccountOptions> getExpenseAccountOptions() {
+        return expenseAccountOptions;
+    }
 
-  public void setIncomeAccountOptions(List<GetSavingsProductsIncomeAccountOptions> incomeAccountOptions) {
+    public void setExpenseAccountOptions(List<GetSavingsProductsExpenseAccountOptions> expenseAccountOptions) {
+        this.expenseAccountOptions = expenseAccountOptions;
+    }
+
+    public GetSavingsProductsAccountingMappingOptions incomeAccountOptions(List<GetSavingsProductsIncomeAccountOptions> incomeAccountOptions) {
     this.incomeAccountOptions = incomeAccountOptions;
+        return this;
+    }
+
+    public GetSavingsProductsAccountingMappingOptions addIncomeAccountOptionsItem(GetSavingsProductsIncomeAccountOptions incomeAccountOptionsItem) {
+        if (this.incomeAccountOptions == null) {
+            this.incomeAccountOptions = new ArrayList<GetSavingsProductsIncomeAccountOptions>();
+        }
+        this.incomeAccountOptions.add(incomeAccountOptionsItem);
+        return this;
+    }
+
+    /**
+     * Get incomeAccountOptions
+     *
+     * @return incomeAccountOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetSavingsProductsIncomeAccountOptions> getIncomeAccountOptions() {
+        return incomeAccountOptions;
+    }
+
+    public void setIncomeAccountOptions(List<GetSavingsProductsIncomeAccountOptions> incomeAccountOptions) {
+        this.incomeAccountOptions = incomeAccountOptions;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsProductsAccountingMappingOptions getSavingsProductsAccountingMappingOptions = (GetSavingsProductsAccountingMappingOptions) o;
-    return Objects.equals(this.liabilityAccountOptions, getSavingsProductsAccountingMappingOptions.liabilityAccountOptions) &&
-            Objects.equals(this.assetAccountOptions, getSavingsProductsAccountingMappingOptions.assetAccountOptions) &&
-            Objects.equals(this.expenseAccountOptions, getSavingsProductsAccountingMappingOptions.expenseAccountOptions) &&
-            Objects.equals(this.incomeAccountOptions, getSavingsProductsAccountingMappingOptions.incomeAccountOptions);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsProductsAccountingMappingOptions getSavingsProductsAccountingMappingOptions = (GetSavingsProductsAccountingMappingOptions) o;
+      return Objects.equals(this.liabilityAccountOptions, getSavingsProductsAccountingMappingOptions.liabilityAccountOptions) &&
+              Objects.equals(this.assetAccountOptions, getSavingsProductsAccountingMappingOptions.assetAccountOptions) &&
+              Objects.equals(this.expenseAccountOptions, getSavingsProductsAccountingMappingOptions.expenseAccountOptions) &&
+              Objects.equals(this.incomeAccountOptions, getSavingsProductsAccountingMappingOptions.incomeAccountOptions);
   }
 
   @Override
@@ -171,7 +171,7 @@ public class GetSavingsProductsAccountingMappingOptions {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsProductsAccountingMappingOptions {\n");
-
+    
     sb.append("    liabilityAccountOptions: ").append(toIndentedString(liabilityAccountOptions)).append("\n");
     sb.append("    assetAccountOptions: ").append(toIndentedString(assetAccountOptions)).append("\n");
     sb.append("    expenseAccountOptions: ").append(toIndentedString(expenseAccountOptions)).append("\n");

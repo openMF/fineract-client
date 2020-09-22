@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.PostAuthenticationResponse;
-import retrofit2.Call;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface AuthenticationHttpBasicApi {
     /**
@@ -11,10 +11,10 @@ public interface AuthenticationHttpBasicApi {
      *
      * @param username username (optional)
      * @param password password (optional)
-     * @return Call&lt;PostAuthenticationResponse&gt;
+     * @return Observable&lt;PostAuthenticationResponse&gt;
      */
     @POST("authentication")
-    Call<PostAuthenticationResponse> authenticate(
+    Observable<PostAuthenticationResponse> authenticate(
             @retrofit2.http.Query("username") String username, @retrofit2.http.Query("password") String password
     );
 

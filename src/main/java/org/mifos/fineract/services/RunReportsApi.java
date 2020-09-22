@@ -1,9 +1,9 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.GetReportNameResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import rx.Observable;
 
 public interface RunReportsApi {
     /**
@@ -12,13 +12,13 @@ public interface RunReportsApi {
      *
      * @param reportName              reportName (required)
      * @param isSelfServiceUserReport isSelfServiceUserReport (optional, default to false)
-     * @return Call&lt;GetReportNameResponse&gt;
+     * @return Observable&lt;GetReportNameResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("runreports/{reportName}")
-    Call<GetReportNameResponse> runReport(
+    Observable<GetReportNameResponse> runReport(
             @retrofit2.http.Path("reportName") String reportName, @retrofit2.http.Query("isSelfServiceUserReport") Boolean isSelfServiceUserReport
     );
 

@@ -2,9 +2,9 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.PostLoansLoanIdScheduleRequest;
 import org.mifos.fineract.models.PostLoansLoanIdScheduleResponse;
-import retrofit2.Call;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface LoanReschedulingApi {
     /**
@@ -14,13 +14,13 @@ public interface LoanReschedulingApi {
      * @param loanId  loanId (required)
      * @param body    body (required)
      * @param command command (optional)
-     * @return Call&lt;PostLoansLoanIdScheduleResponse&gt;
+     * @return Observable&lt;PostLoansLoanIdScheduleResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("loans/{loanId}/schedule")
-    Call<PostLoansLoanIdScheduleResponse> calculateLoanScheduleOrSubmitVariableSchedule(
+    Observable<PostLoansLoanIdScheduleResponse> calculateLoanScheduleOrSubmitVariableSchedule(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostLoansLoanIdScheduleRequest body, @retrofit2.http.Query("command") String command
     );
 

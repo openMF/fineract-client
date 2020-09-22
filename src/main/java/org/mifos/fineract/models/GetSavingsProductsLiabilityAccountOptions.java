@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -47,199 +47,199 @@ public class GetSavingsProductsLiabilityAccountOptions {
   @SerializedName("nameDecorated")
   private String nameDecorated = null;
 
-  @SerializedName("tagId")
-  private GetSavingsProductsLiabilityTagId tagId = null;
+    @SerializedName("tagId")
+    private GetSavingsProductsLiabilityTagId tagId = null;
 
-  public GetSavingsProductsLiabilityAccountOptions id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "15", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   *
-   * @return name
-   **/
-  @ApiModelProperty(example = "Savings Control", value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions glCode(Integer glCode) {
-    this.glCode = glCode;
-    return this;
-  }
-
-  /**
-   * Get glCode
-   *
-   * @return glCode
-   **/
-  @ApiModelProperty(example = "50001", value = "")
-  public Integer getGlCode() {
-    return glCode;
-  }
-
-  public void setGlCode(Integer glCode) {
-    this.glCode = glCode;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions disabled(Boolean disabled) {
-    this.disabled = disabled;
-    return this;
-  }
-
-  /**
-   * Get disabled
-   *
-   * @return disabled
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isDisabled() {
-    return disabled;
-  }
-
-  public void setDisabled(Boolean disabled) {
-    this.disabled = disabled;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions manualEntriesAllowed(Boolean manualEntriesAllowed) {
-    this.manualEntriesAllowed = manualEntriesAllowed;
-    return this;
-  }
-
-  /**
-   * Get manualEntriesAllowed
-   *
-   * @return manualEntriesAllowed
-   **/
-  @ApiModelProperty(example = "true", value = "")
-  public Boolean isManualEntriesAllowed() {
-    return manualEntriesAllowed;
-  }
-
-  public void setManualEntriesAllowed(Boolean manualEntriesAllowed) {
-    this.manualEntriesAllowed = manualEntriesAllowed;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions type(GetSavingsProductsLiabilityType type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   *
-   * @return type
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsLiabilityType getType() {
-    return type;
-  }
-
-  public void setType(GetSavingsProductsLiabilityType type) {
-    this.type = type;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions usage(GetSavingsProductsLiabilityUsage usage) {
-    this.usage = usage;
-    return this;
-  }
-
-  /**
-   * Get usage
-   *
-   * @return usage
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsLiabilityUsage getUsage() {
-    return usage;
-  }
-
-  public void setUsage(GetSavingsProductsLiabilityUsage usage) {
-    this.usage = usage;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions nameDecorated(String nameDecorated) {
-    this.nameDecorated = nameDecorated;
-    return this;
-  }
-
-  /**
-   * Get nameDecorated
-   *
-   * @return nameDecorated
-   **/
-  @ApiModelProperty(example = "Savings Control", value = "")
-  public String getNameDecorated() {
-    return nameDecorated;
-  }
-
-  public void setNameDecorated(String nameDecorated) {
-    this.nameDecorated = nameDecorated;
-  }
-
-  public GetSavingsProductsLiabilityAccountOptions tagId(GetSavingsProductsLiabilityTagId tagId) {
-    this.tagId = tagId;
-    return this;
-  }
-
-  /**
-   * Get tagId
-   *
-   * @return tagId
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsLiabilityTagId getTagId() {
-    return tagId;
-  }
-
-  public void setTagId(GetSavingsProductsLiabilityTagId tagId) {
-    this.tagId = tagId;
-  }
-
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public GetSavingsProductsLiabilityAccountOptions id(Integer id) {
+        this.id = id;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "15", value = "")
+    public Integer getId() {
+        return id;
     }
-    GetSavingsProductsLiabilityAccountOptions getSavingsProductsLiabilityAccountOptions = (GetSavingsProductsLiabilityAccountOptions) o;
-    return Objects.equals(this.id, getSavingsProductsLiabilityAccountOptions.id) &&
-            Objects.equals(this.name, getSavingsProductsLiabilityAccountOptions.name) &&
-            Objects.equals(this.glCode, getSavingsProductsLiabilityAccountOptions.glCode) &&
-            Objects.equals(this.disabled, getSavingsProductsLiabilityAccountOptions.disabled) &&
-            Objects.equals(this.manualEntriesAllowed, getSavingsProductsLiabilityAccountOptions.manualEntriesAllowed) &&
-            Objects.equals(this.type, getSavingsProductsLiabilityAccountOptions.type) &&
-            Objects.equals(this.usage, getSavingsProductsLiabilityAccountOptions.usage) &&
-            Objects.equals(this.nameDecorated, getSavingsProductsLiabilityAccountOptions.nameDecorated) &&
-            Objects.equals(this.tagId, getSavingsProductsLiabilityAccountOptions.tagId);
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return name
+     **/
+    @ApiModelProperty(example = "Savings Control", value = "")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions glCode(Integer glCode) {
+        this.glCode = glCode;
+        return this;
+    }
+
+    /**
+     * Get glCode
+     *
+     * @return glCode
+     **/
+    @ApiModelProperty(example = "50001", value = "")
+    public Integer getGlCode() {
+        return glCode;
+    }
+
+    public void setGlCode(Integer glCode) {
+        this.glCode = glCode;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions disabled(Boolean disabled) {
+        this.disabled = disabled;
+        return this;
+    }
+
+    /**
+     * Get disabled
+     *
+     * @return disabled
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(Boolean disabled) {
+        this.disabled = disabled;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions manualEntriesAllowed(Boolean manualEntriesAllowed) {
+        this.manualEntriesAllowed = manualEntriesAllowed;
+        return this;
+    }
+
+    /**
+     * Get manualEntriesAllowed
+     *
+     * @return manualEntriesAllowed
+     **/
+    @ApiModelProperty(example = "true", value = "")
+    public Boolean isManualEntriesAllowed() {
+        return manualEntriesAllowed;
+    }
+
+    public void setManualEntriesAllowed(Boolean manualEntriesAllowed) {
+        this.manualEntriesAllowed = manualEntriesAllowed;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions type(GetSavingsProductsLiabilityType type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return type
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsLiabilityType getType() {
+        return type;
+    }
+
+    public void setType(GetSavingsProductsLiabilityType type) {
+        this.type = type;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions usage(GetSavingsProductsLiabilityUsage usage) {
+        this.usage = usage;
+        return this;
+    }
+
+    /**
+     * Get usage
+     *
+     * @return usage
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsLiabilityUsage getUsage() {
+        return usage;
+    }
+
+    public void setUsage(GetSavingsProductsLiabilityUsage usage) {
+        this.usage = usage;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions nameDecorated(String nameDecorated) {
+        this.nameDecorated = nameDecorated;
+        return this;
+    }
+
+    /**
+     * Get nameDecorated
+     *
+     * @return nameDecorated
+     **/
+    @ApiModelProperty(example = "Savings Control", value = "")
+    public String getNameDecorated() {
+        return nameDecorated;
+    }
+
+    public void setNameDecorated(String nameDecorated) {
+        this.nameDecorated = nameDecorated;
+    }
+
+    public GetSavingsProductsLiabilityAccountOptions tagId(GetSavingsProductsLiabilityTagId tagId) {
+        this.tagId = tagId;
+        return this;
+    }
+
+    /**
+     * Get tagId
+     *
+     * @return tagId
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsLiabilityTagId getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(GetSavingsProductsLiabilityTagId tagId) {
+        this.tagId = tagId;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GetSavingsProductsLiabilityAccountOptions getSavingsProductsLiabilityAccountOptions = (GetSavingsProductsLiabilityAccountOptions) o;
+        return Objects.equals(this.id, getSavingsProductsLiabilityAccountOptions.id) &&
+                Objects.equals(this.name, getSavingsProductsLiabilityAccountOptions.name) &&
+                Objects.equals(this.glCode, getSavingsProductsLiabilityAccountOptions.glCode) &&
+                Objects.equals(this.disabled, getSavingsProductsLiabilityAccountOptions.disabled) &&
+                Objects.equals(this.manualEntriesAllowed, getSavingsProductsLiabilityAccountOptions.manualEntriesAllowed) &&
+                Objects.equals(this.type, getSavingsProductsLiabilityAccountOptions.type) &&
+                Objects.equals(this.usage, getSavingsProductsLiabilityAccountOptions.usage) &&
+                Objects.equals(this.nameDecorated, getSavingsProductsLiabilityAccountOptions.nameDecorated) &&
+                Objects.equals(this.tagId, getSavingsProductsLiabilityAccountOptions.tagId);
   }
 
   @Override
@@ -252,7 +252,7 @@ public class GetSavingsProductsLiabilityAccountOptions {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsProductsLiabilityAccountOptions {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    glCode: ").append(toIndentedString(glCode)).append("\n");

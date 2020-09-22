@@ -20,7 +20,7 @@ public class UserGeneratedDocumentsApiTest {
 
     /**
      * Add a UGD
-     * <p>
+     *
      * Adds a new UGD.  Mandatory Fields name    Example Requests:  templates/1
      */
     @Test
@@ -52,8 +52,9 @@ public class UserGeneratedDocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
+     *
+     *
      *
      */
     @Test
@@ -64,10 +65,9 @@ public class UserGeneratedDocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve all UGDs
-     * <p>
+     *
      * Example Requests:  templates  It is also possible to get specific UGDs by entity and type:  templates?type&#x3D;0&amp;entity&#x3D;0 [Entity: Id]      client: 0, loan: 1  [Type: Id]    Document: 0, E-Mail (not yet): 1,  SMS: 2
      */
     @Test
@@ -78,10 +78,9 @@ public class UserGeneratedDocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a UGD
-     * <p>
+     *
      * Example Requests:  templates/1
      */
     @Test
@@ -91,9 +90,10 @@ public class UserGeneratedDocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a UGD
+     *
+     *
      */
     @Test
     public void saveTemplateTest() {
@@ -103,10 +103,9 @@ public class UserGeneratedDocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve UGD Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for UGDs. The UGD data returned consists of any or all of:  ARGUMENTS name String entity String type String text String optional mappers Mapper optional Example Request:  templates/template
      */
     @Test

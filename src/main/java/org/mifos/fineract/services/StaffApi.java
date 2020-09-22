@@ -2,11 +2,11 @@ package org.mifos.fineract.services;
 
 import okhttp3.MultipartBody;
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 public interface StaffApi {
     /**
@@ -14,23 +14,23 @@ public interface StaffApi {
      * Creates a staff member.  Mandatory Fields:  officeId, firstname, lastname  Optional Fields:  isLoanOfficer, isActive
      *
      * @param body body (required)
-     * @return Call&lt;PostStaffResponse&gt;
+     * @return Observable&lt;PostStaffResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("staff")
-    Call<PostStaffResponse> createStaff(
+    Observable<PostStaffResponse> createStaff(
             @retrofit2.http.Body PostStaffRequest body
     );
 
     /**
      * @param officeId   (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @GET("staff/downloadtemplate")
-    Call<Void> getStaffTemplate(
+    Observable<Void> getStaffTemplate(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
@@ -38,11 +38,11 @@ public interface StaffApi {
      * @param file       (optional)
      * @param locale     (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("staff/uploadtemplate")
-    Call<String> postStaffTemplate(
+    Observable<String> postStaffTemplate(
             @retrofit2.http.Part MultipartBody.Part file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
     );
 
@@ -51,13 +51,13 @@ public interface StaffApi {
      * Returns the details of a Staff Member.  Example Requests:  staff/1
      *
      * @param staffId staffId (required)
-     * @return Call&lt;GetStaffResponse&gt;
+     * @return Observable&lt;GetStaffResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("staff/{staffId}")
-    Call<GetStaffResponse> retreiveStaff(
+    Observable<GetStaffResponse> retreiveStaff(
             @retrofit2.http.Path("staffId") Long staffId
     );
 
@@ -70,13 +70,13 @@ public interface StaffApi {
      * @param staffInOfficeHierarchy staffInOfficeHierarchy (optional, default to false)
      * @param loanOfficersOnly       loanOfficersOnly (optional, default to false)
      * @param status                 status (optional, default to active)
-     * @return Call&lt;GetStaffResponse&gt;
+     * @return Observable&lt;GetStaffResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("staff")
-    Call<GetStaffResponse> retrieveStaff(
+    Observable<GetStaffResponse> retrieveStaff(
             @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffInOfficeHierarchy") Boolean staffInOfficeHierarchy, @retrofit2.http.Query("loanOfficersOnly") Boolean loanOfficersOnly, @retrofit2.http.Query("status") String status
     );
 
@@ -86,13 +86,13 @@ public interface StaffApi {
      *
      * @param staffId staffId (required)
      * @param body    body (required)
-     * @return Call&lt;PutStaffResponse&gt;
+     * @return Observable&lt;PutStaffResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("staff/{staffId}")
-    Call<PutStaffResponse> updateStaff(
+    Observable<PutStaffResponse> updateStaff(
             @retrofit2.http.Path("staffId") Long staffId, @retrofit2.http.Body PutStaffRequest body
     );
 

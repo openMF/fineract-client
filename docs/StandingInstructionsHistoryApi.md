@@ -1,6 +1,6 @@
 # StandingInstructionsHistoryApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,40 +17,27 @@ The list capability of history can support pagination and sorting   Example Requ
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsHistoryApi;
 
+StandingInstructionsHistoryApi apiService = defaultClient.createService(StandingInstructionsHistoryApi.class);
 
-StandingInstructionsHistoryApi apiInstance = new StandingInstructionsHistoryApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-String externalId = "externalId_example"; // String | externalId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-Integer transferType = 56; // Integer | transferType
-String clientName = "clientName_example"; // String | clientName
-Long clientId = 789L; // Long | clientId
-Long fromAccountId = 789L; // Long | fromAccountId
-Integer fromAccountType = 56; // Integer | fromAccountType
-String locale = "locale_example"; // String | locale
-String dateFormat = "dateFormat_example"; // String | dateFormat
-String fromDate = "fromDate_example"; // String | fromDate
-String toDate = "toDate_example"; // String | toDate
-try {
-    GetStandingInstructionRunHistoryResponse result = apiInstance.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType, locale, dateFormat, fromDate, toDate);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsHistoryApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStandingInstructionRunHistoryResponse> call = apiService.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType, locale, dateFormat, fromDate, toDate);
+call.enqueue(new Callback<GetStandingInstructionRunHistoryResponse>() {
+    @Override
+    public void onResponse(Call<GetStandingInstructionRunHistoryResponse> call, Response<GetStandingInstructionRunHistoryResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStandingInstructionRunHistoryResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **externalId** | **String**| externalId | [optional]
  **offset** | **Integer**| offset | [optional]

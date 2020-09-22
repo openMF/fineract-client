@@ -20,7 +20,7 @@ public class TaxComponentsApiTest {
 
     /**
      * Create a new Tax Component
-     * <p>
+     *
      * Creates a new Tax Component  Mandatory Fields: name, percentage  Optional Fields: debitAccountType, debitAcountId, creditAccountType, creditAcountId, startDate
      */
     @Test
@@ -30,10 +30,9 @@ public class TaxComponentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Tax Components
-     * <p>
+     *
      * List Tax Components
      */
     @Test
@@ -42,10 +41,9 @@ public class TaxComponentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Tax Component
-     * <p>
+     *
      * Retrieve Tax Component
      */
     @Test
@@ -65,10 +63,9 @@ public class TaxComponentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Tax Component
-     * <p>
+     *
      * Updates Tax component. Debit and credit account details cannot be modified. All the future tax components would be replaced with the new percentage.
      */
     @Test

@@ -1,12 +1,12 @@
-# SearchApiApi
+# SearchApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**advancedSearch**](SearchApiApi.md#advancedSearch) | **POST** search/advance | Adhoc query search
-[**retrieveAdHocSearchQueryTemplate**](SearchApiApi.md#retrieveAdHocSearchQueryTemplate) | **GET** search/template | Retrive Adhoc Search query template
-[**searchData**](SearchApiApi.md#searchData) | **GET** search | Search Resources
+[**advancedSearch**](SearchApi.md#advancedSearch) | **POST** search/advance | Adhoc query search
+[**retrieveAdHocSearchQueryTemplate**](SearchApi.md#retrieveAdHocSearchQueryTemplate) | **GET** search/template | Retrive Adhoc Search query template
+[**searchData**](SearchApi.md#searchData) | **GET** search | Search Resources
 
 
 <a name="advancedSearch"></a>
@@ -19,27 +19,27 @@ AdHocQuery search has more search options, it is a POST request, it uses request
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
 
+SearchApi apiService = defaultClient.createService(SearchApi.class);
 
-SearchApiApi apiInstance = new SearchApiApi();
-PostAdhocQuerySearchRequest body2 = new PostAdhocQuerySearchRequest(); // PostAdhocQuerySearchRequest | body
-String body = "body_example"; // String | 
-try {
-    PostAdhocQuerySearchResponse result = apiInstance.advancedSearch(body2, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#advancedSearch");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAdhocQuerySearchResponse> call = apiService.advancedSearch(body2, body);
+call.enqueue(new Callback<PostAdhocQuerySearchResponse>() {
+    @Override
+    public void onResponse(Call<PostAdhocQuerySearchResponse> call, Response<PostAdhocQuerySearchResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAdhocQuerySearchResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body2** | [**PostAdhocQuerySearchRequest**](PostAdhocQuerySearchRequest.md)| body |
  **body** | **String**|  | [optional]
 
@@ -66,19 +66,23 @@ Mandatory Fields  search?query&#x3D;000000001
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
 
+SearchApiApi apiService = defaultClient.createService(SearchApiApi.class);
 
-SearchApiApi apiInstance = new SearchApiApi();
-try {
-    GetSearchResponse result = apiInstance.retrieveAdHocSearchQueryTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#retrieveAdHocSearchQueryTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSearchResponse> call = apiService.retrieveAdHocSearchQueryTemplate();
+call.enqueue(new Callback<GetSearchResponse>() {
+    @Override
+    public void onResponse(Call<GetSearchResponse> call, Response<GetSearchResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSearchResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -107,28 +111,27 @@ Example Requests:  search?query&#x3D;000000001   search?query&#x3D;Petra&amp;res
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
 
+SearchApiApi apiService = defaultClient.createService(SearchApiApi.class);
 
-SearchApiApi apiInstance = new SearchApiApi();
-String query = "query_example"; // String | query
-String resource = "resource_example"; // String | resource
-Boolean exactMatch = false; // Boolean | exactMatch
-try {
-    GetSearchResponse result = apiInstance.searchData(query, resource, exactMatch);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#searchData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSearchResponse> call = apiService.searchData(query, resource, exactMatch);
+call.enqueue(new Callback<GetSearchResponse>() {
+    @Override
+    public void onResponse(Call<GetSearchResponse> call, Response<GetSearchResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSearchResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **query** | **String**| query | [optional]
  **resource** | **String**| resource | [optional]
  **exactMatch** | **Boolean**| exactMatch | [optional] [default to false]

@@ -1,6 +1,6 @@
 # HolidaysApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,26 +23,27 @@ Mandatory Fields: name, description, fromDate, toDate, repaymentsRescheduledTo, 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-PostHolidaysRequest body = new PostHolidaysRequest(); // PostHolidaysRequest | body
-try {
-    PostHolidaysResponse result = apiInstance.createNewHoliday(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#createNewHoliday");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostHolidaysResponse> call = apiService.createNewHoliday(body);
+call.enqueue(new Callback<PostHolidaysResponse>() {
+    @Override
+    public void onResponse(Call<PostHolidaysResponse> call, Response<PostHolidaysResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostHolidaysResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostHolidaysRequest**](PostHolidaysRequest.md)| body |
 
 ### Return type
@@ -68,26 +69,27 @@ This API allows to delete a holiday. This is a soft delete the deleted holiday s
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-Long holidayId = 789L; // Long | holidayId
-try {
-    DeleteHolidaysHolidayIdResponse result = apiInstance.delete(holidayId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteHolidaysHolidayIdResponse> call = apiService.delete(holidayId);
+call.enqueue(new Callback<DeleteHolidaysHolidayIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteHolidaysHolidayIdResponse> call, Response<DeleteHolidaysHolidayIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteHolidaysHolidayIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **holidayId** | **Long**| holidayId |
 
 ### Return type
@@ -113,28 +115,27 @@ Always Holidays are created in pending state. This API allows to activate a holi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-Long holidayId = 789L; // Long | holidayId
-PostHolidaysHolidayIdRequest body = new PostHolidaysHolidayIdRequest(); // PostHolidaysHolidayIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostHolidaysHolidayIdResponse result = apiInstance.handleCommands(holidayId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostHolidaysHolidayIdResponse> call = apiService.handleCommands(holidayId, body, command);
+call.enqueue(new Callback<PostHolidaysHolidayIdResponse>() {
+    @Override
+    public void onResponse(Call<PostHolidaysHolidayIdResponse> call, Response<PostHolidaysHolidayIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostHolidaysHolidayIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **holidayId** | **Long**| holidayId |
  **body** | [**PostHolidaysHolidayIdRequest**](PostHolidaysHolidayIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -162,30 +163,27 @@ Example Requests:  holidays?officeId&#x3D;1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-Long officeId = 789L; // Long | officeId
-String fromDate = "fromDate_example"; // String | fromDate
-String toDate = "toDate_example"; // String | toDate
-String locale = "locale_example"; // String | locale
-String dateFormat = "dateFormat_example"; // String | dateFormat
-try {
-    List<GetHolidaysResponse> result = apiInstance.retrieveAllHolidays(officeId, fromDate, toDate, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#retrieveAllHolidays");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetHolidaysResponse&gt;> call = apiService.retrieveAllHolidays(officeId, fromDate, toDate, locale, dateFormat);
+call.enqueue(new Callback<List&lt;GetHolidaysResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetHolidaysResponse&gt;> call, Response<List&lt;GetHolidaysResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetHolidaysResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
  **fromDate** | **String**| fromDate | [optional]
  **toDate** | **String**| toDate | [optional]
@@ -215,26 +213,27 @@ Example Requests:  holidays/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-Long holidayId = 789L; // Long | holidayId
-try {
-    GetHolidaysResponse result = apiInstance.retrieveOne(holidayId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetHolidaysResponse> call = apiService.retrieveOne(holidayId);
+call.enqueue(new Callback<GetHolidaysResponse>() {
+    @Override
+    public void onResponse(Call<GetHolidaysResponse> call, Response<GetHolidaysResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetHolidaysResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **holidayId** | **Long**| holidayId |
 
 ### Return type
@@ -258,19 +257,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-try {
-    String result = apiInstance.retrieveRepaymentScheduleUpdationTyeOptions();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#retrieveRepaymentScheduleUpdationTyeOptions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveRepaymentScheduleUpdationTyeOptions();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -299,27 +302,27 @@ If a holiday is in pending state (created and not activated) then all fields are
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.HolidaysApi;
 
+HolidaysApi apiService = defaultClient.createService(HolidaysApi.class);
 
-HolidaysApi apiInstance = new HolidaysApi();
-Long holidayId = 789L; // Long | holidayId
-PutHolidaysHolidayIdRequest body = new PutHolidaysHolidayIdRequest(); // PutHolidaysHolidayIdRequest | body
-try {
-    PutHolidaysHolidayIdResponse result = apiInstance.update(holidayId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HolidaysApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutHolidaysHolidayIdResponse> call = apiService.update(holidayId, body);
+call.enqueue(new Callback<PutHolidaysHolidayIdResponse>() {
+    @Override
+    public void onResponse(Call<PutHolidaysHolidayIdResponse> call, Response<PutHolidaysHolidayIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutHolidaysHolidayIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **holidayId** | **Long**| holidayId |
  **body** | [**PutHolidaysHolidayIdRequest**](PutHolidaysHolidayIdRequest.md)| body |
 

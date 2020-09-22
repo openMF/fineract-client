@@ -20,7 +20,7 @@ public class DocumentsApiTest {
 
     /**
      * Create a Document
-     * <p>
+     *
      * Note: A document is created using a Multi-part form upload   Body Parts  name :  Name or summary of the document  description :  Description of the document  file :  The file to be uploaded  Mandatory Fields :  file and description
      */
     @Test
@@ -48,10 +48,9 @@ public class DocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Binary File associated with Document
-     * <p>
+     *
      * Request used to download the file associated with the document  Example Requests:  clients/1/documents/1/attachment   loans/1/documents/1/attachment
      */
     @Test
@@ -63,10 +62,9 @@ public class DocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Document
-     * <p>
+     *
      * Example Requests:  clients/1/documents/1   loans/1/documents/1   client_identifiers/1/documents/1?fields&#x3D;name,description
      */
     @Test
@@ -78,10 +76,9 @@ public class DocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List documents
-     * <p>
+     *
      * Example Requests:  clients/1/documents  client_identifiers/1/documents  loans/1/documents?fields&#x3D;name,description
      */
     @Test
@@ -92,10 +89,9 @@ public class DocumentsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Document
-     * <p>
+     *
      * Note: A document is updated using a Multi-part form upload  Body Parts name Name or summary of the document description Description of the document file The file to be uploaded
      */
     @Test

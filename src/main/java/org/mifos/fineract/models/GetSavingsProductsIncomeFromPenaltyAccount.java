@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -29,79 +29,79 @@ public class GetSavingsProductsIncomeFromPenaltyAccount {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("glCode")
-  private Integer glCode = null;
+    @SerializedName("glCode")
+    private Integer glCode = null;
 
-  public GetSavingsProductsIncomeFromPenaltyAccount id(Integer id) {
-    this.id = id;
-    return this;
-  }
+    public GetSavingsProductsIncomeFromPenaltyAccount id(Integer id) {
+        this.id = id;
+        return this;
+    }
 
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "17", value = "")
-  public Integer getId() {
-    return id;
-  }
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "17", value = "")
+    public Integer getId() {
+        return id;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public GetSavingsProductsIncomeFromPenaltyAccount name(String name) {
-    this.name = name;
-    return this;
-  }
+    public GetSavingsProductsIncomeFromPenaltyAccount name(String name) {
+        this.name = name;
+        return this;
+    }
 
-  /**
-   * Get name
-   *
-   * @return name
-   **/
-  @ApiModelProperty(example = "income from sav penalties", value = "")
-  public String getName() {
-    return name;
-  }
+    /**
+     * Get name
+     *
+     * @return name
+     **/
+    @ApiModelProperty(example = "income from sav penalties", value = "")
+    public String getName() {
+        return name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public GetSavingsProductsIncomeFromPenaltyAccount glCode(Integer glCode) {
-    this.glCode = glCode;
-    return this;
-  }
+    public GetSavingsProductsIncomeFromPenaltyAccount glCode(Integer glCode) {
+        this.glCode = glCode;
+        return this;
+    }
 
-  /**
-   * Get glCode
-   *
-   * @return glCode
-   **/
-  @ApiModelProperty(example = "25", value = "")
-  public Integer getGlCode() {
-    return glCode;
-  }
+    /**
+     * Get glCode
+     *
+     * @return glCode
+     **/
+    @ApiModelProperty(example = "25", value = "")
+    public Integer getGlCode() {
+        return glCode;
+    }
 
-  public void setGlCode(Integer glCode) {
-    this.glCode = glCode;
-  }
+    public void setGlCode(Integer glCode) {
+        this.glCode = glCode;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsProductsIncomeFromPenaltyAccount getSavingsProductsIncomeFromPenaltyAccount = (GetSavingsProductsIncomeFromPenaltyAccount) o;
-    return Objects.equals(this.id, getSavingsProductsIncomeFromPenaltyAccount.id) &&
-            Objects.equals(this.name, getSavingsProductsIncomeFromPenaltyAccount.name) &&
-            Objects.equals(this.glCode, getSavingsProductsIncomeFromPenaltyAccount.glCode);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsProductsIncomeFromPenaltyAccount getSavingsProductsIncomeFromPenaltyAccount = (GetSavingsProductsIncomeFromPenaltyAccount) o;
+      return Objects.equals(this.id, getSavingsProductsIncomeFromPenaltyAccount.id) &&
+              Objects.equals(this.name, getSavingsProductsIncomeFromPenaltyAccount.name) &&
+              Objects.equals(this.glCode, getSavingsProductsIncomeFromPenaltyAccount.glCode);
   }
 
   @Override
@@ -114,7 +114,7 @@ public class GetSavingsProductsIncomeFromPenaltyAccount {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsProductsIncomeFromPenaltyAccount {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    glCode: ").append(toIndentedString(glCode)).append("\n");

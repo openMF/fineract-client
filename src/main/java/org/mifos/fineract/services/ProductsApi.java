@@ -1,11 +1,11 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 public interface ProductsApi {
     /**
@@ -14,13 +14,13 @@ public interface ProductsApi {
      *
      * @param type type (required)
      * @param body body (required)
-     * @return Call&lt;PostProductsTypeResponse&gt;
+     * @return Observable&lt;PostProductsTypeResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("products/{type}")
-    Call<PostProductsTypeResponse> createProduct(
+    Observable<PostProductsTypeResponse> createProduct(
             @retrofit2.http.Path("type") String type, @retrofit2.http.Body PostProductsTypeRequest body
     );
 
@@ -28,13 +28,13 @@ public interface ProductsApi {
      * @param type      type (required)
      * @param productId productId (required)
      * @param command   command (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("products/{type}/{productId}")
-    Call<String> handleCommands(
+    Observable<String> handleCommands(
             @retrofit2.http.Path("type") String type, @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Query("command") String command
     );
 
@@ -45,13 +45,13 @@ public interface ProductsApi {
      * @param type   type (required)
      * @param offset offset (optional)
      * @param limit  limit (optional)
-     * @return Call&lt;GetProductsTypeResponse&gt;
+     * @return Observable&lt;GetProductsTypeResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("products/{type}")
-    Call<GetProductsTypeResponse> retrieveAllProducts(
+    Observable<GetProductsTypeResponse> retrieveAllProducts(
             @retrofit2.http.Path("type") String type, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
     );
 
@@ -61,25 +61,25 @@ public interface ProductsApi {
      *
      * @param productId productId (required)
      * @param type      type (required)
-     * @return Call&lt;GetProductsTypeProductIdResponse&gt;
+     * @return Observable&lt;GetProductsTypeProductIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("products/{type}/{productId}")
-    Call<GetProductsTypeProductIdResponse> retrieveProduct(
+    Observable<GetProductsTypeProductIdResponse> retrieveProduct(
             @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Path("type") String type
     );
 
     /**
      * @param type type (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("products/{type}/template")
-    Call<String> retrieveTemplate(
+    Observable<String> retrieveTemplate(
             @retrofit2.http.Path("type") String type
     );
 
@@ -90,13 +90,13 @@ public interface ProductsApi {
      * @param type      type (required)
      * @param productId productId (required)
      * @param body      body (required)
-     * @return Call&lt;PutProductsTypeProductIdResponse&gt;
+     * @return Observable&lt;PutProductsTypeProductIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("products/{type}/{productId}")
-    Call<PutProductsTypeProductIdResponse> updateProduct(
+    Observable<PutProductsTypeProductIdResponse> updateProduct(
             @retrofit2.http.Path("type") String type, @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Body PutProductsTypeProductIdRequest body
     );
 

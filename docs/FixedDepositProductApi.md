@@ -1,6 +1,6 @@
 # FixedDepositProductApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a Fixed Deposit Product  Mandatory Fields: name, shortName, description,
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-PostFixedDepositProductsRequest body = new PostFixedDepositProductsRequest(); // PostFixedDepositProductsRequest | body
-try {
-    PostFixedDepositProductsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFixedDepositProductsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostFixedDepositProductsResponse>() {
+    @Override
+    public void onResponse(Call<PostFixedDepositProductsResponse> call, Response<PostFixedDepositProductsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFixedDepositProductsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostFixedDepositProductsRequest**](PostFixedDepositProductsRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a Fixed Deposit Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-Long productId = 789L; // Long | productId
-try {
-    DeleteFixedDepositProductsProductIdResponse result = apiInstance.delete(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteFixedDepositProductsProductIdResponse> call = apiService.delete(productId);
+call.enqueue(new Callback<DeleteFixedDepositProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteFixedDepositProductsProductIdResponse> call, Response<DeleteFixedDepositProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteFixedDepositProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -112,19 +114,23 @@ Lists Fixed Deposit Products  Example Requests:  fixeddepositproducts   fixeddep
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-try {
-    List<GetFixedDepositProductsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFixedDepositProductsResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetFixedDepositProductsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFixedDepositProductsResponse&gt;> call, Response<List&lt;GetFixedDepositProductsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFixedDepositProductsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Retrieves a Fixed Deposit Product  Example Requests:  fixeddepositproducts/1   f
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-Long productId = 789L; // Long | productId
-try {
-    GetFixedDepositProductsProductIdResponse result = apiInstance.retrieveOne(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFixedDepositProductsProductIdResponse> call = apiService.retrieveOne(productId);
+call.enqueue(new Callback<GetFixedDepositProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<GetFixedDepositProductsProductIdResponse> call, Response<GetFixedDepositProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFixedDepositProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -196,19 +203,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -237,27 +248,27 @@ Updates a Fixed Deposit Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FixedDepositProductApi;
 
+FixedDepositProductApi apiService = defaultClient.createService(FixedDepositProductApi.class);
 
-FixedDepositProductApi apiInstance = new FixedDepositProductApi();
-Long productId = 789L; // Long | productId
-PutFixedDepositProductsProductIdRequest body = new PutFixedDepositProductsProductIdRequest(); // PutFixedDepositProductsProductIdRequest | body
-try {
-    PutFixedDepositProductsProductIdResponse result = apiInstance.update(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FixedDepositProductApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutFixedDepositProductsProductIdResponse> call = apiService.update(productId, body);
+call.enqueue(new Callback<PutFixedDepositProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<PutFixedDepositProductsProductIdResponse> call, Response<PutFixedDepositProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutFixedDepositProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
  **body** | [**PutFixedDepositProductsProductIdRequest**](PutFixedDepositProductsProductIdRequest.md)| body |
 

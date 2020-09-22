@@ -20,7 +20,7 @@ public class SavingsProductApiTest {
 
     /**
      * Create a Savings Product
-     * <p>
+     *
      * Creates a Savings Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, nominalAnnualInterestRate, interestCompoundingPeriodType, interestCalculationType, interestCalculationDaysInYearType,accountingRule  Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): savingsReferenceAccountId, savingsControlAccountId, interestOnSavingsAccountId, incomeFromFeeAccountId, transfersInSuspenseAccountId, incomeFromPenaltyAccountId  Optional Fields: minRequiredOpeningBalance, lockinPeriodFrequency, lockinPeriodFrequencyType, withdrawalFeeForTransfers, paymentChannelToFundSourceMappings, feeToIncomeAccountMappings, penaltyToIncomeAccountMappings, charges, allowOverdraft, overdraftLimit, minBalanceForInterestCalculation,withHoldTax,taxGroupId
      */
     @Test
@@ -30,10 +30,9 @@ public class SavingsProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Savings Product
-     * <p>
+     *
      * Deletes a Savings Product
      */
     @Test
@@ -43,10 +42,9 @@ public class SavingsProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Savings Products
-     * <p>
+     *
      * Lists Savings Products  Example Requests:  savingsproducts  savingsproducts?fields&#x3D;name
      */
     @Test
@@ -55,10 +53,9 @@ public class SavingsProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Savings Product
-     * <p>
+     *
      * Retrieves a Savings Product  Example Requests:  savingsproducts/1  savingsproducts/1?template&#x3D;true  savingsproducts/1?fields&#x3D;name,description
      */
     @Test
@@ -68,10 +65,9 @@ public class SavingsProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Savings Product Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  savingsproducts/template
      */
     @Test
@@ -80,10 +76,9 @@ public class SavingsProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Savings Product
-     * <p>
+     *
      * Updates a Savings Product
      */
     @Test

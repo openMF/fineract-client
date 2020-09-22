@@ -1,6 +1,6 @@
 # LikelihoodApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LikelihoodApi;
 
+LikelihoodApi apiService = defaultClient.createService(LikelihoodApi.class);
 
-LikelihoodApi apiInstance = new LikelihoodApi();
-Long likelihoodId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieve(likelihoodId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LikelihoodApi#retrieve");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieve(likelihoodId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **likelihoodId** | **Long**|  |
 
 ### Return type
@@ -60,26 +61,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LikelihoodApi;
 
+LikelihoodApi apiService = defaultClient.createService(LikelihoodApi.class);
 
-LikelihoodApi apiInstance = new LikelihoodApi();
-String ppiName = "ppiName_example"; // String | 
-try {
-    String result = apiInstance.retrieveAll(ppiName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LikelihoodApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll(ppiName);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **ppiName** | **String**|  |
 
 ### Return type
@@ -103,27 +105,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LikelihoodApi;
 
+LikelihoodApi apiService = defaultClient.createService(LikelihoodApi.class);
 
-LikelihoodApi apiInstance = new LikelihoodApi();
-Long likelihoodId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.update(likelihoodId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LikelihoodApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.update(likelihoodId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **likelihoodId** | **Long**|  |
  **body** | **String**|  | [optional]
 

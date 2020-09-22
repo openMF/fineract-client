@@ -1,6 +1,6 @@
 # LoanCollateralApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,27 +22,27 @@ Note: Currently, Collaterals may be added only before a Loan is approved
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-Long loanId = 789L; // Long | loanId
-PostLoansLoanIdCollateralsRequest body = new PostLoansLoanIdCollateralsRequest(); // PostLoansLoanIdCollateralsRequest | body
-try {
-    PostLoansLoanIdCollateralsResponse result = apiInstance.createCollateral(loanId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#createCollateral");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdCollateralsResponse> call = apiService.createCollateral(loanId, body);
+call.enqueue(new Callback<PostLoansLoanIdCollateralsResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdCollateralsResponse> call, Response<PostLoansLoanIdCollateralsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdCollateralsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PostLoansLoanIdCollateralsRequest**](PostLoansLoanIdCollateralsRequest.md)| body |
 
@@ -69,27 +69,27 @@ Note: A collateral can only be removed from Loans that are not yet approved.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-Long loanId = 789L; // Long | loanId
-Long collateralId = 789L; // Long | collateralId
-try {
-    DeleteLoansLoanIdCollateralsCollateralIdResponse result = apiInstance.deleteCollateral(loanId, collateralId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#deleteCollateral");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteLoansLoanIdCollateralsCollateralIdResponse> call = apiService.deleteCollateral(loanId, collateralId);
+call.enqueue(new Callback<DeleteLoansLoanIdCollateralsCollateralIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteLoansLoanIdCollateralsCollateralIdResponse> call, Response<DeleteLoansLoanIdCollateralsCollateralIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteLoansLoanIdCollateralsCollateralIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **collateralId** | **Long**| collateralId |
 
@@ -116,19 +116,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-try {
-    GetLoansLoanIdCollateralsTemplateResponse result = apiInstance.newCollateralTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#newCollateralTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdCollateralsTemplateResponse> call = apiService.newCollateralTemplate();
+call.enqueue(new Callback<GetLoansLoanIdCollateralsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdCollateralsTemplateResponse> call, Response<GetLoansLoanIdCollateralsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdCollateralsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -157,26 +161,27 @@ Example Requests:  loans/1/collaterals   loans/1/collaterals?fields&#x3D;value,d
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-Long loanId = 789L; // Long | loanId
-try {
-    List<GetLoansLoanIdCollateralsResponse> result = apiInstance.retrieveCollateralDetails(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#retrieveCollateralDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetLoansLoanIdCollateralsResponse&gt;> call = apiService.retrieveCollateralDetails(loanId);
+call.enqueue(new Callback<List&lt;GetLoansLoanIdCollateralsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetLoansLoanIdCollateralsResponse&gt;> call, Response<List&lt;GetLoansLoanIdCollateralsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetLoansLoanIdCollateralsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
 
 ### Return type
@@ -202,27 +207,27 @@ Example Requests:  /loans/1/collaterals/1   /loans/1/collaterals/1?fields&#x3D;v
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-Long loanId = 789L; // Long | loanId
-Long collateralId = 789L; // Long | collateralId
-try {
-    GetLoansLoanIdCollateralsResponse result = apiInstance.retrieveCollateralDetails_0(loanId, collateralId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#retrieveCollateralDetails_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdCollateralsResponse> call = apiService.retrieveCollateralDetails_0(loanId, collateralId);
+call.enqueue(new Callback<GetLoansLoanIdCollateralsResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdCollateralsResponse> call, Response<GetLoansLoanIdCollateralsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdCollateralsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **collateralId** | **Long**| collateralId |
 
@@ -249,28 +254,27 @@ Update a Collateral
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanCollateralApi;
 
+LoanCollateralApi apiService = defaultClient.createService(LoanCollateralApi.class);
 
-LoanCollateralApi apiInstance = new LoanCollateralApi();
-Long loanId = 789L; // Long | loanId
-Long collateralId = 789L; // Long | collateralId
-PutLoansLoandIdCollateralsCollateralIdRequest body = new PutLoansLoandIdCollateralsCollateralIdRequest(); // PutLoansLoandIdCollateralsCollateralIdRequest | body
-try {
-    PutLoansLoanIdCollateralsCollateralIdResponse result = apiInstance.updateCollateral(loanId, collateralId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanCollateralApi#updateCollateral");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutLoansLoanIdCollateralsCollateralIdResponse> call = apiService.updateCollateral(loanId, collateralId, body);
+call.enqueue(new Callback<PutLoansLoanIdCollateralsCollateralIdResponse>() {
+    @Override
+    public void onResponse(Call<PutLoansLoanIdCollateralsCollateralIdResponse> call, Response<PutLoansLoanIdCollateralsCollateralIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutLoansLoanIdCollateralsCollateralIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **collateralId** | **Long**| collateralId |
  **body** | [**PutLoansLoandIdCollateralsCollateralIdRequest**](PutLoansLoandIdCollateralsCollateralIdRequest.md)| body |

@@ -1,6 +1,6 @@
 # WorkingDaysApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,19 +19,23 @@ Example Requests:  workingdays
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.WorkingDaysApi;
 
+WorkingDaysApi apiService = defaultClient.createService(WorkingDaysApi.class);
 
-WorkingDaysApi apiInstance = new WorkingDaysApi();
-try {
-    List<GetWorkingDaysResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WorkingDaysApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetWorkingDaysResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetWorkingDaysResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetWorkingDaysResponse&gt;> call, Response<List&lt;GetWorkingDaysResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetWorkingDaysResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -60,19 +64,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.WorkingDaysApi;
 
+WorkingDaysApi apiService = defaultClient.createService(WorkingDaysApi.class);
 
-WorkingDaysApi apiInstance = new WorkingDaysApi();
-try {
-    GetWorkingDaysTemplateResponse result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WorkingDaysApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetWorkingDaysTemplateResponse> call = apiService.template();
+call.enqueue(new Callback<GetWorkingDaysTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetWorkingDaysTemplateResponse> call, Response<GetWorkingDaysTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetWorkingDaysTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -101,26 +109,27 @@ Mandatory Fields recurrence,repaymentRescheduleType,extendTermForDailyRepayments
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.WorkingDaysApi;
 
+WorkingDaysApi apiService = defaultClient.createService(WorkingDaysApi.class);
 
-WorkingDaysApi apiInstance = new WorkingDaysApi();
-PutWorkingDaysRequest body = new PutWorkingDaysRequest(); // PutWorkingDaysRequest | body
-try {
-    PutWorkingDaysResponse result = apiInstance.update(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WorkingDaysApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutWorkingDaysResponse> call = apiService.update(body);
+call.enqueue(new Callback<PutWorkingDaysResponse>() {
+    @Override
+    public void onResponse(Call<PutWorkingDaysResponse> call, Response<PutWorkingDaysResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutWorkingDaysResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutWorkingDaysRequest**](PutWorkingDaysRequest.md)| body |
 
 ### Return type

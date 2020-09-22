@@ -19,7 +19,7 @@ public class GlobalConfigurationApiTest {
 
     /**
      * Retrieve Global Configuration | Retrieve Global Configuration for surveys
-     * <p>
+     *
      * Returns the list global enable/disable configurations.  Example Requests:  configurations   Returns the list global enable/disable survey configurations.  Example Requests:  configurations/survey
      */
     @Test
@@ -29,10 +29,9 @@ public class GlobalConfigurationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Global Configuration
-     * <p>
+     *
      * Returns a global enable/disable configurations.  Example Requests:  configurations/1
      */
     @Test
@@ -42,10 +41,9 @@ public class GlobalConfigurationApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Global Configuration
-     * <p>
+     *
      * Updates an enable/disable global configuration item.
      */
     @Test

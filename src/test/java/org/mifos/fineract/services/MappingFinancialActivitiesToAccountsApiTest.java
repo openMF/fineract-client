@@ -19,7 +19,7 @@ public class MappingFinancialActivitiesToAccountsApiTest {
 
     /**
      * Create a new Financial Activity to Accounts Mapping
-     * <p>
+     *
      * Mandatory Fields financialActivityId, glAccountId
      */
     @Test
@@ -53,10 +53,9 @@ public class MappingFinancialActivitiesToAccountsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Financial Activities to Accounts Mappings
-     * <p>
+     *
      * Example Requests:  financialactivityaccounts
      */
     @Test
@@ -68,6 +67,8 @@ public class MappingFinancialActivitiesToAccountsApiTest {
 
     /**
      *
+     *
+     *
      */
     @Test
     public void retrieveTemplateTest() {
@@ -78,8 +79,8 @@ public class MappingFinancialActivitiesToAccountsApiTest {
 
     /**
      * Update a Financial Activity to Account Mapping
-     * <p>
-     * the API updates the Ledger account linked to a Financial Activity
+     *
+     * the API updates the Ledger account linked to a Financial Activity  
      */
     @Test
     public void updateGLAccountTest() {

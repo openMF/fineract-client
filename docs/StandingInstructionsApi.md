@@ -1,6 +1,6 @@
 # StandingInstructionsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Ability to create new instruction for transfer of monetary funds from one accoun
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsApi;
 
+StandingInstructionsApi apiService = defaultClient.createService(StandingInstructionsApi.class);
 
-StandingInstructionsApi apiInstance = new StandingInstructionsApi();
-PostStandingInstructionsRequest body = new PostStandingInstructionsRequest(); // PostStandingInstructionsRequest | body
-try {
-    PostStandingInstructionsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostStandingInstructionsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostStandingInstructionsResponse>() {
+    @Override
+    public void onResponse(Call<PostStandingInstructionsResponse> call, Response<PostStandingInstructionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostStandingInstructionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostStandingInstructionsRequest**](PostStandingInstructionsRequest.md)| body |
 
 ### Return type
@@ -66,36 +67,27 @@ Example Requests:  standinginstructions
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsApi;
 
+StandingInstructionsApi apiService = defaultClient.createService(StandingInstructionsApi.class);
 
-StandingInstructionsApi apiInstance = new StandingInstructionsApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-String externalId = "externalId_example"; // String | externalId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-Integer transferType = 56; // Integer | transferType
-String clientName = "clientName_example"; // String | clientName
-Long clientId = 789L; // Long | clientId
-Long fromAccountId = 789L; // Long | fromAccountId
-Integer fromAccountType = 56; // Integer | fromAccountType
-try {
-    GetStandingInstructionsResponse result = apiInstance.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStandingInstructionsResponse> call = apiService.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType);
+call.enqueue(new Callback<GetStandingInstructionsResponse>() {
+    @Override
+    public void onResponse(Call<GetStandingInstructionsResponse> call, Response<GetStandingInstructionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStandingInstructionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **externalId** | **String**| externalId | [optional]
  **offset** | **Integer**| offset | [optional]
@@ -131,32 +123,27 @@ Example Requests :  standinginstructions/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsApi;
 
+StandingInstructionsApi apiService = defaultClient.createService(StandingInstructionsApi.class);
 
-StandingInstructionsApi apiInstance = new StandingInstructionsApi();
-Long standingInstructionId = 789L; // Long | standingInstructionId
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-String externalId = "externalId_example"; // String | externalId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    GetStandingInstructionsStandingInstructionIdResponse result = apiInstance.retrieveOne(standingInstructionId, sqlSearch, externalId, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStandingInstructionsStandingInstructionIdResponse> call = apiService.retrieveOne(standingInstructionId, sqlSearch, externalId, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<GetStandingInstructionsStandingInstructionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetStandingInstructionsStandingInstructionIdResponse> call, Response<GetStandingInstructionsStandingInstructionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStandingInstructionsStandingInstructionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **standingInstructionId** | **Long**| standingInstructionId |
  **sqlSearch** | **String**| sqlSearch | [optional]
  **externalId** | **String**| externalId | [optional]
@@ -188,34 +175,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsApi;
 
+StandingInstructionsApi apiService = defaultClient.createService(StandingInstructionsApi.class);
 
-StandingInstructionsApi apiInstance = new StandingInstructionsApi();
-Long fromOfficeId = 789L; // Long | fromOfficeId
-Long fromClientId = 789L; // Long | fromClientId
-Long fromAccountId = 789L; // Long | fromAccountId
-Integer fromAccountType = 56; // Integer | fromAccountType
-Long toOfficeId = 789L; // Long | toOfficeId
-Long toClientId = 789L; // Long | toClientId
-Long toAccountId = 789L; // Long | toAccountId
-Integer toAccountType = 56; // Integer | toAccountType
-Integer transferType = 56; // Integer | transferType
-try {
-    GetStandingInstructionsTemplateResponse result = apiInstance.template(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType, transferType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetStandingInstructionsTemplateResponse> call = apiService.template(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType, transferType);
+call.enqueue(new Callback<GetStandingInstructionsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetStandingInstructionsTemplateResponse> call, Response<GetStandingInstructionsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetStandingInstructionsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **fromOfficeId** | **Long**| fromOfficeId | [optional]
  **fromClientId** | **Long**| fromClientId | [optional]
  **fromAccountId** | **Long**| fromAccountId | [optional]
@@ -249,28 +229,27 @@ Ability to modify existing instruction for transfer of monetary funds from one a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.StandingInstructionsApi;
 
+StandingInstructionsApi apiService = defaultClient.createService(StandingInstructionsApi.class);
 
-StandingInstructionsApi apiInstance = new StandingInstructionsApi();
-Long standingInstructionId = 789L; // Long | standingInstructionId
-String command = "command_example"; // String | command
-PutStandingInstructionsStandingInstructionIdRequest body = new PutStandingInstructionsStandingInstructionIdRequest(); // PutStandingInstructionsStandingInstructionIdRequest | body
-try {
-    PutStandingInstructionsStandingInstructionIdResponse result = apiInstance.update(standingInstructionId, command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StandingInstructionsApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutStandingInstructionsStandingInstructionIdResponse> call = apiService.update(standingInstructionId, command, body);
+call.enqueue(new Callback<PutStandingInstructionsStandingInstructionIdResponse>() {
+    @Override
+    public void onResponse(Call<PutStandingInstructionsStandingInstructionIdResponse> call, Response<PutStandingInstructionsStandingInstructionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutStandingInstructionsStandingInstructionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **standingInstructionId** | **Long**| standingInstructionId |
  **command** | **String**| command | [optional]
  **body** | [**PutStandingInstructionsStandingInstructionIdRequest**](PutStandingInstructionsStandingInstructionIdRequest.md)| body | [optional]

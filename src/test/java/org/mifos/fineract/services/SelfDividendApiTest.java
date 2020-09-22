@@ -27,7 +27,6 @@ public class SelfDividendApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */
@@ -39,8 +38,9 @@ public class SelfDividendApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -55,8 +55,9 @@ public class SelfDividendApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -71,8 +72,9 @@ public class SelfDividendApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test

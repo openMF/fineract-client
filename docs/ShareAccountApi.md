@@ -1,6 +1,6 @@
 # ShareAccountApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,27 +24,27 @@ Submits new share application  Mandatory Fields: clientId, productId, submittedD
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-String type = "type_example"; // String | type
-PostAccountsTypeRequest body = new PostAccountsTypeRequest(); // PostAccountsTypeRequest | body
-try {
-    PostAccountsTypeResponse result = apiInstance.createAccount(type, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#createAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAccountsTypeResponse> call = apiService.createAccount(type, body);
+call.enqueue(new Callback<PostAccountsTypeResponse>() {
+    @Override
+    public void onResponse(Call<PostAccountsTypeResponse> call, Response<PostAccountsTypeResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAccountsTypeResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **body** | [**PostAccountsTypeRequest**](PostAccountsTypeRequest.md)| body |
 
@@ -69,26 +69,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-Long officeId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getSharedAccountsTemplate(officeId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#getSharedAccountsTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getSharedAccountsTemplate(officeId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
 
@@ -115,29 +116,27 @@ Approve share application:  Approves share application so long as its in &#39;Su
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-String type = "type_example"; // String | type
-Long accountId = 789L; // Long | accountId
-PostAccountsTypeAccountIdRequest body = new PostAccountsTypeAccountIdRequest(); // PostAccountsTypeAccountIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostAccountsTypeAccountIdResponse result = apiInstance.handleCommands(type, accountId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAccountsTypeAccountIdResponse> call = apiService.handleCommands(type, accountId, body, command);
+call.enqueue(new Callback<PostAccountsTypeAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<PostAccountsTypeAccountIdResponse> call, Response<PostAccountsTypeAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAccountsTypeAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **accountId** | **Long**| accountId |
  **body** | [**PostAccountsTypeAccountIdRequest**](PostAccountsTypeAccountIdRequest.md)| body |
@@ -164,28 +163,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postSharedAccountsTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#postSharedAccountsTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postSharedAccountsTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -213,27 +211,27 @@ Retrieves a share application/account  Example Requests :  shareaccount/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-Long accountId = 789L; // Long | accountId
-String type = "type_example"; // String | type
-try {
-    GetAccountsTypeAccountIdResponse result = apiInstance.retrieveAccount(accountId, type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#retrieveAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountsTypeAccountIdResponse> call = apiService.retrieveAccount(accountId, type);
+call.enqueue(new Callback<GetAccountsTypeAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountsTypeAccountIdResponse> call, Response<GetAccountsTypeAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountsTypeAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**| accountId |
  **type** | **String**| type |
 
@@ -260,28 +258,27 @@ Lists share applications/accounts  Example Requests:  shareaccount
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-String type = "type_example"; // String | type
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    GetAccountsTypeResponse result = apiInstance.retrieveAllAccounts(type, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#retrieveAllAccounts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountsTypeResponse> call = apiService.retrieveAllAccounts(type, offset, limit);
+call.enqueue(new Callback<GetAccountsTypeResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountsTypeResponse> call, Response<GetAccountsTypeResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountsTypeResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -309,28 +306,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-String type = "type_example"; // String | type
-Long clientId = 789L; // Long | clientId
-Long productId = 789L; // Long | productId
-try {
-    GetAccountsTypeTemplateResponse result = apiInstance.template(type, clientId, productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountsTypeTemplateResponse> call = apiService.template(type, clientId, productId);
+call.enqueue(new Callback<GetAccountsTypeTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountsTypeTemplateResponse> call, Response<GetAccountsTypeTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountsTypeTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **clientId** | **Long**| clientId | [optional]
  **productId** | **Long**| productId | [optional]
@@ -358,28 +354,27 @@ Share application can only be modified when in &#39;Submitted and pending approv
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ShareAccountApi;
 
+ShareAccountApi apiService = defaultClient.createService(ShareAccountApi.class);
 
-ShareAccountApi apiInstance = new ShareAccountApi();
-String type = "type_example"; // String | type
-Long accountId = 789L; // Long | accountId
-PutAccountsTypeAccountIdRequest body = new PutAccountsTypeAccountIdRequest(); // PutAccountsTypeAccountIdRequest | body
-try {
-    PutAccountsTypeAccountIdResponse result = apiInstance.updateAccount(type, accountId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ShareAccountApi#updateAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutAccountsTypeAccountIdResponse> call = apiService.updateAccount(type, accountId, body);
+call.enqueue(new Callback<PutAccountsTypeAccountIdResponse>() {
+    @Override
+    public void onResponse(Call<PutAccountsTypeAccountIdResponse> call, Response<PutAccountsTypeAccountIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutAccountsTypeAccountIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type |
  **accountId** | **Long**| accountId |
  **body** | [**PutAccountsTypeAccountIdRequest**](PutAccountsTypeAccountIdRequest.md)| body |

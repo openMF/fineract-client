@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -38,139 +38,139 @@ public class GetSavingsProductsAccountingMappings {
   @SerializedName("savingsControlAccount")
   private GetSavingsProductsSavingsControlAccount savingsControlAccount = null;
 
-  @SerializedName("transfersInSuspenseAccount")
-  private GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount = null;
+    @SerializedName("transfersInSuspenseAccount")
+    private GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount = null;
 
-  public GetSavingsProductsAccountingMappings savingsReferenceAccount(GetSavingsProductsSavingsReferenceAccount savingsReferenceAccount) {
-    this.savingsReferenceAccount = savingsReferenceAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings savingsReferenceAccount(GetSavingsProductsSavingsReferenceAccount savingsReferenceAccount) {
+        this.savingsReferenceAccount = savingsReferenceAccount;
+        return this;
+    }
 
-  /**
-   * Get savingsReferenceAccount
-   *
-   * @return savingsReferenceAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsSavingsReferenceAccount getSavingsReferenceAccount() {
-    return savingsReferenceAccount;
-  }
+    /**
+     * Get savingsReferenceAccount
+     *
+     * @return savingsReferenceAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsSavingsReferenceAccount getSavingsReferenceAccount() {
+        return savingsReferenceAccount;
+    }
 
-  public void setSavingsReferenceAccount(GetSavingsProductsSavingsReferenceAccount savingsReferenceAccount) {
-    this.savingsReferenceAccount = savingsReferenceAccount;
-  }
+    public void setSavingsReferenceAccount(GetSavingsProductsSavingsReferenceAccount savingsReferenceAccount) {
+        this.savingsReferenceAccount = savingsReferenceAccount;
+    }
 
-  public GetSavingsProductsAccountingMappings incomeFromFeeAccount(GetSavingsProductsIncomeFromFeeAccount incomeFromFeeAccount) {
-    this.incomeFromFeeAccount = incomeFromFeeAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings incomeFromFeeAccount(GetSavingsProductsIncomeFromFeeAccount incomeFromFeeAccount) {
+        this.incomeFromFeeAccount = incomeFromFeeAccount;
+        return this;
+    }
 
-  /**
-   * Get incomeFromFeeAccount
-   *
-   * @return incomeFromFeeAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsIncomeFromFeeAccount getIncomeFromFeeAccount() {
-    return incomeFromFeeAccount;
-  }
+    /**
+     * Get incomeFromFeeAccount
+     *
+     * @return incomeFromFeeAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsIncomeFromFeeAccount getIncomeFromFeeAccount() {
+        return incomeFromFeeAccount;
+    }
 
-  public void setIncomeFromFeeAccount(GetSavingsProductsIncomeFromFeeAccount incomeFromFeeAccount) {
-    this.incomeFromFeeAccount = incomeFromFeeAccount;
-  }
+    public void setIncomeFromFeeAccount(GetSavingsProductsIncomeFromFeeAccount incomeFromFeeAccount) {
+        this.incomeFromFeeAccount = incomeFromFeeAccount;
+    }
 
-  public GetSavingsProductsAccountingMappings incomeFromPenaltyAccount(GetSavingsProductsIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
-    this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings incomeFromPenaltyAccount(GetSavingsProductsIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
+        this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
+        return this;
+    }
 
-  /**
-   * Get incomeFromPenaltyAccount
-   *
-   * @return incomeFromPenaltyAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsIncomeFromPenaltyAccount getIncomeFromPenaltyAccount() {
-    return incomeFromPenaltyAccount;
-  }
+    /**
+     * Get incomeFromPenaltyAccount
+     *
+     * @return incomeFromPenaltyAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsIncomeFromPenaltyAccount getIncomeFromPenaltyAccount() {
+        return incomeFromPenaltyAccount;
+    }
 
-  public void setIncomeFromPenaltyAccount(GetSavingsProductsIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
-    this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
-  }
+    public void setIncomeFromPenaltyAccount(GetSavingsProductsIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
+        this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
+    }
 
-  public GetSavingsProductsAccountingMappings interestOnSavingsAccount(GetSavingsProductsInterestOnSavingsAccount interestOnSavingsAccount) {
-    this.interestOnSavingsAccount = interestOnSavingsAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings interestOnSavingsAccount(GetSavingsProductsInterestOnSavingsAccount interestOnSavingsAccount) {
+        this.interestOnSavingsAccount = interestOnSavingsAccount;
+        return this;
+    }
 
-  /**
-   * Get interestOnSavingsAccount
-   *
-   * @return interestOnSavingsAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsInterestOnSavingsAccount getInterestOnSavingsAccount() {
-    return interestOnSavingsAccount;
-  }
+    /**
+     * Get interestOnSavingsAccount
+     *
+     * @return interestOnSavingsAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsInterestOnSavingsAccount getInterestOnSavingsAccount() {
+        return interestOnSavingsAccount;
+    }
 
-  public void setInterestOnSavingsAccount(GetSavingsProductsInterestOnSavingsAccount interestOnSavingsAccount) {
-    this.interestOnSavingsAccount = interestOnSavingsAccount;
-  }
+    public void setInterestOnSavingsAccount(GetSavingsProductsInterestOnSavingsAccount interestOnSavingsAccount) {
+        this.interestOnSavingsAccount = interestOnSavingsAccount;
+    }
 
-  public GetSavingsProductsAccountingMappings savingsControlAccount(GetSavingsProductsSavingsControlAccount savingsControlAccount) {
-    this.savingsControlAccount = savingsControlAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings savingsControlAccount(GetSavingsProductsSavingsControlAccount savingsControlAccount) {
+        this.savingsControlAccount = savingsControlAccount;
+        return this;
+    }
 
-  /**
-   * Get savingsControlAccount
-   *
-   * @return savingsControlAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsSavingsControlAccount getSavingsControlAccount() {
-    return savingsControlAccount;
-  }
+    /**
+     * Get savingsControlAccount
+     *
+     * @return savingsControlAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsSavingsControlAccount getSavingsControlAccount() {
+        return savingsControlAccount;
+    }
 
-  public void setSavingsControlAccount(GetSavingsProductsSavingsControlAccount savingsControlAccount) {
-    this.savingsControlAccount = savingsControlAccount;
-  }
+    public void setSavingsControlAccount(GetSavingsProductsSavingsControlAccount savingsControlAccount) {
+        this.savingsControlAccount = savingsControlAccount;
+    }
 
-  public GetSavingsProductsAccountingMappings transfersInSuspenseAccount(GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount) {
-    this.transfersInSuspenseAccount = transfersInSuspenseAccount;
-    return this;
-  }
+    public GetSavingsProductsAccountingMappings transfersInSuspenseAccount(GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount) {
+        this.transfersInSuspenseAccount = transfersInSuspenseAccount;
+        return this;
+    }
 
-  /**
-   * Get transfersInSuspenseAccount
-   *
-   * @return transfersInSuspenseAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsTransfersInSuspenseAccount getTransfersInSuspenseAccount() {
-    return transfersInSuspenseAccount;
-  }
+    /**
+     * Get transfersInSuspenseAccount
+     *
+     * @return transfersInSuspenseAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsTransfersInSuspenseAccount getTransfersInSuspenseAccount() {
+        return transfersInSuspenseAccount;
+    }
 
-  public void setTransfersInSuspenseAccount(GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount) {
-    this.transfersInSuspenseAccount = transfersInSuspenseAccount;
-  }
+    public void setTransfersInSuspenseAccount(GetSavingsProductsTransfersInSuspenseAccount transfersInSuspenseAccount) {
+        this.transfersInSuspenseAccount = transfersInSuspenseAccount;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsProductsAccountingMappings getSavingsProductsAccountingMappings = (GetSavingsProductsAccountingMappings) o;
-    return Objects.equals(this.savingsReferenceAccount, getSavingsProductsAccountingMappings.savingsReferenceAccount) &&
-            Objects.equals(this.incomeFromFeeAccount, getSavingsProductsAccountingMappings.incomeFromFeeAccount) &&
-            Objects.equals(this.incomeFromPenaltyAccount, getSavingsProductsAccountingMappings.incomeFromPenaltyAccount) &&
-            Objects.equals(this.interestOnSavingsAccount, getSavingsProductsAccountingMappings.interestOnSavingsAccount) &&
-            Objects.equals(this.savingsControlAccount, getSavingsProductsAccountingMappings.savingsControlAccount) &&
-            Objects.equals(this.transfersInSuspenseAccount, getSavingsProductsAccountingMappings.transfersInSuspenseAccount);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsProductsAccountingMappings getSavingsProductsAccountingMappings = (GetSavingsProductsAccountingMappings) o;
+      return Objects.equals(this.savingsReferenceAccount, getSavingsProductsAccountingMappings.savingsReferenceAccount) &&
+              Objects.equals(this.incomeFromFeeAccount, getSavingsProductsAccountingMappings.incomeFromFeeAccount) &&
+              Objects.equals(this.incomeFromPenaltyAccount, getSavingsProductsAccountingMappings.incomeFromPenaltyAccount) &&
+              Objects.equals(this.interestOnSavingsAccount, getSavingsProductsAccountingMappings.interestOnSavingsAccount) &&
+              Objects.equals(this.savingsControlAccount, getSavingsProductsAccountingMappings.savingsControlAccount) &&
+              Objects.equals(this.transfersInSuspenseAccount, getSavingsProductsAccountingMappings.transfersInSuspenseAccount);
   }
 
   @Override
@@ -183,7 +183,7 @@ public class GetSavingsProductsAccountingMappings {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsProductsAccountingMappings {\n");
-
+    
     sb.append("    savingsReferenceAccount: ").append(toIndentedString(savingsReferenceAccount)).append("\n");
     sb.append("    incomeFromFeeAccount: ").append(toIndentedString(incomeFromFeeAccount)).append("\n");
     sb.append("    incomeFromPenaltyAccount: ").append(toIndentedString(incomeFromPenaltyAccount)).append("\n");

@@ -19,7 +19,7 @@ public class CacheApiTest {
 
     /**
      * Retrieve Cache Types
-     * <p>
+     *
      * Returns the list of caches.  Example Requests:  caches
      */
     @Test
@@ -28,10 +28,9 @@ public class CacheApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Switch Cache
-     * <p>
+     *
      * Switches the cache to chosen one.
      */
     @Test

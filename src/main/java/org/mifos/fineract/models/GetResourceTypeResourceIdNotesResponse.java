@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -51,219 +51,219 @@ public class GetResourceTypeResourceIdNotesResponse {
   @SerializedName("updatedByUsername")
   private String updatedByUsername = null;
 
-  @SerializedName("updatedOn")
-  private DateTime updatedOn = null;
+    @SerializedName("updatedOn")
+    private DateTime updatedOn = null;
 
-  public GetResourceTypeResourceIdNotesResponse id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "2", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse clientId(Integer clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-  /**
-   * Get clientId
-   *
-   * @return clientId
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(Integer clientId) {
-    this.clientId = clientId;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse noteType(GetNotesNoteType noteType) {
-    this.noteType = noteType;
-    return this;
-  }
-
-  /**
-   * Get noteType
-   *
-   * @return noteType
-   **/
-  @ApiModelProperty(value = "")
-  public GetNotesNoteType getNoteType() {
-    return noteType;
-  }
-
-  public void setNoteType(GetNotesNoteType noteType) {
-    this.noteType = noteType;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse note(String note) {
-    this.note = note;
-    return this;
-  }
-
-  /**
-   * Get note
-   *
-   * @return note
-   **/
-  @ApiModelProperty(example = "First note edited", value = "")
-  public String getNote() {
-    return note;
-  }
-
-  public void setNote(String note) {
-    this.note = note;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse createdById(Integer createdById) {
-    this.createdById = createdById;
-    return this;
-  }
-
-  /**
-   * Get createdById
-   *
-   * @return createdById
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getCreatedById() {
-    return createdById;
-  }
-
-  public void setCreatedById(Integer createdById) {
-    this.createdById = createdById;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse createdByUsername(String createdByUsername) {
-    this.createdByUsername = createdByUsername;
-    return this;
-  }
-
-  /**
-   * Get createdByUsername
-   *
-   * @return createdByUsername
-   **/
-  @ApiModelProperty(example = "mifos", value = "")
-  public String getCreatedByUsername() {
-    return createdByUsername;
-  }
-
-  public void setCreatedByUsername(String createdByUsername) {
-    this.createdByUsername = createdByUsername;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse createdOn(DateTime createdOn) {
-    this.createdOn = createdOn;
-    return this;
-  }
-
-  /**
-   * Get createdOn
-   *
-   * @return createdOn
-   **/
-  @ApiModelProperty(example = "1342498505000", value = "")
-  public DateTime getCreatedOn() {
-    return createdOn;
-  }
-
-  public void setCreatedOn(DateTime createdOn) {
-    this.createdOn = createdOn;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse updatedById(Integer updatedById) {
-    this.updatedById = updatedById;
-    return this;
-  }
-
-  /**
-   * Get updatedById
-   *
-   * @return updatedById
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getUpdatedById() {
-    return updatedById;
-  }
-
-  public void setUpdatedById(Integer updatedById) {
-    this.updatedById = updatedById;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse updatedByUsername(String updatedByUsername) {
-    this.updatedByUsername = updatedByUsername;
-    return this;
-  }
-
-  /**
-   * Get updatedByUsername
-   *
-   * @return updatedByUsername
-   **/
-  @ApiModelProperty(example = "mifos", value = "")
-  public String getUpdatedByUsername() {
-    return updatedByUsername;
-  }
-
-  public void setUpdatedByUsername(String updatedByUsername) {
-    this.updatedByUsername = updatedByUsername;
-  }
-
-  public GetResourceTypeResourceIdNotesResponse updatedOn(DateTime updatedOn) {
-    this.updatedOn = updatedOn;
-    return this;
-  }
-
-  /**
-   * Get updatedOn
-   *
-   * @return updatedOn
-   **/
-  @ApiModelProperty(example = "1342498517000", value = "")
-  public DateTime getUpdatedOn() {
-    return updatedOn;
-  }
-
-  public void setUpdatedOn(DateTime updatedOn) {
-    this.updatedOn = updatedOn;
-  }
-
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public GetResourceTypeResourceIdNotesResponse id(Integer id) {
+        this.id = id;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "2", value = "")
+    public Integer getId() {
+        return id;
     }
-    GetResourceTypeResourceIdNotesResponse getResourceTypeResourceIdNotesResponse = (GetResourceTypeResourceIdNotesResponse) o;
-    return Objects.equals(this.id, getResourceTypeResourceIdNotesResponse.id) &&
-            Objects.equals(this.clientId, getResourceTypeResourceIdNotesResponse.clientId) &&
-            Objects.equals(this.noteType, getResourceTypeResourceIdNotesResponse.noteType) &&
-            Objects.equals(this.note, getResourceTypeResourceIdNotesResponse.note) &&
-            Objects.equals(this.createdById, getResourceTypeResourceIdNotesResponse.createdById) &&
-            Objects.equals(this.createdByUsername, getResourceTypeResourceIdNotesResponse.createdByUsername) &&
-            Objects.equals(this.createdOn, getResourceTypeResourceIdNotesResponse.createdOn) &&
-            Objects.equals(this.updatedById, getResourceTypeResourceIdNotesResponse.updatedById) &&
-            Objects.equals(this.updatedByUsername, getResourceTypeResourceIdNotesResponse.updatedByUsername) &&
-            Objects.equals(this.updatedOn, getResourceTypeResourceIdNotesResponse.updatedOn);
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse clientId(Integer clientId) {
+        this.clientId = clientId;
+        return this;
+    }
+
+    /**
+     * Get clientId
+     *
+     * @return clientId
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse noteType(GetNotesNoteType noteType) {
+        this.noteType = noteType;
+        return this;
+    }
+
+    /**
+     * Get noteType
+     *
+     * @return noteType
+     **/
+    @ApiModelProperty(value = "")
+    public GetNotesNoteType getNoteType() {
+        return noteType;
+    }
+
+    public void setNoteType(GetNotesNoteType noteType) {
+        this.noteType = noteType;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse note(String note) {
+        this.note = note;
+        return this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return note
+     **/
+    @ApiModelProperty(example = "First note edited", value = "")
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse createdById(Integer createdById) {
+        this.createdById = createdById;
+        return this;
+    }
+
+    /**
+     * Get createdById
+     *
+     * @return createdById
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getCreatedById() {
+        return createdById;
+    }
+
+    public void setCreatedById(Integer createdById) {
+        this.createdById = createdById;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse createdByUsername(String createdByUsername) {
+        this.createdByUsername = createdByUsername;
+        return this;
+    }
+
+    /**
+     * Get createdByUsername
+     *
+     * @return createdByUsername
+     **/
+    @ApiModelProperty(example = "mifos", value = "")
+    public String getCreatedByUsername() {
+        return createdByUsername;
+    }
+
+    public void setCreatedByUsername(String createdByUsername) {
+        this.createdByUsername = createdByUsername;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse createdOn(DateTime createdOn) {
+        this.createdOn = createdOn;
+        return this;
+    }
+
+    /**
+     * Get createdOn
+     *
+     * @return createdOn
+     **/
+    @ApiModelProperty(example = "1342498505000", value = "")
+    public DateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(DateTime createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse updatedById(Integer updatedById) {
+        this.updatedById = updatedById;
+        return this;
+    }
+
+    /**
+     * Get updatedById
+     *
+     * @return updatedById
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getUpdatedById() {
+        return updatedById;
+    }
+
+    public void setUpdatedById(Integer updatedById) {
+        this.updatedById = updatedById;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse updatedByUsername(String updatedByUsername) {
+        this.updatedByUsername = updatedByUsername;
+        return this;
+    }
+
+    /**
+     * Get updatedByUsername
+     *
+     * @return updatedByUsername
+     **/
+    @ApiModelProperty(example = "mifos", value = "")
+    public String getUpdatedByUsername() {
+        return updatedByUsername;
+    }
+
+    public void setUpdatedByUsername(String updatedByUsername) {
+        this.updatedByUsername = updatedByUsername;
+    }
+
+    public GetResourceTypeResourceIdNotesResponse updatedOn(DateTime updatedOn) {
+        this.updatedOn = updatedOn;
+        return this;
+    }
+
+    /**
+     * Get updatedOn
+     *
+     * @return updatedOn
+     **/
+    @ApiModelProperty(example = "1342498517000", value = "")
+    public DateTime getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(DateTime updatedOn) {
+        this.updatedOn = updatedOn;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GetResourceTypeResourceIdNotesResponse getResourceTypeResourceIdNotesResponse = (GetResourceTypeResourceIdNotesResponse) o;
+        return Objects.equals(this.id, getResourceTypeResourceIdNotesResponse.id) &&
+                Objects.equals(this.clientId, getResourceTypeResourceIdNotesResponse.clientId) &&
+                Objects.equals(this.noteType, getResourceTypeResourceIdNotesResponse.noteType) &&
+                Objects.equals(this.note, getResourceTypeResourceIdNotesResponse.note) &&
+                Objects.equals(this.createdById, getResourceTypeResourceIdNotesResponse.createdById) &&
+                Objects.equals(this.createdByUsername, getResourceTypeResourceIdNotesResponse.createdByUsername) &&
+                Objects.equals(this.createdOn, getResourceTypeResourceIdNotesResponse.createdOn) &&
+                Objects.equals(this.updatedById, getResourceTypeResourceIdNotesResponse.updatedById) &&
+                Objects.equals(this.updatedByUsername, getResourceTypeResourceIdNotesResponse.updatedByUsername) &&
+                Objects.equals(this.updatedOn, getResourceTypeResourceIdNotesResponse.updatedOn);
   }
 
   @Override
@@ -276,7 +276,7 @@ public class GetResourceTypeResourceIdNotesResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetResourceTypeResourceIdNotesResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    noteType: ").append(toIndentedString(noteType)).append("\n");

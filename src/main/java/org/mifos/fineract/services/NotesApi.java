@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ public interface NotesApi {
      * @param resourceType resourceType (required)
      * @param resourceId   resourceId (required)
      * @param body         body (required)
-     * @return Call&lt;PostResourceTypeResourceIdNotesResponse&gt;
+     * @return Observable&lt;PostResourceTypeResourceIdNotesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("{resourceType}/{resourceId}/notes")
-    Call<PostResourceTypeResourceIdNotesResponse> addNewNote(
+    Observable<PostResourceTypeResourceIdNotesResponse> addNewNote(
             @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Body PostResourceTypeResourceIdNotesRequest body
     );
 
@@ -31,13 +31,13 @@ public interface NotesApi {
      * @param resourceType resourceType (required)
      * @param resourceId   resourceId (required)
      * @param noteId       noteId (required)
-     * @return Call&lt;DeleteResourceTypeResourceIdNotesNoteIdResponse&gt;
+     * @return Observable&lt;DeleteResourceTypeResourceIdNotesNoteIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("{resourceType}/{resourceId}/notes/{noteId}")
-    Call<DeleteResourceTypeResourceIdNotesNoteIdResponse> deleteNote(
+    Observable<DeleteResourceTypeResourceIdNotesNoteIdResponse> deleteNote(
             @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId
     );
 
@@ -48,13 +48,13 @@ public interface NotesApi {
      * @param resourceType resourceType (required)
      * @param resourceId   resourceId (required)
      * @param noteId       noteId (required)
-     * @return Call&lt;GetResourceTypeResourceIdNotesNoteIdResponse&gt;
+     * @return Observable&lt;GetResourceTypeResourceIdNotesNoteIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("{resourceType}/{resourceId}/notes/{noteId}")
-    Call<GetResourceTypeResourceIdNotesNoteIdResponse> retrieveNote(
+    Observable<GetResourceTypeResourceIdNotesNoteIdResponse> retrieveNote(
             @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId
     );
 
@@ -64,13 +64,13 @@ public interface NotesApi {
      *
      * @param resourceType resourceType (required)
      * @param resourceId   resourceId (required)
-     * @return Call&lt;List&lt;GetResourceTypeResourceIdNotesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetResourceTypeResourceIdNotesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("{resourceType}/{resourceId}/notes")
-    Call<List<GetResourceTypeResourceIdNotesResponse>> retrieveNotesByResource(
+    Observable<List<GetResourceTypeResourceIdNotesResponse>> retrieveNotesByResource(
             @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId
     );
 
@@ -82,13 +82,13 @@ public interface NotesApi {
      * @param resourceId   resourceId (required)
      * @param noteId       noteId (required)
      * @param body         body (required)
-     * @return Call&lt;PutResourceTypeResourceIdNotesNoteIdResponse&gt;
+     * @return Observable&lt;PutResourceTypeResourceIdNotesNoteIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("{resourceType}/{resourceId}/notes/{noteId}")
-    Call<PutResourceTypeResourceIdNotesNoteIdResponse> updateNote(
+    Observable<PutResourceTypeResourceIdNotesNoteIdResponse> updateNote(
             @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId, @retrofit2.http.Body PutResourceTypeResourceIdNotesNoteIdRequest body
     );
 

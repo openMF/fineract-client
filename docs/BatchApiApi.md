@@ -1,6 +1,6 @@
 # BatchApiApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,27 +17,27 @@ The Apache Fineract Batch API is also capable of executing all the requests in a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.BatchApiApi;
 
+BatchApiApi apiService = defaultClient.createService(BatchApiApi.class);
 
-BatchApiApi apiInstance = new BatchApiApi();
-PostBatchesRequest body = new PostBatchesRequest(); // PostBatchesRequest | request body
-Boolean enclosingTransaction = false; // Boolean | enclosingTransaction
-try {
-    BatchResponse result = apiInstance.handleBatchRequests(body, enclosingTransaction);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BatchApiApi#handleBatchRequests");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<BatchResponse> call = apiService.handleBatchRequests(body, enclosingTransaction);
+call.enqueue(new Callback<BatchResponse>() {
+    @Override
+    public void onResponse(Call<BatchResponse> call, Response<BatchResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<BatchResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostBatchesRequest**](PostBatchesRequest.md)| request body |
  **enclosingTransaction** | **Boolean**| enclosingTransaction | [optional] [default to false]
 

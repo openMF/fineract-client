@@ -1,6 +1,6 @@
 # ExternalServicesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,26 +18,27 @@ Returns a external Service configurations based on the Service Name.  Service Na
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ExternalServicesApi;
 
+ExternalServicesApi apiService = defaultClient.createService(ExternalServicesApi.class);
 
-ExternalServicesApi apiInstance = new ExternalServicesApi();
-String servicename = "servicename_example"; // String | servicename
-try {
-    ExternalServicesPropertiesData result = apiInstance.retrieveOne(servicename);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalServicesApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<ExternalServicesPropertiesData> call = apiService.retrieveOne(servicename);
+call.enqueue(new Callback<ExternalServicesPropertiesData>() {
+    @Override
+    public void onResponse(Call<ExternalServicesPropertiesData> call, Response<ExternalServicesPropertiesData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<ExternalServicesPropertiesData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **servicename** | **String**| servicename |
 
 ### Return type
@@ -63,26 +64,27 @@ Updates the external Service Configuration for a Service Name.  Example:   exter
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ExternalServicesApi;
 
+ExternalServicesApi apiService = defaultClient.createService(ExternalServicesApi.class);
 
-ExternalServicesApi apiInstance = new ExternalServicesApi();
-String servicename = "servicename_example"; // String | servicename
-PutExternalServiceRequest body = new PutExternalServiceRequest(); // PutExternalServiceRequest | body
-try {
-    apiInstance.updateExternalServiceProperties(servicename, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalServicesApi#updateExternalServiceProperties");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.updateExternalServiceProperties(servicename, body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **servicename** | **String**| servicename |
  **body** | [**PutExternalServiceRequest**](PutExternalServiceRequest.md)| body |
 

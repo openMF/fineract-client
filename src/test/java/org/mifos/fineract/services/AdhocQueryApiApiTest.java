@@ -26,7 +26,6 @@ public class AdhocQueryApiApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */
@@ -37,8 +36,9 @@ public class AdhocQueryApiApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -48,8 +48,9 @@ public class AdhocQueryApiApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -58,8 +59,9 @@ public class AdhocQueryApiApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -68,8 +70,9 @@ public class AdhocQueryApiApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test

@@ -1,6 +1,6 @@
 # ChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Define a new charge that can later be associated with loans and savings through 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-PostChargesRequest body = new PostChargesRequest(); // PostChargesRequest | body
-try {
-    PostChargesResponse result = apiInstance.createCharge(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#createCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostChargesResponse> call = apiService.createCharge(body);
+call.enqueue(new Callback<PostChargesResponse>() {
+    @Override
+    public void onResponse(Call<PostChargesResponse> call, Response<PostChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostChargesRequest**](PostChargesRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a Charge.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-try {
-    DeleteChargesChargeIdResponse result = apiInstance.deleteCharge(chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#deleteCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteChargesChargeIdResponse> call = apiService.deleteCharge(chargeId);
+call.enqueue(new Callback<DeleteChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteChargesChargeIdResponse> call, Response<DeleteChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chargeId** | **Long**| chargeId |
 
 ### Return type
@@ -112,19 +114,23 @@ Returns the list of defined charges.  Example Requests:  charges
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-try {
-    List<GetChargesResponse> result = apiInstance.retrieveAllCharges();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveAllCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetChargesResponse&gt;> call = apiService.retrieveAllCharges();
+call.enqueue(new Callback<List&lt;GetChargesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetChargesResponse&gt;> call, Response<List&lt;GetChargesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetChargesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Returns the details of a defined Charge.  Example Requests:  charges/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetChargesResponse result = apiInstance.retrieveCharge(chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetChargesResponse> call = apiService.retrieveCharge(chargeId);
+call.enqueue(new Callback<GetChargesResponse>() {
+    @Override
+    public void onResponse(Call<GetChargesResponse> call, Response<GetChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chargeId** | **Long**| chargeId |
 
 ### Return type
@@ -198,19 +205,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-try {
-    GetChargesTemplateResponse result = apiInstance.retrieveNewChargeDetails();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveNewChargeDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetChargesTemplateResponse> call = apiService.retrieveNewChargeDetails();
+call.enqueue(new Callback<GetChargesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetChargesTemplateResponse> call, Response<GetChargesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetChargesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -239,27 +250,27 @@ Updates the details of a Charge.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
 
+ChargesApi apiService = defaultClient.createService(ChargesApi.class);
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-PutChargesChargeIdRequest body = new PutChargesChargeIdRequest(); // PutChargesChargeIdRequest | body
-try {
-    PutChargesChargeIdResponse result = apiInstance.updateCharge(chargeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#updateCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutChargesChargeIdResponse> call = apiService.updateCharge(chargeId, body);
+call.enqueue(new Callback<PutChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PutChargesChargeIdResponse> call, Response<PutChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chargeId** | **Long**| chargeId |
  **body** | [**PutChargesChargeIdRequest**](PutChargesChargeIdRequest.md)| body |
 

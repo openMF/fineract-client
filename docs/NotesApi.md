@@ -1,6 +1,6 @@
 # NotesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,28 +21,27 @@ Adds a new note to a supported resource.  Example Requests:  clients/1/notes   g
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
 
+NotesApi apiService = defaultClient.createService(NotesApi.class);
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-PostResourceTypeResourceIdNotesRequest body = new PostResourceTypeResourceIdNotesRequest(); // PostResourceTypeResourceIdNotesRequest | body
-try {
-    PostResourceTypeResourceIdNotesResponse result = apiInstance.addNewNote(resourceType, resourceId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#addNewNote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostResourceTypeResourceIdNotesResponse> call = apiService.addNewNote(resourceType, resourceId, body);
+call.enqueue(new Callback<PostResourceTypeResourceIdNotesResponse>() {
+    @Override
+    public void onResponse(Call<PostResourceTypeResourceIdNotesResponse> call, Response<PostResourceTypeResourceIdNotesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostResourceTypeResourceIdNotesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
  **body** | [**PostResourceTypeResourceIdNotesRequest**](PostResourceTypeResourceIdNotesRequest.md)| body |
@@ -70,28 +69,27 @@ Deletes a Resource Note
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
 
+NotesApi apiService = defaultClient.createService(NotesApi.class);
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-try {
-    DeleteResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.deleteNote(resourceType, resourceId, noteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#deleteNote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteResourceTypeResourceIdNotesNoteIdResponse> call = apiService.deleteNote(resourceType, resourceId, noteId);
+call.enqueue(new Callback<DeleteResourceTypeResourceIdNotesNoteIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteResourceTypeResourceIdNotesNoteIdResponse> call, Response<DeleteResourceTypeResourceIdNotesNoteIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteResourceTypeResourceIdNotesNoteIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
  **noteId** | **Long**| noteId |
@@ -119,28 +117,27 @@ Retrieves a Resource Note  Example Requests:  clients/1/notes/76   groups/1/note
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
 
+NotesApi apiService = defaultClient.createService(NotesApi.class);
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-try {
-    GetResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.retrieveNote(resourceType, resourceId, noteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#retrieveNote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetResourceTypeResourceIdNotesNoteIdResponse> call = apiService.retrieveNote(resourceType, resourceId, noteId);
+call.enqueue(new Callback<GetResourceTypeResourceIdNotesNoteIdResponse>() {
+    @Override
+    public void onResponse(Call<GetResourceTypeResourceIdNotesNoteIdResponse> call, Response<GetResourceTypeResourceIdNotesNoteIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetResourceTypeResourceIdNotesNoteIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
  **noteId** | **Long**| noteId |
@@ -168,27 +165,27 @@ Retrieves a Resource&#39;s Notes  Note: Notes are returned in descending createO
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
 
+NotesApi apiService = defaultClient.createService(NotesApi.class);
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-try {
-    List<GetResourceTypeResourceIdNotesResponse> result = apiInstance.retrieveNotesByResource(resourceType, resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#retrieveNotesByResource");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetResourceTypeResourceIdNotesResponse&gt;> call = apiService.retrieveNotesByResource(resourceType, resourceId);
+call.enqueue(new Callback<List&lt;GetResourceTypeResourceIdNotesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetResourceTypeResourceIdNotesResponse&gt;> call, Response<List&lt;GetResourceTypeResourceIdNotesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetResourceTypeResourceIdNotesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
 
@@ -215,29 +212,27 @@ Updates a Resource Note
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
 
+NotesApi apiService = defaultClient.createService(NotesApi.class);
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-PutResourceTypeResourceIdNotesNoteIdRequest body = new PutResourceTypeResourceIdNotesNoteIdRequest(); // PutResourceTypeResourceIdNotesNoteIdRequest | body
-try {
-    PutResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.updateNote(resourceType, resourceId, noteId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#updateNote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutResourceTypeResourceIdNotesNoteIdResponse> call = apiService.updateNote(resourceType, resourceId, noteId, body);
+call.enqueue(new Callback<PutResourceTypeResourceIdNotesNoteIdResponse>() {
+    @Override
+    public void onResponse(Call<PutResourceTypeResourceIdNotesNoteIdResponse> call, Response<PutResourceTypeResourceIdNotesNoteIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutResourceTypeResourceIdNotesNoteIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
  **noteId** | **Long**| noteId |

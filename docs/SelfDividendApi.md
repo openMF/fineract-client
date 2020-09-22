@@ -1,6 +1,6 @@
 # SelfDividendApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,27 +19,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfDividendApi;
 
+SelfDividendApi apiService = defaultClient.createService(SelfDividendApi.class);
 
-SelfDividendApi apiInstance = new SelfDividendApi();
-Long productId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.createDividendDetail(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfDividendApi#createDividendDetail");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createDividendDetail(productId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**|  |
  **body** | **String**|  | [optional]
 
@@ -64,27 +64,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfDividendApi;
 
+SelfDividendApi apiService = defaultClient.createService(SelfDividendApi.class);
 
-SelfDividendApi apiInstance = new SelfDividendApi();
-Long productId = 789L; // Long | 
-Long dividendId = 789L; // Long | 
-try {
-    String result = apiInstance.deleteDividendDetail(productId, dividendId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfDividendApi#deleteDividendDetail");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteDividendDetail(productId, dividendId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**|  |
  **dividendId** | **Long**|  |
 
@@ -109,31 +109,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfDividendApi;
 
+SelfDividendApi apiService = defaultClient.createService(SelfDividendApi.class);
 
-SelfDividendApi apiInstance = new SelfDividendApi();
-Long productId = 789L; // Long | 
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-String orderBy = "orderBy_example"; // String | 
-String sortOrder = "sortOrder_example"; // String | 
-Integer status = 56; // Integer | 
-try {
-    String result = apiInstance.retrieveAll(productId, offset, limit, orderBy, sortOrder, status);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfDividendApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll(productId, offset, limit, orderBy, sortOrder, status);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**|  |
  **offset** | **Integer**|  | [optional]
  **limit** | **Integer**|  | [optional]
@@ -162,31 +158,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfDividendApi;
 
+SelfDividendApi apiService = defaultClient.createService(SelfDividendApi.class);
 
-SelfDividendApi apiInstance = new SelfDividendApi();
-Long dividendId = 789L; // Long | 
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-String orderBy = "orderBy_example"; // String | 
-String sortOrder = "sortOrder_example"; // String | 
-String accountNo = "accountNo_example"; // String | 
-try {
-    String result = apiInstance.retrieveDividendDetails(dividendId, offset, limit, orderBy, sortOrder, accountNo);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfDividendApi#retrieveDividendDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveDividendDetails(dividendId, offset, limit, orderBy, sortOrder, accountNo);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **dividendId** | **Long**|  |
  **offset** | **Integer**|  | [optional]
  **limit** | **Integer**|  | [optional]
@@ -215,29 +207,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfDividendApi;
 
+SelfDividendApi apiService = defaultClient.createService(SelfDividendApi.class);
 
-SelfDividendApi apiInstance = new SelfDividendApi();
-Long productId = 789L; // Long | 
-Long dividendId = 789L; // Long | 
-String command = "command_example"; // String | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateDividendDetail(productId, dividendId, command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfDividendApi#updateDividendDetail");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateDividendDetail(productId, dividendId, command, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**|  |
  **dividendId** | **Long**|  |
  **command** | **String**|  | [optional]

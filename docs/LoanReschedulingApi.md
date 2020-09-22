@@ -1,6 +1,6 @@
 # LoanReschedulingApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,28 +17,27 @@ Calculate loan repayment schedule based on Loan term variations:  Mandatory Fiel
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanReschedulingApi;
 
+LoanReschedulingApi apiService = defaultClient.createService(LoanReschedulingApi.class);
 
-LoanReschedulingApi apiInstance = new LoanReschedulingApi();
-Long loanId = 789L; // Long | loanId
-PostLoansLoanIdScheduleRequest body = new PostLoansLoanIdScheduleRequest(); // PostLoansLoanIdScheduleRequest | body
-String command = "command_example"; // String | command
-try {
-    PostLoansLoanIdScheduleResponse result = apiInstance.calculateLoanScheduleOrSubmitVariableSchedule(loanId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanReschedulingApi#calculateLoanScheduleOrSubmitVariableSchedule");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdScheduleResponse> call = apiService.calculateLoanScheduleOrSubmitVariableSchedule(loanId, body, command);
+call.enqueue(new Callback<PostLoansLoanIdScheduleResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdScheduleResponse> call, Response<PostLoansLoanIdScheduleResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdScheduleResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PostLoansLoanIdScheduleRequest**](PostLoansLoanIdScheduleRequest.md)| body |
  **command** | **String**| command | [optional]

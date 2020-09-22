@@ -1,6 +1,6 @@
 # TaxGroupApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Create a new Tax Group Mandatory Fields: name and taxComponents Mandatory Fields
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxGroupApi;
 
+TaxGroupApi apiService = defaultClient.createService(TaxGroupApi.class);
 
-TaxGroupApi apiInstance = new TaxGroupApi();
-PostTaxesGroupRequest body = new PostTaxesGroupRequest(); // PostTaxesGroupRequest | body
-try {
-    PostTaxesGroupResponse result = apiInstance.createTaxGroup(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxGroupApi#createTaxGroup");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTaxesGroupResponse> call = apiService.createTaxGroup(body);
+call.enqueue(new Callback<PostTaxesGroupResponse>() {
+    @Override
+    public void onResponse(Call<PostTaxesGroupResponse> call, Response<PostTaxesGroupResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTaxesGroupResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostTaxesGroupRequest**](PostTaxesGroupRequest.md)| body |
 
 ### Return type
@@ -66,19 +67,23 @@ List Tax Group
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxGroupApi;
 
+TaxGroupApi apiService = defaultClient.createService(TaxGroupApi.class);
 
-TaxGroupApi apiInstance = new TaxGroupApi();
-try {
-    List<GetTaxesGroupResponse> result = apiInstance.retrieveAllTaxGroups();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxGroupApi#retrieveAllTaxGroups");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetTaxesGroupResponse&gt;> call = apiService.retrieveAllTaxGroups();
+call.enqueue(new Callback<List&lt;GetTaxesGroupResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetTaxesGroupResponse&gt;> call, Response<List&lt;GetTaxesGroupResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetTaxesGroupResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -107,26 +112,27 @@ Retrieve Tax Group
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxGroupApi;
 
+TaxGroupApi apiService = defaultClient.createService(TaxGroupApi.class);
 
-TaxGroupApi apiInstance = new TaxGroupApi();
-Long taxGroupId = 789L; // Long | taxGroupId
-try {
-    GetTaxesGroupResponse result = apiInstance.retrieveTaxGroup(taxGroupId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxGroupApi#retrieveTaxGroup");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTaxesGroupResponse> call = apiService.retrieveTaxGroup(taxGroupId);
+call.enqueue(new Callback<GetTaxesGroupResponse>() {
+    @Override
+    public void onResponse(Call<GetTaxesGroupResponse> call, Response<GetTaxesGroupResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTaxesGroupResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **taxGroupId** | **Long**| taxGroupId |
 
 ### Return type
@@ -150,19 +156,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxGroupApi;
 
+TaxGroupApi apiService = defaultClient.createService(TaxGroupApi.class);
 
-TaxGroupApi apiInstance = new TaxGroupApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxGroupApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -191,27 +201,27 @@ Updates Tax Group. Only end date can be up-datable and can insert new tax compon
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxGroupApi;
 
+TaxGroupApi apiService = defaultClient.createService(TaxGroupApi.class);
 
-TaxGroupApi apiInstance = new TaxGroupApi();
-Long taxGroupId = 789L; // Long | taxGroupId
-PutTaxesGroupTaxGroupIdRequest body = new PutTaxesGroupTaxGroupIdRequest(); // PutTaxesGroupTaxGroupIdRequest | body
-try {
-    PutTaxesGroupTaxGroupIdResponse result = apiInstance.updateTaxGroup(taxGroupId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxGroupApi#updateTaxGroup");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutTaxesGroupTaxGroupIdResponse> call = apiService.updateTaxGroup(taxGroupId, body);
+call.enqueue(new Callback<PutTaxesGroupTaxGroupIdResponse>() {
+    @Override
+    public void onResponse(Call<PutTaxesGroupTaxGroupIdResponse> call, Response<PutTaxesGroupTaxGroupIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutTaxesGroupTaxGroupIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **taxGroupId** | **Long**| taxGroupId |
  **body** | [**PutTaxesGroupTaxGroupIdRequest**](PutTaxesGroupTaxGroupIdRequest.md)| body |
 

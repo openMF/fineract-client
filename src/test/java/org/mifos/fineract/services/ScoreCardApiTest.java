@@ -19,7 +19,7 @@ public class ScoreCardApiTest {
 
     /**
      * Create a Scorecard entry
-     * <p>
+     *
      * Add a new entry to a survey.  Mandatory Fields clientId, createdOn, questionId, responseId, staffId
      */
     @Test
@@ -41,10 +41,9 @@ public class ScoreCardApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all Scorecard entries
-     * <p>
+     *
      * List all Scorecard entries for a survey.
      */
     @Test

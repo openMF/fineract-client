@@ -1,6 +1,6 @@
 # SmsCampaignsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,26 +24,27 @@ Mandatory Fields campaignName, campaignType, triggerType, providerId, runReportI
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-CommandWrapper body = new CommandWrapper(); // CommandWrapper | body
-try {
-    String result = apiInstance.createCampaign(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#createCampaign");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createCampaign(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**CommandWrapper**](CommandWrapper.md)| body |
 
 ### Return type
@@ -69,26 +70,27 @@ Note: Only closed SMS Campaigns can be deleted
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-Long campaignId = 789L; // Long | 
-try {
-    String result = apiInstance.delete(campaignId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.delete(campaignId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **campaignId** | **Long**|  |
 
 ### Return type
@@ -114,27 +116,27 @@ Activates | Deactivates | Reactivates
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-Long campaignId = 789L; // Long | 
-String command = "command_example"; // String | 
-try {
-    String result = apiInstance.handleCommands(campaignId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#handleCommands");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.handleCommands(campaignId, command);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **campaignId** | **Long**|  |
  **command** | **String**|  | [optional]
 
@@ -159,26 +161,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.preview(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#preview");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.preview(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -204,30 +207,27 @@ Example Requests:  smscampaigns
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-String sqlSearch = "sqlSearch_example"; // String | 
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-String orderBy = "orderBy_example"; // String | 
-String sortOrder = "sortOrder_example"; // String | 
-try {
-    String result = apiInstance.retrieveAllEmails(sqlSearch, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#retrieveAllEmails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAllEmails(sqlSearch, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**|  | [optional]
  **offset** | **Integer**|  | [optional]
  **limit** | **Integer**|  | [optional]
@@ -257,26 +257,27 @@ Example Requests:  smscampaigns/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-Long resourceId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveCampaign(resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#retrieveCampaign");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveCampaign(resourceId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **resourceId** | **Long**|  |
 
 ### Return type
@@ -302,19 +303,23 @@ Example Requests:  smscampaigns/1   smscampaigns/1?template&#x3D;true   smscampa
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-try {
-    String result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.template();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -343,27 +348,27 @@ Update a Campaign
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SmsCampaignsApi;
 
+SmsCampaignsApi apiService = defaultClient.createService(SmsCampaignsApi.class);
 
-SmsCampaignsApi apiInstance = new SmsCampaignsApi();
-Long campaignId = 789L; // Long | 
-CommandWrapper body = new CommandWrapper(); // CommandWrapper | body
-try {
-    String result = apiInstance.updateCampaign(campaignId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SmsCampaignsApi#updateCampaign");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateCampaign(campaignId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **campaignId** | **Long**|  |
  **body** | [**CommandWrapper**](CommandWrapper.md)| body |
 

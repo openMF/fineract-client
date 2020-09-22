@@ -19,7 +19,7 @@ public class CurrencyApiTest {
 
     /**
      * Retrieve Currency Configuration
-     * <p>
+     *
      * Returns the list of currencies permitted for use AND the list of currencies not selected (but available for selection).  Example Requests:  currencies   currencies?fields&#x3D;selectedCurrencyOptions
      */
     @Test
@@ -28,10 +28,9 @@ public class CurrencyApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Currency Configuration
-     * <p>
+     *
      * Updates the list of currencies permitted for use.
      */
     @Test

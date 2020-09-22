@@ -1,6 +1,6 @@
 # SelfSpmApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,19 +15,23 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfSpmApi;
 
+SelfSpmApi apiService = defaultClient.createService(SelfSpmApi.class);
 
-SelfSpmApi apiInstance = new SelfSpmApi();
-try {
-    List<SurveyData> result = apiInstance.fetchAllSurveys();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfSpmApi#fetchAllSurveys");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;SurveyData&gt;> call = apiService.fetchAllSurveys();
+call.enqueue(new Callback<List&lt;SurveyData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;SurveyData&gt;> call, Response<List&lt;SurveyData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;SurveyData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

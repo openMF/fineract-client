@@ -1,6 +1,6 @@
 # DomainNameapiv1entityentityIdimagesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,29 +18,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entityentityIdimagesApi;
 
+DomainNameapiv1entityentityIdimagesApi apiService = defaultClient.createService(DomainNameapiv1entityentityIdimagesApi.class);
 
-DomainNameapiv1entityentityIdimagesApi apiInstance = new DomainNameapiv1entityentityIdimagesApi();
-String entity = "entity_example"; // String | 
-Long entityId = 789L; // Long | 
-Long contentLength = 789L; // Long | 
-File file = new File("/path/to/file.txt"); // File | 
-try {
-    String result = apiInstance.addNewClientImage(entity, entityId, contentLength, file);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entityentityIdimagesApi#addNewClientImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.addNewClientImage(entity, entityId, contentLength, file);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entity** | **String**|  |
  **entityId** | **Long**|  |
  **contentLength** | **Long**|  | [optional]
@@ -67,27 +65,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entityentityIdimagesApi;
 
+DomainNameapiv1entityentityIdimagesApi apiService = defaultClient.createService(DomainNameapiv1entityentityIdimagesApi.class);
 
-DomainNameapiv1entityentityIdimagesApi apiInstance = new DomainNameapiv1entityentityIdimagesApi();
-String entity = "entity_example"; // String | 
-Long entityId = 789L; // Long | 
-try {
-    String result = apiInstance.deleteClientImage(entity, entityId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entityentityIdimagesApi#deleteClientImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteClientImage(entity, entityId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entity** | **String**|  |
  **entityId** | **Long**|  |
 
@@ -112,29 +110,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entityentityIdimagesApi;
 
+DomainNameapiv1entityentityIdimagesApi apiService = defaultClient.createService(DomainNameapiv1entityentityIdimagesApi.class);
 
-DomainNameapiv1entityentityIdimagesApi apiInstance = new DomainNameapiv1entityentityIdimagesApi();
-String entity = "entity_example"; // String | 
-Long entityId = 789L; // Long | 
-Integer maxWidth = 56; // Integer | 
-Integer maxHeight = 56; // Integer | 
-String output = "output_example"; // String | 
-try {
-    apiInstance.retrieveImage(entity, entityId, maxWidth, maxHeight, output);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entityentityIdimagesApi#retrieveImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.retrieveImage(entity, entityId, maxWidth, maxHeight, output);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entity** | **String**|  |
  **entityId** | **Long**|  |
  **maxWidth** | **Integer**|  | [optional]
@@ -162,29 +158,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entityentityIdimagesApi;
 
+DomainNameapiv1entityentityIdimagesApi apiService = defaultClient.createService(DomainNameapiv1entityentityIdimagesApi.class);
 
-DomainNameapiv1entityentityIdimagesApi apiInstance = new DomainNameapiv1entityentityIdimagesApi();
-String entity = "entity_example"; // String | 
-Long entityId = 789L; // Long | 
-Long contentLength = 789L; // Long | 
-File file = new File("/path/to/file.txt"); // File | 
-try {
-    String result = apiInstance.updateClientImage(entity, entityId, contentLength, file);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entityentityIdimagesApi#updateClientImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateClientImage(entity, entityId, contentLength, file);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entity** | **String**|  |
  **entityId** | **Long**|  |
  **contentLength** | **Long**|  | [optional]

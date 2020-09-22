@@ -1,6 +1,6 @@
 # SurveyApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,29 +23,27 @@ Insert and entry in a survey table (full fill the survey).  Refer Link for sampl
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | surveyName
-Long apptableId = 789L; // Long | apptableId
-PostSurveySurveyNameApptableIdRequest body2 = new PostSurveySurveyNameApptableIdRequest(); // PostSurveySurveyNameApptableIdRequest | body
-String body = "body_example"; // String | 
-try {
-    PostSurveySurveyNameApptableIdResponse result = apiInstance.createDatatableEntry(surveyName, apptableId, body2, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#createDatatableEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSurveySurveyNameApptableIdResponse> call = apiService.createDatatableEntry(surveyName, apptableId, body2, body);
+call.enqueue(new Callback<PostSurveySurveyNameApptableIdResponse>() {
+    @Override
+    public void onResponse(Call<PostSurveySurveyNameApptableIdResponse> call, Response<PostSurveySurveyNameApptableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSurveySurveyNameApptableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**| surveyName |
  **apptableId** | **Long**| apptableId |
  **body2** | [**PostSurveySurveyNameApptableIdRequest**](PostSurveySurveyNameApptableIdRequest.md)| body |
@@ -72,28 +70,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | 
-Long clientId = 789L; // Long | 
-Long fulfilledId = 789L; // Long | 
-try {
-    String result = apiInstance.deleteDatatableEntries(surveyName, clientId, fulfilledId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#deleteDatatableEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteDatatableEntries(surveyName, clientId, fulfilledId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**|  |
  **clientId** | **Long**|  |
  **fulfilledId** | **Long**|  |
@@ -119,27 +116,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | 
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.getClientSurveyOverview(surveyName, clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#getClientSurveyOverview");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getClientSurveyOverview(surveyName, clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**|  |
  **clientId** | **Long**|  |
 
@@ -164,28 +161,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | 
-Long clientId = 789L; // Long | 
-Long entryId = 789L; // Long | 
-try {
-    String result = apiInstance.getSurveyEntry(surveyName, clientId, entryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#getSurveyEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getSurveyEntry(surveyName, clientId, entryId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**|  |
  **clientId** | **Long**|  |
  **entryId** | **Long**|  |
@@ -211,28 +207,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | 
-String apptable = "apptable_example"; // String | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.register(surveyName, apptable, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#register");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.register(surveyName, apptable, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**|  |
  **apptable** | **String**|  |
  **body** | **String**|  | [optional]
@@ -260,26 +255,27 @@ Lists a registered survey table details and the Apache Fineract Core application
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-String surveyName = "surveyName_example"; // String | surveyName
-try {
-    GetSurveyResponse result = apiInstance.retrieveSurvey(surveyName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#retrieveSurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSurveyResponse> call = apiService.retrieveSurvey(surveyName);
+call.enqueue(new Callback<GetSurveyResponse>() {
+    @Override
+    public void onResponse(Call<GetSurveyResponse> call, Response<GetSurveyResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSurveyResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyName** | **String**| surveyName |
 
 ### Return type
@@ -305,19 +301,23 @@ Retrieve surveys. This allows to retrieve the list of survey tables registered .
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SurveyApi;
 
+SurveyApi apiService = defaultClient.createService(SurveyApi.class);
 
-SurveyApi apiInstance = new SurveyApi();
-try {
-    List<GetSurveyResponse> result = apiInstance.retrieveSurveys();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SurveyApi#retrieveSurveys");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSurveyResponse&gt;> call = apiService.retrieveSurveys();
+call.enqueue(new Callback<List&lt;GetSurveyResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSurveyResponse&gt;> call, Response<List&lt;GetSurveyResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSurveyResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

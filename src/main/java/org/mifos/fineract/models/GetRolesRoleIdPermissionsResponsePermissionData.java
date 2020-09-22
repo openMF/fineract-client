@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -35,119 +35,119 @@ public class GetRolesRoleIdPermissionsResponsePermissionData {
   @SerializedName("actionName")
   private String actionName = null;
 
-  @SerializedName("selected")
-  private Boolean selected = null;
+    @SerializedName("selected")
+    private Boolean selected = null;
 
-  public GetRolesRoleIdPermissionsResponsePermissionData grouping(String grouping) {
-    this.grouping = grouping;
-    return this;
-  }
+    public GetRolesRoleIdPermissionsResponsePermissionData grouping(String grouping) {
+        this.grouping = grouping;
+        return this;
+    }
 
-  /**
-   * Get grouping
-   *
-   * @return grouping
-   **/
-  @ApiModelProperty(example = "authorisation", value = "")
-  public String getGrouping() {
-    return grouping;
-  }
+    /**
+     * Get grouping
+     *
+     * @return grouping
+     **/
+    @ApiModelProperty(example = "authorisation", value = "")
+    public String getGrouping() {
+        return grouping;
+    }
 
-  public void setGrouping(String grouping) {
-    this.grouping = grouping;
-  }
+    public void setGrouping(String grouping) {
+        this.grouping = grouping;
+    }
 
-  public GetRolesRoleIdPermissionsResponsePermissionData code(String code) {
-    this.code = code;
-    return this;
-  }
+    public GetRolesRoleIdPermissionsResponsePermissionData code(String code) {
+        this.code = code;
+        return this;
+    }
 
-  /**
-   * Get code
-   *
-   * @return code
-   **/
-  @ApiModelProperty(example = "READ_PERMISSION", value = "")
-  public String getCode() {
-    return code;
-  }
+    /**
+     * Get code
+     *
+     * @return code
+     **/
+    @ApiModelProperty(example = "READ_PERMISSION", value = "")
+    public String getCode() {
+        return code;
+    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-  public GetRolesRoleIdPermissionsResponsePermissionData entityName(String entityName) {
-    this.entityName = entityName;
-    return this;
-  }
+    public GetRolesRoleIdPermissionsResponsePermissionData entityName(String entityName) {
+        this.entityName = entityName;
+        return this;
+    }
 
-  /**
-   * Get entityName
-   *
-   * @return entityName
-   **/
-  @ApiModelProperty(example = "PERMISSION", value = "")
-  public String getEntityName() {
-    return entityName;
-  }
+    /**
+     * Get entityName
+     *
+     * @return entityName
+     **/
+    @ApiModelProperty(example = "PERMISSION", value = "")
+    public String getEntityName() {
+        return entityName;
+    }
 
-  public void setEntityName(String entityName) {
-    this.entityName = entityName;
-  }
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }
 
-  public GetRolesRoleIdPermissionsResponsePermissionData actionName(String actionName) {
-    this.actionName = actionName;
-    return this;
-  }
+    public GetRolesRoleIdPermissionsResponsePermissionData actionName(String actionName) {
+        this.actionName = actionName;
+        return this;
+    }
 
-  /**
-   * Get actionName
-   *
-   * @return actionName
-   **/
-  @ApiModelProperty(example = "READ", value = "")
-  public String getActionName() {
-    return actionName;
-  }
+    /**
+     * Get actionName
+     *
+     * @return actionName
+     **/
+    @ApiModelProperty(example = "READ", value = "")
+    public String getActionName() {
+        return actionName;
+    }
 
-  public void setActionName(String actionName) {
-    this.actionName = actionName;
-  }
+    public void setActionName(String actionName) {
+        this.actionName = actionName;
+    }
 
-  public GetRolesRoleIdPermissionsResponsePermissionData selected(Boolean selected) {
-    this.selected = selected;
-    return this;
-  }
+    public GetRolesRoleIdPermissionsResponsePermissionData selected(Boolean selected) {
+        this.selected = selected;
+        return this;
+    }
 
-  /**
-   * Get selected
-   *
-   * @return selected
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isSelected() {
-    return selected;
-  }
+    /**
+     * Get selected
+     *
+     * @return selected
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isSelected() {
+        return selected;
+    }
 
-  public void setSelected(Boolean selected) {
-    this.selected = selected;
-  }
+    public void setSelected(Boolean selected) {
+        this.selected = selected;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRolesRoleIdPermissionsResponsePermissionData getRolesRoleIdPermissionsResponsePermissionData = (GetRolesRoleIdPermissionsResponsePermissionData) o;
-    return Objects.equals(this.grouping, getRolesRoleIdPermissionsResponsePermissionData.grouping) &&
-            Objects.equals(this.code, getRolesRoleIdPermissionsResponsePermissionData.code) &&
-            Objects.equals(this.entityName, getRolesRoleIdPermissionsResponsePermissionData.entityName) &&
-            Objects.equals(this.actionName, getRolesRoleIdPermissionsResponsePermissionData.actionName) &&
-            Objects.equals(this.selected, getRolesRoleIdPermissionsResponsePermissionData.selected);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRolesRoleIdPermissionsResponsePermissionData getRolesRoleIdPermissionsResponsePermissionData = (GetRolesRoleIdPermissionsResponsePermissionData) o;
+      return Objects.equals(this.grouping, getRolesRoleIdPermissionsResponsePermissionData.grouping) &&
+              Objects.equals(this.code, getRolesRoleIdPermissionsResponsePermissionData.code) &&
+              Objects.equals(this.entityName, getRolesRoleIdPermissionsResponsePermissionData.entityName) &&
+              Objects.equals(this.actionName, getRolesRoleIdPermissionsResponsePermissionData.actionName) &&
+              Objects.equals(this.selected, getRolesRoleIdPermissionsResponsePermissionData.selected);
   }
 
   @Override
@@ -160,7 +160,7 @@ public class GetRolesRoleIdPermissionsResponsePermissionData {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRolesRoleIdPermissionsResponsePermissionData {\n");
-
+    
     sb.append("    grouping: ").append(toIndentedString(grouping)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");

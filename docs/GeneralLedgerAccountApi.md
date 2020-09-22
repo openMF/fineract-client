@@ -1,6 +1,6 @@
 # GeneralLedgerAccountApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,26 +24,27 @@ Note: You may optionally create Hierarchical Chart of Accounts by using the \&qu
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-PostGLAccountsRequest body = new PostGLAccountsRequest(); // PostGLAccountsRequest | body
-try {
-    PostGLAccountsResponse result = apiInstance.createGLAccount(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#createGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostGLAccountsResponse> call = apiService.createGLAccount(body);
+call.enqueue(new Callback<PostGLAccountsResponse>() {
+    @Override
+    public void onResponse(Call<PostGLAccountsResponse> call, Response<PostGLAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostGLAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostGLAccountsRequest**](PostGLAccountsRequest.md)| body | [optional]
 
 ### Return type
@@ -69,26 +70,27 @@ Note: Only the latest accounting closure associated with a branch may be deleted
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-Long glAccountId = 789L; // Long | glAccountId
-try {
-    DeleteGLAccountsRequest result = apiInstance.deleteGLAccount(glAccountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#deleteGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteGLAccountsRequest> call = apiService.deleteGLAccount(glAccountId);
+call.enqueue(new Callback<DeleteGLAccountsRequest>() {
+    @Override
+    public void onResponse(Call<DeleteGLAccountsRequest> call, Response<DeleteGLAccountsRequest> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteGLAccountsRequest> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glAccountId** | **Long**| glAccountId |
 
 ### Return type
@@ -112,25 +114,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getGlAccountsTemplate(dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#getGlAccountsTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getGlAccountsTemplate(dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **dateFormat** | **String**|  | [optional]
 
 ### Return type
@@ -154,28 +158,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postGlAccountsTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#postGlAccountsTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postGlAccountsTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -203,27 +206,27 @@ Example Requests:  glaccounts/1   glaccounts/1?template&#x3D;true   glaccounts/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-Long glAccountId = 789L; // Long | glAccountId
-Boolean fetchRunningBalance = true; // Boolean | fetchRunningBalance
-try {
-    GetGLAccountsResponse result = apiInstance.retreiveAccount(glAccountId, fetchRunningBalance);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#retreiveAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGLAccountsResponse> call = apiService.retreiveAccount(glAccountId, fetchRunningBalance);
+call.enqueue(new Callback<GetGLAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetGLAccountsResponse> call, Response<GetGLAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGLAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glAccountId** | **Long**| glAccountId |
  **fetchRunningBalance** | **Boolean**| fetchRunningBalance | [optional]
 
@@ -250,31 +253,27 @@ ARGUMENTS type Integer optional manualEntriesAllowed boolean optional usage Inte
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-Integer type = 56; // Integer | type
-String searchParam = "searchParam_example"; // String | searchParam
-Integer usage = 56; // Integer | usage
-Boolean manualEntriesAllowed = true; // Boolean | manualEntriesAllowed
-Boolean disabled = true; // Boolean | disabled
-Boolean fetchRunningBalance = true; // Boolean | fetchRunningBalance
-try {
-    List<GetGLAccountsResponse> result = apiInstance.retrieveAllAccounts(type, searchParam, usage, manualEntriesAllowed, disabled, fetchRunningBalance);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#retrieveAllAccounts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetGLAccountsResponse&gt;> call = apiService.retrieveAllAccounts(type, searchParam, usage, manualEntriesAllowed, disabled, fetchRunningBalance);
+call.enqueue(new Callback<List&lt;GetGLAccountsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetGLAccountsResponse&gt;> call, Response<List&lt;GetGLAccountsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetGLAccountsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **Integer**| type | [optional]
  **searchParam** | **String**| searchParam | [optional]
  **usage** | **Integer**| usage | [optional]
@@ -305,26 +304,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-Integer type = 56; // Integer | type
-try {
-    GetGLAccountsTemplateResponse result = apiInstance.retrieveNewAccountDetails(type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#retrieveNewAccountDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGLAccountsTemplateResponse> call = apiService.retrieveNewAccountDetails(type);
+call.enqueue(new Callback<GetGLAccountsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetGLAccountsTemplateResponse> call, Response<GetGLAccountsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGLAccountsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **Integer**| type | [optional]
 
 ### Return type
@@ -350,27 +350,27 @@ Once an accounting closure is created, only the comments associated with it may 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GeneralLedgerAccountApi;
 
+GeneralLedgerAccountApi apiService = defaultClient.createService(GeneralLedgerAccountApi.class);
 
-GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi();
-Long glAccountId = 789L; // Long | glAccountId
-PutGLAccountsRequest body = new PutGLAccountsRequest(); // PutGLAccountsRequest | body
-try {
-    PutGLAccountsResponse result = apiInstance.updateGLAccount(glAccountId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GeneralLedgerAccountApi#updateGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutGLAccountsResponse> call = apiService.updateGLAccount(glAccountId, body);
+call.enqueue(new Callback<PutGLAccountsResponse>() {
+    @Override
+    public void onResponse(Call<PutGLAccountsResponse> call, Response<PutGLAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutGLAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glAccountId** | **Long**| glAccountId |
  **body** | [**PutGLAccountsRequest**](PutGLAccountsRequest.md)| body | [optional]
 

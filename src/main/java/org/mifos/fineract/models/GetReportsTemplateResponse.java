@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -39,95 +39,95 @@ public class GetReportsTemplateResponse {
     return this;
   }
 
-  public GetReportsTemplateResponse addAllowedReportTypesItem(String allowedReportTypesItem) {
-    if (this.allowedReportTypes == null) {
-      this.allowedReportTypes = new ArrayList<String>();
+    public GetReportsTemplateResponse addAllowedReportTypesItem(String allowedReportTypesItem) {
+        if (this.allowedReportTypes == null) {
+            this.allowedReportTypes = new ArrayList<String>();
+        }
+        this.allowedReportTypes.add(allowedReportTypesItem);
+        return this;
     }
-    this.allowedReportTypes.add(allowedReportTypesItem);
-    return this;
-  }
 
-  /**
-   * Get allowedReportTypes
-   *
-   * @return allowedReportTypes
-   **/
-  @ApiModelProperty(value = "")
-  public List<String> getAllowedReportTypes() {
-    return allowedReportTypes;
-  }
+    /**
+     * Get allowedReportTypes
+     *
+     * @return allowedReportTypes
+     **/
+    @ApiModelProperty(value = "")
+    public List<String> getAllowedReportTypes() {
+        return allowedReportTypes;
+    }
 
-  public void setAllowedReportTypes(List<String> allowedReportTypes) {
-    this.allowedReportTypes = allowedReportTypes;
-  }
+    public void setAllowedReportTypes(List<String> allowedReportTypes) {
+        this.allowedReportTypes = allowedReportTypes;
+    }
 
-  public GetReportsTemplateResponse allowedReportSubTypes(List<String> allowedReportSubTypes) {
+    public GetReportsTemplateResponse allowedReportSubTypes(List<String> allowedReportSubTypes) {
     this.allowedReportSubTypes = allowedReportSubTypes;
     return this;
-  }
-
-  public GetReportsTemplateResponse addAllowedReportSubTypesItem(String allowedReportSubTypesItem) {
-    if (this.allowedReportSubTypes == null) {
-      this.allowedReportSubTypes = new ArrayList<String>();
     }
-    this.allowedReportSubTypes.add(allowedReportSubTypesItem);
-    return this;
-  }
 
-  /**
-   * Get allowedReportSubTypes
-   *
-   * @return allowedReportSubTypes
-   **/
-  @ApiModelProperty(value = "")
-  public List<String> getAllowedReportSubTypes() {
-    return allowedReportSubTypes;
-  }
+    public GetReportsTemplateResponse addAllowedReportSubTypesItem(String allowedReportSubTypesItem) {
+        if (this.allowedReportSubTypes == null) {
+            this.allowedReportSubTypes = new ArrayList<String>();
+        }
+        this.allowedReportSubTypes.add(allowedReportSubTypesItem);
+        return this;
+    }
 
-  public void setAllowedReportSubTypes(List<String> allowedReportSubTypes) {
-    this.allowedReportSubTypes = allowedReportSubTypes;
-  }
+    /**
+     * Get allowedReportSubTypes
+     *
+     * @return allowedReportSubTypes
+     **/
+    @ApiModelProperty(value = "")
+    public List<String> getAllowedReportSubTypes() {
+        return allowedReportSubTypes;
+    }
 
-  public GetReportsTemplateResponse allowedParameters(List<ReportParameterData> allowedParameters) {
+    public void setAllowedReportSubTypes(List<String> allowedReportSubTypes) {
+        this.allowedReportSubTypes = allowedReportSubTypes;
+    }
+
+    public GetReportsTemplateResponse allowedParameters(List<ReportParameterData> allowedParameters) {
     this.allowedParameters = allowedParameters;
     return this;
-  }
-
-  public GetReportsTemplateResponse addAllowedParametersItem(ReportParameterData allowedParametersItem) {
-    if (this.allowedParameters == null) {
-      this.allowedParameters = new ArrayList<ReportParameterData>();
     }
-    this.allowedParameters.add(allowedParametersItem);
-    return this;
-  }
 
-  /**
-   * Get allowedParameters
-   *
-   * @return allowedParameters
-   **/
-  @ApiModelProperty(value = "")
-  public List<ReportParameterData> getAllowedParameters() {
-    return allowedParameters;
-  }
+    public GetReportsTemplateResponse addAllowedParametersItem(ReportParameterData allowedParametersItem) {
+        if (this.allowedParameters == null) {
+            this.allowedParameters = new ArrayList<ReportParameterData>();
+        }
+        this.allowedParameters.add(allowedParametersItem);
+        return this;
+    }
 
-  public void setAllowedParameters(List<ReportParameterData> allowedParameters) {
-    this.allowedParameters = allowedParameters;
+    /**
+     * Get allowedParameters
+     *
+     * @return allowedParameters
+     **/
+    @ApiModelProperty(value = "")
+    public List<ReportParameterData> getAllowedParameters() {
+        return allowedParameters;
+    }
+
+    public void setAllowedParameters(List<ReportParameterData> allowedParameters) {
+        this.allowedParameters = allowedParameters;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetReportsTemplateResponse getReportsTemplateResponse = (GetReportsTemplateResponse) o;
-    return Objects.equals(this.allowedReportTypes, getReportsTemplateResponse.allowedReportTypes) &&
-            Objects.equals(this.allowedReportSubTypes, getReportsTemplateResponse.allowedReportSubTypes) &&
-            Objects.equals(this.allowedParameters, getReportsTemplateResponse.allowedParameters);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetReportsTemplateResponse getReportsTemplateResponse = (GetReportsTemplateResponse) o;
+      return Objects.equals(this.allowedReportTypes, getReportsTemplateResponse.allowedReportTypes) &&
+              Objects.equals(this.allowedReportSubTypes, getReportsTemplateResponse.allowedReportSubTypes) &&
+              Objects.equals(this.allowedParameters, getReportsTemplateResponse.allowedParameters);
   }
 
   @Override
@@ -140,7 +140,7 @@ public class GetReportsTemplateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetReportsTemplateResponse {\n");
-
+    
     sb.append("    allowedReportTypes: ").append(toIndentedString(allowedReportTypes)).append("\n");
     sb.append("    allowedReportSubTypes: ").append(toIndentedString(allowedReportSubTypes)).append("\n");
     sb.append("    allowedParameters: ").append(toIndentedString(allowedParameters)).append("\n");

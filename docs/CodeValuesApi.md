@@ -1,6 +1,6 @@
 # CodeValuesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,27 +21,27 @@ Create a Code Value
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodeValuesApi;
 
+CodeValuesApi apiService = defaultClient.createService(CodeValuesApi.class);
 
-CodeValuesApi apiInstance = new CodeValuesApi();
-Long codeId = 789L; // Long | codeId
-PostCodeValuesDataRequest body = new PostCodeValuesDataRequest(); // PostCodeValuesDataRequest | body
-try {
-    PostCodeValueDataResponse result = apiInstance.createCodeValue(codeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodeValuesApi#createCodeValue");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostCodeValueDataResponse> call = apiService.createCodeValue(codeId, body);
+call.enqueue(new Callback<PostCodeValueDataResponse>() {
+    @Override
+    public void onResponse(Call<PostCodeValueDataResponse> call, Response<PostCodeValueDataResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostCodeValueDataResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
  **body** | [**PostCodeValuesDataRequest**](PostCodeValuesDataRequest.md)| body |
 
@@ -68,27 +68,27 @@ Deletes a code value
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodeValuesApi;
 
+CodeValuesApi apiService = defaultClient.createService(CodeValuesApi.class);
 
-CodeValuesApi apiInstance = new CodeValuesApi();
-Long codeId = 789L; // Long | codeId
-Long codeValueId = 789L; // Long | codeValueId
-try {
-    DeleteCodeValueDataResponse result = apiInstance.deleteCodeValue(codeId, codeValueId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodeValuesApi#deleteCodeValue");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteCodeValueDataResponse> call = apiService.deleteCodeValue(codeId, codeValueId);
+call.enqueue(new Callback<DeleteCodeValueDataResponse>() {
+    @Override
+    public void onResponse(Call<DeleteCodeValueDataResponse> call, Response<DeleteCodeValueDataResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteCodeValueDataResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
  **codeValueId** | **Long**| codeValueId |
 
@@ -115,26 +115,27 @@ Returns the list of Code Values for a given Code  Example Requests:  codes/1/cod
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodeValuesApi;
 
+CodeValuesApi apiService = defaultClient.createService(CodeValuesApi.class);
 
-CodeValuesApi apiInstance = new CodeValuesApi();
-Long codeId = 789L; // Long | codeId
-try {
-    List<GetCodeValuesDataResponse> result = apiInstance.retrieveAllCodeValues(codeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodeValuesApi#retrieveAllCodeValues");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetCodeValuesDataResponse&gt;> call = apiService.retrieveAllCodeValues(codeId);
+call.enqueue(new Callback<List&lt;GetCodeValuesDataResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetCodeValuesDataResponse&gt;> call, Response<List&lt;GetCodeValuesDataResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetCodeValuesDataResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
 
 ### Return type
@@ -160,26 +161,27 @@ Returns the details of a Code Value  Example Requests:  codes/1/codevalues/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodeValuesApi;
 
+CodeValuesApi apiService = defaultClient.createService(CodeValuesApi.class);
 
-CodeValuesApi apiInstance = new CodeValuesApi();
-Long codeValueId = 789L; // Long | codeValueId
-try {
-    GetCodeValuesDataResponse result = apiInstance.retrieveCodeValue(codeValueId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodeValuesApi#retrieveCodeValue");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCodeValuesDataResponse> call = apiService.retrieveCodeValue(codeValueId);
+call.enqueue(new Callback<GetCodeValuesDataResponse>() {
+    @Override
+    public void onResponse(Call<GetCodeValuesDataResponse> call, Response<GetCodeValuesDataResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCodeValuesDataResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeValueId** | **Long**| codeValueId |
 
 ### Return type
@@ -205,28 +207,27 @@ Updates the details of a code value.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodeValuesApi;
 
+CodeValuesApi apiService = defaultClient.createService(CodeValuesApi.class);
 
-CodeValuesApi apiInstance = new CodeValuesApi();
-Long codeId = 789L; // Long | codeId
-Long codeValueId = 789L; // Long | codeValueId
-PutCodeValuesDataRequest body = new PutCodeValuesDataRequest(); // PutCodeValuesDataRequest | body
-try {
-    PutCodeValueDataResponse result = apiInstance.updateCodeValue(codeId, codeValueId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodeValuesApi#updateCodeValue");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutCodeValueDataResponse> call = apiService.updateCodeValue(codeId, codeValueId, body);
+call.enqueue(new Callback<PutCodeValueDataResponse>() {
+    @Override
+    public void onResponse(Call<PutCodeValueDataResponse> call, Response<PutCodeValueDataResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutCodeValueDataResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
  **codeValueId** | **Long**| codeValueId |
  **body** | [**PutCodeValuesDataRequest**](PutCodeValuesDataRequest.md)| body |

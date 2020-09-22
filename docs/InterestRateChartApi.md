@@ -1,6 +1,6 @@
 # InterestRateChartApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a new chart which can be attached to a term deposit products (FD or RD).
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-PostInterestRateChartsRequest body = new PostInterestRateChartsRequest(); // PostInterestRateChartsRequest | body
-try {
-    PostInterestRateChartsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostInterestRateChartsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostInterestRateChartsResponse>() {
+    @Override
+    public void onResponse(Call<PostInterestRateChartsResponse> call, Response<PostInterestRateChartsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostInterestRateChartsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostInterestRateChartsRequest**](PostInterestRateChartsRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ It deletes the chart
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-Long chartId = 789L; // Long | chartId
-try {
-    DeleteInterestRateChartsChartIdResponse result = apiInstance.delete(chartId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteInterestRateChartsChartIdResponse> call = apiService.delete(chartId);
+call.enqueue(new Callback<DeleteInterestRateChartsChartIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteInterestRateChartsChartIdResponse> call, Response<DeleteInterestRateChartsChartIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteInterestRateChartsChartIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
 
 ### Return type
@@ -112,26 +114,27 @@ Retrieve list of charts associated with a term deposit product(FD or RD). Exampl
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-Long productId = 789L; // Long | productId
-try {
-    List<GetInterestRateChartsResponse> result = apiInstance.retrieveAll(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetInterestRateChartsResponse&gt;> call = apiService.retrieveAll(productId);
+call.enqueue(new Callback<List&lt;GetInterestRateChartsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetInterestRateChartsResponse&gt;> call, Response<List&lt;GetInterestRateChartsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetInterestRateChartsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId | [optional]
 
 ### Return type
@@ -157,26 +160,27 @@ It retrieves the Interest Rate Chart Example Requests:  interestratecharts/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-Long chartId = 789L; // Long | chartId
-try {
-    GetInterestRateChartsResponse result = apiInstance.retrieveOne(chartId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetInterestRateChartsResponse> call = apiService.retrieveOne(chartId);
+call.enqueue(new Callback<GetInterestRateChartsResponse>() {
+    @Override
+    public void onResponse(Call<GetInterestRateChartsResponse> call, Response<GetInterestRateChartsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetInterestRateChartsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
 
 ### Return type
@@ -202,19 +206,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-try {
-    GetInterestRateChartsTemplateResponse result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetInterestRateChartsTemplateResponse> call = apiService.template();
+call.enqueue(new Callback<GetInterestRateChartsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetInterestRateChartsTemplateResponse> call, Response<GetInterestRateChartsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetInterestRateChartsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -243,27 +251,27 @@ It updates the Chart.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateChartApi;
 
+InterestRateChartApi apiService = defaultClient.createService(InterestRateChartApi.class);
 
-InterestRateChartApi apiInstance = new InterestRateChartApi();
-Long chartId = 789L; // Long | chartId
-PutInterestRateChartsChartIdRequest body = new PutInterestRateChartsChartIdRequest(); // PutInterestRateChartsChartIdRequest | body
-try {
-    PutInterestRateChartsChartIdResponse result = apiInstance.update(chartId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateChartApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutInterestRateChartsChartIdResponse> call = apiService.update(chartId, body);
+call.enqueue(new Callback<PutInterestRateChartsChartIdResponse>() {
+    @Override
+    public void onResponse(Call<PutInterestRateChartsChartIdResponse> call, Response<PutInterestRateChartsChartIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutInterestRateChartsChartIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **body** | [**PutInterestRateChartsChartIdRequest**](PutInterestRateChartsChartIdRequest.md)| body |
 

@@ -26,7 +26,6 @@ public class OfficeTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */
@@ -36,8 +35,9 @@ public class OfficeTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test
@@ -46,8 +46,9 @@ public class OfficeTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
+     * 
+     *
      *
      */
     @Test

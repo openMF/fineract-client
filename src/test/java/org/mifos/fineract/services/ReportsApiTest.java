@@ -28,10 +28,9 @@ public class ReportsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Report
-     * <p>
+     *
      * Only non-core reports can be deleted.
      */
     @Test
@@ -41,10 +40,9 @@ public class ReportsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Report Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists  Example Request :   reports/template
      */
     @Test
@@ -66,10 +64,9 @@ public class ReportsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Reports
-     * <p>
+     *
      * Lists all reports and their parameters.  Example Request:  reports
      */
     @Test
@@ -78,10 +75,9 @@ public class ReportsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Report
-     * <p>
+     *
      * Only the useReport value can be updated for core reports.
      */
     @Test

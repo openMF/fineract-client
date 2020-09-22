@@ -22,7 +22,7 @@ public class UsersApiTest {
 
     /**
      * Create a User
-     * <p>
+     *
      * Adds new application user.  Note: Password information is not required (or processed). Password details at present are auto-generated and then sent to the email account given (which is why it can take a few seconds to complete).  Mandatory Fields:  username, firstname, lastname, email, officeId, roles, sendPasswordToEmail  Optional Fields:  staffId,passwordNeverExpires,isSelfServiceUser,clients
      */
     @Test
@@ -32,10 +32,9 @@ public class UsersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a User
-     * <p>
+     *
      * Removes the user and the associated roles and permissions.
      */
     @Test
@@ -71,10 +70,9 @@ public class UsersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve list of users
-     * <p>
+     *
      * Example Requests:  users   users?fields&#x3D;id,username,email,officeName
      */
     @Test
@@ -83,10 +81,9 @@ public class UsersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a User
-     * <p>
+     *
      * Example Requests:  users/1   users/1?template&#x3D;true   users/1?fields&#x3D;username,officeName
      */
     @Test
@@ -96,10 +93,9 @@ public class UsersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve User Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  users/template
      */
     @Test
@@ -108,10 +104,9 @@ public class UsersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a User
-     * <p>
+     *
      * When updating a password you must provide the repeatPassword parameter also.
      */
     @Test

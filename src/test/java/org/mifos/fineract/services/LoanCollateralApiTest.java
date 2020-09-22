@@ -20,7 +20,7 @@ public class LoanCollateralApiTest {
 
     /**
      * Create a Collateral
-     * <p>
+     *
      * Note: Currently, Collaterals may be added only before a Loan is approved
      */
     @Test
@@ -31,10 +31,9 @@ public class LoanCollateralApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Remove a Collateral
-     * <p>
+     *
      * Note: A collateral can only be removed from Loans that are not yet approved.
      */
     @Test
@@ -45,10 +44,9 @@ public class LoanCollateralApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Collateral Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  loans/1/collaterals/template
      */
     @Test
@@ -57,10 +55,9 @@ public class LoanCollateralApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Loan Collaterals
-     * <p>
+     *
      * Example Requests:  loans/1/collaterals   loans/1/collaterals?fields&#x3D;value,description
      */
     @Test
@@ -70,10 +67,9 @@ public class LoanCollateralApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Collateral
-     * <p>
+     *
      * Example Requests:  /loans/1/collaterals/1   /loans/1/collaterals/1?fields&#x3D;value,description
      */
     @Test

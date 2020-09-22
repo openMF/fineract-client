@@ -1,6 +1,6 @@
 # SelfClientApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,28 +25,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | 
-Long contentLength = 789L; // Long | 
-File file = new File("/path/to/file.txt"); // File | 
-try {
-    String result = apiInstance.addNewClientImage(clientId, contentLength, file);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#addNewClientImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.addNewClientImage(clientId, contentLength, file);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
  **contentLength** | **Long**|  | [optional]
  **file** | **File**|  | [optional]
@@ -72,26 +71,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.deleteClientImage(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#deleteClientImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteClientImage(clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type
@@ -117,32 +117,27 @@ The list capability of clients can support pagination and sorting.  Example Requ
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-String displayName = "displayName_example"; // String | displayName
-String firstName = "firstName_example"; // String | firstName
-String lastName = "lastName_example"; // String | lastName
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    GetSelfClientsResponse result = apiInstance.retrieveAll(displayName, firstName, lastName, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsResponse> call = apiService.retrieveAll(displayName, firstName, lastName, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<GetSelfClientsResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsResponse> call, Response<GetSelfClientsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **displayName** | **String**| displayName | [optional]
  **firstName** | **String**| firstName | [optional]
  **lastName** | **String**| lastName | [optional]
@@ -174,30 +169,27 @@ The list capability of client charges supports pagination.  Example Requests:  s
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-String chargeStatus = "all"; // String | chargeStatus
-Boolean pendingPayment = true; // Boolean | pendingPayment
-Integer limit = 56; // Integer | limit
-Integer offset = 56; // Integer | offset
-try {
-    GetSelfClientsClientIdChargesResponse result = apiInstance.retrieveAllClientCharges(clientId, chargeStatus, pendingPayment, limit, offset);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveAllClientCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdChargesResponse> call = apiService.retrieveAllClientCharges(clientId, chargeStatus, pendingPayment, limit, offset);
+call.enqueue(new Callback<GetSelfClientsClientIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdChargesResponse> call, Response<GetSelfClientsClientIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
  **pendingPayment** | **Boolean**| pendingPayment | [optional]
@@ -227,28 +219,27 @@ The list capability of client transaction can support pagination.  Example Reque
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    GetSelfClientsClientIdTransactionsResponse result = apiInstance.retrieveAllClientTransactions(clientId, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveAllClientTransactions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdTransactionsResponse> call = apiService.retrieveAllClientTransactions(clientId, offset, limit);
+call.enqueue(new Callback<GetSelfClientsClientIdTransactionsResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdTransactionsResponse> call, Response<GetSelfClientsClientIdTransactionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdTransactionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
@@ -276,26 +267,27 @@ An example of how a loan portfolio summary can be provided. This is requested in
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-try {
-    GetSelfClientsClientIdAccountsResponse result = apiInstance.retrieveAssociatedAccounts(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveAssociatedAccounts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdAccountsResponse> call = apiService.retrieveAssociatedAccounts(clientId);
+call.enqueue(new Callback<GetSelfClientsClientIdAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdAccountsResponse> call, Response<GetSelfClientsClientIdAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
 
 ### Return type
@@ -321,27 +313,27 @@ Retrieves a Client Charge  Example Requests:  self/clients/1/charges/1   self/cl
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetSelfClientsClientIdChargesChargeIdResponse result = apiInstance.retrieveClientCharge(clientId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveClientCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdChargesChargeIdResponse> call = apiService.retrieveClientCharge(clientId, chargeId);
+call.enqueue(new Callback<GetSelfClientsClientIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdChargesChargeIdResponse> call, Response<GetSelfClientsClientIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeId** | **Long**| chargeId |
 
@@ -368,27 +360,27 @@ Retrieves a Client TransactionExample Requests:  self/clients/1/transactions/1  
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetSelfClientsClientIdTransactionsTransactionIdResponse result = apiInstance.retrieveClientTransaction(clientId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveClientTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdTransactionsTransactionIdResponse> call = apiService.retrieveClientTransaction(clientId, transactionId);
+call.enqueue(new Callback<GetSelfClientsClientIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdTransactionsTransactionIdResponse> call, Response<GetSelfClientsClientIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **transactionId** | **Long**| transactionId |
 
@@ -415,28 +407,27 @@ Optional arguments are identical to those of Get Image associated with an Entity
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-Integer maxWidth = maxWidth; // Integer | 
-Integer maxHeight = maxHeight; // Integer | 
-String output = "output"; // String | 
-try {
-    apiInstance.retrieveImage(clientId, maxWidth, maxHeight, output);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveImage");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.retrieveImage(clientId, maxWidth, maxHeight, output);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **maxWidth** | **Integer**|  | [optional]
  **maxHeight** | **Integer**|  | [optional]
@@ -463,26 +454,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveObligeeDetails(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveObligeeDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveObligeeDetails(clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type
@@ -508,26 +500,27 @@ Retrieves a Client  Example Requests:  self/clients/1  self/clients/1?fields&#x3
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfClientApi;
 
+SelfClientApi apiService = defaultClient.createService(SelfClientApi.class);
 
-SelfClientApi apiInstance = new SelfClientApi();
-Long clientId = 789L; // Long | clientId
-try {
-    GetSelfClientsClientIdResponse result = apiInstance.retrieveOne(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfClientApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfClientsClientIdResponse> call = apiService.retrieveOne(clientId);
+call.enqueue(new Callback<GetSelfClientsClientIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfClientsClientIdResponse> call, Response<GetSelfClientsClientIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfClientsClientIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
 
 ### Return type

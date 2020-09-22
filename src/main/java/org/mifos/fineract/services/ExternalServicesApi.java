@@ -2,10 +2,10 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.ExternalServicesPropertiesData;
 import org.mifos.fineract.models.PutExternalServiceRequest;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 public interface ExternalServicesApi {
     /**
@@ -13,13 +13,13 @@ public interface ExternalServicesApi {
      * Returns a external Service configurations based on the Service Name.  Service Names supported are S3 and SMTP.  Example Requests:  externalservice/SMTP
      *
      * @param servicename servicename (required)
-     * @return Call&lt;ExternalServicesPropertiesData&gt;
+     * @return Observable&lt;ExternalServicesPropertiesData&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("externalservice/{servicename}")
-    Call<ExternalServicesPropertiesData> retrieveOne(
+    Observable<ExternalServicesPropertiesData> retrieveOne(
             @retrofit2.http.Path("servicename") String servicename
     );
 
@@ -29,13 +29,13 @@ public interface ExternalServicesApi {
      *
      * @param servicename servicename (required)
      * @param body        body (required)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("externalservice/{servicename}")
-    Call<Void> updateExternalServiceProperties(
+    Observable<Void> updateExternalServiceProperties(
             @retrofit2.http.Path("servicename") String servicename, @retrofit2.http.Body PutExternalServiceRequest body
     );
 

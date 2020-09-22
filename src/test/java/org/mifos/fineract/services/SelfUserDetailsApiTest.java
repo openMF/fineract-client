@@ -18,7 +18,7 @@ public class SelfUserDetailsApiTest {
 
     /**
      * Fetch authenticated user details
-     * <p>
+     *
      * Checks the Authentication and returns the set roles and permissions allowed  For more info visit this link - https://demo.openmf.org/api-docs/apiLive.htm#selfoauth
      */
     @Test

@@ -19,7 +19,7 @@ public class WorkingDaysApiTest {
 
     /**
      * List Working days
-     * <p>
+     *
      * Example Requests:  workingdays
      */
     @Test
@@ -28,10 +28,9 @@ public class WorkingDaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Working Days Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for working days.  Example Request:  workingdays/template
      */
     @Test
@@ -40,10 +39,9 @@ public class WorkingDaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Working Day
-     * <p>
+     *
      * Mandatory Fields recurrence,repaymentRescheduleType,extendTermForDailyRepayments,locale
      */
     @Test

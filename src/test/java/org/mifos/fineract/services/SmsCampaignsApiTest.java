@@ -19,7 +19,7 @@ public class SmsCampaignsApiTest {
 
     /**
      * Create a SMS Campaign
-     * <p>
+     *
      * Mandatory Fields campaignName, campaignType, triggerType, providerId, runReportId, message  Mandatory Fields for Cash based on selected report id paramValue in json format
      */
     @Test
@@ -29,10 +29,9 @@ public class SmsCampaignsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a SMS Campaign
-     * <p>
+     *
      * Note: Only closed SMS Campaigns can be deleted
      */
     @Test
@@ -42,10 +41,9 @@ public class SmsCampaignsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * SMS Campaign
-     * <p>
+     *
      * Activates | Deactivates | Reactivates
      */
     @Test
@@ -67,10 +65,9 @@ public class SmsCampaignsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List SMS Campaigns
-     * <p>
+     *
      * Example Requests:  smscampaigns
      */
     @Test
@@ -97,10 +94,9 @@ public class SmsCampaignsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a SMS Campaign
-     * <p>
+     *
      * Example Requests:  smscampaigns/1   smscampaigns/1?template&#x3D;true   smscampaigns/template
      */
     @Test
@@ -112,6 +108,8 @@ public class SmsCampaignsApiTest {
 
     /**
      * Update a Campaign
+     *
+     *
      */
     @Test
     public void updateCampaignTest() {

@@ -26,10 +26,9 @@ public class PasswordPreferencesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Application Password validation policies
-     * <p>
+     *
      * ARGUMENTS Example Requests:  passwordpreferences
      */
     @Test

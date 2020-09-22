@@ -1,6 +1,6 @@
 # AuthenticationHttpBasicApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,27 +17,27 @@ Authenticates the credentials provided and returns the set roles and permissions
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AuthenticationHttpBasicApi;
 
+AuthenticationHttpBasicApi apiService = defaultClient.createService(AuthenticationHttpBasicApi.class);
 
-AuthenticationHttpBasicApi apiInstance = new AuthenticationHttpBasicApi();
-String username = "username_example"; // String | username
-String password = "password_example"; // String | password
-try {
-    PostAuthenticationResponse result = apiInstance.authenticate(username, password);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuthenticationHttpBasicApi#authenticate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAuthenticationResponse> call = apiService.authenticate(username, password);
+call.enqueue(new Callback<PostAuthenticationResponse>() {
+    @Override
+    public void onResponse(Call<PostAuthenticationResponse> call, Response<PostAuthenticationResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAuthenticationResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **username** | **String**| username | [optional]
  **password** | **String**| password | [optional]
 

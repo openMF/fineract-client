@@ -19,7 +19,7 @@ public class RecurringDepositAccountTransactionsApiTest {
 
     /**
      * Adjust Transaction | Undo transaction
-     * <p>
+     *
      * Adjust Transaction:  This command modifies the given transaction.  Undo transaction:  This command reverses the given transaction.  Showing request/response for &#39;Adjust Transaction&#39;
      */
     @Test
@@ -32,10 +32,9 @@ public class RecurringDepositAccountTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Recurring Deposit Account Transaction
-     * <p>
+     *
      * Retrieves Recurring Deposit Account Transaction  Example Requests:  recurringdepositaccounts/1/transactions/1
      */
     @Test
@@ -46,10 +45,9 @@ public class RecurringDepositAccountTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Recurring Deposit Account Transaction Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Requests:  recurringdepositaccounts/1/transactions/template?command&#x3D;deposit  recurringdepositaccounts/1/transactions/template?command&#x3D;withdrawal
      */
     @Test
@@ -60,10 +58,9 @@ public class RecurringDepositAccountTransactionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Deposit Transaction | Withdrawal Transaction
-     * <p>
+     *
      * Deposit Transaction:  Used for a deposit transaction  Withdrawal Transaction:  Used for a Withdrawal Transaction  Showing request/response for Deposit Transaction
      */
     @Test

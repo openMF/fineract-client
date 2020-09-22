@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface DataTablesApi {
      * Create a new data table and registers it with the Apache Fineract Core application table.  Field Descriptions  Mandatory - datatableName :   The name of the Data Table.  Mandatory - apptableName  Application table name. Must be one of the following:  m_client  m_group  m_loan  m_office  m_saving_account  m_product_loan  m_savings_product  Mandatory - columns   An array of columns in the new Data Table.  Optional - multiRow  Allows to create multiple entries in the Data Table. Optional, defaults to false. If this property is not provided Data Table will allow only one entry.  Field Descriptions - columns  Mandatory - name  Name of the created column. Can contain only alphanumeric characters, underscores and spaces, but cannot start with a number. Cannot start or end with an underscore or space.  Mandatory - type  Column type. Must be one of the following:  Boolean  Date  DateTime  Decimal  Dropdown   Number  String  Text  Mandatory [type &#x3D; Dropdown] - code  Used in Code Value fields. Column name becomes: code_cd_name. Mandatory if using type Dropdown, otherwise an error is returned.  Optional - mandatory  Determines whether this column must have a value in every entry. Optional, defaults to false.  Mandatory [type &#x3D; String] - length  Length of the text field. Mandatory if type String is used, otherwise an error is returned.
      *
      * @param body body (required)
-     * @return Call&lt;PostDataTablesResponse&gt;
+     * @return Observable&lt;PostDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("datatables")
-    Call<PostDataTablesResponse> createDatatable(
+    Observable<PostDataTablesResponse> createDatatable(
             @retrofit2.http.Body PostDataTablesRequest body
     );
 
@@ -29,13 +29,13 @@ public interface DataTablesApi {
      * @param datatable  datatable (required)
      * @param apptableId apptableId (required)
      * @param body       body (required)
-     * @return Call&lt;PostDataTablesAppTableIdResponse&gt;
+     * @return Observable&lt;PostDataTablesAppTableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("datatables/{datatable}/{apptableId}")
-    Call<PostDataTablesAppTableIdResponse> createDatatableEntry(
+    Observable<PostDataTablesAppTableIdResponse> createDatatableEntry(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Body PostDataTablesAppTableIdRequest body
     );
 
@@ -44,13 +44,13 @@ public interface DataTablesApi {
      * Deletes a data table and deregisters it from the Apache Fineract Core application table.
      *
      * @param datatableName datatableName (required)
-     * @return Call&lt;DeleteDataTablesResponse&gt;
+     * @return Observable&lt;DeleteDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("datatables/{datatableName}")
-    Call<DeleteDataTablesResponse> deleteDatatable(
+    Observable<DeleteDataTablesResponse> deleteDatatable(
             @retrofit2.http.Path("datatableName") String datatableName
     );
 
@@ -61,13 +61,13 @@ public interface DataTablesApi {
      * @param datatable   datatable (required)
      * @param apptableId  apptableId (required)
      * @param datatableId datatableId (required)
-     * @return Call&lt;DeleteDataTablesDatatableAppTableIdDatatableIdResponse&gt;
+     * @return Observable&lt;DeleteDataTablesDatatableAppTableIdDatatableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("datatables/{datatable}/{apptableId}/{datatableId}")
-    Call<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> deleteDatatableEntries(
+    Observable<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> deleteDatatableEntries(
             @retrofit2.http.Path("datatable") Object datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Path("datatableId") Long datatableId
     );
 
@@ -77,13 +77,13 @@ public interface DataTablesApi {
      *
      * @param datatable  datatable (required)
      * @param apptableId apptableId (required)
-     * @return Call&lt;DeleteDataTablesDatatableAppTableIdResponse&gt;
+     * @return Observable&lt;DeleteDataTablesDatatableAppTableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("datatables/{datatable}/{apptableId}")
-    Call<DeleteDataTablesDatatableAppTableIdResponse> deleteDatatableEntries_0(
+    Observable<DeleteDataTablesDatatableAppTableIdResponse> deleteDatatableEntries_0(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId
     );
 
@@ -92,13 +92,13 @@ public interface DataTablesApi {
      * Deregisters a data table. It will no longer be available through the API.
      *
      * @param datatable datatable (required)
-     * @return Call&lt;PutDataTablesResponse&gt;
+     * @return Observable&lt;PutDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("datatables/deregister/{datatable}")
-    Call<PutDataTablesResponse> deregisterDatatable(
+    Observable<PutDataTablesResponse> deregisterDatatable(
             @retrofit2.http.Path("datatable") String datatable
     );
 
@@ -109,13 +109,13 @@ public interface DataTablesApi {
      * @param datatable  datatable (required)
      * @param apptableId apptableId (required)
      * @param order      order (optional)
-     * @return Call&lt;GetDataTablesAppTableIdResponse&gt;
+     * @return Observable&lt;GetDataTablesAppTableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("datatables/{datatable}/{apptableId}")
-    Call<GetDataTablesAppTableIdResponse> getDatatable(
+    Observable<GetDataTablesAppTableIdResponse> getDatatable(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Query("order") String order
     );
 
@@ -124,13 +124,13 @@ public interface DataTablesApi {
      * @param apptableId  (required)
      * @param datatableId (required)
      * @param order       (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("datatables/{datatable}/{apptableId}/{datatableId}")
-    Call<String> getDatatableManyEntry(
+    Observable<String> getDatatableManyEntry(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Path("datatableId") Long datatableId, @retrofit2.http.Query("order") String order
     );
 
@@ -139,13 +139,13 @@ public interface DataTablesApi {
      * Lists a registered data table details and the Apache Fineract Core application table they are registered to.
      *
      * @param datatable datatable (required)
-     * @return Call&lt;GetDataTablesResponse&gt;
+     * @return Observable&lt;GetDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("datatables/{datatable}")
-    Call<GetDataTablesResponse> getDatatable_0(
+    Observable<GetDataTablesResponse> getDatatable_0(
             @retrofit2.http.Path("datatable") String datatable
     );
 
@@ -154,13 +154,13 @@ public interface DataTablesApi {
      * Lists registered data tables and the Apache Fineract Core application table they are registered to.  ARGUMENTS  apptable  - optional The Apache Fineract core application table.  Example Requests:  datatables?apptable&#x3D;m_client   datatables
      *
      * @param apptable apptable (optional)
-     * @return Call&lt;List&lt;GetDataTablesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetDataTablesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("datatables")
-    Call<List<GetDataTablesResponse>> getDatatables(
+    Observable<List<GetDataTablesResponse>> getDatatables(
             @retrofit2.http.Query("apptable") String apptable
     );
 
@@ -171,13 +171,13 @@ public interface DataTablesApi {
      * @param datatable datatable (required)
      * @param apptable  apptable (required)
      * @param body      body (optional)
-     * @return Call&lt;PutDataTablesResponse&gt;
+     * @return Observable&lt;PutDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("datatables/register/{datatable}/{apptable}")
-    Call<PutDataTablesResponse> registerDatatable(
+    Observable<PutDataTablesResponse> registerDatatable(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptable") String apptable, @retrofit2.http.Body PostDataTablesRegisterDatatableAppTable body
     );
 
@@ -187,13 +187,13 @@ public interface DataTablesApi {
      *
      * @param datatableName datatableName (required)
      * @param body          body (required)
-     * @return Call&lt;PutDataTablesResponse&gt;
+     * @return Observable&lt;PutDataTablesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("datatables/{datatableName}")
-    Call<PutDataTablesResponse> updateDatatable(
+    Observable<PutDataTablesResponse> updateDatatable(
             @retrofit2.http.Path("datatableName") String datatableName, @retrofit2.http.Body PutDataTablesRequest body
     );
 
@@ -205,13 +205,13 @@ public interface DataTablesApi {
      * @param apptableId  apptableId (required)
      * @param datatableId datatableId (required)
      * @param body        body (required)
-     * @return Call&lt;PutDataTablesAppTableIdDatatableIdResponse&gt;
+     * @return Observable&lt;PutDataTablesAppTableIdDatatableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("datatables/{datatable}/{apptableId}/{datatableId}")
-    Call<PutDataTablesAppTableIdDatatableIdResponse> updateDatatableEntryOneToMany(
+    Observable<PutDataTablesAppTableIdDatatableIdResponse> updateDatatableEntryOneToMany(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Path("datatableId") Long datatableId, @retrofit2.http.Body PutDataTablesAppTableIdDatatableIdRequest body
     );
 
@@ -222,13 +222,13 @@ public interface DataTablesApi {
      * @param datatable  datatable (required)
      * @param apptableId apptableId (required)
      * @param body       body (required)
-     * @return Call&lt;PutDataTablesAppTableIdResponse&gt;
+     * @return Observable&lt;PutDataTablesAppTableIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("datatables/{datatable}/{apptableId}")
-    Call<PutDataTablesAppTableIdResponse> updateDatatableEntryOnetoOne(
+    Observable<PutDataTablesAppTableIdResponse> updateDatatableEntryOnetoOne(
             @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Body PutDataTablesAppTableIdRequest body
     );
 

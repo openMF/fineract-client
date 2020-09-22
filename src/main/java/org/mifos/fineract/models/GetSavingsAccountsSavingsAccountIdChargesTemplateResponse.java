@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -37,127 +37,127 @@ public class GetSavingsAccountsSavingsAccountIdChargesTemplateResponse {
   @SerializedName("chargeOptions")
   private List<GetSavingsChargesOptions> chargeOptions = null;
 
-  @SerializedName("penalty")
-  private Boolean penalty = null;
+    @SerializedName("penalty")
+    private Boolean penalty = null;
 
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountPaid(Float amountPaid) {
-    this.amountPaid = amountPaid;
-    return this;
-  }
-
-  /**
-   * Get amountPaid
-   *
-   * @return amountPaid
-   **/
-  @ApiModelProperty(example = "0.0", value = "")
-  public Float getAmountPaid() {
-    return amountPaid;
-  }
-
-  public void setAmountPaid(Float amountPaid) {
-    this.amountPaid = amountPaid;
-  }
-
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountWaived(Float amountWaived) {
-    this.amountWaived = amountWaived;
-    return this;
-  }
-
-  /**
-   * Get amountWaived
-   *
-   * @return amountWaived
-   **/
-  @ApiModelProperty(example = "0.0", value = "")
-  public Float getAmountWaived() {
-    return amountWaived;
-  }
-
-  public void setAmountWaived(Float amountWaived) {
-    this.amountWaived = amountWaived;
-  }
-
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountWrittenOff(Float amountWrittenOff) {
-    this.amountWrittenOff = amountWrittenOff;
-    return this;
-  }
-
-  /**
-   * Get amountWrittenOff
-   *
-   * @return amountWrittenOff
-   **/
-  @ApiModelProperty(example = "0.0", value = "")
-  public Float getAmountWrittenOff() {
-    return amountWrittenOff;
-  }
-
-  public void setAmountWrittenOff(Float amountWrittenOff) {
-    this.amountWrittenOff = amountWrittenOff;
-  }
-
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse chargeOptions(List<GetSavingsChargesOptions> chargeOptions) {
-    this.chargeOptions = chargeOptions;
-    return this;
-  }
-
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse addChargeOptionsItem(GetSavingsChargesOptions chargeOptionsItem) {
-    if (this.chargeOptions == null) {
-      this.chargeOptions = new ArrayList<GetSavingsChargesOptions>();
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountPaid(Float amountPaid) {
+        this.amountPaid = amountPaid;
+        return this;
     }
-    this.chargeOptions.add(chargeOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get chargeOptions
-   *
-   * @return chargeOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetSavingsChargesOptions> getChargeOptions() {
-    return chargeOptions;
-  }
+    /**
+     * Get amountPaid
+     *
+     * @return amountPaid
+     **/
+    @ApiModelProperty(example = "0.0", value = "")
+    public Float getAmountPaid() {
+        return amountPaid;
+    }
 
-  public void setChargeOptions(List<GetSavingsChargesOptions> chargeOptions) {
+    public void setAmountPaid(Float amountPaid) {
+        this.amountPaid = amountPaid;
+    }
+
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountWaived(Float amountWaived) {
+        this.amountWaived = amountWaived;
+        return this;
+    }
+
+    /**
+     * Get amountWaived
+     *
+     * @return amountWaived
+     **/
+    @ApiModelProperty(example = "0.0", value = "")
+    public Float getAmountWaived() {
+        return amountWaived;
+    }
+
+    public void setAmountWaived(Float amountWaived) {
+        this.amountWaived = amountWaived;
+    }
+
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse amountWrittenOff(Float amountWrittenOff) {
+        this.amountWrittenOff = amountWrittenOff;
+        return this;
+    }
+
+    /**
+     * Get amountWrittenOff
+     *
+     * @return amountWrittenOff
+     **/
+    @ApiModelProperty(example = "0.0", value = "")
+    public Float getAmountWrittenOff() {
+        return amountWrittenOff;
+    }
+
+    public void setAmountWrittenOff(Float amountWrittenOff) {
+        this.amountWrittenOff = amountWrittenOff;
+    }
+
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse chargeOptions(List<GetSavingsChargesOptions> chargeOptions) {
     this.chargeOptions = chargeOptions;
-  }
+        return this;
+    }
 
-  public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse penalty(Boolean penalty) {
-    this.penalty = penalty;
-    return this;
-  }
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse addChargeOptionsItem(GetSavingsChargesOptions chargeOptionsItem) {
+        if (this.chargeOptions == null) {
+            this.chargeOptions = new ArrayList<GetSavingsChargesOptions>();
+        }
+        this.chargeOptions.add(chargeOptionsItem);
+        return this;
+    }
 
-  /**
-   * Get penalty
-   *
-   * @return penalty
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isPenalty() {
-    return penalty;
-  }
+    /**
+     * Get chargeOptions
+     *
+     * @return chargeOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetSavingsChargesOptions> getChargeOptions() {
+        return chargeOptions;
+    }
 
-  public void setPenalty(Boolean penalty) {
-    this.penalty = penalty;
+    public void setChargeOptions(List<GetSavingsChargesOptions> chargeOptions) {
+        this.chargeOptions = chargeOptions;
+    }
+
+    public GetSavingsAccountsSavingsAccountIdChargesTemplateResponse penalty(Boolean penalty) {
+        this.penalty = penalty;
+        return this;
+    }
+
+    /**
+     * Get penalty
+     *
+     * @return penalty
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isPenalty() {
+        return penalty;
+    }
+
+    public void setPenalty(Boolean penalty) {
+        this.penalty = penalty;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsAccountsSavingsAccountIdChargesTemplateResponse getSavingsAccountsSavingsAccountIdChargesTemplateResponse = (GetSavingsAccountsSavingsAccountIdChargesTemplateResponse) o;
-    return Objects.equals(this.amountPaid, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountPaid) &&
-            Objects.equals(this.amountWaived, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountWaived) &&
-            Objects.equals(this.amountWrittenOff, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountWrittenOff) &&
-            Objects.equals(this.chargeOptions, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.chargeOptions) &&
-            Objects.equals(this.penalty, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.penalty);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsAccountsSavingsAccountIdChargesTemplateResponse getSavingsAccountsSavingsAccountIdChargesTemplateResponse = (GetSavingsAccountsSavingsAccountIdChargesTemplateResponse) o;
+      return Objects.equals(this.amountPaid, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountPaid) &&
+              Objects.equals(this.amountWaived, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountWaived) &&
+              Objects.equals(this.amountWrittenOff, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.amountWrittenOff) &&
+              Objects.equals(this.chargeOptions, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.chargeOptions) &&
+              Objects.equals(this.penalty, getSavingsAccountsSavingsAccountIdChargesTemplateResponse.penalty);
   }
 
   @Override
@@ -170,7 +170,7 @@ public class GetSavingsAccountsSavingsAccountIdChargesTemplateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsAccountsSavingsAccountIdChargesTemplateResponse {\n");
-
+    
     sb.append("    amountPaid: ").append(toIndentedString(amountPaid)).append("\n");
     sb.append("    amountWaived: ").append(toIndentedString(amountWaived)).append("\n");
     sb.append("    amountWrittenOff: ").append(toIndentedString(amountWrittenOff)).append("\n");

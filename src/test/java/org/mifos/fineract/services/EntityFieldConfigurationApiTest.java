@@ -18,7 +18,7 @@ public class EntityFieldConfigurationApiTest {
 
     /**
      * Retrieves the Entity Field Configuration
-     * <p>
+     *
      * It retrieves all the Entity Field Configuration
      */
     @Test

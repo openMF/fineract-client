@@ -3,10 +3,10 @@ package org.mifos.fineract.services;
 import org.mifos.fineract.models.GetSearchResponse;
 import org.mifos.fineract.models.PostAdhocQuerySearchRequest;
 import org.mifos.fineract.models.PostAdhocQuerySearchResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface SearchApi {
     /**
@@ -15,13 +15,13 @@ public interface SearchApi {
      *
      * @param body2 body (required)
      * @param body  (optional)
-     * @return Call&lt;PostAdhocQuerySearchResponse&gt;
+     * @return Observable&lt;PostAdhocQuerySearchResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("search/advance")
-    Call<PostAdhocQuerySearchResponse> advancedSearch(
+    Observable<PostAdhocQuerySearchResponse> advancedSearch(
             @retrofit2.http.Body PostAdhocQuerySearchRequest body2, @retrofit2.http.Body String body
     );
 
@@ -29,13 +29,13 @@ public interface SearchApi {
      * Retrive Adhoc Search query template
      * Mandatory Fields  search?query&#x3D;000000001
      *
-     * @return Call&lt;GetSearchResponse&gt;
+     * @return Observable&lt;GetSearchResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("search/template")
-    Call<GetSearchResponse> retrieveAdHocSearchQueryTemplate();
+    Observable<GetSearchResponse> retrieveAdHocSearchQueryTemplate();
 
 
     /**
@@ -45,13 +45,13 @@ public interface SearchApi {
      * @param query      query (optional)
      * @param resource   resource (optional)
      * @param exactMatch exactMatch (optional, default to false)
-     * @return Call&lt;GetSearchResponse&gt;
+     * @return Observable&lt;GetSearchResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("search")
-    Call<GetSearchResponse> searchData(
+    Observable<GetSearchResponse> searchData(
             @retrofit2.http.Query("query") String query, @retrofit2.http.Query("resource") String resource, @retrofit2.http.Query("exactMatch") Boolean exactMatch
     );
 

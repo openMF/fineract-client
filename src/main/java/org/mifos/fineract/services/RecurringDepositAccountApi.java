@@ -2,8 +2,8 @@ package org.mifos.fineract.services;
 
 import okhttp3.MultipartBody;
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -11,13 +11,13 @@ public interface RecurringDepositAccountApi {
     /**
      * @param accountId accountId (required)
      * @param command   command (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts/{accountId}/template")
-    Call<String> accountClosureTemplate(
+    Observable<String> accountClosureTemplate(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("command") String command
     );
 
@@ -26,13 +26,13 @@ public interface RecurringDepositAccountApi {
      * At present we support hard delete of recurring deposit application so long as its in &#39;Submitted and pending approval&#39; state. One the application is moves past this state, it is not possible to do a &#39;hard&#39; delete of the application or the account. An API endpoint will be added to close/de-activate the recurring deposit account.
      *
      * @param accountId accountId (required)
-     * @return Call&lt;DeleteRecurringDepositAccountsResponse&gt;
+     * @return Observable&lt;DeleteRecurringDepositAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("recurringdepositaccounts/{accountId}")
-    Call<DeleteRecurringDepositAccountsResponse> delete(
+    Observable<DeleteRecurringDepositAccountsResponse> delete(
             @retrofit2.http.Path("accountId") Long accountId
     );
 
@@ -40,20 +40,20 @@ public interface RecurringDepositAccountApi {
      * @param officeId   (optional)
      * @param staffId    (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @GET("recurringdepositaccounts/downloadtemplate")
-    Call<Void> getRecurringDepositTemplate(
+    Observable<Void> getRecurringDepositTemplate(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
     /**
      * @param officeId   (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @GET("recurringdepositaccounts/transactions/downloadtemplate")
-    Call<Void> getRecurringDepositTransactionTemplate(
+    Observable<Void> getRecurringDepositTransactionTemplate(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
@@ -64,13 +64,13 @@ public interface RecurringDepositAccountApi {
      * @param accountId accountId (required)
      * @param body      body (required)
      * @param command   command (optional)
-     * @return Call&lt;PostRecurringDepositAccountsAccountIdResponse&gt;
+     * @return Observable&lt;PostRecurringDepositAccountsAccountIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("recurringdepositaccounts/{accountId}")
-    Call<PostRecurringDepositAccountsAccountIdResponse> handleCommands(
+    Observable<PostRecurringDepositAccountsAccountIdResponse> handleCommands(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PostRecurringDepositAccountsAccountIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -78,11 +78,11 @@ public interface RecurringDepositAccountApi {
      * @param file       (optional)
      * @param locale     (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("recurringdepositaccounts/uploadtemplate")
-    Call<String> postRecurringDepositTemplate(
+    Observable<String> postRecurringDepositTemplate(
             @retrofit2.http.Part MultipartBody.Part file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
     );
 
@@ -90,11 +90,11 @@ public interface RecurringDepositAccountApi {
      * @param file       (optional)
      * @param locale     (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("recurringdepositaccounts/transactions/uploadtemplate")
-    Call<String> postRecurringDepositTransactionsTemplate(
+    Observable<String> postRecurringDepositTransactionsTemplate(
             @retrofit2.http.Part MultipartBody.Part file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
     );
 
@@ -107,13 +107,13 @@ public interface RecurringDepositAccountApi {
      * @param limit     limit (optional)
      * @param orderBy   orderBy (optional)
      * @param sortOrder sortOrder (optional)
-     * @return Call&lt;List&lt;GetRecurringDepositAccountsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetRecurringDepositAccountsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts")
-    Call<List<GetRecurringDepositAccountsResponse>> retrieveAll(
+    Observable<List<GetRecurringDepositAccountsResponse>> retrieveAll(
             @retrofit2.http.Query("paged") Boolean paged, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
     );
 
@@ -124,13 +124,13 @@ public interface RecurringDepositAccountApi {
      * @param accountId                 accountId (required)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
      * @param chargeStatus              chargeStatus (optional, default to all)
-     * @return Call&lt;GetRecurringDepositAccountsAccountIdResponse&gt;
+     * @return Observable&lt;GetRecurringDepositAccountsAccountIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts/{accountId}")
-    Call<GetRecurringDepositAccountsAccountIdResponse> retrieveOne(
+    Observable<GetRecurringDepositAccountsAccountIdResponse> retrieveOne(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly, @retrofit2.http.Query("chargeStatus") String chargeStatus
     );
 
@@ -139,13 +139,13 @@ public interface RecurringDepositAccountApi {
      * Submits new recurring deposit application  Mandatory Fields: clientId or groupId, productId, submittedOnDate, depositAmount, depositPeriod, depositPeriodFrequencyId  Optional Fields: accountNo, externalId, fieldOfficerId,linkAccountId(if provided initial deposit amount will be collected from this account),transferInterestToSavings(By enabling this flag all interest postings will be transferred to linked saving account )  Inherited from Product (if not provided): interestCompoundingPeriodType, interestCalculationType, interestCalculationDaysInYearType, lockinPeriodFrequency, lockinPeriodFrequencyType, preClosurePenalApplicable, preClosurePenalInterest, preClosurePenalInterestOnTypeId, charts, withHoldTax
      *
      * @param body body (required)
-     * @return Call&lt;PostRecurringDepositAccountsResponse&gt;
+     * @return Observable&lt;PostRecurringDepositAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("recurringdepositaccounts")
-    Call<PostRecurringDepositAccountsResponse> submitApplication(
+    Observable<PostRecurringDepositAccountsResponse> submitApplication(
             @retrofit2.http.Body PostRecurringDepositAccountsRequest body
     );
 
@@ -157,13 +157,13 @@ public interface RecurringDepositAccountApi {
      * @param groupId                   groupId (optional)
      * @param productId                 productId (optional)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-     * @return Call&lt;GetRecurringDepositAccountsTemplateResponse&gt;
+     * @return Observable&lt;GetRecurringDepositAccountsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts/template")
-    Call<GetRecurringDepositAccountsTemplateResponse> template(
+    Observable<GetRecurringDepositAccountsTemplateResponse> template(
             @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("groupId") Long groupId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
     );
 
@@ -173,13 +173,13 @@ public interface RecurringDepositAccountApi {
      *
      * @param accountId accountId (required)
      * @param body      body (required)
-     * @return Call&lt;PutRecurringDepositAccountsAccountIdResponse&gt;
+     * @return Observable&lt;PutRecurringDepositAccountsAccountIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("recurringdepositaccounts/{accountId}")
-    Call<PutRecurringDepositAccountsAccountIdResponse> update(
+    Observable<PutRecurringDepositAccountsAccountIdResponse> update(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PutRecurringDepositAccountsAccountIdRequest body
     );
 

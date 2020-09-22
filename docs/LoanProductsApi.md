@@ -1,6 +1,6 @@
 # LoanProductsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Depending of the Accounting Rule (accountingRule) selected, additional fields wi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanProductsApi;
 
+LoanProductsApi apiService = defaultClient.createService(LoanProductsApi.class);
 
-LoanProductsApi apiInstance = new LoanProductsApi();
-PostLoanProductsRequest body = new PostLoanProductsRequest(); // PostLoanProductsRequest | body
-try {
-    PostLoanProductsResponse result = apiInstance.createLoanProduct(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanProductsApi#createLoanProduct");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoanProductsResponse> call = apiService.createLoanProduct(body);
+call.enqueue(new Callback<PostLoanProductsResponse>() {
+    @Override
+    public void onResponse(Call<PostLoanProductsResponse> call, Response<PostLoanProductsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoanProductsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostLoanProductsRequest**](PostLoanProductsRequest.md)| body |
 
 ### Return type
@@ -66,19 +67,23 @@ Lists Loan Products  Example Requests:  loanproducts   loanproducts?fields&#x3D;
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanProductsApi;
 
+LoanProductsApi apiService = defaultClient.createService(LoanProductsApi.class);
 
-LoanProductsApi apiInstance = new LoanProductsApi();
-try {
-    List<GetLoanProductsResponse> result = apiInstance.retrieveAllLoanProducts();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanProductsApi#retrieveAllLoanProducts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetLoanProductsResponse&gt;> call = apiService.retrieveAllLoanProducts();
+call.enqueue(new Callback<List&lt;GetLoanProductsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetLoanProductsResponse&gt;> call, Response<List&lt;GetLoanProductsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetLoanProductsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -107,26 +112,27 @@ Retrieves a Loan Product  Example Requests:  loanproducts/1   loanproducts/1?tem
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanProductsApi;
 
+LoanProductsApi apiService = defaultClient.createService(LoanProductsApi.class);
 
-LoanProductsApi apiInstance = new LoanProductsApi();
-Long productId = 789L; // Long | productId
-try {
-    GetLoanProductsProductIdResponse result = apiInstance.retrieveLoanProductDetails(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanProductsApi#retrieveLoanProductDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoanProductsProductIdResponse> call = apiService.retrieveLoanProductDetails(productId);
+call.enqueue(new Callback<GetLoanProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<GetLoanProductsProductIdResponse> call, Response<GetLoanProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoanProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -152,26 +158,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanProductsApi;
 
+LoanProductsApi apiService = defaultClient.createService(LoanProductsApi.class);
 
-LoanProductsApi apiInstance = new LoanProductsApi();
-Boolean isProductMixTemplate = true; // Boolean | isProductMixTemplate
-try {
-    GetLoanProductsTemplateResponse result = apiInstance.retrieveTemplate(isProductMixTemplate);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanProductsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoanProductsTemplateResponse> call = apiService.retrieveTemplate(isProductMixTemplate);
+call.enqueue(new Callback<GetLoanProductsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetLoanProductsTemplateResponse> call, Response<GetLoanProductsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoanProductsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **isProductMixTemplate** | **Boolean**| isProductMixTemplate | [optional]
 
 ### Return type
@@ -197,27 +204,27 @@ Updates a Loan Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanProductsApi;
 
+LoanProductsApi apiService = defaultClient.createService(LoanProductsApi.class);
 
-LoanProductsApi apiInstance = new LoanProductsApi();
-Long productId = 789L; // Long | productId
-PutLoanProductsProductIdRequest body = new PutLoanProductsProductIdRequest(); // PutLoanProductsProductIdRequest | body
-try {
-    PutLoanProductsProductIdResponse result = apiInstance.updateLoanProduct(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanProductsApi#updateLoanProduct");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutLoanProductsProductIdResponse> call = apiService.updateLoanProduct(productId, body);
+call.enqueue(new Callback<PutLoanProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<PutLoanProductsProductIdResponse> call, Response<PutLoanProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutLoanProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
  **body** | [**PutLoanProductsProductIdRequest**](PutLoanProductsProductIdRequest.md)| body |
 

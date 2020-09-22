@@ -1,6 +1,6 @@
 # PasswordPreferencesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,19 +17,23 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PasswordPreferencesApi;
 
+PasswordPreferencesApi apiService = defaultClient.createService(PasswordPreferencesApi.class);
 
-PasswordPreferencesApi apiInstance = new PasswordPreferencesApi();
-try {
-    GetPasswordPreferencesTemplateResponse result = apiInstance.retrieve();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PasswordPreferencesApi#retrieve");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetPasswordPreferencesTemplateResponse> call = apiService.retrieve();
+call.enqueue(new Callback<GetPasswordPreferencesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetPasswordPreferencesTemplateResponse> call, Response<GetPasswordPreferencesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetPasswordPreferencesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -58,19 +62,23 @@ ARGUMENTS Example Requests:  passwordpreferences
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PasswordPreferencesApi;
 
+PasswordPreferencesApi apiService = defaultClient.createService(PasswordPreferencesApi.class);
 
-PasswordPreferencesApi apiInstance = new PasswordPreferencesApi();
-try {
-    List<GetPasswordPreferencesTemplateResponse> result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PasswordPreferencesApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetPasswordPreferencesTemplateResponse&gt;> call = apiService.template();
+call.enqueue(new Callback<List&lt;GetPasswordPreferencesTemplateResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetPasswordPreferencesTemplateResponse&gt;> call, Response<List&lt;GetPasswordPreferencesTemplateResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetPasswordPreferencesTemplateResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -99,25 +107,27 @@ Update password preferences
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PasswordPreferencesApi;
 
+PasswordPreferencesApi apiService = defaultClient.createService(PasswordPreferencesApi.class);
 
-PasswordPreferencesApi apiInstance = new PasswordPreferencesApi();
-PutPasswordPreferencesTemplateRequest body = new PutPasswordPreferencesTemplateRequest(); // PutPasswordPreferencesTemplateRequest | body
-try {
-    apiInstance.update(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PasswordPreferencesApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.update(body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutPasswordPreferencesTemplateRequest**](PutPasswordPreferencesTemplateRequest.md)| body |
 
 ### Return type

@@ -1,6 +1,6 @@
 # OfficetransactionsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,26 +18,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficeTransactionsApi;
 
+OfficetransactionsApi apiService = defaultClient.createService(OfficetransactionsApi.class);
 
-OfficetransactionsApi apiInstance = new OfficetransactionsApi();
-Long transactionId = 789L; // Long | 
-try {
-    String result = apiInstance.delete(transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficetransactionsApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.delete(transactionId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transactionId** | **Long**|  |
 
 ### Return type
@@ -61,19 +62,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficeTransactionsApi;
 
+OfficetransactionsApi apiService = defaultClient.createService(OfficetransactionsApi.class);
 
-OfficetransactionsApi apiInstance = new OfficetransactionsApi();
-try {
-    String result = apiInstance.newOfficeTransactionDetails();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficetransactionsApi#newOfficeTransactionDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.newOfficeTransactionDetails();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -100,19 +105,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficeTransactionsApi;
 
+OfficetransactionsApi apiService = defaultClient.createService(OfficetransactionsApi.class);
 
-OfficetransactionsApi apiInstance = new OfficetransactionsApi();
-try {
-    String result = apiInstance.retrieveOfficeTransactions();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficetransactionsApi#retrieveOfficeTransactions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveOfficeTransactions();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -139,26 +148,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.OfficeTransactionsApi;
 
+OfficetransactionsApi apiService = defaultClient.createService(OfficetransactionsApi.class);
 
-OfficetransactionsApi apiInstance = new OfficetransactionsApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.transferMoneyFrom(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OfficetransactionsApi#transferMoneyFrom");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.transferMoneyFrom(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type

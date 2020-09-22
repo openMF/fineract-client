@@ -4,11 +4,11 @@ import org.mifos.fineract.models.GetSelfSavingsAccountsAccountIdChargesResponse;
 import org.mifos.fineract.models.GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse;
 import org.mifos.fineract.models.GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse;
 import org.mifos.fineract.models.GetSelfSavingsAccountsResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 import java.util.List;
 
@@ -17,13 +17,13 @@ public interface SelfSavingsAccountApi {
      * @param accountId (required)
      * @param command   (optional)
      * @param body      (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("self/savingsaccounts/{accountId}")
-    Call<String> modifySavingsAccountApplication(
+    Observable<String> modifySavingsAccountApplication(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
     );
 
@@ -33,13 +33,13 @@ public interface SelfSavingsAccountApi {
      *
      * @param accountId    accountId (required)
      * @param chargeStatus chargeStatus (optional, default to all)
-     * @return Call&lt;List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/savingsaccounts/{accountId}/charges")
-    Call<List<GetSelfSavingsAccountsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges(
+    Observable<List<GetSelfSavingsAccountsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("chargeStatus") String chargeStatus
     );
 
@@ -49,13 +49,13 @@ public interface SelfSavingsAccountApi {
      *
      * @param accountId    accountId (required)
      * @param chargeStatus chargeStatus (optional, default to all)
-     * @return Call&lt;GetSelfSavingsAccountsResponse&gt;
+     * @return Observable&lt;GetSelfSavingsAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/savingsaccounts/{accountId}")
-    Call<GetSelfSavingsAccountsResponse> retrieveSavings(
+    Observable<GetSelfSavingsAccountsResponse> retrieveSavings(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("chargeStatus") String chargeStatus
     );
 
@@ -65,13 +65,13 @@ public interface SelfSavingsAccountApi {
      *
      * @param accountId              accountId (required)
      * @param savingsAccountChargeId savingsAccountChargeId (required)
-     * @return Call&lt;GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+     * @return Observable&lt;GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/savingsaccounts/{accountId}/charges/{savingsAccountChargeId}")
-    Call<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge(
+    Observable<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId
     );
 
@@ -81,26 +81,26 @@ public interface SelfSavingsAccountApi {
      *
      * @param accountId     accountId (required)
      * @param transactionId transactionId (required)
-     * @return Call&lt;GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/savingsaccounts/{accountId}/transactions/{transactionId}")
-    Call<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> retrieveSavingsTransaction(
+    Observable<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> retrieveSavingsTransaction(
             @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
     /**
      * @param command (optional)
      * @param body    (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("self/savingsaccounts")
-    Call<String> submitSavingsAccountApplication(
+    Observable<String> submitSavingsAccountApplication(
             @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
     );
 
@@ -108,13 +108,13 @@ public interface SelfSavingsAccountApi {
      * @param clientId  (optional)
      * @param productId (optional)
      * @param body      (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/savingsaccounts/template")
-    Call<String> template(
+    Observable<String> template(
             @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Body String body
     );
 

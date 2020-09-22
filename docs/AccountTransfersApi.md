@@ -1,6 +1,6 @@
 # AccountTransfersApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Ability to create new transfer of monetary funds from one account to another.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-PostAccountTransfersRequest body = new PostAccountTransfersRequest(); // PostAccountTransfersRequest | body
-try {
-    PostAccountTransfersResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAccountTransfersResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostAccountTransfersResponse>() {
+    @Override
+    public void onResponse(Call<PostAccountTransfersResponse> call, Response<PostAccountTransfersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAccountTransfersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostAccountTransfersRequest**](PostAccountTransfersRequest.md)| body |
 
 ### Return type
@@ -67,32 +68,27 @@ Lists account&#39;s transfers  Example Requests:    accounttransfers
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-String externalId = "externalId_example"; // String | externalId
-Integer offset = 56; // Integer | offset
-Integer limit = limit; // Integer | 
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-Long accountDetailId = 789L; // Long | accountDetailId
-try {
-    GetAccountTransfersResponse result = apiInstance.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, accountDetailId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountTransfersResponse> call = apiService.retrieveAll(sqlSearch, externalId, offset, limit, orderBy, sortOrder, accountDetailId);
+call.enqueue(new Callback<GetAccountTransfersResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountTransfersResponse> call, Response<GetAccountTransfersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountTransfersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **externalId** | **String**| externalId | [optional]
  **offset** | **Integer**| offset | [optional]
@@ -124,26 +120,27 @@ Retrieves account transfer  Example Requests :    accounttransfers/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-Long transferId = 789L; // Long | transferId
-try {
-    GetAccountTransfersPageItems result = apiInstance.retrieveOne(transferId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountTransfersPageItems> call = apiService.retrieveOne(transferId);
+call.enqueue(new Callback<GetAccountTransfersPageItems>() {
+    @Override
+    public void onResponse(Call<GetAccountTransfersPageItems> call, Response<GetAccountTransfersPageItems> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountTransfersPageItems> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transferId** | **Long**| transferId |
 
 ### Return type
@@ -169,33 +166,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-Long fromOfficeId = 789L; // Long | fromOfficeId
-Long fromClientId = 789L; // Long | fromClientId
-Long fromAccountId = 789L; // Long | fromAccountId
-Integer fromAccountType = 56; // Integer | fromAccountType
-Long toOfficeId = 789L; // Long | toOfficeId
-Long toClientId = 789L; // Long | toClientId
-Long toAccountId = 789L; // Long | toAccountId
-Integer toAccountType = 56; // Integer | toAccountType
-try {
-    GetAccountTransfersTemplateResponse result = apiInstance.template(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountTransfersTemplateResponse> call = apiService.template(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType);
+call.enqueue(new Callback<GetAccountTransfersTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountTransfersTemplateResponse> call, Response<GetAccountTransfersTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountTransfersTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **fromOfficeId** | **Long**| fromOfficeId | [optional]
  **fromClientId** | **Long**| fromClientId | [optional]
  **fromAccountId** | **Long**| fromAccountId | [optional]
@@ -228,33 +219,27 @@ Retrieves Refund of an Active Loan by Transfer TemplateExample Requests :    acc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-Long fromOfficeId = 789L; // Long | fromOfficeId
-Long fromClientId = 789L; // Long | fromClientId
-Long fromAccountId = 789L; // Long | fromAccountId
-Integer fromAccountType = 56; // Integer | fromAccountType
-Long toOfficeId = 789L; // Long | toOfficeId
-Long toClientId = 789L; // Long | toClientId
-Long toAccountId = 789L; // Long | toAccountId
-Integer toAccountType = 56; // Integer | toAccountType
-try {
-    GetAccountTransfersTemplateRefundByTransferResponse result = apiInstance.templateRefundByTransfer(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#templateRefundByTransfer");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetAccountTransfersTemplateRefundByTransferResponse> call = apiService.templateRefundByTransfer(fromOfficeId, fromClientId, fromAccountId, fromAccountType, toOfficeId, toClientId, toAccountId, toAccountType);
+call.enqueue(new Callback<GetAccountTransfersTemplateRefundByTransferResponse>() {
+    @Override
+    public void onResponse(Call<GetAccountTransfersTemplateRefundByTransferResponse> call, Response<GetAccountTransfersTemplateRefundByTransferResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetAccountTransfersTemplateRefundByTransferResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **fromOfficeId** | **Long**| fromOfficeId | [optional]
  **fromClientId** | **Long**| fromClientId | [optional]
  **fromAccountId** | **Long**| fromAccountId | [optional]
@@ -287,26 +272,27 @@ Ability to refund an active loan by transferring to a savings account.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountTransfersApi;
 
+AccountTransfersApi apiService = defaultClient.createService(AccountTransfersApi.class);
 
-AccountTransfersApi apiInstance = new AccountTransfersApi();
-PostAccountTransfersRefundByTransferRequest body = new PostAccountTransfersRefundByTransferRequest(); // PostAccountTransfersRefundByTransferRequest | body
-try {
-    PostAccountTransfersRefundByTransferResponse result = apiInstance.templateRefundByTransferPost(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountTransfersApi#templateRefundByTransferPost");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostAccountTransfersRefundByTransferResponse> call = apiService.templateRefundByTransferPost(body);
+call.enqueue(new Callback<PostAccountTransfersRefundByTransferResponse>() {
+    @Override
+    public void onResponse(Call<PostAccountTransfersRefundByTransferResponse> call, Response<PostAccountTransfersRefundByTransferResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostAccountTransfersRefundByTransferResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostAccountTransfersRefundByTransferRequest**](PostAccountTransfersRefundByTransferRequest.md)| body |
 
 ### Return type

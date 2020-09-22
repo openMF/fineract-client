@@ -1,6 +1,6 @@
 # LoanTransactionsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,28 +20,27 @@ Note: there is no need to specify command&#x3D;{transactionType} parameter.  Man
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanTransactionsApi;
 
+LoanTransactionsApi apiService = defaultClient.createService(LoanTransactionsApi.class);
 
-LoanTransactionsApi apiInstance = new LoanTransactionsApi();
-Long loanId = 789L; // Long | loanId
-Long transactionId = 789L; // Long | transactionId
-PostLoansLoanIdTransactionsTransactionIdRequest body = new PostLoansLoanIdTransactionsTransactionIdRequest(); // PostLoansLoanIdTransactionsTransactionIdRequest | body
-try {
-    PostLoansLoanIdTransactionsTransactionIdResponse result = apiInstance.adjustLoanTransaction(loanId, transactionId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanTransactionsApi#adjustLoanTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdTransactionsTransactionIdResponse> call = apiService.adjustLoanTransaction(loanId, transactionId, body);
+call.enqueue(new Callback<PostLoansLoanIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdTransactionsTransactionIdResponse> call, Response<PostLoansLoanIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **transactionId** | **Long**| transactionId |
  **body** | [**PostLoansLoanIdTransactionsTransactionIdRequest**](PostLoansLoanIdTransactionsTransactionIdRequest.md)| body |
@@ -69,28 +68,27 @@ Make Recovery Payment:  This API allows collecting recovery payments for written
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanTransactionsApi;
 
+LoanTransactionsApi apiService = defaultClient.createService(LoanTransactionsApi.class);
 
-LoanTransactionsApi apiInstance = new LoanTransactionsApi();
-Long loanId = 789L; // Long | loanId
-PostLoansLoanIdTransactionsRequest body = new PostLoansLoanIdTransactionsRequest(); // PostLoansLoanIdTransactionsRequest | body
-String command = "command_example"; // String | command
-try {
-    PostLoansLoanIdTransactionsResponse result = apiInstance.executeLoanTransaction(loanId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanTransactionsApi#executeLoanTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdTransactionsResponse> call = apiService.executeLoanTransaction(loanId, body, command);
+call.enqueue(new Callback<PostLoansLoanIdTransactionsResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdTransactionsResponse> call, Response<PostLoansLoanIdTransactionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdTransactionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PostLoansLoanIdTransactionsRequest**](PostLoansLoanIdTransactionsRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -118,27 +116,27 @@ Retrieves a Transaction Details  Example Request:  loans/5/transactions/3
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanTransactionsApi;
 
+LoanTransactionsApi apiService = defaultClient.createService(LoanTransactionsApi.class);
 
-LoanTransactionsApi apiInstance = new LoanTransactionsApi();
-Long loanId = 789L; // Long | loanId
-Long transactionId = 789L; // Long | transactionId
-try {
-    GetLoansLoanIdTransactionsTransactionIdResponse result = apiInstance.retrieveTransaction(loanId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanTransactionsApi#retrieveTransaction");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdTransactionsTransactionIdResponse> call = apiService.retrieveTransaction(loanId, transactionId);
+call.enqueue(new Callback<GetLoansLoanIdTransactionsTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdTransactionsTransactionIdResponse> call, Response<GetLoansLoanIdTransactionsTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdTransactionsTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **transactionId** | **Long**| transactionId |
 
@@ -165,30 +163,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanTransactionsApi;
 
+LoanTransactionsApi apiService = defaultClient.createService(LoanTransactionsApi.class);
 
-LoanTransactionsApi apiInstance = new LoanTransactionsApi();
-Long loanId = 789L; // Long | loanId
-String command = "command_example"; // String | command
-String dateFormat = "dateFormat_example"; // String | dateFormat
-String transactionDate = "transactionDate_example"; // String | transactionDate
-String locale = "locale_example"; // String | locale
-try {
-    GetLoansLoanIdTransactionsTemplateResponse result = apiInstance.retrieveTransactionTemplate(loanId, command, dateFormat, transactionDate, locale);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanTransactionsApi#retrieveTransactionTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdTransactionsTemplateResponse> call = apiService.retrieveTransactionTemplate(loanId, command, dateFormat, transactionDate, locale);
+call.enqueue(new Callback<GetLoansLoanIdTransactionsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdTransactionsTemplateResponse> call, Response<GetLoansLoanIdTransactionsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdTransactionsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **command** | **String**| command | [optional]
  **dateFormat** | **String**| dateFormat | [optional]

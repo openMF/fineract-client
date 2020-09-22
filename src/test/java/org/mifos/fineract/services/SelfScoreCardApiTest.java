@@ -28,7 +28,6 @@ public class SelfScoreCardApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

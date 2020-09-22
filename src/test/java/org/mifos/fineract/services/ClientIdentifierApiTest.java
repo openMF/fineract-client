@@ -31,10 +31,9 @@ public class ClientIdentifierApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Client Identifier
-     * <p>
+     *
      * Deletes a Client Identifier
      */
     @Test
@@ -45,10 +44,9 @@ public class ClientIdentifierApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Client Identifier Details Template
-     * <p>
+     *
      * This is a convenience resource useful for building maintenance user interface screens for client applications. The template data returned consists of any or all of:   Field Defaults  Allowed Value Lists   Example Request: clients/1/identifiers/template
      */
     @Test
@@ -57,10 +55,9 @@ public class ClientIdentifierApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List all Identifiers for a Client
-     * <p>
+     *
      * Example Requests: clients/1/identifiers   clients/1/identifiers?fields&#x3D;documentKey,documentType,description
      */
     @Test
@@ -70,10 +67,9 @@ public class ClientIdentifierApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client Identifier
-     * <p>
+     *
      * Example Requests: clients/1/identifier/2   clients/1/identifier/2?template&#x3D;true  clients/1/identifiers/2?fields&#x3D;documentKey,documentType,description
      */
     @Test
@@ -84,10 +80,9 @@ public class ClientIdentifierApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Client Identifier
-     * <p>
+     *
      * Updates a Client Identifier
      */
     @Test

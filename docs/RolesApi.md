@@ -1,6 +1,6 @@
 # RolesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,27 +24,27 @@ Description : Enable role in case role is disabled. | Disable the role in case r
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-String command = "command_example"; // String | command
-try {
-    PostRolesRoleIdResponse result = apiInstance.actionsOnRoles(roleId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#actionsOnRoles");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostRolesRoleIdResponse> call = apiService.actionsOnRoles(roleId, command);
+call.enqueue(new Callback<PostRolesRoleIdResponse>() {
+    @Override
+    public void onResponse(Call<PostRolesRoleIdResponse> call, Response<PostRolesRoleIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostRolesRoleIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
  **command** | **String**| command | [optional]
 
@@ -71,26 +71,27 @@ Mandatory Fields name, description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-PostRolesRequest body = new PostRolesRequest(); // PostRolesRequest | body
-try {
-    PostRolesResponse result = apiInstance.createRole(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#createRole");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostRolesResponse> call = apiService.createRole(body);
+call.enqueue(new Callback<PostRolesResponse>() {
+    @Override
+    public void onResponse(Call<PostRolesResponse> call, Response<PostRolesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostRolesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostRolesRequest**](PostRolesRequest.md)| body |
 
 ### Return type
@@ -116,26 +117,27 @@ Description : Delete the role in case role is not associated with any users.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    DeleteRolesRoleIdResponse result = apiInstance.deleteRole(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#deleteRole");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteRolesRoleIdResponse> call = apiService.deleteRole(roleId);
+call.enqueue(new Callback<DeleteRolesRoleIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteRolesRoleIdResponse> call, Response<DeleteRolesRoleIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteRolesRoleIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
 
 ### Return type
@@ -161,19 +163,23 @@ Example Requests:  roles   roles?fields&#x3D;name
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-try {
-    List<GetRolesResponse> result = apiInstance.retrieveAllRoles();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveAllRoles");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetRolesResponse&gt;> call = apiService.retrieveAllRoles();
+call.enqueue(new Callback<List&lt;GetRolesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetRolesResponse&gt;> call, Response<List&lt;GetRolesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetRolesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -202,26 +208,27 @@ Example Requests:  roles/1   roles/1?fields&#x3D;name
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    GetRolesRoleIdResponse result = apiInstance.retrieveRole(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveRole");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRolesRoleIdResponse> call = apiService.retrieveRole(roleId);
+call.enqueue(new Callback<GetRolesRoleIdResponse>() {
+    @Override
+    public void onResponse(Call<GetRolesRoleIdResponse> call, Response<GetRolesRoleIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRolesRoleIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
 
 ### Return type
@@ -247,26 +254,27 @@ Example Requests:  roles/1/permissions
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    GetRolesRoleIdPermissionsResponse result = apiInstance.retrieveRolePermissions(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveRolePermissions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRolesRoleIdPermissionsResponse> call = apiService.retrieveRolePermissions(roleId);
+call.enqueue(new Callback<GetRolesRoleIdPermissionsResponse>() {
+    @Override
+    public void onResponse(Call<GetRolesRoleIdPermissionsResponse> call, Response<GetRolesRoleIdPermissionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRolesRoleIdPermissionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
 
 ### Return type
@@ -292,27 +300,27 @@ Update a Role
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-PutRolesRoleIdRequest body = new PutRolesRoleIdRequest(); // PutRolesRoleIdRequest | body
-try {
-    PutRolesRoleIdResponse result = apiInstance.updateRole(roleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#updateRole");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutRolesRoleIdResponse> call = apiService.updateRole(roleId, body);
+call.enqueue(new Callback<PutRolesRoleIdResponse>() {
+    @Override
+    public void onResponse(Call<PutRolesRoleIdResponse> call, Response<PutRolesRoleIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutRolesRoleIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
  **body** | [**PutRolesRoleIdRequest**](PutRolesRoleIdRequest.md)| body |
 
@@ -339,27 +347,27 @@ Update a Role&#39;s Permissions
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
 
+RolesApi apiService = defaultClient.createService(RolesApi.class);
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-PutRolesRoleIdPermissionsRequest body = new PutRolesRoleIdPermissionsRequest(); // PutRolesRoleIdPermissionsRequest | body
-try {
-    PutRolesRoleIdPermissionsResponse result = apiInstance.updateRolePermissions(roleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#updateRolePermissions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutRolesRoleIdPermissionsResponse> call = apiService.updateRolePermissions(roleId, body);
+call.enqueue(new Callback<PutRolesRoleIdPermissionsResponse>() {
+    @Override
+    public void onResponse(Call<PutRolesRoleIdPermissionsResponse> call, Response<PutRolesRoleIdPermissionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutRolesRoleIdPermissionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
  **body** | [**PutRolesRoleIdPermissionsRequest**](PutRolesRoleIdPermissionsRequest.md)| body |
 

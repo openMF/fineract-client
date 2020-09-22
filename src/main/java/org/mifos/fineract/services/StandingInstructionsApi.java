@@ -1,11 +1,11 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 public interface StandingInstructionsApi {
     /**
@@ -13,13 +13,13 @@ public interface StandingInstructionsApi {
      * Ability to create new instruction for transfer of monetary funds from one account to another
      *
      * @param body body (required)
-     * @return Call&lt;PostStandingInstructionsResponse&gt;
+     * @return Observable&lt;PostStandingInstructionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("standinginstructions")
-    Call<PostStandingInstructionsResponse> create(
+    Observable<PostStandingInstructionsResponse> create(
             @retrofit2.http.Body PostStandingInstructionsRequest body
     );
 
@@ -38,13 +38,13 @@ public interface StandingInstructionsApi {
      * @param clientId        clientId (optional)
      * @param fromAccountId   fromAccountId (optional)
      * @param fromAccountType fromAccountType (optional)
-     * @return Call&lt;GetStandingInstructionsResponse&gt;
+     * @return Observable&lt;GetStandingInstructionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("standinginstructions")
-    Call<GetStandingInstructionsResponse> retrieveAll(
+    Observable<GetStandingInstructionsResponse> retrieveAll(
             @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("transferType") Integer transferType, @retrofit2.http.Query("clientName") String clientName, @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType
     );
 
@@ -59,13 +59,13 @@ public interface StandingInstructionsApi {
      * @param limit                 limit (optional)
      * @param orderBy               orderBy (optional)
      * @param sortOrder             sortOrder (optional)
-     * @return Call&lt;GetStandingInstructionsStandingInstructionIdResponse&gt;
+     * @return Observable&lt;GetStandingInstructionsStandingInstructionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("standinginstructions/{standingInstructionId}")
-    Call<GetStandingInstructionsStandingInstructionIdResponse> retrieveOne(
+    Observable<GetStandingInstructionsStandingInstructionIdResponse> retrieveOne(
             @retrofit2.http.Path("standingInstructionId") Long standingInstructionId, @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
     );
 
@@ -82,13 +82,13 @@ public interface StandingInstructionsApi {
      * @param toAccountId     toAccountId (optional)
      * @param toAccountType   toAccountType (optional)
      * @param transferType    transferType (optional)
-     * @return Call&lt;GetStandingInstructionsTemplateResponse&gt;
+     * @return Observable&lt;GetStandingInstructionsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("standinginstructions/template")
-    Call<GetStandingInstructionsTemplateResponse> template(
+    Observable<GetStandingInstructionsTemplateResponse> template(
             @retrofit2.http.Query("fromOfficeId") Long fromOfficeId, @retrofit2.http.Query("fromClientId") Long fromClientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType, @retrofit2.http.Query("toOfficeId") Long toOfficeId, @retrofit2.http.Query("toClientId") Long toClientId, @retrofit2.http.Query("toAccountId") Long toAccountId, @retrofit2.http.Query("toAccountType") Integer toAccountType, @retrofit2.http.Query("transferType") Integer transferType
     );
 
@@ -99,13 +99,13 @@ public interface StandingInstructionsApi {
      * @param standingInstructionId standingInstructionId (required)
      * @param command               command (optional)
      * @param body                  body (optional)
-     * @return Call&lt;PutStandingInstructionsStandingInstructionIdResponse&gt;
+     * @return Observable&lt;PutStandingInstructionsStandingInstructionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("standinginstructions/{standingInstructionId}")
-    Call<PutStandingInstructionsStandingInstructionIdResponse> update(
+    Observable<PutStandingInstructionsStandingInstructionIdResponse> update(
             @retrofit2.http.Path("standingInstructionId") Long standingInstructionId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body PutStandingInstructionsStandingInstructionIdRequest body
     );
 

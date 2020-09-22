@@ -23,7 +23,7 @@ public class CentersApiTest {
 
     /**
      * Activate a Center | Generate Collection Sheet | Save Collection Sheet | Close a Center | Associate Groups | Disassociate Groups
-     * <p>
+     *
      * Activate a Center:  Centers can be created in a Pending state. This API exists to enable center activation. If the center happens to be already active, this API will result in an error.  Close a Center:  Centers can be closed if they don&#39;t have any non-closed groups or saving accounts. If the Center has any active groups or savings accounts, this API will result in an error.  Associate Groups:  This API allows associating existing groups to a center. The groups are listed from the office to which the center is associated. If group(s) is already associated with a center, this API will result in an error.  Disassociate Groups:  This API allows to disassociate groups from a center.  Generate Collection Sheet:  This Api retrieves repayment details of all jlg loans under a center as on a specified meeting date.  Save Collection Sheet:  This Api allows the loan officer to perform bulk repayments of JLG loans for a center on a given meeting date.  Showing Request/Response for Close a Center
      */
     @Test
@@ -35,10 +35,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create a Center
-     * <p>
+     *
      * Creates a Center  Mandatory Fields: name, officeId, active, activationDate (if active&#x3D;true)  Optional Fields: externalId, staffId, groupMembers
      */
     @Test
@@ -48,10 +47,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Center
-     * <p>
+     *
      * A Center can be deleted if it is in pending state and has no association - groups, loans or savings
      */
     @Test
@@ -87,10 +85,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Centers
-     * <p>
+     *
      * The default implementation supports pagination and sorting with the default pagination size set to 200 records. The parameter limit with value -1 will return all entries.  Example Requests:    centers    centers?fields&#x3D;name,officeName,joinedDate    centers?offset&#x3D;10&amp;limit&#x3D;50    centers?orderBy&#x3D;name&amp;sortOrder&#x3D;DESC
      */
     @Test
@@ -113,10 +110,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Center accounts overview
-     * <p>
+     *
      * An example of how a savings summary for a Center can be provided. This is requested in a specific use case of the reference application.  It is quite reasonable to add resources like this to simplify User Interface development.    Example Requests:    centers/9/accounts
      */
     @Test
@@ -126,10 +122,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Center
-     * <p>
+     *
      * Retrieves a Center  Example Requests:    centers/1    centers/1?associations&#x3D;groupMembers
      */
     @Test
@@ -140,10 +135,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Center Template
-     * <p>
+     *
      * Retrieves a Center Template  Example Requests:    centers/template    centers/template?officeId&#x3D;2
      */
     @Test
@@ -155,10 +149,9 @@ public class CentersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Center
-     * <p>
+     *
      * Updates a Center
      */
     @Test

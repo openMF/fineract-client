@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -31,95 +31,95 @@ public class GetReportMailingJobsTemplate {
   @SerializedName("emailAttachmentFileFormatOptions")
   private List<EnumOptionData> emailAttachmentFileFormatOptions = null;
 
-  @SerializedName("stretchyReportParamDateOptions")
-  private List<EnumOptionData> stretchyReportParamDateOptions = null;
+    @SerializedName("stretchyReportParamDateOptions")
+    private List<EnumOptionData> stretchyReportParamDateOptions = null;
 
-  public GetReportMailingJobsTemplate isActive(Boolean isActive) {
-    this.isActive = isActive;
-    return this;
-  }
+    public GetReportMailingJobsTemplate isActive(Boolean isActive) {
+        this.isActive = isActive;
+        return this;
+    }
 
-  /**
-   * Get isActive
-   *
-   * @return isActive
-   **/
-  @ApiModelProperty(example = "true", value = "")
-  public Boolean isIsActive() {
-    return isActive;
-  }
+    /**
+     * Get isActive
+     *
+     * @return isActive
+     **/
+    @ApiModelProperty(example = "true", value = "")
+    public Boolean isIsActive() {
+        return isActive;
+    }
 
-  public void setIsActive(Boolean isActive) {
-    this.isActive = isActive;
-  }
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 
-  public GetReportMailingJobsTemplate emailAttachmentFileFormatOptions(List<EnumOptionData> emailAttachmentFileFormatOptions) {
+    public GetReportMailingJobsTemplate emailAttachmentFileFormatOptions(List<EnumOptionData> emailAttachmentFileFormatOptions) {
     this.emailAttachmentFileFormatOptions = emailAttachmentFileFormatOptions;
     return this;
-  }
-
-  public GetReportMailingJobsTemplate addEmailAttachmentFileFormatOptionsItem(EnumOptionData emailAttachmentFileFormatOptionsItem) {
-    if (this.emailAttachmentFileFormatOptions == null) {
-      this.emailAttachmentFileFormatOptions = new ArrayList<EnumOptionData>();
     }
-    this.emailAttachmentFileFormatOptions.add(emailAttachmentFileFormatOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get emailAttachmentFileFormatOptions
-   *
-   * @return emailAttachmentFileFormatOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<EnumOptionData> getEmailAttachmentFileFormatOptions() {
-    return emailAttachmentFileFormatOptions;
-  }
+    public GetReportMailingJobsTemplate addEmailAttachmentFileFormatOptionsItem(EnumOptionData emailAttachmentFileFormatOptionsItem) {
+        if (this.emailAttachmentFileFormatOptions == null) {
+            this.emailAttachmentFileFormatOptions = new ArrayList<EnumOptionData>();
+        }
+        this.emailAttachmentFileFormatOptions.add(emailAttachmentFileFormatOptionsItem);
+        return this;
+    }
 
-  public void setEmailAttachmentFileFormatOptions(List<EnumOptionData> emailAttachmentFileFormatOptions) {
-    this.emailAttachmentFileFormatOptions = emailAttachmentFileFormatOptions;
-  }
+    /**
+     * Get emailAttachmentFileFormatOptions
+     *
+     * @return emailAttachmentFileFormatOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<EnumOptionData> getEmailAttachmentFileFormatOptions() {
+        return emailAttachmentFileFormatOptions;
+    }
 
-  public GetReportMailingJobsTemplate stretchyReportParamDateOptions(List<EnumOptionData> stretchyReportParamDateOptions) {
+    public void setEmailAttachmentFileFormatOptions(List<EnumOptionData> emailAttachmentFileFormatOptions) {
+        this.emailAttachmentFileFormatOptions = emailAttachmentFileFormatOptions;
+    }
+
+    public GetReportMailingJobsTemplate stretchyReportParamDateOptions(List<EnumOptionData> stretchyReportParamDateOptions) {
     this.stretchyReportParamDateOptions = stretchyReportParamDateOptions;
     return this;
-  }
-
-  public GetReportMailingJobsTemplate addStretchyReportParamDateOptionsItem(EnumOptionData stretchyReportParamDateOptionsItem) {
-    if (this.stretchyReportParamDateOptions == null) {
-      this.stretchyReportParamDateOptions = new ArrayList<EnumOptionData>();
     }
-    this.stretchyReportParamDateOptions.add(stretchyReportParamDateOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get stretchyReportParamDateOptions
-   *
-   * @return stretchyReportParamDateOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<EnumOptionData> getStretchyReportParamDateOptions() {
-    return stretchyReportParamDateOptions;
-  }
+    public GetReportMailingJobsTemplate addStretchyReportParamDateOptionsItem(EnumOptionData stretchyReportParamDateOptionsItem) {
+        if (this.stretchyReportParamDateOptions == null) {
+            this.stretchyReportParamDateOptions = new ArrayList<EnumOptionData>();
+        }
+        this.stretchyReportParamDateOptions.add(stretchyReportParamDateOptionsItem);
+        return this;
+    }
 
-  public void setStretchyReportParamDateOptions(List<EnumOptionData> stretchyReportParamDateOptions) {
-    this.stretchyReportParamDateOptions = stretchyReportParamDateOptions;
+    /**
+     * Get stretchyReportParamDateOptions
+     *
+     * @return stretchyReportParamDateOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<EnumOptionData> getStretchyReportParamDateOptions() {
+        return stretchyReportParamDateOptions;
+    }
+
+    public void setStretchyReportParamDateOptions(List<EnumOptionData> stretchyReportParamDateOptions) {
+        this.stretchyReportParamDateOptions = stretchyReportParamDateOptions;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetReportMailingJobsTemplate getReportMailingJobsTemplate = (GetReportMailingJobsTemplate) o;
-    return Objects.equals(this.isActive, getReportMailingJobsTemplate.isActive) &&
-            Objects.equals(this.emailAttachmentFileFormatOptions, getReportMailingJobsTemplate.emailAttachmentFileFormatOptions) &&
-            Objects.equals(this.stretchyReportParamDateOptions, getReportMailingJobsTemplate.stretchyReportParamDateOptions);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetReportMailingJobsTemplate getReportMailingJobsTemplate = (GetReportMailingJobsTemplate) o;
+      return Objects.equals(this.isActive, getReportMailingJobsTemplate.isActive) &&
+              Objects.equals(this.emailAttachmentFileFormatOptions, getReportMailingJobsTemplate.emailAttachmentFileFormatOptions) &&
+              Objects.equals(this.stretchyReportParamDateOptions, getReportMailingJobsTemplate.stretchyReportParamDateOptions);
   }
 
   @Override
@@ -132,7 +132,7 @@ public class GetReportMailingJobsTemplate {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetReportMailingJobsTemplate {\n");
-
+    
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    emailAttachmentFileFormatOptions: ").append(toIndentedString(emailAttachmentFileFormatOptions)).append("\n");
     sb.append("    stretchyReportParamDateOptions: ").append(toIndentedString(stretchyReportParamDateOptions)).append("\n");

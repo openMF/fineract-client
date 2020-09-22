@@ -1,6 +1,6 @@
 # FundsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Creates a Fund
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
 
+FundsApi apiService = defaultClient.createService(FundsApi.class);
 
-FundsApi apiInstance = new FundsApi();
-PostFundsRequest body = new PostFundsRequest(); // PostFundsRequest | body
-try {
-    PostFundsResponse result = apiInstance.createFund(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#createFund");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFundsResponse> call = apiService.createFund(body);
+call.enqueue(new Callback<PostFundsResponse>() {
+    @Override
+    public void onResponse(Call<PostFundsResponse> call, Response<PostFundsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFundsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostFundsRequest**](PostFundsRequest.md)| body |
 
 ### Return type
@@ -65,26 +66,27 @@ Returns the details of a Fund.  Example Requests:  funds/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
 
+FundsApi apiService = defaultClient.createService(FundsApi.class);
 
-FundsApi apiInstance = new FundsApi();
-Long fundId = 789L; // Long | fundId
-try {
-    GetFundsResponse result = apiInstance.retreiveFund(fundId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#retreiveFund");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFundsResponse> call = apiService.retreiveFund(fundId);
+call.enqueue(new Callback<GetFundsResponse>() {
+    @Override
+    public void onResponse(Call<GetFundsResponse> call, Response<GetFundsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFundsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **fundId** | **Long**| fundId |
 
 ### Return type
@@ -110,19 +112,23 @@ Returns the list of funds.  Example Requests:  funds
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
 
+FundsApi apiService = defaultClient.createService(FundsApi.class);
 
-FundsApi apiInstance = new FundsApi();
-try {
-    List<GetFundsResponse> result = apiInstance.retrieveFunds();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#retrieveFunds");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFundsResponse&gt;> call = apiService.retrieveFunds();
+call.enqueue(new Callback<List&lt;GetFundsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFundsResponse&gt;> call, Response<List&lt;GetFundsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFundsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -151,27 +157,27 @@ Updates the details of a fund.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
 
+FundsApi apiService = defaultClient.createService(FundsApi.class);
 
-FundsApi apiInstance = new FundsApi();
-Long fundId = 789L; // Long | fundId
-PutFundsFundIdRequest body = new PutFundsFundIdRequest(); // PutFundsFundIdRequest | body
-try {
-    PutFundsFundIdResponse result = apiInstance.updateFund(fundId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#updateFund");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutFundsFundIdResponse> call = apiService.updateFund(fundId, body);
+call.enqueue(new Callback<PutFundsFundIdResponse>() {
+    @Override
+    public void onResponse(Call<PutFundsFundIdResponse> call, Response<PutFundsFundIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutFundsFundIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **fundId** | **Long**| fundId |
  **body** | [**PutFundsFundIdRequest**](PutFundsFundIdRequest.md)| body |
 

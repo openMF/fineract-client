@@ -1,6 +1,6 @@
 # GlobalConfigurationApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,26 +19,27 @@ Returns the list global enable/disable configurations.  Example Requests:  confi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GlobalConfigurationApi;
 
+GlobalConfigurationApi apiService = defaultClient.createService(GlobalConfigurationApi.class);
 
-GlobalConfigurationApi apiInstance = new GlobalConfigurationApi();
-Boolean survey = false; // Boolean | survey
-try {
-    List<GetGlobalConfigurationsResponse> result = apiInstance.retrieveConfiguration(survey);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GlobalConfigurationApi#retrieveConfiguration");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetGlobalConfigurationsResponse&gt;> call = apiService.retrieveConfiguration(survey);
+call.enqueue(new Callback<List&lt;GetGlobalConfigurationsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetGlobalConfigurationsResponse&gt;> call, Response<List&lt;GetGlobalConfigurationsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetGlobalConfigurationsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **survey** | **Boolean**| survey | [optional] [default to false]
 
 ### Return type
@@ -64,26 +65,27 @@ Returns a global enable/disable configurations.  Example Requests:  configuratio
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GlobalConfigurationApi;
 
+GlobalConfigurationApi apiService = defaultClient.createService(GlobalConfigurationApi.class);
 
-GlobalConfigurationApi apiInstance = new GlobalConfigurationApi();
-Long configId = 789L; // Long | configId
-try {
-    GetGlobalConfigurationsResponse result = apiInstance.retrieveOne(configId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GlobalConfigurationApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGlobalConfigurationsResponse> call = apiService.retrieveOne(configId);
+call.enqueue(new Callback<GetGlobalConfigurationsResponse>() {
+    @Override
+    public void onResponse(Call<GetGlobalConfigurationsResponse> call, Response<GetGlobalConfigurationsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGlobalConfigurationsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **configId** | **Long**| configId |
 
 ### Return type
@@ -109,27 +111,27 @@ Updates an enable/disable global configuration item.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GlobalConfigurationApi;
 
+GlobalConfigurationApi apiService = defaultClient.createService(GlobalConfigurationApi.class);
 
-GlobalConfigurationApi apiInstance = new GlobalConfigurationApi();
-Long configId = 789L; // Long | configId
-PutGlobalConfigurationsRequest body = new PutGlobalConfigurationsRequest(); // PutGlobalConfigurationsRequest | body
-try {
-    PutGlobalConfigurationsResponse result = apiInstance.updateConfiguration(configId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GlobalConfigurationApi#updateConfiguration");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutGlobalConfigurationsResponse> call = apiService.updateConfiguration(configId, body);
+call.enqueue(new Callback<PutGlobalConfigurationsResponse>() {
+    @Override
+    public void onResponse(Call<PutGlobalConfigurationsResponse> call, Response<PutGlobalConfigurationsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutGlobalConfigurationsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **configId** | **Long**| configId |
  **body** | [**PutGlobalConfigurationsRequest**](PutGlobalConfigurationsRequest.md)| body |
 

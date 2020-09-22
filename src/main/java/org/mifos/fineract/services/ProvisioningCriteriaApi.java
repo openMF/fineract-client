@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface ProvisioningCriteriaApi {
      * Creates a new Provisioning Criteria  Mandatory Fields:  criteriaName provisioningcriteria  Optional Fields:  loanProducts
      *
      * @param body body (required)
-     * @return Call&lt;PostProvisioningCriteriaResponse&gt;
+     * @return Observable&lt;PostProvisioningCriteriaResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("provisioningcriteria")
-    Call<PostProvisioningCriteriaResponse> createProvisioningCriteria(
+    Observable<PostProvisioningCriteriaResponse> createProvisioningCriteria(
             @retrofit2.http.Body PostProvisioningCriteriaRequest body
     );
 
@@ -27,13 +27,13 @@ public interface ProvisioningCriteriaApi {
      * Deletes Provisioning Criteria
      *
      * @param criteriaId criteriaId (required)
-     * @return Call&lt;DeleteProvisioningCriteriaResponse&gt;
+     * @return Observable&lt;DeleteProvisioningCriteriaResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("provisioningcriteria/{criteriaId}")
-    Call<DeleteProvisioningCriteriaResponse> deleteProvisioningCriteria(
+    Observable<DeleteProvisioningCriteriaResponse> deleteProvisioningCriteria(
             @retrofit2.http.Path("criteriaId") Long criteriaId
     );
 
@@ -41,13 +41,13 @@ public interface ProvisioningCriteriaApi {
      * Retrieves all created Provisioning Criterias
      * Retrieves all created Provisioning Criterias
      *
-     * @return Call&lt;List&lt;GetProvisioningCriteriaResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetProvisioningCriteriaResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningcriteria")
-    Call<List<GetProvisioningCriteriaResponse>> retrieveAllProvisioningCriterias();
+    Observable<List<GetProvisioningCriteriaResponse>> retrieveAllProvisioningCriterias();
 
 
     /**
@@ -55,24 +55,24 @@ public interface ProvisioningCriteriaApi {
      * Retrieves a Provisioning Criteria
      *
      * @param criteriaId criteriaId (required)
-     * @return Call&lt;GetProvisioningCriteriaCriteriaIdResponse&gt;
+     * @return Observable&lt;GetProvisioningCriteriaCriteriaIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningcriteria/{criteriaId}")
-    Call<GetProvisioningCriteriaCriteriaIdResponse> retrieveProvisioningCriteria(
+    Observable<GetProvisioningCriteriaCriteriaIdResponse> retrieveProvisioningCriteria(
             @retrofit2.http.Path("criteriaId") Long criteriaId
     );
 
     /**
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningcriteria/template")
-    Call<String> retrieveTemplate();
+    Observable<String> retrieveTemplate();
 
 
     /**
@@ -81,13 +81,13 @@ public interface ProvisioningCriteriaApi {
      *
      * @param criteriaId criteriaId (required)
      * @param body       body (required)
-     * @return Call&lt;PutProvisioningCriteriaResponse&gt;
+     * @return Observable&lt;PutProvisioningCriteriaResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("provisioningcriteria/{criteriaId}")
-    Call<PutProvisioningCriteriaResponse> updateProvisioningCriteria(
+    Observable<PutProvisioningCriteriaResponse> updateProvisioningCriteria(
             @retrofit2.http.Path("criteriaId") Long criteriaId, @retrofit2.http.Body PutProvisioningCriteriaRequest body
     );
 

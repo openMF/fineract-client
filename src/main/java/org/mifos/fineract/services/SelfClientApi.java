@@ -2,34 +2,34 @@ package org.mifos.fineract.services;
 
 import okhttp3.MultipartBody;
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface SelfClientApi {
     /**
      * @param clientId      (required)
      * @param contentLength (optional)
      * @param file          (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("self/clients/{clientId}/images")
-    Call<String> addNewClientImage(
+    Observable<String> addNewClientImage(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part MultipartBody.Part file
     );
 
     /**
      * @param clientId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("self/clients/{clientId}/images")
-    Call<String> deleteClientImage(
+    Observable<String> deleteClientImage(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
@@ -44,13 +44,13 @@ public interface SelfClientApi {
      * @param limit       limit (optional)
      * @param orderBy     orderBy (optional)
      * @param sortOrder   sortOrder (optional)
-     * @return Call&lt;GetSelfClientsResponse&gt;
+     * @return Observable&lt;GetSelfClientsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients")
-    Call<GetSelfClientsResponse> retrieveAll(
+    Observable<GetSelfClientsResponse> retrieveAll(
             @retrofit2.http.Query("displayName") String displayName, @retrofit2.http.Query("firstName") String firstName, @retrofit2.http.Query("lastName") String lastName, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
     );
 
@@ -63,13 +63,13 @@ public interface SelfClientApi {
      * @param pendingPayment pendingPayment (optional)
      * @param limit          limit (optional)
      * @param offset         offset (optional)
-     * @return Call&lt;GetSelfClientsClientIdChargesResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdChargesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/charges")
-    Call<GetSelfClientsClientIdChargesResponse> retrieveAllClientCharges(
+    Observable<GetSelfClientsClientIdChargesResponse> retrieveAllClientCharges(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("chargeStatus") String chargeStatus, @retrofit2.http.Query("pendingPayment") Boolean pendingPayment, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("offset") Integer offset
     );
 
@@ -80,13 +80,13 @@ public interface SelfClientApi {
      * @param clientId clientId (required)
      * @param offset   offset (optional)
      * @param limit    limit (optional)
-     * @return Call&lt;GetSelfClientsClientIdTransactionsResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdTransactionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/transactions")
-    Call<GetSelfClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
+    Observable<GetSelfClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
     );
 
@@ -95,13 +95,13 @@ public interface SelfClientApi {
      * An example of how a loan portfolio summary can be provided. This is requested in a specific use case of the community application. It is quite reasonable to add resources like this to simplify User Interface development.  Example Requests:  self/clients/1/accounts   self/clients/1/accounts?fields&#x3D;loanAccounts,savingsAccounts
      *
      * @param clientId clientId (required)
-     * @return Call&lt;GetSelfClientsClientIdAccountsResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/accounts")
-    Call<GetSelfClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
+    Observable<GetSelfClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
@@ -111,13 +111,13 @@ public interface SelfClientApi {
      *
      * @param clientId clientId (required)
      * @param chargeId chargeId (required)
-     * @return Call&lt;GetSelfClientsClientIdChargesChargeIdResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdChargesChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/charges/{chargeId}")
-    Call<GetSelfClientsClientIdChargesChargeIdResponse> retrieveClientCharge(
+    Observable<GetSelfClientsClientIdChargesChargeIdResponse> retrieveClientCharge(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("chargeId") Long chargeId
     );
 
@@ -127,13 +127,13 @@ public interface SelfClientApi {
      *
      * @param clientId      clientId (required)
      * @param transactionId transactionId (required)
-     * @return Call&lt;GetSelfClientsClientIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/transactions/{transactionId}")
-    Call<GetSelfClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
+    Observable<GetSelfClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
@@ -145,25 +145,25 @@ public interface SelfClientApi {
      * @param maxWidth  (optional)
      * @param maxHeight (optional)
      * @param output    (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/images")
-    Call<Void> retrieveImage(
+    Observable<Void> retrieveImage(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("maxWidth") Integer maxWidth, @retrofit2.http.Query("maxHeight") Integer maxHeight, @retrofit2.http.Query("output") String output
     );
 
     /**
      * @param clientId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}/obligeedetails")
-    Call<String> retrieveObligeeDetails(
+    Observable<String> retrieveObligeeDetails(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
@@ -172,13 +172,13 @@ public interface SelfClientApi {
      * Retrieves a Client  Example Requests:  self/clients/1  self/clients/1?fields&#x3D;id,displayName,officeName
      *
      * @param clientId clientId (required)
-     * @return Call&lt;GetSelfClientsClientIdResponse&gt;
+     * @return Observable&lt;GetSelfClientsClientIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/clients/{clientId}")
-    Call<GetSelfClientsClientIdResponse> retrieveOne(
+    Observable<GetSelfClientsClientIdResponse> retrieveOne(
             @retrofit2.http.Path("clientId") Long clientId
     );
 

@@ -30,7 +30,6 @@ public class NotificationApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

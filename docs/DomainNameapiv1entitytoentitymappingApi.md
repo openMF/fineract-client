@@ -1,6 +1,6 @@
 # DomainNameapiv1entitytoentitymappingApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,27 +20,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-Long relId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.createMap(relId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#createMap");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createMap(relId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **relId** | **Long**|  |
  **body** | **String**|  | [optional]
 
@@ -65,26 +65,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-Long mapId = 789L; // Long | 
-try {
-    String result = apiInstance.delete(mapId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.delete(mapId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mapId** | **Long**|  |
 
 ### Return type
@@ -108,28 +109,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-Long mapId = 789L; // Long | 
-Long fromId = 789L; // Long | 
-Long toId = 789L; // Long | 
-try {
-    String result = apiInstance.getEntityToEntityMappings(mapId, fromId, toId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#getEntityToEntityMappings");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getEntityToEntityMappings(mapId, fromId, toId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mapId** | **Long**|  |
  **fromId** | **Long**|  |
  **toId** | **Long**|  |
@@ -155,19 +155,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-try {
-    String result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -194,26 +198,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-Long mapId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveOne(mapId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveOne(mapId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mapId** | **Long**|  |
 
 ### Return type
@@ -237,27 +242,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DomainNameapiv1entitytoentitymappingApi;
 
+DomainNameapiv1entitytoentitymappingApi apiService = defaultClient.createService(DomainNameapiv1entitytoentitymappingApi.class);
 
-DomainNameapiv1entitytoentitymappingApi apiInstance = new DomainNameapiv1entitytoentitymappingApi();
-Long mapId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateMap(mapId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DomainNameapiv1entitytoentitymappingApi#updateMap");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateMap(mapId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mapId** | **Long**|  |
  **body** | **String**|  | [optional]
 

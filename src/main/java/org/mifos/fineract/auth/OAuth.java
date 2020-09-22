@@ -24,25 +24,21 @@ import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
 public class OAuth implements Interceptor {
 
-    private volatile String accessToken;
-    private OAuthClient oauthClient;
-    private TokenRequestBuilder tokenRequestBuilder;
-    private AuthenticationRequestBuilder authenticationRequestBuilder;
-    private AccessTokenListener accessTokenListener;
-
     public OAuth(OkHttpClient client, TokenRequestBuilder requestBuilder) {
         this.oauthClient = new OAuthClient(new OAuthOkHttpClient(client));
         this.tokenRequestBuilder = requestBuilder;
     }
 
+    private volatile String accessToken;
+    private OAuthClient oauthClient;
+
+    private TokenRequestBuilder tokenRequestBuilder;
+    private AuthenticationRequestBuilder authenticationRequestBuilder;
+
+    private AccessTokenListener accessTokenListener;
+
     public OAuth(TokenRequestBuilder requestBuilder) {
         this(new OkHttpClient(), requestBuilder);
-    }
-
-    public OAuth(OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
-        this(OAuthClientRequest.tokenLocation(tokenUrl).setScope(scopes));
-        setFlow(flow);
-        authenticationRequestBuilder = OAuthClientRequest.authorizationLocation(authorizationUrl);
     }
 
     public void setFlow(OAuthFlow flow) {
@@ -62,11 +58,10 @@ public class OAuth implements Interceptor {
         }
     }
 
-    @Override
-    public Response intercept(Chain chain)
-            throws IOException {
-
-        return retryingIntercept(chain, true);
+    public OAuth(OAuthFlow flow, String authorizationUrl, String tokenUrl, String scopes) {
+        this(OAuthClientRequest.tokenLocation(tokenUrl).setScope(scopes));
+        setFlow(flow);
+        authenticationRequestBuilder = OAuthClientRequest.authorizationLocation(authorizationUrl);
     }
 
     private Response retryingIntercept(Chain chain, boolean updateTokenAndRetryOnAuthorizationFailure) throws IOException {
@@ -122,6 +117,13 @@ public class OAuth implements Interceptor {
         }
     }
 
+    @Override
+    public Response intercept(Chain chain)
+            throws IOException {
+
+        return retryingIntercept(chain, true);
+    }
+
     /*
      * Returns true if the access token has been updated
      */
@@ -145,6 +147,10 @@ public class OAuth implements Interceptor {
             }
         }
         return true;
+    }
+
+    public interface AccessTokenListener {
+        void notify(BasicOAuthToken token);
     }
 
     public void registerAccessTokenListener(AccessTokenListener accessTokenListener) {
@@ -173,10 +179,6 @@ public class OAuth implements Interceptor {
 
     public void setAuthenticationRequestBuilder(AuthenticationRequestBuilder authenticationRequestBuilder) {
         this.authenticationRequestBuilder = authenticationRequestBuilder;
-    }
-
-    public interface AccessTokenListener {
-        void notify(BasicOAuthToken token);
     }
 
 }

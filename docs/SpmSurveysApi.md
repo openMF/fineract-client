@@ -1,6 +1,6 @@
 # SpmSurveysApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Deactivate Survey
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmSurveysApi;
 
+SpmSurveysApi apiService = defaultClient.createService(SpmSurveysApi.class);
 
-SpmSurveysApi apiInstance = new SpmSurveysApi();
-Long id = 789L; // Long | 
-String command = "command_example"; // String | 
-try {
-    apiInstance.activateOrDeactivateSurvey(id, command);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmSurveysApi#activateOrDeactivateSurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.activateOrDeactivateSurvey(id, command);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**|  |
  **command** | **String**|  | [optional]
 
@@ -67,25 +68,27 @@ Adds a new survey to collect client related data.  Mandatory Fields  countryCode
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmSurveysApi;
 
+SpmSurveysApi apiService = defaultClient.createService(SpmSurveysApi.class);
 
-SpmSurveysApi apiInstance = new SpmSurveysApi();
-SurveyData body = new SurveyData(); // SurveyData | Create survey
-try {
-    apiInstance.createSurvey(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmSurveysApi#createSurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.createSurvey(body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**SurveyData**](SurveyData.md)| Create survey | [optional]
 
 ### Return type
@@ -109,27 +112,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmSurveysApi;
 
+SpmSurveysApi apiService = defaultClient.createService(SpmSurveysApi.class);
 
-SpmSurveysApi apiInstance = new SpmSurveysApi();
-Long id = 789L; // Long | 
-SurveyData body = new SurveyData(); // SurveyData | 
-try {
-    String result = apiInstance.editSurvey(id, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmSurveysApi#editSurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.editSurvey(id, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**|  |
  **body** | [**SurveyData**](SurveyData.md)|  | [optional]
 
@@ -156,26 +159,27 @@ List all Surveys
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmSurveysApi;
 
+SpmSurveysApi apiService = defaultClient.createService(SpmSurveysApi.class);
 
-SpmSurveysApi apiInstance = new SpmSurveysApi();
-Boolean isActive = true; // Boolean | 
-try {
-    List<SurveyData> result = apiInstance.fetchAllSurveys(isActive);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmSurveysApi#fetchAllSurveys");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;SurveyData&gt;> call = apiService.fetchAllSurveys(isActive);
+call.enqueue(new Callback<List&lt;SurveyData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;SurveyData&gt;> call, Response<List&lt;SurveyData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;SurveyData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **isActive** | **Boolean**|  | [optional]
 
 ### Return type
@@ -201,26 +205,27 @@ Retrieve a Survey
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SpmSurveysApi;
 
+SpmSurveysApi apiService = defaultClient.createService(SpmSurveysApi.class);
 
-SpmSurveysApi apiInstance = new SpmSurveysApi();
-Long id = 789L; // Long | Enter id
-try {
-    SurveyData result = apiInstance.findSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpmSurveysApi#findSurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<SurveyData> call = apiService.findSurvey(id);
+call.enqueue(new Callback<SurveyData>() {
+    @Override
+    public void onResponse(Call<SurveyData> call, Response<SurveyData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<SurveyData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id** | **Long**| Enter id |
 
 ### Return type

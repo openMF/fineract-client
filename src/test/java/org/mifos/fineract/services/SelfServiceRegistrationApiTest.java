@@ -26,7 +26,6 @@ public class SelfServiceRegistrationApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

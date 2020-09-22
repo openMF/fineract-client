@@ -1,6 +1,6 @@
 # CollectionSheetApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,27 +17,27 @@ Generate Individual Collection Sheet:  This Api retrieves repayment details of a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CollectionSheetApi;
 
+CollectionSheetApi apiService = defaultClient.createService(CollectionSheetApi.class);
 
-CollectionSheetApi apiInstance = new CollectionSheetApi();
-PostCollectionSheetRequest body = new PostCollectionSheetRequest(); // PostCollectionSheetRequest | body
-String command = "command_example"; // String | command
-try {
-    PostCollectionSheetResponse result = apiInstance.generateCollectionSheet(body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionSheetApi#generateCollectionSheet");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostCollectionSheetResponse> call = apiService.generateCollectionSheet(body, command);
+call.enqueue(new Callback<PostCollectionSheetResponse>() {
+    @Override
+    public void onResponse(Call<PostCollectionSheetResponse> call, Response<PostCollectionSheetResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostCollectionSheetResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostCollectionSheetRequest**](PostCollectionSheetRequest.md)| body |
  **command** | **String**| command | [optional]
 

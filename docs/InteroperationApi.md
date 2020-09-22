@@ -1,6 +1,6 @@
 # InteroperationApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,26 +32,27 @@ Calculate Interoperation Quote
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-InteropQuoteRequestData body = new InteropQuoteRequestData(); // InteropQuoteRequestData | body
-try {
-    InteropQuoteResponseData result = apiInstance.createQuote(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#createQuote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropQuoteResponseData> call = apiService.createQuote(body);
+call.enqueue(new Callback<InteropQuoteResponseData>() {
+    @Override
+    public void onResponse(Call<InteropQuoteResponseData> call, Response<InteropQuoteResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropQuoteResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**InteropQuoteRequestData**](InteropQuoteRequestData.md)| body |
 
 ### Return type
@@ -77,26 +78,27 @@ Allow Interoperation Transaction Request
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-InteropTransactionRequestData body = new InteropTransactionRequestData(); // InteropTransactionRequestData | body
-try {
-    InteropTransactionRequestResponseData result = apiInstance.createTransactionRequest(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#createTransactionRequest");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropTransactionRequestResponseData> call = apiService.createTransactionRequest(body);
+call.enqueue(new Callback<InteropTransactionRequestResponseData>() {
+    @Override
+    public void onResponse(Call<InteropTransactionRequestResponseData> call, Response<InteropTransactionRequestResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropTransactionRequestResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**InteropTransactionRequestData**](InteropTransactionRequestData.md)| body |
 
 ### Return type
@@ -122,29 +124,28 @@ Allow Interoperation Identifier registration
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-InteropIdentifierRequestData body = new InteropIdentifierRequestData(); // InteropIdentifierRequestData | body
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.deleteAccountIdentifier(idType, idValue, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#deleteAccountIdentifier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.deleteAccountIdentifier(idType, idValue, body);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
  **body** | [**InteropIdentifierRequestData**](InteropIdentifierRequestData.md)| body |
 
@@ -171,30 +172,28 @@ Allow Interoperation Identifier registration
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-String subIdOrType = "subIdOrType_example"; // String | subIdOrType
-InteropIdentifierRequestData body = new InteropIdentifierRequestData(); // InteropIdentifierRequestData | body
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.deleteAccountIdentifier_0(idType, idValue, subIdOrType, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#deleteAccountIdentifier_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.deleteAccountIdentifier_0(idType, idValue, subIdOrType, body);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
  **subIdOrType** | **String**| subIdOrType |
  **body** | [**InteropIdentifierRequestData**](InteropIdentifierRequestData.md)| body |
@@ -222,28 +221,28 @@ Query Interoperation Account by secondary identifier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.getAccountByIdentifier(idType, idValue);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getAccountByIdentifier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.getAccountByIdentifier(idType, idValue);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
 
 ### Return type
@@ -269,29 +268,28 @@ Query Interoperation Account by secondary identifier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-String subIdOrType = "subIdOrType_example"; // String | subIdOrType
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.getAccountByIdentifier_0(idType, idValue, subIdOrType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getAccountByIdentifier_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.getAccountByIdentifier_0(idType, idValue, subIdOrType);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
  **subIdOrType** | **String**| subIdOrType |
 
@@ -318,26 +316,27 @@ Query Interoperation Account details
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String accountId = "accountId_example"; // String | accountId
-try {
-    InteropAccountData result = apiInstance.getAccountDetails(accountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getAccountDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropAccountData> call = apiService.getAccountDetails(accountId);
+call.enqueue(new Callback<InteropAccountData>() {
+    @Override
+    public void onResponse(Call<InteropAccountData> call, Response<InteropAccountData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropAccountData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **String**| accountId |
 
 ### Return type
@@ -363,26 +362,27 @@ Query Interoperation secondary identifiers by Account Id
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String accountId = "accountId_example"; // String | accountId
-try {
-    InteropIdentifiersResponseData result = apiInstance.getAccountIdentifiers(accountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getAccountIdentifiers");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifiersResponseData> call = apiService.getAccountIdentifiers(accountId);
+call.enqueue(new Callback<InteropIdentifiersResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifiersResponseData> call, Response<InteropIdentifiersResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifiersResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **String**| accountId |
 
 ### Return type
@@ -408,30 +408,27 @@ Query transactions by Account Id
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String accountId = "accountId_example"; // String | accountId
-Boolean debit = true; // Boolean | debit
-Boolean credit = false; // Boolean | credit
-String fromBookingDateTime = "fromBookingDateTime_example"; // String | fromBookingDateTime
-String toBookingDateTime = "toBookingDateTime_example"; // String | toBookingDateTime
-try {
-    InteropTransactionsData result = apiInstance.getAccountTransactions(accountId, debit, credit, fromBookingDateTime, toBookingDateTime);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getAccountTransactions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropTransactionsData> call = apiService.getAccountTransactions(accountId, debit, credit, fromBookingDateTime, toBookingDateTime);
+call.enqueue(new Callback<InteropTransactionsData>() {
+    @Override
+    public void onResponse(Call<InteropTransactionsData> call, Response<InteropTransactionsData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropTransactionsData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **String**| accountId |
  **debit** | **Boolean**| debit | [optional] [default to true]
  **credit** | **Boolean**| credit | [optional] [default to false]
@@ -461,27 +458,27 @@ Query Interoperation Quote
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String transactionCode = "transactionCode_example"; // String | transactionCode
-String quoteCode = "quoteCode_example"; // String | quoteCode
-try {
-    InteropQuoteResponseData result = apiInstance.getQuote(transactionCode, quoteCode);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getQuote");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropQuoteResponseData> call = apiService.getQuote(transactionCode, quoteCode);
+call.enqueue(new Callback<InteropQuoteResponseData>() {
+    @Override
+    public void onResponse(Call<InteropQuoteResponseData> call, Response<InteropQuoteResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropQuoteResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transactionCode** | **String**| transactionCode |
  **quoteCode** | **String**| quoteCode |
 
@@ -508,27 +505,27 @@ Query Interoperation Transaction Request
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String transactionCode = "transactionCode_example"; // String | transactionCode
-String requestCode = "requestCode_example"; // String | requestCode
-try {
-    InteropTransactionRequestResponseData result = apiInstance.getTransactionRequest(transactionCode, requestCode);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getTransactionRequest");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropTransactionRequestResponseData> call = apiService.getTransactionRequest(transactionCode, requestCode);
+call.enqueue(new Callback<InteropTransactionRequestResponseData>() {
+    @Override
+    public void onResponse(Call<InteropTransactionRequestResponseData> call, Response<InteropTransactionRequestResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropTransactionRequestResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transactionCode** | **String**| transactionCode |
  **requestCode** | **String**| requestCode |
 
@@ -555,27 +552,27 @@ Query Interoperation Transfer
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String transactionCode = "transactionCode_example"; // String | transactionCode
-String transferCode = "transferCode_example"; // String | transferCode
-try {
-    InteropTransferResponseData result = apiInstance.getTransfer(transactionCode, transferCode);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#getTransfer");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropTransferResponseData> call = apiService.getTransfer(transactionCode, transferCode);
+call.enqueue(new Callback<InteropTransferResponseData>() {
+    @Override
+    public void onResponse(Call<InteropTransferResponseData> call, Response<InteropTransferResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropTransferResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transactionCode** | **String**| transactionCode |
  **transferCode** | **String**| transferCode |
 
@@ -602,18 +599,23 @@ Query Interoperation Health Request
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-try {
-    apiInstance.health();
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#health");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.health();
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -642,27 +644,27 @@ Prepare Interoperation Transfer
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-InteropTransferRequestData body = new InteropTransferRequestData(); // InteropTransferRequestData | body
-String action = "action_example"; // String | action
-try {
-    InteropTransferResponseData result = apiInstance.performTransfer(body, action);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#performTransfer");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropTransferResponseData> call = apiService.performTransfer(body, action);
+call.enqueue(new Callback<InteropTransferResponseData>() {
+    @Override
+    public void onResponse(Call<InteropTransferResponseData> call, Response<InteropTransferResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropTransferResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**InteropTransferRequestData**](InteropTransferRequestData.md)| body |
  **action** | **String**| action | [optional]
 
@@ -689,29 +691,28 @@ Interoperation Identifier registration
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-InteropIdentifierRequestData body = new InteropIdentifierRequestData(); // InteropIdentifierRequestData | body
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.registerAccountIdentifier(idType, idValue, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#registerAccountIdentifier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.registerAccountIdentifier(idType, idValue, body);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
  **body** | [**InteropIdentifierRequestData**](InteropIdentifierRequestData.md)| body |
 
@@ -738,30 +739,28 @@ Interoperation Identifier registration
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InteroperationApi;
 
+InteroperationApi apiService = defaultClient.createService(InteroperationApi.class);
 
-InteroperationApi apiInstance = new InteroperationApi();
-String idType = "idType_example"; // String | idType
-String idValue = "idValue_example"; // String | idValue
-String subIdOrType = "subIdOrType_example"; // String | subIdOrType
-InteropIdentifierRequestData body = new InteropIdentifierRequestData(); // InteropIdentifierRequestData | body
-try {
-    InteropIdentifierAccountResponseData result = apiInstance.registerAccountIdentifier_0(idType, idValue, subIdOrType, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InteroperationApi#registerAccountIdentifier_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<InteropIdentifierAccountResponseData> call = apiService.registerAccountIdentifier_0(idType, idValue, subIdOrType, body);
+call.enqueue(new Callback<InteropIdentifierAccountResponseData>() {
+    @Override
+    public void onResponse(Call<InteropIdentifierAccountResponseData> call, Response<InteropIdentifierAccountResponseData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<InteropIdentifierAccountResponseData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS]
+ **idType** | **String**| idType | [enum: MSISDN, EMAIL, PERSONAL_ID, BUSINESS, DEVICE, ACCOUNT_ID, IBAN, ALIAS, ]
  **idValue** | **String**| idValue |
  **subIdOrType** | **String**| subIdOrType |
  **body** | [**InteropIdentifierRequestData**](InteropIdentifierRequestData.md)| body |

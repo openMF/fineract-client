@@ -1,6 +1,6 @@
 # MixMapping_Api
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,19 +16,23 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MixMapping_Api;
 
+MixMapping_Api apiService = defaultClient.createService(MixMapping_Api.class);
 
-MixMapping_Api apiInstance = new MixMapping_Api();
-try {
-    String result = apiInstance.retrieveTaxonomyMapping();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MixMapping_Api#retrieveTaxonomyMapping");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTaxonomyMapping();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -55,26 +59,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MixMapping_Api;
 
+MixMapping_Api apiService = defaultClient.createService(MixMapping_Api.class);
 
-MixMapping_Api apiInstance = new MixMapping_Api();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateTaxonomyMapping(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MixMapping_Api#updateTaxonomyMapping");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateTaxonomyMapping(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type

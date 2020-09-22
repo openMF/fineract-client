@@ -1,6 +1,6 @@
 # CentersApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,28 +26,27 @@ Activate a Center:  Centers can be created in a Pending state. This API exists t
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long centerId = 789L; // Long | centerId
-PostCentersCenterIdRequest body = new PostCentersCenterIdRequest(); // PostCentersCenterIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostCentersCenterIdResponse result = apiInstance.activate(centerId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#activate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostCentersCenterIdResponse> call = apiService.activate(centerId, body, command);
+call.enqueue(new Callback<PostCentersCenterIdResponse>() {
+    @Override
+    public void onResponse(Call<PostCentersCenterIdResponse> call, Response<PostCentersCenterIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostCentersCenterIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **centerId** | **Long**| centerId |
  **body** | [**PostCentersCenterIdRequest**](PostCentersCenterIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -75,26 +74,27 @@ Creates a Center  Mandatory Fields: name, officeId, active, activationDate (if a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-PostCentersRequest body = new PostCentersRequest(); // PostCentersRequest | body
-try {
-    PostCentersResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostCentersResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostCentersResponse>() {
+    @Override
+    public void onResponse(Call<PostCentersResponse> call, Response<PostCentersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostCentersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostCentersRequest**](PostCentersRequest.md)| body |
 
 ### Return type
@@ -120,26 +120,27 @@ A Center can be deleted if it is in pending state and has no association - group
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long centerId = 789L; // Long | centerId
-try {
-    DeleteCentersCenterIdResponse result = apiInstance.delete(centerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteCentersCenterIdResponse> call = apiService.delete(centerId);
+call.enqueue(new Callback<DeleteCentersCenterIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteCentersCenterIdResponse> call, Response<DeleteCentersCenterIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteCentersCenterIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **centerId** | **Long**| centerId |
 
 ### Return type
@@ -163,27 +164,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long officeId = 789L; // Long | 
-Long staffId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getCentersTemplate(officeId, staffId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#getCentersTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getCentersTemplate(officeId, staffId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **staffId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -209,28 +210,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postCentersTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#postCentersTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postCentersTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -258,39 +258,27 @@ The default implementation supports pagination and sorting with the default pagi
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-Long officeId = 789L; // Long | officeId
-Long staffId = 789L; // Long | staffId
-String externalId = "externalId_example"; // String | externalId
-String name = "name_example"; // String | name
-String underHierarchy = "underHierarchy_example"; // String | underHierarchy
-Boolean paged = true; // Boolean | paged
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-String meetingDate = "meetingDate_example"; // String | meetingDate
-String dateFormat = "dateFormat_example"; // String | dateFormat
-String locale = "locale_example"; // String | locale
-try {
-    GetCentersResponse result = apiInstance.retrieveAll(sqlSearch, officeId, staffId, externalId, name, underHierarchy, paged, offset, limit, orderBy, sortOrder, meetingDate, dateFormat, locale);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCentersResponse> call = apiService.retrieveAll(sqlSearch, officeId, staffId, externalId, name, underHierarchy, paged, offset, limit, orderBy, sortOrder, meetingDate, dateFormat, locale);
+call.enqueue(new Callback<GetCentersResponse>() {
+    @Override
+    public void onResponse(Call<GetCentersResponse> call, Response<GetCentersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCentersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **officeId** | **Long**| officeId | [optional]
  **staffId** | **Long**| staffId | [optional]
@@ -329,26 +317,27 @@ An example of how a savings summary for a Center can be provided. This is reques
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long centerId = 789L; // Long | centerId
-try {
-    GetCentersCenterIdAccountsResponse result = apiInstance.retrieveGroupAccount(centerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#retrieveGroupAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCentersCenterIdAccountsResponse> call = apiService.retrieveGroupAccount(centerId);
+call.enqueue(new Callback<GetCentersCenterIdAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetCentersCenterIdAccountsResponse> call, Response<GetCentersCenterIdAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCentersCenterIdAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **centerId** | **Long**| centerId |
 
 ### Return type
@@ -374,27 +363,27 @@ Retrieves a Center  Example Requests:    centers/1    centers/1?associations&#x3
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long centerId = 789L; // Long | centerId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetCentersCenterIdResponse result = apiInstance.retrieveOne(centerId, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCentersCenterIdResponse> call = apiService.retrieveOne(centerId, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetCentersCenterIdResponse>() {
+    @Override
+    public void onResponse(Call<GetCentersCenterIdResponse> call, Response<GetCentersCenterIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCentersCenterIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **centerId** | **Long**| centerId |
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
 
@@ -421,28 +410,27 @@ Retrieves a Center Template  Example Requests:    centers/template    centers/te
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-String command = "command_example"; // String | command
-Long officeId = 789L; // Long | officeId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetCentersTemplateResponse result = apiInstance.retrieveTemplate(command, officeId, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCentersTemplateResponse> call = apiService.retrieveTemplate(command, officeId, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetCentersTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetCentersTemplateResponse> call, Response<GetCentersTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCentersTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **command** | **String**| command | [optional]
  **officeId** | **Long**| officeId | [optional]
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
@@ -470,27 +458,27 @@ Updates a Center
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CentersApi;
 
+CentersApi apiService = defaultClient.createService(CentersApi.class);
 
-CentersApi apiInstance = new CentersApi();
-Long centerId = 789L; // Long | centerId
-PutCentersCenterIdRequest body = new PutCentersCenterIdRequest(); // PutCentersCenterIdRequest | body
-try {
-    PutCentersCenterIdResponse result = apiInstance.update(centerId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CentersApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutCentersCenterIdResponse> call = apiService.update(centerId, body);
+call.enqueue(new Callback<PutCentersCenterIdResponse>() {
+    @Override
+    public void onResponse(Call<PutCentersCenterIdResponse> call, Response<PutCentersCenterIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutCentersCenterIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **centerId** | **Long**| centerId |
  **body** | [**PutCentersCenterIdRequest**](PutCentersCenterIdRequest.md)| body |
 

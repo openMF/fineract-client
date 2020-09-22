@@ -1,6 +1,6 @@
 # SelfThirdPartyTransferApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Api to add third party beneficiary linked to current user.  Parameter Definition
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfThirdPartyTransferApi;
 
+SelfThirdPartyTransferApi apiService = defaultClient.createService(SelfThirdPartyTransferApi.class);
 
-SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi();
-PostSelfBeneficiariesTPTRequest body = new PostSelfBeneficiariesTPTRequest(); // PostSelfBeneficiariesTPTRequest | body
-try {
-    PostSelfBeneficiariesTPTResponse result = apiInstance.add(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfThirdPartyTransferApi#add");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSelfBeneficiariesTPTResponse> call = apiService.add(body);
+call.enqueue(new Callback<PostSelfBeneficiariesTPTResponse>() {
+    @Override
+    public void onResponse(Call<PostSelfBeneficiariesTPTResponse> call, Response<PostSelfBeneficiariesTPTResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSelfBeneficiariesTPTResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostSelfBeneficiariesTPTRequest**](PostSelfBeneficiariesTPTRequest.md)| body |
 
 ### Return type
@@ -66,26 +67,27 @@ Api to delete third party beneficiary linked to current user.  Example Requests:
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfThirdPartyTransferApi;
 
+SelfThirdPartyTransferApi apiService = defaultClient.createService(SelfThirdPartyTransferApi.class);
 
-SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi();
-Long beneficiaryId = 789L; // Long | 
-try {
-    DeleteSelfBeneficiariesTPTBeneficiaryIdResponse result = apiInstance.delete(beneficiaryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfThirdPartyTransferApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteSelfBeneficiariesTPTBeneficiaryIdResponse> call = apiService.delete(beneficiaryId);
+call.enqueue(new Callback<DeleteSelfBeneficiariesTPTBeneficiaryIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteSelfBeneficiariesTPTBeneficiaryIdResponse> call, Response<DeleteSelfBeneficiariesTPTBeneficiaryIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteSelfBeneficiariesTPTBeneficiaryIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **beneficiaryId** | **Long**|  |
 
 ### Return type
@@ -111,19 +113,23 @@ Api to get all third party beneficiary linked to current user.  Example Requests
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfThirdPartyTransferApi;
 
+SelfThirdPartyTransferApi apiService = defaultClient.createService(SelfThirdPartyTransferApi.class);
 
-SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi();
-try {
-    List<GetSelfBeneficiariesTPTResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfThirdPartyTransferApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSelfBeneficiariesTPTResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetSelfBeneficiariesTPTResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSelfBeneficiariesTPTResponse&gt;> call, Response<List&lt;GetSelfBeneficiariesTPTResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSelfBeneficiariesTPTResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -152,19 +158,23 @@ Returns Account Type enumerations. Self User is expected to know office name and
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfThirdPartyTransferApi;
 
+SelfThirdPartyTransferApi apiService = defaultClient.createService(SelfThirdPartyTransferApi.class);
 
-SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi();
-try {
-    GetSelfBeneficiariesTPTTemplateResponse result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfThirdPartyTransferApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSelfBeneficiariesTPTTemplateResponse> call = apiService.template();
+call.enqueue(new Callback<GetSelfBeneficiariesTPTTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetSelfBeneficiariesTPTTemplateResponse> call, Response<GetSelfBeneficiariesTPTTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSelfBeneficiariesTPTTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -193,27 +203,27 @@ Api to update third party beneficiary linked to current user.  Example Requests:
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfThirdPartyTransferApi;
 
+SelfThirdPartyTransferApi apiService = defaultClient.createService(SelfThirdPartyTransferApi.class);
 
-SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi();
-Long beneficiaryId = 789L; // Long | beneficiaryId
-PutSelfBeneficiariesTPTBeneficiaryIdRequest body = new PutSelfBeneficiariesTPTBeneficiaryIdRequest(); // PutSelfBeneficiariesTPTBeneficiaryIdRequest | body
-try {
-    PutSelfBeneficiariesTPTBeneficiaryIdResponse result = apiInstance.update(beneficiaryId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfThirdPartyTransferApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutSelfBeneficiariesTPTBeneficiaryIdResponse> call = apiService.update(beneficiaryId, body);
+call.enqueue(new Callback<PutSelfBeneficiariesTPTBeneficiaryIdResponse>() {
+    @Override
+    public void onResponse(Call<PutSelfBeneficiariesTPTBeneficiaryIdResponse> call, Response<PutSelfBeneficiariesTPTBeneficiaryIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutSelfBeneficiariesTPTBeneficiaryIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **beneficiaryId** | **Long**| beneficiaryId |
  **body** | [**PutSelfBeneficiariesTPTBeneficiaryIdRequest**](PutSelfBeneficiariesTPTBeneficiaryIdRequest.md)| body |
 

@@ -1,11 +1,11 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 import java.util.List;
 
@@ -16,13 +16,13 @@ public interface SelfLoansApi {
      *
      * @param body    body (required)
      * @param command command (optional)
-     * @return Call&lt;PostSelfLoansResponse&gt;
+     * @return Observable&lt;PostSelfLoansResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("self/loans")
-    Call<PostSelfLoansResponse> calculateLoanScheduleOrSubmitLoanApplication(
+    Observable<PostSelfLoansResponse> calculateLoanScheduleOrSubmitLoanApplication(
             @retrofit2.http.Body PostSelfLoansRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -32,13 +32,13 @@ public interface SelfLoansApi {
      *
      * @param loanId loanId (required)
      * @param body   body (required)
-     * @return Call&lt;PutSelfLoansLoanIdResponse&gt;
+     * @return Observable&lt;PutSelfLoansLoanIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("self/loans/{loanId}")
-    Call<PutSelfLoansLoanIdResponse> modifyLoanApplication(
+    Observable<PutSelfLoansLoanIdResponse> modifyLoanApplication(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PutSelfLoansLoanIdRequest body
     );
 
@@ -47,25 +47,25 @@ public interface SelfLoansApi {
      * Lists loan Charges  Example Requests:  self/loans/1/charges   self/loans/1/charges?fields&#x3D;name,amountOrPercentage
      *
      * @param loanId loanId (required)
-     * @return Call&lt;List&lt;GetSelfLoansLoanIdChargesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetSelfLoansLoanIdChargesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/{loanId}/charges")
-    Call<List<GetSelfLoansLoanIdChargesResponse>> retrieveAllLoanCharges(
+    Observable<List<GetSelfLoansLoanIdChargesResponse>> retrieveAllLoanCharges(
             @retrofit2.http.Path("loanId") Long loanId
     );
 
     /**
      * @param loanId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/{loanId}/guarantors")
-    Call<String> retrieveGuarantorDetails(
+    Observable<String> retrieveGuarantorDetails(
             @retrofit2.http.Path("loanId") Long loanId
     );
 
@@ -74,13 +74,13 @@ public interface SelfLoansApi {
      * Retrieves a Loan  Example Requests:  self/loans/1   self/loans/1?fields&#x3D;id,principal,annualInterestRate   self/loans/1?fields&#x3D;id,principal,annualInterestRate&amp;associations&#x3D;repaymentSchedule,transactions
      *
      * @param loanId loanId (required)
-     * @return Call&lt;GetSelfLoansLoanIdResponse&gt;
+     * @return Observable&lt;GetSelfLoansLoanIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/{loanId}")
-    Call<GetSelfLoansLoanIdResponse> retrieveLoan(
+    Observable<GetSelfLoansLoanIdResponse> retrieveLoan(
             @retrofit2.http.Path("loanId") Long loanId
     );
 
@@ -90,13 +90,13 @@ public interface SelfLoansApi {
      *
      * @param loanId   loanId (required)
      * @param chargeId chargeId (required)
-     * @return Call&lt;GetSelfLoansLoanIdChargesResponse&gt;
+     * @return Observable&lt;GetSelfLoansLoanIdChargesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/{loanId}/charges/{chargeId}")
-    Call<GetSelfLoansLoanIdChargesResponse> retrieveLoanCharge(
+    Observable<GetSelfLoansLoanIdChargesResponse> retrieveLoanCharge(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("chargeId") Long chargeId
     );
 
@@ -106,13 +106,13 @@ public interface SelfLoansApi {
      *
      * @param loanId        loanId (required)
      * @param transactionId transactionId (required)
-     * @return Call&lt;GetSelfLoansLoanIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetSelfLoansLoanIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/{loanId}/transactions/{transactionId}")
-    Call<GetSelfLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
+    Observable<GetSelfLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
@@ -123,13 +123,13 @@ public interface SelfLoansApi {
      * @param loanId  loanId (required)
      * @param body    body (required)
      * @param command command (optional)
-     * @return Call&lt;PostSelfLoansLoanIdResponse&gt;
+     * @return Observable&lt;PostSelfLoansLoanIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("self/loans/{loanId}")
-    Call<PostSelfLoansLoanIdResponse> stateTransitions(
+    Observable<PostSelfLoansLoanIdResponse> stateTransitions(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostSelfLoansLoanIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -140,13 +140,13 @@ public interface SelfLoansApi {
      * @param clientId     clientId (optional)
      * @param productId    productId (optional)
      * @param templateType templateType (optional)
-     * @return Call&lt;GetSelfLoansTemplateResponse&gt;
+     * @return Observable&lt;GetSelfLoansTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/loans/template")
-    Call<GetSelfLoansTemplateResponse> template(
+    Observable<GetSelfLoansTemplateResponse> template(
             @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("templateType") String templateType
     );
 

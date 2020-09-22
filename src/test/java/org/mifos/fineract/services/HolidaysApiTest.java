@@ -21,7 +21,7 @@ public class HolidaysApiTest {
 
     /**
      * Create a Holiday
-     * <p>
+     *
      * Mandatory Fields: name, description, fromDate, toDate, repaymentsRescheduledTo, offices
      */
     @Test
@@ -31,10 +31,9 @@ public class HolidaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Holiday
-     * <p>
+     *
      * This API allows to delete a holiday. This is a soft delete the deleted holiday status is marked as deleted.
      */
     @Test
@@ -44,10 +43,9 @@ public class HolidaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Activate a Holiday
-     * <p>
+     *
      * Always Holidays are created in pending state. This API allows to activate a holiday.  Only the active holidays are considered for rescheduling the loan repayment.
      */
     @Test
@@ -59,10 +57,9 @@ public class HolidaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Holidays
-     * <p>
+     *
      * Example Requests:  holidays?officeId&#x3D;1
      */
     @Test
@@ -76,10 +73,9 @@ public class HolidaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Holiday
-     * <p>
+     *
      * Example Requests:  holidays/1
      */
     @Test
@@ -99,10 +95,9 @@ public class HolidaysApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Holiday
-     * <p>
+     *
      * If a holiday is in pending state (created and not activated) then all fields are allowed to modify. Once holidays become active only name and descriptions are allowed to modify.
      */
     @Test

@@ -1,6 +1,6 @@
 # LoanChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,27 +23,27 @@ Note: Currently, A Loan Charge may only be removed from Loans that are not yet a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-Long chargeId = 789L; // Long | chargeId
-try {
-    DeleteLoansLoanIdChargesChargeIdResponse result = apiInstance.deleteLoanCharge(loanId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#deleteLoanCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteLoansLoanIdChargesChargeIdResponse> call = apiService.deleteLoanCharge(loanId, chargeId);
+call.enqueue(new Callback<DeleteLoansLoanIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteLoansLoanIdChargesChargeIdResponse> call, Response<DeleteLoansLoanIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteLoansLoanIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **chargeId** | **Long**| chargeId |
 
@@ -70,29 +70,27 @@ Loan Charge will be paid if the loan is linked with a savings account
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-Long chargeId = 789L; // Long | chargeId
-PostLoansLoanIdChargesChargeIdRequest body = new PostLoansLoanIdChargesChargeIdRequest(); // PostLoansLoanIdChargesChargeIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostLoansLoanIdChargesChargeIdResponse result = apiInstance.executeLoanCharge(loanId, chargeId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#executeLoanCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdChargesChargeIdResponse> call = apiService.executeLoanCharge(loanId, chargeId, body, command);
+call.enqueue(new Callback<PostLoansLoanIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdChargesChargeIdResponse> call, Response<PostLoansLoanIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **chargeId** | **Long**| chargeId |
  **body** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)| body |
@@ -121,28 +119,27 @@ It Creates a Loan Charge
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-PostLoansLoanIdChargesRequest body = new PostLoansLoanIdChargesRequest(); // PostLoansLoanIdChargesRequest | body
-String command = "command_example"; // String | command
-try {
-    PostLoansLoanIdChargesResponse result = apiInstance.executeLoanCharge_0(loanId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#executeLoanCharge_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostLoansLoanIdChargesResponse> call = apiService.executeLoanCharge_0(loanId, body, command);
+call.enqueue(new Callback<PostLoansLoanIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<PostLoansLoanIdChargesResponse> call, Response<PostLoansLoanIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostLoansLoanIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **body** | [**PostLoansLoanIdChargesRequest**](PostLoansLoanIdChargesRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -170,26 +167,27 @@ It lists all the Loan Charges specific to a Loan   Example Requests:  loans/1/ch
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-try {
-    List<GetLoansLoanIdChargesChargeIdResponse> result = apiInstance.retrieveAllLoanCharges(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#retrieveAllLoanCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;> call = apiService.retrieveAllLoanCharges(loanId);
+call.enqueue(new Callback<List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;> call, Response<List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
 
 ### Return type
@@ -215,27 +213,27 @@ Retrieves Loan Charge according to the Loan ID and Charge IDExample Requests:  /
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetLoansLoanIdChargesChargeIdResponse result = apiInstance.retrieveLoanCharge(loanId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#retrieveLoanCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdChargesChargeIdResponse> call = apiService.retrieveLoanCharge(loanId, chargeId);
+call.enqueue(new Callback<GetLoansLoanIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdChargesChargeIdResponse> call, Response<GetLoansLoanIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **chargeId** | **Long**| chargeId |
 
@@ -262,26 +260,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-try {
-    GetLoansLoanIdChargesTemplateResponse result = apiInstance.retrieveTemplate(loanId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetLoansLoanIdChargesTemplateResponse> call = apiService.retrieveTemplate(loanId);
+call.enqueue(new Callback<GetLoansLoanIdChargesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetLoansLoanIdChargesTemplateResponse> call, Response<GetLoansLoanIdChargesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetLoansLoanIdChargesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
 
 ### Return type
@@ -307,28 +306,27 @@ Currently Loan Charges may be updated only if the Loan is not yet approved
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.LoanChargesApi;
 
+LoanChargesApi apiService = defaultClient.createService(LoanChargesApi.class);
 
-LoanChargesApi apiInstance = new LoanChargesApi();
-Long loanId = 789L; // Long | loanId
-Long chargeId = 789L; // Long | chargeId
-PutLoansLoanIdChargesChargeIdRequest body = new PutLoansLoanIdChargesChargeIdRequest(); // PutLoansLoanIdChargesChargeIdRequest | body
-try {
-    PutLoansLoanIdChargesChargeIdResponse result = apiInstance.updateLoanCharge(loanId, chargeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoanChargesApi#updateLoanCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutLoansLoanIdChargesChargeIdResponse> call = apiService.updateLoanCharge(loanId, chargeId, body);
+call.enqueue(new Callback<PutLoansLoanIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PutLoansLoanIdChargesChargeIdResponse> call, Response<PutLoansLoanIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutLoansLoanIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **loanId** | **Long**| loanId |
  **chargeId** | **Long**| chargeId |
  **body** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)| body |

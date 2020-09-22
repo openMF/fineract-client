@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ public interface RolesApi {
      *
      * @param roleId  roleId (required)
      * @param command command (optional)
-     * @return Call&lt;PostRolesRoleIdResponse&gt;
+     * @return Observable&lt;PostRolesRoleIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("roles/{roleId}")
-    Call<PostRolesRoleIdResponse> actionsOnRoles(
+    Observable<PostRolesRoleIdResponse> actionsOnRoles(
             @retrofit2.http.Path("roleId") Long roleId, @retrofit2.http.Query("command") String command
     );
 
@@ -28,13 +28,13 @@ public interface RolesApi {
      * Mandatory Fields name, description
      *
      * @param body body (required)
-     * @return Call&lt;PostRolesResponse&gt;
+     * @return Observable&lt;PostRolesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("roles")
-    Call<PostRolesResponse> createRole(
+    Observable<PostRolesResponse> createRole(
             @retrofit2.http.Body PostRolesRequest body
     );
 
@@ -43,13 +43,13 @@ public interface RolesApi {
      * Description : Delete the role in case role is not associated with any users.
      *
      * @param roleId roleId (required)
-     * @return Call&lt;DeleteRolesRoleIdResponse&gt;
+     * @return Observable&lt;DeleteRolesRoleIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("roles/{roleId}")
-    Call<DeleteRolesRoleIdResponse> deleteRole(
+    Observable<DeleteRolesRoleIdResponse> deleteRole(
             @retrofit2.http.Path("roleId") Long roleId
     );
 
@@ -57,13 +57,13 @@ public interface RolesApi {
      * List Roles
      * Example Requests:  roles   roles?fields&#x3D;name
      *
-     * @return Call&lt;List&lt;GetRolesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetRolesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("roles")
-    Call<List<GetRolesResponse>> retrieveAllRoles();
+    Observable<List<GetRolesResponse>> retrieveAllRoles();
 
 
     /**
@@ -71,13 +71,13 @@ public interface RolesApi {
      * Example Requests:  roles/1   roles/1?fields&#x3D;name
      *
      * @param roleId roleId (required)
-     * @return Call&lt;GetRolesRoleIdResponse&gt;
+     * @return Observable&lt;GetRolesRoleIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("roles/{roleId}")
-    Call<GetRolesRoleIdResponse> retrieveRole(
+    Observable<GetRolesRoleIdResponse> retrieveRole(
             @retrofit2.http.Path("roleId") Long roleId
     );
 
@@ -86,13 +86,13 @@ public interface RolesApi {
      * Example Requests:  roles/1/permissions
      *
      * @param roleId roleId (required)
-     * @return Call&lt;GetRolesRoleIdPermissionsResponse&gt;
+     * @return Observable&lt;GetRolesRoleIdPermissionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("roles/{roleId}/permissions")
-    Call<GetRolesRoleIdPermissionsResponse> retrieveRolePermissions(
+    Observable<GetRolesRoleIdPermissionsResponse> retrieveRolePermissions(
             @retrofit2.http.Path("roleId") Long roleId
     );
 
@@ -101,13 +101,13 @@ public interface RolesApi {
      *
      * @param roleId roleId (required)
      * @param body   body (required)
-     * @return Call&lt;PutRolesRoleIdResponse&gt;
+     * @return Observable&lt;PutRolesRoleIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("roles/{roleId}")
-    Call<PutRolesRoleIdResponse> updateRole(
+    Observable<PutRolesRoleIdResponse> updateRole(
             @retrofit2.http.Path("roleId") Long roleId, @retrofit2.http.Body PutRolesRoleIdRequest body
     );
 
@@ -116,13 +116,13 @@ public interface RolesApi {
      *
      * @param roleId roleId (required)
      * @param body   body (required)
-     * @return Call&lt;PutRolesRoleIdPermissionsResponse&gt;
+     * @return Observable&lt;PutRolesRoleIdPermissionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("roles/{roleId}/permissions")
-    Call<PutRolesRoleIdPermissionsResponse> updateRolePermissions(
+    Observable<PutRolesRoleIdPermissionsResponse> updateRolePermissions(
             @retrofit2.http.Path("roleId") Long roleId, @retrofit2.http.Body PutRolesRoleIdPermissionsRequest body
     );
 

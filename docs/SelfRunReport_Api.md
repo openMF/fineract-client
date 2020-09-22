@@ -1,6 +1,6 @@
 # SelfRunReport_Api
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ Example Requests:   self/runreports/Client%20Details?R_officeId&#x3D;1   self/ru
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfRunReport_Api;
 
+SelfRunReport_Api apiService = defaultClient.createService(SelfRunReport_Api.class);
 
-SelfRunReport_Api apiInstance = new SelfRunReport_Api();
-String reportName = "reportName_example"; // String | reportName
-try {
-    GetRunReportResponse result = apiInstance.runReport(reportName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfRunReport_Api#runReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRunReportResponse> call = apiService.runReport(reportName);
+call.enqueue(new Callback<GetRunReportResponse>() {
+    @Override
+    public void onResponse(Call<GetRunReportResponse> call, Response<GetRunReportResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRunReportResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **reportName** | **String**| reportName |
 
 ### Return type

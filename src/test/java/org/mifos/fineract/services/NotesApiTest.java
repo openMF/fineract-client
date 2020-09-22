@@ -20,7 +20,7 @@ public class NotesApiTest {
 
     /**
      * Add a Resource Note
-     * <p>
+     *
      * Adds a new note to a supported resource.  Example Requests:  clients/1/notes   groups/1/notes
      */
     @Test
@@ -32,10 +32,9 @@ public class NotesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Resource Note
-     * <p>
+     *
      * Deletes a Resource Note
      */
     @Test
@@ -47,10 +46,9 @@ public class NotesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Resource Note
-     * <p>
+     *
      * Retrieves a Resource Note  Example Requests:  clients/1/notes/76   groups/1/notes/20   clients/1/notes/76?fields&#x3D;note,createdOn,createdByUsername   groups/1/notes/20?fields&#x3D;note,createdOn,createdByUsername
      */
     @Test
@@ -62,10 +60,9 @@ public class NotesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Resource&#39;s Notes
-     * <p>
+     *
      * Retrieves a Resource&#39;s Notes  Note: Notes are returned in descending createOn order.  Example Requests:  clients/2/notes   groups/2/notes?fields&#x3D;note,createdOn,createdByUsername
      */
     @Test
@@ -76,10 +73,9 @@ public class NotesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Resource Note
-     * <p>
+     *
      * Updates a Resource Note
      */
     @Test

@@ -20,7 +20,7 @@ public class InterestRateSlabAKAInterestBandsApiTest {
 
     /**
      * Create a Slab
-     * <p>
+     *
      * Creates a new interest rate slab for an interest rate chart. Mandatory Fields periodType, fromPeriod, annualInterestRate Optional Fields toPeriod and description Example Requests:  interestratecharts/1/chartslabs
      */
     @Test
@@ -31,10 +31,9 @@ public class InterestRateSlabAKAInterestBandsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Slab
-     * <p>
+     *
      * Delete a Slab from a chart
      */
     @Test
@@ -45,10 +44,9 @@ public class InterestRateSlabAKAInterestBandsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve all Slabs
-     * <p>
+     *
      * Retrieve list of slabs associated with a chart  Example Requests:  interestratecharts/1/chartslabs
      */
     @Test
@@ -82,10 +80,9 @@ public class InterestRateSlabAKAInterestBandsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Slab
-     * <p>
+     *
      * It updates the Slab from chart
      */
     @Test

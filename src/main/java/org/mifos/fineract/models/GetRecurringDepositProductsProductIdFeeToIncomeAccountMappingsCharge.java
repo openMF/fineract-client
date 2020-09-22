@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -32,99 +32,99 @@ public class GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharg
   @SerializedName("active")
   private Boolean active = null;
 
-  @SerializedName("penalty")
-  private Boolean penalty = null;
+    @SerializedName("penalty")
+    private Boolean penalty = null;
 
-  public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge id(Integer id) {
-    this.id = id;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge id(Integer id) {
+        this.id = id;
+        return this;
+    }
 
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "11", value = "")
-  public Integer getId() {
-    return id;
-  }
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "11", value = "")
+    public Integer getId() {
+        return id;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge name(String name) {
-    this.name = name;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge name(String name) {
+        this.name = name;
+        return this;
+    }
 
-  /**
-   * Get name
-   *
-   * @return name
-   **/
-  @ApiModelProperty(example = "sav charge", value = "")
-  public String getName() {
-    return name;
-  }
+    /**
+     * Get name
+     *
+     * @return name
+     **/
+    @ApiModelProperty(example = "sav charge", value = "")
+    public String getName() {
+        return name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge active(Boolean active) {
-    this.active = active;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge active(Boolean active) {
+        this.active = active;
+        return this;
+    }
 
-  /**
-   * Get active
-   *
-   * @return active
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isActive() {
-    return active;
-  }
+    /**
+     * Get active
+     *
+     * @return active
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isActive() {
+        return active;
+    }
 
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
 
-  public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge penalty(Boolean penalty) {
-    this.penalty = penalty;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge penalty(Boolean penalty) {
+        this.penalty = penalty;
+        return this;
+    }
 
-  /**
-   * Get penalty
-   *
-   * @return penalty
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isPenalty() {
-    return penalty;
-  }
+    /**
+     * Get penalty
+     *
+     * @return penalty
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isPenalty() {
+        return penalty;
+    }
 
-  public void setPenalty(Boolean penalty) {
-    this.penalty = penalty;
-  }
+    public void setPenalty(Boolean penalty) {
+        this.penalty = penalty;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge = (GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge) o;
-    return Objects.equals(this.id, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.id) &&
-            Objects.equals(this.name, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.name) &&
-            Objects.equals(this.active, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.active) &&
-            Objects.equals(this.penalty, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.penalty);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge = (GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge) o;
+      return Objects.equals(this.id, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.id) &&
+              Objects.equals(this.name, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.name) &&
+              Objects.equals(this.active, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.active) &&
+              Objects.equals(this.penalty, getRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge.penalty);
   }
 
   @Override
@@ -137,7 +137,7 @@ public class GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharg
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositProductsProductIdFeeToIncomeAccountMappingsCharge {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");

@@ -1,6 +1,6 @@
 # ListReportMailingJobHistoryApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,30 +17,27 @@ The list capability of report mailing job history can support pagination and sor
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ListReportMailingJobHistoryApi;
 
+ListReportMailingJobHistoryApi apiService = defaultClient.createService(ListReportMailingJobHistoryApi.class);
 
-ListReportMailingJobHistoryApi apiInstance = new ListReportMailingJobHistoryApi();
-Long reportMailingJobId = 789L; // Long | reportMailingJobId
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    ReportMailingJobRunHistoryData result = apiInstance.retrieveAllByReportMailingJobId(reportMailingJobId, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ListReportMailingJobHistoryApi#retrieveAllByReportMailingJobId");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<ReportMailingJobRunHistoryData> call = apiService.retrieveAllByReportMailingJobId(reportMailingJobId, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<ReportMailingJobRunHistoryData>() {
+    @Override
+    public void onResponse(Call<ReportMailingJobRunHistoryData> call, Response<ReportMailingJobRunHistoryData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<ReportMailingJobRunHistoryData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **reportMailingJobId** | **Long**| reportMailingJobId | [optional]
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]

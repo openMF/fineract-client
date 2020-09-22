@@ -1,6 +1,6 @@
 # SelfLoanProductsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,26 +16,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoanProductsApi;
 
+SelfLoanProductsApi apiService = defaultClient.createService(SelfLoanProductsApi.class);
 
-SelfLoanProductsApi apiInstance = new SelfLoanProductsApi();
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveAllLoanProducts(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoanProductsApi#retrieveAllLoanProducts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAllLoanProducts(clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  | [optional]
 
 ### Return type
@@ -59,27 +60,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfLoanProductsApi;
 
+SelfLoanProductsApi apiService = defaultClient.createService(SelfLoanProductsApi.class);
 
-SelfLoanProductsApi apiInstance = new SelfLoanProductsApi();
-Long productId = 789L; // Long | 
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveLoanProductDetails(productId, clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfLoanProductsApi#retrieveLoanProductDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveLoanProductDetails(productId, clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**|  |
  **clientId** | **Long**|  | [optional]
 

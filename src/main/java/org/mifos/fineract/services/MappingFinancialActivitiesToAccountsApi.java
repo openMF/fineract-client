@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface MappingFinancialActivitiesToAccountsApi {
      * Mandatory Fields financialActivityId, glAccountId
      *
      * @param body Request body (optional)
-     * @return Call&lt;PostFinancialActivityAccountsResponse&gt;
+     * @return Observable&lt;PostFinancialActivityAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("financialactivityaccounts")
-    Call<PostFinancialActivityAccountsResponse> createGLAccount(
+    Observable<PostFinancialActivityAccountsResponse> createGLAccount(
             @retrofit2.http.Body PostFinancialActivityAccountsRequest body
     );
 
@@ -26,13 +26,13 @@ public interface MappingFinancialActivitiesToAccountsApi {
      * Delete a Financial Activity to Account Mapping
      *
      * @param mappingId mappingId (required)
-     * @return Call&lt;DeleteFinancialActivityAccountsResponse&gt;
+     * @return Observable&lt;DeleteFinancialActivityAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("financialactivityaccounts/{mappingId}")
-    Call<DeleteFinancialActivityAccountsResponse> deleteGLAccount(
+    Observable<DeleteFinancialActivityAccountsResponse> deleteGLAccount(
             @retrofit2.http.Path("mappingId") Long mappingId
     );
 
@@ -41,13 +41,13 @@ public interface MappingFinancialActivitiesToAccountsApi {
      * Example Requests:  financialactivityaccounts/1
      *
      * @param mappingId mappingId (required)
-     * @return Call&lt;GetFinancialActivityAccountsResponse&gt;
+     * @return Observable&lt;GetFinancialActivityAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("financialactivityaccounts/{mappingId}")
-    Call<GetFinancialActivityAccountsResponse> retreive(
+    Observable<GetFinancialActivityAccountsResponse> retreive(
             @retrofit2.http.Path("mappingId") Long mappingId
     );
 
@@ -55,23 +55,23 @@ public interface MappingFinancialActivitiesToAccountsApi {
      * List Financial Activities to Accounts Mappings
      * Example Requests:  financialactivityaccounts
      *
-     * @return Call&lt;List&lt;GetFinancialActivityAccountsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetFinancialActivityAccountsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("financialactivityaccounts")
-    Call<List<GetFinancialActivityAccountsResponse>> retrieveAll();
+    Observable<List<GetFinancialActivityAccountsResponse>> retrieveAll();
 
 
     /**
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("financialactivityaccounts/template")
-    Call<String> retrieveTemplate();
+    Observable<String> retrieveTemplate();
 
 
     /**
@@ -80,13 +80,13 @@ public interface MappingFinancialActivitiesToAccountsApi {
      *
      * @param mappingId mappingId (required)
      * @param body      Request body (optional)
-     * @return Call&lt;PutFinancialActivityAccountsResponse&gt;
+     * @return Observable&lt;PutFinancialActivityAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("financialactivityaccounts/{mappingId}")
-    Call<PutFinancialActivityAccountsResponse> updateGLAccount(
+    Observable<PutFinancialActivityAccountsResponse> updateGLAccount(
             @retrofit2.http.Path("mappingId") Long mappingId, @retrofit2.http.Body PostFinancialActivityAccountsRequest body
     );
 

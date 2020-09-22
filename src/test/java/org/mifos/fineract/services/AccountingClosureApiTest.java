@@ -20,7 +20,7 @@ public class AccountingClosureApiTest {
 
     /**
      * Create an Accounting Closure
-     * <p>
+     *
      * Mandatory Fields officeId,closingDate
      */
     @Test
@@ -30,10 +30,9 @@ public class AccountingClosureApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete an accounting closure
-     * <p>
+     *
      * Note: Only the latest accounting closure associated with a branch may be deleted.
      */
     @Test
@@ -43,10 +42,9 @@ public class AccountingClosureApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve an Accounting Closure
-     * <p>
+     *
      * Example Requests:  glclosures/1   /glclosures/1?fields&#x3D;officeName,closingDate
      */
     @Test
@@ -56,10 +54,9 @@ public class AccountingClosureApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Accounting closures
-     * <p>
+     *
      * Example Requests:  glclosures
      */
     @Test
@@ -69,10 +66,9 @@ public class AccountingClosureApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update an Accounting closure
-     * <p>
+     *
      * Once an accounting closure is created, only the comments associated with it may be edited
      */
     @Test

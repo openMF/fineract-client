@@ -1,6 +1,6 @@
 # FloatingRatesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Creates a new Floating Rate Mandatory Fields: name Optional Fields: isBaseLendin
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FloatingRatesApi;
 
+FloatingRatesApi apiService = defaultClient.createService(FloatingRatesApi.class);
 
-FloatingRatesApi apiInstance = new FloatingRatesApi();
-PostFloatingRatesRequest body = new PostFloatingRatesRequest(); // PostFloatingRatesRequest | body
-try {
-    PostFloatingRatesResponse result = apiInstance.createFloatingRate(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FloatingRatesApi#createFloatingRate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFloatingRatesResponse> call = apiService.createFloatingRate(body);
+call.enqueue(new Callback<PostFloatingRatesResponse>() {
+    @Override
+    public void onResponse(Call<PostFloatingRatesResponse> call, Response<PostFloatingRatesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFloatingRatesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostFloatingRatesRequest**](PostFloatingRatesRequest.md)| body |
 
 ### Return type
@@ -65,19 +66,23 @@ Lists Floating Rates
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FloatingRatesApi;
 
+FloatingRatesApi apiService = defaultClient.createService(FloatingRatesApi.class);
 
-FloatingRatesApi apiInstance = new FloatingRatesApi();
-try {
-    List<GetFloatingRatesResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FloatingRatesApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFloatingRatesResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetFloatingRatesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFloatingRatesResponse&gt;> call, Response<List&lt;GetFloatingRatesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFloatingRatesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -106,26 +111,27 @@ Retrieves Floating Rate
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FloatingRatesApi;
 
+FloatingRatesApi apiService = defaultClient.createService(FloatingRatesApi.class);
 
-FloatingRatesApi apiInstance = new FloatingRatesApi();
-Long floatingRateId = 789L; // Long | floatingRateId
-try {
-    GetFloatingRatesFloatingRateIdResponse result = apiInstance.retrieveOne(floatingRateId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FloatingRatesApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFloatingRatesFloatingRateIdResponse> call = apiService.retrieveOne(floatingRateId);
+call.enqueue(new Callback<GetFloatingRatesFloatingRateIdResponse>() {
+    @Override
+    public void onResponse(Call<GetFloatingRatesFloatingRateIdResponse> call, Response<GetFloatingRatesFloatingRateIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFloatingRatesFloatingRateIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **floatingRateId** | **Long**| floatingRateId |
 
 ### Return type
@@ -151,27 +157,27 @@ Updates new Floating Rate. Rate Periods in the past cannot be modified. All the 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FloatingRatesApi;
 
+FloatingRatesApi apiService = defaultClient.createService(FloatingRatesApi.class);
 
-FloatingRatesApi apiInstance = new FloatingRatesApi();
-Long floatingRateId = 789L; // Long | floatingRateId
-PutFloatingRatesFloatingRateIdRequest body = new PutFloatingRatesFloatingRateIdRequest(); // PutFloatingRatesFloatingRateIdRequest | body
-try {
-    PutFloatingRatesFloatingRateIdResponse result = apiInstance.updateFloatingRate(floatingRateId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FloatingRatesApi#updateFloatingRate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutFloatingRatesFloatingRateIdResponse> call = apiService.updateFloatingRate(floatingRateId, body);
+call.enqueue(new Callback<PutFloatingRatesFloatingRateIdResponse>() {
+    @Override
+    public void onResponse(Call<PutFloatingRatesFloatingRateIdResponse> call, Response<PutFloatingRatesFloatingRateIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutFloatingRatesFloatingRateIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **floatingRateId** | **Long**| floatingRateId |
  **body** | [**PutFloatingRatesFloatingRateIdRequest**](PutFloatingRatesFloatingRateIdRequest.md)| body |
 

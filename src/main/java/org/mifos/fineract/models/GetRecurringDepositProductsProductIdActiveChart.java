@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -41,155 +41,155 @@ public class GetRecurringDepositProductsProductIdActiveChart {
   @SerializedName("chartSlabs")
   private List<GetRecurringDepositProductsProductIdChartSlabs> chartSlabs = null;
 
-  @SerializedName("periodTypes")
-  private List<GetRecurringDepositProductsProductIdPeriodType> periodTypes = null;
+    @SerializedName("periodTypes")
+    private List<GetRecurringDepositProductsProductIdPeriodType> periodTypes = null;
 
-  public GetRecurringDepositProductsProductIdActiveChart id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "8", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart fromDate(LocalDate fromDate) {
-    this.fromDate = fromDate;
-    return this;
-  }
-
-  /**
-   * Get fromDate
-   *
-   * @return fromDate
-   **/
-  @ApiModelProperty(example = "[2014, 1, 1]", value = "")
-  public LocalDate getFromDate() {
-    return fromDate;
-  }
-
-  public void setFromDate(LocalDate fromDate) {
-    this.fromDate = fromDate;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart savingsProductId(Integer savingsProductId) {
-    this.savingsProductId = savingsProductId;
-    return this;
-  }
-
-  /**
-   * Get savingsProductId
-   *
-   * @return savingsProductId
-   **/
-  @ApiModelProperty(example = "8", value = "")
-  public Integer getSavingsProductId() {
-    return savingsProductId;
-  }
-
-  public void setSavingsProductId(Integer savingsProductId) {
-    this.savingsProductId = savingsProductId;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart savingsProductName(String savingsProductName) {
-    this.savingsProductName = savingsProductName;
-    return this;
-  }
-
-  /**
-   * Get savingsProductName
-   *
-   * @return savingsProductName
-   **/
-  @ApiModelProperty(example = "Recurring deposit product", value = "")
-  public String getSavingsProductName() {
-    return savingsProductName;
-  }
-
-  public void setSavingsProductName(String savingsProductName) {
-    this.savingsProductName = savingsProductName;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart chartSlabs(List<GetRecurringDepositProductsProductIdChartSlabs> chartSlabs) {
-    this.chartSlabs = chartSlabs;
-    return this;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart addChartSlabsItem(GetRecurringDepositProductsProductIdChartSlabs chartSlabsItem) {
-    if (this.chartSlabs == null) {
-      this.chartSlabs = new ArrayList<GetRecurringDepositProductsProductIdChartSlabs>();
+    public GetRecurringDepositProductsProductIdActiveChart id(Integer id) {
+        this.id = id;
+        return this;
     }
-    this.chartSlabs.add(chartSlabsItem);
-    return this;
-  }
 
-  /**
-   * Get chartSlabs
-   *
-   * @return chartSlabs
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRecurringDepositProductsProductIdChartSlabs> getChartSlabs() {
-    return chartSlabs;
-  }
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "8", value = "")
+    public Integer getId() {
+        return id;
+    }
 
-  public void setChartSlabs(List<GetRecurringDepositProductsProductIdChartSlabs> chartSlabs) {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GetRecurringDepositProductsProductIdActiveChart fromDate(LocalDate fromDate) {
+        this.fromDate = fromDate;
+        return this;
+    }
+
+    /**
+     * Get fromDate
+     *
+     * @return fromDate
+     **/
+    @ApiModelProperty(example = "[2014, 1, 1]", value = "")
+    public LocalDate getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(LocalDate fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public GetRecurringDepositProductsProductIdActiveChart savingsProductId(Integer savingsProductId) {
+        this.savingsProductId = savingsProductId;
+        return this;
+    }
+
+    /**
+     * Get savingsProductId
+     *
+     * @return savingsProductId
+     **/
+    @ApiModelProperty(example = "8", value = "")
+    public Integer getSavingsProductId() {
+        return savingsProductId;
+    }
+
+    public void setSavingsProductId(Integer savingsProductId) {
+        this.savingsProductId = savingsProductId;
+    }
+
+    public GetRecurringDepositProductsProductIdActiveChart savingsProductName(String savingsProductName) {
+        this.savingsProductName = savingsProductName;
+        return this;
+    }
+
+    /**
+     * Get savingsProductName
+     *
+     * @return savingsProductName
+     **/
+    @ApiModelProperty(example = "Recurring deposit product", value = "")
+    public String getSavingsProductName() {
+        return savingsProductName;
+    }
+
+    public void setSavingsProductName(String savingsProductName) {
+        this.savingsProductName = savingsProductName;
+    }
+
+    public GetRecurringDepositProductsProductIdActiveChart chartSlabs(List<GetRecurringDepositProductsProductIdChartSlabs> chartSlabs) {
     this.chartSlabs = chartSlabs;
-  }
+        return this;
+    }
 
-  public GetRecurringDepositProductsProductIdActiveChart periodTypes(List<GetRecurringDepositProductsProductIdPeriodType> periodTypes) {
+    public GetRecurringDepositProductsProductIdActiveChart addChartSlabsItem(GetRecurringDepositProductsProductIdChartSlabs chartSlabsItem) {
+        if (this.chartSlabs == null) {
+            this.chartSlabs = new ArrayList<GetRecurringDepositProductsProductIdChartSlabs>();
+        }
+        this.chartSlabs.add(chartSlabsItem);
+        return this;
+    }
+
+    /**
+     * Get chartSlabs
+     *
+     * @return chartSlabs
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRecurringDepositProductsProductIdChartSlabs> getChartSlabs() {
+        return chartSlabs;
+    }
+
+    public void setChartSlabs(List<GetRecurringDepositProductsProductIdChartSlabs> chartSlabs) {
+        this.chartSlabs = chartSlabs;
+    }
+
+    public GetRecurringDepositProductsProductIdActiveChart periodTypes(List<GetRecurringDepositProductsProductIdPeriodType> periodTypes) {
     this.periodTypes = periodTypes;
-    return this;
-  }
-
-  public GetRecurringDepositProductsProductIdActiveChart addPeriodTypesItem(GetRecurringDepositProductsProductIdPeriodType periodTypesItem) {
-    if (this.periodTypes == null) {
-      this.periodTypes = new ArrayList<GetRecurringDepositProductsProductIdPeriodType>();
+        return this;
     }
-    this.periodTypes.add(periodTypesItem);
-    return this;
-  }
 
-  /**
-   * Get periodTypes
-   *
-   * @return periodTypes
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRecurringDepositProductsProductIdPeriodType> getPeriodTypes() {
-    return periodTypes;
-  }
+    public GetRecurringDepositProductsProductIdActiveChart addPeriodTypesItem(GetRecurringDepositProductsProductIdPeriodType periodTypesItem) {
+        if (this.periodTypes == null) {
+            this.periodTypes = new ArrayList<GetRecurringDepositProductsProductIdPeriodType>();
+        }
+        this.periodTypes.add(periodTypesItem);
+        return this;
+    }
 
-  public void setPeriodTypes(List<GetRecurringDepositProductsProductIdPeriodType> periodTypes) {
+    /**
+     * Get periodTypes
+     *
+     * @return periodTypes
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRecurringDepositProductsProductIdPeriodType> getPeriodTypes() {
+        return periodTypes;
+    }
+
+    public void setPeriodTypes(List<GetRecurringDepositProductsProductIdPeriodType> periodTypes) {
     this.periodTypes = periodTypes;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRecurringDepositProductsProductIdActiveChart getRecurringDepositProductsProductIdActiveChart = (GetRecurringDepositProductsProductIdActiveChart) o;
-    return Objects.equals(this.id, getRecurringDepositProductsProductIdActiveChart.id) &&
-            Objects.equals(this.fromDate, getRecurringDepositProductsProductIdActiveChart.fromDate) &&
-            Objects.equals(this.savingsProductId, getRecurringDepositProductsProductIdActiveChart.savingsProductId) &&
-            Objects.equals(this.savingsProductName, getRecurringDepositProductsProductIdActiveChart.savingsProductName) &&
-            Objects.equals(this.chartSlabs, getRecurringDepositProductsProductIdActiveChart.chartSlabs) &&
-            Objects.equals(this.periodTypes, getRecurringDepositProductsProductIdActiveChart.periodTypes);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRecurringDepositProductsProductIdActiveChart getRecurringDepositProductsProductIdActiveChart = (GetRecurringDepositProductsProductIdActiveChart) o;
+      return Objects.equals(this.id, getRecurringDepositProductsProductIdActiveChart.id) &&
+              Objects.equals(this.fromDate, getRecurringDepositProductsProductIdActiveChart.fromDate) &&
+              Objects.equals(this.savingsProductId, getRecurringDepositProductsProductIdActiveChart.savingsProductId) &&
+              Objects.equals(this.savingsProductName, getRecurringDepositProductsProductIdActiveChart.savingsProductName) &&
+              Objects.equals(this.chartSlabs, getRecurringDepositProductsProductIdActiveChart.chartSlabs) &&
+              Objects.equals(this.periodTypes, getRecurringDepositProductsProductIdActiveChart.periodTypes);
   }
 
   @Override
@@ -202,7 +202,7 @@ public class GetRecurringDepositProductsProductIdActiveChart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositProductsProductIdActiveChart {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    fromDate: ").append(toIndentedString(fromDate)).append("\n");
     sb.append("    savingsProductId: ").append(toIndentedString(savingsProductId)).append("\n");

@@ -1,6 +1,6 @@
 # MixReportApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,28 +15,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MixReportApi;
 
+MixReportApi apiService = defaultClient.createService(MixReportApi.class);
 
-MixReportApi apiInstance = new MixReportApi();
-DateTime startDate = new DateTime(); // DateTime | 
-DateTime endDate = new DateTime(); // DateTime | 
-String currency = "currency_example"; // String | 
-try {
-    String result = apiInstance.retrieveXBRLReport(startDate, endDate, currency);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MixReportApi#retrieveXBRLReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveXBRLReport(startDate, endDate, currency);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **startDate** | **DateTime**|  | [optional]
  **endDate** | **DateTime**|  | [optional]
  **currency** | **String**|  | [optional]

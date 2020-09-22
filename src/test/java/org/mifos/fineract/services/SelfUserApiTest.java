@@ -19,7 +19,7 @@ public class SelfUserApiTest {
 
     /**
      * Update User
-     * <p>
+     *
      * This API can be used by Self Service user to update their own user information. Currently, \&quot;password\&quot; and \&quot;repeatPassword\&quot; are the only parameters accepted.
      */
     @Test

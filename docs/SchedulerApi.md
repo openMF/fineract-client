@@ -1,6 +1,6 @@
 # SchedulerApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,25 +18,27 @@ Activates the scheduler job service. | Suspends the scheduler job service.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SchedulerApi;
 
+SchedulerApi apiService = defaultClient.createService(SchedulerApi.class);
 
-SchedulerApi apiInstance = new SchedulerApi();
-String command = "command_example"; // String | command
-try {
-    apiInstance.changeSchedulerStatus(command);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchedulerApi#changeSchedulerStatus");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.changeSchedulerStatus(command);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **command** | **String**| command | [optional]
 
 ### Return type
@@ -62,19 +64,23 @@ Returns the scheduler status.  Example Requests:  scheduler
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SchedulerApi;
 
+SchedulerApi apiService = defaultClient.createService(SchedulerApi.class);
 
-SchedulerApi apiInstance = new SchedulerApi();
-try {
-    GetSchedulerResponse result = apiInstance.retrieveStatus();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchedulerApi#retrieveStatus");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSchedulerResponse> call = apiService.retrieveStatus();
+call.enqueue(new Callback<GetSchedulerResponse>() {
+    @Override
+    public void onResponse(Call<GetSchedulerResponse> call, Response<GetSchedulerResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSchedulerResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

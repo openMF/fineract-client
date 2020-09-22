@@ -1,6 +1,6 @@
 # ClientApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,28 +28,27 @@ Activate a Client:  Clients can be created in a Pending state. This API exists t
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | clientId
-PostClientsClientIdRequest body = new PostClientsClientIdRequest(); // PostClientsClientIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostClientsClientIdResponse result = apiInstance.activate(clientId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#activate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsClientIdResponse> call = apiService.activate(clientId, body, command);
+call.enqueue(new Callback<PostClientsClientIdResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsClientIdResponse> call, Response<PostClientsClientIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsClientIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **body** | [**PostClientsClientIdRequest**](PostClientsClientIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -77,26 +76,27 @@ Note:  1. You can enter either:firstname/middlename/lastname - for a person (mid
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-PostClientsRequest body = new PostClientsRequest(); // PostClientsRequest | 
-try {
-    PostClientsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostClientsResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsResponse> call, Response<PostClientsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostClientsRequest**](PostClientsRequest.md)|  |
 
 ### Return type
@@ -122,27 +122,27 @@ If a client is in Pending state, you are allowed to Delete it. The delete is a &
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | clientId
-DeleteClientsClientIdRequest body = new DeleteClientsClientIdRequest(); // DeleteClientsClientIdRequest | body
-try {
-    DeleteClientsClientIdResponse result = apiInstance.delete(clientId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteClientsClientIdResponse> call = apiService.delete(clientId, body);
+call.enqueue(new Callback<DeleteClientsClientIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteClientsClientIdResponse> call, Response<DeleteClientsClientIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteClientsClientIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **body** | [**DeleteClientsClientIdRequest**](DeleteClientsClientIdRequest.md)| body |
 
@@ -167,28 +167,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-String legalFormType = "legalFormType_example"; // String | 
-Long officeId = 789L; // Long | 
-Long staffId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getClientTemplate(legalFormType, officeId, staffId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#getClientTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getClientTemplate(legalFormType, officeId, staffId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **legalFormType** | **String**|  | [optional]
  **officeId** | **Long**|  | [optional]
  **staffId** | **Long**|  | [optional]
@@ -215,29 +214,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-String legalFormType = "legalFormType_example"; // String | 
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postClientTemplate(legalFormType, file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#postClientTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postClientTemplate(legalFormType, file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **legalFormType** | **String**|  | [optional]
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
@@ -266,37 +263,27 @@ The list capability of clients can support pagination and sorting.  Example Requ
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-Long officeId = 789L; // Long | officeId
-String externalId = "externalId_example"; // String | externalId
-String displayName = "displayName_example"; // String | displayName
-String firstName = "firstName_example"; // String | firstName
-String lastName = "lastName_example"; // String | lastName
-String underHierarchy = "underHierarchy_example"; // String | underHierarchy
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-Boolean orphansOnly = true; // Boolean | orphansOnly
-try {
-    GetClientsResponse result = apiInstance.retrieveAll(sqlSearch, officeId, externalId, displayName, firstName, lastName, underHierarchy, offset, limit, orderBy, sortOrder, orphansOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsResponse> call = apiService.retrieveAll(sqlSearch, officeId, externalId, displayName, firstName, lastName, underHierarchy, offset, limit, orderBy, sortOrder, orphansOnly);
+call.enqueue(new Callback<GetClientsResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsResponse> call, Response<GetClientsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **officeId** | **Long**| officeId | [optional]
  **externalId** | **String**| externalId | [optional]
@@ -333,26 +320,27 @@ An example of how a loan portfolio summary can be provided. This is requested in
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | clientId
-try {
-    GetClientsClientIdAccountsResponse result = apiInstance.retrieveAssociatedAccounts(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveAssociatedAccounts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdAccountsResponse> call = apiService.retrieveAssociatedAccounts(clientId);
+call.enqueue(new Callback<GetClientsClientIdAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdAccountsResponse> call, Response<GetClientsClientIdAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
 
 ### Return type
@@ -376,26 +364,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveObligeeDetails(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveObligeeDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveObligeeDetails(clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type
@@ -421,27 +410,27 @@ Example Requests:  clients/1   clients/1?template&#x3D;true   clients/1?fields&#
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | clientId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetClientsClientIdResponse result = apiInstance.retrieveOne(clientId, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdResponse> call = apiService.retrieveOne(clientId, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetClientsClientIdResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdResponse> call, Response<GetClientsClientIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
 
@@ -468,28 +457,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long officeId = 789L; // Long | officeId
-String commandParam = "commandParam_example"; // String | commandParam
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetClientsTemplateResponse result = apiInstance.retrieveTemplate(officeId, commandParam, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsTemplateResponse> call = apiService.retrieveTemplate(officeId, commandParam, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetClientsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsTemplateResponse> call, Response<GetClientsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
  **commandParam** | **String**| commandParam | [optional]
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
@@ -515,26 +503,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveTransferTemplate(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#retrieveTransferTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTransferTemplate(clientId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type
@@ -560,27 +549,27 @@ Note: You can update any of the basic attributes of a client (but not its associ
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientApi;
 
+ClientApi apiService = defaultClient.createService(ClientApi.class);
 
-ClientApi apiInstance = new ClientApi();
-Long clientId = 789L; // Long | clientId
-PutClientsClientIdRequest body = new PutClientsClientIdRequest(); // PutClientsClientIdRequest | 
-try {
-    PutClientsClientIdResponse result = apiInstance.update(clientId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutClientsClientIdResponse> call = apiService.update(clientId, body);
+call.enqueue(new Callback<PutClientsClientIdResponse>() {
+    @Override
+    public void onResponse(Call<PutClientsClientIdResponse> call, Response<PutClientsClientIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutClientsClientIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **body** | [**PutClientsClientIdRequest**](PutClientsClientIdRequest.md)|  |
 

@@ -29,10 +29,9 @@ public class CodeValuesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Code Value
-     * <p>
+     *
      * Deletes a code value
      */
     @Test
@@ -43,10 +42,9 @@ public class CodeValuesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Code Values
-     * <p>
+     *
      * Returns the list of Code Values for a given Code  Example Requests:  codes/1/codevalues
      */
     @Test
@@ -56,10 +54,9 @@ public class CodeValuesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Code Value
-     * <p>
+     *
      * Returns the details of a Code Value  Example Requests:  codes/1/codevalues/1
      */
     @Test
@@ -69,10 +66,9 @@ public class CodeValuesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Code Value
-     * <p>
+     *
      * Updates the details of a code value.
      */
     @Test

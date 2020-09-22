@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -38,139 +38,139 @@ public class GetRecurringDepositProductsProductIdAccountingMappings {
   @SerializedName("savingsControlAccount")
   private GetRecurringDepositProductsProductIdSavingsControlAccount savingsControlAccount = null;
 
-  @SerializedName("transfersInSuspenseAccount")
-  private GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount = null;
+    @SerializedName("transfersInSuspenseAccount")
+    private GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount = null;
 
-  public GetRecurringDepositProductsProductIdAccountingMappings savingsReferenceAccount(GetRecurringDepositProductsProductIdSavingsReferenceAccount savingsReferenceAccount) {
-    this.savingsReferenceAccount = savingsReferenceAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings savingsReferenceAccount(GetRecurringDepositProductsProductIdSavingsReferenceAccount savingsReferenceAccount) {
+        this.savingsReferenceAccount = savingsReferenceAccount;
+        return this;
+    }
 
-  /**
-   * Get savingsReferenceAccount
-   *
-   * @return savingsReferenceAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdSavingsReferenceAccount getSavingsReferenceAccount() {
-    return savingsReferenceAccount;
-  }
+    /**
+     * Get savingsReferenceAccount
+     *
+     * @return savingsReferenceAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdSavingsReferenceAccount getSavingsReferenceAccount() {
+        return savingsReferenceAccount;
+    }
 
-  public void setSavingsReferenceAccount(GetRecurringDepositProductsProductIdSavingsReferenceAccount savingsReferenceAccount) {
-    this.savingsReferenceAccount = savingsReferenceAccount;
-  }
+    public void setSavingsReferenceAccount(GetRecurringDepositProductsProductIdSavingsReferenceAccount savingsReferenceAccount) {
+        this.savingsReferenceAccount = savingsReferenceAccount;
+    }
 
-  public GetRecurringDepositProductsProductIdAccountingMappings incomeFromFeeAccount(GetRecurringDepositProductsProductIdIncomeFromFeeAccount incomeFromFeeAccount) {
-    this.incomeFromFeeAccount = incomeFromFeeAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings incomeFromFeeAccount(GetRecurringDepositProductsProductIdIncomeFromFeeAccount incomeFromFeeAccount) {
+        this.incomeFromFeeAccount = incomeFromFeeAccount;
+        return this;
+    }
 
-  /**
-   * Get incomeFromFeeAccount
-   *
-   * @return incomeFromFeeAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdIncomeFromFeeAccount getIncomeFromFeeAccount() {
-    return incomeFromFeeAccount;
-  }
+    /**
+     * Get incomeFromFeeAccount
+     *
+     * @return incomeFromFeeAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdIncomeFromFeeAccount getIncomeFromFeeAccount() {
+        return incomeFromFeeAccount;
+    }
 
-  public void setIncomeFromFeeAccount(GetRecurringDepositProductsProductIdIncomeFromFeeAccount incomeFromFeeAccount) {
-    this.incomeFromFeeAccount = incomeFromFeeAccount;
-  }
+    public void setIncomeFromFeeAccount(GetRecurringDepositProductsProductIdIncomeFromFeeAccount incomeFromFeeAccount) {
+        this.incomeFromFeeAccount = incomeFromFeeAccount;
+    }
 
-  public GetRecurringDepositProductsProductIdAccountingMappings incomeFromPenaltyAccount(GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
-    this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings incomeFromPenaltyAccount(GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
+        this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
+        return this;
+    }
 
-  /**
-   * Get incomeFromPenaltyAccount
-   *
-   * @return incomeFromPenaltyAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount getIncomeFromPenaltyAccount() {
-    return incomeFromPenaltyAccount;
-  }
+    /**
+     * Get incomeFromPenaltyAccount
+     *
+     * @return incomeFromPenaltyAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount getIncomeFromPenaltyAccount() {
+        return incomeFromPenaltyAccount;
+    }
 
-  public void setIncomeFromPenaltyAccount(GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
-    this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
-  }
+    public void setIncomeFromPenaltyAccount(GetRecurringDepositProductsProductIdIncomeFromPenaltyAccount incomeFromPenaltyAccount) {
+        this.incomeFromPenaltyAccount = incomeFromPenaltyAccount;
+    }
 
-  public GetRecurringDepositProductsProductIdAccountingMappings interestOnSavingsAccount(GetRecurringDepositProductsProductIdInterestOnSavingsAccount interestOnSavingsAccount) {
-    this.interestOnSavingsAccount = interestOnSavingsAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings interestOnSavingsAccount(GetRecurringDepositProductsProductIdInterestOnSavingsAccount interestOnSavingsAccount) {
+        this.interestOnSavingsAccount = interestOnSavingsAccount;
+        return this;
+    }
 
-  /**
-   * Get interestOnSavingsAccount
-   *
-   * @return interestOnSavingsAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdInterestOnSavingsAccount getInterestOnSavingsAccount() {
-    return interestOnSavingsAccount;
-  }
+    /**
+     * Get interestOnSavingsAccount
+     *
+     * @return interestOnSavingsAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdInterestOnSavingsAccount getInterestOnSavingsAccount() {
+        return interestOnSavingsAccount;
+    }
 
-  public void setInterestOnSavingsAccount(GetRecurringDepositProductsProductIdInterestOnSavingsAccount interestOnSavingsAccount) {
-    this.interestOnSavingsAccount = interestOnSavingsAccount;
-  }
+    public void setInterestOnSavingsAccount(GetRecurringDepositProductsProductIdInterestOnSavingsAccount interestOnSavingsAccount) {
+        this.interestOnSavingsAccount = interestOnSavingsAccount;
+    }
 
-  public GetRecurringDepositProductsProductIdAccountingMappings savingsControlAccount(GetRecurringDepositProductsProductIdSavingsControlAccount savingsControlAccount) {
-    this.savingsControlAccount = savingsControlAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings savingsControlAccount(GetRecurringDepositProductsProductIdSavingsControlAccount savingsControlAccount) {
+        this.savingsControlAccount = savingsControlAccount;
+        return this;
+    }
 
-  /**
-   * Get savingsControlAccount
-   *
-   * @return savingsControlAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdSavingsControlAccount getSavingsControlAccount() {
-    return savingsControlAccount;
-  }
+    /**
+     * Get savingsControlAccount
+     *
+     * @return savingsControlAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdSavingsControlAccount getSavingsControlAccount() {
+        return savingsControlAccount;
+    }
 
-  public void setSavingsControlAccount(GetRecurringDepositProductsProductIdSavingsControlAccount savingsControlAccount) {
-    this.savingsControlAccount = savingsControlAccount;
-  }
+    public void setSavingsControlAccount(GetRecurringDepositProductsProductIdSavingsControlAccount savingsControlAccount) {
+        this.savingsControlAccount = savingsControlAccount;
+    }
 
-  public GetRecurringDepositProductsProductIdAccountingMappings transfersInSuspenseAccount(GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount) {
-    this.transfersInSuspenseAccount = transfersInSuspenseAccount;
-    return this;
-  }
+    public GetRecurringDepositProductsProductIdAccountingMappings transfersInSuspenseAccount(GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount) {
+        this.transfersInSuspenseAccount = transfersInSuspenseAccount;
+        return this;
+    }
 
-  /**
-   * Get transfersInSuspenseAccount
-   *
-   * @return transfersInSuspenseAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringDepositProductsProductIdTransfersInSuspenseAccount getTransfersInSuspenseAccount() {
-    return transfersInSuspenseAccount;
-  }
+    /**
+     * Get transfersInSuspenseAccount
+     *
+     * @return transfersInSuspenseAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringDepositProductsProductIdTransfersInSuspenseAccount getTransfersInSuspenseAccount() {
+        return transfersInSuspenseAccount;
+    }
 
-  public void setTransfersInSuspenseAccount(GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount) {
-    this.transfersInSuspenseAccount = transfersInSuspenseAccount;
-  }
+    public void setTransfersInSuspenseAccount(GetRecurringDepositProductsProductIdTransfersInSuspenseAccount transfersInSuspenseAccount) {
+        this.transfersInSuspenseAccount = transfersInSuspenseAccount;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRecurringDepositProductsProductIdAccountingMappings getRecurringDepositProductsProductIdAccountingMappings = (GetRecurringDepositProductsProductIdAccountingMappings) o;
-    return Objects.equals(this.savingsReferenceAccount, getRecurringDepositProductsProductIdAccountingMappings.savingsReferenceAccount) &&
-            Objects.equals(this.incomeFromFeeAccount, getRecurringDepositProductsProductIdAccountingMappings.incomeFromFeeAccount) &&
-            Objects.equals(this.incomeFromPenaltyAccount, getRecurringDepositProductsProductIdAccountingMappings.incomeFromPenaltyAccount) &&
-            Objects.equals(this.interestOnSavingsAccount, getRecurringDepositProductsProductIdAccountingMappings.interestOnSavingsAccount) &&
-            Objects.equals(this.savingsControlAccount, getRecurringDepositProductsProductIdAccountingMappings.savingsControlAccount) &&
-            Objects.equals(this.transfersInSuspenseAccount, getRecurringDepositProductsProductIdAccountingMappings.transfersInSuspenseAccount);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRecurringDepositProductsProductIdAccountingMappings getRecurringDepositProductsProductIdAccountingMappings = (GetRecurringDepositProductsProductIdAccountingMappings) o;
+      return Objects.equals(this.savingsReferenceAccount, getRecurringDepositProductsProductIdAccountingMappings.savingsReferenceAccount) &&
+              Objects.equals(this.incomeFromFeeAccount, getRecurringDepositProductsProductIdAccountingMappings.incomeFromFeeAccount) &&
+              Objects.equals(this.incomeFromPenaltyAccount, getRecurringDepositProductsProductIdAccountingMappings.incomeFromPenaltyAccount) &&
+              Objects.equals(this.interestOnSavingsAccount, getRecurringDepositProductsProductIdAccountingMappings.interestOnSavingsAccount) &&
+              Objects.equals(this.savingsControlAccount, getRecurringDepositProductsProductIdAccountingMappings.savingsControlAccount) &&
+              Objects.equals(this.transfersInSuspenseAccount, getRecurringDepositProductsProductIdAccountingMappings.transfersInSuspenseAccount);
   }
 
   @Override
@@ -183,7 +183,7 @@ public class GetRecurringDepositProductsProductIdAccountingMappings {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositProductsProductIdAccountingMappings {\n");
-
+    
     sb.append("    savingsReferenceAccount: ").append(toIndentedString(savingsReferenceAccount)).append("\n");
     sb.append("    incomeFromFeeAccount: ").append(toIndentedString(incomeFromFeeAccount)).append("\n");
     sb.append("    incomeFromPenaltyAccount: ").append(toIndentedString(incomeFromPenaltyAccount)).append("\n");

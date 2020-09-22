@@ -1,6 +1,6 @@
 # SelfUserApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ This API can be used by Self Service user to update their own user information. 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfUserApi;
 
+SelfUserApi apiService = defaultClient.createService(SelfUserApi.class);
 
-SelfUserApi apiInstance = new SelfUserApi();
-PutSelfUserRequest body = new PutSelfUserRequest(); // PutSelfUserRequest | body
-try {
-    PutSelfUserResponse result = apiInstance.update(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfUserApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutSelfUserResponse> call = apiService.update(body);
+call.enqueue(new Callback<PutSelfUserResponse>() {
+    @Override
+    public void onResponse(Call<PutSelfUserResponse> call, Response<PutSelfUserResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutSelfUserResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutSelfUserRequest**](PutSelfUserRequest.md)| body |
 
 ### Return type

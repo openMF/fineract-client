@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -36,67 +36,67 @@ public class GetRunReportResponse {
     return this;
   }
 
-  public GetRunReportResponse addColumnHeadersItem(GetRunReportColumnHeaders columnHeadersItem) {
-    if (this.columnHeaders == null) {
-      this.columnHeaders = new ArrayList<GetRunReportColumnHeaders>();
+    public GetRunReportResponse addColumnHeadersItem(GetRunReportColumnHeaders columnHeadersItem) {
+        if (this.columnHeaders == null) {
+            this.columnHeaders = new ArrayList<GetRunReportColumnHeaders>();
+        }
+        this.columnHeaders.add(columnHeadersItem);
+        return this;
     }
-    this.columnHeaders.add(columnHeadersItem);
-    return this;
-  }
 
-  /**
-   * Get columnHeaders
-   *
-   * @return columnHeaders
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRunReportColumnHeaders> getColumnHeaders() {
-    return columnHeaders;
-  }
+    /**
+     * Get columnHeaders
+     *
+     * @return columnHeaders
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRunReportColumnHeaders> getColumnHeaders() {
+        return columnHeaders;
+    }
 
-  public void setColumnHeaders(List<GetRunReportColumnHeaders> columnHeaders) {
-    this.columnHeaders = columnHeaders;
-  }
+    public void setColumnHeaders(List<GetRunReportColumnHeaders> columnHeaders) {
+        this.columnHeaders = columnHeaders;
+    }
 
-  public GetRunReportResponse data(List<GetPocketData> data) {
+    public GetRunReportResponse data(List<GetPocketData> data) {
     this.data = data;
     return this;
-  }
-
-  public GetRunReportResponse addDataItem(GetPocketData dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<GetPocketData>();
     }
-    this.data.add(dataItem);
-    return this;
-  }
 
-  /**
-   * Get data
-   *
-   * @return data
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetPocketData> getData() {
-    return data;
-  }
+    public GetRunReportResponse addDataItem(GetPocketData dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<GetPocketData>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
 
-  public void setData(List<GetPocketData> data) {
-    this.data = data;
-  }
+    /**
+     * Get data
+     *
+     * @return data
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetPocketData> getData() {
+        return data;
+    }
+
+    public void setData(List<GetPocketData> data) {
+        this.data = data;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRunReportResponse getRunReportResponse = (GetRunReportResponse) o;
-    return Objects.equals(this.columnHeaders, getRunReportResponse.columnHeaders) &&
-            Objects.equals(this.data, getRunReportResponse.data);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRunReportResponse getRunReportResponse = (GetRunReportResponse) o;
+      return Objects.equals(this.columnHeaders, getRunReportResponse.columnHeaders) &&
+              Objects.equals(this.data, getRunReportResponse.data);
   }
 
   @Override
@@ -109,7 +109,7 @@ public class GetRunReportResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRunReportResponse {\n");
-
+    
     sb.append("    columnHeaders: ").append(toIndentedString(columnHeaders)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

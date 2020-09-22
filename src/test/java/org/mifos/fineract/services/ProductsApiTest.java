@@ -20,7 +20,7 @@ public class ProductsApiTest {
 
     /**
      * Create a Share Product
-     * <p>
+     *
      * Creates a Share Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, locale, totalShares, unitPrice, nominalShares,allowDividendCalculationForInactiveClients,accountingRule  Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): shareReferenceId, shareSuspenseId, shareEquityId, incomeFromFeeAccountId  Optional Fields: sharesIssued, minimumShares, maximumShares, minimumActivePeriodForDividends, minimumactiveperiodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType, marketPricePeriods, chargesSelected
      */
     @Test
@@ -44,10 +44,9 @@ public class ProductsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Share Products
-     * <p>
+     *
      * Lists Share Products  Mandatory Fields: limit, offset  Example Requests:  shareproducts
      */
     @Test
@@ -59,10 +58,9 @@ public class ProductsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Share Product
-     * <p>
+     *
      * Retrieves a Share Product  Example Requests:  products/share/1   products/share/1?template&#x3D;true
      */
     @Test
@@ -84,10 +82,9 @@ public class ProductsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Share Product
-     * <p>
+     *
      * Updates a Share Product
      */
     @Test

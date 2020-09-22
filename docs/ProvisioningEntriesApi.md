@@ -1,6 +1,6 @@
 # ProvisioningEntriesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Creates a new Provisioning Entries  Mandatory Fields date dateFormat locale Opti
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningEntriesApi;
 
+ProvisioningEntriesApi apiService = defaultClient.createService(ProvisioningEntriesApi.class);
 
-ProvisioningEntriesApi apiInstance = new ProvisioningEntriesApi();
-PostProvisioningEntriesRequest body = new PostProvisioningEntriesRequest(); // PostProvisioningEntriesRequest | body
-try {
-    PostProvisioningEntriesResponse result = apiInstance.createProvisioningEntries(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningEntriesApi#createProvisioningEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostProvisioningEntriesResponse> call = apiService.createProvisioningEntries(body);
+call.enqueue(new Callback<PostProvisioningEntriesResponse>() {
+    @Override
+    public void onResponse(Call<PostProvisioningEntriesResponse> call, Response<PostProvisioningEntriesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostProvisioningEntriesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostProvisioningEntriesRequest**](PostProvisioningEntriesRequest.md)| body | [optional]
 
 ### Return type
@@ -66,28 +67,27 @@ Recreates Provisioning Entry | createjournalentry.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningEntriesApi;
 
+ProvisioningEntriesApi apiService = defaultClient.createService(ProvisioningEntriesApi.class);
 
-ProvisioningEntriesApi apiInstance = new ProvisioningEntriesApi();
-Long entryId = 789L; // Long | entryId
-String command = "command_example"; // String | command=createjournalentry command=recreateprovisioningentry
-PutProvisioningEntriesRequest body = new PutProvisioningEntriesRequest(); // PutProvisioningEntriesRequest | body
-try {
-    PutProvisioningEntriesResponse result = apiInstance.modifyProvisioningEntry(entryId, command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningEntriesApi#modifyProvisioningEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutProvisioningEntriesResponse> call = apiService.modifyProvisioningEntry(entryId, command, body);
+call.enqueue(new Callback<PutProvisioningEntriesResponse>() {
+    @Override
+    public void onResponse(Call<PutProvisioningEntriesResponse> call, Response<PutProvisioningEntriesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutProvisioningEntriesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entryId** | **Long**| entryId |
  **command** | **String**| command&#x3D;createjournalentry command&#x3D;recreateprovisioningentry | [optional]
  **body** | [**PutProvisioningEntriesRequest**](PutProvisioningEntriesRequest.md)| body | [optional]
@@ -115,27 +115,27 @@ List all Provisioning Entries
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningEntriesApi;
 
+ProvisioningEntriesApi apiService = defaultClient.createService(ProvisioningEntriesApi.class);
 
-ProvisioningEntriesApi apiInstance = new ProvisioningEntriesApi();
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-try {
-    List<ProvisioningEntryData> result = apiInstance.retrieveAllProvisioningEntries(offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningEntriesApi#retrieveAllProvisioningEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;ProvisioningEntryData&gt;> call = apiService.retrieveAllProvisioningEntries(offset, limit);
+call.enqueue(new Callback<List&lt;ProvisioningEntryData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;ProvisioningEntryData&gt;> call, Response<List&lt;ProvisioningEntryData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;ProvisioningEntryData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
 
@@ -160,31 +160,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningEntriesApi;
 
+ProvisioningEntriesApi apiService = defaultClient.createService(ProvisioningEntriesApi.class);
 
-ProvisioningEntriesApi apiInstance = new ProvisioningEntriesApi();
-Long entryId = 789L; // Long | 
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-Long officeId = 789L; // Long | 
-Long productId = 789L; // Long | 
-Long categoryId = 789L; // Long | 
-try {
-    LoanProductProvisioningEntryData result = apiInstance.retrieveProviioningEntries(entryId, offset, limit, officeId, productId, categoryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningEntriesApi#retrieveProviioningEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<LoanProductProvisioningEntryData> call = apiService.retrieveProviioningEntries(entryId, offset, limit, officeId, productId, categoryId);
+call.enqueue(new Callback<LoanProductProvisioningEntryData>() {
+    @Override
+    public void onResponse(Call<LoanProductProvisioningEntryData> call, Response<LoanProductProvisioningEntryData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<LoanProductProvisioningEntryData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entryId** | **Long**|  | [optional]
  **offset** | **Integer**|  | [optional]
  **limit** | **Integer**|  | [optional]
@@ -215,26 +211,27 @@ Returns the details of a generated Provisioning Entry.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ProvisioningEntriesApi;
 
+ProvisioningEntriesApi apiService = defaultClient.createService(ProvisioningEntriesApi.class);
 
-ProvisioningEntriesApi apiInstance = new ProvisioningEntriesApi();
-Long entryId = 789L; // Long | entryId
-try {
-    ProvisioningEntryData result = apiInstance.retrieveProvisioningEntry(entryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProvisioningEntriesApi#retrieveProvisioningEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<ProvisioningEntryData> call = apiService.retrieveProvisioningEntry(entryId);
+call.enqueue(new Callback<ProvisioningEntryData>() {
+    @Override
+    public void onResponse(Call<ProvisioningEntryData> call, Response<ProvisioningEntryData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<ProvisioningEntryData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entryId** | **Long**| entryId |
 
 ### Return type

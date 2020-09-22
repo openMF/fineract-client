@@ -1,6 +1,6 @@
 # RecurringDepositProductApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a Recurring Deposit Product  Mandatory Fields: name, shortName, descript
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-PostRecurringDepositProductsRequest body = new PostRecurringDepositProductsRequest(); // PostRecurringDepositProductsRequest | body
-try {
-    PostRecurringDepositProductsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostRecurringDepositProductsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostRecurringDepositProductsResponse>() {
+    @Override
+    public void onResponse(Call<PostRecurringDepositProductsResponse> call, Response<PostRecurringDepositProductsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostRecurringDepositProductsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostRecurringDepositProductsRequest**](PostRecurringDepositProductsRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a Recurring Deposit Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-Long productId = 789L; // Long | productId
-try {
-    DeleteRecurringDepositProductsProductIdResponse result = apiInstance.delete(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteRecurringDepositProductsProductIdResponse> call = apiService.delete(productId);
+call.enqueue(new Callback<DeleteRecurringDepositProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteRecurringDepositProductsProductIdResponse> call, Response<DeleteRecurringDepositProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteRecurringDepositProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -112,19 +114,23 @@ Lists Recuring Deposit Products  Example Requests:  recurringdepositproducts   r
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-try {
-    List<GetRecurringDepositProductsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetRecurringDepositProductsResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetRecurringDepositProductsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetRecurringDepositProductsResponse&gt;> call, Response<List&lt;GetRecurringDepositProductsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetRecurringDepositProductsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Retrieves a Recurring Deposit Product  Example Requests:  recurringdepositproduc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-Long productId = 789L; // Long | productId
-try {
-    GetRecurringDepositProductsProductIdResponse result = apiInstance.retrieveOne(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetRecurringDepositProductsProductIdResponse> call = apiService.retrieveOne(productId);
+call.enqueue(new Callback<GetRecurringDepositProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<GetRecurringDepositProductsProductIdResponse> call, Response<GetRecurringDepositProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetRecurringDepositProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -196,19 +203,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -237,27 +248,27 @@ Updates a Recurring Deposit Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RecurringDepositProductApi;
 
+RecurringDepositProductApi apiService = defaultClient.createService(RecurringDepositProductApi.class);
 
-RecurringDepositProductApi apiInstance = new RecurringDepositProductApi();
-Long productId = 789L; // Long | productId
-PutRecurringDepositProductsRequest body = new PutRecurringDepositProductsRequest(); // PutRecurringDepositProductsRequest | body
-try {
-    PutRecurringDepositProductsResponse result = apiInstance.update(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RecurringDepositProductApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutRecurringDepositProductsResponse> call = apiService.update(productId, body);
+call.enqueue(new Callback<PutRecurringDepositProductsResponse>() {
+    @Override
+    public void onResponse(Call<PutRecurringDepositProductsResponse> call, Response<PutRecurringDepositProductsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutRecurringDepositProductsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
  **body** | [**PutRecurringDepositProductsRequest**](PutRecurringDepositProductsRequest.md)| body |
 

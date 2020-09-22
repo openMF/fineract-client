@@ -1,6 +1,6 @@
 # JournalEntriesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,27 +24,27 @@ Note: A Balanced (simple) Journal entry would have atleast one \&quot;Debit\&quo
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-String command = "command_example"; // String | command
-JournalEntryCommand body = new JournalEntryCommand(); // JournalEntryCommand | body
-try {
-    PostJournalEntriesResponse result = apiInstance.createGLJournalEntry(command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#createGLJournalEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostJournalEntriesResponse> call = apiService.createGLJournalEntry(command, body);
+call.enqueue(new Callback<PostJournalEntriesResponse>() {
+    @Override
+    public void onResponse(Call<PostJournalEntriesResponse> call, Response<PostJournalEntriesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostJournalEntriesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **command** | **String**| command | [optional]
  **body** | [**JournalEntryCommand**](JournalEntryCommand.md)| body | [optional]
 
@@ -71,28 +71,27 @@ This API calculates the running balances for office. If office ID not provided t
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-String transactionId = "transactionId_example"; // String | transactionId
-String command = "command_example"; // String | command
-PostJournalEntriesTransactionIdRequest body = new PostJournalEntriesTransactionIdRequest(); // PostJournalEntriesTransactionIdRequest | body
-try {
-    PostJournalEntriesTransactionIdResponse result = apiInstance.createReversalJournalEntry(transactionId, command, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#createReversalJournalEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostJournalEntriesTransactionIdResponse> call = apiService.createReversalJournalEntry(transactionId, command, body);
+call.enqueue(new Callback<PostJournalEntriesTransactionIdResponse>() {
+    @Override
+    public void onResponse(Call<PostJournalEntriesTransactionIdResponse> call, Response<PostJournalEntriesTransactionIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostJournalEntriesTransactionIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **transactionId** | **String**| transactionId |
  **command** | **String**| command | [optional]
  **body** | [**PostJournalEntriesTransactionIdRequest**](PostJournalEntriesTransactionIdRequest.md)| body | [optional]
@@ -118,26 +117,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-Long officeId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getJournalEntriesTemplate(officeId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#getJournalEntriesTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getJournalEntriesTemplate(officeId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
 
@@ -162,28 +162,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postJournalEntriesTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#postJournalEntriesTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postJournalEntriesTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -211,28 +210,27 @@ Example Requests:  journalentries/1    journalentries/1?fields&#x3D;officeName,g
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-Long journalEntryId = 789L; // Long | journalEntryId
-Boolean runningBalance = true; // Boolean | runningBalance
-Boolean transactionDetails = true; // Boolean | transactionDetails
-try {
-    JournalEntryData result = apiInstance.retreiveJournalEntryById(journalEntryId, runningBalance, transactionDetails);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#retreiveJournalEntryById");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<JournalEntryData> call = apiService.retreiveJournalEntryById(journalEntryId, runningBalance, transactionDetails);
+call.enqueue(new Callback<JournalEntryData>() {
+    @Override
+    public void onResponse(Call<JournalEntryData> call, Response<JournalEntryData> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<JournalEntryData> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **journalEntryId** | **Long**| journalEntryId |
  **runningBalance** | **Boolean**| runningBalance | [optional]
  **transactionDetails** | **Boolean**| transactionDetails | [optional]
@@ -260,42 +258,27 @@ The list capability of journal entries can support pagination and sorting.  Exam
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-Long officeId = 789L; // Long | officeId
-Long glAccountId = 789L; // Long | glAccountId
-Boolean manualEntriesOnly = true; // Boolean | manualEntriesOnly
-String fromDate = "fromDate_example"; // String | fromDate
-String toDate = "toDate_example"; // String | toDate
-String transactionId = "transactionId_example"; // String | transactionId
-Integer entityType = 56; // Integer | entityType
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-String locale = "locale_example"; // String | locale
-String dateFormat = "dateFormat_example"; // String | dateFormat
-Long loanId = 789L; // Long | loanId
-Long savingsId = 789L; // Long | savingsId
-Boolean runningBalance = true; // Boolean | runningBalance
-Boolean transactionDetails = true; // Boolean | transactionDetails
-try {
-    List<JournalEntryData> result = apiInstance.retrieveAll(officeId, glAccountId, manualEntriesOnly, fromDate, toDate, transactionId, entityType, offset, limit, orderBy, sortOrder, locale, dateFormat, loanId, savingsId, runningBalance, transactionDetails);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;JournalEntryData&gt;> call = apiService.retrieveAll(officeId, glAccountId, manualEntriesOnly, fromDate, toDate, transactionId, entityType, offset, limit, orderBy, sortOrder, locale, dateFormat, loanId, savingsId, runningBalance, transactionDetails);
+call.enqueue(new Callback<List&lt;JournalEntryData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;JournalEntryData&gt;> call, Response<List&lt;JournalEntryData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;JournalEntryData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
  **glAccountId** | **Long**| glAccountId | [optional]
  **manualEntriesOnly** | **Boolean**| manualEntriesOnly | [optional]
@@ -335,28 +318,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-Integer offset = 56; // Integer | 
-Integer limit = 56; // Integer | 
-Long entryId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveJournalEntries(offset, limit, entryId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#retrieveJournalEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveJournalEntries(offset, limit, entryId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **offset** | **Integer**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **entryId** | **Long**|  | [optional]
@@ -382,27 +364,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.JournalEntriesApi;
 
+JournalEntriesApi apiService = defaultClient.createService(JournalEntriesApi.class);
 
-JournalEntriesApi apiInstance = new JournalEntriesApi();
-Long officeId = 789L; // Long | 
-String currencyCode = "currencyCode_example"; // String | 
-try {
-    String result = apiInstance.retrieveOpeningBalance(officeId, currencyCode);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JournalEntriesApi#retrieveOpeningBalance");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveOpeningBalance(officeId, currencyCode);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **currencyCode** | **String**|  | [optional]
 

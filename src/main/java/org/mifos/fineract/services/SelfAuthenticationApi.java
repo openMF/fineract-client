@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.PostSelfAuthenticationResponse;
-import retrofit2.Call;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface SelfAuthenticationApi {
     /**
@@ -11,10 +11,10 @@ public interface SelfAuthenticationApi {
      *
      * @param username username (optional)
      * @param password password (optional)
-     * @return Call&lt;PostSelfAuthenticationResponse&gt;
+     * @return Observable&lt;PostSelfAuthenticationResponse&gt;
      */
     @POST("self/authentication")
-    Call<PostSelfAuthenticationResponse> authenticate(
+    Observable<PostSelfAuthenticationResponse> authenticate(
             @retrofit2.http.Query("username") String username, @retrofit2.http.Query("password") String password
     );
 

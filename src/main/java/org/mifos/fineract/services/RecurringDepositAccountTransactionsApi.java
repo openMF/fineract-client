@@ -1,10 +1,10 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface RecurringDepositAccountTransactionsApi {
     /**
@@ -15,13 +15,13 @@ public interface RecurringDepositAccountTransactionsApi {
      * @param transactionId             transactionId (required)
      * @param body                      body (required)
      * @param command                   command (optional)
-     * @return Call&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("recurringdepositaccounts/{recurringDepositAccountId}/transactions/{transactionId}")
-    Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> handleTransactionCommands(
+    Observable<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> handleTransactionCommands(
             @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Body PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -31,13 +31,13 @@ public interface RecurringDepositAccountTransactionsApi {
      *
      * @param recurringDepositAccountId recurringDepositAccountId (required)
      * @param transactionId             transactionId (required)
-     * @return Call&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts/{recurringDepositAccountId}/transactions/{transactionId}")
-    Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> retrieveOne(
+    Observable<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> retrieveOne(
             @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
@@ -47,13 +47,13 @@ public interface RecurringDepositAccountTransactionsApi {
      *
      * @param recurringDepositAccountId recurringDepositAccountId (required)
      * @param command                   command (optional)
-     * @return Call&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse&gt;
+     * @return Observable&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("recurringdepositaccounts/{recurringDepositAccountId}/transactions/template")
-    Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> retrieveTemplate(
+    Observable<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> retrieveTemplate(
             @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Query("command") String command
     );
 
@@ -64,13 +64,13 @@ public interface RecurringDepositAccountTransactionsApi {
      * @param recurringDepositAccountId recurringDepositAccountId (required)
      * @param body                      body (required)
      * @param command                   command (optional)
-     * @return Call&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse&gt;
+     * @return Observable&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("recurringdepositaccounts/{recurringDepositAccountId}/transactions")
-    Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> transaction(
+    Observable<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> transaction(
             @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Body PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest body, @retrofit2.http.Query("command") String command
     );
 

@@ -1,6 +1,6 @@
 # SavingsChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,27 +23,27 @@ Creates a Savings account Charge  Mandatory Fields for Savings account Charges: 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-PostSavingsAccountsSavingsAccountIdChargesRequest body = new PostSavingsAccountsSavingsAccountIdChargesRequest(); // PostSavingsAccountsSavingsAccountIdChargesRequest | body
-try {
-    PostSavingsAccountsSavingsAccountIdChargesResponse result = apiInstance.addSavingsAccountCharge(savingsAccountId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#addSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSavingsAccountsSavingsAccountIdChargesResponse> call = apiService.addSavingsAccountCharge(savingsAccountId, body);
+call.enqueue(new Callback<PostSavingsAccountsSavingsAccountIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<PostSavingsAccountsSavingsAccountIdChargesResponse> call, Response<PostSavingsAccountsSavingsAccountIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSavingsAccountsSavingsAccountIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **body** | [**PostSavingsAccountsSavingsAccountIdChargesRequest**](PostSavingsAccountsSavingsAccountIdChargesRequest.md)| body |
 
@@ -70,27 +70,27 @@ Note: Currently, A Savings account Charge may only be removed from Savings that 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-try {
-    DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.deleteSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#deleteSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call = apiService.deleteSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
+call.enqueue(new Callback<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Response<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
 
@@ -117,29 +117,27 @@ Pay a Savings account Charge:  An active charge will be paid when savings accoun
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body = new PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#payOrWaiveSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call = apiService.payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body, command);
+call.enqueue(new Callback<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Response<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
  **body** | [**PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)| body |
@@ -168,27 +166,27 @@ Lists Savings Charges  Example Requests:  savingsaccounts/1/charges  savingsacco
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-String chargeStatus = "all"; // String | chargeStatus
-try {
-    List<GetSavingsAccountsSavingsAccountIdChargesResponse> result = apiInstance.retrieveAllSavingsAccountCharges(savingsAccountId, chargeStatus);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveAllSavingsAccountCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;> call = apiService.retrieveAllSavingsAccountCharges(savingsAccountId, chargeStatus);
+call.enqueue(new Callback<List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;> call, Response<List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
 
@@ -215,27 +213,27 @@ Retrieves a Savings account Charge  Example Requests:  /savingsaccounts/1/charge
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-try {
-    GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.retrieveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call = apiService.retrieveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
+call.enqueue(new Callback<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Response<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
 
@@ -262,26 +260,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-try {
-    GetSavingsAccountsSavingsAccountIdChargesTemplateResponse result = apiInstance.retrieveTemplate(savingsAccountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> call = apiService.retrieveTemplate(savingsAccountId);
+call.enqueue(new Callback<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> call, Response<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
 
 ### Return type
@@ -307,28 +306,27 @@ Currently Savings account Charges may be updated only if the Savings account is 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
 
+SavingsChargesApi apiService = defaultClient.createService(SavingsChargesApi.class);
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body = new PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | body
-try {
-    PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#updateSavingsAccountCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call = apiService.updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body);
+call.enqueue(new Callback<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Response<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
  **body** | [**PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)| body |

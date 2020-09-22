@@ -2,8 +2,8 @@ package org.mifos.fineract.services;
 
 import okhttp3.MultipartBody;
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 public interface CentersApi {
     /**
@@ -13,13 +13,13 @@ public interface CentersApi {
      * @param centerId centerId (required)
      * @param body     body (required)
      * @param command  command (optional)
-     * @return Call&lt;PostCentersCenterIdResponse&gt;
+     * @return Observable&lt;PostCentersCenterIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("centers/{centerId}")
-    Call<PostCentersCenterIdResponse> activate(
+    Observable<PostCentersCenterIdResponse> activate(
             @retrofit2.http.Path("centerId") Long centerId, @retrofit2.http.Body PostCentersCenterIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -28,13 +28,13 @@ public interface CentersApi {
      * Creates a Center  Mandatory Fields: name, officeId, active, activationDate (if active&#x3D;true)  Optional Fields: externalId, staffId, groupMembers
      *
      * @param body body (required)
-     * @return Call&lt;PostCentersResponse&gt;
+     * @return Observable&lt;PostCentersResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("centers")
-    Call<PostCentersResponse> create(
+    Observable<PostCentersResponse> create(
             @retrofit2.http.Body PostCentersRequest body
     );
 
@@ -43,13 +43,13 @@ public interface CentersApi {
      * A Center can be deleted if it is in pending state and has no association - groups, loans or savings
      *
      * @param centerId centerId (required)
-     * @return Call&lt;DeleteCentersCenterIdResponse&gt;
+     * @return Observable&lt;DeleteCentersCenterIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("centers/{centerId}")
-    Call<DeleteCentersCenterIdResponse> delete(
+    Observable<DeleteCentersCenterIdResponse> delete(
             @retrofit2.http.Path("centerId") Long centerId
     );
 
@@ -57,10 +57,10 @@ public interface CentersApi {
      * @param officeId   (optional)
      * @param staffId    (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @GET("centers/downloadtemplate")
-    Call<Void> getCentersTemplate(
+    Observable<Void> getCentersTemplate(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
@@ -68,11 +68,11 @@ public interface CentersApi {
      * @param file       (optional)
      * @param locale     (optional)
      * @param dateFormat (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("centers/uploadtemplate")
-    Call<String> postCentersTemplate(
+    Observable<String> postCentersTemplate(
             @retrofit2.http.Part MultipartBody.Part file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
     );
 
@@ -94,13 +94,13 @@ public interface CentersApi {
      * @param meetingDate    meetingDate (optional)
      * @param dateFormat     dateFormat (optional)
      * @param locale         locale (optional)
-     * @return Call&lt;GetCentersResponse&gt;
+     * @return Observable&lt;GetCentersResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("centers")
-    Call<GetCentersResponse> retrieveAll(
+    Observable<GetCentersResponse> retrieveAll(
             @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("name") String name, @retrofit2.http.Query("underHierarchy") String underHierarchy, @retrofit2.http.Query("paged") Boolean paged, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("meetingDate") String meetingDate, @retrofit2.http.Query("dateFormat") String dateFormat, @retrofit2.http.Query("locale") String locale
     );
 
@@ -109,13 +109,13 @@ public interface CentersApi {
      * An example of how a savings summary for a Center can be provided. This is requested in a specific use case of the reference application.  It is quite reasonable to add resources like this to simplify User Interface development.    Example Requests:    centers/9/accounts
      *
      * @param centerId centerId (required)
-     * @return Call&lt;GetCentersCenterIdAccountsResponse&gt;
+     * @return Observable&lt;GetCentersCenterIdAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("centers/{centerId}/accounts")
-    Call<GetCentersCenterIdAccountsResponse> retrieveGroupAccount(
+    Observable<GetCentersCenterIdAccountsResponse> retrieveGroupAccount(
             @retrofit2.http.Path("centerId") Long centerId
     );
 
@@ -125,13 +125,13 @@ public interface CentersApi {
      *
      * @param centerId                  centerId (required)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-     * @return Call&lt;GetCentersCenterIdResponse&gt;
+     * @return Observable&lt;GetCentersCenterIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("centers/{centerId}")
-    Call<GetCentersCenterIdResponse> retrieveOne(
+    Observable<GetCentersCenterIdResponse> retrieveOne(
             @retrofit2.http.Path("centerId") Long centerId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
     );
 
@@ -142,13 +142,13 @@ public interface CentersApi {
      * @param command                   command (optional)
      * @param officeId                  officeId (optional)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-     * @return Call&lt;GetCentersTemplateResponse&gt;
+     * @return Observable&lt;GetCentersTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("centers/template")
-    Call<GetCentersTemplateResponse> retrieveTemplate(
+    Observable<GetCentersTemplateResponse> retrieveTemplate(
             @retrofit2.http.Query("command") String command, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
     );
 
@@ -158,13 +158,13 @@ public interface CentersApi {
      *
      * @param centerId centerId (required)
      * @param body     body (required)
-     * @return Call&lt;PutCentersCenterIdResponse&gt;
+     * @return Observable&lt;PutCentersCenterIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("centers/{centerId}")
-    Call<PutCentersCenterIdResponse> update(
+    Observable<PutCentersCenterIdResponse> update(
             @retrofit2.http.Path("centerId") Long centerId, @retrofit2.http.Body PutCentersCenterIdRequest body
     );
 

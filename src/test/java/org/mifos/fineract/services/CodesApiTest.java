@@ -20,7 +20,7 @@ public class CodesApiTest {
 
     /**
      * Create a Code
-     * <p>
+     *
      * Creates a code. Codes created through api are always &#39;user defined&#39; and so system defined is marked as false.
      */
     @Test
@@ -30,10 +30,9 @@ public class CodesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Code
-     * <p>
+     *
      * Deletes a code if it is not system defined.
      */
     @Test
@@ -43,10 +42,9 @@ public class CodesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Code
-     * <p>
+     *
      * Returns the details of a Code.  Example Requests:  codes/1
      */
     @Test
@@ -56,10 +54,9 @@ public class CodesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Codes
-     * <p>
+     *
      * Returns the list of codes.  Example Requests:  codes
      */
     @Test
@@ -68,10 +65,9 @@ public class CodesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Code
-     * <p>
+     *
      * Updates the details of a code if it is not system defined.
      */
     @Test

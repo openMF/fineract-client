@@ -20,7 +20,7 @@ public class ProvisioningCriteriaApiTest {
 
     /**
      * Create a new Provisioning Criteria
-     * <p>
+     *
      * Creates a new Provisioning Criteria  Mandatory Fields:  criteriaName provisioningcriteria  Optional Fields:  loanProducts
      */
     @Test
@@ -30,10 +30,9 @@ public class ProvisioningCriteriaApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Deletes Provisioning Criteria
-     * <p>
+     *
      * Deletes Provisioning Criteria
      */
     @Test
@@ -43,10 +42,9 @@ public class ProvisioningCriteriaApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieves all created Provisioning Criterias
-     * <p>
+     *
      * Retrieves all created Provisioning Criterias
      */
     @Test
@@ -55,10 +53,9 @@ public class ProvisioningCriteriaApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieves a Provisioning Criteria
-     * <p>
+     *
      * Retrieves a Provisioning Criteria
      */
     @Test
@@ -78,10 +75,9 @@ public class ProvisioningCriteriaApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Updates a new Provisioning Criteria
-     * <p>
+     *
      * Updates a new Provisioning Criteria  Optional Fields criteriaName, loanProducts, provisioningcriteria
      */
     @Test

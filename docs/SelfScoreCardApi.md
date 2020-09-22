@@ -1,6 +1,6 @@
 # SelfScoreCardApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,26 +16,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfScoreCardApi;
 
+SelfScoreCardApi apiService = defaultClient.createService(SelfScoreCardApi.class);
 
-SelfScoreCardApi apiInstance = new SelfScoreCardApi();
-Long surveyId = 789L; // Long | 
-ScorecardData body = new ScorecardData(); // ScorecardData | 
-try {
-    apiInstance.createScorecard(surveyId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfScoreCardApi#createScorecard");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.createScorecard(surveyId, body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**|  |
  **body** | [**ScorecardData**](ScorecardData.md)|  | [optional]
 
@@ -60,26 +61,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfScoreCardApi;
 
+SelfScoreCardApi apiService = defaultClient.createService(SelfScoreCardApi.class);
 
-SelfScoreCardApi apiInstance = new SelfScoreCardApi();
-Long clientId = 789L; // Long | 
-try {
-    List<ScorecardData> result = apiInstance.findByClient(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfScoreCardApi#findByClient");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;ScorecardData&gt;> call = apiService.findByClient(clientId);
+call.enqueue(new Callback<List&lt;ScorecardData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;ScorecardData&gt;> call, Response<List&lt;ScorecardData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;ScorecardData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type

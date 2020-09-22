@@ -1,11 +1,11 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import rx.Observable;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ public interface TaxComponentsApi {
      * Creates a new Tax Component  Mandatory Fields: name, percentage  Optional Fields: debitAccountType, debitAcountId, creditAccountType, creditAcountId, startDate
      *
      * @param body body (required)
-     * @return Call&lt;PostTaxesComponentsResponse&gt;
+     * @return Observable&lt;PostTaxesComponentsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("taxes/component")
-    Call<PostTaxesComponentsResponse> createTaxCompoent(
+    Observable<PostTaxesComponentsResponse> createTaxCompoent(
             @retrofit2.http.Body PostTaxesComponentsRequest body
     );
 
@@ -29,13 +29,13 @@ public interface TaxComponentsApi {
      * List Tax Components
      * List Tax Components
      *
-     * @return Call&lt;List&lt;GetTaxesComponentsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetTaxesComponentsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("taxes/component")
-    Call<List<GetTaxesComponentsResponse>> retrieveAllTaxComponents();
+    Observable<List<GetTaxesComponentsResponse>> retrieveAllTaxComponents();
 
 
     /**
@@ -43,24 +43,24 @@ public interface TaxComponentsApi {
      * Retrieve Tax Component
      *
      * @param taxComponentId taxComponentId (required)
-     * @return Call&lt;GetTaxesComponentsResponse&gt;
+     * @return Observable&lt;GetTaxesComponentsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("taxes/component/{taxComponentId}")
-    Call<GetTaxesComponentsResponse> retrieveTaxComponent(
+    Observable<GetTaxesComponentsResponse> retrieveTaxComponent(
             @retrofit2.http.Path("taxComponentId") Long taxComponentId
     );
 
     /**
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("taxes/component/template")
-    Call<String> retrieveTemplate();
+    Observable<String> retrieveTemplate();
 
 
     /**
@@ -69,13 +69,13 @@ public interface TaxComponentsApi {
      *
      * @param taxComponentId taxComponentId (required)
      * @param body           body (required)
-     * @return Call&lt;PutTaxesComponentsTaxComponentIdResponse&gt;
+     * @return Observable&lt;PutTaxesComponentsTaxComponentIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("taxes/component/{taxComponentId}")
-    Call<PutTaxesComponentsTaxComponentIdResponse> updateTaxCompoent(
+    Observable<PutTaxesComponentsTaxComponentIdResponse> updateTaxCompoent(
             @retrofit2.http.Path("taxComponentId") Long taxComponentId, @retrofit2.http.Body PutTaxesComponentsTaxComponentIdRequest body
     );
 

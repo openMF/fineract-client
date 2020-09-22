@@ -26,7 +26,6 @@ public class PovertyLineApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

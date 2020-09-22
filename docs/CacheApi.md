@@ -1,6 +1,6 @@
 # CacheApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,19 +18,23 @@ Returns the list of caches.  Example Requests:  caches
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CacheApi;
 
+CacheApi apiService = defaultClient.createService(CacheApi.class);
 
-CacheApi apiInstance = new CacheApi();
-try {
-    List<GetCachesResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CacheApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetCachesResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetCachesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetCachesResponse&gt;> call, Response<List&lt;GetCachesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetCachesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -59,26 +63,27 @@ Switches the cache to chosen one.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CacheApi;
 
+CacheApi apiService = defaultClient.createService(CacheApi.class);
 
-CacheApi apiInstance = new CacheApi();
-PutCachesRequest body = new PutCachesRequest(); // PutCachesRequest | body
-try {
-    PutCachesResponse result = apiInstance.switchCache(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CacheApi#switchCache");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutCachesResponse> call = apiService.switchCache(body);
+call.enqueue(new Callback<PutCachesResponse>() {
+    @Override
+    public void onResponse(Call<PutCachesResponse> call, Response<PutCachesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutCachesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutCachesRequest**](PutCachesRequest.md)| body |
 
 ### Return type

@@ -18,7 +18,7 @@ public class ClientTransactionApiTest {
 
     /**
      * List Client Transactions
-     * <p>
+     *
      * The list capability of client transaction can support pagination.  Example Requests:  clients/189/transactions  clients/189/transactions?offset&#x3D;10&amp;limit&#x3D;50
      */
     @Test
@@ -30,10 +30,9 @@ public class ClientTransactionApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Client Transaction
-     * <p>
+     *
      * Example Requests: clients/1/transactions/1   clients/1/transactions/1?fields&#x3D;id,officeName
      */
     @Test
@@ -44,10 +43,9 @@ public class ClientTransactionApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Undo a Client Transaction
-     * <p>
+     *
      * Undoes a Client Transaction
      */
     @Test

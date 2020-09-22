@@ -20,7 +20,7 @@ public class ChargesApiTest {
 
     /**
      * Create/Define a Charge
-     * <p>
+     *
      * Define a new charge that can later be associated with loans and savings through their respective product definitions or directly on each account instance.
      */
     @Test
@@ -30,10 +30,9 @@ public class ChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Charge
-     * <p>
+     *
      * Deletes a Charge.
      */
     @Test
@@ -43,10 +42,9 @@ public class ChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Charges
-     * <p>
+     *
      * Returns the list of defined charges.  Example Requests:  charges
      */
     @Test
@@ -55,10 +53,9 @@ public class ChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Charge
-     * <p>
+     *
      * Returns the details of a defined Charge.  Example Requests:  charges/1
      */
     @Test
@@ -80,10 +77,9 @@ public class ChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Charge
-     * <p>
+     *
      * Updates the details of a Charge.
      */
     @Test

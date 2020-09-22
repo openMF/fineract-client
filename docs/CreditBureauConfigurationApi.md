@@ -1,6 +1,6 @@
 # CreditBureauConfigurationApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,27 +23,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-Long organisationCreditBureauId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.addOrganisationCreditBureau(organisationCreditBureauId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#addOrganisationCreditBureau");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.addOrganisationCreditBureau(organisationCreditBureauId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **organisationCreditBureauId** | **Long**|  |
  **body** | **String**|  | [optional]
 
@@ -68,27 +68,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-Long creditBureauId = 789L; // Long | 
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.createCreditBureauLoanProductMapping(creditBureauId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#createCreditBureauLoanProductMapping");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createCreditBureauLoanProductMapping(creditBureauId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **creditBureauId** | **Long**|  |
  **body** | **String**|  | [optional]
 
@@ -113,19 +113,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-try {
-    String result = apiInstance.fetchLoanProducts();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#fetchLoanProducts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.fetchLoanProducts();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -152,26 +156,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-Long organisationCreditBureauId = 789L; // Long | 
-try {
-    String result = apiInstance.getConfiguration(organisationCreditBureauId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#getConfiguration");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getConfiguration(organisationCreditBureauId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **organisationCreditBureauId** | **Long**|  |
 
 ### Return type
@@ -195,19 +200,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-try {
-    String result = apiInstance.getCreditBureau();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#getCreditBureau");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getCreditBureau();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -234,19 +243,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-try {
-    String result = apiInstance.getCreditBureauLoanProductMapping();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#getCreditBureauLoanProductMapping");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getCreditBureauLoanProductMapping();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -273,19 +286,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-try {
-    String result = apiInstance.getOrganisationCreditBureau();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#getOrganisationCreditBureau");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getOrganisationCreditBureau();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -312,26 +329,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateCreditBureau(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#updateCreditBureau");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateCreditBureau(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -355,26 +373,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CreditBureauConfigurationApi;
 
+CreditBureauConfigurationApi apiService = defaultClient.createService(CreditBureauConfigurationApi.class);
 
-CreditBureauConfigurationApi apiInstance = new CreditBureauConfigurationApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.updateCreditBureauLoanProductMapping(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreditBureauConfigurationApi#updateCreditBureauLoanProductMapping");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.updateCreditBureauLoanProductMapping(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type

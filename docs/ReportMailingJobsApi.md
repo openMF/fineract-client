@@ -1,6 +1,6 @@
 # ReportMailingJobsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Mandatory Fields: name, startDateTime, stretchyReportId, emailRecipients, emailS
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-PostReportMailingJobsRequest body = new PostReportMailingJobsRequest(); // PostReportMailingJobsRequest | body
-try {
-    PostReportMailingJobsResponse result = apiInstance.createReportMailingJob(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#createReportMailingJob");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostReportMailingJobsResponse> call = apiService.createReportMailingJob(body);
+call.enqueue(new Callback<PostReportMailingJobsResponse>() {
+    @Override
+    public void onResponse(Call<PostReportMailingJobsResponse> call, Response<PostReportMailingJobsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostReportMailingJobsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostReportMailingJobsRequest**](PostReportMailingJobsRequest.md)| body |
 
 ### Return type
@@ -67,27 +68,27 @@ Delete a Report Mailing Job
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-Long entityId = 789L; // Long | entityId
-DeleteReportMailingJobsRequest body = new DeleteReportMailingJobsRequest(); // DeleteReportMailingJobsRequest | body
-try {
-    DeleteReportMailingJobsResponse result = apiInstance.deleteReportMailingJob(entityId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#deleteReportMailingJob");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteReportMailingJobsResponse> call = apiService.deleteReportMailingJob(entityId, body);
+call.enqueue(new Callback<DeleteReportMailingJobsResponse>() {
+    @Override
+    public void onResponse(Call<DeleteReportMailingJobsResponse> call, Response<DeleteReportMailingJobsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteReportMailingJobsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityId** | **Long**| entityId |
  **body** | [**DeleteReportMailingJobsRequest**](DeleteReportMailingJobsRequest.md)| body |
 
@@ -114,29 +115,27 @@ Example Requests:  reportmailingjobs
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetReportMailingJobsResponse> result = apiInstance.retrieveAllReportMailingJobs(offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#retrieveAllReportMailingJobs");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetReportMailingJobsResponse&gt;> call = apiService.retrieveAllReportMailingJobs(offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<List&lt;GetReportMailingJobsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetReportMailingJobsResponse&gt;> call, Response<List&lt;GetReportMailingJobsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetReportMailingJobsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| offset | [optional]
  **limit** | **Integer**| limit | [optional]
  **orderBy** | **String**| orderBy | [optional]
@@ -165,26 +164,27 @@ Example Requests:  reportmailingjobs/1   reportmailingjobs/1?template&#x3D;true
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-Long entityId = 789L; // Long | entityId
-try {
-    GetReportMailingJobsResponse result = apiInstance.retrieveReportMailingJob(entityId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#retrieveReportMailingJob");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetReportMailingJobsResponse> call = apiService.retrieveReportMailingJob(entityId);
+call.enqueue(new Callback<GetReportMailingJobsResponse>() {
+    @Override
+    public void onResponse(Call<GetReportMailingJobsResponse> call, Response<GetReportMailingJobsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetReportMailingJobsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityId** | **Long**| entityId |
 
 ### Return type
@@ -210,19 +210,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-try {
-    GetReportMailingJobsTemplate result = apiInstance.retrieveReportMailingJobTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#retrieveReportMailingJobTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetReportMailingJobsTemplate> call = apiService.retrieveReportMailingJobTemplate();
+call.enqueue(new Callback<GetReportMailingJobsTemplate>() {
+    @Override
+    public void onResponse(Call<GetReportMailingJobsTemplate> call, Response<GetReportMailingJobsTemplate> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetReportMailingJobsTemplate> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -251,27 +255,27 @@ Update a Report Mailing Job
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ReportMailingJobsApi;
 
+ReportMailingJobsApi apiService = defaultClient.createService(ReportMailingJobsApi.class);
 
-ReportMailingJobsApi apiInstance = new ReportMailingJobsApi();
-Long entityId = 789L; // Long | entityId
-PutReportMailingJobsRequest body = new PutReportMailingJobsRequest(); // PutReportMailingJobsRequest | body
-try {
-    PutReportMailingJobsResponse result = apiInstance.updateReportMailingJob(entityId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ReportMailingJobsApi#updateReportMailingJob");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutReportMailingJobsResponse> call = apiService.updateReportMailingJob(entityId, body);
+call.enqueue(new Callback<PutReportMailingJobsResponse>() {
+    @Override
+    public void onResponse(Call<PutReportMailingJobsResponse> call, Response<PutReportMailingJobsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutReportMailingJobsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entityId** | **Long**| entityId |
  **body** | [**PutReportMailingJobsRequest**](PutReportMailingJobsRequest.md)| body |
 

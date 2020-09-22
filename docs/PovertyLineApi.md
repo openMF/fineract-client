@@ -1,6 +1,6 @@
 # PovertyLineApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,26 +16,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PovertyLineApi;
 
+PovertyLineApi apiService = defaultClient.createService(PovertyLineApi.class);
 
-PovertyLineApi apiInstance = new PovertyLineApi();
-String ppiName = "ppiName_example"; // String | 
-try {
-    String result = apiInstance.retrieveAll(ppiName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PovertyLineApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll(ppiName);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **ppiName** | **String**|  |
 
 ### Return type
@@ -59,27 +60,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PovertyLineApi;
 
+PovertyLineApi apiService = defaultClient.createService(PovertyLineApi.class);
 
-PovertyLineApi apiInstance = new PovertyLineApi();
-String ppiName = "ppiName_example"; // String | 
-Long likelihoodId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveAll_0(ppiName, likelihoodId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PovertyLineApi#retrieveAll_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll_0(ppiName, likelihoodId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **ppiName** | **String**|  |
  **likelihoodId** | **Long**|  |
 

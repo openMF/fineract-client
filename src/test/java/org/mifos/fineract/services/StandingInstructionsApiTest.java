@@ -20,7 +20,7 @@ public class StandingInstructionsApiTest {
 
     /**
      * Create new Standing Instruction
-     * <p>
+     *
      * Ability to create new instruction for transfer of monetary funds from one account to another
      */
     @Test
@@ -30,10 +30,9 @@ public class StandingInstructionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Standing Instructions
-     * <p>
+     *
      * Example Requests:  standinginstructions
      */
     @Test
@@ -53,10 +52,9 @@ public class StandingInstructionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Standing Instruction
-     * <p>
+     *
      * Example Requests :  standinginstructions/1
      */
     @Test
@@ -72,10 +70,9 @@ public class StandingInstructionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Standing Instruction Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Requests:  standinginstructions/template?fromAccountType&#x3D;2&amp;fromOfficeId&#x3D;1  standinginstructions/template?fromAccountType&#x3D;2&amp;fromOfficeId&#x3D;1&amp;fromClientId&#x3D;1&amp;transferType&#x3D;1  standinginstructions/template?fromClientId&#x3D;1&amp;fromAccountType&#x3D;2&amp;fromAccountId&#x3D;1&amp;transferType&#x3D;1
      */
     @Test
@@ -93,10 +90,9 @@ public class StandingInstructionsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update Standing Instruction | Delete Standing Instruction
-     * <p>
+     *
      * Ability to modify existing instruction for transfer of monetary funds from one account to another.  PUT https://DomainName/api/v1/standinginstructions/1?command&#x3D;update   Ability to modify existing instruction for transfer of monetary funds from one account to another.  PUT https://DomainName/api/v1/standinginstructions/1?command&#x3D;delete
      */
     @Test

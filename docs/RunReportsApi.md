@@ -1,6 +1,6 @@
 # RunReportsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,27 +17,27 @@ This resource allows you to run and receive output from pre-defined Apache Finer
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RunReportsApi;
 
+RunReportsApi apiService = defaultClient.createService(RunReportsApi.class);
 
-RunReportsApi apiInstance = new RunReportsApi();
-String reportName = "reportName_example"; // String | reportName
-Boolean isSelfServiceUserReport = false; // Boolean | isSelfServiceUserReport
-try {
-    GetReportNameResponse result = apiInstance.runReport(reportName, isSelfServiceUserReport);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RunReportsApi#runReport");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetReportNameResponse> call = apiService.runReport(reportName, isSelfServiceUserReport);
+call.enqueue(new Callback<GetReportNameResponse>() {
+    @Override
+    public void onResponse(Call<GetReportNameResponse> call, Response<GetReportNameResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetReportNameResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **reportName** | **String**| reportName |
  **isSelfServiceUserReport** | **Boolean**| isSelfServiceUserReport | [optional] [default to false]
 

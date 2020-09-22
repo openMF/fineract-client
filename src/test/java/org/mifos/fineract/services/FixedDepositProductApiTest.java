@@ -20,7 +20,7 @@ public class FixedDepositProductApiTest {
 
     /**
      * Create a Fixed Deposit Product
-     * <p>
+     *
      * Creates a Fixed Deposit Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, interestCompoundingPeriodType, interestCalculationType, interestCalculationDaysInYearType, minDepositTerm, minDepositTermTypeId, accountingRule  Optional Fields: lockinPeriodFrequency, lockinPeriodFrequencyType, maxDepositTerm, maxDepositTermTypeId, inMultiplesOfDepositTerm, inMultiplesOfDepositTermTypeId, preClosurePenalApplicable, preClosurePenalInterest, preClosurePenalInterestOnTypeId, feeToIncomeAccountMappings, penaltyToIncomeAccountMappings, charges, charts, , withHoldTax, taxGroupId   Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): savingsReferenceAccountId, savingsControlAccountId, interestOnSavingsAccountId, incomeFromFeeAccountId, transfersInSuspenseAccountId, incomeFromPenaltyAccountId
      */
     @Test
@@ -30,10 +30,9 @@ public class FixedDepositProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Fixed Deposit Product
-     * <p>
+     *
      * Deletes a Fixed Deposit Product
      */
     @Test
@@ -43,10 +42,9 @@ public class FixedDepositProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Fixed Deposit Products
-     * <p>
+     *
      * Lists Fixed Deposit Products  Example Requests:  fixeddepositproducts   fixeddepositproducts?fields&#x3D;name
      */
     @Test
@@ -55,10 +53,9 @@ public class FixedDepositProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Fixed Deposit Product
-     * <p>
+     *
      * Retrieves a Fixed Deposit Product  Example Requests:  fixeddepositproducts/1   fixeddepositproducts/1?template&#x3D;true   fixeddepositproducts/1?fields&#x3D;name,description
      */
     @Test
@@ -78,10 +75,9 @@ public class FixedDepositProductApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Fixed Deposit Product
-     * <p>
+     *
      * Updates a Fixed Deposit Product
      */
     @Test

@@ -21,7 +21,7 @@ public class LoanChargesApiTest {
 
     /**
      * Delete a Loan Charge
-     * <p>
+     *
      * Note: Currently, A Loan Charge may only be removed from Loans that are not yet approved.
      */
     @Test
@@ -32,10 +32,9 @@ public class LoanChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Pay Loan Charge
-     * <p>
+     *
      * Loan Charge will be paid if the loan is linked with a savings account
      */
     @Test
@@ -48,10 +47,9 @@ public class LoanChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create a Loan Charge
-     * <p>
+     *
      * It Creates a Loan Charge
      */
     @Test
@@ -63,10 +61,9 @@ public class LoanChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Loan Charges
-     * <p>
+     *
      * It lists all the Loan Charges specific to a Loan   Example Requests:  loans/1/charges   loans/1/charges?fields&#x3D;name,amountOrPercentage
      */
     @Test
@@ -76,10 +73,9 @@ public class LoanChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Loan Charge
-     * <p>
+     *
      * Retrieves Loan Charge according to the Loan ID and Charge IDExample Requests:  /loans/1/charges/1   /loans/1/charges/1?fields&#x3D;name,amountOrPercentage
      */
     @Test
@@ -103,10 +99,9 @@ public class LoanChargesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Loan Charge
-     * <p>
+     *
      * Currently Loan Charges may be updated only if the Loan is not yet approved
      */
     @Test

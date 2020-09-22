@@ -1,6 +1,6 @@
 # SelfShareAccountsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,26 +19,27 @@ Mandatory fields:  clientId, productId, submittedDate, savingsAccountId, request
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfShareAccountsApi;
 
+SelfShareAccountsApi apiService = defaultClient.createService(SelfShareAccountsApi.class);
 
-SelfShareAccountsApi apiInstance = new SelfShareAccountsApi();
-String body = "body_example"; // String | 
-try {
-    List<PostNewShareApplicationResponse> result = apiInstance.createAccount(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfShareAccountsApi#createAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;PostNewShareApplicationResponse&gt;> call = apiService.createAccount(body);
+call.enqueue(new Callback<List&lt;PostNewShareApplicationResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;PostNewShareApplicationResponse&gt;> call, Response<List&lt;PostNewShareApplicationResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;PostNewShareApplicationResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -62,26 +63,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfShareAccountsApi;
 
+SelfShareAccountsApi apiService = defaultClient.createService(SelfShareAccountsApi.class);
 
-SelfShareAccountsApi apiInstance = new SelfShareAccountsApi();
-Long accountId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveShareAccount(accountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfShareAccountsApi#retrieveShareAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveShareAccount(accountId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accountId** | **Long**|  |
 
 ### Return type
@@ -107,27 +109,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfShareAccountsApi;
 
+SelfShareAccountsApi apiService = defaultClient.createService(SelfShareAccountsApi.class);
 
-SelfShareAccountsApi apiInstance = new SelfShareAccountsApi();
-Long clientId = 789L; // Long | clientId
-Long productId = 789L; // Long | productId
-try {
-    List<GetShareAccountsClientIdProductIdResponse> result = apiInstance.template(clientId, productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfShareAccountsApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetShareAccountsClientIdProductIdResponse&gt;> call = apiService.template(clientId, productId);
+call.enqueue(new Callback<List&lt;GetShareAccountsClientIdProductIdResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetShareAccountsClientIdProductIdResponse&gt;> call, Response<List&lt;GetShareAccountsClientIdProductIdResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetShareAccountsClientIdProductIdResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId | [optional]
  **productId** | **Long**| productId | [optional]
 

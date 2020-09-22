@@ -18,7 +18,7 @@ public class SchedulerApiTest {
 
     /**
      * Activate Scheduler Jobs | Suspend Scheduler Jobs
-     * <p>
+     *
      * Activates the scheduler job service. | Suspends the scheduler job service.
      */
     @Test
@@ -28,10 +28,9 @@ public class SchedulerApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Scheduler Status
-     * <p>
+     *
      * Returns the scheduler status.  Example Requests:  scheduler
      */
     @Test

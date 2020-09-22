@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -35,119 +35,119 @@ public class GetRunReportColumnHeaders {
   @SerializedName("isColumnPrimaryKey")
   private Boolean isColumnPrimaryKey = null;
 
-  @SerializedName("columnValues")
-  private String columnValues = null;
+    @SerializedName("columnValues")
+    private String columnValues = null;
 
-  public GetRunReportColumnHeaders columnName(String columnName) {
-    this.columnName = columnName;
-    return this;
-  }
+    public GetRunReportColumnHeaders columnName(String columnName) {
+        this.columnName = columnName;
+        return this;
+    }
 
-  /**
-   * Get columnName
-   *
-   * @return columnName
-   **/
-  @ApiModelProperty(example = "Office/Branch", value = "")
-  public String getColumnName() {
-    return columnName;
-  }
+    /**
+     * Get columnName
+     *
+     * @return columnName
+     **/
+    @ApiModelProperty(example = "Office/Branch", value = "")
+    public String getColumnName() {
+        return columnName;
+    }
 
-  public void setColumnName(String columnName) {
-    this.columnName = columnName;
-  }
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
 
-  public GetRunReportColumnHeaders columnType(String columnType) {
-    this.columnType = columnType;
-    return this;
-  }
+    public GetRunReportColumnHeaders columnType(String columnType) {
+        this.columnType = columnType;
+        return this;
+    }
 
-  /**
-   * Get columnType
-   *
-   * @return columnType
-   **/
-  @ApiModelProperty(example = "VARCHAR", value = "")
-  public String getColumnType() {
-    return columnType;
-  }
+    /**
+     * Get columnType
+     *
+     * @return columnType
+     **/
+    @ApiModelProperty(example = "VARCHAR", value = "")
+    public String getColumnType() {
+        return columnType;
+    }
 
-  public void setColumnType(String columnType) {
-    this.columnType = columnType;
-  }
+    public void setColumnType(String columnType) {
+        this.columnType = columnType;
+    }
 
-  public GetRunReportColumnHeaders isColumnNullable(Boolean isColumnNullable) {
-    this.isColumnNullable = isColumnNullable;
-    return this;
-  }
+    public GetRunReportColumnHeaders isColumnNullable(Boolean isColumnNullable) {
+        this.isColumnNullable = isColumnNullable;
+        return this;
+    }
 
-  /**
-   * Get isColumnNullable
-   *
-   * @return isColumnNullable
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isIsColumnNullable() {
-    return isColumnNullable;
-  }
+    /**
+     * Get isColumnNullable
+     *
+     * @return isColumnNullable
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isIsColumnNullable() {
+        return isColumnNullable;
+    }
 
-  public void setIsColumnNullable(Boolean isColumnNullable) {
-    this.isColumnNullable = isColumnNullable;
-  }
+    public void setIsColumnNullable(Boolean isColumnNullable) {
+        this.isColumnNullable = isColumnNullable;
+    }
 
-  public GetRunReportColumnHeaders isColumnPrimaryKey(Boolean isColumnPrimaryKey) {
-    this.isColumnPrimaryKey = isColumnPrimaryKey;
-    return this;
-  }
+    public GetRunReportColumnHeaders isColumnPrimaryKey(Boolean isColumnPrimaryKey) {
+        this.isColumnPrimaryKey = isColumnPrimaryKey;
+        return this;
+    }
 
-  /**
-   * Get isColumnPrimaryKey
-   *
-   * @return isColumnPrimaryKey
-   **/
-  @ApiModelProperty(example = "false", value = "")
-  public Boolean isIsColumnPrimaryKey() {
-    return isColumnPrimaryKey;
-  }
+    /**
+     * Get isColumnPrimaryKey
+     *
+     * @return isColumnPrimaryKey
+     **/
+    @ApiModelProperty(example = "false", value = "")
+    public Boolean isIsColumnPrimaryKey() {
+        return isColumnPrimaryKey;
+    }
 
-  public void setIsColumnPrimaryKey(Boolean isColumnPrimaryKey) {
-    this.isColumnPrimaryKey = isColumnPrimaryKey;
-  }
+    public void setIsColumnPrimaryKey(Boolean isColumnPrimaryKey) {
+        this.isColumnPrimaryKey = isColumnPrimaryKey;
+    }
 
-  public GetRunReportColumnHeaders columnValues(String columnValues) {
-    this.columnValues = columnValues;
-    return this;
-  }
+    public GetRunReportColumnHeaders columnValues(String columnValues) {
+        this.columnValues = columnValues;
+        return this;
+    }
 
-  /**
-   * Get columnValues
-   *
-   * @return columnValues
-   **/
-  @ApiModelProperty(example = "[]", value = "")
-  public String getColumnValues() {
-    return columnValues;
-  }
+    /**
+     * Get columnValues
+     *
+     * @return columnValues
+     **/
+    @ApiModelProperty(example = "[]", value = "")
+    public String getColumnValues() {
+        return columnValues;
+    }
 
-  public void setColumnValues(String columnValues) {
-    this.columnValues = columnValues;
-  }
+    public void setColumnValues(String columnValues) {
+        this.columnValues = columnValues;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRunReportColumnHeaders getRunReportColumnHeaders = (GetRunReportColumnHeaders) o;
-    return Objects.equals(this.columnName, getRunReportColumnHeaders.columnName) &&
-            Objects.equals(this.columnType, getRunReportColumnHeaders.columnType) &&
-            Objects.equals(this.isColumnNullable, getRunReportColumnHeaders.isColumnNullable) &&
-            Objects.equals(this.isColumnPrimaryKey, getRunReportColumnHeaders.isColumnPrimaryKey) &&
-            Objects.equals(this.columnValues, getRunReportColumnHeaders.columnValues);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRunReportColumnHeaders getRunReportColumnHeaders = (GetRunReportColumnHeaders) o;
+      return Objects.equals(this.columnName, getRunReportColumnHeaders.columnName) &&
+              Objects.equals(this.columnType, getRunReportColumnHeaders.columnType) &&
+              Objects.equals(this.isColumnNullable, getRunReportColumnHeaders.isColumnNullable) &&
+              Objects.equals(this.isColumnPrimaryKey, getRunReportColumnHeaders.isColumnPrimaryKey) &&
+              Objects.equals(this.columnValues, getRunReportColumnHeaders.columnValues);
   }
 
   @Override
@@ -160,7 +160,7 @@ public class GetRunReportColumnHeaders {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRunReportColumnHeaders {\n");
-
+    
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    columnType: ").append(toIndentedString(columnType)).append("\n");
     sb.append("    isColumnNullable: ").append(toIndentedString(isColumnNullable)).append("\n");

@@ -18,7 +18,7 @@ public class PocketApiTest {
 
     /**
      * Link/delink accounts to/from pocket
-     * <p>
+     *
      * Pockets behave as favourites. An user can link his/her Loan, Savings and Share accounts to pocket for faster access. In a similar way linked accounts can be delinked from the pocket.  Example Requests:  self/pockets?command&#x3D;linkAccounts  self/pockets?command&#x3D;delinkAccounts
      */
     @Test
@@ -29,10 +29,9 @@ public class PocketApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve accounts linked to pocket
-     * <p>
+     *
      * All linked loan  Example Requests:   self/pockets
      */
     @Test

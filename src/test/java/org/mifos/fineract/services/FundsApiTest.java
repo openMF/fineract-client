@@ -20,7 +20,7 @@ public class FundsApiTest {
 
     /**
      * Create a Fund
-     * <p>
+     *
      * Creates a Fund
      */
     @Test
@@ -30,10 +30,9 @@ public class FundsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Fund
-     * <p>
+     *
      * Returns the details of a Fund.  Example Requests:  funds/1
      */
     @Test
@@ -43,10 +42,9 @@ public class FundsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Funds
-     * <p>
+     *
      * Returns the list of funds.  Example Requests:  funds
      */
     @Test
@@ -55,10 +53,9 @@ public class FundsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Fund
-     * <p>
+     *
      * Updates the details of a fund.
      */
     @Test

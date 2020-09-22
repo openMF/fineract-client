@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -26,59 +26,59 @@ public class GetSavingsProductsFeeToIncomeAccountMappings {
   @SerializedName("charge")
   private GetSavingsProductsFeeToIncomeAccountMappingsCharge charge = null;
 
-  @SerializedName("incomeAccount")
-  private GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount = null;
+    @SerializedName("incomeAccount")
+    private GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount = null;
 
-  public GetSavingsProductsFeeToIncomeAccountMappings charge(GetSavingsProductsFeeToIncomeAccountMappingsCharge charge) {
-    this.charge = charge;
-    return this;
-  }
+    public GetSavingsProductsFeeToIncomeAccountMappings charge(GetSavingsProductsFeeToIncomeAccountMappingsCharge charge) {
+        this.charge = charge;
+        return this;
+    }
 
-  /**
-   * Get charge
-   *
-   * @return charge
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsFeeToIncomeAccountMappingsCharge getCharge() {
-    return charge;
-  }
+    /**
+     * Get charge
+     *
+     * @return charge
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsFeeToIncomeAccountMappingsCharge getCharge() {
+        return charge;
+    }
 
-  public void setCharge(GetSavingsProductsFeeToIncomeAccountMappingsCharge charge) {
-    this.charge = charge;
-  }
+    public void setCharge(GetSavingsProductsFeeToIncomeAccountMappingsCharge charge) {
+        this.charge = charge;
+    }
 
-  public GetSavingsProductsFeeToIncomeAccountMappings incomeAccount(GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount) {
-    this.incomeAccount = incomeAccount;
-    return this;
-  }
+    public GetSavingsProductsFeeToIncomeAccountMappings incomeAccount(GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount) {
+        this.incomeAccount = incomeAccount;
+        return this;
+    }
 
-  /**
-   * Get incomeAccount
-   *
-   * @return incomeAccount
-   **/
-  @ApiModelProperty(value = "")
-  public GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount getIncomeAccount() {
-    return incomeAccount;
-  }
+    /**
+     * Get incomeAccount
+     *
+     * @return incomeAccount
+     **/
+    @ApiModelProperty(value = "")
+    public GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount getIncomeAccount() {
+        return incomeAccount;
+    }
 
-  public void setIncomeAccount(GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount) {
-    this.incomeAccount = incomeAccount;
-  }
+    public void setIncomeAccount(GetSavingsProductsFeeToIncomeAccountMappingsIncomeAccount incomeAccount) {
+        this.incomeAccount = incomeAccount;
+    }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetSavingsProductsFeeToIncomeAccountMappings getSavingsProductsFeeToIncomeAccountMappings = (GetSavingsProductsFeeToIncomeAccountMappings) o;
-    return Objects.equals(this.charge, getSavingsProductsFeeToIncomeAccountMappings.charge) &&
-            Objects.equals(this.incomeAccount, getSavingsProductsFeeToIncomeAccountMappings.incomeAccount);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetSavingsProductsFeeToIncomeAccountMappings getSavingsProductsFeeToIncomeAccountMappings = (GetSavingsProductsFeeToIncomeAccountMappings) o;
+      return Objects.equals(this.charge, getSavingsProductsFeeToIncomeAccountMappings.charge) &&
+              Objects.equals(this.incomeAccount, getSavingsProductsFeeToIncomeAccountMappings.incomeAccount);
   }
 
   @Override
@@ -91,7 +91,7 @@ public class GetSavingsProductsFeeToIncomeAccountMappings {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSavingsProductsFeeToIncomeAccountMappings {\n");
-
+    
     sb.append("    charge: ").append(toIndentedString(charge)).append("\n");
     sb.append("    incomeAccount: ").append(toIndentedString(incomeAccount)).append("\n");
     sb.append("}");

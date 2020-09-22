@@ -18,7 +18,7 @@ public class SelfShareAccountsApiTest {
 
     /**
      * Submit new share application
-     * <p>
+     *
      * Mandatory fields:  clientId, productId, submittedDate, savingsAccountId, requestedShares, applicationDate   Optional Fields  accountNo, externalId   Inherited from Product (if not provided)  minimumActivePeriod, minimumActivePeriodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType.
      */
     @Test

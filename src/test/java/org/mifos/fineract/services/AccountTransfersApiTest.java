@@ -20,7 +20,7 @@ public class AccountTransfersApiTest {
 
     /**
      * Create new Transfer
-     * <p>
+     *
      * Ability to create new transfer of monetary funds from one account to another.
      */
     @Test
@@ -30,10 +30,9 @@ public class AccountTransfersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List account transfers
-     * <p>
+     *
      * Lists account&#39;s transfers  Example Requests:    accounttransfers
      */
     @Test
@@ -49,10 +48,9 @@ public class AccountTransfersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve account transfer
-     * <p>
+     *
      * Retrieves account transfer  Example Requests :    accounttransfers/1
      */
     @Test
@@ -62,10 +60,9 @@ public class AccountTransfersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Account Transfer Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:    Field Defaults  Allowed Value Lists  Example Requests:    accounttransfers/template?fromAccountType&#x3D;2&amp;fromOfficeId&#x3D;1    accounttransfers/template?fromAccountType&#x3D;2&amp;fromOfficeId&#x3D;1&amp;fromClientId&#x3D;1    accounttransfers/template?fromClientId&#x3D;1&amp;fromAccountType&#x3D;2&amp;fromAccountId&#x3D;1
      */
     @Test
@@ -82,10 +79,9 @@ public class AccountTransfersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Refund of an Active Loan by Transfer Template
-     * <p>
+     *
      * Retrieves Refund of an Active Loan by Transfer TemplateExample Requests :    accounttransfers/templateRefundByTransfer?fromAccountId&#x3D;2&amp;fromAccountType&#x3D;1&amp; toAccountId&#x3D;1&amp;toAccountType&#x3D;2&amp;toClientId&#x3D;1&amp;toOfficeId&#x3D;1
      */
     @Test
@@ -102,10 +98,9 @@ public class AccountTransfersApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Refund of an Active Loan by Transfer
-     * <p>
+     *
      * Ability to refund an active loan by transferring to a savings account.
      */
     @Test

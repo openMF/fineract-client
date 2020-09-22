@@ -1,6 +1,6 @@
 # MappingFinancialActivitiesToAccountsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Mandatory Fields financialActivityId, glAccountId
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-PostFinancialActivityAccountsRequest body = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | Request body
-try {
-    PostFinancialActivityAccountsResponse result = apiInstance.createGLAccount(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#createGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostFinancialActivityAccountsResponse> call = apiService.createGLAccount(body);
+call.enqueue(new Callback<PostFinancialActivityAccountsResponse>() {
+    @Override
+    public void onResponse(Call<PostFinancialActivityAccountsResponse> call, Response<PostFinancialActivityAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostFinancialActivityAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)| Request body | [optional]
 
 ### Return type
@@ -67,26 +68,27 @@ Delete a Financial Activity to Account Mapping
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-try {
-    DeleteFinancialActivityAccountsResponse result = apiInstance.deleteGLAccount(mappingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#deleteGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteFinancialActivityAccountsResponse> call = apiService.deleteGLAccount(mappingId);
+call.enqueue(new Callback<DeleteFinancialActivityAccountsResponse>() {
+    @Override
+    public void onResponse(Call<DeleteFinancialActivityAccountsResponse> call, Response<DeleteFinancialActivityAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteFinancialActivityAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mappingId** | **Long**| mappingId |
 
 ### Return type
@@ -112,26 +114,27 @@ Example Requests:  financialactivityaccounts/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-try {
-    GetFinancialActivityAccountsResponse result = apiInstance.retreive(mappingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retreive");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetFinancialActivityAccountsResponse> call = apiService.retreive(mappingId);
+call.enqueue(new Callback<GetFinancialActivityAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetFinancialActivityAccountsResponse> call, Response<GetFinancialActivityAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetFinancialActivityAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mappingId** | **Long**| mappingId |
 
 ### Return type
@@ -157,19 +160,23 @@ Example Requests:  financialactivityaccounts
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-try {
-    List<GetFinancialActivityAccountsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFinancialActivityAccountsResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetFinancialActivityAccountsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFinancialActivityAccountsResponse&gt;> call, Response<List&lt;GetFinancialActivityAccountsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFinancialActivityAccountsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -196,19 +203,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -237,27 +248,27 @@ the API updates the Ledger account linked to a Financial Activity
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
 
+MappingFinancialActivitiesToAccountsApi apiService = defaultClient.createService(MappingFinancialActivitiesToAccountsApi.class);
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-PostFinancialActivityAccountsRequest body = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | Request body
-try {
-    PutFinancialActivityAccountsResponse result = apiInstance.updateGLAccount(mappingId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#updateGLAccount");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutFinancialActivityAccountsResponse> call = apiService.updateGLAccount(mappingId, body);
+call.enqueue(new Callback<PutFinancialActivityAccountsResponse>() {
+    @Override
+    public void onResponse(Call<PutFinancialActivityAccountsResponse> call, Response<PutFinancialActivityAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutFinancialActivityAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **mappingId** | **Long**| mappingId |
  **body** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)| Request body | [optional]
 

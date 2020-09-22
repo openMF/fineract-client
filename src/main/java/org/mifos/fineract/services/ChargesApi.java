@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ public interface ChargesApi {
      * Define a new charge that can later be associated with loans and savings through their respective product definitions or directly on each account instance.
      *
      * @param body body (required)
-     * @return Call&lt;PostChargesResponse&gt;
+     * @return Observable&lt;PostChargesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("charges")
-    Call<PostChargesResponse> createCharge(
+    Observable<PostChargesResponse> createCharge(
             @retrofit2.http.Body PostChargesRequest body
     );
 
@@ -27,13 +27,13 @@ public interface ChargesApi {
      * Deletes a Charge.
      *
      * @param chargeId chargeId (required)
-     * @return Call&lt;DeleteChargesChargeIdResponse&gt;
+     * @return Observable&lt;DeleteChargesChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("charges/{chargeId}")
-    Call<DeleteChargesChargeIdResponse> deleteCharge(
+    Observable<DeleteChargesChargeIdResponse> deleteCharge(
             @retrofit2.http.Path("chargeId") Long chargeId
     );
 
@@ -41,13 +41,13 @@ public interface ChargesApi {
      * Retrieve Charges
      * Returns the list of defined charges.  Example Requests:  charges
      *
-     * @return Call&lt;List&lt;GetChargesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetChargesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("charges")
-    Call<List<GetChargesResponse>> retrieveAllCharges();
+    Observable<List<GetChargesResponse>> retrieveAllCharges();
 
 
     /**
@@ -55,13 +55,13 @@ public interface ChargesApi {
      * Returns the details of a defined Charge.  Example Requests:  charges/1
      *
      * @param chargeId chargeId (required)
-     * @return Call&lt;GetChargesResponse&gt;
+     * @return Observable&lt;GetChargesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("charges/{chargeId}")
-    Call<GetChargesResponse> retrieveCharge(
+    Observable<GetChargesResponse> retrieveCharge(
             @retrofit2.http.Path("chargeId") Long chargeId
     );
 
@@ -69,13 +69,13 @@ public interface ChargesApi {
      * Retrieve Charge Template
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  charges/template
      *
-     * @return Call&lt;GetChargesTemplateResponse&gt;
+     * @return Observable&lt;GetChargesTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("charges/template")
-    Call<GetChargesTemplateResponse> retrieveNewChargeDetails();
+    Observable<GetChargesTemplateResponse> retrieveNewChargeDetails();
 
 
     /**
@@ -84,13 +84,13 @@ public interface ChargesApi {
      *
      * @param chargeId chargeId (required)
      * @param body     body (required)
-     * @return Call&lt;PutChargesChargeIdResponse&gt;
+     * @return Observable&lt;PutChargesChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("charges/{chargeId}")
-    Call<PutChargesChargeIdResponse> updateCharge(
+    Observable<PutChargesChargeIdResponse> updateCharge(
             @retrofit2.http.Path("chargeId") Long chargeId, @retrofit2.http.Body PutChargesChargeIdRequest body
     );
 

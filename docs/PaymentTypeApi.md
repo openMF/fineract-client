@@ -1,6 +1,6 @@
 # PaymentTypeApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Creates a new Payment type  Mandatory Fields: name  Optional Fields: Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PaymentTypeApi;
 
+PaymentTypeApi apiService = defaultClient.createService(PaymentTypeApi.class);
 
-PaymentTypeApi apiInstance = new PaymentTypeApi();
-PostPaymentTypesRequest body = new PostPaymentTypesRequest(); // PostPaymentTypesRequest | body
-try {
-    PostPaymentTypesResponse result = apiInstance.createPaymentType(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypeApi#createPaymentType");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostPaymentTypesResponse> call = apiService.createPaymentType(body);
+call.enqueue(new Callback<PostPaymentTypesResponse>() {
+    @Override
+    public void onResponse(Call<PostPaymentTypesResponse> call, Response<PostPaymentTypesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostPaymentTypesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostPaymentTypesRequest**](PostPaymentTypesRequest.md)| body |
 
 ### Return type
@@ -66,26 +67,27 @@ Deletes payment type
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PaymentTypeApi;
 
+PaymentTypeApi apiService = defaultClient.createService(PaymentTypeApi.class);
 
-PaymentTypeApi apiInstance = new PaymentTypeApi();
-Long paymentTypeId = 789L; // Long | paymentTypeId
-try {
-    DeletePaymentTypesPaymentTypeIdResponse result = apiInstance.deleteCode(paymentTypeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypeApi#deleteCode");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeletePaymentTypesPaymentTypeIdResponse> call = apiService.deleteCode(paymentTypeId);
+call.enqueue(new Callback<DeletePaymentTypesPaymentTypeIdResponse>() {
+    @Override
+    public void onResponse(Call<DeletePaymentTypesPaymentTypeIdResponse> call, Response<DeletePaymentTypesPaymentTypeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeletePaymentTypesPaymentTypeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **paymentTypeId** | **Long**| paymentTypeId |
 
 ### Return type
@@ -111,19 +113,23 @@ Retrieve list of payment types
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PaymentTypeApi;
 
+PaymentTypeApi apiService = defaultClient.createService(PaymentTypeApi.class);
 
-PaymentTypeApi apiInstance = new PaymentTypeApi();
-try {
-    List<GetPaymentTypesResponse> result = apiInstance.getAllPaymentTypes();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypeApi#getAllPaymentTypes");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetPaymentTypesResponse&gt;> call = apiService.getAllPaymentTypes();
+call.enqueue(new Callback<List&lt;GetPaymentTypesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetPaymentTypesResponse&gt;> call, Response<List&lt;GetPaymentTypesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetPaymentTypesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -152,26 +158,27 @@ Retrieves a payment type
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PaymentTypeApi;
 
+PaymentTypeApi apiService = defaultClient.createService(PaymentTypeApi.class);
 
-PaymentTypeApi apiInstance = new PaymentTypeApi();
-Long paymentTypeId = 789L; // Long | paymentTypeId
-try {
-    GetPaymentTypesPaymentTypeIdResponse result = apiInstance.retrieveOnePaymentType(paymentTypeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypeApi#retrieveOnePaymentType");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetPaymentTypesPaymentTypeIdResponse> call = apiService.retrieveOnePaymentType(paymentTypeId);
+call.enqueue(new Callback<GetPaymentTypesPaymentTypeIdResponse>() {
+    @Override
+    public void onResponse(Call<GetPaymentTypesPaymentTypeIdResponse> call, Response<GetPaymentTypesPaymentTypeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetPaymentTypesPaymentTypeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **paymentTypeId** | **Long**| paymentTypeId |
 
 ### Return type
@@ -197,27 +204,27 @@ Updates a Payment Type
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PaymentTypeApi;
 
+PaymentTypeApi apiService = defaultClient.createService(PaymentTypeApi.class);
 
-PaymentTypeApi apiInstance = new PaymentTypeApi();
-Long paymentTypeId = 789L; // Long | paymentTypeId
-PutPaymentTypesPaymentTypeIdRequest body = new PutPaymentTypesPaymentTypeIdRequest(); // PutPaymentTypesPaymentTypeIdRequest | body
-try {
-    PutPaymentTypesPaymentTypeIdResponse result = apiInstance.updatePaymentType(paymentTypeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypeApi#updatePaymentType");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutPaymentTypesPaymentTypeIdResponse> call = apiService.updatePaymentType(paymentTypeId, body);
+call.enqueue(new Callback<PutPaymentTypesPaymentTypeIdResponse>() {
+    @Override
+    public void onResponse(Call<PutPaymentTypesPaymentTypeIdResponse> call, Response<PutPaymentTypesPaymentTypeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutPaymentTypesPaymentTypeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **paymentTypeId** | **Long**| paymentTypeId |
  **body** | [**PutPaymentTypesPaymentTypeIdRequest**](PutPaymentTypesPaymentTypeIdRequest.md)| body |
 

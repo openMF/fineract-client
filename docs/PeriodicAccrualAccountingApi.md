@@ -1,6 +1,6 @@
 # PeriodicAccrualAccountingApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,25 +17,27 @@ Mandatory Fields  tillDate
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PeriodicAccrualAccountingApi;
 
+PeriodicAccrualAccountingApi apiService = defaultClient.createService(PeriodicAccrualAccountingApi.class);
 
-PeriodicAccrualAccountingApi apiInstance = new PeriodicAccrualAccountingApi();
-RunaccrualsRequest body = new RunaccrualsRequest(); // RunaccrualsRequest | Request Body  Field Descriptions:  tillDate:  which specifies periodic accruals should happen till the given Date
-try {
-    apiInstance.executePeriodicAccrualAccounting(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PeriodicAccrualAccountingApi#executePeriodicAccrualAccounting");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.executePeriodicAccrualAccounting(body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**RunaccrualsRequest**](RunaccrualsRequest.md)| Request Body  Field Descriptions:  tillDate:  which specifies periodic accruals should happen till the given Date |
 
 ### Return type

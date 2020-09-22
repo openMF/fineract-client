@@ -1,6 +1,6 @@
 # SelfAccountTransferApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,27 +18,27 @@ Ability to create new transfer of monetary funds from one account to another.   
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfAccountTransferApi;
 
+SelfAccountTransferApi apiService = defaultClient.createService(SelfAccountTransferApi.class);
 
-SelfAccountTransferApi apiInstance = new SelfAccountTransferApi();
-String type = "type_example"; // String | type
-String body = "body_example"; // String | 
-try {
-    List<PostNewTransferResponse> result = apiInstance.create(type, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfAccountTransferApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;PostNewTransferResponse&gt;> call = apiService.create(type, body);
+call.enqueue(new Callback<List&lt;PostNewTransferResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;PostNewTransferResponse&gt;> call, Response<List&lt;PostNewTransferResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;PostNewTransferResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type | [optional]
  **body** | **String**|  | [optional]
 
@@ -65,26 +65,27 @@ Returns list of loan/savings accounts that can be used for account transfer   Ex
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfAccountTransferApi;
 
+SelfAccountTransferApi apiService = defaultClient.createService(SelfAccountTransferApi.class);
 
-SelfAccountTransferApi apiInstance = new SelfAccountTransferApi();
-String type = "type_example"; // String | type
-try {
-    List<GetAccountTransferTemplateResponse> result = apiInstance.template(type);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfAccountTransferApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetAccountTransferTemplateResponse&gt;> call = apiService.template(type);
+call.enqueue(new Callback<List&lt;GetAccountTransferTemplateResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetAccountTransferTemplateResponse&gt;> call, Response<List&lt;GetAccountTransferTemplateResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetAccountTransferTemplateResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **type** | **String**| type | [optional]
 
 ### Return type

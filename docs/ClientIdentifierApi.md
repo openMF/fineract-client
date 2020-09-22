@@ -1,6 +1,6 @@
 # ClientIdentifierApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,27 +22,27 @@ Mandatory Fields documentKey, documentTypeId
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-Long clientId = 789L; // Long | clientId
-PostClientsClientIdIdentifiersRequest body = new PostClientsClientIdIdentifiersRequest(); // PostClientsClientIdIdentifiersRequest | body
-try {
-    PostClientsClientIdIdentifiersResponse result = apiInstance.createClientIdentifier(clientId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#createClientIdentifier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsClientIdIdentifiersResponse> call = apiService.createClientIdentifier(clientId, body);
+call.enqueue(new Callback<PostClientsClientIdIdentifiersResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsClientIdIdentifiersResponse> call, Response<PostClientsClientIdIdentifiersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsClientIdIdentifiersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **body** | [**PostClientsClientIdIdentifiersRequest**](PostClientsClientIdIdentifiersRequest.md)| body |
 
@@ -69,27 +69,27 @@ Deletes a Client Identifier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-Long clientId = 789L; // Long | clientId
-Long identifierId = 789L; // Long | identifierId
-try {
-    DeleteClientsClientIdIdentifiersIdentifierIdResponse result = apiInstance.deleteClientIdentifier(clientId, identifierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#deleteClientIdentifier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteClientsClientIdIdentifiersIdentifierIdResponse> call = apiService.deleteClientIdentifier(clientId, identifierId);
+call.enqueue(new Callback<DeleteClientsClientIdIdentifiersIdentifierIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteClientsClientIdIdentifiersIdentifierIdResponse> call, Response<DeleteClientsClientIdIdentifiersIdentifierIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteClientsClientIdIdentifiersIdentifierIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **identifierId** | **Long**| identifierId |
 
@@ -116,19 +116,23 @@ This is a convenience resource useful for building maintenance user interface sc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-try {
-    GetClientsClientIdIdentifiersTemplateResponse result = apiInstance.newClientIdentifierDetails();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#newClientIdentifierDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdIdentifiersTemplateResponse> call = apiService.newClientIdentifierDetails();
+call.enqueue(new Callback<GetClientsClientIdIdentifiersTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdIdentifiersTemplateResponse> call, Response<GetClientsClientIdIdentifiersTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdIdentifiersTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -157,26 +161,27 @@ Example Requests: clients/1/identifiers   clients/1/identifiers?fields&#x3D;docu
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-Long clientId = 789L; // Long | clientId
-try {
-    List<GetClientsClientIdIdentifiersResponse> result = apiInstance.retrieveAllClientIdentifiers(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#retrieveAllClientIdentifiers");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetClientsClientIdIdentifiersResponse&gt;> call = apiService.retrieveAllClientIdentifiers(clientId);
+call.enqueue(new Callback<List&lt;GetClientsClientIdIdentifiersResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetClientsClientIdIdentifiersResponse&gt;> call, Response<List&lt;GetClientsClientIdIdentifiersResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetClientsClientIdIdentifiersResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
 
 ### Return type
@@ -202,27 +207,27 @@ Example Requests: clients/1/identifier/2   clients/1/identifier/2?template&#x3D;
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-Long clientId = 789L; // Long | clientId
-Long identifierId = 789L; // Long | identifierId
-try {
-    GetClientsClientIdIdentifiersResponse result = apiInstance.retrieveClientIdentifiers(clientId, identifierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#retrieveClientIdentifiers");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdIdentifiersResponse> call = apiService.retrieveClientIdentifiers(clientId, identifierId);
+call.enqueue(new Callback<GetClientsClientIdIdentifiersResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdIdentifiersResponse> call, Response<GetClientsClientIdIdentifiersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdIdentifiersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **identifierId** | **Long**| identifierId |
 
@@ -249,28 +254,27 @@ Updates a Client Identifier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientIdentifierApi;
 
+ClientIdentifierApi apiService = defaultClient.createService(ClientIdentifierApi.class);
 
-ClientIdentifierApi apiInstance = new ClientIdentifierApi();
-Long clientId = 789L; // Long | clientId
-Long identifierId = 789L; // Long | identifierId
-PutClientsClientIdIdentifiersIdentifierIdRequest body = new PutClientsClientIdIdentifiersIdentifierIdRequest(); // PutClientsClientIdIdentifiersIdentifierIdRequest | body
-try {
-    PutClientsClientIdIdentifiersIdentifierIdResponse result = apiInstance.updateClientIdentifer(clientId, identifierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientIdentifierApi#updateClientIdentifer");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutClientsClientIdIdentifiersIdentifierIdResponse> call = apiService.updateClientIdentifer(clientId, identifierId, body);
+call.enqueue(new Callback<PutClientsClientIdIdentifiersIdentifierIdResponse>() {
+    @Override
+    public void onResponse(Call<PutClientsClientIdIdentifiersIdentifierIdResponse> call, Response<PutClientsClientIdIdentifiersIdentifierIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutClientsClientIdIdentifiersIdentifierIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **identifierId** | **Long**| identifierId |
  **body** | [**PutClientsClientIdIdentifiersIdentifierIdRequest**](PutClientsClientIdIdentifiersIdentifierIdRequest.md)| body |

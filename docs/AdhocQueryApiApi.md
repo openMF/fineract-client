@@ -1,6 +1,6 @@
 # AdhocQueryApiApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Method | HTTP request | Description
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.createAdHocQuery(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#createAdHocQuery");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.createAdHocQuery(body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | **String**|  | [optional]
 
 ### Return type
@@ -63,26 +64,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-Long adHocId = 789L; // Long | adHocId
-try {
-    String result = apiInstance.deleteAdHocQuery(adHocId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#deleteAdHocQuery");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteAdHocQuery(adHocId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **adHocId** | **Long**| adHocId |
 
 ### Return type
@@ -106,26 +108,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-Long adHocId = 789L; // Long | adHocId
-try {
-    String result = apiInstance.retrieveAdHocQuery(adHocId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#retrieveAdHocQuery");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAdHocQuery(adHocId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **adHocId** | **Long**| adHocId |
 
 ### Return type
@@ -149,19 +152,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-try {
-    String result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveAll();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -188,19 +195,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-try {
-    String result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.template();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -227,27 +238,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AdhocQueryApiApi;
 
+AdhocQueryApiApi apiService = defaultClient.createService(AdhocQueryApiApi.class);
 
-AdhocQueryApiApi apiInstance = new AdhocQueryApiApi();
-Long adHocId = 789L; // Long | adHocId
-String body = "body_example"; // String | 
-try {
-    String result = apiInstance.update(adHocId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdhocQueryApiApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.update(adHocId, body);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **adHocId** | **Long**| adHocId |
  **body** | **String**|  | [optional]
 

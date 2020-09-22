@@ -1,6 +1,6 @@
 # PermissionsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,19 +18,23 @@ ARGUMENTS makerCheckerableoptional, Values are true, false. Default is false. If
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PermissionsApi;
 
+PermissionsApi apiService = defaultClient.createService(PermissionsApi.class);
 
-PermissionsApi apiInstance = new PermissionsApi();
-try {
-    List<GetPermissionsResponse> result = apiInstance.retrieveAllPermissions();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PermissionsApi#retrieveAllPermissions");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetPermissionsResponse&gt;> call = apiService.retrieveAllPermissions();
+call.enqueue(new Callback<List&lt;GetPermissionsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetPermissionsResponse&gt;> call, Response<List&lt;GetPermissionsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetPermissionsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -59,26 +63,27 @@ Enable/Disable Permissions for Maker Checker
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PermissionsApi;
 
+PermissionsApi apiService = defaultClient.createService(PermissionsApi.class);
 
-PermissionsApi apiInstance = new PermissionsApi();
-PutPermissionsRequest body = new PutPermissionsRequest(); // PutPermissionsRequest | body
-try {
-    CommandProcessingResult result = apiInstance.updatePermissionsDetails(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PermissionsApi#updatePermissionsDetails");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<CommandProcessingResult> call = apiService.updatePermissionsDetails(body);
+call.enqueue(new Callback<CommandProcessingResult>() {
+    @Override
+    public void onResponse(Call<CommandProcessingResult> call, Response<CommandProcessingResult> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<CommandProcessingResult> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PutPermissionsRequest**](PutPermissionsRequest.md)| body |
 
 ### Return type

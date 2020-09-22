@@ -1,6 +1,6 @@
 # EntityFieldConfigurationApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ It retrieves all the Entity Field Configuration
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.EntityFieldConfigurationApi;
 
+EntityFieldConfigurationApi apiService = defaultClient.createService(EntityFieldConfigurationApi.class);
 
-EntityFieldConfigurationApi apiInstance = new EntityFieldConfigurationApi();
-String entity = "entity_example"; // String | entity
-try {
-    List<GetFieldConfigurationEntityResponse> result = apiInstance.getAddresses(entity);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling EntityFieldConfigurationApi#getAddresses");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetFieldConfigurationEntityResponse&gt;> call = apiService.getAddresses(entity);
+call.enqueue(new Callback<List&lt;GetFieldConfigurationEntityResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetFieldConfigurationEntityResponse&gt;> call, Response<List&lt;GetFieldConfigurationEntityResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetFieldConfigurationEntityResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **entity** | **String**| entity |
 
 ### Return type

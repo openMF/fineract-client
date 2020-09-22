@@ -1,6 +1,6 @@
 # UsersApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,26 +24,27 @@ Adds new application user.  Note: Password information is not required (or proce
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-PostUsersRequest body = new PostUsersRequest(); // PostUsersRequest | body
-try {
-    PostUsersResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostUsersResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostUsersResponse>() {
+    @Override
+    public void onResponse(Call<PostUsersResponse> call, Response<PostUsersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostUsersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostUsersRequest**](PostUsersRequest.md)| body |
 
 ### Return type
@@ -69,26 +70,27 @@ Removes the user and the associated roles and permissions.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-Long userId = 789L; // Long | userId
-try {
-    DeleteUsersUserIdResponse result = apiInstance.delete(userId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteUsersUserIdResponse> call = apiService.delete(userId);
+call.enqueue(new Callback<DeleteUsersUserIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteUsersUserIdResponse> call, Response<DeleteUsersUserIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteUsersUserIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **userId** | **Long**| userId |
 
 ### Return type
@@ -112,27 +114,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-Long officeId = 789L; // Long | 
-Long staffId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getUserTemplate(officeId, staffId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getUserTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getUserTemplate(officeId, staffId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **staffId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -158,28 +160,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postUsersTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#postUsersTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postUsersTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -207,19 +208,23 @@ Example Requests:  users   users?fields&#x3D;id,username,email,officeName
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-try {
-    List<GetUsersResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetUsersResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetUsersResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetUsersResponse&gt;> call, Response<List&lt;GetUsersResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetUsersResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -248,26 +253,27 @@ Example Requests:  users/1   users/1?template&#x3D;true   users/1?fields&#x3D;us
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-Long userId = 789L; // Long | userId
-try {
-    GetUsersUserIdResponse result = apiInstance.retrieveOne(userId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetUsersUserIdResponse> call = apiService.retrieveOne(userId);
+call.enqueue(new Callback<GetUsersUserIdResponse>() {
+    @Override
+    public void onResponse(Call<GetUsersUserIdResponse> call, Response<GetUsersUserIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetUsersUserIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **userId** | **Long**| userId |
 
 ### Return type
@@ -293,19 +299,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-try {
-    GetUsersTemplateResponse result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#template");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetUsersTemplateResponse> call = apiService.template();
+call.enqueue(new Callback<GetUsersTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetUsersTemplateResponse> call, Response<GetUsersTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetUsersTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -334,27 +344,27 @@ When updating a password you must provide the repeatPassword parameter also.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.UsersApi;
 
+UsersApi apiService = defaultClient.createService(UsersApi.class);
 
-UsersApi apiInstance = new UsersApi();
-Long userId = 789L; // Long | userId
-PutUsersUserIdRequest body = new PutUsersUserIdRequest(); // PutUsersUserIdRequest | body
-try {
-    PutUsersUserIdResponse result = apiInstance.update(userId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutUsersUserIdResponse> call = apiService.update(userId, body);
+call.enqueue(new Callback<PutUsersUserIdResponse>() {
+    @Override
+    public void onResponse(Call<PutUsersUserIdResponse> call, Response<PutUsersUserIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutUsersUserIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **userId** | **Long**| userId |
  **body** | [**PutUsersUserIdRequest**](PutUsersUserIdRequest.md)| body |
 

@@ -1,6 +1,6 @@
 # DataTablesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,26 +30,27 @@ Create a new data table and registers it with the Apache Fineract Core applicati
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-PostDataTablesRequest body = new PostDataTablesRequest(); // PostDataTablesRequest | body
-try {
-    PostDataTablesResponse result = apiInstance.createDatatable(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#createDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostDataTablesResponse> call = apiService.createDatatable(body);
+call.enqueue(new Callback<PostDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<PostDataTablesResponse> call, Response<PostDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostDataTablesRequest**](PostDataTablesRequest.md)| body |
 
 ### Return type
@@ -75,28 +76,27 @@ Adds a row to the data table.  Note that the default datatable UI functionality 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-Long apptableId = 789L; // Long | apptableId
-PostDataTablesAppTableIdRequest body = new PostDataTablesAppTableIdRequest(); // PostDataTablesAppTableIdRequest | body
-try {
-    PostDataTablesAppTableIdResponse result = apiInstance.createDatatableEntry(datatable, apptableId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#createDatatableEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostDataTablesAppTableIdResponse> call = apiService.createDatatableEntry(datatable, apptableId, body);
+call.enqueue(new Callback<PostDataTablesAppTableIdResponse>() {
+    @Override
+    public void onResponse(Call<PostDataTablesAppTableIdResponse> call, Response<PostDataTablesAppTableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostDataTablesAppTableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
  **body** | [**PostDataTablesAppTableIdRequest**](PostDataTablesAppTableIdRequest.md)| body |
@@ -124,26 +124,27 @@ Deletes a data table and deregisters it from the Apache Fineract Core applicatio
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatableName = "datatableName_example"; // String | datatableName
-try {
-    DeleteDataTablesResponse result = apiInstance.deleteDatatable(datatableName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#deleteDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteDataTablesResponse> call = apiService.deleteDatatable(datatableName);
+call.enqueue(new Callback<DeleteDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<DeleteDataTablesResponse> call, Response<DeleteDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatableName** | **String**| datatableName |
 
 ### Return type
@@ -169,28 +170,27 @@ Deletes the entry (if it exists) for data tables that are one to many with the a
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-Object datatable = "{}"; // Object | datatable
-Long apptableId = 789L; // Long | apptableId
-Long datatableId = 789L; // Long | datatableId
-try {
-    DeleteDataTablesDatatableAppTableIdDatatableIdResponse result = apiInstance.deleteDatatableEntries(datatable, apptableId, datatableId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#deleteDatatableEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> call = apiService.deleteDatatableEntries(datatable, apptableId, datatableId);
+call.enqueue(new Callback<DeleteDataTablesDatatableAppTableIdDatatableIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> call, Response<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteDataTablesDatatableAppTableIdDatatableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | [**Object**](.md)| datatable |
  **apptableId** | **Long**| apptableId |
  **datatableId** | **Long**| datatableId |
@@ -218,27 +218,27 @@ Deletes the entry (if it exists) for data tables that are one-to-one with the ap
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-Long apptableId = 789L; // Long | apptableId
-try {
-    DeleteDataTablesDatatableAppTableIdResponse result = apiInstance.deleteDatatableEntries_0(datatable, apptableId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#deleteDatatableEntries_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteDataTablesDatatableAppTableIdResponse> call = apiService.deleteDatatableEntries_0(datatable, apptableId);
+call.enqueue(new Callback<DeleteDataTablesDatatableAppTableIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteDataTablesDatatableAppTableIdResponse> call, Response<DeleteDataTablesDatatableAppTableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteDataTablesDatatableAppTableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
 
@@ -265,26 +265,27 @@ Deregisters a data table. It will no longer be available through the API.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-try {
-    PutDataTablesResponse result = apiInstance.deregisterDatatable(datatable);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#deregisterDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutDataTablesResponse> call = apiService.deregisterDatatable(datatable);
+call.enqueue(new Callback<PutDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<PutDataTablesResponse> call, Response<PutDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
 
 ### Return type
@@ -310,28 +311,27 @@ Gets the entry (if it exists) for data tables that are one to one with the appli
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-Long apptableId = 789L; // Long | apptableId
-String order = "order_example"; // String | order
-try {
-    GetDataTablesAppTableIdResponse result = apiInstance.getDatatable(datatable, apptableId, order);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#getDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetDataTablesAppTableIdResponse> call = apiService.getDatatable(datatable, apptableId, order);
+call.enqueue(new Callback<GetDataTablesAppTableIdResponse>() {
+    @Override
+    public void onResponse(Call<GetDataTablesAppTableIdResponse> call, Response<GetDataTablesAppTableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetDataTablesAppTableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
  **order** | **String**| order | [optional]
@@ -357,29 +357,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | 
-Long apptableId = 789L; // Long | 
-Long datatableId = 789L; // Long | 
-String order = "order_example"; // String | 
-try {
-    String result = apiInstance.getDatatableManyEntry(datatable, apptableId, datatableId, order);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#getDatatableManyEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getDatatableManyEntry(datatable, apptableId, datatableId, order);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**|  |
  **apptableId** | **Long**|  |
  **datatableId** | **Long**|  |
@@ -408,26 +406,27 @@ Lists a registered data table details and the Apache Fineract Core application t
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-try {
-    GetDataTablesResponse result = apiInstance.getDatatable_0(datatable);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#getDatatable_0");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetDataTablesResponse> call = apiService.getDatatable_0(datatable);
+call.enqueue(new Callback<GetDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<GetDataTablesResponse> call, Response<GetDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
 
 ### Return type
@@ -453,26 +452,27 @@ Lists registered data tables and the Apache Fineract Core application table they
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String apptable = "apptable_example"; // String | apptable
-try {
-    List<GetDataTablesResponse> result = apiInstance.getDatatables(apptable);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#getDatatables");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetDataTablesResponse&gt;> call = apiService.getDatatables(apptable);
+call.enqueue(new Callback<List&lt;GetDataTablesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetDataTablesResponse&gt;> call, Response<List&lt;GetDataTablesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetDataTablesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **apptable** | **String**| apptable | [optional]
 
 ### Return type
@@ -498,28 +498,27 @@ Registers a data table with the Apache Fineract Core application table. This all
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-String apptable = "apptable_example"; // String | apptable
-PostDataTablesRegisterDatatableAppTable body = new PostDataTablesRegisterDatatableAppTable(); // PostDataTablesRegisterDatatableAppTable | body
-try {
-    PutDataTablesResponse result = apiInstance.registerDatatable(datatable, apptable, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#registerDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutDataTablesResponse> call = apiService.registerDatatable(datatable, apptable, body);
+call.enqueue(new Callback<PutDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<PutDataTablesResponse> call, Response<PutDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptable** | **String**| apptable |
  **body** | [**PostDataTablesRegisterDatatableAppTable**](PostDataTablesRegisterDatatableAppTable.md)| body | [optional]
@@ -547,27 +546,27 @@ Modifies fields of a data table. If the apptableName parameter is passed, data t
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatableName = "datatableName_example"; // String | datatableName
-PutDataTablesRequest body = new PutDataTablesRequest(); // PutDataTablesRequest | body
-try {
-    PutDataTablesResponse result = apiInstance.updateDatatable(datatableName, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#updateDatatable");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutDataTablesResponse> call = apiService.updateDatatable(datatableName, body);
+call.enqueue(new Callback<PutDataTablesResponse>() {
+    @Override
+    public void onResponse(Call<PutDataTablesResponse> call, Response<PutDataTablesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutDataTablesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatableName** | **String**| datatableName |
  **body** | [**PutDataTablesRequest**](PutDataTablesRequest.md)| body |
 
@@ -594,29 +593,27 @@ Updates the row (if it exists) of the data table.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-Long apptableId = 789L; // Long | apptableId
-Long datatableId = 789L; // Long | datatableId
-PutDataTablesAppTableIdDatatableIdRequest body = new PutDataTablesAppTableIdDatatableIdRequest(); // PutDataTablesAppTableIdDatatableIdRequest | body
-try {
-    PutDataTablesAppTableIdDatatableIdResponse result = apiInstance.updateDatatableEntryOneToMany(datatable, apptableId, datatableId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#updateDatatableEntryOneToMany");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutDataTablesAppTableIdDatatableIdResponse> call = apiService.updateDatatableEntryOneToMany(datatable, apptableId, datatableId, body);
+call.enqueue(new Callback<PutDataTablesAppTableIdDatatableIdResponse>() {
+    @Override
+    public void onResponse(Call<PutDataTablesAppTableIdDatatableIdResponse> call, Response<PutDataTablesAppTableIdDatatableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutDataTablesAppTableIdDatatableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
  **datatableId** | **Long**| datatableId |
@@ -645,28 +642,27 @@ Updates the row (if it exists) of the data table.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.DataTablesApi;
 
+DataTablesApi apiService = defaultClient.createService(DataTablesApi.class);
 
-DataTablesApi apiInstance = new DataTablesApi();
-String datatable = "datatable_example"; // String | datatable
-Long apptableId = 789L; // Long | apptableId
-PutDataTablesAppTableIdRequest body = new PutDataTablesAppTableIdRequest(); // PutDataTablesAppTableIdRequest | body
-try {
-    PutDataTablesAppTableIdResponse result = apiInstance.updateDatatableEntryOnetoOne(datatable, apptableId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataTablesApi#updateDatatableEntryOnetoOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutDataTablesAppTableIdResponse> call = apiService.updateDatatableEntryOnetoOne(datatable, apptableId, body);
+call.enqueue(new Callback<PutDataTablesAppTableIdResponse>() {
+    @Override
+    public void onResponse(Call<PutDataTablesAppTableIdResponse> call, Response<PutDataTablesAppTableIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutDataTablesAppTableIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
  **body** | [**PutDataTablesAppTableIdRequest**](PutDataTablesAppTableIdRequest.md)| body |

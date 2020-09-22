@@ -18,7 +18,7 @@ public class AuditsApiTest {
 
     /**
      * List Audits
-     * <p>
+     *
      * Get a 200 list of audits that match the criteria supplied and sorted by audit id in descending order, and are within the requestors&#39; data scope. Also it supports pagination and sorting  Example Requests:  audits  audits?fields&#x3D;madeOnDate,maker,processingResult  audits?makerDateTimeFrom&#x3D;2013-03-25 08:00:00&amp;makerDateTimeTo&#x3D;2013-04-04 18:00:00  audits?officeId&#x3D;1  audits?officeId&#x3D;1&amp;includeJson&#x3D;true
      */
     @Test
@@ -47,10 +47,9 @@ public class AuditsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve an Audit Entry
-     * <p>
+     *
      * Example Requests:  audits/20 audits/20?fields&#x3D;madeOnDate,maker,processingResult
      */
     @Test
@@ -60,10 +59,9 @@ public class AuditsApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Audit Search Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building an Audit Search UI. \&quot;appUsers\&quot; are data scoped to the office/branch the requestor is associated with.  Example Requests:  audits/searchtemplate audits/searchtemplate?fields&#x3D;actionNames
      */
     @Test

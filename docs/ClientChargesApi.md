@@ -1,6 +1,6 @@
 # ClientChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,27 +22,27 @@ Add Client Charge
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-Long clientId = 789L; // Long | clientId
-PostClientsClientIdChargesRequest body = new PostClientsClientIdChargesRequest(); // PostClientsClientIdChargesRequest | body
-try {
-    PostClientsClientIdChargesResponse result = apiInstance.applyClientCharge(clientId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#applyClientCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsClientIdChargesResponse> call = apiService.applyClientCharge(clientId, body);
+call.enqueue(new Callback<PostClientsClientIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsClientIdChargesResponse> call, Response<PostClientsClientIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsClientIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **body** | [**PostClientsClientIdChargesRequest**](PostClientsClientIdChargesRequest.md)| body |
 
@@ -69,27 +69,27 @@ Deletes a Client Charge on which no transactions have taken place (either paymen
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-Long clientId = 789L; // Long | clientId
-Long chargeId = 789L; // Long | chargeId
-try {
-    DeleteClientsClientIdChargesChargeIdResponse result = apiInstance.deleteClientCharge(clientId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#deleteClientCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteClientsClientIdChargesChargeIdResponse> call = apiService.deleteClientCharge(clientId, chargeId);
+call.enqueue(new Callback<DeleteClientsClientIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteClientsClientIdChargesChargeIdResponse> call, Response<DeleteClientsClientIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteClientsClientIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeId** | **Long**| chargeId |
 
@@ -116,29 +116,27 @@ Pay a Client Charge:  Mandatory Fields:transactionDate and amount \&quot;Pay eit
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-Long clientId = 789L; // Long | clientId
-Long chargeId = 789L; // Long | chargeId
-PostClientsClientIdChargesChargeIdRequest body = new PostClientsClientIdChargesChargeIdRequest(); // PostClientsClientIdChargesChargeIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostClientsClientIdChargesChargeIdResponse result = apiInstance.payOrWaiveClientCharge(clientId, chargeId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#payOrWaiveClientCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostClientsClientIdChargesChargeIdResponse> call = apiService.payOrWaiveClientCharge(clientId, chargeId, body, command);
+call.enqueue(new Callback<PostClientsClientIdChargesChargeIdResponse>() {
+    @Override
+    public void onResponse(Call<PostClientsClientIdChargesChargeIdResponse> call, Response<PostClientsClientIdChargesChargeIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostClientsClientIdChargesChargeIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeId** | **Long**| chargeId |
  **body** | [**PostClientsClientIdChargesChargeIdRequest**](PostClientsClientIdChargesChargeIdRequest.md)| body |
@@ -167,30 +165,27 @@ The list capability of client charges supports pagination.Example Requests: clie
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-Long clientId = 789L; // Long | clientId
-String chargeStatus = "all"; // String | chargeStatus
-Boolean pendingPayment = true; // Boolean | pendingPayment
-Integer limit = 56; // Integer | limit
-Integer offset = 56; // Integer | offset
-try {
-    GetClientsClientIdChargesResponse result = apiInstance.retrieveAllClientCharges(clientId, chargeStatus, pendingPayment, limit, offset);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#retrieveAllClientCharges");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsClientIdChargesResponse> call = apiService.retrieveAllClientCharges(clientId, chargeStatus, pendingPayment, limit, offset);
+call.enqueue(new Callback<GetClientsClientIdChargesResponse>() {
+    @Override
+    public void onResponse(Call<GetClientsClientIdChargesResponse> call, Response<GetClientsClientIdChargesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsClientIdChargesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
  **pendingPayment** | **Boolean**| pendingPayment | [optional]
@@ -220,27 +215,27 @@ Example Requests: clients/1/charges/1   clients/1/charges/1?fields&#x3D;name,id
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-Long clientId = 789L; // Long | clientId
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetClientsChargesPageItems result = apiInstance.retrieveClientCharge(clientId, chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#retrieveClientCharge");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetClientsChargesPageItems> call = apiService.retrieveClientCharge(clientId, chargeId);
+call.enqueue(new Callback<GetClientsChargesPageItems>() {
+    @Override
+    public void onResponse(Call<GetClientsChargesPageItems> call, Response<GetClientsChargesPageItems> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetClientsChargesPageItems> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**| clientId |
  **chargeId** | **Long**| chargeId |
 
@@ -265,19 +260,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ClientChargesApi;
 
+ClientChargesApi apiService = defaultClient.createService(ClientChargesApi.class);
 
-ClientChargesApi apiInstance = new ClientChargesApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientChargesApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

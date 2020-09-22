@@ -1,6 +1,6 @@
 # TaxComponentsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Creates a new Tax Component  Mandatory Fields: name, percentage  Optional Fields
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxComponentsApi;
 
+TaxComponentsApi apiService = defaultClient.createService(TaxComponentsApi.class);
 
-TaxComponentsApi apiInstance = new TaxComponentsApi();
-PostTaxesComponentsRequest body = new PostTaxesComponentsRequest(); // PostTaxesComponentsRequest | body
-try {
-    PostTaxesComponentsResponse result = apiInstance.createTaxCompoent(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxComponentsApi#createTaxCompoent");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTaxesComponentsResponse> call = apiService.createTaxCompoent(body);
+call.enqueue(new Callback<PostTaxesComponentsResponse>() {
+    @Override
+    public void onResponse(Call<PostTaxesComponentsResponse> call, Response<PostTaxesComponentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTaxesComponentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostTaxesComponentsRequest**](PostTaxesComponentsRequest.md)| body |
 
 ### Return type
@@ -66,19 +67,23 @@ List Tax Components
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxComponentsApi;
 
+TaxComponentsApi apiService = defaultClient.createService(TaxComponentsApi.class);
 
-TaxComponentsApi apiInstance = new TaxComponentsApi();
-try {
-    List<GetTaxesComponentsResponse> result = apiInstance.retrieveAllTaxComponents();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxComponentsApi#retrieveAllTaxComponents");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetTaxesComponentsResponse&gt;> call = apiService.retrieveAllTaxComponents();
+call.enqueue(new Callback<List&lt;GetTaxesComponentsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetTaxesComponentsResponse&gt;> call, Response<List&lt;GetTaxesComponentsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetTaxesComponentsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -107,26 +112,27 @@ Retrieve Tax Component
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxComponentsApi;
 
+TaxComponentsApi apiService = defaultClient.createService(TaxComponentsApi.class);
 
-TaxComponentsApi apiInstance = new TaxComponentsApi();
-Long taxComponentId = 789L; // Long | taxComponentId
-try {
-    GetTaxesComponentsResponse result = apiInstance.retrieveTaxComponent(taxComponentId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxComponentsApi#retrieveTaxComponent");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTaxesComponentsResponse> call = apiService.retrieveTaxComponent(taxComponentId);
+call.enqueue(new Callback<GetTaxesComponentsResponse>() {
+    @Override
+    public void onResponse(Call<GetTaxesComponentsResponse> call, Response<GetTaxesComponentsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTaxesComponentsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **taxComponentId** | **Long**| taxComponentId |
 
 ### Return type
@@ -150,19 +156,23 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxComponentsApi;
 
+TaxComponentsApi apiService = defaultClient.createService(TaxComponentsApi.class);
 
-TaxComponentsApi apiInstance = new TaxComponentsApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxComponentsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -191,27 +201,27 @@ Updates Tax component. Debit and credit account details cannot be modified. All 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TaxComponentsApi;
 
+TaxComponentsApi apiService = defaultClient.createService(TaxComponentsApi.class);
 
-TaxComponentsApi apiInstance = new TaxComponentsApi();
-Long taxComponentId = 789L; // Long | taxComponentId
-PutTaxesComponentsTaxComponentIdRequest body = new PutTaxesComponentsTaxComponentIdRequest(); // PutTaxesComponentsTaxComponentIdRequest | body
-try {
-    PutTaxesComponentsTaxComponentIdResponse result = apiInstance.updateTaxCompoent(taxComponentId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TaxComponentsApi#updateTaxCompoent");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutTaxesComponentsTaxComponentIdResponse> call = apiService.updateTaxCompoent(taxComponentId, body);
+call.enqueue(new Callback<PutTaxesComponentsTaxComponentIdResponse>() {
+    @Override
+    public void onResponse(Call<PutTaxesComponentsTaxComponentIdResponse> call, Response<PutTaxesComponentsTaxComponentIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutTaxesComponentsTaxComponentIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **taxComponentId** | **Long**| taxComponentId |
  **body** | [**PutTaxesComponentsTaxComponentIdRequest**](PutTaxesComponentsTaxComponentIdRequest.md)| body |
 

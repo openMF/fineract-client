@@ -2,10 +2,10 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.GetShareAccountsClientIdProductIdResponse;
 import org.mifos.fineract.models.PostNewShareApplicationResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 import java.util.List;
 
@@ -15,25 +15,25 @@ public interface SelfShareAccountsApi {
      * Mandatory fields:  clientId, productId, submittedDate, savingsAccountId, requestedShares, applicationDate   Optional Fields  accountNo, externalId   Inherited from Product (if not provided)  minimumActivePeriod, minimumActivePeriodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType.
      *
      * @param body (optional)
-     * @return Call&lt;List&lt;PostNewShareApplicationResponse&gt;&gt;
+     * @return Observable&lt;List&lt;PostNewShareApplicationResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("self/shareaccounts")
-    Call<List<PostNewShareApplicationResponse>> createAccount(
+    Observable<List<PostNewShareApplicationResponse>> createAccount(
             @retrofit2.http.Body String body
     );
 
     /**
      * @param accountId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/shareaccounts/{accountId}")
-    Call<String> retrieveShareAccount(
+    Observable<String> retrieveShareAccount(
             @retrofit2.http.Path("accountId") Long accountId
     );
 
@@ -43,13 +43,13 @@ public interface SelfShareAccountsApi {
      *
      * @param clientId  clientId (optional)
      * @param productId productId (optional)
-     * @return Call&lt;List&lt;GetShareAccountsClientIdProductIdResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetShareAccountsClientIdProductIdResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/shareaccounts/template")
-    Call<List<GetShareAccountsClientIdProductIdResponse>> template(
+    Observable<List<GetShareAccountsClientIdProductIdResponse>> template(
             @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId
     );
 

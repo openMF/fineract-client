@@ -1,6 +1,6 @@
 # ScoreCardApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,26 +20,27 @@ Add a new entry to a survey.  Mandatory Fields clientId, createdOn, questionId, 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ScoreCardApi;
 
+ScoreCardApi apiService = defaultClient.createService(ScoreCardApi.class);
 
-ScoreCardApi apiInstance = new ScoreCardApi();
-Long surveyId = 789L; // Long | Enter surveyId
-ScorecardData body = new ScorecardData(); // ScorecardData | 
-try {
-    apiInstance.createScorecard(surveyId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ScoreCardApi#createScorecard");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.createScorecard(surveyId, body);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
  **body** | [**ScorecardData**](ScorecardData.md)|  | [optional]
 
@@ -64,26 +65,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ScoreCardApi;
 
+ScoreCardApi apiService = defaultClient.createService(ScoreCardApi.class);
 
-ScoreCardApi apiInstance = new ScoreCardApi();
-Long clientId = 789L; // Long | 
-try {
-    List<ScorecardData> result = apiInstance.findByClient(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ScoreCardApi#findByClient");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;ScorecardData&gt;> call = apiService.findByClient(clientId);
+call.enqueue(new Callback<List&lt;ScorecardData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;ScorecardData&gt;> call, Response<List&lt;ScorecardData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;ScorecardData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **clientId** | **Long**|  |
 
 ### Return type
@@ -109,26 +111,27 @@ List all Scorecard entries for a survey.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ScoreCardApi;
 
+ScoreCardApi apiService = defaultClient.createService(ScoreCardApi.class);
 
-ScoreCardApi apiInstance = new ScoreCardApi();
-Long surveyId = 789L; // Long | Enter surveyId
-try {
-    List<Scorecard> result = apiInstance.findBySurvey(surveyId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ScoreCardApi#findBySurvey");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;Scorecard&gt;> call = apiService.findBySurvey(surveyId);
+call.enqueue(new Callback<List&lt;Scorecard&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;Scorecard&gt;> call, Response<List&lt;Scorecard&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;Scorecard&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
 
 ### Return type
@@ -152,27 +155,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ScoreCardApi;
 
+ScoreCardApi apiService = defaultClient.createService(ScoreCardApi.class);
 
-ScoreCardApi apiInstance = new ScoreCardApi();
-Long surveyId = 789L; // Long | Enter surveyId
-Long clientId = 789L; // Long | Enter clientId
-try {
-    List<ScorecardData> result = apiInstance.findBySurveyAndClient(surveyId, clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ScoreCardApi#findBySurveyAndClient");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;ScorecardData&gt;> call = apiService.findBySurveyAndClient(surveyId, clientId);
+call.enqueue(new Callback<List&lt;ScorecardData&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;ScorecardData&gt;> call, Response<List&lt;ScorecardData&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;ScorecardData&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**| Enter surveyId |
  **clientId** | **Long**| Enter clientId |
 

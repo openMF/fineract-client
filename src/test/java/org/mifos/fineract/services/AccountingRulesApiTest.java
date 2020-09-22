@@ -20,7 +20,7 @@ public class AccountingRulesApiTest {
 
     /**
      * Create/Define a Accounting rule
-     * <p>
+     *
      * Define a new Accounting rule.  Mandatory Fields name, officeId, accountToDebit OR debitTags, accountToCredit OR creditTags.  Optional Fields description
      */
     @Test
@@ -30,10 +30,9 @@ public class AccountingRulesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Accounting Rule
-     * <p>
+     *
      * Deletes a Accounting rule.
      */
     @Test
@@ -43,10 +42,9 @@ public class AccountingRulesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Accounting rule
-     * <p>
+     *
      * Returns the details of a defined Accounting rule.  Example Requests:  accountingrules/1
      */
     @Test
@@ -56,10 +54,9 @@ public class AccountingRulesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Accounting Rules
-     * <p>
+     *
      * Returns the list of defined accounting rules.  Example Requests:  accountingrules
      */
     @Test
@@ -68,10 +65,9 @@ public class AccountingRulesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Accounting Rule Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  accountingrules/template
      */
     @Test
@@ -80,10 +76,9 @@ public class AccountingRulesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Accounting Rule
-     * <p>
+     *
      * Updates the details of a Accounting rule.
      */
     @Test

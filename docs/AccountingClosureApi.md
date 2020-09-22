@@ -1,6 +1,6 @@
 # AccountingClosureApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Mandatory Fields officeId,closingDate
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
 
+AccountingClosureApi apiService = defaultClient.createService(AccountingClosureApi.class);
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-PostGLCLosuresRequest body = new PostGLCLosuresRequest(); // PostGLCLosuresRequest | Request Body
-try {
-    PostGlClosuresResponse result = apiInstance.createGLClosure(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#createGLClosure");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostGlClosuresResponse> call = apiService.createGLClosure(body);
+call.enqueue(new Callback<PostGlClosuresResponse>() {
+    @Override
+    public void onResponse(Call<PostGlClosuresResponse> call, Response<PostGlClosuresResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostGlClosuresResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostGLCLosuresRequest**](PostGLCLosuresRequest.md)| Request Body |
 
 ### Return type
@@ -66,26 +67,27 @@ Note: Only the latest accounting closure associated with a branch may be deleted
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
 
+AccountingClosureApi apiService = defaultClient.createService(AccountingClosureApi.class);
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glclosureId
-try {
-    DeleteGlClosuresResponse result = apiInstance.deleteGLClosure(glClosureId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#deleteGLClosure");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteGlClosuresResponse> call = apiService.deleteGLClosure(glClosureId);
+call.enqueue(new Callback<DeleteGlClosuresResponse>() {
+    @Override
+    public void onResponse(Call<DeleteGlClosuresResponse> call, Response<DeleteGlClosuresResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteGlClosuresResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glClosureId** | **Long**| glclosureId |
 
 ### Return type
@@ -111,26 +113,27 @@ Example Requests:  glclosures/1   /glclosures/1?fields&#x3D;officeName,closingDa
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
 
+AccountingClosureApi apiService = defaultClient.createService(AccountingClosureApi.class);
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glClosureId
-try {
-    GetGLClosureResponse result = apiInstance.retreiveClosure(glClosureId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#retreiveClosure");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGLClosureResponse> call = apiService.retreiveClosure(glClosureId);
+call.enqueue(new Callback<GetGLClosureResponse>() {
+    @Override
+    public void onResponse(Call<GetGLClosureResponse> call, Response<GetGLClosureResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGLClosureResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glClosureId** | **Long**| glClosureId |
 
 ### Return type
@@ -156,26 +159,27 @@ Example Requests:  glclosures
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
 
+AccountingClosureApi apiService = defaultClient.createService(AccountingClosureApi.class);
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long officeId = 789L; // Long | officeId
-try {
-    List<GetGLClosureResponse> result = apiInstance.retrieveAllClosures(officeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#retrieveAllClosures");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetGLClosureResponse&gt;> call = apiService.retrieveAllClosures(officeId);
+call.enqueue(new Callback<List&lt;GetGLClosureResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetGLClosureResponse&gt;> call, Response<List&lt;GetGLClosureResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetGLClosureResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
 
 ### Return type
@@ -201,27 +205,27 @@ Once an accounting closure is created, only the comments associated with it may 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
 
+AccountingClosureApi apiService = defaultClient.createService(AccountingClosureApi.class);
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glClosureId
-PutGlClosuresRequest body = new PutGlClosuresRequest(); // PutGlClosuresRequest | Request body
-try {
-    PutGlClosuresResponse result = apiInstance.updateGLClosure(glClosureId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#updateGLClosure");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutGlClosuresResponse> call = apiService.updateGLClosure(glClosureId, body);
+call.enqueue(new Callback<PutGlClosuresResponse>() {
+    @Override
+    public void onResponse(Call<PutGlClosuresResponse> call, Response<PutGlClosuresResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutGlClosuresResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **glClosureId** | **Long**| glClosureId |
  **body** | [**PutGlClosuresRequest**](PutGlClosuresRequest.md)| Request body |
 

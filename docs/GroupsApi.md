@@ -1,6 +1,6 @@
 # GroupsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,29 +27,27 @@ Activate a Group:  Groups can be created in a Pending state. This API exists to 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-PostGroupsGroupIdRequest body = new PostGroupsGroupIdRequest(); // PostGroupsGroupIdRequest | body
-String command = "command_example"; // String | command
-Long roleId = 789L; // Long | roleId
-try {
-    PostGroupsGroupIdResponse result = apiInstance.activateOrGenerateCollectionSheet(groupId, body, command, roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#activateOrGenerateCollectionSheet");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostGroupsGroupIdResponse> call = apiService.activateOrGenerateCollectionSheet(groupId, body, command, roleId);
+call.enqueue(new Callback<PostGroupsGroupIdResponse>() {
+    @Override
+    public void onResponse(Call<PostGroupsGroupIdResponse> call, Response<PostGroupsGroupIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostGroupsGroupIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
  **body** | [**PostGroupsGroupIdRequest**](PostGroupsGroupIdRequest.md)| body |
  **command** | **String**| command | [optional]
@@ -78,26 +76,27 @@ Creates a Group  Mandatory Fields: name, officeId, active, activationDate (if ac
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-PostGroupsRequest body = new PostGroupsRequest(); // PostGroupsRequest | body
-try {
-    PostGroupsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostGroupsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostGroupsResponse>() {
+    @Override
+    public void onResponse(Call<PostGroupsResponse> call, Response<PostGroupsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostGroupsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostGroupsRequest**](PostGroupsRequest.md)| body |
 
 ### Return type
@@ -123,26 +122,27 @@ A group can be deleted if it is in pending state and has no associations - clien
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-try {
-    DeleteGroupsGroupIdResponse result = apiInstance.delete(groupId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteGroupsGroupIdResponse> call = apiService.delete(groupId);
+call.enqueue(new Callback<DeleteGroupsGroupIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteGroupsGroupIdResponse> call, Response<DeleteGroupsGroupIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteGroupsGroupIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
 
 ### Return type
@@ -166,27 +166,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long officeId = 789L; // Long | 
-Long staffId = 789L; // Long | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    apiInstance.getGroupsTemplate(officeId, staffId, dateFormat);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#getGroupsTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<> call = apiService.getGroupsTemplate(officeId, staffId, dateFormat);
+call.enqueue(new Callback<>() {
+    @Override
+    public void onResponse(Call<> call, Response<> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**|  | [optional]
  **staffId** | **Long**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -212,28 +212,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-File file = new File("/path/to/file.txt"); // File | 
-String locale = "locale_example"; // String | 
-String dateFormat = "dateFormat_example"; // String | 
-try {
-    String result = apiInstance.postGroupTemplate(file, locale, dateFormat);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#postGroupTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.postGroupTemplate(file, locale, dateFormat);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **file** | **File**|  | [optional]
  **locale** | **String**|  | [optional]
  **dateFormat** | **String**|  | [optional]
@@ -261,26 +260,27 @@ Retrieves details of all Loan and Savings accounts associated with this group.  
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-try {
-    GetGroupsGroupIdAccountsResponse result = apiInstance.retrieveAccounts(groupId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#retrieveAccounts");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGroupsGroupIdAccountsResponse> call = apiService.retrieveAccounts(groupId);
+call.enqueue(new Callback<GetGroupsGroupIdAccountsResponse>() {
+    @Override
+    public void onResponse(Call<GetGroupsGroupIdAccountsResponse> call, Response<GetGroupsGroupIdAccountsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGroupsGroupIdAccountsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
 
 ### Return type
@@ -306,37 +306,27 @@ The default implementation of listing Groups returns 200 entries with support fo
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-Long officeId = 789L; // Long | officeId
-Long staffId = 789L; // Long | staffId
-String externalId = "externalId_example"; // String | externalId
-String name = "name_example"; // String | name
-String underHierarchy = "underHierarchy_example"; // String | underHierarchy
-Boolean paged = true; // Boolean | paged
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-Boolean orphansOnly = true; // Boolean | orphansOnly
-try {
-    GetGroupsResponse result = apiInstance.retrieveAll(sqlSearch, officeId, staffId, externalId, name, underHierarchy, paged, offset, limit, orderBy, sortOrder, orphansOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGroupsResponse> call = apiService.retrieveAll(sqlSearch, officeId, staffId, externalId, name, underHierarchy, paged, offset, limit, orderBy, sortOrder, orphansOnly);
+call.enqueue(new Callback<GetGroupsResponse>() {
+    @Override
+    public void onResponse(Call<GetGroupsResponse> call, Response<GetGroupsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGroupsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **sqlSearch** | **String**| sqlSearch | [optional]
  **officeId** | **Long**| officeId | [optional]
  **staffId** | **Long**| staffId | [optional]
@@ -373,28 +363,27 @@ Retrieve group information.  Example Requests:    groups/1    groups/1?associati
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-Long roleId = 789L; // Long | roleId
-try {
-    GetGroupsGroupIdResponse result = apiInstance.retrieveOne(groupId, staffInSelectedOfficeOnly, roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGroupsGroupIdResponse> call = apiService.retrieveOne(groupId, staffInSelectedOfficeOnly, roleId);
+call.enqueue(new Callback<GetGroupsGroupIdResponse>() {
+    @Override
+    public void onResponse(Call<GetGroupsGroupIdResponse> call, Response<GetGroupsGroupIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGroupsGroupIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
  **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
  **roleId** | **Long**| roleId | [optional]
@@ -422,30 +411,27 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long officeId = 789L; // Long | officeId
-Boolean center = true; // Boolean | center
-Long centerId = 789L; // Long | centerId
-String command = "command_example"; // String | command
-Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-try {
-    GetGroupsTemplateResponse result = apiInstance.retrieveTemplate(officeId, center, centerId, command, staffInSelectedOfficeOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetGroupsTemplateResponse> call = apiService.retrieveTemplate(officeId, center, centerId, command, staffInSelectedOfficeOnly);
+call.enqueue(new Callback<GetGroupsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetGroupsTemplateResponse> call, Response<GetGroupsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetGroupsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
  **center** | **Boolean**| center | [optional]
  **centerId** | **Long**| centerId | [optional]
@@ -475,27 +461,27 @@ Allows you to unassign the Staff.  Mandatory Fields: staffId
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-PostGroupsGroupIdCommandUnassignStaffRequest body = new PostGroupsGroupIdCommandUnassignStaffRequest(); // PostGroupsGroupIdCommandUnassignStaffRequest | body
-try {
-    PostGroupsGroupIdCommandUnassignStaffResponse result = apiInstance.unassignLoanOfficer(groupId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#unassignLoanOfficer");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostGroupsGroupIdCommandUnassignStaffResponse> call = apiService.unassignLoanOfficer(groupId, body);
+call.enqueue(new Callback<PostGroupsGroupIdCommandUnassignStaffResponse>() {
+    @Override
+    public void onResponse(Call<PostGroupsGroupIdCommandUnassignStaffResponse> call, Response<PostGroupsGroupIdCommandUnassignStaffResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostGroupsGroupIdCommandUnassignStaffResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
  **body** | [**PostGroupsGroupIdCommandUnassignStaffRequest**](PostGroupsGroupIdCommandUnassignStaffRequest.md)| body |
 
@@ -522,27 +508,27 @@ Updates a Group
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.GroupsApi;
 
+GroupsApi apiService = defaultClient.createService(GroupsApi.class);
 
-GroupsApi apiInstance = new GroupsApi();
-Long groupId = 789L; // Long | groupId
-PutGroupsGroupIdRequest body = new PutGroupsGroupIdRequest(); // PutGroupsGroupIdRequest | body
-try {
-    PutGroupsGroupIdResponse result = apiInstance.update(groupId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutGroupsGroupIdResponse> call = apiService.update(groupId, body);
+call.enqueue(new Callback<PutGroupsGroupIdResponse>() {
+    @Override
+    public void onResponse(Call<PutGroupsGroupIdResponse> call, Response<PutGroupsGroupIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutGroupsGroupIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **groupId** | **Long**| groupId |
  **body** | [**PutGroupsGroupIdRequest**](PutGroupsGroupIdRequest.md)| body |
 

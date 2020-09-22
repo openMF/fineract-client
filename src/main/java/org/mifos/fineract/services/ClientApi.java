@@ -2,8 +2,8 @@ package org.mifos.fineract.services;
 
 import okhttp3.MultipartBody;
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 public interface ClientApi {
     /**
@@ -13,13 +13,13 @@ public interface ClientApi {
      * @param clientId clientId (required)
      * @param body     body (required)
      * @param command  command (optional)
-     * @return Call&lt;PostClientsClientIdResponse&gt;
+     * @return Observable&lt;PostClientsClientIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("clients/{clientId}")
-    Call<PostClientsClientIdResponse> activate(
+    Observable<PostClientsClientIdResponse> activate(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PostClientsClientIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -28,13 +28,13 @@ public interface ClientApi {
      * Note:  1. You can enter either:firstname/middlename/lastname - for a person (middlename is optional) OR fullname - for a business or organisation (or person known by one name).  2.If address is enable(enable-address&#x3D;true), then additional field called address has to be passed.  Mandatory Fields: firstname and lastname OR fullname, officeId, active&#x3D;true and activationDate OR active&#x3D;false, if(address enabled) address  Optional Fields: groupId, externalId, accountNo, staffId, mobileNo, savingsProductId, genderId, clientTypeId, clientClassificationId
      *
      * @param body (required)
-     * @return Call&lt;PostClientsResponse&gt;
+     * @return Observable&lt;PostClientsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("clients")
-    Call<PostClientsResponse> create(
+    Observable<PostClientsResponse> create(
             @retrofit2.http.Body PostClientsRequest body
     );
 
@@ -44,13 +44,13 @@ public interface ClientApi {
      *
      * @param clientId clientId (required)
      * @param body     body (required)
-     * @return Call&lt;DeleteClientsClientIdResponse&gt;
+     * @return Observable&lt;DeleteClientsClientIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("clients/{clientId}")
-    Call<DeleteClientsClientIdResponse> delete(
+    Observable<DeleteClientsClientIdResponse> delete(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body DeleteClientsClientIdRequest body
     );
 
@@ -59,10 +59,10 @@ public interface ClientApi {
      * @param officeId      (optional)
      * @param staffId       (optional)
      * @param dateFormat    (optional)
-     * @return Call&lt;Void&gt;
+     * @return Observable&lt;Void&gt;
      */
     @GET("clients/downloadtemplate")
-    Call<Void> getClientTemplate(
+    Observable<Void> getClientTemplate(
             @retrofit2.http.Query("legalFormType") String legalFormType, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
     );
 
@@ -71,11 +71,11 @@ public interface ClientApi {
      * @param file          (optional)
      * @param locale        (optional)
      * @param dateFormat    (optional)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @retrofit2.http.Multipart
     @POST("clients/uploadtemplate")
-    Call<String> postClientTemplate(
+    Observable<String> postClientTemplate(
             @retrofit2.http.Query("legalFormType") String legalFormType, @retrofit2.http.Part MultipartBody.Part file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
     );
 
@@ -95,13 +95,13 @@ public interface ClientApi {
      * @param orderBy        orderBy (optional)
      * @param sortOrder      sortOrder (optional)
      * @param orphansOnly    orphansOnly (optional)
-     * @return Call&lt;GetClientsResponse&gt;
+     * @return Observable&lt;GetClientsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients")
-    Call<GetClientsResponse> retrieveAll(
+    Observable<GetClientsResponse> retrieveAll(
             @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("displayName") String displayName, @retrofit2.http.Query("firstName") String firstName, @retrofit2.http.Query("lastName") String lastName, @retrofit2.http.Query("underHierarchy") String underHierarchy, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("orphansOnly") Boolean orphansOnly
     );
 
@@ -110,25 +110,25 @@ public interface ClientApi {
      * An example of how a loan portfolio summary can be provided. This is requested in a specific use case of the community application. It is quite reasonable to add resources like this to simplify User Interface development.  Example Requests:   clients/1/accounts  clients/1/accounts?fields&#x3D;loanAccounts,savingsAccounts
      *
      * @param clientId clientId (required)
-     * @return Call&lt;GetClientsClientIdAccountsResponse&gt;
+     * @return Observable&lt;GetClientsClientIdAccountsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}/accounts")
-    Call<GetClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
+    Observable<GetClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
     /**
      * @param clientId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}/obligeedetails")
-    Call<String> retrieveObligeeDetails(
+    Observable<String> retrieveObligeeDetails(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
@@ -138,13 +138,13 @@ public interface ClientApi {
      *
      * @param clientId                  clientId (required)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-     * @return Call&lt;GetClientsClientIdResponse&gt;
+     * @return Observable&lt;GetClientsClientIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}")
-    Call<GetClientsClientIdResponse> retrieveOne(
+    Observable<GetClientsClientIdResponse> retrieveOne(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
     );
 
@@ -155,25 +155,25 @@ public interface ClientApi {
      * @param officeId                  officeId (optional)
      * @param commandParam              commandParam (optional)
      * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-     * @return Call&lt;GetClientsTemplateResponse&gt;
+     * @return Observable&lt;GetClientsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/template")
-    Call<GetClientsTemplateResponse> retrieveTemplate(
+    Observable<GetClientsTemplateResponse> retrieveTemplate(
             @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("commandParam") String commandParam, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
     );
 
     /**
      * @param clientId (required)
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("clients/{clientId}/transferproposaldate")
-    Call<String> retrieveTransferTemplate(
+    Observable<String> retrieveTransferTemplate(
             @retrofit2.http.Path("clientId") Long clientId
     );
 
@@ -183,13 +183,13 @@ public interface ClientApi {
      *
      * @param clientId clientId (required)
      * @param body     (required)
-     * @return Call&lt;PutClientsClientIdResponse&gt;
+     * @return Observable&lt;PutClientsClientIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("clients/{clientId}")
-    Call<PutClientsClientIdResponse> update(
+    Observable<PutClientsClientIdResponse> update(
             @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PutClientsClientIdRequest body
     );
 

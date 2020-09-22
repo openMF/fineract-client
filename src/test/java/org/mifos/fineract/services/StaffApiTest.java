@@ -22,7 +22,7 @@ public class StaffApiTest {
 
     /**
      * Create a staff member
-     * <p>
+     *
      * Creates a staff member.  Mandatory Fields:  officeId, firstname, lastname  Optional Fields:  isLoanOfficer, isActive
      */
     @Test
@@ -57,10 +57,9 @@ public class StaffApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Staff Member
-     * <p>
+     *
      * Returns the details of a Staff Member.  Example Requests:  staff/1
      */
     @Test
@@ -70,10 +69,9 @@ public class StaffApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Staff
-     * <p>
+     *
      * Returns the list of staff members.  Example Requests:  staff     Retrieve a Staff by status  Returns the details of a Staff based on status.  By default it Returns all the ACTIVE Staff.  If status&#x3D;INACTIVE, then it returns all INACTIVE Staff.  and for status&#x3D;ALL, it Returns both ACTIVE and INACTIVE Staff.  Example Requests:  staff?status&#x3D;active
      */
     @Test
@@ -87,10 +85,9 @@ public class StaffApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Staff Member
-     * <p>
+     *
      * Updates the details of a staff member.
      */
     @Test

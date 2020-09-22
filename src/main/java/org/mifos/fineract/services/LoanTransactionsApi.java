@@ -1,10 +1,10 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface LoanTransactionsApi {
     /**
@@ -14,13 +14,13 @@ public interface LoanTransactionsApi {
      * @param loanId        loanId (required)
      * @param transactionId transactionId (required)
      * @param body          body (required)
-     * @return Call&lt;PostLoansLoanIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;PostLoansLoanIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("loans/{loanId}/transactions/{transactionId}")
-    Call<PostLoansLoanIdTransactionsTransactionIdResponse> adjustLoanTransaction(
+    Observable<PostLoansLoanIdTransactionsTransactionIdResponse> adjustLoanTransaction(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Body PostLoansLoanIdTransactionsTransactionIdRequest body
     );
 
@@ -31,13 +31,13 @@ public interface LoanTransactionsApi {
      * @param loanId  loanId (required)
      * @param body    body (required)
      * @param command command (optional)
-     * @return Call&lt;PostLoansLoanIdTransactionsResponse&gt;
+     * @return Observable&lt;PostLoansLoanIdTransactionsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("loans/{loanId}/transactions")
-    Call<PostLoansLoanIdTransactionsResponse> executeLoanTransaction(
+    Observable<PostLoansLoanIdTransactionsResponse> executeLoanTransaction(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostLoansLoanIdTransactionsRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -47,13 +47,13 @@ public interface LoanTransactionsApi {
      *
      * @param loanId        loanId (required)
      * @param transactionId transactionId (required)
-     * @return Call&lt;GetLoansLoanIdTransactionsTransactionIdResponse&gt;
+     * @return Observable&lt;GetLoansLoanIdTransactionsTransactionIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("loans/{loanId}/transactions/{transactionId}")
-    Call<GetLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
+    Observable<GetLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId
     );
 
@@ -66,13 +66,13 @@ public interface LoanTransactionsApi {
      * @param dateFormat      dateFormat (optional)
      * @param transactionDate transactionDate (optional)
      * @param locale          locale (optional)
-     * @return Call&lt;GetLoansLoanIdTransactionsTemplateResponse&gt;
+     * @return Observable&lt;GetLoansLoanIdTransactionsTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("loans/{loanId}/transactions/template")
-    Call<GetLoansLoanIdTransactionsTemplateResponse> retrieveTransactionTemplate(
+    Observable<GetLoansLoanIdTransactionsTemplateResponse> retrieveTransactionTemplate(
             @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("command") String command, @retrofit2.http.Query("dateFormat") String dateFormat, @retrofit2.http.Query("transactionDate") String transactionDate, @retrofit2.http.Query("locale") String locale
     );
 

@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -31,87 +31,87 @@ public class GetRecurringDepositAccountsTemplateResponse {
   @SerializedName("clientName")
   private String clientName = null;
 
-  @SerializedName("productOptions")
-  private List<GetRecurringProductOptions> productOptions = null;
+    @SerializedName("productOptions")
+    private List<GetRecurringProductOptions> productOptions = null;
 
-  public GetRecurringDepositAccountsTemplateResponse clientId(Integer clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-  /**
-   * Get clientId
-   *
-   * @return clientId
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(Integer clientId) {
-    this.clientId = clientId;
-  }
-
-  public GetRecurringDepositAccountsTemplateResponse clientName(String clientName) {
-    this.clientName = clientName;
-    return this;
-  }
-
-  /**
-   * Get clientName
-   *
-   * @return clientName
-   **/
-  @ApiModelProperty(example = "small business", value = "")
-  public String getClientName() {
-    return clientName;
-  }
-
-  public void setClientName(String clientName) {
-    this.clientName = clientName;
-  }
-
-  public GetRecurringDepositAccountsTemplateResponse productOptions(List<GetRecurringProductOptions> productOptions) {
-    this.productOptions = productOptions;
-    return this;
-  }
-
-  public GetRecurringDepositAccountsTemplateResponse addProductOptionsItem(GetRecurringProductOptions productOptionsItem) {
-    if (this.productOptions == null) {
-      this.productOptions = new ArrayList<GetRecurringProductOptions>();
+    public GetRecurringDepositAccountsTemplateResponse clientId(Integer clientId) {
+        this.clientId = clientId;
+        return this;
     }
-    this.productOptions.add(productOptionsItem);
-    return this;
-  }
 
-  /**
-   * Get productOptions
-   *
-   * @return productOptions
-   **/
-  @ApiModelProperty(value = "")
-  public List<GetRecurringProductOptions> getProductOptions() {
-    return productOptions;
-  }
+    /**
+     * Get clientId
+     *
+     * @return clientId
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getClientId() {
+        return clientId;
+    }
 
-  public void setProductOptions(List<GetRecurringProductOptions> productOptions) {
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
+    }
+
+    public GetRecurringDepositAccountsTemplateResponse clientName(String clientName) {
+        this.clientName = clientName;
+        return this;
+    }
+
+    /**
+     * Get clientName
+     *
+     * @return clientName
+     **/
+    @ApiModelProperty(example = "small business", value = "")
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public GetRecurringDepositAccountsTemplateResponse productOptions(List<GetRecurringProductOptions> productOptions) {
     this.productOptions = productOptions;
+    return this;
+    }
+
+    public GetRecurringDepositAccountsTemplateResponse addProductOptionsItem(GetRecurringProductOptions productOptionsItem) {
+        if (this.productOptions == null) {
+            this.productOptions = new ArrayList<GetRecurringProductOptions>();
+        }
+        this.productOptions.add(productOptionsItem);
+        return this;
+    }
+
+    /**
+     * Get productOptions
+     *
+     * @return productOptions
+     **/
+    @ApiModelProperty(value = "")
+    public List<GetRecurringProductOptions> getProductOptions() {
+        return productOptions;
+    }
+
+    public void setProductOptions(List<GetRecurringProductOptions> productOptions) {
+        this.productOptions = productOptions;
   }
 
 
   @Override
   public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetRecurringDepositAccountsTemplateResponse getRecurringDepositAccountsTemplateResponse = (GetRecurringDepositAccountsTemplateResponse) o;
-    return Objects.equals(this.clientId, getRecurringDepositAccountsTemplateResponse.clientId) &&
-            Objects.equals(this.clientName, getRecurringDepositAccountsTemplateResponse.clientName) &&
-            Objects.equals(this.productOptions, getRecurringDepositAccountsTemplateResponse.productOptions);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      GetRecurringDepositAccountsTemplateResponse getRecurringDepositAccountsTemplateResponse = (GetRecurringDepositAccountsTemplateResponse) o;
+      return Objects.equals(this.clientId, getRecurringDepositAccountsTemplateResponse.clientId) &&
+              Objects.equals(this.clientName, getRecurringDepositAccountsTemplateResponse.clientName) &&
+              Objects.equals(this.productOptions, getRecurringDepositAccountsTemplateResponse.productOptions);
   }
 
   @Override
@@ -124,7 +124,7 @@ public class GetRecurringDepositAccountsTemplateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositAccountsTemplateResponse {\n");
-
+    
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    clientName: ").append(toIndentedString(clientName)).append("\n");
     sb.append("    productOptions: ").append(toIndentedString(productOptions)).append("\n");

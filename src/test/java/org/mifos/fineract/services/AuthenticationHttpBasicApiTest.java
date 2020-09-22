@@ -18,7 +18,7 @@ public class AuthenticationHttpBasicApiTest {
 
     /**
      * Verify authentication
-     * <p>
+     *
      * Authenticates the credentials provided and returns the set roles and permissions allowed.
      */
     @Test

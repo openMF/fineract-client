@@ -26,7 +26,6 @@ public class SelfLoanProductsApiTest {
 
         // TODO: test validations
     }
-
     /**
      *
      */

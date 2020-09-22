@@ -1,6 +1,6 @@
 /*
  * Apache Fineract API Documentation
- * Apache Fineract is a secure, multi-tenanted microfinance platform. <br />              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
+ * Apache Fineract is a secure, multi-tenanted microfinance platform. <br/>              The goal of the Apache Fineract API is to empower developers to build apps on top of the Apache Fineract Platform. The reference app [  https://demo.openmf.org  ] (username: mifos, password: password) works on the same demo tenant as the interactive links in this documentation.              <br/>The API                 is organized around REST [ https://en.wikipedia.org/wiki/Representational_state_transfer ]               <br/> Find out more about Apache Fineract on [ https://demo.openmf.org/api-docs/apiLive.htm#top ]              <br/> You can Try The API From Your Browser itself at [ https://demo.openmf.org/api-docs/apiLive.htm#interact ]              <br/> The Generic Options are available at [ https://demo.openmf.org/api-docs/apiLive.htm#genopts ]              <br/> Find out more about Updating Dates and Numbers at [ https://demo.openmf.org/api-docs/apiLive.htm#dates_and_numbers ]              <br/> For the Authentication and the Basic of HTTP and HTTPS refer [ https://demo.openmf.org/api-docs/apiLive.htm#authentication_overview ]              <br/> Check about ERROR codes at [ https://demo.openmf.org/api-docs/apiLive.htm#errors ]               <br/> <br/> Please refer to the old documentation for any documentation queries [ https://demo.openmf.org/api-docs/apiLive.htm ]              <br/>             ______________________________________________________________________________________________________________________________
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -51,219 +51,219 @@ public class GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTra
   @SerializedName("runningBalance")
   private Integer runningBalance = null;
 
-  @SerializedName("reversed")
-  private Boolean reversed = null;
+    @SerializedName("reversed")
+    private Boolean reversed = null;
 
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   *
-   * @return id
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse transactionType(GetRecurringTransactionsTransactionType transactionType) {
-    this.transactionType = transactionType;
-    return this;
-  }
-
-  /**
-   * Get transactionType
-   *
-   * @return transactionType
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringTransactionsTransactionType getTransactionType() {
-    return transactionType;
-  }
-
-  public void setTransactionType(GetRecurringTransactionsTransactionType transactionType) {
-    this.transactionType = transactionType;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse accountId(Integer accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-  /**
-   * Get accountId
-   *
-   * @return accountId
-   **/
-  @ApiModelProperty(example = "1", value = "")
-  public Integer getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(Integer accountId) {
-    this.accountId = accountId;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse accountNo(String accountNo) {
-    this.accountNo = accountNo;
-    return this;
-  }
-
-  /**
-   * Get accountNo
-   *
-   * @return accountNo
-   **/
-  @ApiModelProperty(example = "000000001", value = "")
-  public String getAccountNo() {
-    return accountNo;
-  }
-
-  public void setAccountNo(String accountNo) {
-    this.accountNo = accountNo;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse date(LocalDate date) {
-    this.date = date;
-    return this;
-  }
-
-  /**
-   * Get date
-   *
-   * @return date
-   **/
-  @ApiModelProperty(example = "[2013, 8, 7]", value = "")
-  public LocalDate getDate() {
-    return date;
-  }
-
-  public void setDate(LocalDate date) {
-    this.date = date;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse currency(GetRecurringTransactionsCurrency currency) {
-    this.currency = currency;
-    return this;
-  }
-
-  /**
-   * Get currency
-   *
-   * @return currency
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringTransactionsCurrency getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(GetRecurringTransactionsCurrency currency) {
-    this.currency = currency;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse paymentDetailData(GetRecurringPaymentDetailData paymentDetailData) {
-    this.paymentDetailData = paymentDetailData;
-    return this;
-  }
-
-  /**
-   * Get paymentDetailData
-   *
-   * @return paymentDetailData
-   **/
-  @ApiModelProperty(value = "")
-  public GetRecurringPaymentDetailData getPaymentDetailData() {
-    return paymentDetailData;
-  }
-
-  public void setPaymentDetailData(GetRecurringPaymentDetailData paymentDetailData) {
-    this.paymentDetailData = paymentDetailData;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse amount(Float amount) {
-    this.amount = amount;
-    return this;
-  }
-
-  /**
-   * Get amount
-   *
-   * @return amount
-   **/
-  @ApiModelProperty(example = "5000.0", value = "")
-  public Float getAmount() {
-    return amount;
-  }
-
-  public void setAmount(Float amount) {
-    this.amount = amount;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse runningBalance(Integer runningBalance) {
-    this.runningBalance = runningBalance;
-    return this;
-  }
-
-  /**
-   * Get runningBalance
-   *
-   * @return runningBalance
-   **/
-  @ApiModelProperty(example = "0", value = "")
-  public Integer getRunningBalance() {
-    return runningBalance;
-  }
-
-  public void setRunningBalance(Integer runningBalance) {
-    this.runningBalance = runningBalance;
-  }
-
-  public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse reversed(Boolean reversed) {
-    this.reversed = reversed;
-    return this;
-  }
-
-  /**
-   * Get reversed
-   *
-   * @return reversed
-   **/
-  @ApiModelProperty(example = "true", value = "")
-  public Boolean isReversed() {
-    return reversed;
-  }
-
-  public void setReversed(Boolean reversed) {
-    this.reversed = reversed;
-  }
-
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse id(Integer id) {
+        this.id = id;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get id
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getId() {
+        return id;
     }
-    GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse = (GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse) o;
-    return Objects.equals(this.id, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.id) &&
-            Objects.equals(this.transactionType, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.transactionType) &&
-            Objects.equals(this.accountId, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.accountId) &&
-            Objects.equals(this.accountNo, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.accountNo) &&
-            Objects.equals(this.date, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.date) &&
-            Objects.equals(this.currency, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.currency) &&
-            Objects.equals(this.paymentDetailData, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.paymentDetailData) &&
-            Objects.equals(this.amount, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.amount) &&
-            Objects.equals(this.runningBalance, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.runningBalance) &&
-            Objects.equals(this.reversed, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.reversed);
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse transactionType(GetRecurringTransactionsTransactionType transactionType) {
+        this.transactionType = transactionType;
+        return this;
+    }
+
+    /**
+     * Get transactionType
+     *
+     * @return transactionType
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringTransactionsTransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(GetRecurringTransactionsTransactionType transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse accountId(Integer accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * Get accountId
+     *
+     * @return accountId
+     **/
+    @ApiModelProperty(example = "1", value = "")
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse accountNo(String accountNo) {
+        this.accountNo = accountNo;
+        return this;
+    }
+
+    /**
+     * Get accountNo
+     *
+     * @return accountNo
+     **/
+    @ApiModelProperty(example = "000000001", value = "")
+    public String getAccountNo() {
+        return accountNo;
+    }
+
+    public void setAccountNo(String accountNo) {
+        this.accountNo = accountNo;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse date(LocalDate date) {
+        this.date = date;
+        return this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return date
+     **/
+    @ApiModelProperty(example = "[2013, 8, 7]", value = "")
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse currency(GetRecurringTransactionsCurrency currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return currency
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringTransactionsCurrency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(GetRecurringTransactionsCurrency currency) {
+        this.currency = currency;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse paymentDetailData(GetRecurringPaymentDetailData paymentDetailData) {
+        this.paymentDetailData = paymentDetailData;
+        return this;
+    }
+
+    /**
+     * Get paymentDetailData
+     *
+     * @return paymentDetailData
+     **/
+    @ApiModelProperty(value = "")
+    public GetRecurringPaymentDetailData getPaymentDetailData() {
+        return paymentDetailData;
+    }
+
+    public void setPaymentDetailData(GetRecurringPaymentDetailData paymentDetailData) {
+        this.paymentDetailData = paymentDetailData;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse amount(Float amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return amount
+     **/
+    @ApiModelProperty(example = "5000.0", value = "")
+    public Float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Float amount) {
+        this.amount = amount;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse runningBalance(Integer runningBalance) {
+        this.runningBalance = runningBalance;
+        return this;
+    }
+
+    /**
+     * Get runningBalance
+     *
+     * @return runningBalance
+     **/
+    @ApiModelProperty(example = "0", value = "")
+    public Integer getRunningBalance() {
+        return runningBalance;
+    }
+
+    public void setRunningBalance(Integer runningBalance) {
+        this.runningBalance = runningBalance;
+    }
+
+    public GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse reversed(Boolean reversed) {
+        this.reversed = reversed;
+        return this;
+    }
+
+    /**
+     * Get reversed
+     *
+     * @return reversed
+     **/
+    @ApiModelProperty(example = "true", value = "")
+    public Boolean isReversed() {
+        return reversed;
+    }
+
+    public void setReversed(Boolean reversed) {
+        this.reversed = reversed;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse = (GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse) o;
+        return Objects.equals(this.id, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.id) &&
+                Objects.equals(this.transactionType, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.transactionType) &&
+                Objects.equals(this.accountId, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.accountId) &&
+                Objects.equals(this.accountNo, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.accountNo) &&
+                Objects.equals(this.date, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.date) &&
+                Objects.equals(this.currency, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.currency) &&
+                Objects.equals(this.paymentDetailData, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.paymentDetailData) &&
+                Objects.equals(this.amount, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.amount) &&
+                Objects.equals(this.runningBalance, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.runningBalance) &&
+                Objects.equals(this.reversed, getRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse.reversed);
   }
 
   @Override
@@ -276,7 +276,7 @@ public class GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTra
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");

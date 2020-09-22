@@ -19,7 +19,7 @@ public class ExternalServicesApiTest {
 
     /**
      * Retrieve External Services Configuration
-     * <p>
+     *
      * Returns a external Service configurations based on the Service Name.  Service Names supported are S3 and SMTP.  Example Requests:  externalservice/SMTP
      */
     @Test
@@ -29,10 +29,9 @@ public class ExternalServicesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update External Service
-     * <p>
+     *
      * Updates the external Service Configuration for a Service Name.  Example:   externalservice/S3
      */
     @Test

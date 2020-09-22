@@ -20,7 +20,7 @@ public class InterestRateChartApiTest {
 
     /**
      * Create a Chart
-     * <p>
+     *
      * Creates a new chart which can be attached to a term deposit products (FD or RD).
      */
     @Test
@@ -30,10 +30,9 @@ public class InterestRateChartApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Chart
-     * <p>
+     *
      * It deletes the chart
      */
     @Test
@@ -43,10 +42,9 @@ public class InterestRateChartApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve all Charts
-     * <p>
+     *
      * Retrieve list of charts associated with a term deposit product(FD or RD). Example Requests:  interestratecharts?productId&#x3D;1
      */
     @Test
@@ -56,10 +54,9 @@ public class InterestRateChartApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Chart
-     * <p>
+     *
      * It retrieves the Interest Rate Chart Example Requests:  interestratecharts/1
      */
     @Test
@@ -69,10 +66,9 @@ public class InterestRateChartApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve Chart Details Template
-     * <p>
+     *
      * This is a convenience resource. It can be useful when building maintenance user interface screens for creating a chart. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  interestratecharts/template
      */
     @Test
@@ -81,10 +77,9 @@ public class InterestRateChartApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Update a Chart
-     * <p>
+     *
      * It updates the Chart.
      */
     @Test

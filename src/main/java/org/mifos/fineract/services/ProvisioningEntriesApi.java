@@ -1,10 +1,10 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ public interface ProvisioningEntriesApi {
      * Creates a new Provisioning Entries  Mandatory Fields date dateFormat locale Optional Fields createjournalentries
      *
      * @param body body (optional)
-     * @return Call&lt;PostProvisioningEntriesResponse&gt;
+     * @return Observable&lt;PostProvisioningEntriesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("provisioningentries")
-    Call<PostProvisioningEntriesResponse> createProvisioningEntries(
+    Observable<PostProvisioningEntriesResponse> createProvisioningEntries(
             @retrofit2.http.Body PostProvisioningEntriesRequest body
     );
 
@@ -31,13 +31,13 @@ public interface ProvisioningEntriesApi {
      * @param entryId entryId (required)
      * @param command command&#x3D;createjournalentry command&#x3D;recreateprovisioningentry (optional)
      * @param body    body (optional)
-     * @return Call&lt;PutProvisioningEntriesResponse&gt;
+     * @return Observable&lt;PutProvisioningEntriesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("provisioningentries/{entryId}")
-    Call<PutProvisioningEntriesResponse> modifyProvisioningEntry(
+    Observable<PutProvisioningEntriesResponse> modifyProvisioningEntry(
             @retrofit2.http.Path("entryId") Long entryId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body PutProvisioningEntriesRequest body
     );
 
@@ -46,13 +46,13 @@ public interface ProvisioningEntriesApi {
      *
      * @param offset offset (optional)
      * @param limit  limit (optional)
-     * @return Call&lt;List&lt;ProvisioningEntryData&gt;&gt;
+     * @return Observable&lt;List&lt;ProvisioningEntryData&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningentries")
-    Call<List<ProvisioningEntryData>> retrieveAllProvisioningEntries(
+    Observable<List<ProvisioningEntryData>> retrieveAllProvisioningEntries(
             @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
     );
 
@@ -63,13 +63,13 @@ public interface ProvisioningEntriesApi {
      * @param officeId   (optional)
      * @param productId  (optional)
      * @param categoryId (optional)
-     * @return Call&lt;LoanProductProvisioningEntryData&gt;
+     * @return Observable&lt;LoanProductProvisioningEntryData&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningentries/entries")
-    Call<LoanProductProvisioningEntryData> retrieveProviioningEntries(
+    Observable<LoanProductProvisioningEntryData> retrieveProviioningEntries(
             @retrofit2.http.Query("entryId") Long entryId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("categoryId") Long categoryId
     );
 
@@ -78,13 +78,13 @@ public interface ProvisioningEntriesApi {
      * Returns the details of a generated Provisioning Entry.
      *
      * @param entryId entryId (required)
-     * @return Call&lt;ProvisioningEntryData&gt;
+     * @return Observable&lt;ProvisioningEntryData&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("provisioningentries/{entryId}")
-    Call<ProvisioningEntryData> retrieveProvisioningEntry(
+    Observable<ProvisioningEntryData> retrieveProvisioningEntry(
             @retrofit2.http.Path("entryId") Long entryId
     );
 

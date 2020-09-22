@@ -16,6 +16,7 @@ import org.mifos.fineract.auth.OAuth.AccessTokenListener;
 import org.mifos.fineract.services.*;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -86,7 +87,7 @@ public class FineractApiClient {
     private CheckerInboxApi checkerInboxApi;
 
     public FineractApiClient() {
-        apiAuthorizations = new LinkedHashMap<>();
+        apiAuthorizations = new LinkedHashMap<String, Interceptor>();
         createDefaultAdapter();
         init();
     }
@@ -195,6 +196,7 @@ public class FineractApiClient {
         adapterBuilder = new Retrofit
                 .Builder()
                 .baseUrl(baseUrl)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonCustomConverterFactory.create(json.getGson()));
     }
@@ -579,15 +581,15 @@ class GsonCustomConverterFactory extends Converter.Factory {
     private final Gson gson;
     private final GsonConverterFactory gsonConverterFactory;
 
+    public static GsonCustomConverterFactory create(Gson gson) {
+        return new GsonCustomConverterFactory(gson);
+    }
+
     private GsonCustomConverterFactory(Gson gson) {
         if (gson == null)
             throw new NullPointerException("gson == null");
         this.gson = gson;
         this.gsonConverterFactory = GsonConverterFactory.create(gson);
-    }
-
-    public static GsonCustomConverterFactory create(Gson gson) {
-        return new GsonCustomConverterFactory(gson);
     }
 
     @Override

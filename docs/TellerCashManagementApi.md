@@ -1,6 +1,6 @@
 # TellerCashManagementApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,28 +35,27 @@ Mandatory Fields:  Date, Amount, Currency, Notes/Comments
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PostTellersTellerIdCashiersCashierIdAllocateRequest body = new PostTellersTellerIdCashiersCashierIdAllocateRequest(); // PostTellersTellerIdCashiersCashierIdAllocateRequest | body
-try {
-    PostTellersTellerIdCashiersCashierIdAllocateResponse result = apiInstance.allocateCashToCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#allocateCashToCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTellersTellerIdCashiersCashierIdAllocateResponse> call = apiService.allocateCashToCashier(tellerId, cashierId, body);
+call.enqueue(new Callback<PostTellersTellerIdCashiersCashierIdAllocateResponse>() {
+    @Override
+    public void onResponse(Call<PostTellersTellerIdCashiersCashierIdAllocateResponse> call, Response<PostTellersTellerIdCashiersCashierIdAllocateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTellersTellerIdCashiersCashierIdAllocateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
  **body** | [**PostTellersTellerIdCashiersCashierIdAllocateRequest**](PostTellersTellerIdCashiersCashierIdAllocateRequest.md)| body |
@@ -84,27 +83,27 @@ Mandatory Fields:  Cashier/staff, Fromm Date, To Date, Full Day or From time and
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-PostTellersTellerIdCashiersRequest body = new PostTellersTellerIdCashiersRequest(); // PostTellersTellerIdCashiersRequest | body
-try {
-    PostTellersTellerIdCashiersResponse result = apiInstance.createCashier(tellerId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#createCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTellersTellerIdCashiersResponse> call = apiService.createCashier(tellerId, body);
+call.enqueue(new Callback<PostTellersTellerIdCashiersResponse>() {
+    @Override
+    public void onResponse(Call<PostTellersTellerIdCashiersResponse> call, Response<PostTellersTellerIdCashiersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTellersTellerIdCashiersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **body** | [**PostTellersTellerIdCashiersRequest**](PostTellersTellerIdCashiersRequest.md)| body |
 
@@ -131,26 +130,27 @@ Mandatory Fields Teller name, OfficeId, Description, Start Date, Status Optional
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-PostTellersRequest body = new PostTellersRequest(); // PostTellersRequest | body
-try {
-    PostTellersResponse result = apiInstance.createTeller(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#createTeller");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTellersResponse> call = apiService.createTeller(body);
+call.enqueue(new Callback<PostTellersResponse>() {
+    @Override
+    public void onResponse(Call<PostTellersResponse> call, Response<PostTellersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTellersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostTellersRequest**](PostTellersRequest.md)| body |
 
 ### Return type
@@ -176,27 +176,27 @@ Delete Cashier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    DeleteTellersTellerIdCashiersCashierIdResponse result = apiInstance.deleteCashier(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#deleteCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteTellersTellerIdCashiersCashierIdResponse> call = apiService.deleteCashier(tellerId, cashierId);
+call.enqueue(new Callback<DeleteTellersTellerIdCashiersCashierIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteTellersTellerIdCashiersCashierIdResponse> call, Response<DeleteTellersTellerIdCashiersCashierIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteTellersTellerIdCashiersCashierIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
 
@@ -221,26 +221,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    String result = apiInstance.deleteTeller(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#deleteTeller");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.deleteTeller(tellerId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
 
 ### Return type
@@ -266,27 +267,27 @@ Retrieve a cashier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    GetTellersTellerIdCashiersCashierIdResponse result = apiInstance.findCashierData(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findCashierData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersTellerIdCashiersCashierIdResponse> call = apiService.findCashierData(tellerId, cashierId);
+call.enqueue(new Callback<GetTellersTellerIdCashiersCashierIdResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersTellerIdCashiersCashierIdResponse> call, Response<GetTellersTellerIdCashiersCashierIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersTellerIdCashiersCashierIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
 
@@ -313,26 +314,27 @@ Retrieve tellers
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    GetTellersResponse result = apiInstance.findTeller(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findTeller");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersResponse> call = apiService.findTeller(tellerId);
+call.enqueue(new Callback<GetTellersResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersResponse> call, Response<GetTellersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
 
 ### Return type
@@ -356,27 +358,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long transactionId = 789L; // Long | transactionId
-try {
-    String result = apiInstance.findTransactionData(tellerId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findTransactionData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.findTransactionData(tellerId, transactionId);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **transactionId** | **Long**| transactionId |
 
@@ -403,28 +405,27 @@ List Cashiers
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-String fromdate = "fromdate_example"; // String | fromdate
-String todate = "todate_example"; // String | todate
-try {
-    GetTellersTellerIdCashiersResponse result = apiInstance.getCashierData(tellerId, fromdate, todate);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersTellerIdCashiersResponse> call = apiService.getCashierData(tellerId, fromdate, todate);
+call.enqueue(new Callback<GetTellersTellerIdCashiersResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersTellerIdCashiersResponse> call, Response<GetTellersTellerIdCashiersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersTellerIdCashiersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **fromdate** | **String**| fromdate | [optional]
  **todate** | **String**| todate | [optional]
@@ -452,26 +453,27 @@ Find Cashiers
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    GetTellersTellerIdCashiersTemplateResponse result = apiInstance.getCashierTemplate(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersTellerIdCashiersTemplateResponse> call = apiService.getCashierTemplate(tellerId);
+call.enqueue(new Callback<GetTellersTellerIdCashiersTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersTellerIdCashiersTemplateResponse> call, Response<GetTellersTellerIdCashiersTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersTellerIdCashiersTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
 
 ### Return type
@@ -497,27 +499,27 @@ Retrieve Cashier Transaction Template
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse result = apiInstance.getCashierTxnTemplate(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierTxnTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> call = apiService.getCashierTxnTemplate(tellerId, cashierId);
+call.enqueue(new Callback<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> call, Response<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
 
@@ -542,28 +544,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String dateRange = "dateRange_example"; // String | dateRange
-try {
-    String result = apiInstance.getJournalData(tellerId, cashierId, dateRange);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getJournalData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getJournalData(tellerId, cashierId, dateRange);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId | [optional]
  **dateRange** | **String**| dateRange | [optional]
@@ -591,26 +592,27 @@ Retrieves list tellers
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long officeId = 789L; // Long | officeId
-try {
-    List<GetTellersResponse> result = apiInstance.getTellerData(officeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTellerData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetTellersResponse&gt;> call = apiService.getTellerData(officeId);
+call.enqueue(new Callback<List&lt;GetTellersResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetTellersResponse&gt;> call, Response<List&lt;GetTellersResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetTellersResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **officeId** | **Long**| officeId | [optional]
 
 ### Return type
@@ -634,27 +636,27 @@ No authorization required
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-String dateRange = "dateRange_example"; // String | dateRange
-try {
-    String result = apiInstance.getTransactionData(tellerId, dateRange);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<String> call = apiService.getTransactionData(tellerId, dateRange);
+call.enqueue(new Callback<String>() {
+    @Override
+    public void onResponse(Call<String> call, Response<String> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<String> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **dateRange** | **String**| dateRange | [optional]
 
@@ -681,32 +683,27 @@ Retrieve Cashier Transaction
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String currencyCode = "currencyCode_example"; // String | currencyCode
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetTellersTellerIdCashiersCashiersIdTransactionsResponse> result = apiInstance.getTransactionsForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionsForCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;> call = apiService.getTransactionsForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;> call, Response<List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
  **currencyCode** | **String**| currencyCode | [optional]
@@ -738,32 +735,27 @@ Transactions Wtih Summary For Cashier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String currencyCode = "currencyCode_example"; // String | currencyCode
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse result = apiInstance.getTransactionsWtihSummaryForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionsWtihSummaryForCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> call = apiService.getTransactionsWtihSummaryForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse>() {
+    @Override
+    public void onResponse(Call<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> call, Response<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
  **currencyCode** | **String**| currencyCode | [optional]
@@ -795,28 +787,27 @@ Mandatory Fields Date, Amount, Currency, Notes/Comments
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PostTellersTellerIdCashiersCashierIdSettleRequest body = new PostTellersTellerIdCashiersCashierIdSettleRequest(); // PostTellersTellerIdCashiersCashierIdSettleRequest | body
-try {
-    PostTellersTellerIdCashiersCashierIdSettleResponse result = apiInstance.settleCashFromCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#settleCashFromCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostTellersTellerIdCashiersCashierIdSettleResponse> call = apiService.settleCashFromCashier(tellerId, cashierId, body);
+call.enqueue(new Callback<PostTellersTellerIdCashiersCashierIdSettleResponse>() {
+    @Override
+    public void onResponse(Call<PostTellersTellerIdCashiersCashierIdSettleResponse> call, Response<PostTellersTellerIdCashiersCashierIdSettleResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostTellersTellerIdCashiersCashierIdSettleResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
  **body** | [**PostTellersTellerIdCashiersCashierIdSettleRequest**](PostTellersTellerIdCashiersCashierIdSettleRequest.md)| body |
@@ -844,28 +835,27 @@ Update Cashier
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PutTellersTellerIdCashiersCashierIdRequest body = new PutTellersTellerIdCashiersCashierIdRequest(); // PutTellersTellerIdCashiersCashierIdRequest | body
-try {
-    PutTellersTellerIdCashiersCashierIdResponse result = apiInstance.updateCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#updateCashier");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutTellersTellerIdCashiersCashierIdResponse> call = apiService.updateCashier(tellerId, cashierId, body);
+call.enqueue(new Callback<PutTellersTellerIdCashiersCashierIdResponse>() {
+    @Override
+    public void onResponse(Call<PutTellersTellerIdCashiersCashierIdResponse> call, Response<PutTellersTellerIdCashiersCashierIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutTellersTellerIdCashiersCashierIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
  **body** | [**PutTellersTellerIdCashiersCashierIdRequest**](PutTellersTellerIdCashiersCashierIdRequest.md)| body |
@@ -893,27 +883,27 @@ Update teller
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
 
+TellerCashManagementApi apiService = defaultClient.createService(TellerCashManagementApi.class);
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-PutTellersRequest body = new PutTellersRequest(); // PutTellersRequest | body
-try {
-    PutTellersResponse result = apiInstance.updateTeller(tellerId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#updateTeller");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutTellersResponse> call = apiService.updateTeller(tellerId, body);
+call.enqueue(new Callback<PutTellersResponse>() {
+    @Override
+    public void onResponse(Call<PutTellersResponse> call, Response<PutTellersResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutTellersResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **body** | [**PutTellersRequest**](PutTellersRequest.md)| body |
 

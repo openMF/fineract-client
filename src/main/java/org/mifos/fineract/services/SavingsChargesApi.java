@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ public interface SavingsChargesApi {
      *
      * @param savingsAccountId savingsAccountId (required)
      * @param body             body (required)
-     * @return Call&lt;PostSavingsAccountsSavingsAccountIdChargesResponse&gt;
+     * @return Observable&lt;PostSavingsAccountsSavingsAccountIdChargesResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("savingsaccounts/{savingsAccountId}/charges")
-    Call<PostSavingsAccountsSavingsAccountIdChargesResponse> addSavingsAccountCharge(
+    Observable<PostSavingsAccountsSavingsAccountIdChargesResponse> addSavingsAccountCharge(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Body PostSavingsAccountsSavingsAccountIdChargesRequest body
     );
 
@@ -29,13 +29,13 @@ public interface SavingsChargesApi {
      *
      * @param savingsAccountId       savingsAccountId (required)
      * @param savingsAccountChargeId savingsAccountChargeId (required)
-     * @return Call&lt;DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+     * @return Observable&lt;DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId}")
-    Call<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> deleteSavingsAccountCharge(
+    Observable<DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> deleteSavingsAccountCharge(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId
     );
 
@@ -47,13 +47,13 @@ public interface SavingsChargesApi {
      * @param savingsAccountChargeId savingsAccountChargeId (required)
      * @param body                   body (required)
      * @param command                command (optional)
-     * @return Call&lt;PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+     * @return Observable&lt;PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId}")
-    Call<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> payOrWaiveSavingsAccountCharge(
+    Observable<PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> payOrWaiveSavingsAccountCharge(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId, @retrofit2.http.Body PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body, @retrofit2.http.Query("command") String command
     );
 
@@ -63,13 +63,13 @@ public interface SavingsChargesApi {
      *
      * @param savingsAccountId savingsAccountId (required)
      * @param chargeStatus     chargeStatus (optional, default to all)
-     * @return Call&lt;List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("savingsaccounts/{savingsAccountId}/charges")
-    Call<List<GetSavingsAccountsSavingsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges(
+    Observable<List<GetSavingsAccountsSavingsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Query("chargeStatus") String chargeStatus
     );
 
@@ -79,13 +79,13 @@ public interface SavingsChargesApi {
      *
      * @param savingsAccountId       savingsAccountId (required)
      * @param savingsAccountChargeId savingsAccountChargeId (required)
-     * @return Call&lt;GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+     * @return Observable&lt;GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId}")
-    Call<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge(
+    Observable<GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId
     );
 
@@ -94,13 +94,13 @@ public interface SavingsChargesApi {
      * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  savingsaccounts/1/charges/template
      *
      * @param savingsAccountId savingsAccountId (required)
-     * @return Call&lt;GetSavingsAccountsSavingsAccountIdChargesTemplateResponse&gt;
+     * @return Observable&lt;GetSavingsAccountsSavingsAccountIdChargesTemplateResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("savingsaccounts/{savingsAccountId}/charges/template")
-    Call<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> retrieveTemplate(
+    Observable<GetSavingsAccountsSavingsAccountIdChargesTemplateResponse> retrieveTemplate(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId
     );
 
@@ -111,13 +111,13 @@ public interface SavingsChargesApi {
      * @param savingsAccountId       savingsAccountId (required)
      * @param savingsAccountChargeId savingsAccountChargeId (required)
      * @param body                   body (required)
-     * @return Call&lt;PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+     * @return Observable&lt;PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId}")
-    Call<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> updateSavingsAccountCharge(
+    Observable<PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse> updateSavingsAccountCharge(
             @retrofit2.http.Path("savingsAccountId") Long savingsAccountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId, @retrofit2.http.Body PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body
     );
 

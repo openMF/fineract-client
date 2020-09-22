@@ -1,6 +1,6 @@
 # FetchAuthenticatedUserDetailsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,26 +17,27 @@ checks the Authentication and returns the set roles and permissions allowed.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FetchAuthenticatedUserDetailsApi;
 
+FetchAuthenticatedUserDetailsApi apiService = defaultClient.createService(FetchAuthenticatedUserDetailsApi.class);
 
-FetchAuthenticatedUserDetailsApi apiInstance = new FetchAuthenticatedUserDetailsApi();
-String accessToken = "accessToken_example"; // String | access_token
-try {
-    GetUserDetailsResponse result = apiInstance.fetchAuthenticatedUserData(accessToken);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FetchAuthenticatedUserDetailsApi#fetchAuthenticatedUserData");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetUserDetailsResponse> call = apiService.fetchAuthenticatedUserData(accessToken);
+call.enqueue(new Callback<GetUserDetailsResponse>() {
+    @Override
+    public void onResponse(Call<GetUserDetailsResponse> call, Response<GetUserDetailsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetUserDetailsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| access_token | [optional]
 
 ### Return type

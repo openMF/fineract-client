@@ -20,7 +20,7 @@ public class ProvisioningEntriesApiTest {
 
     /**
      * Create new Provisioning Entries
-     * <p>
+     *
      * Creates a new Provisioning Entries  Mandatory Fields date dateFormat locale Optional Fields createjournalentries
      */
     @Test
@@ -30,10 +30,9 @@ public class ProvisioningEntriesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Recreates Provisioning Entry
-     * <p>
+     *
      * Recreates Provisioning Entry | createjournalentry.
      */
     @Test
@@ -73,10 +72,9 @@ public class ProvisioningEntriesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieves a Provisioning Entry
-     * <p>
+     *
      * Returns the details of a generated Provisioning Entry.
      */
     @Test

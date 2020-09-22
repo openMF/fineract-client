@@ -1,6 +1,6 @@
 # SavingsProductApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,26 +22,27 @@ Creates a Savings Product  Mandatory Fields: name, shortName, description, curre
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-PostSavingsProductsRequest body = new PostSavingsProductsRequest(); // PostSavingsProductsRequest | body
-try {
-    PostSavingsProductsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#create");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostSavingsProductsResponse> call = apiService.create(body);
+call.enqueue(new Callback<PostSavingsProductsResponse>() {
+    @Override
+    public void onResponse(Call<PostSavingsProductsResponse> call, Response<PostSavingsProductsResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostSavingsProductsResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostSavingsProductsRequest**](PostSavingsProductsRequest.md)| body |
 
 ### Return type
@@ -67,26 +68,27 @@ Deletes a Savings Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-try {
-    DeleteSavingsProductsProductIdResponse result = apiInstance.delete(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#delete");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteSavingsProductsProductIdResponse> call = apiService.delete(productId);
+call.enqueue(new Callback<DeleteSavingsProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<DeleteSavingsProductsProductIdResponse> call, Response<DeleteSavingsProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteSavingsProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -112,19 +114,23 @@ Lists Savings Products  Example Requests:  savingsproducts  savingsproducts?fiel
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-try {
-    List<GetSavingsProductsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveAll");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetSavingsProductsResponse&gt;> call = apiService.retrieveAll();
+call.enqueue(new Callback<List&lt;GetSavingsProductsResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetSavingsProductsResponse&gt;> call, Response<List&lt;GetSavingsProductsResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetSavingsProductsResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -153,26 +159,27 @@ Retrieves a Savings Product  Example Requests:  savingsproducts/1  savingsproduc
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-try {
-    GetSavingsProductsProductIdResponse result = apiInstance.retrieveOne(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveOne");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSavingsProductsProductIdResponse> call = apiService.retrieveOne(productId);
+call.enqueue(new Callback<GetSavingsProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<GetSavingsProductsProductIdResponse> call, Response<GetSavingsProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSavingsProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
 
 ### Return type
@@ -198,19 +205,23 @@ This is a convenience resource. It can be useful when building maintenance user 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-try {
-    GetSavingsProductsTemplateResponse result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetSavingsProductsTemplateResponse> call = apiService.retrieveTemplate();
+call.enqueue(new Callback<GetSavingsProductsTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetSavingsProductsTemplateResponse> call, Response<GetSavingsProductsTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetSavingsProductsTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -239,27 +250,27 @@ Updates a Savings Product
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
 
+SavingsProductApi apiService = defaultClient.createService(SavingsProductApi.class);
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-PutSavingsProductsProductIdRequest body = new PutSavingsProductsProductIdRequest(); // PutSavingsProductsProductIdRequest | body
-try {
-    PutSavingsProductsProductIdResponse result = apiInstance.update(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#update");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutSavingsProductsProductIdResponse> call = apiService.update(productId, body);
+call.enqueue(new Callback<PutSavingsProductsProductIdResponse>() {
+    @Override
+    public void onResponse(Call<PutSavingsProductsProductIdResponse> call, Response<PutSavingsProductsProductIdResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutSavingsProductsProductIdResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
  **body** | [**PutSavingsProductsProductIdRequest**](PutSavingsProductsProductIdRequest.md)| body |
 

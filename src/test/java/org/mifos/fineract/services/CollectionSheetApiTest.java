@@ -19,7 +19,7 @@ public class CollectionSheetApiTest {
 
     /**
      * Generate Individual Collection Sheet | Save Collection Sheet
-     * <p>
+     *
      * Generate Individual Collection Sheet:  This Api retrieves repayment details of all individual loans under a office as on a specified meeting date.  Save Collection Sheet:  This Api allows the loan officer to perform bulk repayments of individual loans and deposit of mandatory savings on a given meeting date.
      */
     @Test

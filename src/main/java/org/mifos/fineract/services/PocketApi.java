@@ -2,10 +2,10 @@ package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.GetAccountsLinkedToPocketResponse;
 import org.mifos.fineract.models.PostLinkDelinkAccountsToFromPocketResponse;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import rx.Observable;
 
 public interface PocketApi {
     /**
@@ -14,13 +14,13 @@ public interface PocketApi {
      *
      * @param command command (optional)
      * @param body    (optional)
-     * @return Call&lt;PostLinkDelinkAccountsToFromPocketResponse&gt;
+     * @return Observable&lt;PostLinkDelinkAccountsToFromPocketResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("self/pockets")
-    Call<PostLinkDelinkAccountsToFromPocketResponse> handleCommands(
+    Observable<PostLinkDelinkAccountsToFromPocketResponse> handleCommands(
             @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
     );
 
@@ -28,13 +28,13 @@ public interface PocketApi {
      * Retrieve accounts linked to pocket
      * All linked loan  Example Requests:   self/pockets
      *
-     * @return Call&lt;GetAccountsLinkedToPocketResponse&gt;
+     * @return Observable&lt;GetAccountsLinkedToPocketResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("self/pockets")
-    Call<GetAccountsLinkedToPocketResponse> retrieveAll();
+    Observable<GetAccountsLinkedToPocketResponse> retrieveAll();
 
 
 }

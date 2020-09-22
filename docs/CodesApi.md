@@ -1,6 +1,6 @@
 # CodesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,27 @@ Creates a code. Codes created through api are always &#39;user defined&#39; and 
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodesApi;
 
+CodesApi apiService = defaultClient.createService(CodesApi.class);
 
-CodesApi apiInstance = new CodesApi();
-PostCodesRequest body = new PostCodesRequest(); // PostCodesRequest | body
-try {
-    PostCodesResponse result = apiInstance.createCode(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodesApi#createCode");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PostCodesResponse> call = apiService.createCode(body);
+call.enqueue(new Callback<PostCodesResponse>() {
+    @Override
+    public void onResponse(Call<PostCodesResponse> call, Response<PostCodesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PostCodesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **body** | [**PostCodesRequest**](PostCodesRequest.md)| body |
 
 ### Return type
@@ -66,26 +67,27 @@ Deletes a code if it is not system defined.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodesApi;
 
+CodesApi apiService = defaultClient.createService(CodesApi.class);
 
-CodesApi apiInstance = new CodesApi();
-Long codeId = 789L; // Long | codeId
-try {
-    DeleteCodesResponse result = apiInstance.deleteCode(codeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodesApi#deleteCode");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<DeleteCodesResponse> call = apiService.deleteCode(codeId);
+call.enqueue(new Callback<DeleteCodesResponse>() {
+    @Override
+    public void onResponse(Call<DeleteCodesResponse> call, Response<DeleteCodesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<DeleteCodesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
 
 ### Return type
@@ -111,26 +113,27 @@ Returns the details of a Code.  Example Requests:  codes/1
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodesApi;
 
+CodesApi apiService = defaultClient.createService(CodesApi.class);
 
-CodesApi apiInstance = new CodesApi();
-Long codeId = 789L; // Long | codeId
-try {
-    GetCodesResponse result = apiInstance.retrieveCode(codeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodesApi#retrieveCode");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetCodesResponse> call = apiService.retrieveCode(codeId);
+call.enqueue(new Callback<GetCodesResponse>() {
+    @Override
+    public void onResponse(Call<GetCodesResponse> call, Response<GetCodesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetCodesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
 
 ### Return type
@@ -156,19 +159,23 @@ Returns the list of codes.  Example Requests:  codes
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodesApi;
 
+CodesApi apiService = defaultClient.createService(CodesApi.class);
 
-CodesApi apiInstance = new CodesApi();
-try {
-    List<GetCodesResponse> result = apiInstance.retrieveCodes();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodesApi#retrieveCodes");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetCodesResponse&gt;> call = apiService.retrieveCodes();
+call.enqueue(new Callback<List&lt;GetCodesResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetCodesResponse&gt;> call, Response<List&lt;GetCodesResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetCodesResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
@@ -197,27 +204,27 @@ Updates the details of a code if it is not system defined.
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.CodesApi;
 
+CodesApi apiService = defaultClient.createService(CodesApi.class);
 
-CodesApi apiInstance = new CodesApi();
-Long codeId = 789L; // Long | codeId
-PutCodesRequest body = new PutCodesRequest(); // PutCodesRequest | body
-try {
-    PutCodesResponse result = apiInstance.updateCode(codeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CodesApi#updateCode");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<PutCodesResponse> call = apiService.updateCode(codeId, body);
+call.enqueue(new Callback<PutCodesResponse>() {
+    @Override
+    public void onResponse(Call<PutCodesResponse> call, Response<PutCodesResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<PutCodesResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **codeId** | **Long**| codeId |
  **body** | [**PutCodesRequest**](PutCodesRequest.md)| body |
 

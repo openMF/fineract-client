@@ -21,7 +21,7 @@ public class RolesApiTest {
 
     /**
      * Enable Role | Disable Role
-     * <p>
+     *
      * Description : Enable role in case role is disabled. | Disable the role in case role is not associated with any users.      Example Request:   https://DomainName/api/v1/roles/{roleId}?command&#x3D;enable      https://DomainName/api/v1/roles/{roleId}?command&#x3D;disable
      */
     @Test
@@ -32,10 +32,9 @@ public class RolesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Create a New Role
-     * <p>
+     *
      * Mandatory Fields name, description
      */
     @Test
@@ -45,10 +44,9 @@ public class RolesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Delete a Role
-     * <p>
+     *
      * Description : Delete the role in case role is not associated with any users.
      */
     @Test
@@ -58,10 +56,9 @@ public class RolesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * List Roles
-     * <p>
+     *
      * Example Requests:  roles   roles?fields&#x3D;name
      */
     @Test
@@ -70,10 +67,9 @@ public class RolesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Role
-     * <p>
+     *
      * Example Requests:  roles/1   roles/1?fields&#x3D;name
      */
     @Test
@@ -83,10 +79,9 @@ public class RolesApiTest {
 
         // TODO: test validations
     }
-
     /**
      * Retrieve a Role&#39;s Permissions
-     * <p>
+     *
      * Example Requests:  roles/1/permissions
      */
     @Test

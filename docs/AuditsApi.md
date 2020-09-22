@@ -1,6 +1,6 @@
 # AuditsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://demo.mifos.io/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,45 +19,27 @@ Get a 200 list of audits that match the criteria supplied and sorted by audit id
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AuditsApi;
 
+AuditsApi apiService = defaultClient.createService(AuditsApi.class);
 
-AuditsApi apiInstance = new AuditsApi();
-String actionName = "actionName_example"; // String | actionName
-String entityName = "entityName_example"; // String | entityName
-Long resourceId = 789L; // Long | resourceId
-Long makerId = 789L; // Long | makerId
-String makerDateTimeFrom = "makerDateTimeFrom_example"; // String | makerDateTimeFrom
-String makerDateTimeTo = "makerDateTimeTo_example"; // String | makerDateTimeTo
-Long checkerId = 789L; // Long | checkerId
-String checkerDateTimeFrom = "checkerDateTimeFrom_example"; // String | checkerDateTimeFrom
-String checkerDateTimeTo = "checkerDateTimeTo_example"; // String | checkerDateTimeTo
-Integer processingResult = 56; // Integer | processingResult
-Integer officeId = 56; // Integer | officeId
-Integer groupId = 56; // Integer | groupId
-Integer clientId = 56; // Integer | clientId
-Integer loanid = 56; // Integer | loanid
-Integer savingsAccountId = 56; // Integer | savingsAccountId
-Boolean paged = true; // Boolean | paged
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetMakerCheckerResponse> result = apiInstance.retrieveAuditEntries(actionName, entityName, resourceId, makerId, makerDateTimeFrom, makerDateTimeTo, checkerId, checkerDateTimeFrom, checkerDateTimeTo, processingResult, officeId, groupId, clientId, loanid, savingsAccountId, paged, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuditsApi#retrieveAuditEntries");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<List&lt;GetMakerCheckerResponse&gt;> call = apiService.retrieveAuditEntries(actionName, entityName, resourceId, makerId, makerDateTimeFrom, makerDateTimeTo, checkerId, checkerDateTimeFrom, checkerDateTimeTo, processingResult, officeId, groupId, clientId, loanid, savingsAccountId, paged, offset, limit, orderBy, sortOrder);
+call.enqueue(new Callback<List&lt;GetMakerCheckerResponse&gt;>() {
+    @Override
+    public void onResponse(Call<List&lt;GetMakerCheckerResponse&gt;> call, Response<List&lt;GetMakerCheckerResponse&gt;> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<List&lt;GetMakerCheckerResponse&gt;> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **actionName** | **String**| actionName | [optional]
  **entityName** | **String**| entityName | [optional]
  **resourceId** | **Long**| resourceId | [optional]
@@ -102,26 +84,27 @@ Example Requests:  audits/20 audits/20?fields&#x3D;madeOnDate,maker,processingRe
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AuditsApi;
 
+AuditsApi apiService = defaultClient.createService(AuditsApi.class);
 
-AuditsApi apiInstance = new AuditsApi();
-Long auditId = 789L; // Long | auditId
-try {
-    GetMakerCheckerResponse result = apiInstance.retrieveAuditEntry(auditId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuditsApi#retrieveAuditEntry");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetMakerCheckerResponse> call = apiService.retrieveAuditEntry(auditId);
+call.enqueue(new Callback<GetMakerCheckerResponse>() {
+    @Override
+    public void onResponse(Call<GetMakerCheckerResponse> call, Response<GetMakerCheckerResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetMakerCheckerResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **auditId** | **Long**| auditId |
 
 ### Return type
@@ -147,19 +130,23 @@ This is a convenience resource. It can be useful when building an Audit Search U
 
 ### Example
 ```java
-// Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AuditsApi;
 
+AuditsApi apiService = defaultClient.createService(AuditsApi.class);
 
-AuditsApi apiInstance = new AuditsApi();
-try {
-    GetMakerCheckersSearchTemplateResponse result = apiInstance.retrieveAuditSearchTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuditsApi#retrieveAuditSearchTemplate");
-    e.printStackTrace();
-}
+// Initialize these parameters earlier.
+Call<GetMakerCheckersSearchTemplateResponse> call = apiService.retrieveAuditSearchTemplate();
+call.enqueue(new Callback<GetMakerCheckersSearchTemplateResponse>() {
+    @Override
+    public void onResponse(Call<GetMakerCheckersSearchTemplateResponse> call, Response<GetMakerCheckersSearchTemplateResponse> response) {
+        System.out.println(call.toString() + "\n" + response.toString());
+    }
+
+    @Override
+    public void onFailure(Call<GetMakerCheckersSearchTemplateResponse> call, Throwable t) {
+        System.out.println(t.getMessage());
+    }
+});
+
 ```
 
 ### Parameters

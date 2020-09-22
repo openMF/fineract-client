@@ -18,7 +18,7 @@ public class SelfAuthenticationApiTest {
 
     /**
      * Verify authentication
-     * <p>
+     *
      * Authenticates the credentials provided and returns the set roles and permissions allowed.  Please visit this link for more info - https://demo.openmf.org/api-docs/apiLive.htm#selfbasicauth
      */
     @Test

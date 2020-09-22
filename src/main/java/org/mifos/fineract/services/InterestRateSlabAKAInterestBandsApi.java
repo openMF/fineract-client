@@ -1,8 +1,8 @@
 package org.mifos.fineract.services;
 
 import org.mifos.fineract.models.*;
-import retrofit2.Call;
 import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ public interface InterestRateSlabAKAInterestBandsApi {
      *
      * @param chartId chartId (required)
      * @param body    body (required)
-     * @return Call&lt;PostInterestRateChartsChartIdChartSlabsResponse&gt;
+     * @return Observable&lt;PostInterestRateChartsChartIdChartSlabsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @POST("interestratecharts/{chartId}/chartslabs")
-    Call<PostInterestRateChartsChartIdChartSlabsResponse> create(
+    Observable<PostInterestRateChartsChartIdChartSlabsResponse> create(
             @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Body PostInterestRateChartsChartIdChartSlabsRequest body
     );
 
@@ -29,13 +29,13 @@ public interface InterestRateSlabAKAInterestBandsApi {
      *
      * @param chartId     chartId (required)
      * @param chartSlabId chartSlabId (required)
-     * @return Call&lt;DeleteInterestRateChartsChartIdChartSlabsResponse&gt;
+     * @return Observable&lt;DeleteInterestRateChartsChartIdChartSlabsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("interestratecharts/{chartId}/chartslabs/{chartSlabId}")
-    Call<DeleteInterestRateChartsChartIdChartSlabsResponse> delete(
+    Observable<DeleteInterestRateChartsChartIdChartSlabsResponse> delete(
             @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Path("chartSlabId") Long chartSlabId
     );
 
@@ -44,13 +44,13 @@ public interface InterestRateSlabAKAInterestBandsApi {
      * Retrieve list of slabs associated with a chart  Example Requests:  interestratecharts/1/chartslabs
      *
      * @param chartId chartId (required)
-     * @return Call&lt;List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;&gt;
+     * @return Observable&lt;List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts/{chartId}/chartslabs")
-    Call<List<GetInterestRateChartsChartIdChartSlabsResponse>> retrieveAll(
+    Observable<List<GetInterestRateChartsChartIdChartSlabsResponse>> retrieveAll(
             @retrofit2.http.Path("chartId") Long chartId
     );
 
@@ -60,24 +60,24 @@ public interface InterestRateSlabAKAInterestBandsApi {
      *
      * @param chartId     chartId (required)
      * @param chartSlabId chartSlabId (required)
-     * @return Call&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;
+     * @return Observable&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts/{chartId}/chartslabs/{chartSlabId}")
-    Call<GetInterestRateChartsChartIdChartSlabsResponse> retrieveOne(
+    Observable<GetInterestRateChartsChartIdChartSlabsResponse> retrieveOne(
             @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Path("chartSlabId") Long chartSlabId
     );
 
     /**
-     * @return Call&lt;String&gt;
+     * @return Observable&lt;String&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @GET("interestratecharts/{chartId}/chartslabs/template")
-    Call<String> template();
+    Observable<String> template();
 
 
     /**
@@ -87,13 +87,13 @@ public interface InterestRateSlabAKAInterestBandsApi {
      * @param chartId     chartId (required)
      * @param chartSlabId chartSlabId (required)
      * @param body        body (required)
-     * @return Call&lt;PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse&gt;
+     * @return Observable&lt;PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse&gt;
      */
     @Headers({
             "Content-Type:application/json"
     })
     @PUT("interestratecharts/{chartId}/chartslabs/{chartSlabId}")
-    Call<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> update(
+    Observable<PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse> update(
             @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Path("chartSlabId") Long chartSlabId, @retrofit2.http.Body PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest body
     );
 
