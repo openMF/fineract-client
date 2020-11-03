@@ -99,7 +99,7 @@ ext {
     swagger_annotations_version = "1.6.2"
     junit_version = "4.13"
     jodatime_version = "2.10.6"
-    json_fire_version = "1.8.4"
+    json_fire_version = "1.8.5"
 }
 
 dependencies {

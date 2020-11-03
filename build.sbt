@@ -15,7 +15,7 @@ lazy val root = (project in file(".")).
       "io.swagger" % "swagger-annotations" % "1.6.2" % "compile",
       "org.apache.oltu.oauth2" % "org.apache.oltu.oauth2.client" % "1.0.1" % "compile",
       "joda-time" % "joda-time" % "2.10.6" % "compile",
-      "io.gsonfire" % "gson-fire" % "1.8.4" % "compile",
+      "io.gsonfire" % "gson-fire" % "1.8.5" % "compile",
       "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.11" % "test"
     )
