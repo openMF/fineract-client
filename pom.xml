@@ -249,7 +249,7 @@
         <gson-fire-version>1.8.4</gson-fire-version>
         <swagger-core-version>1.6.2</swagger-core-version>
         <retrofit-version>2.9.0</retrofit-version>
-        <jodatime-version>2.10.6</jodatime-version>
+        <jodatime-version>2.10.10</jodatime-version>
         <oltu-version>1.0.1</oltu-version>
         <junit-version>4.13</junit-version>
     </properties>
