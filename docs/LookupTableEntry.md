@@ -1,7 +1,9 @@
 
+
 # LookupTableEntry
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **valueFrom** | **Integer** |  |  [optional]

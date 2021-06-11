@@ -1,7 +1,9 @@
 
+
 # GetGroupsGroupIdTimeline
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activatedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]

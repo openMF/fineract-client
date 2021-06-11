@@ -1,6 +1,6 @@
 # FundsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,37 +10,64 @@ Method | HTTP request | Description
 [**updateFund**](FundsApi.md#updateFund) | **PUT** funds/{fundId} | Update a Fund
 
 
-<a name="createFund"></a>
-# **createFund**
-> PostFundsResponse createFund(body)
+
+## createFund
+
+> PostFundsResponse createFund(postFundsRequest)
 
 Create a Fund
 
 Creates a Fund
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.FundsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-FundsApi apiInstance = new FundsApi();
-PostFundsRequest body = new PostFundsRequest(); // PostFundsRequest | body
-try {
-    PostFundsResponse result = apiInstance.createFund(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#createFund");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        FundsApi apiInstance = new FundsApi(defaultClient);
+        PostFundsRequest postFundsRequest = new PostFundsRequest(); // PostFundsRequest | 
+        try {
+            PostFundsResponse result = apiInstance.createFund(postFundsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FundsApi#createFund");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostFundsRequest**](PostFundsRequest.md)| body |
+ **postFundsRequest** | [**PostFundsRequest**](PostFundsRequest.md)|  |
 
 ### Return type
 
@@ -48,15 +75,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="retreiveFund"></a>
-# **retreiveFund**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retreiveFund
+
 > GetFundsResponse retreiveFund(fundId)
 
 Retrieve a Fund
@@ -64,24 +97,50 @@ Retrieve a Fund
 Returns the details of a Fund.  Example Requests:  funds/1
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.FundsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-FundsApi apiInstance = new FundsApi();
-Long fundId = 789L; // Long | fundId
-try {
-    GetFundsResponse result = apiInstance.retreiveFund(fundId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#retreiveFund");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        FundsApi apiInstance = new FundsApi(defaultClient);
+        Long fundId = 56L; // Long | fundId
+        try {
+            GetFundsResponse result = apiInstance.retreiveFund(fundId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FundsApi#retreiveFund");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -93,15 +152,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveFunds"></a>
-# **retrieveFunds**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveFunds
+
 > List&lt;GetFundsResponse&gt; retrieveFunds()
 
 Retrieve Funds
@@ -109,23 +174,49 @@ Retrieve Funds
 Returns the list of funds.  Example Requests:  funds
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.FundsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-FundsApi apiInstance = new FundsApi();
-try {
-    List<GetFundsResponse> result = apiInstance.retrieveFunds();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#retrieveFunds");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        FundsApi apiInstance = new FundsApi(defaultClient);
+        try {
+            List<GetFundsResponse> result = apiInstance.retrieveFunds();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FundsApi#retrieveFunds");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -134,46 +225,78 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateFund"></a>
-# **updateFund**
-> PutFundsFundIdResponse updateFund(fundId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateFund
+
+> PutFundsFundIdResponse updateFund(fundId, putFundsFundIdRequest)
 
 Update a Fund
 
 Updates the details of a fund.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.FundsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.FundsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-FundsApi apiInstance = new FundsApi();
-Long fundId = 789L; // Long | fundId
-PutFundsFundIdRequest body = new PutFundsFundIdRequest(); // PutFundsFundIdRequest | body
-try {
-    PutFundsFundIdResponse result = apiInstance.updateFund(fundId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FundsApi#updateFund");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        FundsApi apiInstance = new FundsApi(defaultClient);
+        Long fundId = 56L; // Long | fundId
+        PutFundsFundIdRequest putFundsFundIdRequest = new PutFundsFundIdRequest(); // PutFundsFundIdRequest | 
+        try {
+            PutFundsFundIdResponse result = apiInstance.updateFund(fundId, putFundsFundIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FundsApi#updateFund");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fundId** | **Long**| fundId |
- **body** | [**PutFundsFundIdRequest**](PutFundsFundIdRequest.md)| body |
+ **putFundsFundIdRequest** | [**PutFundsFundIdRequest**](PutFundsFundIdRequest.md)|  |
 
 ### Return type
 
@@ -181,10 +304,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

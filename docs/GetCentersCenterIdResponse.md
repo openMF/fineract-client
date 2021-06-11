@@ -1,7 +1,10 @@
 
+
 # GetCentersCenterIdResponse
 
+GetCentersCenterIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

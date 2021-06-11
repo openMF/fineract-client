@@ -1,7 +1,10 @@
 
+
 # PostRepostRequest
 
+PostRepostRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reportName** | **String** |  |  [optional]
@@ -10,7 +13,7 @@ Name | Type | Description | Notes
 **reportCategory** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **reportSql** | **String** |  |  [optional]
-**reportParameters** | [**List&lt;ReportParameterData&gt;**](ReportParameterData.md) |  |  [optional]
+**reportParameters** | **List&lt;Object&gt;** |  |  [optional]
 
 
 

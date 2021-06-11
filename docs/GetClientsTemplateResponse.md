@@ -1,7 +1,10 @@
 
+
 # GetClientsTemplateResponse
 
+GetClientsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activationDate** | [**LocalDate**](LocalDate.md) |  |  [optional]

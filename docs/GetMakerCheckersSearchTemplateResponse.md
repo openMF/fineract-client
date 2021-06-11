@@ -1,7 +1,10 @@
 
+
 # GetMakerCheckersSearchTemplateResponse
 
+GetMakerCheckersSearchTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appUsers** | [**List&lt;AppUserData&gt;**](AppUserData.md) |  |  [optional]

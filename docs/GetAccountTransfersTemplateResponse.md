@@ -1,7 +1,10 @@
 
+
 # GetAccountTransfersTemplateResponse
 
+GetAccountTransfersTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transferAmount** | **Long** |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # GetSearchResponse
 
+GetSearchResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entityId** | **Long** |  |  [optional]

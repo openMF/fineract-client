@@ -1,7 +1,10 @@
 
+
 # GetResourceTypeResourceIdNotesNoteIdResponse
 
+GetResourceTypeResourceIdNotesNoteIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -10,10 +13,10 @@ Name | Type | Description | Notes
 **note** | **String** |  |  [optional]
 **createdById** | **Integer** |  |  [optional]
 **createdByUsername** | **String** |  |  [optional]
-**createdOn** | [**DateTime**](DateTime.md) |  |  [optional]
+**createdOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updatedById** | **Integer** |  |  [optional]
 **updatedByUsername** | **String** |  |  [optional]
-**updatedOn** | [**DateTime**](DateTime.md) |  |  [optional]
+**updatedOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 
 

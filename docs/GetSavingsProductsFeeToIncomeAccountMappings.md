@@ -1,7 +1,9 @@
 
+
 # GetSavingsProductsFeeToIncomeAccountMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **charge** | [**GetSavingsProductsFeeToIncomeAccountMappingsCharge**](GetSavingsProductsFeeToIncomeAccountMappingsCharge.md) |  |  [optional]

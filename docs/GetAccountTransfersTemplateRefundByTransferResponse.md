@@ -1,7 +1,10 @@
 
+
 # GetAccountTransfersTemplateRefundByTransferResponse
 
+GetAccountTransfersTemplateRefundByTransferResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**GetAccountTransfersTemplateRefundByTransferCurrency**](GetAccountTransfersTemplateRefundByTransferCurrency.md) |  |  [optional]

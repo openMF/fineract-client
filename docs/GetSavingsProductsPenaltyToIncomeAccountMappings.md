@@ -1,7 +1,9 @@
 
+
 # GetSavingsProductsPenaltyToIncomeAccountMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **charge** | [**GetSavingsProductsPenaltyToIncomeAccountMappingsCharge**](GetSavingsProductsPenaltyToIncomeAccountMappingsCharge.md) |  |  [optional]

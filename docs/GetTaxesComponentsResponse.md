@@ -1,7 +1,10 @@
 
+
 # GetTaxesComponentsResponse
 
+GetTaxesComponentsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -10,7 +13,7 @@ Name | Type | Description | Notes
 **creditAccountType** | [**GetTaxesComponentsCreditAccountType**](GetTaxesComponentsCreditAccountType.md) |  |  [optional]
 **creditAccount** | [**GetTaxesComponentsCreditAccount**](GetTaxesComponentsCreditAccount.md) |  |  [optional]
 **startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**taxComponentsHistories** | [**List&lt;GetTaxesComponentsHistories&gt;**](GetTaxesComponentsHistories.md) |  |  [optional]
+**taxComponentsHistories** | **List&lt;Object&gt;** |  |  [optional]
 
 
 

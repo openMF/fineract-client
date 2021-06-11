@@ -1,7 +1,9 @@
 
+
 # GetProductsAccountingMappingOptions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **liabilityAccountOptions** | [**List&lt;GetProductsLiabilityAccountOptions&gt;**](GetProductsLiabilityAccountOptions.md) |  |  [optional]

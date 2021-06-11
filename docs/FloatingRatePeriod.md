@@ -1,19 +1,21 @@
 
+
 # FloatingRatePeriod
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
-**fromDate** | [**DateTime**](DateTime.md) |  |  [optional]
+**fromDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **interestRate** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
 **modifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdOn** | [**DateTime**](DateTime.md) |  |  [optional]
-**modifiedOn** | [**DateTime**](DateTime.md) |  |  [optional]
+**createdOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**modifiedOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**active** | **Boolean** |  |  [optional]
 **differentialToBaseLendingRate** | **Boolean** |  |  [optional]
 **floatingRatesId** | [**FloatingRate**](FloatingRate.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

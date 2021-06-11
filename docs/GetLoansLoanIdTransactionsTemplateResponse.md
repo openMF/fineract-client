@@ -1,7 +1,10 @@
 
+
 # GetLoansLoanIdTransactionsTemplateResponse
 
+GetLoansLoanIdTransactionsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactionType** | [**GetLoansTransactionType**](GetLoansTransactionType.md) |  |  [optional]

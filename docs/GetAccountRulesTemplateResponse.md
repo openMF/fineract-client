@@ -1,7 +1,10 @@
 
+
 # GetAccountRulesTemplateResponse
 
+GetAccountRulesTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **systemDefined** | **Boolean** |  |  [optional]

@@ -1,7 +1,9 @@
 
+
 # GetAccountTransfersTemplateRefundByTransferFromClient
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -12,13 +14,13 @@ Name | Type | Description | Notes
 **firstname** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **displayName** | **String** |  |  [optional]
-**gender** | [**GetAccountTransfersGender**](GetAccountTransfersGender.md) |  |  [optional]
-**clientType** | [**GetAccountTransfersClientType**](GetAccountTransfersClientType.md) |  |  [optional]
-**clientClassification** | [**GetAccountTransfersClientClassification**](GetAccountTransfersClientClassification.md) |  |  [optional]
+**gender** | [**Object**](.md) |  |  [optional]
+**clientType** | [**Object**](.md) |  |  [optional]
+**clientClassification** | [**Object**](.md) |  |  [optional]
 **officeId** | **Integer** |  |  [optional]
 **officeName** | **String** |  |  [optional]
 **timeline** | [**GetAccountTransfersTimeline**](GetAccountTransfersTimeline.md) |  |  [optional]
-**groups** | [**GetAccountTransfersGroups**](GetAccountTransfersGroups.md) |  |  [optional]
+**groups** | [**Object**](.md) |  |  [optional]
 
 
 

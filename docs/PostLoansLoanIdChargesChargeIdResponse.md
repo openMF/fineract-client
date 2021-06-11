@@ -1,7 +1,10 @@
 
+
 # PostLoansLoanIdChargesChargeIdResponse
 
+PostLoansLoanIdChargesChargeIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]

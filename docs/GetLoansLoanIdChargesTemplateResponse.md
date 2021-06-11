@@ -1,7 +1,10 @@
 
+
 # GetLoansLoanIdChargesTemplateResponse
 
+GetLoansLoanIdChargesTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amountPaid** | **Float** |  |  [optional]

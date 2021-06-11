@@ -1,7 +1,9 @@
 
+
 # Group
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -9,22 +11,23 @@ Name | Type | Description | Notes
 **staff** | [**Staff**](Staff.md) |  |  [optional]
 **parent** | [**Group**](Group.md) |  |  [optional]
 **groupLevel** | [**GroupLevel**](GroupLevel.md) |  |  [optional]
+**groupMembers** | [**List&lt;Group&gt;**](Group.md) |  |  [optional]
 **clientMembers** | [**List&lt;Client&gt;**](Client.md) |  |  [optional]
 **submittedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **accountNumberRequiresAutoGeneration** | **Boolean** |  |  [optional]
-**notActive** | **Boolean** |  |  [optional]
-**center** | **Boolean** |  |  [optional]
-**group** | **Boolean** |  |  [optional]
-**transferOnHold** | **Boolean** |  |  [optional]
-**transferInProgress** | **Boolean** |  |  [optional]
+**closed** | **Boolean** |  |  [optional]
+**active** | **Boolean** |  |  [optional]
 **activationLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**pending** | **Boolean** |  |  [optional]
+**group** | **Boolean** |  |  [optional]
+**notActive** | **Boolean** |  |  [optional]
+**transferInProgress** | **Boolean** |  |  [optional]
+**transferOnHold** | **Boolean** |  |  [optional]
+**center** | **Boolean** |  |  [optional]
 **notPending** | **Boolean** |  |  [optional]
 **transferInProgressOrOnHold** | **Boolean** |  |  [optional]
 **childGroup** | **Boolean** |  |  [optional]
 **activeClientMembers** | [**List&lt;Client&gt;**](Client.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**pending** | **Boolean** |  |  [optional]
-**closed** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

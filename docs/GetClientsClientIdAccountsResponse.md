@@ -1,7 +1,10 @@
 
+
 # GetClientsClientIdAccountsResponse
 
+GetClientsClientIdAccountsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loanAccounts** | [**List&lt;GetClientsLoanAccounts&gt;**](GetClientsLoanAccounts.md) |  |  [optional]

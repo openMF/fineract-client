@@ -1,10 +1,13 @@
 
+
 # PostStaffRequest
 
+PostStaffRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
+**officeId** | **Long** |  |  [optional]
 **firstname** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **isLoanOfficer** | **Boolean** |  |  [optional]

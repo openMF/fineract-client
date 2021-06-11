@@ -1,7 +1,10 @@
 
+
 # GetSelfClientsClientIdTransactionsTransactionIdResponse
 
+GetSelfClientsClientIdTransactionsTransactionIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

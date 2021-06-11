@@ -1,7 +1,10 @@
 
+
 # GetProvisioningCriteriaCriteriaIdResponse
 
+GetProvisioningCriteriaCriteriaIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **criteriaId** | **Long** |  |  [optional]

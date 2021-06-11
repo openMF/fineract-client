@@ -1,7 +1,10 @@
 
+
 # GetRecurringDepositAccountsAccountIdResponse
 
+GetRecurringDepositAccountsAccountIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

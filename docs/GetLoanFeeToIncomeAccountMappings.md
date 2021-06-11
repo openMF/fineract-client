@@ -1,7 +1,9 @@
 
+
 # GetLoanFeeToIncomeAccountMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **charge** | [**GetLoanCharge**](GetLoanCharge.md) |  |  [optional]

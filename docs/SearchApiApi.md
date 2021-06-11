@@ -1,6 +1,6 @@
 # SearchApiApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,39 +9,64 @@ Method | HTTP request | Description
 [**searchData**](SearchApiApi.md#searchData) | **GET** search | Search Resources
 
 
-<a name="advancedSearch"></a>
-# **advancedSearch**
-> PostAdhocQuerySearchResponse advancedSearch(body2, body)
+
+## advancedSearch
+
+> PostAdhocQuerySearchResponse advancedSearch(postAdhocQuerySearchRequest)
 
 Adhoc query search
 
 AdHocQuery search has more search options, it is a POST request, it uses request body to send search parameters   Mandatory fields:entities  Optional fields:loanStatus, loanProducts, offices, loanDateOption, loanFromDate, loanToDate,  includeOutStandingAmountPercentage, outStandingAmountPercentageCondition,  minOutStandingAmountPercentage and maxOutStandingAmountPercentage OR outStandingAmountPercentage,  includeOutstandingAmount, outstandingAmountCondition,  minOutstandingAmount and maxOutstandingAmount OR outstandingAmount
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SearchApiApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SearchApiApi apiInstance = new SearchApiApi();
-PostAdhocQuerySearchRequest body2 = new PostAdhocQuerySearchRequest(); // PostAdhocQuerySearchRequest | body
-String body = "body_example"; // String | 
-try {
-    PostAdhocQuerySearchResponse result = apiInstance.advancedSearch(body2, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#advancedSearch");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
+        PostAdhocQuerySearchRequest postAdhocQuerySearchRequest = new PostAdhocQuerySearchRequest(); // PostAdhocQuerySearchRequest | 
+        try {
+            PostAdhocQuerySearchResponse result = apiInstance.advancedSearch(postAdhocQuerySearchRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SearchApiApi#advancedSearch");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body2** | [**PostAdhocQuerySearchRequest**](PostAdhocQuerySearchRequest.md)| body |
- **body** | **String**|  | [optional]
+ **postAdhocQuerySearchRequest** | [**PostAdhocQuerySearchRequest**](PostAdhocQuerySearchRequest.md)|  |
 
 ### Return type
 
@@ -49,15 +74,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="retrieveAdHocSearchQueryTemplate"></a>
-# **retrieveAdHocSearchQueryTemplate**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAdHocSearchQueryTemplate
+
 > GetSearchResponse retrieveAdHocSearchQueryTemplate()
 
 Retrive Adhoc Search query template
@@ -65,23 +96,49 @@ Retrive Adhoc Search query template
 Mandatory Fields  search?query&#x3D;000000001 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SearchApiApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SearchApiApi apiInstance = new SearchApiApi();
-try {
-    GetSearchResponse result = apiInstance.retrieveAdHocSearchQueryTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#retrieveAdHocSearchQueryTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
+        try {
+            GetSearchResponse result = apiInstance.retrieveAdHocSearchQueryTemplate();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SearchApiApi#retrieveAdHocSearchQueryTemplate");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -90,15 +147,21 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="searchData"></a>
-# **searchData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## searchData
+
 > GetSearchResponse searchData(query, resource, exactMatch)
 
 Search Resources
@@ -106,26 +169,52 @@ Search Resources
 Example Requests:  search?query&#x3D;000000001   search?query&#x3D;Petra&amp;resource&#x3D;clients,groups   search?query&#x3D;Petra&amp;resource&#x3D;clients,groups&amp;exactMatch&#x3D;true
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SearchApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SearchApiApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SearchApiApi apiInstance = new SearchApiApi();
-String query = "query_example"; // String | query
-String resource = "resource_example"; // String | resource
-Boolean exactMatch = false; // Boolean | exactMatch
-try {
-    GetSearchResponse result = apiInstance.searchData(query, resource, exactMatch);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SearchApiApi#searchData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
+        String query = "query_example"; // String | query
+        String resource = "resource_example"; // String | resource
+        Boolean exactMatch = false; // Boolean | exactMatch
+        try {
+            GetSearchResponse result = apiInstance.searchData(query, resource, exactMatch);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SearchApiApi#searchData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -139,10 +228,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

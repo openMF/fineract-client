@@ -1,7 +1,10 @@
 
+
 # PostLoansLoanIdCollateralsResponse
 
+PostLoansLoanIdCollateralsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loanId** | **Integer** |  |  [optional]

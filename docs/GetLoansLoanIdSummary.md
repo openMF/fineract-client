@@ -1,7 +1,9 @@
 
+
 # GetLoansLoanIdSummary
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**GetLoansLoanIdCurrency**](GetLoansLoanIdCurrency.md) |  |  [optional]
@@ -43,7 +45,7 @@ Name | Type | Description | Notes
 **fixedEmiAmount** | **Float** |  |  [optional]
 **maxOutstandingLoanBalance** | **Long** |  |  [optional]
 **canDisburse** | **Boolean** |  |  [optional]
-**emiAmountVariations** | [**List&lt;GetLoansLoanIdEmiVariations&gt;**](GetLoansLoanIdEmiVariations.md) |  |  [optional]
+**emiAmountVariations** | **List&lt;Object&gt;** |  |  [optional]
 **inArrears** | **Boolean** |  |  [optional]
 **isNPA** | **Boolean** |  |  [optional]
 **overdueCharges** | [**List&lt;GetLoansLoanIdOverdueCharges&gt;**](GetLoansLoanIdOverdueCharges.md) |  |  [optional]

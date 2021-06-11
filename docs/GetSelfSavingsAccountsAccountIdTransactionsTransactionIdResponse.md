@@ -1,7 +1,10 @@
 
+
 # GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse
 
+GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # PutWorkingDaysRequest
 
+PutWorkingDaysRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **recurrence** | **String** |  |  [optional]

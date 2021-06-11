@@ -1,7 +1,10 @@
 
+
 # PostSurveySurveyNameApptableIdRequest
 
+PostSurveySurveyNameApptableIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ppiHouseholdMembersCdQ1Householdmembers** | **Long** |  |  [optional]
@@ -14,8 +17,8 @@ Name | Type | Description | Notes
 **ppiMosquitonetsCdQ8Mosquitonets** | **Long** |  |  [optional]
 **ppiTowelsCdQ9Towels** | **Long** |  |  [optional]
 **ppiFryingpansCdQ10Fryingpans** | **Long** |  |  [optional]
-**date** | [**DateTime**](DateTime.md) |  |  [optional]
-**dateFormat** | [**DateTime**](DateTime.md) |  |  [optional]
+**date** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**dateFormat** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **locale** | **String** |  |  [optional]
 
 

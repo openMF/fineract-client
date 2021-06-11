@@ -1,7 +1,10 @@
 
+
 # PostInterestRateChartsChartIdChartSlabsRequest
 
+PostInterestRateChartsChartIdChartSlabsRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **periodType** | **Integer** |  |  [optional]

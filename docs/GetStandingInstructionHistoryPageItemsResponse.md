@@ -1,7 +1,9 @@
 
+
 # GetStandingInstructionHistoryPageItemsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **standingInstructionId** | **Long** |  |  [optional]

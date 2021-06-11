@@ -1,6 +1,6 @@
 # SchedulerApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**retrieveStatus**](SchedulerApi.md#retrieveStatus) | **GET** scheduler | Retrieve Scheduler Status
 
 
-<a name="changeSchedulerStatus"></a>
-# **changeSchedulerStatus**
+
+## changeSchedulerStatus
+
 > changeSchedulerStatus(command)
 
 Activate Scheduler Jobs | Suspend Scheduler Jobs
@@ -17,23 +18,49 @@ Activate Scheduler Jobs | Suspend Scheduler Jobs
 Activates the scheduler job service. | Suspends the scheduler job service.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SchedulerApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SchedulerApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SchedulerApi apiInstance = new SchedulerApi();
-String command = "command_example"; // String | command
-try {
-    apiInstance.changeSchedulerStatus(command);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchedulerApi#changeSchedulerStatus");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SchedulerApi apiInstance = new SchedulerApi(defaultClient);
+        String command = "command_example"; // String | command
+        try {
+            apiInstance.changeSchedulerStatus(command);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SchedulerApi#changeSchedulerStatus");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -45,15 +72,21 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="retrieveStatus"></a>
-# **retrieveStatus**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | POST :  scheduler?command&#x3D;start   POST : scheduler?command&#x3D;stop |  -  |
+
+
+## retrieveStatus
+
 > GetSchedulerResponse retrieveStatus()
 
 Retrieve Scheduler Status
@@ -61,23 +94,49 @@ Retrieve Scheduler Status
 Returns the scheduler status.  Example Requests:  scheduler
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SchedulerApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SchedulerApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SchedulerApi apiInstance = new SchedulerApi();
-try {
-    GetSchedulerResponse result = apiInstance.retrieveStatus();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SchedulerApi#retrieveStatus");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SchedulerApi apiInstance = new SchedulerApi(defaultClient);
+        try {
+            GetSchedulerResponse result = apiInstance.retrieveStatus();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SchedulerApi#retrieveStatus");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -86,10 +145,15 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

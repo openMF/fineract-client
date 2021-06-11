@@ -1,6 +1,6 @@
 # RolesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,8 +14,9 @@ Method | HTTP request | Description
 [**updateRolePermissions**](RolesApi.md#updateRolePermissions) | **PUT** roles/{roleId}/permissions | Update a Role&#39;s Permissions
 
 
-<a name="actionsOnRoles"></a>
-# **actionsOnRoles**
+
+## actionsOnRoles
+
 > PostRolesRoleIdResponse actionsOnRoles(roleId, command)
 
 Enable Role | Disable Role
@@ -23,25 +24,51 @@ Enable Role | Disable Role
 Description : Enable role in case role is disabled. | Disable the role in case role is not associated with any users.      Example Request:   https://DomainName/api/v1/roles/{roleId}?command&#x3D;enable      https://DomainName/api/v1/roles/{roleId}?command&#x3D;disable
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-String command = "command_example"; // String | command
-try {
-    PostRolesRoleIdResponse result = apiInstance.actionsOnRoles(roleId, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#actionsOnRoles");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        String command = "command_example"; // String | command
+        try {
+            PostRolesRoleIdResponse result = apiInstance.actionsOnRoles(roleId, command);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#actionsOnRoles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,44 +81,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="createRole"></a>
-# **createRole**
-> PostRolesResponse createRole(body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## createRole
+
+> PostRolesResponse createRole(postRolesRequest)
 
 Create a New Role
 
 Mandatory Fields name, description
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-PostRolesRequest body = new PostRolesRequest(); // PostRolesRequest | body
-try {
-    PostRolesResponse result = apiInstance.createRole(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#createRole");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        PostRolesRequest postRolesRequest = new PostRolesRequest(); // PostRolesRequest | 
+        try {
+            PostRolesResponse result = apiInstance.createRole(postRolesRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#createRole");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostRolesRequest**](PostRolesRequest.md)| body |
+ **postRolesRequest** | [**PostRolesRequest**](PostRolesRequest.md)|  |
 
 ### Return type
 
@@ -99,15 +158,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteRole"></a>
-# **deleteRole**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteRole
+
 > DeleteRolesRoleIdResponse deleteRole(roleId)
 
 Delete a Role
@@ -115,24 +180,50 @@ Delete a Role
 Description : Delete the role in case role is not associated with any users.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    DeleteRolesRoleIdResponse result = apiInstance.deleteRole(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#deleteRole");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        try {
+            DeleteRolesRoleIdResponse result = apiInstance.deleteRole(roleId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#deleteRole");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -144,15 +235,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAllRoles"></a>
-# **retrieveAllRoles**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAllRoles
+
 > List&lt;GetRolesResponse&gt; retrieveAllRoles()
 
 List Roles
@@ -160,23 +257,49 @@ List Roles
 Example Requests:  roles   roles?fields&#x3D;name
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-try {
-    List<GetRolesResponse> result = apiInstance.retrieveAllRoles();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveAllRoles");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        try {
+            List<GetRolesResponse> result = apiInstance.retrieveAllRoles();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#retrieveAllRoles");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -185,15 +308,21 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveRole"></a>
-# **retrieveRole**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveRole
+
 > GetRolesRoleIdResponse retrieveRole(roleId)
 
 Retrieve a Role
@@ -201,24 +330,50 @@ Retrieve a Role
 Example Requests:  roles/1   roles/1?fields&#x3D;name
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    GetRolesRoleIdResponse result = apiInstance.retrieveRole(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveRole");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        try {
+            GetRolesRoleIdResponse result = apiInstance.retrieveRole(roleId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#retrieveRole");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -230,15 +385,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveRolePermissions"></a>
-# **retrieveRolePermissions**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveRolePermissions
+
 > GetRolesRoleIdPermissionsResponse retrieveRolePermissions(roleId)
 
 Retrieve a Role&#39;s Permissions
@@ -246,24 +407,50 @@ Retrieve a Role&#39;s Permissions
 Example Requests:  roles/1/permissions
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-try {
-    GetRolesRoleIdPermissionsResponse result = apiInstance.retrieveRolePermissions(roleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#retrieveRolePermissions");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        try {
+            GetRolesRoleIdPermissionsResponse result = apiInstance.retrieveRolePermissions(roleId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#retrieveRolePermissions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -275,46 +462,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateRole"></a>
-# **updateRole**
-> PutRolesRoleIdResponse updateRole(roleId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateRole
+
+> PutRolesRoleIdResponse updateRole(roleId, putRolesRoleIdRequest)
 
 Update a Role
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-PutRolesRoleIdRequest body = new PutRolesRoleIdRequest(); // PutRolesRoleIdRequest | body
-try {
-    PutRolesRoleIdResponse result = apiInstance.updateRole(roleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#updateRole");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        PutRolesRoleIdRequest putRolesRoleIdRequest = new PutRolesRoleIdRequest(); // PutRolesRoleIdRequest | 
+        try {
+            PutRolesRoleIdResponse result = apiInstance.updateRole(roleId, putRolesRoleIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#updateRole");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
- **body** | [**PutRolesRoleIdRequest**](PutRolesRoleIdRequest.md)| body |
+ **putRolesRoleIdRequest** | [**PutRolesRoleIdRequest**](PutRolesRoleIdRequest.md)|  |
 
 ### Return type
 
@@ -322,46 +539,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateRolePermissions"></a>
-# **updateRolePermissions**
-> PutRolesRoleIdPermissionsResponse updateRolePermissions(roleId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateRolePermissions
+
+> PutRolesRoleIdPermissionsResponse updateRolePermissions(roleId, putRolesRoleIdPermissionsRequest)
 
 Update a Role&#39;s Permissions
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.RolesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.RolesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-RolesApi apiInstance = new RolesApi();
-Long roleId = 789L; // Long | roleId
-PutRolesRoleIdPermissionsRequest body = new PutRolesRoleIdPermissionsRequest(); // PutRolesRoleIdPermissionsRequest | body
-try {
-    PutRolesRoleIdPermissionsResponse result = apiInstance.updateRolePermissions(roleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RolesApi#updateRolePermissions");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        RolesApi apiInstance = new RolesApi(defaultClient);
+        Long roleId = 56L; // Long | roleId
+        PutRolesRoleIdPermissionsRequest putRolesRoleIdPermissionsRequest = new PutRolesRoleIdPermissionsRequest(); // PutRolesRoleIdPermissionsRequest | 
+        try {
+            PutRolesRoleIdPermissionsResponse result = apiInstance.updateRolePermissions(roleId, putRolesRoleIdPermissionsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RolesApi#updateRolePermissions");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roleId** | **Long**| roleId |
- **body** | [**PutRolesRoleIdPermissionsRequest**](PutRolesRoleIdPermissionsRequest.md)| body |
+ **putRolesRoleIdPermissionsRequest** | [**PutRolesRoleIdPermissionsRequest**](PutRolesRoleIdPermissionsRequest.md)|  |
 
 ### Return type
 
@@ -369,10 +616,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

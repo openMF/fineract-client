@@ -1,7 +1,10 @@
 
+
 # PutSavingsProductsProductIdRequest
 
+PutSavingsProductsProductIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  |  [optional]

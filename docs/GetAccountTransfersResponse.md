@@ -1,7 +1,10 @@
 
+
 # GetAccountTransfersResponse
 
+GetAccountTransfersResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **totalFilteredRecords** | **Integer** |  |  [optional]

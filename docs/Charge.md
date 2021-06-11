@@ -1,7 +1,9 @@
 
+
 # Charge
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -19,21 +21,21 @@ Name | Type | Description | Notes
 **maxCap** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **account** | [**GLAccount**](GLAccount.md) |  |  [optional]
 **taxGroup** | [**TaxGroup**](TaxGroup.md) |  |  [optional]
+**feeOnMonthDay** | [**ChargeFeeOnMonthDay**](ChargeFeeOnMonthDay.md) |  |  [optional]
 **savingsCharge** | **Boolean** |  |  [optional]
-**feeOnMonthDay** | [**MonthDay**](MonthDay.md) |  |  [optional]
+**allowedSavingsChargeCalculationType** | **Boolean** |  |  [optional]
+**allowedClientChargeCalculationType** | **Boolean** |  |  [optional]
+**percentageOfDisbursementAmount** | **Boolean** |  |  [optional]
 **annualFee** | **Boolean** |  |  [optional]
 **monthlyFee** | **Boolean** |  |  [optional]
-**overdueInstallment** | **Boolean** |  |  [optional]
 **allowedLoanChargeTime** | **Boolean** |  |  [optional]
 **allowedClientChargeTime** | **Boolean** |  |  [optional]
 **allowedSavingsChargeTime** | **Boolean** |  |  [optional]
+**percentageOfApprovedAmount** | **Boolean** |  |  [optional]
+**overdueInstallment** | **Boolean** |  |  [optional]
+**disbursementCharge** | **Boolean** |  |  [optional]
 **loanCharge** | **Boolean** |  |  [optional]
 **clientCharge** | **Boolean** |  |  [optional]
-**allowedSavingsChargeCalculationType** | **Boolean** |  |  [optional]
-**allowedClientChargeCalculationType** | **Boolean** |  |  [optional]
-**percentageOfApprovedAmount** | **Boolean** |  |  [optional]
-**percentageOfDisbursementAmount** | **Boolean** |  |  [optional]
-**disbursementCharge** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

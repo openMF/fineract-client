@@ -1,7 +1,9 @@
 
+
 # GetGroupsTemplateColumnHeaderData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **columnName** | **String** |  |  [optional]
@@ -10,7 +12,7 @@ Name | Type | Description | Notes
 **columnDisplayType** | **String** |  |  [optional]
 **isColumnNullable** | **Boolean** |  |  [optional]
 **isColumnPrimaryKey** | **Boolean** |  |  [optional]
-**columnValues** | [**List&lt;GetGroupsTemplateColumnValues&gt;**](GetGroupsTemplateColumnValues.md) |  |  [optional]
+**columnValues** | **List&lt;Object&gt;** |  |  [optional]
 
 
 

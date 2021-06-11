@@ -1,7 +1,10 @@
 
+
 # GetChargesTemplateResponse
 
+GetChargesTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **String** |  |  [optional]

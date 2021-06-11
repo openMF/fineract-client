@@ -1,7 +1,10 @@
 
+
 # PutTellersTellerIdCashiersCashierIdRequest
 
+PutTellersTellerIdCashiersCashierIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]

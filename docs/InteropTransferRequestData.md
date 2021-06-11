@@ -1,7 +1,9 @@
 
+
 # InteropTransferRequestData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactionCode** | **String** |  | 
@@ -12,7 +14,7 @@ Name | Type | Description | Notes
 **transactionType** | [**InteropTransactionTypeData**](InteropTransactionTypeData.md) |  |  [optional]
 **note** | **String** |  |  [optional]
 **geoCode** | [**GeoCodeData**](GeoCodeData.md) |  |  [optional]
-**expiration** | [**LocalDateTime**](LocalDateTime.md) |  |  [optional]
+**expiration** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **extensionList** | [**List&lt;ExtensionData&gt;**](ExtensionData.md) |  |  [optional]
 **transferCode** | **String** |  | 
 **fspFee** | [**MoneyData**](MoneyData.md) |  |  [optional]
@@ -20,8 +22,9 @@ Name | Type | Description | Notes
 **expirationLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 
 
-<a name="TransactionRoleEnum"></a>
+
 ## Enum: TransactionRoleEnum
+
 Name | Value
 ---- | -----
 PAYER | &quot;PAYER&quot;

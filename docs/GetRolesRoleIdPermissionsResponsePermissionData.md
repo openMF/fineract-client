@@ -1,7 +1,9 @@
 
+
 # GetRolesRoleIdPermissionsResponsePermissionData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **grouping** | **String** |  |  [optional]

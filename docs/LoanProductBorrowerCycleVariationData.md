@@ -1,7 +1,9 @@
 
+
 # LoanProductBorrowerCycleVariationData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **borrowerCycleNumber** | **Integer** |  |  [optional]
@@ -10,8 +12,9 @@ Name | Type | Description | Notes
 **defaultValue** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 
 
-<a name="ParamTypeEnum"></a>
+
 ## Enum: ParamTypeEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;
@@ -20,8 +23,9 @@ INTERESTRATE | &quot;INTERESTRATE&quot;
 REPAYMENT | &quot;REPAYMENT&quot;
 
 
-<a name="ValueConditionTypeEnum"></a>
+
 ## Enum: ValueConditionTypeEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;

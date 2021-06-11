@@ -1,7 +1,9 @@
 
+
 # LoanProductInterestRecalculationData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **interestRecalculationCompoundingType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]

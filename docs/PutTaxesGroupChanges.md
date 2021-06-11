@@ -1,7 +1,9 @@
 
+
 # PutTaxesGroupChanges
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addComponents** | **List&lt;Integer&gt;** |  |  [optional]

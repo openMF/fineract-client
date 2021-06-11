@@ -1,7 +1,10 @@
 
+
 # DeleteClientsClientIdResponse
 
+DeleteClientsClientIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Integer** |  |  [optional]

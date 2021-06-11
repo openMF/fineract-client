@@ -1,7 +1,10 @@
 
+
 # GetOfficesTemplateResponse
 
+GetOfficesTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **openingDate** | [**LocalDate**](LocalDate.md) |  |  [optional]

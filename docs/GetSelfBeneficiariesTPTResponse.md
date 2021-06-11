@@ -1,7 +1,10 @@
 
+
 # GetSelfBeneficiariesTPTResponse
 
+GetSelfBeneficiariesTPTResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

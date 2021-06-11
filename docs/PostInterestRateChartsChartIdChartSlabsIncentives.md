@@ -1,7 +1,9 @@
 
+
 # PostInterestRateChartsChartIdChartSlabsIncentives
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entityType** | **Integer** |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # PutTellersRequest
 
+PutTellersRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  |  [optional]
@@ -14,8 +17,9 @@ Name | Type | Description | Notes
 **dateFormat** | **String** |  |  [optional]
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;

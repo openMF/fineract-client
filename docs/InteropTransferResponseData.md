@@ -1,7 +1,9 @@
 
+
 # InteropTransferResponseData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]
@@ -13,6 +15,8 @@ Name | Type | Description | Notes
 **transactionId** | **String** |  |  [optional]
 **changes** | **Map&lt;String, Object&gt;** |  |  [optional]
 **productId** | **Long** |  |  [optional]
+**gsimId** | **Long** |  |  [optional]
+**glimId** | **Long** |  |  [optional]
 **rollbackTransaction** | **Boolean** |  |  [optional]
 **transactionCode** | **String** |  | 
 **state** | [**StateEnum**](#StateEnum) |  | 
@@ -20,10 +24,12 @@ Name | Type | Description | Notes
 **extensionList** | [**List&lt;ExtensionData&gt;**](ExtensionData.md) |  |  [optional]
 **transferCode** | **String** |  | 
 **completedTimestamp** | **String** |  |  [optional]
+**creditReport** | [**Object**](.md) |  |  [optional]
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
+
 Name | Value
 ---- | -----
 ACCEPTED | &quot;ACCEPTED&quot;

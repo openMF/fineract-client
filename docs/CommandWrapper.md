@@ -1,7 +1,9 @@
 
+
 # CommandWrapper
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **groupId** | **Long** |  |  [optional]
@@ -29,7 +31,6 @@ Name | Type | Description | Notes
 **updateMultiple** | **Boolean** |  |  [optional]
 **registerDatatable** | **Boolean** |  |  [optional]
 **noteResource** | **Boolean** |  |  [optional]
-**update** | **Boolean** |  |  [optional]
 **cacheResource** | **Boolean** |  |  [optional]
 **updateOperation** | **Boolean** |  |  [optional]
 **delete** | **Boolean** |  |  [optional]
@@ -44,6 +45,7 @@ Name | Type | Description | Notes
 **currencyResource** | **Boolean** |  |  [optional]
 **loanDisburseDetailResource** | **Boolean** |  |  [optional]
 **updateDisbursementDate** | **Boolean** |  |  [optional]
+**update** | **Boolean** |  |  [optional]
 
 
 

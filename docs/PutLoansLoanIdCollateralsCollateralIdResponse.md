@@ -1,7 +1,10 @@
 
+
 # PutLoansLoanIdCollateralsCollateralIdResponse
 
+PutLoansLoanIdCollateralsCollateralIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loanId** | **Integer** |  |  [optional]

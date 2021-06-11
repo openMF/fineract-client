@@ -1,7 +1,10 @@
 
+
 # PostLoansRequest
 
+PostLoansRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dateFormat** | **String** |  |  [optional]
@@ -19,6 +22,15 @@ Name | Type | Description | Notes
 **interestCalculationPeriodType** | **Integer** |  |  [optional]
 **expectedDisbursementDate** | **String** |  |  [optional]
 **transactionProcessingStrategyId** | **Integer** |  |  [optional]
+**daysInYearType** | [**DaysInYearTypeEnum**](#DaysInYearTypeEnum) |  |  [optional]
+
+
+
+## Enum: DaysInYearTypeEnum
+
+Name | Value
+---- | -----
+NUMBER_null | null
 
 
 

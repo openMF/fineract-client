@@ -1,7 +1,9 @@
 
+
 # PutLoansLoanIdChanges
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **principal** | **Long** |  |  [optional]

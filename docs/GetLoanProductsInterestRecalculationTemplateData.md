@@ -1,7 +1,9 @@
 
+
 # GetLoanProductsInterestRecalculationTemplateData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **interestRecalculationCompoundingType** | [**GetLoanProductsInterestRecalculationCompoundingType**](GetLoanProductsInterestRecalculationCompoundingType.md) |  |  [optional]

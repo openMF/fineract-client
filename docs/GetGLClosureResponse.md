@@ -1,7 +1,10 @@
 
-# GetGLClosureResponse
 
+# GetGlClosureResponse
+
+GetGLClosureResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]

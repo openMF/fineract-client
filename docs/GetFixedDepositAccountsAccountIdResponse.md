@@ -1,7 +1,10 @@
 
+
 # GetFixedDepositAccountsAccountIdResponse
 
+GetFixedDepositAccountsAccountIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

@@ -1,7 +1,9 @@
 
+
 # GetRecurringDepositProductsProductIdAccountingMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **savingsReferenceAccount** | [**GetRecurringDepositProductsProductIdSavingsReferenceAccount**](GetRecurringDepositProductsProductIdSavingsReferenceAccount.md) |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # GetCentersTemplateResponse
 
+GetCentersTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **Boolean** |  |  [optional]

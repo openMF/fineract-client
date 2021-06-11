@@ -1,7 +1,10 @@
 
+
 # PostAdhocQuerySearchResponse
 
+PostAdhocQuerySearchResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeName** | **String** |  |  [optional]

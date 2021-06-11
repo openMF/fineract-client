@@ -1,38 +1,65 @@
 # PovertyLineApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveAll**](PovertyLineApi.md#retrieveAll) | **GET** povertyLine/{ppiName} | 
-[**retrieveAll_0**](PovertyLineApi.md#retrieveAll_0) | **GET** povertyLine/{ppiName}/{likelihoodId} | 
+[**retrieveAll12**](PovertyLineApi.md#retrieveAll12) | **GET** povertyLine/{ppiName} | 
+[**retrieveAll13**](PovertyLineApi.md#retrieveAll13) | **GET** povertyLine/{ppiName}/{likelihoodId} | 
 
 
-<a name="retrieveAll"></a>
-# **retrieveAll**
-> String retrieveAll(ppiName)
+
+## retrieveAll12
+
+> String retrieveAll12(ppiName)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PovertyLineApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.PovertyLineApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-PovertyLineApi apiInstance = new PovertyLineApi();
-String ppiName = "ppiName_example"; // String | 
-try {
-    String result = apiInstance.retrieveAll(ppiName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PovertyLineApi#retrieveAll");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        PovertyLineApi apiInstance = new PovertyLineApi(defaultClient);
+        String ppiName = "ppiName_example"; // String | 
+        try {
+            String result = apiInstance.retrieveAll12(ppiName);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PovertyLineApi#retrieveAll12");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -44,39 +71,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAll_0"></a>
-# **retrieveAll_0**
-> String retrieveAll_0(ppiName, likelihoodId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## retrieveAll13
+
+> String retrieveAll13(ppiName, likelihoodId)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.PovertyLineApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.PovertyLineApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-PovertyLineApi apiInstance = new PovertyLineApi();
-String ppiName = "ppiName_example"; // String | 
-Long likelihoodId = 789L; // Long | 
-try {
-    String result = apiInstance.retrieveAll_0(ppiName, likelihoodId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PovertyLineApi#retrieveAll_0");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        PovertyLineApi apiInstance = new PovertyLineApi(defaultClient);
+        String ppiName = "ppiName_example"; // String | 
+        Long likelihoodId = 56L; // Long | 
+        try {
+            String result = apiInstance.retrieveAll13(ppiName, likelihoodId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PovertyLineApi#retrieveAll13");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -89,10 +148,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
 

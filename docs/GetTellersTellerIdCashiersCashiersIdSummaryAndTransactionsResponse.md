@@ -1,7 +1,10 @@
 
+
 # GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse
 
+GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sumCashAllocation** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # GetSavingsAccountsAccountIdResponse
 
+GetSavingsAccountsAccountIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # PutHolidaysHolidayIdResponse
 
+PutHolidaysHolidayIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **resourceId** | **Long** |  |  [optional]

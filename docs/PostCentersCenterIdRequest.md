@@ -1,7 +1,10 @@
 
+
 # PostCentersCenterIdRequest
 
+PostCentersCenterIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **closureReasonId** | **Integer** |  |  [optional]

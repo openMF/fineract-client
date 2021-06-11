@@ -1,7 +1,10 @@
 
+
 # PostTellersTellerIdCashiersCashierIdAllocateRequest
 
+PostTellersTellerIdCashiersCashierIdAllocateRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currencyCode** | **String** |  |  [optional]
@@ -9,7 +12,7 @@ Name | Type | Description | Notes
 **txnNote** | **String** |  |  [optional]
 **locale** | **String** |  |  [optional]
 **dateFormat** | **String** |  |  [optional]
-**txnDate** | [**DateTime**](DateTime.md) |  |  [optional]
+**txnDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 
 
