@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface ChargesApi {
    * Create/Define a Charge
    * Define a new charge that can later be associated with loans and savings through their respective product definitions or directly on each account instance.
    * @param postChargesRequest  (required)
-   * @return Call&lt;PostChargesResponse&gt;
+   * @return Observable&lt;PostChargesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("charges")
-  Call<PostChargesResponse> createCharge(
+  Observable<PostChargesResponse> createCharge(
     @retrofit2.http.Body PostChargesRequest postChargesRequest
   );
 
@@ -61,40 +60,40 @@ public interface ChargesApi {
    * Delete a Charge
    * Deletes a Charge.
    * @param chargeId chargeId (required)
-   * @return Call&lt;DeleteChargesChargeIdResponse&gt;
+   * @return Observable&lt;DeleteChargesChargeIdResponse&gt;
    */
   @DELETE("charges/{chargeId}")
-  Call<DeleteChargesChargeIdResponse> deleteCharge(
+  Observable<DeleteChargesChargeIdResponse> deleteCharge(
     @retrofit2.http.Path("chargeId") Long chargeId
   );
 
   /**
    * Retrieve Charges
    * Returns the list of defined charges.  Example Requests:  charges
-   * @return Call&lt;List&lt;GetChargesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetChargesResponse&gt;&gt;
    */
   @GET("charges")
-  Call<List<GetChargesResponse>> retrieveAllCharges();
+  Observable<List<GetChargesResponse>> retrieveAllCharges();
     
 
   /**
    * Retrieve a Charge
    * Returns the details of a defined Charge.  Example Requests:  charges/1
    * @param chargeId chargeId (required)
-   * @return Call&lt;GetChargesResponse&gt;
+   * @return Observable&lt;GetChargesResponse&gt;
    */
   @GET("charges/{chargeId}")
-  Call<GetChargesResponse> retrieveCharge(
+  Observable<GetChargesResponse> retrieveCharge(
     @retrofit2.http.Path("chargeId") Long chargeId
   );
 
   /**
    * Retrieve Charge Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  charges/template 
-   * @return Call&lt;GetChargesTemplateResponse&gt;
+   * @return Observable&lt;GetChargesTemplateResponse&gt;
    */
   @GET("charges/template")
-  Call<GetChargesTemplateResponse> retrieveNewChargeDetails();
+  Observable<GetChargesTemplateResponse> retrieveNewChargeDetails();
     
 
   /**
@@ -102,13 +101,13 @@ public interface ChargesApi {
    * Updates the details of a Charge.
    * @param chargeId chargeId (required)
    * @param putChargesChargeIdRequest  (required)
-   * @return Call&lt;PutChargesChargeIdResponse&gt;
+   * @return Observable&lt;PutChargesChargeIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("charges/{chargeId}")
-  Call<PutChargesChargeIdResponse> updateCharge(
+  Observable<PutChargesChargeIdResponse> updateCharge(
     @retrofit2.http.Path("chargeId") Long chargeId, @retrofit2.http.Body PutChargesChargeIdRequest putChargesChargeIdRequest
   );
 

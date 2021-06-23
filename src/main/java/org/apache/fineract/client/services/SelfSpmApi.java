@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,10 +39,10 @@ public interface SelfSpmApi {
   /**
    * 
    * 
-   * @return Call&lt;List&lt;SurveyData&gt;&gt;
+   * @return Observable&lt;List&lt;SurveyData&gt;&gt;
    */
   @GET("self/surveys")
-  Call<List<SurveyData>> fetchAllSurveys();
+  Observable<List<SurveyData>> fetchAllSurveys();
     
 
 }

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -39,10 +38,10 @@ public interface TwoFactorApi {
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("twofactor")
-  Call<String> getOTPDeliveryMethods();
+  Observable<String> getOTPDeliveryMethods();
     
 
   /**
@@ -50,10 +49,10 @@ public interface TwoFactorApi {
    * 
    * @param deliveryMethod  (optional)
    * @param extendedToken  (optional, default to false)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("twofactor")
-  Call<String> requestToken(
+  Observable<String> requestToken(
     @retrofit2.http.Query("deliveryMethod") String deliveryMethod, @retrofit2.http.Query("extendedToken") Boolean extendedToken
   );
 
@@ -61,10 +60,10 @@ public interface TwoFactorApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("twofactor/invalidate")
-  Call<String> updateConfiguration2(
+  Observable<String> updateConfiguration2(
     @retrofit2.http.Body String body
   );
 
@@ -72,10 +71,10 @@ public interface TwoFactorApi {
    * 
    * 
    * @param token  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("twofactor/validate")
-  Call<String> validate(
+  Observable<String> validate(
     @retrofit2.http.Query("token") String token
   );
 

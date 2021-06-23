@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,13 +39,13 @@ public interface AdhocQueryApiApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("adhocquery")
-  Call<String> createAdHocQuery(
+  Observable<String> createAdHocQuery(
     @retrofit2.http.Body String body
   );
 
@@ -54,10 +53,10 @@ public interface AdhocQueryApiApi {
    * 
    * 
    * @param adHocId adHocId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("adhocquery/{adHocId}")
-  Call<String> deleteAdHocQuery(
+  Observable<String> deleteAdHocQuery(
     @retrofit2.http.Path("adHocId") Long adHocId
   );
 
@@ -65,29 +64,29 @@ public interface AdhocQueryApiApi {
    * 
    * 
    * @param adHocId adHocId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("adhocquery/{adHocId}")
-  Call<String> retrieveAdHocQuery(
+  Observable<String> retrieveAdHocQuery(
     @retrofit2.http.Path("adHocId") Long adHocId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("adhocquery")
-  Call<String> retrieveAll2();
+  Observable<String> retrieveAll2();
     
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("adhocquery/template")
-  Call<String> template();
+  Observable<String> template();
     
 
   /**
@@ -95,13 +94,13 @@ public interface AdhocQueryApiApi {
    * 
    * @param adHocId adHocId (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("adhocquery/{adHocId}")
-  Call<String> update(
+  Observable<String> update(
     @retrofit2.http.Path("adHocId") Long adHocId, @retrofit2.http.Body String body
   );
 

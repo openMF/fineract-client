@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **productId** | **Long** |  |  [optional]
 **creditBureauId** | **Long** |  |  [optional]
 **organisationCreditBureauId** | **Long** |  |  [optional]
+**update** | **Boolean** |  |  [optional]
 **create** | **Boolean** |  |  [optional]
 **createDatatable** | **Boolean** |  |  [optional]
 **deleteDatatable** | **Boolean** |  |  [optional]
@@ -45,7 +46,6 @@ Name | Type | Description | Notes
 **currencyResource** | **Boolean** |  |  [optional]
 **loanDisburseDetailResource** | **Boolean** |  |  [optional]
 **updateDisbursementDate** | **Boolean** |  |  [optional]
-**update** | **Boolean** |  |  [optional]
 
 
 

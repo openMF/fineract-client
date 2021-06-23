@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,10 +40,10 @@ public interface EntityFieldConfigurationApi {
    * Retrieves the Entity Field Configuration
    * It retrieves all the Entity Field Configuration
    * @param entity entity (required)
-   * @return Call&lt;List&lt;GetFieldConfigurationEntityResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetFieldConfigurationEntityResponse&gt;&gt;
    */
   @GET("fieldconfiguration/{entity}")
-  Call<List<GetFieldConfigurationEntityResponse>> getAddresses(
+  Observable<List<GetFieldConfigurationEntityResponse>> getAddresses(
     @retrofit2.http.Path("entity") String entity
   );
 

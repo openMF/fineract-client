@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,32 +42,32 @@ public interface WorkingDaysApi {
   /**
    * List Working days
    * Example Requests:  workingdays
-   * @return Call&lt;List&lt;GetWorkingDaysResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetWorkingDaysResponse&gt;&gt;
    */
   @GET("workingdays")
-  Call<List<GetWorkingDaysResponse>> retrieveAll17();
+  Observable<List<GetWorkingDaysResponse>> retrieveAll17();
     
 
   /**
    * Working Days Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for working days.  Example Request:  workingdays/template
-   * @return Call&lt;GetWorkingDaysTemplateResponse&gt;
+   * @return Observable&lt;GetWorkingDaysTemplateResponse&gt;
    */
   @GET("workingdays/template")
-  Call<GetWorkingDaysTemplateResponse> template4();
+  Observable<GetWorkingDaysTemplateResponse> template4();
     
 
   /**
    * Update a Working Day
    * Mandatory Fields recurrence,repaymentRescheduleType,extendTermForDailyRepayments,locale
    * @param putWorkingDaysRequest  (required)
-   * @return Call&lt;PutWorkingDaysResponse&gt;
+   * @return Observable&lt;PutWorkingDaysResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("workingdays")
-  Call<PutWorkingDaysResponse> update8(
+  Observable<PutWorkingDaysResponse> update8(
     @retrofit2.http.Body PutWorkingDaysRequest putWorkingDaysRequest
   );
 

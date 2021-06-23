@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -44,20 +43,20 @@ public interface NotificationApi {
    * @param offset  (optional)
    * @param sortOrder  (optional)
    * @param isRead  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("notifications")
-  Call<String> getAllNotifications(
+  Observable<String> getAllNotifications(
     @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("isRead") Boolean isRead
   );
 
   /**
    * 
    * 
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @PUT("notifications")
-  Call<Void> update5();
+  Completable update5();
     
 
 }

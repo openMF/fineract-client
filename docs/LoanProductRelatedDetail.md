@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 **amortizationMethod** | [**AmortizationMethodEnum**](#AmortizationMethodEnum) |  |  [optional]
 **inArrearsTolerance** | [**Money**](Money.md) |  |  [optional]
 **graceOnArrearsAgeing** | **Integer** |  |  [optional]
+**arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **equalAmortization** | **Boolean** |  |  [optional]
 **interestRecalculationEnabled** | **Boolean** |  |  [optional]
-**arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **graceOnDueDate** | **Integer** |  |  [optional]
 
 

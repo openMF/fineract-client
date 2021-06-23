@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,13 +40,13 @@ public interface FineractEntityApi {
    * 
    * @param relId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("entitytoentitymapping/{relId}")
-  Call<String> createMap(
+  Observable<String> createMap(
     @retrofit2.http.Path("relId") Long relId, @retrofit2.http.Body String body
   );
 
@@ -55,10 +54,10 @@ public interface FineractEntityApi {
    * 
    * 
    * @param mapId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("entitytoentitymapping/{mapId}")
-  Call<String> delete4(
+  Observable<String> delete4(
     @retrofit2.http.Path("mapId") Long mapId
   );
 
@@ -68,30 +67,30 @@ public interface FineractEntityApi {
    * @param mapId  (required)
    * @param fromId  (required)
    * @param toId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("entitytoentitymapping/{mapId}/{fromId}/{toId}")
-  Call<String> getEntityToEntityMappings(
+  Observable<String> getEntityToEntityMappings(
     @retrofit2.http.Path("mapId") Long mapId, @retrofit2.http.Path("fromId") Long fromId, @retrofit2.http.Path("toId") Long toId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("entitytoentitymapping")
-  Call<String> retrieveAll7();
+  Observable<String> retrieveAll7();
     
 
   /**
    * 
    * 
    * @param mapId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("entitytoentitymapping/{mapId}")
-  Call<String> retrieveOne4(
+  Observable<String> retrieveOne4(
     @retrofit2.http.Path("mapId") Long mapId
   );
 
@@ -100,13 +99,13 @@ public interface FineractEntityApi {
    * 
    * @param mapId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("entitytoentitymapping/{mapId}")
-  Call<String> updateMap(
+  Observable<String> updateMap(
     @retrofit2.http.Path("mapId") Long mapId, @retrofit2.http.Body String body
   );
 

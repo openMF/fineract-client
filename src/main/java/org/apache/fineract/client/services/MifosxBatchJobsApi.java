@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -44,20 +43,20 @@ public interface MifosxBatchJobsApi {
    * Manually Execute Specific Job.
    * @param jobId jobId (required)
    * @param command command (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @POST("jobs/{jobId}")
-  Call<Void> executeJob(
+  Completable executeJob(
     @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Query("command") String command
   );
 
   /**
    * Retrieve Scheduler Jobs
    * Returns the list of jobs.  Example Requests:  jobs
-   * @return Call&lt;List&lt;GetJobsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetJobsResponse&gt;&gt;
    */
   @GET("jobs")
-  Call<List<GetJobsResponse>> retrieveAll8();
+  Observable<List<GetJobsResponse>> retrieveAll8();
     
 
   /**
@@ -68,10 +67,10 @@ public interface MifosxBatchJobsApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;GetJobsJobIDJobRunHistoryResponse&gt;
+   * @return Observable&lt;GetJobsJobIDJobRunHistoryResponse&gt;
    */
   @GET("jobs/{jobId}/runhistory")
-  Call<GetJobsJobIDJobRunHistoryResponse> retrieveHistory(
+  Observable<GetJobsJobIDJobRunHistoryResponse> retrieveHistory(
     @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -79,10 +78,10 @@ public interface MifosxBatchJobsApi {
    * Retrieve a Job
    * Returns the details of a Job.  Example Requests:  jobs/5
    * @param jobId jobId (required)
-   * @return Call&lt;GetJobsResponse&gt;
+   * @return Observable&lt;GetJobsResponse&gt;
    */
   @GET("jobs/{jobId}")
-  Call<GetJobsResponse> retrieveOne5(
+  Observable<GetJobsResponse> retrieveOne5(
     @retrofit2.http.Path("jobId") Long jobId
   );
 
@@ -91,13 +90,13 @@ public interface MifosxBatchJobsApi {
    * Updates the details of a job.
    * @param jobId jobId (required)
    * @param putJobsJobIDRequest  (required)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("jobs/{jobId}")
-  Call<Void> updateJobDetail(
+  Completable updateJobDetail(
     @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Body PutJobsJobIDRequest putJobsJobIDRequest
   );
 

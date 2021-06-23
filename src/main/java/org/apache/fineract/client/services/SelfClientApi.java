@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -50,11 +49,11 @@ public interface SelfClientApi {
    * @param clientId  (required)
    * @param contentLength  (optional)
    * @param file  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("self/clients/{clientId}/images")
-  Call<String> addNewClientImage2(
+  Observable<String> addNewClientImage2(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part("file") FormDataBodyPart file
   );
 
@@ -62,10 +61,10 @@ public interface SelfClientApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("self/clients/{clientId}/images")
-  Call<String> deleteClientImage1(
+  Observable<String> deleteClientImage1(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -80,10 +79,10 @@ public interface SelfClientApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;GetSelfClientsResponse&gt;
+   * @return Observable&lt;GetSelfClientsResponse&gt;
    */
   @GET("self/clients")
-  Call<GetSelfClientsResponse> retrieveAll36(
+  Observable<GetSelfClientsResponse> retrieveAll36(
     @retrofit2.http.Query("displayName") String displayName, @retrofit2.http.Query("firstName") String firstName, @retrofit2.http.Query("lastName") String lastName, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("status") String status, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -95,10 +94,10 @@ public interface SelfClientApi {
    * @param pendingPayment pendingPayment (optional)
    * @param limit limit (optional)
    * @param offset offset (optional)
-   * @return Call&lt;GetSelfClientsClientIdChargesResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdChargesResponse&gt;
    */
   @GET("self/clients/{clientId}/charges")
-  Call<GetSelfClientsClientIdChargesResponse> retrieveAllClientCharges1(
+  Observable<GetSelfClientsClientIdChargesResponse> retrieveAllClientCharges1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("chargeStatus") String chargeStatus, @retrofit2.http.Query("pendingPayment") Boolean pendingPayment, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("offset") Integer offset
   );
 
@@ -108,10 +107,10 @@ public interface SelfClientApi {
    * @param clientId clientId (required)
    * @param offset offset (optional)
    * @param limit limit (optional)
-   * @return Call&lt;GetSelfClientsClientIdTransactionsResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdTransactionsResponse&gt;
    */
   @GET("self/clients/{clientId}/transactions")
-  Call<GetSelfClientsClientIdTransactionsResponse> retrieveAllClientTransactions1(
+  Observable<GetSelfClientsClientIdTransactionsResponse> retrieveAllClientTransactions1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -119,10 +118,10 @@ public interface SelfClientApi {
    * Retrieve client accounts overview
    * An example of how a loan portfolio summary can be provided. This is requested in a specific use case of the community application. It is quite reasonable to add resources like this to simplify User Interface development.  Example Requests:  self/clients/1/accounts   self/clients/1/accounts?fields&#x3D;loanAccounts,savingsAccounts
    * @param clientId clientId (required)
-   * @return Call&lt;GetSelfClientsClientIdAccountsResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdAccountsResponse&gt;
    */
   @GET("self/clients/{clientId}/accounts")
-  Call<GetSelfClientsClientIdAccountsResponse> retrieveAssociatedAccounts1(
+  Observable<GetSelfClientsClientIdAccountsResponse> retrieveAssociatedAccounts1(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -131,10 +130,10 @@ public interface SelfClientApi {
    * Retrieves a Client Charge  Example Requests:  self/clients/1/charges/1   self/clients/1/charges/1?fields&#x3D;name,id
    * @param clientId clientId (required)
    * @param chargeId chargeId (required)
-   * @return Call&lt;GetSelfClientsClientIdChargesChargeIdResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdChargesChargeIdResponse&gt;
    */
   @GET("self/clients/{clientId}/charges/{chargeId}")
-  Call<GetSelfClientsClientIdChargesChargeIdResponse> retrieveClientCharge1(
+  Observable<GetSelfClientsClientIdChargesChargeIdResponse> retrieveClientCharge1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("chargeId") Long chargeId
   );
 
@@ -143,10 +142,10 @@ public interface SelfClientApi {
    * Retrieves a Client TransactionExample Requests:  self/clients/1/transactions/1   self/clients/1/transactions/1?fields&#x3D;id,officeName
    * @param clientId clientId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetSelfClientsClientIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdTransactionsTransactionIdResponse&gt;
    */
   @GET("self/clients/{clientId}/transactions/{transactionId}")
-  Call<GetSelfClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction1(
+  Observable<GetSelfClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -157,10 +156,10 @@ public interface SelfClientApi {
    * @param maxWidth  (optional)
    * @param maxHeight  (optional)
    * @param output  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("self/clients/{clientId}/images")
-  Call<Void> retrieveImage1(
+  Completable retrieveImage1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("maxWidth") Integer maxWidth, @retrofit2.http.Query("maxHeight") Integer maxHeight, @retrofit2.http.Query("output") String output
   );
 
@@ -168,10 +167,10 @@ public interface SelfClientApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("self/clients/{clientId}/obligeedetails")
-  Call<String> retrieveObligeeDetails1(
+  Observable<String> retrieveObligeeDetails1(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -179,10 +178,10 @@ public interface SelfClientApi {
    * Retrieve a Client
    * Retrieves a Client  Example Requests:  self/clients/1  self/clients/1?fields&#x3D;id,displayName,officeName
    * @param clientId clientId (required)
-   * @return Call&lt;GetSelfClientsClientIdResponse&gt;
+   * @return Observable&lt;GetSelfClientsClientIdResponse&gt;
    */
   @GET("self/clients/{clientId}")
-  Call<GetSelfClientsClientIdResponse> retrieveOne26(
+  Observable<GetSelfClientsClientIdResponse> retrieveOne26(
     @retrofit2.http.Path("clientId") Long clientId
   );
 

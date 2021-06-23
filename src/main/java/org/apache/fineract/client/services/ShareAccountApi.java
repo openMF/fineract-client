@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -51,13 +50,13 @@ public interface ShareAccountApi {
    * Submits new share application  Mandatory Fields: clientId, productId, submittedDate, savingsAccountId, requestedShares, applicationDate  Optional Fields: accountNo, externalId  Inherited from Product (if not provided): minimumActivePeriod, minimumActivePeriodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType
    * @param type type (required)
    * @param postAccountsTypeRequest  (required)
-   * @return Call&lt;PostAccountsTypeResponse&gt;
+   * @return Observable&lt;PostAccountsTypeResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("accounts/{type}")
-  Call<PostAccountsTypeResponse> createAccount(
+  Observable<PostAccountsTypeResponse> createAccount(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Body PostAccountsTypeRequest postAccountsTypeRequest
   );
 
@@ -67,10 +66,10 @@ public interface ShareAccountApi {
    * @param type type (required)
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("accounts/{type}/downloadtemplate")
-  Call<Void> getSharedAccountsTemplate(
+  Completable getSharedAccountsTemplate(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -81,13 +80,13 @@ public interface ShareAccountApi {
    * @param accountId accountId (required)
    * @param postAccountsTypeAccountIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostAccountsTypeAccountIdResponse&gt;
+   * @return Observable&lt;PostAccountsTypeAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("accounts/{type}/{accountId}")
-  Call<PostAccountsTypeAccountIdResponse> handleCommands2(
+  Observable<PostAccountsTypeAccountIdResponse> handleCommands2(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PostAccountsTypeAccountIdRequest postAccountsTypeAccountIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -98,11 +97,11 @@ public interface ShareAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("accounts/{type}/uploadtemplate")
-  Call<String> postSharedAccountsTemplate(
+  Observable<String> postSharedAccountsTemplate(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -111,10 +110,10 @@ public interface ShareAccountApi {
    * Retrieves a share application/account  Example Requests :  shareaccount/1
    * @param accountId accountId (required)
    * @param type type (required)
-   * @return Call&lt;GetAccountsTypeAccountIdResponse&gt;
+   * @return Observable&lt;GetAccountsTypeAccountIdResponse&gt;
    */
   @GET("accounts/{type}/{accountId}")
-  Call<GetAccountsTypeAccountIdResponse> retrieveAccount(
+  Observable<GetAccountsTypeAccountIdResponse> retrieveAccount(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Path("type") String type
   );
 
@@ -124,10 +123,10 @@ public interface ShareAccountApi {
    * @param type type (required)
    * @param offset offset (optional)
    * @param limit limit (optional)
-   * @return Call&lt;GetAccountsTypeResponse&gt;
+   * @return Observable&lt;GetAccountsTypeResponse&gt;
    */
   @GET("accounts/{type}")
-  Call<GetAccountsTypeResponse> retrieveAllAccounts1(
+  Observable<GetAccountsTypeResponse> retrieveAllAccounts1(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -137,10 +136,10 @@ public interface ShareAccountApi {
    * @param type type (required)
    * @param clientId clientId (optional)
    * @param productId productId (optional)
-   * @return Call&lt;GetAccountsTypeTemplateResponse&gt;
+   * @return Observable&lt;GetAccountsTypeTemplateResponse&gt;
    */
   @GET("accounts/{type}/template")
-  Call<GetAccountsTypeTemplateResponse> template7(
+  Observable<GetAccountsTypeTemplateResponse> template7(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId
   );
 
@@ -150,13 +149,13 @@ public interface ShareAccountApi {
    * @param type type (required)
    * @param accountId accountId (required)
    * @param putAccountsTypeAccountIdRequest  (required)
-   * @return Call&lt;PutAccountsTypeAccountIdResponse&gt;
+   * @return Observable&lt;PutAccountsTypeAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("accounts/{type}/{accountId}")
-  Call<PutAccountsTypeAccountIdResponse> updateAccount(
+  Observable<PutAccountsTypeAccountIdResponse> updateAccount(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PutAccountsTypeAccountIdRequest putAccountsTypeAccountIdRequest
   );
 

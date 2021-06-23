@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface LoanCollateralApi {
    * Note: Currently, Collaterals may be added only before a Loan is approved
    * @param loanId loanId (required)
    * @param postLoansLoanIdCollateralsRequest  (required)
-   * @return Call&lt;PostLoansLoanIdCollateralsResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdCollateralsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}/collaterals")
-  Call<PostLoansLoanIdCollateralsResponse> createCollateral(
+  Observable<PostLoansLoanIdCollateralsResponse> createCollateral(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostLoansLoanIdCollateralsRequest postLoansLoanIdCollateralsRequest
   );
 
@@ -63,10 +62,10 @@ public interface LoanCollateralApi {
    * Note: A collateral can only be removed from Loans that are not yet approved.
    * @param loanId loanId (required)
    * @param collateralId collateralId (required)
-   * @return Call&lt;DeleteLoansLoanIdCollateralsCollateralIdResponse&gt;
+   * @return Observable&lt;DeleteLoansLoanIdCollateralsCollateralIdResponse&gt;
    */
   @DELETE("loans/{loanId}/collaterals/{collateralId}")
-  Call<DeleteLoansLoanIdCollateralsCollateralIdResponse> deleteCollateral(
+  Observable<DeleteLoansLoanIdCollateralsCollateralIdResponse> deleteCollateral(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("collateralId") Long collateralId
   );
 
@@ -74,10 +73,10 @@ public interface LoanCollateralApi {
    * Retrieve Collateral Details Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  loans/1/collaterals/template
    * @param loanId loanId (required)
-   * @return Call&lt;GetLoansLoanIdCollateralsTemplateResponse&gt;
+   * @return Observable&lt;GetLoansLoanIdCollateralsTemplateResponse&gt;
    */
   @GET("loans/{loanId}/collaterals/template")
-  Call<GetLoansLoanIdCollateralsTemplateResponse> newCollateralTemplate(
+  Observable<GetLoansLoanIdCollateralsTemplateResponse> newCollateralTemplate(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -85,10 +84,10 @@ public interface LoanCollateralApi {
    * List Loan Collaterals
    * Example Requests:  loans/1/collaterals   loans/1/collaterals?fields&#x3D;value,description
    * @param loanId loanId (required)
-   * @return Call&lt;List&lt;GetLoansLoanIdCollateralsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetLoansLoanIdCollateralsResponse&gt;&gt;
    */
   @GET("loans/{loanId}/collaterals")
-  Call<List<GetLoansLoanIdCollateralsResponse>> retrieveCollateralDetails(
+  Observable<List<GetLoansLoanIdCollateralsResponse>> retrieveCollateralDetails(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -97,10 +96,10 @@ public interface LoanCollateralApi {
    * Example Requests:  /loans/1/collaterals/1   /loans/1/collaterals/1?fields&#x3D;description,description
    * @param loanId loanId (required)
    * @param collateralId collateralId (required)
-   * @return Call&lt;GetLoansLoanIdCollateralsResponse&gt;
+   * @return Observable&lt;GetLoansLoanIdCollateralsResponse&gt;
    */
   @GET("loans/{loanId}/collaterals/{collateralId}")
-  Call<GetLoansLoanIdCollateralsResponse> retrieveCollateralDetails1(
+  Observable<GetLoansLoanIdCollateralsResponse> retrieveCollateralDetails1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("collateralId") Long collateralId
   );
 
@@ -110,13 +109,13 @@ public interface LoanCollateralApi {
    * @param loanId loanId (required)
    * @param collateralId collateralId (required)
    * @param putLoansLoandIdCollateralsCollateralIdRequest  (required)
-   * @return Call&lt;PutLoansLoanIdCollateralsCollateralIdResponse&gt;
+   * @return Observable&lt;PutLoansLoanIdCollateralsCollateralIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("loans/{loanId}/collaterals/{collateralId}")
-  Call<PutLoansLoanIdCollateralsCollateralIdResponse> updateCollateral(
+  Observable<PutLoansLoanIdCollateralsCollateralIdResponse> updateCollateral(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("collateralId") Long collateralId, @retrofit2.http.Body PutLoansLoandIdCollateralsCollateralIdRequest putLoansLoandIdCollateralsCollateralIdRequest
   );
 

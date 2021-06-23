@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,13 +39,13 @@ public interface SmsApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("sms")
-  Call<String> create2(
+  Observable<String> create2(
     @retrofit2.http.Body String body
   );
 
@@ -54,20 +53,20 @@ public interface SmsApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("sms/{resourceId}")
-  Call<String> delete6(
+  Observable<String> delete6(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("sms")
-  Call<String> retrieveAll10();
+  Observable<String> retrieveAll10();
     
 
   /**
@@ -84,10 +83,10 @@ public interface SmsApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("sms/{campaignId}/messageByStatus")
-  Call<String> retrieveAllSmsByStatus(
+  Observable<String> retrieveAllSmsByStatus(
     @retrofit2.http.Path("campaignId") Long campaignId, @retrofit2.http.Query("status") Long status, @retrofit2.http.Query("fromDate") Object fromDate, @retrofit2.http.Query("toDate") Object toDate, @retrofit2.http.Query("locale") String locale, @retrofit2.http.Query("dateFormat") String dateFormat, @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -95,10 +94,10 @@ public interface SmsApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("sms/{resourceId}")
-  Call<String> retrieveOne6(
+  Observable<String> retrieveOne6(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -107,13 +106,13 @@ public interface SmsApi {
    * 
    * @param resourceId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("sms/{resourceId}")
-  Call<String> update3(
+  Observable<String> update3(
     @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Body String body
   );
 

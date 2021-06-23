@@ -87,13 +87,13 @@ public class FormDataBodyPart {
   @SerializedName(SERIALIZED_NAME_SIMPLE)
   private Boolean simple;
 
-  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
-  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
-  private ContentDisposition contentDisposition;
-
   public static final String SERIALIZED_NAME_FORM_DATA_CONTENT_DISPOSITION = "formDataContentDisposition";
   @SerializedName(SERIALIZED_NAME_FORM_DATA_CONTENT_DISPOSITION)
   private FormDataContentDisposition formDataContentDisposition;
+
+  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
+  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
+  private ContentDisposition contentDisposition;
 
   public static final String SERIALIZED_NAME_PARAMETERIZED_HEADERS = "parameterizedHeaders";
   @SerializedName(SERIALIZED_NAME_PARAMETERIZED_HEADERS)
@@ -292,29 +292,6 @@ public class FormDataBodyPart {
   }
 
 
-  public FormDataBodyPart contentDisposition(ContentDisposition contentDisposition) {
-    
-    this.contentDisposition = contentDisposition;
-    return this;
-  }
-
-   /**
-   * Get contentDisposition
-   * @return contentDisposition
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ContentDisposition getContentDisposition() {
-    return contentDisposition;
-  }
-
-
-  public void setContentDisposition(ContentDisposition contentDisposition) {
-    this.contentDisposition = contentDisposition;
-  }
-
-
   public FormDataBodyPart formDataContentDisposition(FormDataContentDisposition formDataContentDisposition) {
     
     this.formDataContentDisposition = formDataContentDisposition;
@@ -335,6 +312,29 @@ public class FormDataBodyPart {
 
   public void setFormDataContentDisposition(FormDataContentDisposition formDataContentDisposition) {
     this.formDataContentDisposition = formDataContentDisposition;
+  }
+
+
+  public FormDataBodyPart contentDisposition(ContentDisposition contentDisposition) {
+    
+    this.contentDisposition = contentDisposition;
+    return this;
+  }
+
+   /**
+   * Get contentDisposition
+   * @return contentDisposition
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ContentDisposition getContentDisposition() {
+    return contentDisposition;
+  }
+
+
+  public void setContentDisposition(ContentDisposition contentDisposition) {
+    this.contentDisposition = contentDisposition;
   }
 
 
@@ -386,14 +386,14 @@ public class FormDataBodyPart {
         Objects.equals(this.name, formDataBodyPart.name) &&
         Objects.equals(this.value, formDataBodyPart.value) &&
         Objects.equals(this.simple, formDataBodyPart.simple) &&
-        Objects.equals(this.contentDisposition, formDataBodyPart.contentDisposition) &&
         Objects.equals(this.formDataContentDisposition, formDataBodyPart.formDataContentDisposition) &&
+        Objects.equals(this.contentDisposition, formDataBodyPart.contentDisposition) &&
         Objects.equals(this.parameterizedHeaders, formDataBodyPart.parameterizedHeaders);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entity, headers, mediaType, parent, providers, name, value, simple, contentDisposition, formDataContentDisposition, parameterizedHeaders);
+    return Objects.hash(entity, headers, mediaType, parent, providers, name, value, simple, formDataContentDisposition, contentDisposition, parameterizedHeaders);
   }
 
 
@@ -409,8 +409,8 @@ public class FormDataBodyPart {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    simple: ").append(toIndentedString(simple)).append("\n");
-    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("    formDataContentDisposition: ").append(toIndentedString(formDataContentDisposition)).append("\n");
+    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("    parameterizedHeaders: ").append(toIndentedString(parameterizedHeaders)).append("\n");
     sb.append("}");
     return sb.toString();

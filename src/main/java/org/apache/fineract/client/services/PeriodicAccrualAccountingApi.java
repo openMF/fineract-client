@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,13 +40,13 @@ public interface PeriodicAccrualAccountingApi {
    * Executes Periodic Accrual Accounting
    * Mandatory Fields  tillDate 
    * @param postRunaccrualsRequest  (required)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("runaccruals")
-  Call<Void> executePeriodicAccrualAccounting(
+  Completable executePeriodicAccrualAccounting(
     @retrofit2.http.Body PostRunaccrualsRequest postRunaccrualsRequest
   );
 

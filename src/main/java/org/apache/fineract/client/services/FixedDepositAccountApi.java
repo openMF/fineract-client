@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -51,10 +50,10 @@ public interface FixedDepositAccountApi {
    * 
    * @param accountId accountId (required)
    * @param command command (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("fixeddepositaccounts/{accountId}/template")
-  Call<String> accountClosureTemplate(
+  Observable<String> accountClosureTemplate(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("command") String command
   );
 
@@ -62,10 +61,10 @@ public interface FixedDepositAccountApi {
    * Delete a fixed deposit application
    * At present we support hard delete of fixed deposit application so long as its in &#39;Submitted and pending approval&#39; state. One the application is moves past this state, it is not possible to do a &#39;hard&#39; delete of the application or the account. An API endpoint will be added to close/de-activate the fixed deposit account.
    * @param accountId accountId (required)
-   * @return Call&lt;DeleteFixedDepositAccountsAccountIdResponse&gt;
+   * @return Observable&lt;DeleteFixedDepositAccountsAccountIdResponse&gt;
    */
   @DELETE("fixeddepositaccounts/{accountId}")
-  Call<DeleteFixedDepositAccountsAccountIdResponse> delete14(
+  Observable<DeleteFixedDepositAccountsAccountIdResponse> delete14(
     @retrofit2.http.Path("accountId") Long accountId
   );
 
@@ -75,10 +74,10 @@ public interface FixedDepositAccountApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("fixeddepositaccounts/downloadtemplate")
-  Call<Void> getFixedDepositTemplate(
+  Completable getFixedDepositTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -87,10 +86,10 @@ public interface FixedDepositAccountApi {
    * 
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("fixeddepositaccounts/transaction/downloadtemplate")
-  Call<Void> getFixedDepositTransactionTemplate(
+  Completable getFixedDepositTransactionTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -100,13 +99,13 @@ public interface FixedDepositAccountApi {
    * @param accountId accountId (required)
    * @param body  (required)
    * @param command command (optional)
-   * @return Call&lt;PostFixedDepositAccountsAccountIdResponse&gt;
+   * @return Observable&lt;PostFixedDepositAccountsAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("fixeddepositaccounts/{accountId}")
-  Call<PostFixedDepositAccountsAccountIdResponse> handleCommands4(
+  Observable<PostFixedDepositAccountsAccountIdResponse> handleCommands4(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body Object body, @retrofit2.http.Query("command") String command
   );
 
@@ -116,11 +115,11 @@ public interface FixedDepositAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("fixeddepositaccounts/uploadtemplate")
-  Call<String> postFixedDepositTemplate(
+  Observable<String> postFixedDepositTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -130,11 +129,11 @@ public interface FixedDepositAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("fixeddepositaccounts/transaction/uploadtemplate")
-  Call<String> postFixedDepositTransactionTemplate(
+  Observable<String> postFixedDepositTransactionTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -146,10 +145,10 @@ public interface FixedDepositAccountApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;List&lt;GetFixedDepositAccountsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetFixedDepositAccountsResponse&gt;&gt;
    */
   @GET("fixeddepositaccounts")
-  Call<List<GetFixedDepositAccountsResponse>> retrieveAll29(
+  Observable<List<GetFixedDepositAccountsResponse>> retrieveAll29(
     @retrofit2.http.Query("paged") Boolean paged, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -159,10 +158,10 @@ public interface FixedDepositAccountApi {
    * @param accountId accountId (required)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
    * @param chargeStatus chargeStatus (optional, default to &quot;all&quot;)
-   * @return Call&lt;GetFixedDepositAccountsAccountIdResponse&gt;
+   * @return Observable&lt;GetFixedDepositAccountsAccountIdResponse&gt;
    */
   @GET("fixeddepositaccounts/{accountId}")
-  Call<GetFixedDepositAccountsAccountIdResponse> retrieveOne18(
+  Observable<GetFixedDepositAccountsAccountIdResponse> retrieveOne18(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly, @retrofit2.http.Query("chargeStatus") String chargeStatus
   );
 
@@ -170,13 +169,13 @@ public interface FixedDepositAccountApi {
    * Submit new fixed deposit application
    * Submits a new fixed deposit applicationMandatory Fields: clientId or groupId, productId, submittedOnDate, depositAmount, depositPeriod, depositPeriodFrequencyId  Optional Fields: accountNo, externalId, fieldOfficerId,linkAccountId(if provided initial deposit amount will be collected from this account),transferInterestToSavings(By enabling this flag all interest postings will be transferred to linked saving account )
    * @param postFixedDepositAccountsRequest  (required)
-   * @return Call&lt;PostFixedDepositAccountsResponse&gt;
+   * @return Observable&lt;PostFixedDepositAccountsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("fixeddepositaccounts")
-  Call<PostFixedDepositAccountsResponse> submitApplication(
+  Observable<PostFixedDepositAccountsResponse> submitApplication(
     @retrofit2.http.Body PostFixedDepositAccountsRequest postFixedDepositAccountsRequest
   );
 
@@ -187,10 +186,10 @@ public interface FixedDepositAccountApi {
    * @param groupId groupId (optional)
    * @param productId productId (optional)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetFixedDepositAccountsTemplateResponse&gt;
+   * @return Observable&lt;GetFixedDepositAccountsTemplateResponse&gt;
    */
   @GET("fixeddepositaccounts/template")
-  Call<GetFixedDepositAccountsTemplateResponse> template12(
+  Observable<GetFixedDepositAccountsTemplateResponse> template12(
     @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("groupId") Long groupId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -199,13 +198,13 @@ public interface FixedDepositAccountApi {
    * Fixed deposit application can only be modified when in &#39;Submitted and pending approval&#39; state. Once the application is approved, the details cannot be changed using this method. Specific api endpoints will be created to allow change of interest detail such as rate, compounding period, posting period etc
    * @param accountId accountId (required)
    * @param putFixedDepositAccountsAccountIdRequest  (required)
-   * @return Call&lt;PutFixedDepositAccountsAccountIdResponse&gt;
+   * @return Observable&lt;PutFixedDepositAccountsAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("fixeddepositaccounts/{accountId}")
-  Call<PutFixedDepositAccountsAccountIdResponse> update15(
+  Observable<PutFixedDepositAccountsAccountIdResponse> update15(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PutFixedDepositAccountsAccountIdRequest putFixedDepositAccountsAccountIdRequest
   );
 

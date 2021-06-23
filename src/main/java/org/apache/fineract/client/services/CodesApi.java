@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -46,13 +45,13 @@ public interface CodesApi {
    * Create a Code
    * Creates a code. Codes created through api are always &#39;user defined&#39; and so system defined is marked as false.
    * @param postCodesRequest  (required)
-   * @return Call&lt;PostCodesResponse&gt;
+   * @return Observable&lt;PostCodesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("codes")
-  Call<PostCodesResponse> createCode(
+  Observable<PostCodesResponse> createCode(
     @retrofit2.http.Body PostCodesRequest postCodesRequest
   );
 
@@ -60,10 +59,10 @@ public interface CodesApi {
    * Delete a Code
    * Deletes a code if it is not system defined.
    * @param codeId codeId (required)
-   * @return Call&lt;DeleteCodesResponse&gt;
+   * @return Observable&lt;DeleteCodesResponse&gt;
    */
   @DELETE("codes/{codeId}")
-  Call<DeleteCodesResponse> deleteCode(
+  Observable<DeleteCodesResponse> deleteCode(
     @retrofit2.http.Path("codeId") Long codeId
   );
 
@@ -71,20 +70,20 @@ public interface CodesApi {
    * Retrieve a Code
    * Returns the details of a Code.  Example Requests:  codes/1
    * @param codeId codeId (required)
-   * @return Call&lt;GetCodesResponse&gt;
+   * @return Observable&lt;GetCodesResponse&gt;
    */
   @GET("codes/{codeId}")
-  Call<GetCodesResponse> retrieveCode(
+  Observable<GetCodesResponse> retrieveCode(
     @retrofit2.http.Path("codeId") Long codeId
   );
 
   /**
    * Retrieve Codes
    * Returns the list of codes.  Example Requests:  codes
-   * @return Call&lt;List&lt;GetCodesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetCodesResponse&gt;&gt;
    */
   @GET("codes")
-  Call<List<GetCodesResponse>> retrieveCodes();
+  Observable<List<GetCodesResponse>> retrieveCodes();
     
 
   /**
@@ -92,13 +91,13 @@ public interface CodesApi {
    * Updates the details of a code if it is not system defined.
    * @param codeId codeId (required)
    * @param putCodesRequest  (required)
-   * @return Call&lt;PutCodesResponse&gt;
+   * @return Observable&lt;PutCodesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("codes/{codeId}")
-  Call<PutCodesResponse> updateCode(
+  Observable<PutCodesResponse> updateCode(
     @retrofit2.http.Path("codeId") Long codeId, @retrofit2.http.Body PutCodesRequest putCodesRequest
   );
 

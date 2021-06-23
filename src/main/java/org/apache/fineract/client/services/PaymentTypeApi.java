@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface PaymentTypeApi {
    * Create a Payment Type
    * Creates a new Payment type  Mandatory Fields: name  Optional Fields: Description, isCashPayment,Position
    * @param postPaymentTypesRequest  (required)
-   * @return Call&lt;PostPaymentTypesResponse&gt;
+   * @return Observable&lt;PostPaymentTypesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("paymenttypes")
-  Call<PostPaymentTypesResponse> createPaymentType(
+  Observable<PostPaymentTypesResponse> createPaymentType(
     @retrofit2.http.Body PostPaymentTypesRequest postPaymentTypesRequest
   );
 
@@ -61,30 +60,30 @@ public interface PaymentTypeApi {
    * Delete a Payment Type
    * Deletes payment type
    * @param paymentTypeId paymentTypeId (required)
-   * @return Call&lt;DeletePaymentTypesPaymentTypeIdResponse&gt;
+   * @return Observable&lt;DeletePaymentTypesPaymentTypeIdResponse&gt;
    */
   @DELETE("paymenttypes/{paymentTypeId}")
-  Call<DeletePaymentTypesPaymentTypeIdResponse> deleteCode1(
+  Observable<DeletePaymentTypesPaymentTypeIdResponse> deleteCode1(
     @retrofit2.http.Path("paymentTypeId") Long paymentTypeId
   );
 
   /**
    * Retrieve all Payment Types
    * Retrieve list of payment types
-   * @return Call&lt;List&lt;GetPaymentTypesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetPaymentTypesResponse&gt;&gt;
    */
   @GET("paymenttypes")
-  Call<List<GetPaymentTypesResponse>> getAllPaymentTypes();
+  Observable<List<GetPaymentTypesResponse>> getAllPaymentTypes();
     
 
   /**
    * Retrieve a Payment Type
    * Retrieves a payment type
    * @param paymentTypeId paymentTypeId (required)
-   * @return Call&lt;GetPaymentTypesPaymentTypeIdResponse&gt;
+   * @return Observable&lt;GetPaymentTypesPaymentTypeIdResponse&gt;
    */
   @GET("paymenttypes/{paymentTypeId}")
-  Call<GetPaymentTypesPaymentTypeIdResponse> retrieveOnePaymentType(
+  Observable<GetPaymentTypesPaymentTypeIdResponse> retrieveOnePaymentType(
     @retrofit2.http.Path("paymentTypeId") Long paymentTypeId
   );
 
@@ -93,13 +92,13 @@ public interface PaymentTypeApi {
    * Updates a Payment Type
    * @param paymentTypeId paymentTypeId (required)
    * @param putPaymentTypesPaymentTypeIdRequest  (required)
-   * @return Call&lt;PutPaymentTypesPaymentTypeIdResponse&gt;
+   * @return Observable&lt;PutPaymentTypesPaymentTypeIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("paymenttypes/{paymentTypeId}")
-  Call<PutPaymentTypesPaymentTypeIdResponse> updatePaymentType(
+  Observable<PutPaymentTypesPaymentTypeIdResponse> updatePaymentType(
     @retrofit2.http.Path("paymentTypeId") Long paymentTypeId, @retrofit2.http.Body PutPaymentTypesPaymentTypeIdRequest putPaymentTypesPaymentTypeIdRequest
   );
 

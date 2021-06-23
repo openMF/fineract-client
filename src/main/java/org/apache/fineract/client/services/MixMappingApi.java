@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -39,23 +38,23 @@ public interface MixMappingApi {
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("mixmapping")
-  Call<String> retrieveTaxonomyMapping();
+  Observable<String> retrieveTaxonomyMapping();
     
 
   /**
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("mixmapping")
-  Call<String> updateTaxonomyMapping(
+  Observable<String> updateTaxonomyMapping(
     @retrofit2.http.Body String body
   );
 

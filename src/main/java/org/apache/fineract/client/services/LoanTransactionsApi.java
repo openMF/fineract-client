@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface LoanTransactionsApi {
    * @param loanId loanId (required)
    * @param transactionId transactionId (required)
    * @param postLoansLoanIdTransactionsTransactionIdRequest  (required)
-   * @return Call&lt;PostLoansLoanIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdTransactionsTransactionIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}/transactions/{transactionId}")
-  Call<PostLoansLoanIdTransactionsTransactionIdResponse> adjustLoanTransaction(
+  Observable<PostLoansLoanIdTransactionsTransactionIdResponse> adjustLoanTransaction(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Body PostLoansLoanIdTransactionsTransactionIdRequest postLoansLoanIdTransactionsTransactionIdRequest
   );
 
@@ -63,13 +62,13 @@ public interface LoanTransactionsApi {
    * @param loanId loanId (required)
    * @param body  (required)
    * @param command command (optional)
-   * @return Call&lt;PostLoansLoanIdTransactionsResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdTransactionsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}/transactions")
-  Call<PostLoansLoanIdTransactionsResponse> executeLoanTransaction(
+  Observable<PostLoansLoanIdTransactionsResponse> executeLoanTransaction(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body Object body, @retrofit2.http.Query("command") String command
   );
 
@@ -78,10 +77,10 @@ public interface LoanTransactionsApi {
    * Retrieves a Transaction Details  Example Request:  loans/5/transactions/3
    * @param loanId loanId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetLoansLoanIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetLoansLoanIdTransactionsTransactionIdResponse&gt;
    */
   @GET("loans/{loanId}/transactions/{transactionId}")
-  Call<GetLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
+  Observable<GetLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -93,10 +92,10 @@ public interface LoanTransactionsApi {
    * @param dateFormat dateFormat (optional)
    * @param transactionDate transactionDate (optional)
    * @param locale locale (optional)
-   * @return Call&lt;GetLoansLoanIdTransactionsTemplateResponse&gt;
+   * @return Observable&lt;GetLoansLoanIdTransactionsTemplateResponse&gt;
    */
   @GET("loans/{loanId}/transactions/template")
-  Call<GetLoansLoanIdTransactionsTemplateResponse> retrieveTransactionTemplate(
+  Observable<GetLoansLoanIdTransactionsTemplateResponse> retrieveTransactionTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("command") String command, @retrofit2.http.Query("dateFormat") String dateFormat, @retrofit2.http.Query("transactionDate") Object transactionDate, @retrofit2.http.Query("locale") String locale
   );
 

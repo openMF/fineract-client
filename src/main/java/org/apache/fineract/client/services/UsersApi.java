@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -49,13 +48,13 @@ public interface UsersApi {
    * Create a User
    * Adds new application user.  Note: Password information is not required (or processed). Password details at present are auto-generated and then sent to the email account given (which is why it can take a few seconds to complete).  Mandatory Fields:  username, firstname, lastname, email, officeId, roles, sendPasswordToEmail  Optional Fields:  staffId,passwordNeverExpires,isSelfServiceUser,clients
    * @param postUsersRequest  (required)
-   * @return Call&lt;PostUsersResponse&gt;
+   * @return Observable&lt;PostUsersResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("users")
-  Call<PostUsersResponse> create15(
+  Observable<PostUsersResponse> create15(
     @retrofit2.http.Body PostUsersRequest postUsersRequest
   );
 
@@ -63,10 +62,10 @@ public interface UsersApi {
    * Delete a User
    * Removes the user and the associated roles and permissions.
    * @param userId userId (required)
-   * @return Call&lt;DeleteUsersUserIdResponse&gt;
+   * @return Observable&lt;DeleteUsersUserIdResponse&gt;
    */
   @DELETE("users/{userId}")
-  Call<DeleteUsersUserIdResponse> delete21(
+  Observable<DeleteUsersUserIdResponse> delete21(
     @retrofit2.http.Path("userId") Long userId
   );
 
@@ -76,10 +75,10 @@ public interface UsersApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("users/downloadtemplate")
-  Call<Void> getUserTemplate(
+  Completable getUserTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -89,41 +88,41 @@ public interface UsersApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("users/uploadtemplate")
-  Call<String> postUsersTemplate(
+  Observable<String> postUsersTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
   /**
    * Retrieve list of users
    * Example Requests:  users   users?fields&#x3D;id,username,email,officeName
-   * @return Call&lt;List&lt;GetUsersResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetUsersResponse&gt;&gt;
    */
   @GET("users")
-  Call<List<GetUsersResponse>> retrieveAll41();
+  Observable<List<GetUsersResponse>> retrieveAll41();
     
 
   /**
    * Retrieve a User
    * Example Requests:  users/1   users/1?template&#x3D;true   users/1?fields&#x3D;username,officeName
    * @param userId userId (required)
-   * @return Call&lt;GetUsersUserIdResponse&gt;
+   * @return Observable&lt;GetUsersUserIdResponse&gt;
    */
   @GET("users/{userId}")
-  Call<GetUsersUserIdResponse> retrieveOne29(
+  Observable<GetUsersUserIdResponse> retrieveOne29(
     @retrofit2.http.Path("userId") Long userId
   );
 
   /**
    * Retrieve User Details Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  users/template
-   * @return Call&lt;GetUsersTemplateResponse&gt;
+   * @return Observable&lt;GetUsersTemplateResponse&gt;
    */
   @GET("users/template")
-  Call<GetUsersTemplateResponse> template22();
+  Observable<GetUsersTemplateResponse> template22();
     
 
   /**
@@ -131,13 +130,13 @@ public interface UsersApi {
    * When updating a password you must provide the repeatPassword parameter also.
    * @param userId userId (required)
    * @param putUsersUserIdRequest  (required)
-   * @return Call&lt;PutUsersUserIdResponse&gt;
+   * @return Observable&lt;PutUsersUserIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("users/{userId}")
-  Call<PutUsersUserIdResponse> update24(
+  Observable<PutUsersUserIdResponse> update24(
     @retrofit2.http.Path("userId") Long userId, @retrofit2.http.Body PutUsersUserIdRequest putUsersUserIdRequest
   );
 

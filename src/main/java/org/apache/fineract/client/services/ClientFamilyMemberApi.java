@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,13 +40,13 @@ public interface ClientFamilyMemberApi {
    * 
    * @param clientId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients/{clientId}/familymembers")
-  Call<String> addClientFamilyMembers(
+  Observable<String> addClientFamilyMembers(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body String body
   );
 
@@ -57,13 +56,13 @@ public interface ClientFamilyMemberApi {
    * @param familyMemberId  (required)
    * @param clientId clientId (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @DELETE("clients/{clientId}/familymembers/{familyMemberId}")
-  Call<String> deleteClientFamilyMembers(
+  Observable<String> deleteClientFamilyMembers(
     @retrofit2.http.Path("familyMemberId") Long familyMemberId, @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body String body
   );
 
@@ -72,10 +71,10 @@ public interface ClientFamilyMemberApi {
    * 
    * @param familyMemberId  (required)
    * @param clientId clientId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/familymembers/{familyMemberId}")
-  Call<String> getFamilyMember(
+  Observable<String> getFamilyMember(
     @retrofit2.http.Path("familyMemberId") Long familyMemberId, @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -83,10 +82,10 @@ public interface ClientFamilyMemberApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/familymembers")
-  Call<String> getFamilyMembers(
+  Observable<String> getFamilyMembers(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -94,10 +93,10 @@ public interface ClientFamilyMemberApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/familymembers/template")
-  Call<String> getTemplate2(
+  Observable<String> getTemplate2(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -107,13 +106,13 @@ public interface ClientFamilyMemberApi {
    * @param familyMemberId  (required)
    * @param clientId clientId (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("clients/{clientId}/familymembers/{familyMemberId}")
-  Call<String> updateClientFamilyMembers(
+  Observable<String> updateClientFamilyMembers(
     @retrofit2.http.Path("familyMemberId") Long familyMemberId, @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body String body
   );
 

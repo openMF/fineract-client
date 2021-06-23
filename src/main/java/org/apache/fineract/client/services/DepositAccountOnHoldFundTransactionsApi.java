@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,10 +44,10 @@ public interface DepositAccountOnHoldFundTransactionsApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("savingsaccounts/{savingsId}/onholdtransactions")
-  Call<String> retrieveAll28(
+  Observable<String> retrieveAll28(
     @retrofit2.http.Path("savingsId") Long savingsId, @retrofit2.http.Query("guarantorFundingId") Long guarantorFundingId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,13 +44,13 @@ public interface FundsApi {
    * Create a Fund
    * Creates a Fund
    * @param postFundsRequest  (required)
-   * @return Call&lt;PostFundsResponse&gt;
+   * @return Observable&lt;PostFundsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("funds")
-  Call<PostFundsResponse> createFund(
+  Observable<PostFundsResponse> createFund(
     @retrofit2.http.Body PostFundsRequest postFundsRequest
   );
 
@@ -59,20 +58,20 @@ public interface FundsApi {
    * Retrieve a Fund
    * Returns the details of a Fund.  Example Requests:  funds/1
    * @param fundId fundId (required)
-   * @return Call&lt;GetFundsResponse&gt;
+   * @return Observable&lt;GetFundsResponse&gt;
    */
   @GET("funds/{fundId}")
-  Call<GetFundsResponse> retreiveFund(
+  Observable<GetFundsResponse> retreiveFund(
     @retrofit2.http.Path("fundId") Long fundId
   );
 
   /**
    * Retrieve Funds
    * Returns the list of funds.  Example Requests:  funds
-   * @return Call&lt;List&lt;GetFundsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetFundsResponse&gt;&gt;
    */
   @GET("funds")
-  Call<List<GetFundsResponse>> retrieveFunds();
+  Observable<List<GetFundsResponse>> retrieveFunds();
     
 
   /**
@@ -80,13 +79,13 @@ public interface FundsApi {
    * Updates the details of a fund.
    * @param fundId fundId (required)
    * @param putFundsFundIdRequest  (required)
-   * @return Call&lt;PutFundsFundIdResponse&gt;
+   * @return Observable&lt;PutFundsFundIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("funds/{fundId}")
-  Call<PutFundsFundIdResponse> updateFund(
+  Observable<PutFundsFundIdResponse> updateFund(
     @retrofit2.http.Path("fundId") Long fundId, @retrofit2.http.Body PutFundsFundIdRequest putFundsFundIdRequest
   );
 

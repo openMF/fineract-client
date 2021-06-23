@@ -111,33 +111,13 @@ public class Charge {
   @SerializedName(SERIALIZED_NAME_TAX_GROUP)
   private TaxGroup taxGroup;
 
-  public static final String SERIALIZED_NAME_FEE_ON_MONTH_DAY = "feeOnMonthDay";
-  @SerializedName(SERIALIZED_NAME_FEE_ON_MONTH_DAY)
-  private ChargeFeeOnMonthDay feeOnMonthDay;
+  public static final String SERIALIZED_NAME_CLIENT_CHARGE = "clientCharge";
+  @SerializedName(SERIALIZED_NAME_CLIENT_CHARGE)
+  private Boolean clientCharge;
 
-  public static final String SERIALIZED_NAME_SAVINGS_CHARGE = "savingsCharge";
-  @SerializedName(SERIALIZED_NAME_SAVINGS_CHARGE)
-  private Boolean savingsCharge;
-
-  public static final String SERIALIZED_NAME_ALLOWED_SAVINGS_CHARGE_CALCULATION_TYPE = "allowedSavingsChargeCalculationType";
-  @SerializedName(SERIALIZED_NAME_ALLOWED_SAVINGS_CHARGE_CALCULATION_TYPE)
-  private Boolean allowedSavingsChargeCalculationType;
-
-  public static final String SERIALIZED_NAME_ALLOWED_CLIENT_CHARGE_CALCULATION_TYPE = "allowedClientChargeCalculationType";
-  @SerializedName(SERIALIZED_NAME_ALLOWED_CLIENT_CHARGE_CALCULATION_TYPE)
-  private Boolean allowedClientChargeCalculationType;
-
-  public static final String SERIALIZED_NAME_PERCENTAGE_OF_DISBURSEMENT_AMOUNT = "percentageOfDisbursementAmount";
-  @SerializedName(SERIALIZED_NAME_PERCENTAGE_OF_DISBURSEMENT_AMOUNT)
-  private Boolean percentageOfDisbursementAmount;
-
-  public static final String SERIALIZED_NAME_ANNUAL_FEE = "annualFee";
-  @SerializedName(SERIALIZED_NAME_ANNUAL_FEE)
-  private Boolean annualFee;
-
-  public static final String SERIALIZED_NAME_MONTHLY_FEE = "monthlyFee";
-  @SerializedName(SERIALIZED_NAME_MONTHLY_FEE)
-  private Boolean monthlyFee;
+  public static final String SERIALIZED_NAME_LOAN_CHARGE = "loanCharge";
+  @SerializedName(SERIALIZED_NAME_LOAN_CHARGE)
+  private Boolean loanCharge;
 
   public static final String SERIALIZED_NAME_ALLOWED_LOAN_CHARGE_TIME = "allowedLoanChargeTime";
   @SerializedName(SERIALIZED_NAME_ALLOWED_LOAN_CHARGE_TIME)
@@ -163,13 +143,33 @@ public class Charge {
   @SerializedName(SERIALIZED_NAME_DISBURSEMENT_CHARGE)
   private Boolean disbursementCharge;
 
-  public static final String SERIALIZED_NAME_LOAN_CHARGE = "loanCharge";
-  @SerializedName(SERIALIZED_NAME_LOAN_CHARGE)
-  private Boolean loanCharge;
+  public static final String SERIALIZED_NAME_SAVINGS_CHARGE = "savingsCharge";
+  @SerializedName(SERIALIZED_NAME_SAVINGS_CHARGE)
+  private Boolean savingsCharge;
 
-  public static final String SERIALIZED_NAME_CLIENT_CHARGE = "clientCharge";
-  @SerializedName(SERIALIZED_NAME_CLIENT_CHARGE)
-  private Boolean clientCharge;
+  public static final String SERIALIZED_NAME_ANNUAL_FEE = "annualFee";
+  @SerializedName(SERIALIZED_NAME_ANNUAL_FEE)
+  private Boolean annualFee;
+
+  public static final String SERIALIZED_NAME_MONTHLY_FEE = "monthlyFee";
+  @SerializedName(SERIALIZED_NAME_MONTHLY_FEE)
+  private Boolean monthlyFee;
+
+  public static final String SERIALIZED_NAME_FEE_ON_MONTH_DAY = "feeOnMonthDay";
+  @SerializedName(SERIALIZED_NAME_FEE_ON_MONTH_DAY)
+  private ChargeFeeOnMonthDay feeOnMonthDay;
+
+  public static final String SERIALIZED_NAME_ALLOWED_SAVINGS_CHARGE_CALCULATION_TYPE = "allowedSavingsChargeCalculationType";
+  @SerializedName(SERIALIZED_NAME_ALLOWED_SAVINGS_CHARGE_CALCULATION_TYPE)
+  private Boolean allowedSavingsChargeCalculationType;
+
+  public static final String SERIALIZED_NAME_ALLOWED_CLIENT_CHARGE_CALCULATION_TYPE = "allowedClientChargeCalculationType";
+  @SerializedName(SERIALIZED_NAME_ALLOWED_CLIENT_CHARGE_CALCULATION_TYPE)
+  private Boolean allowedClientChargeCalculationType;
+
+  public static final String SERIALIZED_NAME_PERCENTAGE_OF_DISBURSEMENT_AMOUNT = "percentageOfDisbursementAmount";
+  @SerializedName(SERIALIZED_NAME_PERCENTAGE_OF_DISBURSEMENT_AMOUNT)
+  private Boolean percentageOfDisbursementAmount;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -521,164 +521,49 @@ public class Charge {
   }
 
 
-  public Charge feeOnMonthDay(ChargeFeeOnMonthDay feeOnMonthDay) {
+  public Charge clientCharge(Boolean clientCharge) {
     
-    this.feeOnMonthDay = feeOnMonthDay;
+    this.clientCharge = clientCharge;
     return this;
   }
 
    /**
-   * Get feeOnMonthDay
-   * @return feeOnMonthDay
+   * Get clientCharge
+   * @return clientCharge
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ChargeFeeOnMonthDay getFeeOnMonthDay() {
-    return feeOnMonthDay;
+  public Boolean getClientCharge() {
+    return clientCharge;
   }
 
 
-  public void setFeeOnMonthDay(ChargeFeeOnMonthDay feeOnMonthDay) {
-    this.feeOnMonthDay = feeOnMonthDay;
+  public void setClientCharge(Boolean clientCharge) {
+    this.clientCharge = clientCharge;
   }
 
 
-  public Charge savingsCharge(Boolean savingsCharge) {
+  public Charge loanCharge(Boolean loanCharge) {
     
-    this.savingsCharge = savingsCharge;
+    this.loanCharge = loanCharge;
     return this;
   }
 
    /**
-   * Get savingsCharge
-   * @return savingsCharge
+   * Get loanCharge
+   * @return loanCharge
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getSavingsCharge() {
-    return savingsCharge;
+  public Boolean getLoanCharge() {
+    return loanCharge;
   }
 
 
-  public void setSavingsCharge(Boolean savingsCharge) {
-    this.savingsCharge = savingsCharge;
-  }
-
-
-  public Charge allowedSavingsChargeCalculationType(Boolean allowedSavingsChargeCalculationType) {
-    
-    this.allowedSavingsChargeCalculationType = allowedSavingsChargeCalculationType;
-    return this;
-  }
-
-   /**
-   * Get allowedSavingsChargeCalculationType
-   * @return allowedSavingsChargeCalculationType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getAllowedSavingsChargeCalculationType() {
-    return allowedSavingsChargeCalculationType;
-  }
-
-
-  public void setAllowedSavingsChargeCalculationType(Boolean allowedSavingsChargeCalculationType) {
-    this.allowedSavingsChargeCalculationType = allowedSavingsChargeCalculationType;
-  }
-
-
-  public Charge allowedClientChargeCalculationType(Boolean allowedClientChargeCalculationType) {
-    
-    this.allowedClientChargeCalculationType = allowedClientChargeCalculationType;
-    return this;
-  }
-
-   /**
-   * Get allowedClientChargeCalculationType
-   * @return allowedClientChargeCalculationType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getAllowedClientChargeCalculationType() {
-    return allowedClientChargeCalculationType;
-  }
-
-
-  public void setAllowedClientChargeCalculationType(Boolean allowedClientChargeCalculationType) {
-    this.allowedClientChargeCalculationType = allowedClientChargeCalculationType;
-  }
-
-
-  public Charge percentageOfDisbursementAmount(Boolean percentageOfDisbursementAmount) {
-    
-    this.percentageOfDisbursementAmount = percentageOfDisbursementAmount;
-    return this;
-  }
-
-   /**
-   * Get percentageOfDisbursementAmount
-   * @return percentageOfDisbursementAmount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getPercentageOfDisbursementAmount() {
-    return percentageOfDisbursementAmount;
-  }
-
-
-  public void setPercentageOfDisbursementAmount(Boolean percentageOfDisbursementAmount) {
-    this.percentageOfDisbursementAmount = percentageOfDisbursementAmount;
-  }
-
-
-  public Charge annualFee(Boolean annualFee) {
-    
-    this.annualFee = annualFee;
-    return this;
-  }
-
-   /**
-   * Get annualFee
-   * @return annualFee
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getAnnualFee() {
-    return annualFee;
-  }
-
-
-  public void setAnnualFee(Boolean annualFee) {
-    this.annualFee = annualFee;
-  }
-
-
-  public Charge monthlyFee(Boolean monthlyFee) {
-    
-    this.monthlyFee = monthlyFee;
-    return this;
-  }
-
-   /**
-   * Get monthlyFee
-   * @return monthlyFee
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getMonthlyFee() {
-    return monthlyFee;
-  }
-
-
-  public void setMonthlyFee(Boolean monthlyFee) {
-    this.monthlyFee = monthlyFee;
+  public void setLoanCharge(Boolean loanCharge) {
+    this.loanCharge = loanCharge;
   }
 
 
@@ -820,49 +705,164 @@ public class Charge {
   }
 
 
-  public Charge loanCharge(Boolean loanCharge) {
+  public Charge savingsCharge(Boolean savingsCharge) {
     
-    this.loanCharge = loanCharge;
+    this.savingsCharge = savingsCharge;
     return this;
   }
 
    /**
-   * Get loanCharge
-   * @return loanCharge
+   * Get savingsCharge
+   * @return savingsCharge
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getLoanCharge() {
-    return loanCharge;
+  public Boolean getSavingsCharge() {
+    return savingsCharge;
   }
 
 
-  public void setLoanCharge(Boolean loanCharge) {
-    this.loanCharge = loanCharge;
+  public void setSavingsCharge(Boolean savingsCharge) {
+    this.savingsCharge = savingsCharge;
   }
 
 
-  public Charge clientCharge(Boolean clientCharge) {
+  public Charge annualFee(Boolean annualFee) {
     
-    this.clientCharge = clientCharge;
+    this.annualFee = annualFee;
     return this;
   }
 
    /**
-   * Get clientCharge
-   * @return clientCharge
+   * Get annualFee
+   * @return annualFee
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getClientCharge() {
-    return clientCharge;
+  public Boolean getAnnualFee() {
+    return annualFee;
   }
 
 
-  public void setClientCharge(Boolean clientCharge) {
-    this.clientCharge = clientCharge;
+  public void setAnnualFee(Boolean annualFee) {
+    this.annualFee = annualFee;
+  }
+
+
+  public Charge monthlyFee(Boolean monthlyFee) {
+    
+    this.monthlyFee = monthlyFee;
+    return this;
+  }
+
+   /**
+   * Get monthlyFee
+   * @return monthlyFee
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getMonthlyFee() {
+    return monthlyFee;
+  }
+
+
+  public void setMonthlyFee(Boolean monthlyFee) {
+    this.monthlyFee = monthlyFee;
+  }
+
+
+  public Charge feeOnMonthDay(ChargeFeeOnMonthDay feeOnMonthDay) {
+    
+    this.feeOnMonthDay = feeOnMonthDay;
+    return this;
+  }
+
+   /**
+   * Get feeOnMonthDay
+   * @return feeOnMonthDay
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ChargeFeeOnMonthDay getFeeOnMonthDay() {
+    return feeOnMonthDay;
+  }
+
+
+  public void setFeeOnMonthDay(ChargeFeeOnMonthDay feeOnMonthDay) {
+    this.feeOnMonthDay = feeOnMonthDay;
+  }
+
+
+  public Charge allowedSavingsChargeCalculationType(Boolean allowedSavingsChargeCalculationType) {
+    
+    this.allowedSavingsChargeCalculationType = allowedSavingsChargeCalculationType;
+    return this;
+  }
+
+   /**
+   * Get allowedSavingsChargeCalculationType
+   * @return allowedSavingsChargeCalculationType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getAllowedSavingsChargeCalculationType() {
+    return allowedSavingsChargeCalculationType;
+  }
+
+
+  public void setAllowedSavingsChargeCalculationType(Boolean allowedSavingsChargeCalculationType) {
+    this.allowedSavingsChargeCalculationType = allowedSavingsChargeCalculationType;
+  }
+
+
+  public Charge allowedClientChargeCalculationType(Boolean allowedClientChargeCalculationType) {
+    
+    this.allowedClientChargeCalculationType = allowedClientChargeCalculationType;
+    return this;
+  }
+
+   /**
+   * Get allowedClientChargeCalculationType
+   * @return allowedClientChargeCalculationType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getAllowedClientChargeCalculationType() {
+    return allowedClientChargeCalculationType;
+  }
+
+
+  public void setAllowedClientChargeCalculationType(Boolean allowedClientChargeCalculationType) {
+    this.allowedClientChargeCalculationType = allowedClientChargeCalculationType;
+  }
+
+
+  public Charge percentageOfDisbursementAmount(Boolean percentageOfDisbursementAmount) {
+    
+    this.percentageOfDisbursementAmount = percentageOfDisbursementAmount;
+    return this;
+  }
+
+   /**
+   * Get percentageOfDisbursementAmount
+   * @return percentageOfDisbursementAmount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getPercentageOfDisbursementAmount() {
+    return percentageOfDisbursementAmount;
+  }
+
+
+  public void setPercentageOfDisbursementAmount(Boolean percentageOfDisbursementAmount) {
+    this.percentageOfDisbursementAmount = percentageOfDisbursementAmount;
   }
 
 
@@ -913,27 +913,27 @@ public class Charge {
         Objects.equals(this.maxCap, charge.maxCap) &&
         Objects.equals(this.account, charge.account) &&
         Objects.equals(this.taxGroup, charge.taxGroup) &&
-        Objects.equals(this.feeOnMonthDay, charge.feeOnMonthDay) &&
-        Objects.equals(this.savingsCharge, charge.savingsCharge) &&
-        Objects.equals(this.allowedSavingsChargeCalculationType, charge.allowedSavingsChargeCalculationType) &&
-        Objects.equals(this.allowedClientChargeCalculationType, charge.allowedClientChargeCalculationType) &&
-        Objects.equals(this.percentageOfDisbursementAmount, charge.percentageOfDisbursementAmount) &&
-        Objects.equals(this.annualFee, charge.annualFee) &&
-        Objects.equals(this.monthlyFee, charge.monthlyFee) &&
+        Objects.equals(this.clientCharge, charge.clientCharge) &&
+        Objects.equals(this.loanCharge, charge.loanCharge) &&
         Objects.equals(this.allowedLoanChargeTime, charge.allowedLoanChargeTime) &&
         Objects.equals(this.allowedClientChargeTime, charge.allowedClientChargeTime) &&
         Objects.equals(this.allowedSavingsChargeTime, charge.allowedSavingsChargeTime) &&
         Objects.equals(this.percentageOfApprovedAmount, charge.percentageOfApprovedAmount) &&
         Objects.equals(this.overdueInstallment, charge.overdueInstallment) &&
         Objects.equals(this.disbursementCharge, charge.disbursementCharge) &&
-        Objects.equals(this.loanCharge, charge.loanCharge) &&
-        Objects.equals(this.clientCharge, charge.clientCharge) &&
+        Objects.equals(this.savingsCharge, charge.savingsCharge) &&
+        Objects.equals(this.annualFee, charge.annualFee) &&
+        Objects.equals(this.monthlyFee, charge.monthlyFee) &&
+        Objects.equals(this.feeOnMonthDay, charge.feeOnMonthDay) &&
+        Objects.equals(this.allowedSavingsChargeCalculationType, charge.allowedSavingsChargeCalculationType) &&
+        Objects.equals(this.allowedClientChargeCalculationType, charge.allowedClientChargeCalculationType) &&
+        Objects.equals(this.percentageOfDisbursementAmount, charge.percentageOfDisbursementAmount) &&
         Objects.equals(this._new, charge._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, amount, currencyCode, chargeTimeType, chargeCalculation, chargePaymentMode, feeInterval, penalty, active, deleted, minCap, maxCap, account, taxGroup, feeOnMonthDay, savingsCharge, allowedSavingsChargeCalculationType, allowedClientChargeCalculationType, percentageOfDisbursementAmount, annualFee, monthlyFee, allowedLoanChargeTime, allowedClientChargeTime, allowedSavingsChargeTime, percentageOfApprovedAmount, overdueInstallment, disbursementCharge, loanCharge, clientCharge, _new);
+    return Objects.hash(id, name, amount, currencyCode, chargeTimeType, chargeCalculation, chargePaymentMode, feeInterval, penalty, active, deleted, minCap, maxCap, account, taxGroup, clientCharge, loanCharge, allowedLoanChargeTime, allowedClientChargeTime, allowedSavingsChargeTime, percentageOfApprovedAmount, overdueInstallment, disbursementCharge, savingsCharge, annualFee, monthlyFee, feeOnMonthDay, allowedSavingsChargeCalculationType, allowedClientChargeCalculationType, percentageOfDisbursementAmount, _new);
   }
 
 
@@ -956,21 +956,21 @@ public class Charge {
     sb.append("    maxCap: ").append(toIndentedString(maxCap)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    taxGroup: ").append(toIndentedString(taxGroup)).append("\n");
-    sb.append("    feeOnMonthDay: ").append(toIndentedString(feeOnMonthDay)).append("\n");
-    sb.append("    savingsCharge: ").append(toIndentedString(savingsCharge)).append("\n");
-    sb.append("    allowedSavingsChargeCalculationType: ").append(toIndentedString(allowedSavingsChargeCalculationType)).append("\n");
-    sb.append("    allowedClientChargeCalculationType: ").append(toIndentedString(allowedClientChargeCalculationType)).append("\n");
-    sb.append("    percentageOfDisbursementAmount: ").append(toIndentedString(percentageOfDisbursementAmount)).append("\n");
-    sb.append("    annualFee: ").append(toIndentedString(annualFee)).append("\n");
-    sb.append("    monthlyFee: ").append(toIndentedString(monthlyFee)).append("\n");
+    sb.append("    clientCharge: ").append(toIndentedString(clientCharge)).append("\n");
+    sb.append("    loanCharge: ").append(toIndentedString(loanCharge)).append("\n");
     sb.append("    allowedLoanChargeTime: ").append(toIndentedString(allowedLoanChargeTime)).append("\n");
     sb.append("    allowedClientChargeTime: ").append(toIndentedString(allowedClientChargeTime)).append("\n");
     sb.append("    allowedSavingsChargeTime: ").append(toIndentedString(allowedSavingsChargeTime)).append("\n");
     sb.append("    percentageOfApprovedAmount: ").append(toIndentedString(percentageOfApprovedAmount)).append("\n");
     sb.append("    overdueInstallment: ").append(toIndentedString(overdueInstallment)).append("\n");
     sb.append("    disbursementCharge: ").append(toIndentedString(disbursementCharge)).append("\n");
-    sb.append("    loanCharge: ").append(toIndentedString(loanCharge)).append("\n");
-    sb.append("    clientCharge: ").append(toIndentedString(clientCharge)).append("\n");
+    sb.append("    savingsCharge: ").append(toIndentedString(savingsCharge)).append("\n");
+    sb.append("    annualFee: ").append(toIndentedString(annualFee)).append("\n");
+    sb.append("    monthlyFee: ").append(toIndentedString(monthlyFee)).append("\n");
+    sb.append("    feeOnMonthDay: ").append(toIndentedString(feeOnMonthDay)).append("\n");
+    sb.append("    allowedSavingsChargeCalculationType: ").append(toIndentedString(allowedSavingsChargeCalculationType)).append("\n");
+    sb.append("    allowedClientChargeCalculationType: ").append(toIndentedString(allowedClientChargeCalculationType)).append("\n");
+    sb.append("    percentageOfDisbursementAmount: ").append(toIndentedString(percentageOfDisbursementAmount)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();

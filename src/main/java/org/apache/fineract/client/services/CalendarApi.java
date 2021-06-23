@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface CalendarApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("{entityType}/{entityId}/calendars")
-  Call<String> createCalendar(
+  Observable<String> createCalendar(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Body String body
   );
 
@@ -58,10 +57,10 @@ public interface CalendarApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param calendarId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("{entityType}/{entityId}/calendars/{calendarId}")
-  Call<String> deleteCalendar(
+  Observable<String> deleteCalendar(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("calendarId") Long calendarId
   );
 
@@ -71,10 +70,10 @@ public interface CalendarApi {
    * @param calendarId  (required)
    * @param entityType  (required)
    * @param entityId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/calendars/{calendarId}")
-  Call<String> retrieveCalendar(
+  Observable<String> retrieveCalendar(
     @retrofit2.http.Path("calendarId") Long calendarId, @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId
   );
 
@@ -84,10 +83,10 @@ public interface CalendarApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param calendarType  (optional, default to &quot;all&quot;)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/calendars")
-  Call<String> retrieveCalendarsByEntity(
+  Observable<String> retrieveCalendarsByEntity(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Query("calendarType") String calendarType
   );
 
@@ -96,10 +95,10 @@ public interface CalendarApi {
    * 
    * @param entityType  (required)
    * @param entityId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/calendars/template")
-  Call<String> retrieveNewCalendarDetails(
+  Observable<String> retrieveNewCalendarDetails(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId
   );
 
@@ -110,13 +109,13 @@ public interface CalendarApi {
    * @param entityId  (required)
    * @param calendarId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("{entityType}/{entityId}/calendars/{calendarId}")
-  Call<String> updateCalendar(
+  Observable<String> updateCalendar(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("calendarId") Long calendarId, @retrofit2.http.Body String body
   );
 

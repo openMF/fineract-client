@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,13 +39,13 @@ public interface RescheduleLoansApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("rescheduleloans")
-  Call<String> createLoanRescheduleRequest(
+  Observable<String> createLoanRescheduleRequest(
     @retrofit2.http.Body String body
   );
 
@@ -55,10 +54,10 @@ public interface RescheduleLoansApi {
    * 
    * @param scheduleId  (required)
    * @param command  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("rescheduleloans/{scheduleId}")
-  Call<String> readLoanRescheduleRequest(
+  Observable<String> readLoanRescheduleRequest(
     @retrofit2.http.Path("scheduleId") Long scheduleId, @retrofit2.http.Query("command") String command
   );
 
@@ -66,20 +65,20 @@ public interface RescheduleLoansApi {
    * 
    * 
    * @param command  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("rescheduleloans")
-  Call<String> retrieveAllRescheduleRequest(
+  Observable<String> retrieveAllRescheduleRequest(
     @retrofit2.http.Query("command") String command
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("rescheduleloans/template")
-  Call<String> retrieveTemplate9();
+  Observable<String> retrieveTemplate9();
     
 
   /**
@@ -88,13 +87,13 @@ public interface RescheduleLoansApi {
    * @param scheduleId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("rescheduleloans/{scheduleId}")
-  Call<String> updateLoanRescheduleRequest(
+  Observable<String> updateLoanRescheduleRequest(
     @retrofit2.http.Path("scheduleId") Long scheduleId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 

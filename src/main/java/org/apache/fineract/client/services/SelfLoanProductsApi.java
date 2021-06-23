@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,10 +39,10 @@ public interface SelfLoanProductsApi {
    * 
    * 
    * @param clientId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("self/loanproducts")
-  Call<String> retrieveAllLoanProducts1(
+  Observable<String> retrieveAllLoanProducts1(
     @retrofit2.http.Query("clientId") Long clientId
   );
 
@@ -52,10 +51,10 @@ public interface SelfLoanProductsApi {
    * 
    * @param productId  (required)
    * @param clientId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("self/loanproducts/{productId}")
-  Call<String> retrieveLoanProductDetails1(
+  Observable<String> retrieveLoanProductDetails1(
     @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Query("clientId") Long clientId
   );
 

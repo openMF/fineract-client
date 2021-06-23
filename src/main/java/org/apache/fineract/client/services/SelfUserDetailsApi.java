@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,10 +40,10 @@ public interface SelfUserDetailsApi {
    * Fetch authenticated user details
    * Checks the Authentication and returns the set roles and permissions allowed  For more info visit this link - https://demo.fineract.dev/fineract-provider/api-docs/apiLive.htm#selfoauth
    * @param accessToken äccess_token (optional)
-   * @return Call&lt;GetSelfUserDetailsResponse&gt;
+   * @return Observable&lt;GetSelfUserDetailsResponse&gt;
    */
   @GET("self/userdetails")
-  Call<GetSelfUserDetailsResponse> fetchAuthenticatedUserData1(
+  Observable<GetSelfUserDetailsResponse> fetchAuthenticatedUserData1(
     @retrofit2.http.Query("access_token") String accessToken
   );
 

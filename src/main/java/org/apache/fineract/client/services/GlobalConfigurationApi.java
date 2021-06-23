@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,10 +42,10 @@ public interface GlobalConfigurationApi {
    * Retrieve Global Configuration | Retrieve Global Configuration for surveys
    * Returns the list global enable/disable configurations.  Example Requests:  configurations   Returns the list global enable/disable survey configurations.  Example Requests:  configurations/survey
    * @param survey survey (optional, default to false)
-   * @return Call&lt;List&lt;GetGlobalConfigurationsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetGlobalConfigurationsResponse&gt;&gt;
    */
   @GET("configurations")
-  Call<List<GetGlobalConfigurationsResponse>> retrieveConfiguration(
+  Observable<List<GetGlobalConfigurationsResponse>> retrieveConfiguration(
     @retrofit2.http.Query("survey") Boolean survey
   );
 
@@ -54,10 +53,10 @@ public interface GlobalConfigurationApi {
    * Retrieve Global Configuration
    * Returns a global enable/disable configurations.  Example Requests:  configurations/1
    * @param configId configId (required)
-   * @return Call&lt;GetGlobalConfigurationsResponse&gt;
+   * @return Observable&lt;GetGlobalConfigurationsResponse&gt;
    */
   @GET("configurations/{configId}")
-  Call<GetGlobalConfigurationsResponse> retrieveOne3(
+  Observable<GetGlobalConfigurationsResponse> retrieveOne3(
     @retrofit2.http.Path("configId") Long configId
   );
 
@@ -66,13 +65,13 @@ public interface GlobalConfigurationApi {
    * Updates an enable/disable global configuration item.
    * @param configId configId (required)
    * @param putGlobalConfigurationsRequest  (required)
-   * @return Call&lt;PutGlobalConfigurationsResponse&gt;
+   * @return Observable&lt;PutGlobalConfigurationsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("configurations/{configId}")
-  Call<PutGlobalConfigurationsResponse> updateConfiguration1(
+  Observable<PutGlobalConfigurationsResponse> updateConfiguration1(
     @retrofit2.http.Path("configId") Long configId, @retrofit2.http.Body PutGlobalConfigurationsRequest putGlobalConfigurationsRequest
   );
 

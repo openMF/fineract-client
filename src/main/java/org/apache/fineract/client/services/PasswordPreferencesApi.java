@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,32 +40,32 @@ public interface PasswordPreferencesApi {
   /**
    * 
    * 
-   * @return Call&lt;GetPasswordPreferencesTemplateResponse&gt;
+   * @return Observable&lt;GetPasswordPreferencesTemplateResponse&gt;
    */
   @GET("passwordpreferences")
-  Call<GetPasswordPreferencesTemplateResponse> retrieve1();
+  Observable<GetPasswordPreferencesTemplateResponse> retrieve1();
     
 
   /**
    * List Application Password validation policies
    * ARGUMENTS Example Requests:  passwordpreferences
-   * @return Call&lt;List&lt;GetPasswordPreferencesTemplateResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetPasswordPreferencesTemplateResponse&gt;&gt;
    */
   @GET("passwordpreferences/template")
-  Call<List<GetPasswordPreferencesTemplateResponse>> template21();
+  Observable<List<GetPasswordPreferencesTemplateResponse>> template21();
     
 
   /**
    * Update password preferences
    * 
    * @param putPasswordPreferencesTemplateRequest  (required)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("passwordpreferences")
-  Call<Void> update23(
+  Completable update23(
     @retrofit2.http.Body PutPasswordPreferencesTemplateRequest putPasswordPreferencesTemplateRequest
   );
 

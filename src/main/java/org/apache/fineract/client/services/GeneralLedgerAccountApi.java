@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface GeneralLedgerAccountApi {
    * Create a General Ledger Account
    * Note: You may optionally create Hierarchical Chart of Accounts by using the \&quot;parentId\&quot; property of an Account Mandatory Fields:  name, glCode, type, usage and manualEntriesAllowed
    * @param postGLAccountsRequest  (optional)
-   * @return Call&lt;PostGLAccountsResponse&gt;
+   * @return Observable&lt;PostGLAccountsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("glaccounts")
-  Call<PostGLAccountsResponse> createGLAccount1(
+  Observable<PostGLAccountsResponse> createGLAccount1(
     @retrofit2.http.Body PostGLAccountsRequest postGLAccountsRequest
   );
 
@@ -62,10 +61,10 @@ public interface GeneralLedgerAccountApi {
    * Delete an accounting closure
    * Note: Only the latest accounting closure associated with a branch may be deleted.
    * @param glAccountId glAccountId (required)
-   * @return Call&lt;DeleteGLAccountsRequest&gt;
+   * @return Observable&lt;DeleteGLAccountsRequest&gt;
    */
   @DELETE("glaccounts/{glAccountId}")
-  Call<DeleteGLAccountsRequest> deleteGLAccount1(
+  Observable<DeleteGLAccountsRequest> deleteGLAccount1(
     @retrofit2.http.Path("glAccountId") Long glAccountId
   );
 
@@ -73,10 +72,10 @@ public interface GeneralLedgerAccountApi {
    * 
    * 
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("glaccounts/downloadtemplate")
-  Call<Void> getGlAccountsTemplate(
+  Completable getGlAccountsTemplate(
     @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -86,11 +85,11 @@ public interface GeneralLedgerAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("glaccounts/uploadtemplate")
-  Call<String> postGlAccountsTemplate(
+  Observable<String> postGlAccountsTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -99,10 +98,10 @@ public interface GeneralLedgerAccountApi {
    * Example Requests:  glaccounts/1   glaccounts/1?template&#x3D;true   glaccounts/1?fields&#x3D;name,glCode   glaccounts/1?fetchRunningBalance&#x3D;true
    * @param glAccountId glAccountId (required)
    * @param fetchRunningBalance fetchRunningBalance (optional)
-   * @return Call&lt;GetGLAccountsResponse&gt;
+   * @return Observable&lt;GetGLAccountsResponse&gt;
    */
   @GET("glaccounts/{glAccountId}")
-  Call<GetGLAccountsResponse> retreiveAccount(
+  Observable<GetGLAccountsResponse> retreiveAccount(
     @retrofit2.http.Path("glAccountId") Long glAccountId, @retrofit2.http.Query("fetchRunningBalance") Boolean fetchRunningBalance
   );
 
@@ -115,10 +114,10 @@ public interface GeneralLedgerAccountApi {
    * @param manualEntriesAllowed manualEntriesAllowed (optional)
    * @param disabled disabled (optional)
    * @param fetchRunningBalance fetchRunningBalance (optional)
-   * @return Call&lt;List&lt;GetGLAccountsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetGLAccountsResponse&gt;&gt;
    */
   @GET("glaccounts")
-  Call<List<GetGLAccountsResponse>> retrieveAllAccounts(
+  Observable<List<GetGLAccountsResponse>> retrieveAllAccounts(
     @retrofit2.http.Query("type") Integer type, @retrofit2.http.Query("searchParam") String searchParam, @retrofit2.http.Query("usage") Integer usage, @retrofit2.http.Query("manualEntriesAllowed") Boolean manualEntriesAllowed, @retrofit2.http.Query("disabled") Boolean disabled, @retrofit2.http.Query("fetchRunningBalance") Boolean fetchRunningBalance
   );
 
@@ -126,10 +125,10 @@ public interface GeneralLedgerAccountApi {
    * Retrieve GL Accounts Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  glaccounts/template glaccounts/template?type&#x3D;1  type is optional and integer value from 1 to 5.  1.Assets  2.Liabilities  3.Equity  4.Income  5.Expenses
    * @param type type (optional)
-   * @return Call&lt;GetGLAccountsTemplateResponse&gt;
+   * @return Observable&lt;GetGLAccountsTemplateResponse&gt;
    */
   @GET("glaccounts/template")
-  Call<GetGLAccountsTemplateResponse> retrieveNewAccountDetails(
+  Observable<GetGLAccountsTemplateResponse> retrieveNewAccountDetails(
     @retrofit2.http.Query("type") Integer type
   );
 
@@ -138,13 +137,13 @@ public interface GeneralLedgerAccountApi {
    * Once an accounting closure is created, only the comments associated with it may be edited  
    * @param glAccountId glAccountId (required)
    * @param putGLAccountsRequest  (optional)
-   * @return Call&lt;PutGLAccountsResponse&gt;
+   * @return Observable&lt;PutGLAccountsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("glaccounts/{glAccountId}")
-  Call<PutGLAccountsResponse> updateGLAccount1(
+  Observable<PutGLAccountsResponse> updateGLAccount1(
     @retrofit2.http.Path("glAccountId") Long glAccountId, @retrofit2.http.Body PutGLAccountsRequest putGLAccountsRequest
   );
 

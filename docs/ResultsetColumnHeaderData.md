@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **columnCode** | **String** |  |  [optional]
 **mandatory** | **Boolean** |  |  [optional]
 **optional** | **Boolean** |  |  [optional]
-**string** | **Boolean** |  |  [optional]
 **dateDisplayType** | **Boolean** |  |  [optional]
 **dateTimeDisplayType** | **Boolean** |  |  [optional]
-**integerDisplayType** | **Boolean** |  |  [optional]
+**string** | **Boolean** |  |  [optional]
 **decimalDisplayType** | **Boolean** |  |  [optional]
 **booleanDisplayType** | **Boolean** |  |  [optional]
 **codeValueDisplayType** | **Boolean** |  |  [optional]
 **codeLookupDisplayType** | **Boolean** |  |  [optional]
+**integerDisplayType** | **Boolean** |  |  [optional]
 
 
 

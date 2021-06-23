@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **value** | **String** |  |  [optional]
 **simple** | **Boolean** |  |  [optional]
-**contentDisposition** | [**ContentDisposition**](ContentDisposition.md) |  |  [optional]
 **formDataContentDisposition** | [**FormDataContentDisposition**](FormDataContentDisposition.md) |  |  [optional]
+**contentDisposition** | [**ContentDisposition**](ContentDisposition.md) |  |  [optional]
 **parameterizedHeaders** | [**Map&lt;String, List&lt;ParameterizedHeader&gt;&gt;**](List.md) |  |  [optional]
 
 

@@ -147,22 +147,6 @@ public class Client {
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
 
-  public static final String SERIALIZED_NAME_ACTIVATION_LOCAL_DATE = "activationLocalDate";
-  @SerializedName(SERIALIZED_NAME_ACTIVATION_LOCAL_DATE)
-  private LocalDate activationLocalDate;
-
-  public static final String SERIALIZED_NAME_WITHDRAWN = "withdrawn";
-  @SerializedName(SERIALIZED_NAME_WITHDRAWN)
-  private Boolean withdrawn;
-
-  public static final String SERIALIZED_NAME_NOT_STAFF = "notStaff";
-  @SerializedName(SERIALIZED_NAME_NOT_STAFF)
-  private Boolean notStaff;
-
-  public static final String SERIALIZED_NAME_REJECTED_DATE = "rejectedDate";
-  @SerializedName(SERIALIZED_NAME_REJECTED_DATE)
-  private LocalDate rejectedDate;
-
   public static final String SERIALIZED_NAME_PENDING = "pending";
   @SerializedName(SERIALIZED_NAME_PENDING)
   private Boolean pending;
@@ -171,9 +155,17 @@ public class Client {
   @SerializedName(SERIALIZED_NAME_REJECTED)
   private Boolean rejected;
 
+  public static final String SERIALIZED_NAME_WITHDRAWN = "withdrawn";
+  @SerializedName(SERIALIZED_NAME_WITHDRAWN)
+  private Boolean withdrawn;
+
   public static final String SERIALIZED_NAME_NOT_ACTIVE = "notActive";
   @SerializedName(SERIALIZED_NAME_NOT_ACTIVE)
   private Boolean notActive;
+
+  public static final String SERIALIZED_NAME_ACTIVATION_LOCAL_DATE = "activationLocalDate";
+  @SerializedName(SERIALIZED_NAME_ACTIVATION_LOCAL_DATE)
+  private LocalDate activationLocalDate;
 
   public static final String SERIALIZED_NAME_TRANSFER_IN_PROGRESS = "transferInProgress";
   @SerializedName(SERIALIZED_NAME_TRANSFER_IN_PROGRESS)
@@ -194,6 +186,14 @@ public class Client {
   public static final String SERIALIZED_NAME_TRANSFER_IN_PROGRESS_OR_ON_HOLD = "transferInProgressOrOnHold";
   @SerializedName(SERIALIZED_NAME_TRANSFER_IN_PROGRESS_OR_ON_HOLD)
   private Boolean transferInProgressOrOnHold;
+
+  public static final String SERIALIZED_NAME_NOT_STAFF = "notStaff";
+  @SerializedName(SERIALIZED_NAME_NOT_STAFF)
+  private Boolean notStaff;
+
+  public static final String SERIALIZED_NAME_REJECTED_DATE = "rejectedDate";
+  @SerializedName(SERIALIZED_NAME_REJECTED_DATE)
+  private LocalDate rejectedDate;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -737,98 +737,6 @@ public class Client {
   }
 
 
-  public Client activationLocalDate(LocalDate activationLocalDate) {
-    
-    this.activationLocalDate = activationLocalDate;
-    return this;
-  }
-
-   /**
-   * Get activationLocalDate
-   * @return activationLocalDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public LocalDate getActivationLocalDate() {
-    return activationLocalDate;
-  }
-
-
-  public void setActivationLocalDate(LocalDate activationLocalDate) {
-    this.activationLocalDate = activationLocalDate;
-  }
-
-
-  public Client withdrawn(Boolean withdrawn) {
-    
-    this.withdrawn = withdrawn;
-    return this;
-  }
-
-   /**
-   * Get withdrawn
-   * @return withdrawn
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getWithdrawn() {
-    return withdrawn;
-  }
-
-
-  public void setWithdrawn(Boolean withdrawn) {
-    this.withdrawn = withdrawn;
-  }
-
-
-  public Client notStaff(Boolean notStaff) {
-    
-    this.notStaff = notStaff;
-    return this;
-  }
-
-   /**
-   * Get notStaff
-   * @return notStaff
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getNotStaff() {
-    return notStaff;
-  }
-
-
-  public void setNotStaff(Boolean notStaff) {
-    this.notStaff = notStaff;
-  }
-
-
-  public Client rejectedDate(LocalDate rejectedDate) {
-    
-    this.rejectedDate = rejectedDate;
-    return this;
-  }
-
-   /**
-   * Get rejectedDate
-   * @return rejectedDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public LocalDate getRejectedDate() {
-    return rejectedDate;
-  }
-
-
-  public void setRejectedDate(LocalDate rejectedDate) {
-    this.rejectedDate = rejectedDate;
-  }
-
-
   public Client pending(Boolean pending) {
     
     this.pending = pending;
@@ -875,6 +783,29 @@ public class Client {
   }
 
 
+  public Client withdrawn(Boolean withdrawn) {
+    
+    this.withdrawn = withdrawn;
+    return this;
+  }
+
+   /**
+   * Get withdrawn
+   * @return withdrawn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getWithdrawn() {
+    return withdrawn;
+  }
+
+
+  public void setWithdrawn(Boolean withdrawn) {
+    this.withdrawn = withdrawn;
+  }
+
+
   public Client notActive(Boolean notActive) {
     
     this.notActive = notActive;
@@ -895,6 +826,29 @@ public class Client {
 
   public void setNotActive(Boolean notActive) {
     this.notActive = notActive;
+  }
+
+
+  public Client activationLocalDate(LocalDate activationLocalDate) {
+    
+    this.activationLocalDate = activationLocalDate;
+    return this;
+  }
+
+   /**
+   * Get activationLocalDate
+   * @return activationLocalDate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalDate getActivationLocalDate() {
+    return activationLocalDate;
+  }
+
+
+  public void setActivationLocalDate(LocalDate activationLocalDate) {
+    this.activationLocalDate = activationLocalDate;
   }
 
 
@@ -1013,6 +967,52 @@ public class Client {
   }
 
 
+  public Client notStaff(Boolean notStaff) {
+    
+    this.notStaff = notStaff;
+    return this;
+  }
+
+   /**
+   * Get notStaff
+   * @return notStaff
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getNotStaff() {
+    return notStaff;
+  }
+
+
+  public void setNotStaff(Boolean notStaff) {
+    this.notStaff = notStaff;
+  }
+
+
+  public Client rejectedDate(LocalDate rejectedDate) {
+    
+    this.rejectedDate = rejectedDate;
+    return this;
+  }
+
+   /**
+   * Get rejectedDate
+   * @return rejectedDate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalDate getRejectedDate() {
+    return rejectedDate;
+  }
+
+
+  public void setRejectedDate(LocalDate rejectedDate) {
+    this.rejectedDate = rejectedDate;
+  }
+
+
   public Client _new(Boolean _new) {
     
     this._new = _new;
@@ -1068,24 +1068,24 @@ public class Client {
         Objects.equals(this.proposedTransferDate, client.proposedTransferDate) &&
         Objects.equals(this.closed, client.closed) &&
         Objects.equals(this.active, client.active) &&
-        Objects.equals(this.activationLocalDate, client.activationLocalDate) &&
-        Objects.equals(this.withdrawn, client.withdrawn) &&
-        Objects.equals(this.notStaff, client.notStaff) &&
-        Objects.equals(this.rejectedDate, client.rejectedDate) &&
         Objects.equals(this.pending, client.pending) &&
         Objects.equals(this.rejected, client.rejected) &&
+        Objects.equals(this.withdrawn, client.withdrawn) &&
         Objects.equals(this.notActive, client.notActive) &&
+        Objects.equals(this.activationLocalDate, client.activationLocalDate) &&
         Objects.equals(this.transferInProgress, client.transferInProgress) &&
         Objects.equals(this.transferOnHold, client.transferOnHold) &&
         Objects.equals(this.officeJoiningLocalDate, client.officeJoiningLocalDate) &&
         Objects.equals(this.notPending, client.notPending) &&
         Objects.equals(this.transferInProgressOrOnHold, client.transferInProgressOrOnHold) &&
+        Objects.equals(this.notStaff, client.notStaff) &&
+        Objects.equals(this.rejectedDate, client.rejectedDate) &&
         Objects.equals(this._new, client._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, office, transferToOffice, image, status, firstname, middlename, lastname, displayName, mobileNo, emailAddress, externalId, staff, groups, accountNumberRequiresAutoGeneration, closureDate, withdrawalDate, submittedOnDate, legalForm, reopenedDate, proposedTransferDate, closed, active, activationLocalDate, withdrawn, notStaff, rejectedDate, pending, rejected, notActive, transferInProgress, transferOnHold, officeJoiningLocalDate, notPending, transferInProgressOrOnHold, _new);
+    return Objects.hash(id, office, transferToOffice, image, status, firstname, middlename, lastname, displayName, mobileNo, emailAddress, externalId, staff, groups, accountNumberRequiresAutoGeneration, closureDate, withdrawalDate, submittedOnDate, legalForm, reopenedDate, proposedTransferDate, closed, active, pending, rejected, withdrawn, notActive, activationLocalDate, transferInProgress, transferOnHold, officeJoiningLocalDate, notPending, transferInProgressOrOnHold, notStaff, rejectedDate, _new);
   }
 
 
@@ -1116,18 +1116,18 @@ public class Client {
     sb.append("    proposedTransferDate: ").append(toIndentedString(proposedTransferDate)).append("\n");
     sb.append("    closed: ").append(toIndentedString(closed)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    activationLocalDate: ").append(toIndentedString(activationLocalDate)).append("\n");
-    sb.append("    withdrawn: ").append(toIndentedString(withdrawn)).append("\n");
-    sb.append("    notStaff: ").append(toIndentedString(notStaff)).append("\n");
-    sb.append("    rejectedDate: ").append(toIndentedString(rejectedDate)).append("\n");
     sb.append("    pending: ").append(toIndentedString(pending)).append("\n");
     sb.append("    rejected: ").append(toIndentedString(rejected)).append("\n");
+    sb.append("    withdrawn: ").append(toIndentedString(withdrawn)).append("\n");
     sb.append("    notActive: ").append(toIndentedString(notActive)).append("\n");
+    sb.append("    activationLocalDate: ").append(toIndentedString(activationLocalDate)).append("\n");
     sb.append("    transferInProgress: ").append(toIndentedString(transferInProgress)).append("\n");
     sb.append("    transferOnHold: ").append(toIndentedString(transferOnHold)).append("\n");
     sb.append("    officeJoiningLocalDate: ").append(toIndentedString(officeJoiningLocalDate)).append("\n");
     sb.append("    notPending: ").append(toIndentedString(notPending)).append("\n");
     sb.append("    transferInProgressOrOnHold: ").append(toIndentedString(transferInProgressOrOnHold)).append("\n");
+    sb.append("    notStaff: ").append(toIndentedString(notStaff)).append("\n");
+    sb.append("    rejectedDate: ").append(toIndentedString(rejectedDate)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface AccountingRulesApi {
    * Create/Define a Accounting rule
    * Define a new Accounting rule.  Mandatory Fields name, officeId, accountToDebit OR debitTags, accountToCredit OR creditTags.  Optional Fields description
    * @param postAccountingRulesRequest  (optional)
-   * @return Call&lt;PostAccountingRulesResponse&gt;
+   * @return Observable&lt;PostAccountingRulesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("accountingrules")
-  Call<PostAccountingRulesResponse> createAccountingRule(
+  Observable<PostAccountingRulesResponse> createAccountingRule(
     @retrofit2.http.Body PostAccountingRulesRequest postAccountingRulesRequest
   );
 
@@ -62,10 +61,10 @@ public interface AccountingRulesApi {
    * Delete a Accounting Rule
    * Deletes a Accounting rule.
    * @param accountingRuleId accountingRuleId (required)
-   * @return Call&lt;DeleteAccountingRulesResponse&gt;
+   * @return Observable&lt;DeleteAccountingRulesResponse&gt;
    */
   @DELETE("accountingrules/{accountingRuleId}")
-  Call<DeleteAccountingRulesResponse> deleteAccountingRule(
+  Observable<DeleteAccountingRulesResponse> deleteAccountingRule(
     @retrofit2.http.Path("accountingRuleId") Long accountingRuleId
   );
 
@@ -73,29 +72,29 @@ public interface AccountingRulesApi {
    * Retrieve a Accounting rule
    * Returns the details of a defined Accounting rule.  Example Requests:  accountingrules/1
    * @param accountingRuleId accountingRuleId (required)
-   * @return Call&lt;AccountingRuleData&gt;
+   * @return Observable&lt;AccountingRuleData&gt;
    */
   @GET("accountingrules/{accountingRuleId}")
-  Call<AccountingRuleData> retreiveAccountingRule(
+  Observable<AccountingRuleData> retreiveAccountingRule(
     @retrofit2.http.Path("accountingRuleId") Long accountingRuleId
   );
 
   /**
    * Retrieve Accounting Rules
    * Returns the list of defined accounting rules.  Example Requests:  accountingrules
-   * @return Call&lt;List&lt;GetAccountRulesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetAccountRulesResponse&gt;&gt;
    */
   @GET("accountingrules")
-  Call<List<GetAccountRulesResponse>> retrieveAllAccountingRules();
+  Observable<List<GetAccountRulesResponse>> retrieveAllAccountingRules();
     
 
   /**
    * Retrieve Accounting Rule Details Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  accountingrules/template
-   * @return Call&lt;GetAccountRulesTemplateResponse&gt;
+   * @return Observable&lt;GetAccountRulesTemplateResponse&gt;
    */
   @GET("accountingrules/template")
-  Call<GetAccountRulesTemplateResponse> retrieveTemplate1();
+  Observable<GetAccountRulesTemplateResponse> retrieveTemplate1();
     
 
   /**
@@ -103,13 +102,13 @@ public interface AccountingRulesApi {
    * Updates the details of a Accounting rule.
    * @param accountingRuleId accountingRuleId (required)
    * @param putAccountingRulesRequest  (optional)
-   * @return Call&lt;PutAccountingRulesResponse&gt;
+   * @return Observable&lt;PutAccountingRulesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("accountingrules/{accountingRuleId}")
-  Call<PutAccountingRulesResponse> updateAccountingRule(
+  Observable<PutAccountingRulesResponse> updateAccountingRule(
     @retrofit2.http.Path("accountingRuleId") Long accountingRuleId, @retrofit2.http.Body PutAccountingRulesRequest putAccountingRulesRequest
   );
 

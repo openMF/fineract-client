@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface ProductsApi {
    * Creates a Share Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, locale, totalShares, unitPrice, nominalShares,allowDividendCalculationForInactiveClients,accountingRule  Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): shareReferenceId, shareSuspenseId, shareEquityId, incomeFromFeeAccountId  Optional Fields: sharesIssued, minimumShares, maximumShares, minimumActivePeriodForDividends, minimumactiveperiodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType, marketPricePeriods, chargesSelected
    * @param type type (required)
    * @param postProductsTypeRequest  (required)
-   * @return Call&lt;PostProductsTypeResponse&gt;
+   * @return Observable&lt;PostProductsTypeResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("products/{type}")
-  Call<PostProductsTypeResponse> createProduct(
+  Observable<PostProductsTypeResponse> createProduct(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Body PostProductsTypeRequest postProductsTypeRequest
   );
 
@@ -63,10 +62,10 @@ public interface ProductsApi {
    * @param type type (required)
    * @param productId productId (required)
    * @param command command (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("products/{type}/{productId}")
-  Call<String> handleCommands3(
+  Observable<String> handleCommands3(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Query("command") String command
   );
 
@@ -76,10 +75,10 @@ public interface ProductsApi {
    * @param type type (required)
    * @param offset offset (optional)
    * @param limit limit (optional)
-   * @return Call&lt;GetProductsTypeResponse&gt;
+   * @return Observable&lt;GetProductsTypeResponse&gt;
    */
   @GET("products/{type}")
-  Call<GetProductsTypeResponse> retrieveAllProducts(
+  Observable<GetProductsTypeResponse> retrieveAllProducts(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -88,10 +87,10 @@ public interface ProductsApi {
    * Retrieves a Share Product  Example Requests:  products/share/1   products/share/1?template&#x3D;true
    * @param productId productId (required)
    * @param type type (required)
-   * @return Call&lt;GetProductsTypeProductIdResponse&gt;
+   * @return Observable&lt;GetProductsTypeProductIdResponse&gt;
    */
   @GET("products/{type}/{productId}")
-  Call<GetProductsTypeProductIdResponse> retrieveProduct(
+  Observable<GetProductsTypeProductIdResponse> retrieveProduct(
     @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Path("type") String type
   );
 
@@ -99,10 +98,10 @@ public interface ProductsApi {
    * 
    * 
    * @param type type (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("products/{type}/template")
-  Call<String> retrieveTemplate12(
+  Observable<String> retrieveTemplate12(
     @retrofit2.http.Path("type") String type
   );
 
@@ -112,13 +111,13 @@ public interface ProductsApi {
    * @param type type (required)
    * @param productId productId (required)
    * @param putProductsTypeProductIdRequest  (required)
-   * @return Call&lt;PutProductsTypeProductIdResponse&gt;
+   * @return Observable&lt;PutProductsTypeProductIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("products/{type}/{productId}")
-  Call<PutProductsTypeProductIdResponse> updateProduct(
+  Observable<PutProductsTypeProductIdResponse> updateProduct(
     @retrofit2.http.Path("type") String type, @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Body PutProductsTypeProductIdRequest putProductsTypeProductIdRequest
   );
 

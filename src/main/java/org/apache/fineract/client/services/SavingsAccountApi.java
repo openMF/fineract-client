@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -51,10 +50,10 @@ public interface SavingsAccountApi {
    * Delete a savings application
    * At present we support hard delete of savings application so long as its in &#39;Submitted and pending approval&#39; state. One the application is moves past this state, it is not possible to do a &#39;hard&#39; delete of the application or the account. An API endpoint will be added to close/de-activate the savings account.
    * @param accountId accountId (required)
-   * @return Call&lt;DeleteSavingsAccountsAccountIdResponse&gt;
+   * @return Observable&lt;DeleteSavingsAccountsAccountIdResponse&gt;
    */
   @DELETE("savingsaccounts/{accountId}")
-  Call<DeleteSavingsAccountsAccountIdResponse> delete18(
+  Observable<DeleteSavingsAccountsAccountIdResponse> delete18(
     @retrofit2.http.Path("accountId") Long accountId
   );
 
@@ -64,10 +63,10 @@ public interface SavingsAccountApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("savingsaccounts/downloadtemplate")
-  Call<Void> getSavingsTemplate(
+  Completable getSavingsTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -76,10 +75,10 @@ public interface SavingsAccountApi {
    * 
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("savingsaccounts/transactions/downloadtemplate")
-  Call<Void> getSavingsTransactionTemplate(
+  Completable getSavingsTransactionTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -89,13 +88,13 @@ public interface SavingsAccountApi {
    * @param accountId accountId (required)
    * @param postSavingsAccountsAccountIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostSavingsAccountsAccountIdResponse&gt;
+   * @return Observable&lt;PostSavingsAccountsAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts/{accountId}")
-  Call<PostSavingsAccountsAccountIdResponse> handleCommands6(
+  Observable<PostSavingsAccountsAccountIdResponse> handleCommands6(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PostSavingsAccountsAccountIdRequest postSavingsAccountsAccountIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -105,13 +104,13 @@ public interface SavingsAccountApi {
    * @param parentAccountId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts/gsimcommands/{parentAccountId}")
-  Call<String> handleGSIMCommands(
+  Observable<String> handleGSIMCommands(
     @retrofit2.http.Path("parentAccountId") Long parentAccountId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -121,11 +120,11 @@ public interface SavingsAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("savingsaccounts/uploadtemplate")
-  Call<String> postSavingsTemplate(
+  Observable<String> postSavingsTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -135,11 +134,11 @@ public interface SavingsAccountApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("savingsaccounts/transactions/uploadtemplate")
-  Call<String> postSavingsTransactionTemplate(
+  Observable<String> postSavingsTransactionTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -152,10 +151,10 @@ public interface SavingsAccountApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;GetSavingsAccountsResponse&gt;
+   * @return Observable&lt;GetSavingsAccountsResponse&gt;
    */
   @GET("savingsaccounts")
-  Call<GetSavingsAccountsResponse> retrieveAll33(
+  Observable<GetSavingsAccountsResponse> retrieveAll33(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -165,10 +164,10 @@ public interface SavingsAccountApi {
    * @param accountId accountId (required)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
    * @param chargeStatus chargeStatus (optional, default to &quot;all&quot;)
-   * @return Call&lt;GetSavingsAccountsAccountIdResponse&gt;
+   * @return Observable&lt;GetSavingsAccountsAccountIdResponse&gt;
    */
   @GET("savingsaccounts/{accountId}")
-  Call<GetSavingsAccountsAccountIdResponse> retrieveOne24(
+  Observable<GetSavingsAccountsAccountIdResponse> retrieveOne24(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly, @retrofit2.http.Query("chargeStatus") String chargeStatus
   );
 
@@ -176,13 +175,13 @@ public interface SavingsAccountApi {
    * Submit new savings application
    * Submits new savings application  Mandatory Fields: clientId or groupId, productId, submittedOnDate  Optional Fields: accountNo, externalId, fieldOfficerId  Inherited from Product (if not provided): nominalAnnualInterestRate, interestCompoundingPeriodType, interestCalculationType, interestCalculationDaysInYearType, minRequiredOpeningBalance, lockinPeriodFrequency, lockinPeriodFrequencyType, withdrawalFeeForTransfers, allowOverdraft, overdraftLimit, withHoldTax  Additional Mandatory Field if Entity-Datatable Check is enabled for the entity of type Savings: datatables
    * @param postSavingsAccountsRequest  (required)
-   * @return Call&lt;PostSavingsAccountsResponse&gt;
+   * @return Observable&lt;PostSavingsAccountsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts")
-  Call<PostSavingsAccountsResponse> submitApplication2(
+  Observable<PostSavingsAccountsResponse> submitApplication2(
     @retrofit2.http.Body PostSavingsAccountsRequest postSavingsAccountsRequest
   );
 
@@ -190,13 +189,13 @@ public interface SavingsAccountApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts/gsim")
-  Call<String> submitGSIMApplication(
+  Observable<String> submitGSIMApplication(
     @retrofit2.http.Body String body
   );
 
@@ -207,10 +206,10 @@ public interface SavingsAccountApi {
    * @param groupId groupId (optional)
    * @param productId productId (optional)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetSavingsAccountsTemplateResponse&gt;
+   * @return Observable&lt;GetSavingsAccountsTemplateResponse&gt;
    */
   @GET("savingsaccounts/template")
-  Call<GetSavingsAccountsTemplateResponse> template14(
+  Observable<GetSavingsAccountsTemplateResponse> template14(
     @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("groupId") Long groupId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -220,13 +219,13 @@ public interface SavingsAccountApi {
    * @param accountId accountId (required)
    * @param putSavingsAccountsAccountIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PutSavingsAccountsAccountIdResponse&gt;
+   * @return Observable&lt;PutSavingsAccountsAccountIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("savingsaccounts/{accountId}")
-  Call<PutSavingsAccountsAccountIdResponse> update19(
+  Observable<PutSavingsAccountsAccountIdResponse> update19(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Body PutSavingsAccountsAccountIdRequest putSavingsAccountsAccountIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -235,13 +234,13 @@ public interface SavingsAccountApi {
    * 
    * @param parentAccountId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("savingsaccounts/gsim/{parentAccountId}")
-  Call<String> updateGsim(
+  Observable<String> updateGsim(
     @retrofit2.http.Path("parentAccountId") Long parentAccountId, @retrofit2.http.Body String body
   );
 

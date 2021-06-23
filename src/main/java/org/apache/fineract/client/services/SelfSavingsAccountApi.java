@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -46,13 +45,13 @@ public interface SelfSavingsAccountApi {
    * @param accountId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("self/savingsaccounts/{accountId}")
-  Call<String> modifySavingsAccountApplication(
+  Observable<String> modifySavingsAccountApplication(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -61,10 +60,10 @@ public interface SelfSavingsAccountApi {
    * Lists Savings Charges  Example Requests:  self/savingsaccounts/1/charges  self/savingsaccounts/1/charges?chargeStatus&#x3D;inactive  self/savingsaccounts/1/charges?fields&#x3D;name,amountOrPercentage
    * @param accountId accountId (required)
    * @param chargeStatus chargeStatus (optional, default to &quot;all&quot;)
-   * @return Call&lt;List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetSelfSavingsAccountsAccountIdChargesResponse&gt;&gt;
    */
   @GET("self/savingsaccounts/{accountId}/charges")
-  Call<List<GetSelfSavingsAccountsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges1(
+  Observable<List<GetSelfSavingsAccountsAccountIdChargesResponse>> retrieveAllSavingsAccountCharges1(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("chargeStatus") String chargeStatus
   );
 
@@ -73,10 +72,10 @@ public interface SelfSavingsAccountApi {
    * Retrieves a savings account  Example Requests :  self/savingsaccounts/1   self/savingsaccounts/1?associations&#x3D;transactions
    * @param accountId accountId (required)
    * @param chargeStatus chargeStatus (optional, default to &quot;all&quot;)
-   * @return Call&lt;GetSelfSavingsAccountsResponse&gt;
+   * @return Observable&lt;GetSelfSavingsAccountsResponse&gt;
    */
   @GET("self/savingsaccounts/{accountId}")
-  Call<GetSelfSavingsAccountsResponse> retrieveSavings(
+  Observable<GetSelfSavingsAccountsResponse> retrieveSavings(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Query("chargeStatus") String chargeStatus
   );
 
@@ -85,10 +84,10 @@ public interface SelfSavingsAccountApi {
    * Retrieves a Savings account Charge  Example Requests:  self/savingsaccounts/1/charges/5   self/savingsaccounts/1/charges/5?fields&#x3D;name,amountOrPercentage
    * @param accountId accountId (required)
    * @param savingsAccountChargeId savingsAccountChargeId (required)
-   * @return Call&lt;GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse&gt;
+   * @return Observable&lt;GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse&gt;
    */
   @GET("self/savingsaccounts/{accountId}/charges/{savingsAccountChargeId}")
-  Call<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge1(
+  Observable<GetSelfSavingsAccountsAccountIdChargesSavingsAccountChargeIdResponse> retrieveSavingsAccountCharge1(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Path("savingsAccountChargeId") Long savingsAccountChargeId
   );
 
@@ -97,10 +96,10 @@ public interface SelfSavingsAccountApi {
    * Retrieves Savings Account Transaction  Example Requests:  self/savingsaccounts/1/transactions/1
    * @param accountId accountId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse&gt;
    */
   @GET("self/savingsaccounts/{accountId}/transactions/{transactionId}")
-  Call<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> retrieveSavingsTransaction(
+  Observable<GetSelfSavingsAccountsAccountIdTransactionsTransactionIdResponse> retrieveSavingsTransaction(
     @retrofit2.http.Path("accountId") Long accountId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -109,13 +108,13 @@ public interface SelfSavingsAccountApi {
    * 
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("self/savingsaccounts")
-  Call<String> submitSavingsAccountApplication(
+  Observable<String> submitSavingsAccountApplication(
     @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -124,10 +123,10 @@ public interface SelfSavingsAccountApi {
    * 
    * @param clientId  (optional)
    * @param productId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("self/savingsaccounts/template")
-  Call<String> template18(
+  Observable<String> template18(
     @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId
   );
 

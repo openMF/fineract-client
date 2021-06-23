@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,33 +39,33 @@ public interface RateApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("rates")
-  Call<String> createRate(
+  Observable<String> createRate(
     @retrofit2.http.Body String body
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("rates")
-  Call<String> getAllRates();
+  Observable<String> getAllRates();
     
 
   /**
    * 
    * 
    * @param rateId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("rates/{rateId}")
-  Call<String> retrieveRate(
+  Observable<String> retrieveRate(
     @retrofit2.http.Path("rateId") Long rateId
   );
 
@@ -75,13 +74,13 @@ public interface RateApi {
    * 
    * @param rateId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("rates/{rateId}")
-  Call<String> updateRate(
+  Observable<String> updateRate(
     @retrofit2.http.Path("rateId") Long rateId, @retrofit2.http.Body String body
   );
 

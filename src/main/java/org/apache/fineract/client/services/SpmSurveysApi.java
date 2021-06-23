@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,10 +41,10 @@ public interface SpmSurveysApi {
    * 
    * @param id  (required)
    * @param command  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @POST("surveys/{id}")
-  Call<Void> activateOrDeactivateSurvey(
+  Completable activateOrDeactivateSurvey(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Query("command") String command
   );
 
@@ -53,13 +52,13 @@ public interface SpmSurveysApi {
    * Create a Survey
    * Adds a new survey to collect client related data.  Mandatory Fields  countryCode, key, name, questions, responses, sequenceNo, text, description
    * @param surveyData Create survey (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("surveys")
-  Call<Void> createSurvey(
+  Completable createSurvey(
     @retrofit2.http.Body SurveyData surveyData
   );
 
@@ -68,13 +67,13 @@ public interface SpmSurveysApi {
    * 
    * @param id  (required)
    * @param surveyData  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("surveys/{id}")
-  Call<String> editSurvey(
+  Observable<String> editSurvey(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Body SurveyData surveyData
   );
 
@@ -82,10 +81,10 @@ public interface SpmSurveysApi {
    * List all Surveys
    * 
    * @param isActive  (optional)
-   * @return Call&lt;List&lt;SurveyData&gt;&gt;
+   * @return Observable&lt;List&lt;SurveyData&gt;&gt;
    */
   @GET("surveys")
-  Call<List<SurveyData>> fetchAllSurveys1(
+  Observable<List<SurveyData>> fetchAllSurveys1(
     @retrofit2.http.Query("isActive") Boolean isActive
   );
 
@@ -93,10 +92,10 @@ public interface SpmSurveysApi {
    * Retrieve a Survey
    * 
    * @param id Enter id (required)
-   * @return Call&lt;SurveyData&gt;
+   * @return Observable&lt;SurveyData&gt;
    */
   @GET("surveys/{id}")
-  Call<SurveyData> findSurvey(
+  Observable<SurveyData> findSurvey(
     @retrofit2.http.Path("id") Long id
   );
 

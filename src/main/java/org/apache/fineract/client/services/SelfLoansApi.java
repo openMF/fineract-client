@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -51,13 +50,13 @@ public interface SelfLoansApi {
    * Calculate Loan Repayment Schedule:  Calculates Loan Repayment Schedule  Mandatory Fields: productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, expectedDisbursementDate, transactionProcessingStrategyId  Submit a new Loan Application:  Mandatory Fields: clientId, productId, principal, loanTermFrequency, loanTermFrequencyType, loanType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyId, expectedDisbursementDate, submittedOnDate, loanType  Additional Mandatory Fields if interest recalculation is enabled for product and Rest frequency not same as repayment period: recalculationRestFrequencyDate  Additional Mandatory Fields if interest recalculation with interest/fee compounding is enabled for product and compounding frequency not same as repayment period: recalculationCompoundingFrequencyDate  Additional Mandatory Field if Entity-Datatable Check is enabled for the entity of type loan: datatables  Optional Fields: graceOnPrincipalPayment, graceOnInterestPayment, graceOnInterestCharged, linkAccountId, allowPartialPeriodInterestCalcualtion, fixedEmiAmount, maxOutstandingLoanBalance, disbursementData, graceOnArrearsAgeing, createStandingInstructionAtDisbursement (requires linkedAccountId if set to true)  Showing request/response for &#39;Submit a new Loan Application&#39;
    * @param postSelfLoansRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostSelfLoansResponse&gt;
+   * @return Observable&lt;PostSelfLoansResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("self/loans")
-  Call<PostSelfLoansResponse> calculateLoanScheduleOrSubmitLoanApplication1(
+  Observable<PostSelfLoansResponse> calculateLoanScheduleOrSubmitLoanApplication1(
     @retrofit2.http.Body PostSelfLoansRequest postSelfLoansRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -66,13 +65,13 @@ public interface SelfLoansApi {
    * Loan application can only be modified when in &#39;Submitted and pending approval&#39; state. Once the application is approved, the details cannot be changed using this method.
    * @param loanId loanId (required)
    * @param putSelfLoansLoanIdRequest  (required)
-   * @return Call&lt;PutSelfLoansLoanIdResponse&gt;
+   * @return Observable&lt;PutSelfLoansLoanIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("self/loans/{loanId}")
-  Call<PutSelfLoansLoanIdResponse> modifyLoanApplication1(
+  Observable<PutSelfLoansLoanIdResponse> modifyLoanApplication1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PutSelfLoansLoanIdRequest putSelfLoansLoanIdRequest
   );
 
@@ -80,10 +79,10 @@ public interface SelfLoansApi {
    * List Loan Charges
    * Lists loan Charges  Example Requests:  self/loans/1/charges   self/loans/1/charges?fields&#x3D;name,amountOrPercentage
    * @param loanId loanId (required)
-   * @return Call&lt;List&lt;GetSelfLoansLoanIdChargesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetSelfLoansLoanIdChargesResponse&gt;&gt;
    */
   @GET("self/loans/{loanId}/charges")
-  Call<List<GetSelfLoansLoanIdChargesResponse>> retrieveAllLoanCharges1(
+  Observable<List<GetSelfLoansLoanIdChargesResponse>> retrieveAllLoanCharges1(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -91,10 +90,10 @@ public interface SelfLoansApi {
    * 
    * 
    * @param loanId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("self/loans/{loanId}/guarantors")
-  Call<String> retrieveGuarantorDetails2(
+  Observable<String> retrieveGuarantorDetails2(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -102,10 +101,10 @@ public interface SelfLoansApi {
    * Retrieve a Loan
    * Retrieves a Loan  Example Requests:  self/loans/1   self/loans/1?fields&#x3D;id,principal,annualInterestRate   self/loans/1?fields&#x3D;id,principal,annualInterestRate&amp;associations&#x3D;repaymentSchedule,transactions
    * @param loanId loanId (required)
-   * @return Call&lt;GetSelfLoansLoanIdResponse&gt;
+   * @return Observable&lt;GetSelfLoansLoanIdResponse&gt;
    */
   @GET("self/loans/{loanId}")
-  Call<GetSelfLoansLoanIdResponse> retrieveLoan1(
+  Observable<GetSelfLoansLoanIdResponse> retrieveLoan1(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -114,10 +113,10 @@ public interface SelfLoansApi {
    * Retrieves a Loan Charge  Example Requests:  self/loans/1/charges/1   self/loans/1/charges/1?fields&#x3D;name,amountOrPercentage
    * @param loanId loanId (required)
    * @param chargeId chargeId (required)
-   * @return Call&lt;GetSelfLoansLoanIdChargesResponse&gt;
+   * @return Observable&lt;GetSelfLoansLoanIdChargesResponse&gt;
    */
   @GET("self/loans/{loanId}/charges/{chargeId}")
-  Call<GetSelfLoansLoanIdChargesResponse> retrieveLoanCharge1(
+  Observable<GetSelfLoansLoanIdChargesResponse> retrieveLoanCharge1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("chargeId") Long chargeId
   );
 
@@ -126,10 +125,10 @@ public interface SelfLoansApi {
    * Retrieves a Loan Transaction DetailsExample Request:  self/loans/5/transactions/3
    * @param loanId loanId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetSelfLoansLoanIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetSelfLoansLoanIdTransactionsTransactionIdResponse&gt;
    */
   @GET("self/loans/{loanId}/transactions/{transactionId}")
-  Call<GetSelfLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction1(
+  Observable<GetSelfLoansLoanIdTransactionsTransactionIdResponse> retrieveTransaction1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -139,13 +138,13 @@ public interface SelfLoansApi {
    * @param loanId loanId (required)
    * @param postSelfLoansLoanIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostSelfLoansLoanIdResponse&gt;
+   * @return Observable&lt;PostSelfLoansLoanIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("self/loans/{loanId}")
-  Call<PostSelfLoansLoanIdResponse> stateTransitions1(
+  Observable<PostSelfLoansLoanIdResponse> stateTransitions1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostSelfLoansLoanIdRequest postSelfLoansLoanIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -155,10 +154,10 @@ public interface SelfLoansApi {
    * @param clientId clientId (optional)
    * @param productId productId (optional)
    * @param templateType templateType (optional)
-   * @return Call&lt;GetSelfLoansTemplateResponse&gt;
+   * @return Observable&lt;GetSelfLoansTemplateResponse&gt;
    */
   @GET("self/loans/template")
-  Call<GetSelfLoansTemplateResponse> template17(
+  Observable<GetSelfLoansTemplateResponse> template17(
     @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("templateType") String templateType
   );
 

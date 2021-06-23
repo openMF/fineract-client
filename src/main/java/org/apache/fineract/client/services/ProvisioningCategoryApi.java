@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,13 +39,13 @@ public interface ProvisioningCategoryApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("provisioningcategory")
-  Call<String> createProvisioningCategory(
+  Observable<String> createProvisioningCategory(
     @retrofit2.http.Body String body
   );
 
@@ -54,20 +53,20 @@ public interface ProvisioningCategoryApi {
    * 
    * 
    * @param categoryId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("provisioningcategory/{categoryId}")
-  Call<String> deleteProvisioningCategory(
+  Observable<String> deleteProvisioningCategory(
     @retrofit2.http.Path("categoryId") Long categoryId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("provisioningcategory")
-  Call<String> retrieveAll15();
+  Observable<String> retrieveAll15();
     
 
   /**
@@ -75,13 +74,13 @@ public interface ProvisioningCategoryApi {
    * 
    * @param categoryId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("provisioningcategory/{categoryId}")
-  Call<String> updateProvisioningCategory(
+  Observable<String> updateProvisioningCategory(
     @retrofit2.http.Path("categoryId") Long categoryId, @retrofit2.http.Body String body
   );
 

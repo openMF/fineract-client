@@ -371,6 +371,10 @@ public class LoanProductRelatedDetail {
   @SerializedName(SERIALIZED_NAME_GRACE_ON_ARREARS_AGEING)
   private Integer graceOnArrearsAgeing;
 
+  public static final String SERIALIZED_NAME_ARREARS_TOLERANCE = "arrearsTolerance";
+  @SerializedName(SERIALIZED_NAME_ARREARS_TOLERANCE)
+  private BigDecimal arrearsTolerance;
+
   public static final String SERIALIZED_NAME_EQUAL_AMORTIZATION = "equalAmortization";
   @SerializedName(SERIALIZED_NAME_EQUAL_AMORTIZATION)
   private Boolean equalAmortization;
@@ -378,10 +382,6 @@ public class LoanProductRelatedDetail {
   public static final String SERIALIZED_NAME_INTEREST_RECALCULATION_ENABLED = "interestRecalculationEnabled";
   @SerializedName(SERIALIZED_NAME_INTEREST_RECALCULATION_ENABLED)
   private Boolean interestRecalculationEnabled;
-
-  public static final String SERIALIZED_NAME_ARREARS_TOLERANCE = "arrearsTolerance";
-  @SerializedName(SERIALIZED_NAME_ARREARS_TOLERANCE)
-  private BigDecimal arrearsTolerance;
 
   public static final String SERIALIZED_NAME_GRACE_ON_DUE_DATE = "graceOnDueDate";
   @SerializedName(SERIALIZED_NAME_GRACE_ON_DUE_DATE)
@@ -756,6 +756,29 @@ public class LoanProductRelatedDetail {
   }
 
 
+  public LoanProductRelatedDetail arrearsTolerance(BigDecimal arrearsTolerance) {
+    
+    this.arrearsTolerance = arrearsTolerance;
+    return this;
+  }
+
+   /**
+   * Get arrearsTolerance
+   * @return arrearsTolerance
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getArrearsTolerance() {
+    return arrearsTolerance;
+  }
+
+
+  public void setArrearsTolerance(BigDecimal arrearsTolerance) {
+    this.arrearsTolerance = arrearsTolerance;
+  }
+
+
   public LoanProductRelatedDetail equalAmortization(Boolean equalAmortization) {
     
     this.equalAmortization = equalAmortization;
@@ -799,29 +822,6 @@ public class LoanProductRelatedDetail {
 
   public void setInterestRecalculationEnabled(Boolean interestRecalculationEnabled) {
     this.interestRecalculationEnabled = interestRecalculationEnabled;
-  }
-
-
-  public LoanProductRelatedDetail arrearsTolerance(BigDecimal arrearsTolerance) {
-    
-    this.arrearsTolerance = arrearsTolerance;
-    return this;
-  }
-
-   /**
-   * Get arrearsTolerance
-   * @return arrearsTolerance
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getArrearsTolerance() {
-    return arrearsTolerance;
-  }
-
-
-  public void setArrearsTolerance(BigDecimal arrearsTolerance) {
-    this.arrearsTolerance = arrearsTolerance;
   }
 
 
@@ -873,15 +873,15 @@ public class LoanProductRelatedDetail {
         Objects.equals(this.amortizationMethod, loanProductRelatedDetail.amortizationMethod) &&
         Objects.equals(this.inArrearsTolerance, loanProductRelatedDetail.inArrearsTolerance) &&
         Objects.equals(this.graceOnArrearsAgeing, loanProductRelatedDetail.graceOnArrearsAgeing) &&
+        Objects.equals(this.arrearsTolerance, loanProductRelatedDetail.arrearsTolerance) &&
         Objects.equals(this.equalAmortization, loanProductRelatedDetail.equalAmortization) &&
         Objects.equals(this.interestRecalculationEnabled, loanProductRelatedDetail.interestRecalculationEnabled) &&
-        Objects.equals(this.arrearsTolerance, loanProductRelatedDetail.arrearsTolerance) &&
         Objects.equals(this.graceOnDueDate, loanProductRelatedDetail.graceOnDueDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, principal, nominalInterestRatePerPeriod, interestPeriodFrequencyType, annualNominalInterestRate, interestMethod, interestCalculationPeriodMethod, allowPartialPeriodInterestCalcualtion, repayEvery, repaymentPeriodFrequencyType, numberOfRepayments, graceOnPrincipalPayment, graceOnInterestPayment, amortizationMethod, inArrearsTolerance, graceOnArrearsAgeing, equalAmortization, interestRecalculationEnabled, arrearsTolerance, graceOnDueDate);
+    return Objects.hash(currency, principal, nominalInterestRatePerPeriod, interestPeriodFrequencyType, annualNominalInterestRate, interestMethod, interestCalculationPeriodMethod, allowPartialPeriodInterestCalcualtion, repayEvery, repaymentPeriodFrequencyType, numberOfRepayments, graceOnPrincipalPayment, graceOnInterestPayment, amortizationMethod, inArrearsTolerance, graceOnArrearsAgeing, arrearsTolerance, equalAmortization, interestRecalculationEnabled, graceOnDueDate);
   }
 
 
@@ -905,9 +905,9 @@ public class LoanProductRelatedDetail {
     sb.append("    amortizationMethod: ").append(toIndentedString(amortizationMethod)).append("\n");
     sb.append("    inArrearsTolerance: ").append(toIndentedString(inArrearsTolerance)).append("\n");
     sb.append("    graceOnArrearsAgeing: ").append(toIndentedString(graceOnArrearsAgeing)).append("\n");
+    sb.append("    arrearsTolerance: ").append(toIndentedString(arrearsTolerance)).append("\n");
     sb.append("    equalAmortization: ").append(toIndentedString(equalAmortization)).append("\n");
     sb.append("    interestRecalculationEnabled: ").append(toIndentedString(interestRecalculationEnabled)).append("\n");
-    sb.append("    arrearsTolerance: ").append(toIndentedString(arrearsTolerance)).append("\n");
     sb.append("    graceOnDueDate: ").append(toIndentedString(graceOnDueDate)).append("\n");
     sb.append("}");
     return sb.toString();

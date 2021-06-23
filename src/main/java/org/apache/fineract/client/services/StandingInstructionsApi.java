@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface StandingInstructionsApi {
    * Create new Standing Instruction
    * Ability to create new instruction for transfer of monetary funds from one account to another
    * @param postStandingInstructionsRequest  (required)
-   * @return Call&lt;PostStandingInstructionsResponse&gt;
+   * @return Observable&lt;PostStandingInstructionsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("standinginstructions")
-  Call<PostStandingInstructionsResponse> create5(
+  Observable<PostStandingInstructionsResponse> create5(
     @retrofit2.http.Body PostStandingInstructionsRequest postStandingInstructionsRequest
   );
 
@@ -71,10 +70,10 @@ public interface StandingInstructionsApi {
    * @param clientId clientId (optional)
    * @param fromAccountId fromAccountId (optional)
    * @param fromAccountType fromAccountType (optional)
-   * @return Call&lt;GetStandingInstructionsResponse&gt;
+   * @return Observable&lt;GetStandingInstructionsResponse&gt;
    */
   @GET("standinginstructions")
-  Call<GetStandingInstructionsResponse> retrieveAll19(
+  Observable<GetStandingInstructionsResponse> retrieveAll19(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("transferType") Integer transferType, @retrofit2.http.Query("clientName") String clientName, @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType
   );
 
@@ -88,10 +87,10 @@ public interface StandingInstructionsApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;GetStandingInstructionsStandingInstructionIdResponse&gt;
+   * @return Observable&lt;GetStandingInstructionsStandingInstructionIdResponse&gt;
    */
   @GET("standinginstructions/{standingInstructionId}")
-  Call<GetStandingInstructionsStandingInstructionIdResponse> retrieveOne10(
+  Observable<GetStandingInstructionsStandingInstructionIdResponse> retrieveOne10(
     @retrofit2.http.Path("standingInstructionId") Long standingInstructionId, @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -107,10 +106,10 @@ public interface StandingInstructionsApi {
    * @param toAccountId toAccountId (optional)
    * @param toAccountType toAccountType (optional)
    * @param transferType transferType (optional)
-   * @return Call&lt;GetStandingInstructionsTemplateResponse&gt;
+   * @return Observable&lt;GetStandingInstructionsTemplateResponse&gt;
    */
   @GET("standinginstructions/template")
-  Call<GetStandingInstructionsTemplateResponse> template6(
+  Observable<GetStandingInstructionsTemplateResponse> template6(
     @retrofit2.http.Query("fromOfficeId") Long fromOfficeId, @retrofit2.http.Query("fromClientId") Long fromClientId, @retrofit2.http.Query("fromAccountId") Long fromAccountId, @retrofit2.http.Query("fromAccountType") Integer fromAccountType, @retrofit2.http.Query("toOfficeId") Long toOfficeId, @retrofit2.http.Query("toClientId") Long toClientId, @retrofit2.http.Query("toAccountId") Long toAccountId, @retrofit2.http.Query("toAccountType") Integer toAccountType, @retrofit2.http.Query("transferType") Integer transferType
   );
 
@@ -120,13 +119,13 @@ public interface StandingInstructionsApi {
    * @param standingInstructionId standingInstructionId (required)
    * @param command command (optional)
    * @param putStandingInstructionsStandingInstructionIdRequest  (optional)
-   * @return Call&lt;PutStandingInstructionsStandingInstructionIdResponse&gt;
+   * @return Observable&lt;PutStandingInstructionsStandingInstructionIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("standinginstructions/{standingInstructionId}")
-  Call<PutStandingInstructionsStandingInstructionIdResponse> update9(
+  Observable<PutStandingInstructionsStandingInstructionIdResponse> update9(
     @retrofit2.http.Path("standingInstructionId") Long standingInstructionId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body PutStandingInstructionsStandingInstructionIdRequest putStandingInstructionsStandingInstructionIdRequest
   );
 

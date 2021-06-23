@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,23 +41,23 @@ public interface CurrencyApi {
   /**
    * Retrieve Currency Configuration
    * Returns the list of currencies permitted for use AND the list of currencies not selected (but available for selection).  Example Requests:  currencies   currencies?fields&#x3D;selectedCurrencyOptions
-   * @return Call&lt;GetCurrenciesResponse&gt;
+   * @return Observable&lt;GetCurrenciesResponse&gt;
    */
   @GET("currencies")
-  Call<GetCurrenciesResponse> retrieveCurrencies();
+  Observable<GetCurrenciesResponse> retrieveCurrencies();
     
 
   /**
    * Update Currency Configuration
    * Updates the list of currencies permitted for use.
    * @param putCurrenciesRequest  (required)
-   * @return Call&lt;PutCurrenciesResponse&gt;
+   * @return Observable&lt;PutCurrenciesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("currencies")
-  Call<PutCurrenciesResponse> updateCurrencies(
+  Observable<PutCurrenciesResponse> updateCurrencies(
     @retrofit2.http.Body PutCurrenciesRequest putCurrenciesRequest
   );
 

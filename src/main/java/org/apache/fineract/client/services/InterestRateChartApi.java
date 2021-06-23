@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface InterestRateChartApi {
    * Create a Chart
    * Creates a new chart which can be attached to a term deposit products (FD or RD).
    * @param postInterestRateChartsRequest  (required)
-   * @return Call&lt;PostInterestRateChartsResponse&gt;
+   * @return Observable&lt;PostInterestRateChartsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interestratecharts")
-  Call<PostInterestRateChartsResponse> create10(
+  Observable<PostInterestRateChartsResponse> create10(
     @retrofit2.http.Body PostInterestRateChartsRequest postInterestRateChartsRequest
   );
 
@@ -61,10 +60,10 @@ public interface InterestRateChartApi {
    * Delete a Chart
    * It deletes the chart
    * @param chartId chartId (required)
-   * @return Call&lt;DeleteInterestRateChartsChartIdResponse&gt;
+   * @return Observable&lt;DeleteInterestRateChartsChartIdResponse&gt;
    */
   @DELETE("interestratecharts/{chartId}")
-  Call<DeleteInterestRateChartsChartIdResponse> delete13(
+  Observable<DeleteInterestRateChartsChartIdResponse> delete13(
     @retrofit2.http.Path("chartId") Long chartId
   );
 
@@ -72,10 +71,10 @@ public interface InterestRateChartApi {
    * Retrieve all Charts
    * Retrieve list of charts associated with a term deposit product(FD or RD). Example Requests:  interestratecharts?productId&#x3D;1
    * @param productId productId (optional)
-   * @return Call&lt;List&lt;GetInterestRateChartsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetInterestRateChartsResponse&gt;&gt;
    */
   @GET("interestratecharts")
-  Call<List<GetInterestRateChartsResponse>> retrieveAll26(
+  Observable<List<GetInterestRateChartsResponse>> retrieveAll26(
     @retrofit2.http.Query("productId") Long productId
   );
 
@@ -83,20 +82,20 @@ public interface InterestRateChartApi {
    * Retrieve a Chart
    * It retrieves the Interest Rate Chart Example Requests:  interestratecharts/1
    * @param chartId chartId (required)
-   * @return Call&lt;GetInterestRateChartsResponse&gt;
+   * @return Observable&lt;GetInterestRateChartsResponse&gt;
    */
   @GET("interestratecharts/{chartId}")
-  Call<GetInterestRateChartsResponse> retrieveOne16(
+  Observable<GetInterestRateChartsResponse> retrieveOne16(
     @retrofit2.http.Path("chartId") Long chartId
   );
 
   /**
    * Retrieve Chart Details Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for creating a chart. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  interestratecharts/template
-   * @return Call&lt;GetInterestRateChartsTemplateResponse&gt;
+   * @return Observable&lt;GetInterestRateChartsTemplateResponse&gt;
    */
   @GET("interestratecharts/template")
-  Call<GetInterestRateChartsTemplateResponse> template9();
+  Observable<GetInterestRateChartsTemplateResponse> template9();
     
 
   /**
@@ -104,13 +103,13 @@ public interface InterestRateChartApi {
    * It updates the chart
    * @param chartId chartId (required)
    * @param putInterestRateChartsChartIdRequest  (required)
-   * @return Call&lt;PutInterestRateChartsChartIdResponse&gt;
+   * @return Observable&lt;PutInterestRateChartsChartIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("interestratecharts/{chartId}")
-  Call<PutInterestRateChartsChartIdResponse> update14(
+  Observable<PutInterestRateChartsChartIdResponse> update14(
     @retrofit2.http.Path("chartId") Long chartId, @retrofit2.http.Body PutInterestRateChartsChartIdRequest putInterestRateChartsChartIdRequest
   );
 

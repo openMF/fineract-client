@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -61,10 +60,10 @@ public interface AuditsApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;List&lt;GetMakerCheckerResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetMakerCheckerResponse&gt;&gt;
    */
   @GET("audits")
-  Call<List<GetMakerCheckerResponse>> retrieveAuditEntries(
+  Observable<List<GetMakerCheckerResponse>> retrieveAuditEntries(
     @retrofit2.http.Query("actionName") String actionName, @retrofit2.http.Query("entityName") String entityName, @retrofit2.http.Query("resourceId") Long resourceId, @retrofit2.http.Query("makerId") Long makerId, @retrofit2.http.Query("makerDateTimeFrom") String makerDateTimeFrom, @retrofit2.http.Query("makerDateTimeTo") String makerDateTimeTo, @retrofit2.http.Query("checkerId") Long checkerId, @retrofit2.http.Query("checkerDateTimeFrom") String checkerDateTimeFrom, @retrofit2.http.Query("checkerDateTimeTo") String checkerDateTimeTo, @retrofit2.http.Query("processingResult") Integer processingResult, @retrofit2.http.Query("officeId") Integer officeId, @retrofit2.http.Query("groupId") Integer groupId, @retrofit2.http.Query("clientId") Integer clientId, @retrofit2.http.Query("loanid") Integer loanid, @retrofit2.http.Query("savingsAccountId") Integer savingsAccountId, @retrofit2.http.Query("paged") Boolean paged, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -72,20 +71,20 @@ public interface AuditsApi {
    * Retrieve an Audit Entry
    * Example Requests:  audits/20 audits/20?fields&#x3D;madeOnDate,maker,processingResult
    * @param auditId auditId (required)
-   * @return Call&lt;GetMakerCheckerResponse&gt;
+   * @return Observable&lt;GetMakerCheckerResponse&gt;
    */
   @GET("audits/{auditId}")
-  Call<GetMakerCheckerResponse> retrieveAuditEntry(
+  Observable<GetMakerCheckerResponse> retrieveAuditEntry(
     @retrofit2.http.Path("auditId") Long auditId
   );
 
   /**
    * Audit Search Template
    * This is a convenience resource. It can be useful when building an Audit Search UI. \&quot;appUsers\&quot; are data scoped to the office/branch the requestor is associated with.  Example Requests:  audits/searchtemplate audits/searchtemplate?fields&#x3D;actionNames
-   * @return Call&lt;GetMakerCheckersSearchTemplateResponse&gt;
+   * @return Observable&lt;GetMakerCheckersSearchTemplateResponse&gt;
    */
   @GET("audits/searchtemplate")
-  Call<GetMakerCheckersSearchTemplateResponse> retrieveAuditSearchTemplate();
+  Observable<GetMakerCheckersSearchTemplateResponse> retrieveAuditSearchTemplate();
     
 
 }

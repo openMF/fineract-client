@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -39,10 +38,10 @@ public interface MixTaxonomyApi {
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("mixtaxonomy")
-  Call<String> retrieveAll14();
+  Observable<String> retrieveAll14();
     
 
 }

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface SpmApiLookUpTableApi {
    * Add a new entry to a survey.  Mandatory Fields key, score, validFrom, validTo
    * @param surveyId Enter surveyId (required)
    * @param lookupTableData  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("surveys/{surveyId}/lookuptables")
-  Call<Void> createLookupTable(
+  Completable createLookupTable(
     @retrofit2.http.Path("surveyId") Long surveyId, @retrofit2.http.Body LookupTableData lookupTableData
   );
 
@@ -56,10 +55,10 @@ public interface SpmApiLookUpTableApi {
    * List all Lookup Table entries
    * List all Lookup Table entries for a survey.
    * @param surveyId Enter surveyId (required)
-   * @return Call&lt;List&lt;LookupTableData&gt;&gt;
+   * @return Observable&lt;List&lt;LookupTableData&gt;&gt;
    */
   @GET("surveys/{surveyId}/lookuptables")
-  Call<List<LookupTableData>> fetchLookupTables(
+  Observable<List<LookupTableData>> fetchLookupTables(
     @retrofit2.http.Path("surveyId") Long surveyId
   );
 
@@ -68,10 +67,10 @@ public interface SpmApiLookUpTableApi {
    * Retrieve a Lookup Table entry for a survey.
    * @param surveyId Enter surveyId (required)
    * @param key Enter key (required)
-   * @return Call&lt;LookupTableData&gt;
+   * @return Observable&lt;LookupTableData&gt;
    */
   @GET("surveys/{surveyId}/lookuptables/{key}")
-  Call<LookupTableData> findLookupTable(
+  Observable<LookupTableData> findLookupTable(
     @retrofit2.http.Path("surveyId") Long surveyId, @retrofit2.http.Path("key") String key
   );
 

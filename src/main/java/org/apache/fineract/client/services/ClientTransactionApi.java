@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,10 +44,10 @@ public interface ClientTransactionApi {
    * @param clientId clientId (required)
    * @param offset offset (optional)
    * @param limit limit (optional)
-   * @return Call&lt;GetClientsClientIdTransactionsResponse&gt;
+   * @return Observable&lt;GetClientsClientIdTransactionsResponse&gt;
    */
   @GET("clients/{clientId}/transactions")
-  Call<GetClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
+  Observable<GetClientsClientIdTransactionsResponse> retrieveAllClientTransactions(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -57,10 +56,10 @@ public interface ClientTransactionApi {
    * Example Requests: clients/1/transactions/1   clients/1/transactions/1?fields&#x3D;id,officeName
    * @param clientId clientId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetClientsClientIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetClientsClientIdTransactionsTransactionIdResponse&gt;
    */
   @GET("clients/{clientId}/transactions/{transactionId}")
-  Call<GetClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
+  Observable<GetClientsClientIdTransactionsTransactionIdResponse> retrieveClientTransaction(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -70,10 +69,10 @@ public interface ClientTransactionApi {
    * @param clientId clientId (required)
    * @param transactionId transactionId (required)
    * @param command command (optional)
-   * @return Call&lt;PostClientsClientIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;PostClientsClientIdTransactionsTransactionIdResponse&gt;
    */
   @POST("clients/{clientId}/transactions/{transactionId}")
-  Call<PostClientsClientIdTransactionsTransactionIdResponse> undoClientTransaction(
+  Observable<PostClientsClientIdTransactionsTransactionIdResponse> undoClientTransaction(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Query("command") String command
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,10 +41,10 @@ public interface GuarantorsApi {
    * 
    * @param loanId  (required)
    * @param clientId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/{loanId}/guarantors/accounts/template")
-  Call<String> accountsTemplate(
+  Observable<String> accountsTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("clientId") Long clientId
   );
 
@@ -54,13 +53,13 @@ public interface GuarantorsApi {
    * 
    * @param loanId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}/guarantors")
-  Call<String> createGuarantor(
+  Observable<String> createGuarantor(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body String body
   );
 
@@ -70,10 +69,10 @@ public interface GuarantorsApi {
    * @param loanId  (required)
    * @param guarantorId  (required)
    * @param guarantorFundingId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("loans/{loanId}/guarantors/{guarantorId}")
-  Call<String> deleteGuarantor(
+  Observable<String> deleteGuarantor(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("guarantorId") Long guarantorId, @retrofit2.http.Query("guarantorFundingId") Long guarantorFundingId
   );
 
@@ -83,10 +82,10 @@ public interface GuarantorsApi {
    * @param loanId  (required)
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("loans/{loanId}/guarantors/downloadtemplate")
-  Call<Void> getGuarantorTemplate(
+  Completable getGuarantorTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -94,10 +93,10 @@ public interface GuarantorsApi {
    * 
    * 
    * @param loanId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/{loanId}/guarantors/template")
-  Call<String> newGuarantorTemplate(
+  Observable<String> newGuarantorTemplate(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -108,11 +107,11 @@ public interface GuarantorsApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("loans/{loanId}/guarantors/uploadtemplate")
-  Call<String> postGuarantorTemplate(
+  Observable<String> postGuarantorTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -120,10 +119,10 @@ public interface GuarantorsApi {
    * 
    * 
    * @param loanId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/{loanId}/guarantors")
-  Call<String> retrieveGuarantorDetails(
+  Observable<String> retrieveGuarantorDetails(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -132,10 +131,10 @@ public interface GuarantorsApi {
    * 
    * @param loanId  (required)
    * @param guarantorId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/{loanId}/guarantors/{guarantorId}")
-  Call<String> retrieveGuarantorDetails1(
+  Observable<String> retrieveGuarantorDetails1(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("guarantorId") Long guarantorId
   );
 
@@ -145,13 +144,13 @@ public interface GuarantorsApi {
    * @param loanId  (required)
    * @param guarantorId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("loans/{loanId}/guarantors/{guarantorId}")
-  Call<String> updateGuarantor(
+  Observable<String> updateGuarantor(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Path("guarantorId") Long guarantorId, @retrofit2.http.Body String body
   );
 

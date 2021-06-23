@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface DefaultApi {
    * @param resourceId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("email/campaign/{resourceId}")
-  Call<String> activate(
+  Observable<String> activate(
     @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -62,11 +61,11 @@ public interface DefaultApi {
    * 
    * @param creditBureauId creditBureauId (optional)
    * @param file  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("creditBureauIntegration/addCreditReport")
-  Call<String> addCreditReport(
+  Observable<String> addCreditReport(
     @retrofit2.http.Query("creditBureauId") Long creditBureauId, @retrofit2.http.Part("file") FormDataContentDisposition file
   );
 
@@ -77,11 +76,11 @@ public interface DefaultApi {
    * @param entityId  (required)
    * @param contentLength  (optional)
    * @param file  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("{entity}/{entityId}/images")
-  Call<String> addNewClientImage1(
+  Observable<String> addNewClientImage1(
     @retrofit2.http.Path("entity") String entity, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part("file") FormDataBodyPart file
   );
 
@@ -89,13 +88,13 @@ public interface DefaultApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("email")
-  Call<String> create1(
+  Observable<String> create1(
     @retrofit2.http.Body String body
   );
 
@@ -103,13 +102,13 @@ public interface DefaultApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("email/campaign")
-  Call<String> createCampaign(
+  Observable<String> createCampaign(
     @retrofit2.http.Body String body
   );
 
@@ -117,13 +116,13 @@ public interface DefaultApi {
    * Create a SMS Campaign
    * Mandatory Fields campaignName, campaignType, triggerType, providerId, runReportId, message  Mandatory Fields for Cash based on selected report id paramValue in json format
    * @param commandWrapper  (required)
-   * @return Call&lt;CommandProcessingResult&gt;
+   * @return Observable&lt;CommandProcessingResult&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("smscampaigns")
-  Call<CommandProcessingResult> createCampaign1(
+  Observable<CommandProcessingResult> createCampaign1(
     @retrofit2.http.Body CommandWrapper commandWrapper
   );
 
@@ -131,10 +130,10 @@ public interface DefaultApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("email/{resourceId}")
-  Call<String> delete1(
+  Observable<String> delete1(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -142,10 +141,10 @@ public interface DefaultApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("email/campaign/{resourceId}")
-  Call<String> delete2(
+  Observable<String> delete2(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -153,10 +152,10 @@ public interface DefaultApi {
    * Delete a SMS Campaign
    * Note: Only closed SMS Campaigns can be deleted
    * @param campaignId  (required)
-   * @return Call&lt;CommandProcessingResult&gt;
+   * @return Observable&lt;CommandProcessingResult&gt;
    */
   @DELETE("smscampaigns/{campaignId}")
-  Call<CommandProcessingResult> delete3(
+  Observable<CommandProcessingResult> delete3(
     @retrofit2.http.Path("campaignId") Long campaignId
   );
 
@@ -164,10 +163,10 @@ public interface DefaultApi {
    * 
    * 
    * @param transactionId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("officetransactions/{transactionId}")
-  Call<String> delete8(
+  Observable<String> delete8(
     @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -176,10 +175,10 @@ public interface DefaultApi {
    * 
    * @param entity  (required)
    * @param entityId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("{entity}/{entityId}/images")
-  Call<String> deleteClientImage(
+  Observable<String> deleteClientImage(
     @retrofit2.http.Path("entity") String entity, @retrofit2.http.Path("entityId") Long entityId
   );
 
@@ -187,10 +186,10 @@ public interface DefaultApi {
    * 
    * 
    * @param creditBureauId creditBureauId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("creditBureauIntegration/deleteCreditReport/{creditBureauId}")
-  Call<String> deleteCreditReport(
+  Observable<String> deleteCreditReport(
     @retrofit2.http.Path("creditBureauId") Long creditBureauId
   );
 
@@ -198,33 +197,33 @@ public interface DefaultApi {
    * 
    * 
    * @param requestBody  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("creditBureauIntegration/creditReport")
-  Call<String> fetchCreditReport(
+  Observable<String> fetchCreditReport(
     @retrofit2.http.Body Map<String, Object> requestBody
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("echo")
-  Call<String> get();
+  Observable<String> get();
     
 
   /**
    * 
    * 
    * @param creditBureauId creditBureauId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("creditBureauIntegration/creditReport/{creditBureauId}")
-  Call<String> getSavedCreditReport(
+  Observable<String> getSavedCreditReport(
     @retrofit2.http.Path("creditBureauId") Long creditBureauId
   );
 
@@ -233,33 +232,33 @@ public interface DefaultApi {
    * Activates | Deactivates | Reactivates
    * @param campaignId  (required)
    * @param command  (optional)
-   * @return Call&lt;CommandProcessingResult&gt;
+   * @return Observable&lt;CommandProcessingResult&gt;
    */
   @POST("smscampaigns/{campaignId}")
-  Call<CommandProcessingResult> handleCommands(
+  Observable<CommandProcessingResult> handleCommands(
     @retrofit2.http.Path("campaignId") Long campaignId, @retrofit2.http.Query("command") String command
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("officetransactions/template")
-  Call<String> newOfficeTransactionDetails();
+  Observable<String> newOfficeTransactionDetails();
     
 
   /**
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("email/campaign/preview")
-  Call<String> preview(
+  Observable<String> preview(
     @retrofit2.http.Body String body
   );
 
@@ -267,41 +266,41 @@ public interface DefaultApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("smscampaigns/preview")
-  Call<String> preview1(
+  Observable<String> preview1(
     @retrofit2.http.Body String body
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/configuration")
-  Call<String> retrieveAll5();
+  Observable<String> retrieveAll5();
     
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("twofactor/configure")
-  Call<String> retrieveAll9();
+  Observable<String> retrieveAll9();
     
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/campaign")
-  Call<String> retrieveAllCampaign();
+  Observable<String> retrieveAllCampaign();
     
 
   /**
@@ -317,20 +316,20 @@ public interface DefaultApi {
    * @param toDate  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/messageByStatus")
-  Call<String> retrieveAllEmailByStatus(
+  Observable<String> retrieveAllEmailByStatus(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("status") Integer status, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("fromDate") Object fromDate, @retrofit2.http.Query("toDate") Object toDate, @retrofit2.http.Query("locale") String locale, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email")
-  Call<String> retrieveAllEmails();
+  Observable<String> retrieveAllEmails();
     
 
   /**
@@ -341,10 +340,10 @@ public interface DefaultApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;SmsCampaignData&gt;
+   * @return Observable&lt;SmsCampaignData&gt;
    */
   @GET("smscampaigns")
-  Call<SmsCampaignData> retrieveAllEmails1(
+  Observable<SmsCampaignData> retrieveAllEmails1(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -352,10 +351,10 @@ public interface DefaultApi {
    * Retrieve a SMS Campaign
    * Example Requests:  smscampaigns/1 
    * @param resourceId  (required)
-   * @return Call&lt;SmsCampaignData&gt;
+   * @return Observable&lt;SmsCampaignData&gt;
    */
   @GET("smscampaigns/{resourceId}")
-  Call<SmsCampaignData> retrieveCampaign(
+  Observable<SmsCampaignData> retrieveCampaign(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -367,10 +366,10 @@ public interface DefaultApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/failedEmail")
-  Call<String> retrieveFailedEmail(
+  Observable<String> retrieveFailedEmail(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -383,30 +382,30 @@ public interface DefaultApi {
    * @param maxHeight  (optional)
    * @param output  (optional)
    * @param accept  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("{entity}/{entityId}/images")
-  Call<Void> retrieveImage(
+  Completable retrieveImage(
     @retrofit2.http.Path("entity") String entity, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Query("maxWidth") Integer maxWidth, @retrofit2.http.Query("maxHeight") Integer maxHeight, @retrofit2.http.Query("output") String output, @retrofit2.http.Header("Accept") String accept
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("officetransactions")
-  Call<String> retrieveOfficeTransactions();
+  Observable<String> retrieveOfficeTransactions();
     
 
   /**
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/{resourceId}")
-  Call<String> retrieveOne1(
+  Observable<String> retrieveOne1(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -414,10 +413,10 @@ public interface DefaultApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/campaign/{resourceId}")
-  Call<String> retrieveOneCampaign(
+  Observable<String> retrieveOneCampaign(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -425,10 +424,10 @@ public interface DefaultApi {
    * 
    * 
    * @param resourceId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/campaign/template/{resourceId}")
-  Call<String> retrieveOneTemplate(
+  Observable<String> retrieveOneTemplate(
     @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -440,10 +439,10 @@ public interface DefaultApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/pendingEmail")
-  Call<String> retrievePendingEmail(
+  Observable<String> retrievePendingEmail(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -455,10 +454,10 @@ public interface DefaultApi {
    * @param limit  (optional)
    * @param orderBy  (optional)
    * @param sortOrder  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/sentEmail")
-  Call<String> retrieveSentEmail(
+  Observable<String> retrieveSentEmail(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -467,42 +466,42 @@ public interface DefaultApi {
    * 
    * @param creditBureauId creditBureauId (optional)
    * @param nationalId nationalId (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("creditBureauIntegration/saveCreditReport")
-  Call<String> saveCreditReport(
+  Observable<String> saveCreditReport(
     @retrofit2.http.Query("creditBureauId") Long creditBureauId, @retrofit2.http.Query("nationalId") String nationalId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("email/campaign/template")
-  Call<String> template1();
+  Observable<String> template1();
     
 
   /**
    * Retrieve a SMS Campaign
    * Example Requests:  smscampaigns/1   smscampaigns/1?template&#x3D;true   smscampaigns/template
-   * @return Call&lt;SmsCampaignData&gt;
+   * @return Observable&lt;SmsCampaignData&gt;
    */
   @GET("smscampaigns/template")
-  Call<SmsCampaignData> template2();
+  Observable<SmsCampaignData> template2();
     
 
   /**
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("officetransactions")
-  Call<String> transferMoneyFrom(
+  Observable<String> transferMoneyFrom(
     @retrofit2.http.Body String body
   );
 
@@ -511,13 +510,13 @@ public interface DefaultApi {
    * 
    * @param resourceId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("email/{resourceId}")
-  Call<String> update2(
+  Observable<String> update2(
     @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Body String body
   );
 
@@ -526,13 +525,13 @@ public interface DefaultApi {
    * 
    * @param resourceId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("email/campaign/{resourceId}")
-  Call<String> updateCampaign(
+  Observable<String> updateCampaign(
     @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Body String body
   );
 
@@ -541,13 +540,13 @@ public interface DefaultApi {
    * 
    * @param campaignId  (required)
    * @param commandWrapper  (required)
-   * @return Call&lt;CommandProcessingResult&gt;
+   * @return Observable&lt;CommandProcessingResult&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("smscampaigns/{campaignId}")
-  Call<CommandProcessingResult> updateCampaign1(
+  Observable<CommandProcessingResult> updateCampaign1(
     @retrofit2.http.Path("campaignId") Long campaignId, @retrofit2.http.Body CommandWrapper commandWrapper
   );
 
@@ -558,11 +557,11 @@ public interface DefaultApi {
    * @param entityId  (required)
    * @param contentLength  (optional)
    * @param file  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @PUT("{entity}/{entityId}/images")
-  Call<String> updateClientImage1(
+  Observable<String> updateClientImage1(
     @retrofit2.http.Path("entity") String entity, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part("file") FormDataBodyPart file
   );
 
@@ -570,13 +569,13 @@ public interface DefaultApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("email/configuration")
-  Call<String> updateConfiguration(
+  Observable<String> updateConfiguration(
     @retrofit2.http.Body String body
   );
 
@@ -584,13 +583,13 @@ public interface DefaultApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("twofactor/configure")
-  Call<String> updateConfiguration3(
+  Observable<String> updateConfiguration3(
     @retrofit2.http.Body String body
   );
 

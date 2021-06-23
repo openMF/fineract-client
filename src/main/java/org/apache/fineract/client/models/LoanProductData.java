@@ -266,10 +266,6 @@ public class LoanProductData {
   @SerializedName(SERIALIZED_NAME_OUTSTANDING_LOAN_BALANCE)
   private BigDecimal outstandingLoanBalance;
 
-  public static final String SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION = "compoundingToBePostedAsTransaction";
-  @SerializedName(SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION)
-  private Boolean compoundingToBePostedAsTransaction;
-
   public static final String SERIALIZED_NAME_EQUAL_AMORTIZATION = "equalAmortization";
   @SerializedName(SERIALIZED_NAME_EQUAL_AMORTIZATION)
   private Boolean equalAmortization;
@@ -289,6 +285,10 @@ public class LoanProductData {
   public static final String SERIALIZED_NAME_INTEREST_RECALCULATION_ENABLED = "interestRecalculationEnabled";
   @SerializedName(SERIALIZED_NAME_INTEREST_RECALCULATION_ENABLED)
   private Boolean interestRecalculationEnabled;
+
+  public static final String SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION = "compoundingToBePostedAsTransaction";
+  @SerializedName(SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION)
+  private Boolean compoundingToBePostedAsTransaction;
 
   public static final String SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES = "getloanProductConfigurableAttributes";
   @SerializedName(SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES)
@@ -1579,29 +1579,6 @@ public class LoanProductData {
   }
 
 
-  public LoanProductData compoundingToBePostedAsTransaction(Boolean compoundingToBePostedAsTransaction) {
-    
-    this.compoundingToBePostedAsTransaction = compoundingToBePostedAsTransaction;
-    return this;
-  }
-
-   /**
-   * Get compoundingToBePostedAsTransaction
-   * @return compoundingToBePostedAsTransaction
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getCompoundingToBePostedAsTransaction() {
-    return compoundingToBePostedAsTransaction;
-  }
-
-
-  public void setCompoundingToBePostedAsTransaction(Boolean compoundingToBePostedAsTransaction) {
-    this.compoundingToBePostedAsTransaction = compoundingToBePostedAsTransaction;
-  }
-
-
   public LoanProductData equalAmortization(Boolean equalAmortization) {
     
     this.equalAmortization = equalAmortization;
@@ -1714,6 +1691,29 @@ public class LoanProductData {
 
   public void setInterestRecalculationEnabled(Boolean interestRecalculationEnabled) {
     this.interestRecalculationEnabled = interestRecalculationEnabled;
+  }
+
+
+  public LoanProductData compoundingToBePostedAsTransaction(Boolean compoundingToBePostedAsTransaction) {
+    
+    this.compoundingToBePostedAsTransaction = compoundingToBePostedAsTransaction;
+    return this;
+  }
+
+   /**
+   * Get compoundingToBePostedAsTransaction
+   * @return compoundingToBePostedAsTransaction
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCompoundingToBePostedAsTransaction() {
+    return compoundingToBePostedAsTransaction;
+  }
+
+
+  public void setCompoundingToBePostedAsTransaction(Boolean compoundingToBePostedAsTransaction) {
+    this.compoundingToBePostedAsTransaction = compoundingToBePostedAsTransaction;
   }
 
 
@@ -1847,12 +1847,12 @@ public class LoanProductData {
         Objects.equals(this.chargeOptions, loanProductData.chargeOptions) &&
         Objects.equals(this.multiDisburseLoan, loanProductData.multiDisburseLoan) &&
         Objects.equals(this.outstandingLoanBalance, loanProductData.outstandingLoanBalance) &&
-        Objects.equals(this.compoundingToBePostedAsTransaction, loanProductData.compoundingToBePostedAsTransaction) &&
         Objects.equals(this.equalAmortization, loanProductData.equalAmortization) &&
         Objects.equals(this.floatingInterestRateCalculationAllowed, loanProductData.floatingInterestRateCalculationAllowed) &&
         Objects.equals(this.linkedToFloatingInterestRates, loanProductData.linkedToFloatingInterestRates) &&
         Objects.equals(this.variableInstallmentsAllowed, loanProductData.variableInstallmentsAllowed) &&
         Objects.equals(this.interestRecalculationEnabled, loanProductData.interestRecalculationEnabled) &&
+        Objects.equals(this.compoundingToBePostedAsTransaction, loanProductData.compoundingToBePostedAsTransaction) &&
         Objects.equals(this.getloanProductConfigurableAttributes, loanProductData.getloanProductConfigurableAttributes) &&
         Objects.equals(this.minimumGapBetweenInstallments, loanProductData.minimumGapBetweenInstallments) &&
         Objects.equals(this.maximumGapBetweenInstallments, loanProductData.maximumGapBetweenInstallments);
@@ -1860,7 +1860,7 @@ public class LoanProductData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyId, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, compoundingToBePostedAsTransaction, equalAmortization, floatingInterestRateCalculationAllowed, linkedToFloatingInterestRates, variableInstallmentsAllowed, interestRecalculationEnabled, getloanProductConfigurableAttributes, minimumGapBetweenInstallments, maximumGapBetweenInstallments);
+    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyId, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, equalAmortization, floatingInterestRateCalculationAllowed, linkedToFloatingInterestRates, variableInstallmentsAllowed, interestRecalculationEnabled, compoundingToBePostedAsTransaction, getloanProductConfigurableAttributes, minimumGapBetweenInstallments, maximumGapBetweenInstallments);
   }
 
 
@@ -1920,12 +1920,12 @@ public class LoanProductData {
     sb.append("    chargeOptions: ").append(toIndentedString(chargeOptions)).append("\n");
     sb.append("    multiDisburseLoan: ").append(toIndentedString(multiDisburseLoan)).append("\n");
     sb.append("    outstandingLoanBalance: ").append(toIndentedString(outstandingLoanBalance)).append("\n");
-    sb.append("    compoundingToBePostedAsTransaction: ").append(toIndentedString(compoundingToBePostedAsTransaction)).append("\n");
     sb.append("    equalAmortization: ").append(toIndentedString(equalAmortization)).append("\n");
     sb.append("    floatingInterestRateCalculationAllowed: ").append(toIndentedString(floatingInterestRateCalculationAllowed)).append("\n");
     sb.append("    linkedToFloatingInterestRates: ").append(toIndentedString(linkedToFloatingInterestRates)).append("\n");
     sb.append("    variableInstallmentsAllowed: ").append(toIndentedString(variableInstallmentsAllowed)).append("\n");
     sb.append("    interestRecalculationEnabled: ").append(toIndentedString(interestRecalculationEnabled)).append("\n");
+    sb.append("    compoundingToBePostedAsTransaction: ").append(toIndentedString(compoundingToBePostedAsTransaction)).append("\n");
     sb.append("    getloanProductConfigurableAttributes: ").append(toIndentedString(getloanProductConfigurableAttributes)).append("\n");
     sb.append("    minimumGapBetweenInstallments: ").append(toIndentedString(minimumGapBetweenInstallments)).append("\n");
     sb.append("    maximumGapBetweenInstallments: ").append(toIndentedString(maximumGapBetweenInstallments)).append("\n");

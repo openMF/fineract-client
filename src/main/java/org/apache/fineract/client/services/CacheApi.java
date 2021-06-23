@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,23 +41,23 @@ public interface CacheApi {
   /**
    * Retrieve Cache Types
    * Returns the list of caches.  Example Requests:  caches
-   * @return Call&lt;List&lt;GetCachesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetCachesResponse&gt;&gt;
    */
   @GET("caches")
-  Call<List<GetCachesResponse>> retrieveAll4();
+  Observable<List<GetCachesResponse>> retrieveAll4();
     
 
   /**
    * Switch Cache
    * Switches the cache to chosen one.
    * @param putCachesRequest  (required)
-   * @return Call&lt;PutCachesResponse&gt;
+   * @return Observable&lt;PutCachesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("caches")
-  Call<PutCachesResponse> switchCache(
+  Observable<PutCachesResponse> switchCache(
     @retrofit2.http.Body PutCachesRequest putCachesRequest
   );
 

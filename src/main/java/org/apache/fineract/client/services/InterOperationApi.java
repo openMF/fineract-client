@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -52,13 +51,13 @@ public interface InterOperationApi {
    * Calculate Interoperation Quote
    * 
    * @param interopQuoteRequestData  (required)
-   * @return Call&lt;InteropQuoteResponseData&gt;
+   * @return Observable&lt;InteropQuoteResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interoperation/quotes")
-  Call<InteropQuoteResponseData> createQuote(
+  Observable<InteropQuoteResponseData> createQuote(
     @retrofit2.http.Body InteropQuoteRequestData interopQuoteRequestData
   );
 
@@ -66,13 +65,13 @@ public interface InterOperationApi {
    * Allow Interoperation Transaction Request
    * 
    * @param interopTransactionRequestData  (required)
-   * @return Call&lt;InteropTransactionRequestResponseData&gt;
+   * @return Observable&lt;InteropTransactionRequestResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interoperation/requests")
-  Call<InteropTransactionRequestResponseData> createTransactionRequest(
+  Observable<InteropTransactionRequestResponseData> createTransactionRequest(
     @retrofit2.http.Body InteropTransactionRequestData interopTransactionRequestData
   );
 
@@ -82,13 +81,13 @@ public interface InterOperationApi {
    * @param idType idType (required)
    * @param idValue idValue (required)
    * @param interopIdentifierRequestData  (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @DELETE("interoperation/parties/{idType}/{idValue}")
-  Call<InteropIdentifierAccountResponseData> deleteAccountIdentifier(
+  Observable<InteropIdentifierAccountResponseData> deleteAccountIdentifier(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue, @retrofit2.http.Body InteropIdentifierRequestData interopIdentifierRequestData
   );
 
@@ -99,13 +98,13 @@ public interface InterOperationApi {
    * @param idValue idValue (required)
    * @param subIdOrType subIdOrType (required)
    * @param interopIdentifierRequestData  (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @DELETE("interoperation/parties/{idType}/{idValue}/{subIdOrType}")
-  Call<InteropIdentifierAccountResponseData> deleteAccountIdentifier1(
+  Observable<InteropIdentifierAccountResponseData> deleteAccountIdentifier1(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue, @retrofit2.http.Path("subIdOrType") String subIdOrType, @retrofit2.http.Body InteropIdentifierRequestData interopIdentifierRequestData
   );
 
@@ -113,10 +112,10 @@ public interface InterOperationApi {
    * Disburse Loan by Account Id
    * 
    * @param accountId accountId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @POST("interoperation/transactions/{accountId}/disburse")
-  Call<String> disburseLoan(
+  Observable<String> disburseLoan(
     @retrofit2.http.Path("accountId") String accountId
   );
 
@@ -125,10 +124,10 @@ public interface InterOperationApi {
    * 
    * @param idType idType (required)
    * @param idValue idValue (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @GET("interoperation/parties/{idType}/{idValue}")
-  Call<InteropIdentifierAccountResponseData> getAccountByIdentifier(
+  Observable<InteropIdentifierAccountResponseData> getAccountByIdentifier(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue
   );
 
@@ -138,10 +137,10 @@ public interface InterOperationApi {
    * @param idType idType (required)
    * @param idValue idValue (required)
    * @param subIdOrType subIdOrType (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @GET("interoperation/parties/{idType}/{idValue}/{subIdOrType}")
-  Call<InteropIdentifierAccountResponseData> getAccountByIdentifier1(
+  Observable<InteropIdentifierAccountResponseData> getAccountByIdentifier1(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue, @retrofit2.http.Path("subIdOrType") String subIdOrType
   );
 
@@ -149,10 +148,10 @@ public interface InterOperationApi {
    * Query Interoperation Account details
    * 
    * @param accountId accountId (required)
-   * @return Call&lt;InteropAccountData&gt;
+   * @return Observable&lt;InteropAccountData&gt;
    */
   @GET("interoperation/accounts/{accountId}")
-  Call<InteropAccountData> getAccountDetails(
+  Observable<InteropAccountData> getAccountDetails(
     @retrofit2.http.Path("accountId") String accountId
   );
 
@@ -160,10 +159,10 @@ public interface InterOperationApi {
    * Query Interoperation secondary identifiers by Account Id
    * 
    * @param accountId accountId (required)
-   * @return Call&lt;InteropIdentifiersResponseData&gt;
+   * @return Observable&lt;InteropIdentifiersResponseData&gt;
    */
   @GET("interoperation/accounts/{accountId}/identifiers")
-  Call<InteropIdentifiersResponseData> getAccountIdentifiers(
+  Observable<InteropIdentifiersResponseData> getAccountIdentifiers(
     @retrofit2.http.Path("accountId") String accountId
   );
 
@@ -175,10 +174,10 @@ public interface InterOperationApi {
    * @param credit credit (optional, default to false)
    * @param fromBookingDateTime fromBookingDateTime (optional)
    * @param toBookingDateTime toBookingDateTime (optional)
-   * @return Call&lt;InteropTransactionsData&gt;
+   * @return Observable&lt;InteropTransactionsData&gt;
    */
   @GET("interoperation/accounts/{accountId}/transactions")
-  Call<InteropTransactionsData> getAccountTransactions(
+  Observable<InteropTransactionsData> getAccountTransactions(
     @retrofit2.http.Path("accountId") String accountId, @retrofit2.http.Query("debit") Boolean debit, @retrofit2.http.Query("credit") Boolean credit, @retrofit2.http.Query("fromBookingDateTime") String fromBookingDateTime, @retrofit2.http.Query("toBookingDateTime") String toBookingDateTime
   );
 
@@ -186,10 +185,10 @@ public interface InterOperationApi {
    * Query KYC by Account Id
    * 
    * @param accountId accountId (required)
-   * @return Call&lt;InteropKycResponseData&gt;
+   * @return Observable&lt;InteropKycResponseData&gt;
    */
   @GET("interoperation/accounts/{accountId}/kyc")
-  Call<InteropKycResponseData> getClientKyc(
+  Observable<InteropKycResponseData> getClientKyc(
     @retrofit2.http.Path("accountId") String accountId
   );
 
@@ -198,10 +197,10 @@ public interface InterOperationApi {
    * 
    * @param transactionCode transactionCode (required)
    * @param quoteCode quoteCode (required)
-   * @return Call&lt;InteropQuoteResponseData&gt;
+   * @return Observable&lt;InteropQuoteResponseData&gt;
    */
   @GET("interoperation/transactions/{transactionCode}/quotes/{quoteCode}")
-  Call<InteropQuoteResponseData> getQuote(
+  Observable<InteropQuoteResponseData> getQuote(
     @retrofit2.http.Path("transactionCode") String transactionCode, @retrofit2.http.Path("quoteCode") String quoteCode
   );
 
@@ -210,10 +209,10 @@ public interface InterOperationApi {
    * 
    * @param transactionCode transactionCode (required)
    * @param requestCode requestCode (required)
-   * @return Call&lt;InteropTransactionRequestResponseData&gt;
+   * @return Observable&lt;InteropTransactionRequestResponseData&gt;
    */
   @GET("interoperation/transactions/{transactionCode}/requests/{requestCode}")
-  Call<InteropTransactionRequestResponseData> getTransactionRequest(
+  Observable<InteropTransactionRequestResponseData> getTransactionRequest(
     @retrofit2.http.Path("transactionCode") String transactionCode, @retrofit2.http.Path("requestCode") String requestCode
   );
 
@@ -222,20 +221,20 @@ public interface InterOperationApi {
    * 
    * @param transactionCode transactionCode (required)
    * @param transferCode transferCode (required)
-   * @return Call&lt;InteropTransferResponseData&gt;
+   * @return Observable&lt;InteropTransferResponseData&gt;
    */
   @GET("interoperation/transactions/{transactionCode}/transfers/{transferCode}")
-  Call<InteropTransferResponseData> getTransfer(
+  Observable<InteropTransferResponseData> getTransfer(
     @retrofit2.http.Path("transactionCode") String transactionCode, @retrofit2.http.Path("transferCode") String transferCode
   );
 
   /**
    * Query Interoperation Health Request
    * 
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("interoperation/health")
-  Call<Void> health();
+  Completable health();
     
 
   /**
@@ -243,13 +242,13 @@ public interface InterOperationApi {
    * 
    * @param interopTransferRequestData  (required)
    * @param action action (optional)
-   * @return Call&lt;InteropTransferResponseData&gt;
+   * @return Observable&lt;InteropTransferResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interoperation/transfers")
-  Call<InteropTransferResponseData> performTransfer(
+  Observable<InteropTransferResponseData> performTransfer(
     @retrofit2.http.Body InteropTransferRequestData interopTransferRequestData, @retrofit2.http.Query("action") String action
   );
 
@@ -259,13 +258,13 @@ public interface InterOperationApi {
    * @param idType idType (required)
    * @param idValue idValue (required)
    * @param interopIdentifierRequestData  (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interoperation/parties/{idType}/{idValue}")
-  Call<InteropIdentifierAccountResponseData> registerAccountIdentifier(
+  Observable<InteropIdentifierAccountResponseData> registerAccountIdentifier(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue, @retrofit2.http.Body InteropIdentifierRequestData interopIdentifierRequestData
   );
 
@@ -276,13 +275,13 @@ public interface InterOperationApi {
    * @param idValue idValue (required)
    * @param subIdOrType subIdOrType (required)
    * @param interopIdentifierRequestData  (required)
-   * @return Call&lt;InteropIdentifierAccountResponseData&gt;
+   * @return Observable&lt;InteropIdentifierAccountResponseData&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("interoperation/parties/{idType}/{idValue}/{subIdOrType}")
-  Call<InteropIdentifierAccountResponseData> registerAccountIdentifier1(
+  Observable<InteropIdentifierAccountResponseData> registerAccountIdentifier1(
     @retrofit2.http.Path("idType") String idType, @retrofit2.http.Path("idValue") String idValue, @retrofit2.http.Path("subIdOrType") String subIdOrType, @retrofit2.http.Body InteropIdentifierRequestData interopIdentifierRequestData
   );
 

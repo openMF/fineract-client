@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,13 +44,13 @@ public interface SurveyApi {
    * @param surveyName surveyName (required)
    * @param apptableId apptableId (required)
    * @param postSurveySurveyNameApptableIdRequest  (required)
-   * @return Call&lt;PostSurveySurveyNameApptableIdResponse&gt;
+   * @return Observable&lt;PostSurveySurveyNameApptableIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("survey/{surveyName}/{apptableId}")
-  Call<PostSurveySurveyNameApptableIdResponse> createDatatableEntry1(
+  Observable<PostSurveySurveyNameApptableIdResponse> createDatatableEntry1(
     @retrofit2.http.Path("surveyName") String surveyName, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Body PostSurveySurveyNameApptableIdRequest postSurveySurveyNameApptableIdRequest
   );
 
@@ -61,10 +60,10 @@ public interface SurveyApi {
    * @param surveyName  (required)
    * @param clientId  (required)
    * @param fulfilledId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("survey/{surveyName}/{clientId}/{fulfilledId}")
-  Call<String> deleteDatatableEntries2(
+  Observable<String> deleteDatatableEntries2(
     @retrofit2.http.Path("surveyName") String surveyName, @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("fulfilledId") Long fulfilledId
   );
 
@@ -73,10 +72,10 @@ public interface SurveyApi {
    * 
    * @param surveyName  (required)
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("survey/{surveyName}/{clientId}")
-  Call<String> getClientSurveyOverview(
+  Observable<String> getClientSurveyOverview(
     @retrofit2.http.Path("surveyName") String surveyName, @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -86,10 +85,10 @@ public interface SurveyApi {
    * @param surveyName  (required)
    * @param clientId  (required)
    * @param entryId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("survey/{surveyName}/{clientId}/{entryId}")
-  Call<String> getSurveyEntry(
+  Observable<String> getSurveyEntry(
     @retrofit2.http.Path("surveyName") String surveyName, @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("entryId") Long entryId
   );
 
@@ -99,13 +98,13 @@ public interface SurveyApi {
    * @param surveyName  (required)
    * @param apptable  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("survey/register/{surveyName}/{apptable}")
-  Call<String> register(
+  Observable<String> register(
     @retrofit2.http.Path("surveyName") String surveyName, @retrofit2.http.Path("apptable") String apptable, @retrofit2.http.Body String body
   );
 
@@ -113,20 +112,20 @@ public interface SurveyApi {
    * Retrieve survey
    * Lists a registered survey table details and the Apache Fineract Core application table they are registered to.
    * @param surveyName surveyName (required)
-   * @return Call&lt;GetSurveyResponse&gt;
+   * @return Observable&lt;GetSurveyResponse&gt;
    */
   @GET("survey/{surveyName}")
-  Call<GetSurveyResponse> retrieveSurvey(
+  Observable<GetSurveyResponse> retrieveSurvey(
     @retrofit2.http.Path("surveyName") String surveyName
   );
 
   /**
    * Retrieve surveys
    * Retrieve surveys. This allows to retrieve the list of survey tables registered .
-   * @return Call&lt;List&lt;GetSurveyResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetSurveyResponse&gt;&gt;
    */
   @GET("survey")
-  Call<List<GetSurveyResponse>> retrieveSurveys();
+  Observable<List<GetSurveyResponse>> retrieveSurveys();
     
 
 }

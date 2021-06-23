@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface ReportsApi {
    * Create a Report
    * 
    * @param postRepostRequest  (required)
-   * @return Call&lt;PostReportsResponse&gt;
+   * @return Observable&lt;PostReportsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("reports")
-  Call<PostReportsResponse> createReport(
+  Observable<PostReportsResponse> createReport(
     @retrofit2.http.Body PostRepostRequest postRepostRequest
   );
 
@@ -61,40 +60,40 @@ public interface ReportsApi {
    * Delete a Report
    * Only non-core reports can be deleted.
    * @param id id (required)
-   * @return Call&lt;DeleteReportsResponse&gt;
+   * @return Observable&lt;DeleteReportsResponse&gt;
    */
   @DELETE("reports/{id}")
-  Call<DeleteReportsResponse> deleteReport(
+  Observable<DeleteReportsResponse> deleteReport(
     @retrofit2.http.Path("id") Long id
   );
 
   /**
    * Retrieve Report Template
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists  Example Request :   reports/template
-   * @return Call&lt;GetReportsTemplateResponse&gt;
+   * @return Observable&lt;GetReportsTemplateResponse&gt;
    */
   @GET("reports/template")
-  Call<GetReportsTemplateResponse> retrieveOfficeTemplate();
+  Observable<GetReportsTemplateResponse> retrieveOfficeTemplate();
     
 
   /**
    * Retrieve a Report 
    * Example Requests:  reports/1   reports/1?template&#x3D;true
    * @param id id (required)
-   * @return Call&lt;GetReportsResponse&gt;
+   * @return Observable&lt;GetReportsResponse&gt;
    */
   @GET("reports/{id}")
-  Call<GetReportsResponse> retrieveReport(
+  Observable<GetReportsResponse> retrieveReport(
     @retrofit2.http.Path("id") Long id
   );
 
   /**
    * List Reports
    * Lists all reports and their parameters.  Example Request:  reports
-   * @return Call&lt;List&lt;GetReportsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetReportsResponse&gt;&gt;
    */
   @GET("reports")
-  Call<List<GetReportsResponse>> retrieveReportList();
+  Observable<List<GetReportsResponse>> retrieveReportList();
     
 
   /**
@@ -102,13 +101,13 @@ public interface ReportsApi {
    * Only the useReport description can be updated for core reports.
    * @param id id (required)
    * @param putReportRequest  (required)
-   * @return Call&lt;PutReportResponse&gt;
+   * @return Observable&lt;PutReportResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("reports/{id}")
-  Call<PutReportResponse> updateReport(
+  Observable<PutReportResponse> updateReport(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Body PutReportRequest putReportRequest
   );
 

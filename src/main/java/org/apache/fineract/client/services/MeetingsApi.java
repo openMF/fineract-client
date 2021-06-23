@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface MeetingsApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("{entityType}/{entityId}/meetings")
-  Call<String> createMeeting(
+  Observable<String> createMeeting(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Body String body
   );
 
@@ -58,10 +57,10 @@ public interface MeetingsApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param meetingId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("{entityType}/{entityId}/meetings/{meetingId}")
-  Call<String> deleteMeeting(
+  Observable<String> deleteMeeting(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("meetingId") Long meetingId
   );
 
@@ -73,13 +72,13 @@ public interface MeetingsApi {
    * @param meetingId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("{entityType}/{entityId}/meetings/{meetingId}")
-  Call<String> performMeetingCommands(
+  Observable<String> performMeetingCommands(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("meetingId") Long meetingId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -89,10 +88,10 @@ public interface MeetingsApi {
    * @param meetingId  (required)
    * @param entityType  (required)
    * @param entityId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/meetings/{meetingId}")
-  Call<String> retrieveMeeting(
+  Observable<String> retrieveMeeting(
     @retrofit2.http.Path("meetingId") Long meetingId, @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId
   );
 
@@ -102,10 +101,10 @@ public interface MeetingsApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param limit  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/meetings")
-  Call<String> retrieveMeetings(
+  Observable<String> retrieveMeetings(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -115,10 +114,10 @@ public interface MeetingsApi {
    * @param entityType  (required)
    * @param entityId  (required)
    * @param calendarId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("{entityType}/{entityId}/meetings/template")
-  Call<String> template11(
+  Observable<String> template11(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Query("calendarId") Long calendarId
   );
 
@@ -129,13 +128,13 @@ public interface MeetingsApi {
    * @param entityId  (required)
    * @param meetingId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("{entityType}/{entityId}/meetings/{meetingId}")
-  Call<String> updateMeeting(
+  Observable<String> updateMeeting(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("meetingId") Long meetingId, @retrofit2.http.Body String body
   );
 

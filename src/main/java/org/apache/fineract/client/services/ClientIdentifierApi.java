@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface ClientIdentifierApi {
    * Mandatory Fields documentKey, documentTypeId 
    * @param clientId clientId (required)
    * @param postClientsClientIdIdentifiersRequest  (required)
-   * @return Call&lt;PostClientsClientIdIdentifiersResponse&gt;
+   * @return Observable&lt;PostClientsClientIdIdentifiersResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients/{clientId}/identifiers")
-  Call<PostClientsClientIdIdentifiersResponse> createClientIdentifier(
+  Observable<PostClientsClientIdIdentifiersResponse> createClientIdentifier(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PostClientsClientIdIdentifiersRequest postClientsClientIdIdentifiersRequest
   );
 
@@ -63,10 +62,10 @@ public interface ClientIdentifierApi {
    * Deletes a Client Identifier
    * @param clientId clientId (required)
    * @param identifierId identifierId (required)
-   * @return Call&lt;DeleteClientsClientIdIdentifiersIdentifierIdResponse&gt;
+   * @return Observable&lt;DeleteClientsClientIdIdentifiersIdentifierIdResponse&gt;
    */
   @DELETE("clients/{clientId}/identifiers/{identifierId}")
-  Call<DeleteClientsClientIdIdentifiersIdentifierIdResponse> deleteClientIdentifier(
+  Observable<DeleteClientsClientIdIdentifiersIdentifierIdResponse> deleteClientIdentifier(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("identifierId") Long identifierId
   );
 
@@ -74,10 +73,10 @@ public interface ClientIdentifierApi {
    * Retrieve Client Identifier Details Template
    * This is a convenience resource useful for building maintenance user interface screens for client applications. The template data returned consists of any or all of:   Field Defaults  Allowed description Lists   Example Request: clients/1/identifiers/template
    * @param clientId clientId (required)
-   * @return Call&lt;GetClientsClientIdIdentifiersTemplateResponse&gt;
+   * @return Observable&lt;GetClientsClientIdIdentifiersTemplateResponse&gt;
    */
   @GET("clients/{clientId}/identifiers/template")
-  Call<GetClientsClientIdIdentifiersTemplateResponse> newClientIdentifierDetails(
+  Observable<GetClientsClientIdIdentifiersTemplateResponse> newClientIdentifierDetails(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -85,10 +84,10 @@ public interface ClientIdentifierApi {
    * List all Identifiers for a Client
    * Example Requests: clients/1/identifiers   clients/1/identifiers?fields&#x3D;documentKey,documentType,description
    * @param clientId clientId (required)
-   * @return Call&lt;List&lt;GetClientsClientIdIdentifiersResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetClientsClientIdIdentifiersResponse&gt;&gt;
    */
   @GET("clients/{clientId}/identifiers")
-  Call<List<GetClientsClientIdIdentifiersResponse>> retrieveAllClientIdentifiers(
+  Observable<List<GetClientsClientIdIdentifiersResponse>> retrieveAllClientIdentifiers(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -97,10 +96,10 @@ public interface ClientIdentifierApi {
    * Example Requests: clients/1/identifier/2   clients/1/identifier/2?template&#x3D;true  clients/1/identifiers/2?fields&#x3D;documentKey,documentType,description
    * @param clientId clientId (required)
    * @param identifierId identifierId (required)
-   * @return Call&lt;GetClientsClientIdIdentifiersResponse&gt;
+   * @return Observable&lt;GetClientsClientIdIdentifiersResponse&gt;
    */
   @GET("clients/{clientId}/identifiers/{identifierId}")
-  Call<GetClientsClientIdIdentifiersResponse> retrieveClientIdentifiers(
+  Observable<GetClientsClientIdIdentifiersResponse> retrieveClientIdentifiers(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("identifierId") Long identifierId
   );
 
@@ -110,13 +109,13 @@ public interface ClientIdentifierApi {
    * @param clientId clientId (required)
    * @param identifierId identifierId (required)
    * @param putClientsClientIdIdentifiersIdentifierIdRequest  (required)
-   * @return Call&lt;PutClientsClientIdIdentifiersIdentifierIdResponse&gt;
+   * @return Observable&lt;PutClientsClientIdIdentifiersIdentifierIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("clients/{clientId}/identifiers/{identifierId}")
-  Call<PutClientsClientIdIdentifiersIdentifierIdResponse> updateClientIdentifer(
+  Observable<PutClientsClientIdIdentifiersIdentifierIdResponse> updateClientIdentifer(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("identifierId") Long identifierId, @retrofit2.http.Body PutClientsClientIdIdentifiersIdentifierIdRequest putClientsClientIdIdentifiersIdentifierIdRequest
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface SelfScoreCardApi {
    * 
    * @param surveyId  (required)
    * @param scorecardData  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("self/surveys/scorecards/{surveyId}")
-  Call<Void> createScorecard(
+  Completable createScorecard(
     @retrofit2.http.Path("surveyId") Long surveyId, @retrofit2.http.Body ScorecardData scorecardData
   );
 
@@ -56,10 +55,10 @@ public interface SelfScoreCardApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;List&lt;ScorecardData&gt;&gt;
+   * @return Observable&lt;List&lt;ScorecardData&gt;&gt;
    */
   @GET("self/surveys/scorecards/clients/{clientId}")
-  Call<List<ScorecardData>> findByClient(
+  Observable<List<ScorecardData>> findByClient(
     @retrofit2.http.Path("clientId") Long clientId
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,10 +40,10 @@ public interface LikelihoodApi {
    * 
    * @param likelihoodId  (required)
    * @param ppiName  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("likelihood/{ppiName}/{likelihoodId}")
-  Call<String> retrieve(
+  Observable<String> retrieve(
     @retrofit2.http.Path("likelihoodId") Long likelihoodId, @retrofit2.http.Path("ppiName") String ppiName
   );
 
@@ -52,10 +51,10 @@ public interface LikelihoodApi {
    * 
    * 
    * @param ppiName  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("likelihood/{ppiName}")
-  Call<String> retrieveAll11(
+  Observable<String> retrieveAll11(
     @retrofit2.http.Path("ppiName") String ppiName
   );
 
@@ -65,13 +64,13 @@ public interface LikelihoodApi {
    * @param likelihoodId  (required)
    * @param ppiName  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("likelihood/{ppiName}/{likelihoodId}")
-  Call<String> update4(
+  Observable<String> update4(
     @retrofit2.http.Path("likelihoodId") Long likelihoodId, @retrofit2.http.Path("ppiName") String ppiName, @retrofit2.http.Body String body
   );
 

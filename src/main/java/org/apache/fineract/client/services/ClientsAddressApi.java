@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface ClientsAddressApi {
    * @param clientid clientId (required)
    * @param postClientClientIdAddressesRequest  (required)
    * @param type type (optional)
-   * @return Call&lt;PostClientClientIdAddressesResponse&gt;
+   * @return Observable&lt;PostClientClientIdAddressesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("client/{clientid}/addresses")
-  Call<PostClientClientIdAddressesResponse> addClientAddress(
+  Observable<PostClientClientIdAddressesResponse> addClientAddress(
     @retrofit2.http.Path("clientid") Long clientid, @retrofit2.http.Body PostClientClientIdAddressesRequest postClientClientIdAddressesRequest, @retrofit2.http.Query("type") Long type
   );
 
@@ -63,20 +62,20 @@ public interface ClientsAddressApi {
    * @param clientid clientId (required)
    * @param status status (optional)
    * @param type type (optional)
-   * @return Call&lt;List&lt;GetClientClientIdAddressesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetClientClientIdAddressesResponse&gt;&gt;
    */
   @GET("client/{clientid}/addresses")
-  Call<List<GetClientClientIdAddressesResponse>> getAddresses1(
+  Observable<List<GetClientClientIdAddressesResponse>> getAddresses1(
     @retrofit2.http.Path("clientid") Long clientid, @retrofit2.http.Query("status") String status, @retrofit2.http.Query("type") Long type
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("client/addresses/template")
-  Call<String> getAddressesTemplate();
+  Observable<String> getAddressesTemplate();
     
 
   /**
@@ -84,13 +83,13 @@ public interface ClientsAddressApi {
    * All the address fields can be updated by using update client address API  Mandatory Fields type and addressId
    * @param clientid clientId (required)
    * @param putClientClientIdAddressesRequest  (required)
-   * @return Call&lt;PutClientClientIdAddressesResponse&gt;
+   * @return Observable&lt;PutClientClientIdAddressesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("client/{clientid}/addresses")
-  Call<PutClientClientIdAddressesResponse> updateClientAddress(
+  Observable<PutClientClientIdAddressesResponse> updateClientAddress(
     @retrofit2.http.Path("clientid") Long clientid, @retrofit2.http.Body PutClientClientIdAddressesRequest putClientClientIdAddressesRequest
   );
 

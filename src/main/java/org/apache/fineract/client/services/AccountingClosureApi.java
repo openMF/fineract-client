@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -46,13 +45,13 @@ public interface AccountingClosureApi {
    * Create an Accounting Closure
    * Mandatory Fields officeId,closingDate
    * @param postGlClosuresRequest  (required)
-   * @return Call&lt;PostGlClosuresResponse&gt;
+   * @return Observable&lt;PostGlClosuresResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("glclosures")
-  Call<PostGlClosuresResponse> createGLClosure(
+  Observable<PostGlClosuresResponse> createGLClosure(
     @retrofit2.http.Body PostGlClosuresRequest postGlClosuresRequest
   );
 
@@ -60,10 +59,10 @@ public interface AccountingClosureApi {
    * Delete an accounting closure
    * Note: Only the latest accounting closure associated with a branch may be deleted.
    * @param glClosureId glclosureId (required)
-   * @return Call&lt;DeleteGlClosuresResponse&gt;
+   * @return Observable&lt;DeleteGlClosuresResponse&gt;
    */
   @DELETE("glclosures/{glClosureId}")
-  Call<DeleteGlClosuresResponse> deleteGLClosure(
+  Observable<DeleteGlClosuresResponse> deleteGLClosure(
     @retrofit2.http.Path("glClosureId") Long glClosureId
   );
 
@@ -71,10 +70,10 @@ public interface AccountingClosureApi {
    * Retrieve an Accounting Closure
    * Example Requests:  glclosures/1   /glclosures/1?fields&#x3D;officeName,closingDate
    * @param glClosureId glClosureId (required)
-   * @return Call&lt;GetGlClosureResponse&gt;
+   * @return Observable&lt;GetGlClosureResponse&gt;
    */
   @GET("glclosures/{glClosureId}")
-  Call<GetGlClosureResponse> retreiveClosure(
+  Observable<GetGlClosureResponse> retreiveClosure(
     @retrofit2.http.Path("glClosureId") Long glClosureId
   );
 
@@ -82,10 +81,10 @@ public interface AccountingClosureApi {
    * List Accounting closures
    * Example Requests:  glclosures
    * @param officeId  (optional)
-   * @return Call&lt;List&lt;GetGlClosureResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetGlClosureResponse&gt;&gt;
    */
   @GET("glclosures")
-  Call<List<GetGlClosureResponse>> retrieveAllClosures(
+  Observable<List<GetGlClosureResponse>> retrieveAllClosures(
     @retrofit2.http.Query("officeId") Long officeId
   );
 
@@ -94,13 +93,13 @@ public interface AccountingClosureApi {
    * Once an accounting closure is created, only the comments associated with it may be edited
    * @param glClosureId glClosureId (required)
    * @param putGlClosuresRequest  (optional)
-   * @return Call&lt;PutGlClosuresResponse&gt;
+   * @return Observable&lt;PutGlClosuresResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("glclosures/{glClosureId}")
-  Call<PutGlClosuresResponse> updateGLClosure(
+  Observable<PutGlClosuresResponse> updateGLClosure(
     @retrofit2.http.Path("glClosureId") Long glClosureId, @retrofit2.http.Body PutGlClosuresRequest putGlClosuresRequest
   );
 

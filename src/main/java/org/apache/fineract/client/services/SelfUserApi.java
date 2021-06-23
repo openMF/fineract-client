@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,10 +41,10 @@ public interface SelfUserApi {
    * Update User
    * This API can be used by Self Service user to update their own user information. Currently, \&quot;password\&quot; and \&quot;repeatPassword\&quot; are the only parameters accepted.
    * @param putSelfUserRequest  (required)
-   * @return Call&lt;PutSelfUserResponse&gt;
+   * @return Observable&lt;PutSelfUserResponse&gt;
    */
   @PUT("self/user")
-  Call<PutSelfUserResponse> update22(
+  Observable<PutSelfUserResponse> update22(
     @retrofit2.http.Body PutSelfUserRequest putSelfUserRequest
   );
 

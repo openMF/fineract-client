@@ -7,6 +7,7 @@
 *.jar
 *.war
 *.ear
+*.DS_Store
 
 # exclude jar for gradle wrapper
 !gradle/wrapper/*.jar
@@ -19,3 +20,4 @@ hs_err_pid*
 target
 .gradle
 build
+.idea

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,23 +42,23 @@ public interface PocketApi {
    * Pockets behave as favourites. An user can link his/her Loan, Savings and Share accounts to pocket for faster access. In a similar way linked accounts can be delinked from the pocket.  Example Requests:  self/pockets?command&#x3D;linkAccounts  self/pockets?command&#x3D;delinkAccounts
    * @param command command (optional)
    * @param body  (optional)
-   * @return Call&lt;PostLinkDelinkAccountsToFromPocketResponse&gt;
+   * @return Observable&lt;PostLinkDelinkAccountsToFromPocketResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("self/pockets")
-  Call<PostLinkDelinkAccountsToFromPocketResponse> handleCommands7(
+  Observable<PostLinkDelinkAccountsToFromPocketResponse> handleCommands7(
     @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
   /**
    * Retrieve accounts linked to pocket
    * All linked loan  Example Requests:   self/pockets
-   * @return Call&lt;GetAccountsLinkedToPocketResponse&gt;
+   * @return Observable&lt;GetAccountsLinkedToPocketResponse&gt;
    */
   @GET("self/pockets")
-  Call<GetAccountsLinkedToPocketResponse> retrieveAll37();
+  Observable<GetAccountsLinkedToPocketResponse> retrieveAll37();
     
 
 }

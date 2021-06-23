@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface AuthenticationHttpBasicApi {
    * Authenticates the credentials provided and returns the set roles and permissions allowed.
    * @param returnClientList  (optional, default to false)
    * @param body  (optional)
-   * @return Call&lt;PostAuthenticationResponse&gt;
+   * @return Observable&lt;PostAuthenticationResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("authentication")
-  Call<PostAuthenticationResponse> authenticate(
+  Observable<PostAuthenticationResponse> authenticate(
     @retrofit2.http.Query("returnClientList") Boolean returnClientList, @retrofit2.http.Body String body
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface RecurringDepositAccountTransactionsApi {
    * @param transactionId transactionId (required)
    * @param postRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("recurringdepositaccounts/{recurringDepositAccountId}/transactions/{transactionId}")
-  Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> handleTransactionCommands(
+  Observable<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> handleTransactionCommands(
     @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Body PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest postRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -63,10 +62,10 @@ public interface RecurringDepositAccountTransactionsApi {
    * Retrieves Recurring Deposit Account Transaction  Example Requests:  recurringdepositaccounts/1/transactions/1
    * @param recurringDepositAccountId recurringDepositAccountId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
+   * @return Observable&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse&gt;
    */
   @GET("recurringdepositaccounts/{recurringDepositAccountId}/transactions/{transactionId}")
-  Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> retrieveOne20(
+  Observable<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse> retrieveOne20(
     @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -75,10 +74,10 @@ public interface RecurringDepositAccountTransactionsApi {
    * This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Requests:  recurringdepositaccounts/1/transactions/template?command&#x3D;deposit  recurringdepositaccounts/1/transactions/template?command&#x3D;withdrawal
    * @param recurringDepositAccountId recurringDepositAccountId (required)
    * @param command command (optional)
-   * @return Call&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse&gt;
+   * @return Observable&lt;GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse&gt;
    */
   @GET("recurringdepositaccounts/{recurringDepositAccountId}/transactions/template")
-  Call<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> retrieveTemplate15(
+  Observable<GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse> retrieveTemplate15(
     @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Query("command") String command
   );
 
@@ -88,13 +87,13 @@ public interface RecurringDepositAccountTransactionsApi {
    * @param recurringDepositAccountId recurringDepositAccountId (required)
    * @param postRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse&gt;
+   * @return Observable&lt;PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("recurringdepositaccounts/{recurringDepositAccountId}/transactions")
-  Call<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> transaction1(
+  Observable<PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsResponse> transaction1(
     @retrofit2.http.Path("recurringDepositAccountId") Long recurringDepositAccountId, @retrofit2.http.Body PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest postRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest, @retrofit2.http.Query("command") String command
   );
 

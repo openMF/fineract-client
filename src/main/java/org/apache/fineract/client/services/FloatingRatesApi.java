@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -46,33 +45,33 @@ public interface FloatingRatesApi {
    * Create a new Floating Rate
    * Creates a new Floating Rate Mandatory Fields: name Optional Fields: isBaseLendingRate, isActive, ratePeriods
    * @param postFloatingRatesRequest  (required)
-   * @return Call&lt;PostFloatingRatesResponse&gt;
+   * @return Observable&lt;PostFloatingRatesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("floatingrates")
-  Call<PostFloatingRatesResponse> createFloatingRate(
+  Observable<PostFloatingRatesResponse> createFloatingRate(
     @retrofit2.http.Body PostFloatingRatesRequest postFloatingRatesRequest
   );
 
   /**
    * List Floating Rates
    * Lists Floating Rates
-   * @return Call&lt;List&lt;GetFloatingRatesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetFloatingRatesResponse&gt;&gt;
    */
   @GET("floatingrates")
-  Call<List<GetFloatingRatesResponse>> retrieveAll22();
+  Observable<List<GetFloatingRatesResponse>> retrieveAll22();
     
 
   /**
    * Retrieve Floating Rate
    * Retrieves Floating Rate
    * @param floatingRateId floatingRateId (required)
-   * @return Call&lt;GetFloatingRatesFloatingRateIdResponse&gt;
+   * @return Observable&lt;GetFloatingRatesFloatingRateIdResponse&gt;
    */
   @GET("floatingrates/{floatingRateId}")
-  Call<GetFloatingRatesFloatingRateIdResponse> retrieveOne12(
+  Observable<GetFloatingRatesFloatingRateIdResponse> retrieveOne12(
     @retrofit2.http.Path("floatingRateId") Long floatingRateId
   );
 
@@ -81,13 +80,13 @@ public interface FloatingRatesApi {
    * Updates new Floating Rate. Rate Periods in the past cannot be modified. All the future rateperiods would be replaced with the new ratePeriods data sent.
    * @param floatingRateId floatingRateId (required)
    * @param putFloatingRatesFloatingRateIdRequest  (required)
-   * @return Call&lt;PutFloatingRatesFloatingRateIdResponse&gt;
+   * @return Observable&lt;PutFloatingRatesFloatingRateIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("floatingrates/{floatingRateId}")
-  Call<PutFloatingRatesFloatingRateIdResponse> updateFloatingRate(
+  Observable<PutFloatingRatesFloatingRateIdResponse> updateFloatingRate(
     @retrofit2.http.Path("floatingRateId") Long floatingRateId, @retrofit2.http.Body PutFloatingRatesFloatingRateIdRequest putFloatingRatesFloatingRateIdRequest
   );
 

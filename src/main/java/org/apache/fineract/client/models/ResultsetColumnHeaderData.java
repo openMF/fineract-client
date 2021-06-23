@@ -75,10 +75,6 @@ public class ResultsetColumnHeaderData {
   @SerializedName(SERIALIZED_NAME_OPTIONAL)
   private Boolean optional;
 
-  public static final String SERIALIZED_NAME_STRING = "string";
-  @SerializedName(SERIALIZED_NAME_STRING)
-  private Boolean string;
-
   public static final String SERIALIZED_NAME_DATE_DISPLAY_TYPE = "dateDisplayType";
   @SerializedName(SERIALIZED_NAME_DATE_DISPLAY_TYPE)
   private Boolean dateDisplayType;
@@ -87,9 +83,9 @@ public class ResultsetColumnHeaderData {
   @SerializedName(SERIALIZED_NAME_DATE_TIME_DISPLAY_TYPE)
   private Boolean dateTimeDisplayType;
 
-  public static final String SERIALIZED_NAME_INTEGER_DISPLAY_TYPE = "integerDisplayType";
-  @SerializedName(SERIALIZED_NAME_INTEGER_DISPLAY_TYPE)
-  private Boolean integerDisplayType;
+  public static final String SERIALIZED_NAME_STRING = "string";
+  @SerializedName(SERIALIZED_NAME_STRING)
+  private Boolean string;
 
   public static final String SERIALIZED_NAME_DECIMAL_DISPLAY_TYPE = "decimalDisplayType";
   @SerializedName(SERIALIZED_NAME_DECIMAL_DISPLAY_TYPE)
@@ -106,6 +102,10 @@ public class ResultsetColumnHeaderData {
   public static final String SERIALIZED_NAME_CODE_LOOKUP_DISPLAY_TYPE = "codeLookupDisplayType";
   @SerializedName(SERIALIZED_NAME_CODE_LOOKUP_DISPLAY_TYPE)
   private Boolean codeLookupDisplayType;
+
+  public static final String SERIALIZED_NAME_INTEGER_DISPLAY_TYPE = "integerDisplayType";
+  @SerializedName(SERIALIZED_NAME_INTEGER_DISPLAY_TYPE)
+  private Boolean integerDisplayType;
 
 
   public ResultsetColumnHeaderData columnName(String columnName) {
@@ -269,29 +269,6 @@ public class ResultsetColumnHeaderData {
   }
 
 
-  public ResultsetColumnHeaderData string(Boolean string) {
-    
-    this.string = string;
-    return this;
-  }
-
-   /**
-   * Get string
-   * @return string
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getString() {
-    return string;
-  }
-
-
-  public void setString(Boolean string) {
-    this.string = string;
-  }
-
-
   public ResultsetColumnHeaderData dateDisplayType(Boolean dateDisplayType) {
     
     this.dateDisplayType = dateDisplayType;
@@ -338,26 +315,26 @@ public class ResultsetColumnHeaderData {
   }
 
 
-  public ResultsetColumnHeaderData integerDisplayType(Boolean integerDisplayType) {
+  public ResultsetColumnHeaderData string(Boolean string) {
     
-    this.integerDisplayType = integerDisplayType;
+    this.string = string;
     return this;
   }
 
    /**
-   * Get integerDisplayType
-   * @return integerDisplayType
+   * Get string
+   * @return string
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getIntegerDisplayType() {
-    return integerDisplayType;
+  public Boolean getString() {
+    return string;
   }
 
 
-  public void setIntegerDisplayType(Boolean integerDisplayType) {
-    this.integerDisplayType = integerDisplayType;
+  public void setString(Boolean string) {
+    this.string = string;
   }
 
 
@@ -453,6 +430,29 @@ public class ResultsetColumnHeaderData {
   }
 
 
+  public ResultsetColumnHeaderData integerDisplayType(Boolean integerDisplayType) {
+    
+    this.integerDisplayType = integerDisplayType;
+    return this;
+  }
+
+   /**
+   * Get integerDisplayType
+   * @return integerDisplayType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIntegerDisplayType() {
+    return integerDisplayType;
+  }
+
+
+  public void setIntegerDisplayType(Boolean integerDisplayType) {
+    this.integerDisplayType = integerDisplayType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -469,19 +469,19 @@ public class ResultsetColumnHeaderData {
         Objects.equals(this.columnCode, resultsetColumnHeaderData.columnCode) &&
         Objects.equals(this.mandatory, resultsetColumnHeaderData.mandatory) &&
         Objects.equals(this.optional, resultsetColumnHeaderData.optional) &&
-        Objects.equals(this.string, resultsetColumnHeaderData.string) &&
         Objects.equals(this.dateDisplayType, resultsetColumnHeaderData.dateDisplayType) &&
         Objects.equals(this.dateTimeDisplayType, resultsetColumnHeaderData.dateTimeDisplayType) &&
-        Objects.equals(this.integerDisplayType, resultsetColumnHeaderData.integerDisplayType) &&
+        Objects.equals(this.string, resultsetColumnHeaderData.string) &&
         Objects.equals(this.decimalDisplayType, resultsetColumnHeaderData.decimalDisplayType) &&
         Objects.equals(this.booleanDisplayType, resultsetColumnHeaderData.booleanDisplayType) &&
         Objects.equals(this.codeValueDisplayType, resultsetColumnHeaderData.codeValueDisplayType) &&
-        Objects.equals(this.codeLookupDisplayType, resultsetColumnHeaderData.codeLookupDisplayType);
+        Objects.equals(this.codeLookupDisplayType, resultsetColumnHeaderData.codeLookupDisplayType) &&
+        Objects.equals(this.integerDisplayType, resultsetColumnHeaderData.integerDisplayType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, columnType, columnLength, columnDisplayType, columnCode, mandatory, optional, string, dateDisplayType, dateTimeDisplayType, integerDisplayType, decimalDisplayType, booleanDisplayType, codeValueDisplayType, codeLookupDisplayType);
+    return Objects.hash(columnName, columnType, columnLength, columnDisplayType, columnCode, mandatory, optional, dateDisplayType, dateTimeDisplayType, string, decimalDisplayType, booleanDisplayType, codeValueDisplayType, codeLookupDisplayType, integerDisplayType);
   }
 
 
@@ -496,14 +496,14 @@ public class ResultsetColumnHeaderData {
     sb.append("    columnCode: ").append(toIndentedString(columnCode)).append("\n");
     sb.append("    mandatory: ").append(toIndentedString(mandatory)).append("\n");
     sb.append("    optional: ").append(toIndentedString(optional)).append("\n");
-    sb.append("    string: ").append(toIndentedString(string)).append("\n");
     sb.append("    dateDisplayType: ").append(toIndentedString(dateDisplayType)).append("\n");
     sb.append("    dateTimeDisplayType: ").append(toIndentedString(dateTimeDisplayType)).append("\n");
-    sb.append("    integerDisplayType: ").append(toIndentedString(integerDisplayType)).append("\n");
+    sb.append("    string: ").append(toIndentedString(string)).append("\n");
     sb.append("    decimalDisplayType: ").append(toIndentedString(decimalDisplayType)).append("\n");
     sb.append("    booleanDisplayType: ").append(toIndentedString(booleanDisplayType)).append("\n");
     sb.append("    codeValueDisplayType: ").append(toIndentedString(codeValueDisplayType)).append("\n");
     sb.append("    codeLookupDisplayType: ").append(toIndentedString(codeLookupDisplayType)).append("\n");
+    sb.append("    integerDisplayType: ").append(toIndentedString(integerDisplayType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

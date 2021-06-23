@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -62,13 +61,13 @@ public interface TellerCashManagementApi {
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
    * @param postTellersTellerIdCashiersCashierIdAllocateRequest  (required)
-   * @return Call&lt;PostTellersTellerIdCashiersCashierIdAllocateResponse&gt;
+   * @return Observable&lt;PostTellersTellerIdCashiersCashierIdAllocateResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("tellers/{tellerId}/cashiers/{cashierId}/allocate")
-  Call<PostTellersTellerIdCashiersCashierIdAllocateResponse> allocateCashToCashier(
+  Observable<PostTellersTellerIdCashiersCashierIdAllocateResponse> allocateCashToCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId, @retrofit2.http.Body PostTellersTellerIdCashiersCashierIdAllocateRequest postTellersTellerIdCashiersCashierIdAllocateRequest
   );
 
@@ -77,13 +76,13 @@ public interface TellerCashManagementApi {
    * Mandatory Fields:  Cashier/staff, Fromm Date, To Date, Full Day or From time and To time    Optional Fields:  Description/Notes
    * @param tellerId tellerId (required)
    * @param postTellersTellerIdCashiersRequest  (required)
-   * @return Call&lt;PostTellersTellerIdCashiersResponse&gt;
+   * @return Observable&lt;PostTellersTellerIdCashiersResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("tellers/{tellerId}/cashiers")
-  Call<PostTellersTellerIdCashiersResponse> createCashier(
+  Observable<PostTellersTellerIdCashiersResponse> createCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Body PostTellersTellerIdCashiersRequest postTellersTellerIdCashiersRequest
   );
 
@@ -91,13 +90,13 @@ public interface TellerCashManagementApi {
    * Create teller
    * Mandatory Fields Teller name, OfficeId, Description, Start Date, Status Optional Fields End Date
    * @param postTellersRequest  (required)
-   * @return Call&lt;PostTellersResponse&gt;
+   * @return Observable&lt;PostTellersResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("tellers")
-  Call<PostTellersResponse> createTeller(
+  Observable<PostTellersResponse> createTeller(
     @retrofit2.http.Body PostTellersRequest postTellersRequest
   );
 
@@ -106,10 +105,10 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
-   * @return Call&lt;DeleteTellersTellerIdCashiersCashierIdResponse&gt;
+   * @return Observable&lt;DeleteTellersTellerIdCashiersCashierIdResponse&gt;
    */
   @DELETE("tellers/{tellerId}/cashiers/{cashierId}")
-  Call<DeleteTellersTellerIdCashiersCashierIdResponse> deleteCashier(
+  Observable<DeleteTellersTellerIdCashiersCashierIdResponse> deleteCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId
   );
 
@@ -117,10 +116,10 @@ public interface TellerCashManagementApi {
    * 
    * 
    * @param tellerId tellerId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("tellers/{tellerId}")
-  Call<String> deleteTeller(
+  Observable<String> deleteTeller(
     @retrofit2.http.Path("tellerId") Long tellerId
   );
 
@@ -129,10 +128,10 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
-   * @return Call&lt;GetTellersTellerIdCashiersCashierIdResponse&gt;
+   * @return Observable&lt;GetTellersTellerIdCashiersCashierIdResponse&gt;
    */
   @GET("tellers/{tellerId}/cashiers/{cashierId}")
-  Call<GetTellersTellerIdCashiersCashierIdResponse> findCashierData(
+  Observable<GetTellersTellerIdCashiersCashierIdResponse> findCashierData(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId
   );
 
@@ -140,10 +139,10 @@ public interface TellerCashManagementApi {
    * Retrieve tellers
    * 
    * @param tellerId tellerId (required)
-   * @return Call&lt;GetTellersResponse&gt;
+   * @return Observable&lt;GetTellersResponse&gt;
    */
   @GET("tellers/{tellerId}")
-  Call<GetTellersResponse> findTeller(
+  Observable<GetTellersResponse> findTeller(
     @retrofit2.http.Path("tellerId") Long tellerId
   );
 
@@ -152,10 +151,10 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param transactionId transactionId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("tellers/{tellerId}/transactions/{transactionId}")
-  Call<String> findTransactionData(
+  Observable<String> findTransactionData(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -165,10 +164,10 @@ public interface TellerCashManagementApi {
    * @param tellerId tellerId (required)
    * @param fromdate fromdate (optional)
    * @param todate todate (optional)
-   * @return Call&lt;GetTellersTellerIdCashiersResponse&gt;
+   * @return Observable&lt;GetTellersTellerIdCashiersResponse&gt;
    */
   @GET("tellers/{tellerId}/cashiers")
-  Call<GetTellersTellerIdCashiersResponse> getCashierData1(
+  Observable<GetTellersTellerIdCashiersResponse> getCashierData1(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Query("fromdate") String fromdate, @retrofit2.http.Query("todate") String todate
   );
 
@@ -176,10 +175,10 @@ public interface TellerCashManagementApi {
    * Find Cashiers
    * 
    * @param tellerId tellerId (required)
-   * @return Call&lt;GetTellersTellerIdCashiersTemplateResponse&gt;
+   * @return Observable&lt;GetTellersTellerIdCashiersTemplateResponse&gt;
    */
   @GET("tellers/{tellerId}/cashiers/template")
-  Call<GetTellersTellerIdCashiersTemplateResponse> getCashierTemplate(
+  Observable<GetTellersTellerIdCashiersTemplateResponse> getCashierTemplate(
     @retrofit2.http.Path("tellerId") Long tellerId
   );
 
@@ -188,10 +187,10 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
-   * @return Call&lt;GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse&gt;
+   * @return Observable&lt;GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse&gt;
    */
   @GET("tellers/{tellerId}/cashiers/{cashierId}/transactions/template")
-  Call<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> getCashierTxnTemplate(
+  Observable<GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse> getCashierTxnTemplate(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId
   );
 
@@ -201,10 +200,10 @@ public interface TellerCashManagementApi {
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (optional)
    * @param dateRange dateRange (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("tellers/{tellerId}/journals")
-  Call<String> getJournalData(
+  Observable<String> getJournalData(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Query("cashierId") Long cashierId, @retrofit2.http.Query("dateRange") String dateRange
   );
 
@@ -212,10 +211,10 @@ public interface TellerCashManagementApi {
    * List all tellers
    * Retrieves list tellers
    * @param officeId officeId (optional)
-   * @return Call&lt;List&lt;GetTellersResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetTellersResponse&gt;&gt;
    */
   @GET("tellers")
-  Call<List<GetTellersResponse>> getTellerData(
+  Observable<List<GetTellersResponse>> getTellerData(
     @retrofit2.http.Query("officeId") Long officeId
   );
 
@@ -224,10 +223,10 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param dateRange dateRange (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("tellers/{tellerId}/transactions")
-  Call<String> getTransactionData(
+  Observable<String> getTransactionData(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Query("dateRange") String dateRange
   );
 
@@ -241,10 +240,10 @@ public interface TellerCashManagementApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt;&gt;
    */
   @GET("tellers/{tellerId}/cashiers/{cashierId}/transactions")
-  Call<List<GetTellersTellerIdCashiersCashiersIdTransactionsResponse>> getTransactionsForCashier(
+  Observable<List<GetTellersTellerIdCashiersCashiersIdTransactionsResponse>> getTransactionsForCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId, @retrofit2.http.Query("currencyCode") String currencyCode, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -258,10 +257,10 @@ public interface TellerCashManagementApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse&gt;
+   * @return Observable&lt;GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse&gt;
    */
   @GET("tellers/{tellerId}/cashiers/{cashierId}/summaryandtransactions")
-  Call<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> getTransactionsWtihSummaryForCashier(
+  Observable<GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse> getTransactionsWtihSummaryForCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId, @retrofit2.http.Query("currencyCode") String currencyCode, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 
@@ -271,13 +270,13 @@ public interface TellerCashManagementApi {
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
    * @param postTellersTellerIdCashiersCashierIdSettleRequest  (required)
-   * @return Call&lt;PostTellersTellerIdCashiersCashierIdSettleResponse&gt;
+   * @return Observable&lt;PostTellersTellerIdCashiersCashierIdSettleResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("tellers/{tellerId}/cashiers/{cashierId}/settle")
-  Call<PostTellersTellerIdCashiersCashierIdSettleResponse> settleCashFromCashier(
+  Observable<PostTellersTellerIdCashiersCashierIdSettleResponse> settleCashFromCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId, @retrofit2.http.Body PostTellersTellerIdCashiersCashierIdSettleRequest postTellersTellerIdCashiersCashierIdSettleRequest
   );
 
@@ -287,13 +286,13 @@ public interface TellerCashManagementApi {
    * @param tellerId tellerId (required)
    * @param cashierId cashierId (required)
    * @param putTellersTellerIdCashiersCashierIdRequest  (required)
-   * @return Call&lt;PutTellersTellerIdCashiersCashierIdResponse&gt;
+   * @return Observable&lt;PutTellersTellerIdCashiersCashierIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("tellers/{tellerId}/cashiers/{cashierId}")
-  Call<PutTellersTellerIdCashiersCashierIdResponse> updateCashier(
+  Observable<PutTellersTellerIdCashiersCashierIdResponse> updateCashier(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Path("cashierId") Long cashierId, @retrofit2.http.Body PutTellersTellerIdCashiersCashierIdRequest putTellersTellerIdCashiersCashierIdRequest
   );
 
@@ -302,13 +301,13 @@ public interface TellerCashManagementApi {
    * 
    * @param tellerId tellerId (required)
    * @param putTellersRequest  (required)
-   * @return Call&lt;PutTellersResponse&gt;
+   * @return Observable&lt;PutTellersResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("tellers/{tellerId}")
-  Call<PutTellersResponse> updateTeller(
+  Observable<PutTellersResponse> updateTeller(
     @retrofit2.http.Path("tellerId") Long tellerId, @retrofit2.http.Body PutTellersRequest putTellersRequest
   );
 

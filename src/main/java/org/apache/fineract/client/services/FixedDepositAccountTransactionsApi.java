@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,13 +42,13 @@ public interface FixedDepositAccountTransactionsApi {
    * @param transactionId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("fixeddepositaccounts/{fixedDepositAccountId}/transactions/{transactionId}")
-  Call<String> adjustTransaction(
+  Observable<String> adjustTransaction(
     @retrofit2.http.Path("fixedDepositAccountId") Long fixedDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -58,10 +57,10 @@ public interface FixedDepositAccountTransactionsApi {
    * 
    * @param fixedDepositAccountId  (required)
    * @param transactionId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("fixeddepositaccounts/{fixedDepositAccountId}/transactions/{transactionId}")
-  Call<String> retrieveOne17(
+  Observable<String> retrieveOne17(
     @retrofit2.http.Path("fixedDepositAccountId") Long fixedDepositAccountId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -69,10 +68,10 @@ public interface FixedDepositAccountTransactionsApi {
    * 
    * 
    * @param fixedDepositAccountId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("fixeddepositaccounts/{fixedDepositAccountId}/transactions/template")
-  Call<String> retrieveTemplate13(
+  Observable<String> retrieveTemplate13(
     @retrofit2.http.Path("fixedDepositAccountId") Long fixedDepositAccountId
   );
 
@@ -82,13 +81,13 @@ public interface FixedDepositAccountTransactionsApi {
    * @param fixedDepositAccountId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("fixeddepositaccounts/{fixedDepositAccountId}/transactions")
-  Call<String> transaction(
+  Observable<String> transaction(
     @retrofit2.http.Path("fixedDepositAccountId") Long fixedDepositAccountId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 

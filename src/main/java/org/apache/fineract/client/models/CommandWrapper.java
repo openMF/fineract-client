@@ -103,6 +103,10 @@ public class CommandWrapper {
   @SerializedName(SERIALIZED_NAME_ORGANISATION_CREDIT_BUREAU_ID)
   private Long organisationCreditBureauId;
 
+  public static final String SERIALIZED_NAME_UPDATE = "update";
+  @SerializedName(SERIALIZED_NAME_UPDATE)
+  private Boolean update;
+
   public static final String SERIALIZED_NAME_CREATE = "create";
   @SerializedName(SERIALIZED_NAME_CREATE)
   private Boolean create;
@@ -202,10 +206,6 @@ public class CommandWrapper {
   public static final String SERIALIZED_NAME_UPDATE_DISBURSEMENT_DATE = "updateDisbursementDate";
   @SerializedName(SERIALIZED_NAME_UPDATE_DISBURSEMENT_DATE)
   private Boolean updateDisbursementDate;
-
-  public static final String SERIALIZED_NAME_UPDATE = "update";
-  @SerializedName(SERIALIZED_NAME_UPDATE)
-  private Boolean update;
 
 
   public CommandWrapper groupId(Long groupId) {
@@ -527,6 +527,29 @@ public class CommandWrapper {
 
   public void setOrganisationCreditBureauId(Long organisationCreditBureauId) {
     this.organisationCreditBureauId = organisationCreditBureauId;
+  }
+
+
+  public CommandWrapper update(Boolean update) {
+    
+    this.update = update;
+    return this;
+  }
+
+   /**
+   * Get update
+   * @return update
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getUpdate() {
+    return update;
+  }
+
+
+  public void setUpdate(Boolean update) {
+    this.update = update;
   }
 
 
@@ -1105,29 +1128,6 @@ public class CommandWrapper {
   }
 
 
-  public CommandWrapper update(Boolean update) {
-    
-    this.update = update;
-    return this;
-  }
-
-   /**
-   * Get update
-   * @return update
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getUpdate() {
-    return update;
-  }
-
-
-  public void setUpdate(Boolean update) {
-    this.update = update;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1151,6 +1151,7 @@ public class CommandWrapper {
         Objects.equals(this.productId, commandWrapper.productId) &&
         Objects.equals(this.creditBureauId, commandWrapper.creditBureauId) &&
         Objects.equals(this.organisationCreditBureauId, commandWrapper.organisationCreditBureauId) &&
+        Objects.equals(this.update, commandWrapper.update) &&
         Objects.equals(this.create, commandWrapper.create) &&
         Objects.equals(this.createDatatable, commandWrapper.createDatatable) &&
         Objects.equals(this.deleteDatatable, commandWrapper.deleteDatatable) &&
@@ -1175,13 +1176,12 @@ public class CommandWrapper {
         Objects.equals(this.userResource, commandWrapper.userResource) &&
         Objects.equals(this.currencyResource, commandWrapper.currencyResource) &&
         Objects.equals(this.loanDisburseDetailResource, commandWrapper.loanDisburseDetailResource) &&
-        Objects.equals(this.updateDisbursementDate, commandWrapper.updateDisbursementDate) &&
-        Objects.equals(this.update, commandWrapper.update);
+        Objects.equals(this.updateDisbursementDate, commandWrapper.updateDisbursementDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(groupId, clientId, loanId, savingsId, entityName, taskPermissionName, entityId, subentityId, href, json, transactionId, productId, creditBureauId, organisationCreditBureauId, create, createDatatable, deleteDatatable, updateDatatable, datatableResource, deleteOneToOne, deleteMultiple, updateOneToOne, updateMultiple, registerDatatable, noteResource, cacheResource, updateOperation, delete, deleteOperation, surveyResource, registerSurvey, fullFilSurvey, workingDaysResource, passwordPreferencesResource, permissionResource, userResource, currencyResource, loanDisburseDetailResource, updateDisbursementDate, update);
+    return Objects.hash(groupId, clientId, loanId, savingsId, entityName, taskPermissionName, entityId, subentityId, href, json, transactionId, productId, creditBureauId, organisationCreditBureauId, update, create, createDatatable, deleteDatatable, updateDatatable, datatableResource, deleteOneToOne, deleteMultiple, updateOneToOne, updateMultiple, registerDatatable, noteResource, cacheResource, updateOperation, delete, deleteOperation, surveyResource, registerSurvey, fullFilSurvey, workingDaysResource, passwordPreferencesResource, permissionResource, userResource, currencyResource, loanDisburseDetailResource, updateDisbursementDate);
   }
 
 
@@ -1203,6 +1203,7 @@ public class CommandWrapper {
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    creditBureauId: ").append(toIndentedString(creditBureauId)).append("\n");
     sb.append("    organisationCreditBureauId: ").append(toIndentedString(organisationCreditBureauId)).append("\n");
+    sb.append("    update: ").append(toIndentedString(update)).append("\n");
     sb.append("    create: ").append(toIndentedString(create)).append("\n");
     sb.append("    createDatatable: ").append(toIndentedString(createDatatable)).append("\n");
     sb.append("    deleteDatatable: ").append(toIndentedString(deleteDatatable)).append("\n");
@@ -1228,7 +1229,6 @@ public class CommandWrapper {
     sb.append("    currencyResource: ").append(toIndentedString(currencyResource)).append("\n");
     sb.append("    loanDisburseDetailResource: ").append(toIndentedString(loanDisburseDetailResource)).append("\n");
     sb.append("    updateDisbursementDate: ").append(toIndentedString(updateDisbursementDate)).append("\n");
-    sb.append("    update: ").append(toIndentedString(update)).append("\n");
     sb.append("}");
     return sb.toString();
   }

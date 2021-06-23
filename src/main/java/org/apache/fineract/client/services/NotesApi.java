@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -49,13 +48,13 @@ public interface NotesApi {
    * @param resourceType resourceType (required)
    * @param resourceId resourceId (required)
    * @param postResourceTypeResourceIdNotesRequest  (required)
-   * @return Call&lt;PostResourceTypeResourceIdNotesResponse&gt;
+   * @return Observable&lt;PostResourceTypeResourceIdNotesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("{resourceType}/{resourceId}/notes")
-  Call<PostResourceTypeResourceIdNotesResponse> addNewNote(
+  Observable<PostResourceTypeResourceIdNotesResponse> addNewNote(
     @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Body PostResourceTypeResourceIdNotesRequest postResourceTypeResourceIdNotesRequest
   );
 
@@ -65,10 +64,10 @@ public interface NotesApi {
    * @param resourceType resourceType (required)
    * @param resourceId resourceId (required)
    * @param noteId noteId (required)
-   * @return Call&lt;DeleteResourceTypeResourceIdNotesNoteIdResponse&gt;
+   * @return Observable&lt;DeleteResourceTypeResourceIdNotesNoteIdResponse&gt;
    */
   @DELETE("{resourceType}/{resourceId}/notes/{noteId}")
-  Call<DeleteResourceTypeResourceIdNotesNoteIdResponse> deleteNote(
+  Observable<DeleteResourceTypeResourceIdNotesNoteIdResponse> deleteNote(
     @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId
   );
 
@@ -78,10 +77,10 @@ public interface NotesApi {
    * @param resourceType resourceType (required)
    * @param resourceId resourceId (required)
    * @param noteId noteId (required)
-   * @return Call&lt;GetResourceTypeResourceIdNotesNoteIdResponse&gt;
+   * @return Observable&lt;GetResourceTypeResourceIdNotesNoteIdResponse&gt;
    */
   @GET("{resourceType}/{resourceId}/notes/{noteId}")
-  Call<GetResourceTypeResourceIdNotesNoteIdResponse> retrieveNote(
+  Observable<GetResourceTypeResourceIdNotesNoteIdResponse> retrieveNote(
     @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId
   );
 
@@ -90,10 +89,10 @@ public interface NotesApi {
    * Retrieves a Resource&#39;s Notes  Note: Notes are returned in descending createOn order.  Example Requests:  clients/2/notes   groups/2/notes?fields&#x3D;note,createdOn,createdByUsername
    * @param resourceType resourceType (required)
    * @param resourceId resourceId (required)
-   * @return Call&lt;List&lt;GetResourceTypeResourceIdNotesResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetResourceTypeResourceIdNotesResponse&gt;&gt;
    */
   @GET("{resourceType}/{resourceId}/notes")
-  Call<List<GetResourceTypeResourceIdNotesResponse>> retrieveNotesByResource(
+  Observable<List<GetResourceTypeResourceIdNotesResponse>> retrieveNotesByResource(
     @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId
   );
 
@@ -104,13 +103,13 @@ public interface NotesApi {
    * @param resourceId resourceId (required)
    * @param noteId noteId (required)
    * @param putResourceTypeResourceIdNotesNoteIdRequest  (required)
-   * @return Call&lt;PutResourceTypeResourceIdNotesNoteIdResponse&gt;
+   * @return Observable&lt;PutResourceTypeResourceIdNotesNoteIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("{resourceType}/{resourceId}/notes/{noteId}")
-  Call<PutResourceTypeResourceIdNotesNoteIdResponse> updateNote(
+  Observable<PutResourceTypeResourceIdNotesNoteIdResponse> updateNote(
     @retrofit2.http.Path("resourceType") String resourceType, @retrofit2.http.Path("resourceId") Long resourceId, @retrofit2.http.Path("noteId") Long noteId, @retrofit2.http.Body PutResourceTypeResourceIdNotesNoteIdRequest putResourceTypeResourceIdNotesNoteIdRequest
   );
 

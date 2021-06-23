@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,43 +44,43 @@ public interface TaxGroupApi {
    * Create a new Tax Group
    * Create a new Tax Group Mandatory Fields: name and taxComponents Mandatory Fields in taxComponents: taxComponentId Optional Fields in taxComponents: id, startDate and endDate
    * @param postTaxesGroupRequest  (required)
-   * @return Call&lt;PostTaxesGroupResponse&gt;
+   * @return Observable&lt;PostTaxesGroupResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("taxes/group")
-  Call<PostTaxesGroupResponse> createTaxGroup(
+  Observable<PostTaxesGroupResponse> createTaxGroup(
     @retrofit2.http.Body PostTaxesGroupRequest postTaxesGroupRequest
   );
 
   /**
    * List Tax Group
    * List Tax Group
-   * @return Call&lt;List&lt;GetTaxesGroupResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetTaxesGroupResponse&gt;&gt;
    */
   @GET("taxes/group")
-  Call<List<GetTaxesGroupResponse>> retrieveAllTaxGroups();
+  Observable<List<GetTaxesGroupResponse>> retrieveAllTaxGroups();
     
 
   /**
    * Retrieve Tax Group
    * Retrieve Tax Group
    * @param taxGroupId taxGroupId (required)
-   * @return Call&lt;GetTaxesGroupResponse&gt;
+   * @return Observable&lt;GetTaxesGroupResponse&gt;
    */
   @GET("taxes/group/{taxGroupId}")
-  Call<GetTaxesGroupResponse> retrieveTaxGroup(
+  Observable<GetTaxesGroupResponse> retrieveTaxGroup(
     @retrofit2.http.Path("taxGroupId") Long taxGroupId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("taxes/group/template")
-  Call<String> retrieveTemplate21();
+  Observable<String> retrieveTemplate21();
     
 
   /**
@@ -89,13 +88,13 @@ public interface TaxGroupApi {
    * Updates Tax Group. Only end date can be up-datable and can insert new tax components.
    * @param taxGroupId taxGroupId (required)
    * @param putTaxesGroupTaxGroupIdRequest  (required)
-   * @return Call&lt;PutTaxesGroupTaxGroupIdResponse&gt;
+   * @return Observable&lt;PutTaxesGroupTaxGroupIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("taxes/group/{taxGroupId}")
-  Call<PutTaxesGroupTaxGroupIdResponse> updateTaxGroup(
+  Observable<PutTaxesGroupTaxGroupIdResponse> updateTaxGroup(
     @retrofit2.http.Path("taxGroupId") Long taxGroupId, @retrofit2.http.Body PutTaxesGroupTaxGroupIdRequest putTaxesGroupTaxGroupIdRequest
   );
 

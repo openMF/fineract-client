@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,10 +39,10 @@ public interface BulkImportApi {
    * 
    * 
    * @param importDocumentId  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("imports/downloadOutputTemplate")
-  Call<Void> getOutputTemplate(
+  Completable getOutputTemplate(
     @retrofit2.http.Query("importDocumentId") String importDocumentId
   );
 
@@ -51,10 +50,10 @@ public interface BulkImportApi {
    * 
    * 
    * @param entityType  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("imports")
-  Call<String> retrieveImportDocuments(
+  Observable<String> retrieveImportDocuments(
     @retrofit2.http.Query("entityType") String entityType
   );
 
@@ -62,10 +61,10 @@ public interface BulkImportApi {
    * 
    * 
    * @param importDocumentId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("imports/getOutputTemplateLocation")
-  Call<String> retriveOutputTemplateLocation(
+  Observable<String> retriveOutputTemplateLocation(
     @retrofit2.http.Query("importDocumentId") String importDocumentId
   );
 

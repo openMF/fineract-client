@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,13 +40,13 @@ public interface ProductMixApi {
    * 
    * @param productId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loanproducts/{productId}/productmix")
-  Call<String> createProductMix(
+  Observable<String> createProductMix(
     @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Body String body
   );
 
@@ -55,10 +54,10 @@ public interface ProductMixApi {
    * 
    * 
    * @param productId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @DELETE("loanproducts/{productId}/productmix")
-  Call<String> deleteProductMix(
+  Observable<String> deleteProductMix(
     @retrofit2.http.Path("productId") Long productId
   );
 
@@ -66,10 +65,10 @@ public interface ProductMixApi {
    * 
    * 
    * @param productId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loanproducts/{productId}/productmix")
-  Call<String> retrieveTemplate11(
+  Observable<String> retrieveTemplate11(
     @retrofit2.http.Path("productId") Long productId
   );
 
@@ -78,13 +77,13 @@ public interface ProductMixApi {
    * 
    * @param productId  (required)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("loanproducts/{productId}/productmix")
-  Call<String> updateProductMix(
+  Observable<String> updateProductMix(
     @retrofit2.http.Path("productId") Long productId, @retrofit2.http.Body String body
   );
 

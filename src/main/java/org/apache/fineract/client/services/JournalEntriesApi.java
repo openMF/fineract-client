@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface JournalEntriesApi {
    * Note: A Balanced (simple) Journal entry would have atleast one \&quot;Debit\&quot; and one \&quot;Credit\&quot; entry whose amounts are equal  Compound Journal entries may have \&quot;n\&quot; debits and \&quot;m\&quot; credits where both \&quot;m\&quot; and \&quot;n\&quot; are greater than 0 and the net sum or all debits and credits are equal    Mandatory Fields officeId, transactionDate   credits- glAccountId, amount, comments    debits-  glAccountId, amount, comments    Optional Fields paymentTypeId, accountNumber, checkNumber, routingCode, receiptNumber, bankNumber
    * @param command command (optional)
    * @param journalEntryCommand  (optional)
-   * @return Call&lt;PostJournalEntriesResponse&gt;
+   * @return Observable&lt;PostJournalEntriesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("journalentries")
-  Call<PostJournalEntriesResponse> createGLJournalEntry(
+  Observable<PostJournalEntriesResponse> createGLJournalEntry(
     @retrofit2.http.Query("command") String command, @retrofit2.http.Body JournalEntryCommand journalEntryCommand
   );
 
@@ -63,13 +62,13 @@ public interface JournalEntriesApi {
    * @param transactionId transactionId (required)
    * @param command command (optional)
    * @param postJournalEntriesTransactionIdRequest  (optional)
-   * @return Call&lt;PostJournalEntriesTransactionIdResponse&gt;
+   * @return Observable&lt;PostJournalEntriesTransactionIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("journalentries/{transactionId}")
-  Call<PostJournalEntriesTransactionIdResponse> createReversalJournalEntry(
+  Observable<PostJournalEntriesTransactionIdResponse> createReversalJournalEntry(
     @retrofit2.http.Path("transactionId") String transactionId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body PostJournalEntriesTransactionIdRequest postJournalEntriesTransactionIdRequest
   );
 
@@ -78,10 +77,10 @@ public interface JournalEntriesApi {
    * 
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("journalentries/downloadtemplate")
-  Call<Void> getJournalEntriesTemplate(
+  Completable getJournalEntriesTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -91,11 +90,11 @@ public interface JournalEntriesApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("journalentries/uploadtemplate")
-  Call<String> postJournalEntriesTemplate(
+  Observable<String> postJournalEntriesTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -105,10 +104,10 @@ public interface JournalEntriesApi {
    * @param journalEntryId journalEntryId (required)
    * @param runningBalance runningBalance (optional)
    * @param transactionDetails transactionDetails (optional)
-   * @return Call&lt;JournalEntryData&gt;
+   * @return Observable&lt;JournalEntryData&gt;
    */
   @GET("journalentries/{journalEntryId}")
-  Call<JournalEntryData> retreiveJournalEntryById(
+  Observable<JournalEntryData> retreiveJournalEntryById(
     @retrofit2.http.Path("journalEntryId") Long journalEntryId, @retrofit2.http.Query("runningBalance") Boolean runningBalance, @retrofit2.http.Query("transactionDetails") Boolean transactionDetails
   );
 
@@ -132,10 +131,10 @@ public interface JournalEntriesApi {
    * @param savingsId savingsId (optional)
    * @param runningBalance runningBalance (optional)
    * @param transactionDetails transactionDetails (optional)
-   * @return Call&lt;List&lt;JournalEntryData&gt;&gt;
+   * @return Observable&lt;List&lt;JournalEntryData&gt;&gt;
    */
   @GET("journalentries")
-  Call<List<JournalEntryData>> retrieveAll1(
+  Observable<List<JournalEntryData>> retrieveAll1(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("glAccountId") Long glAccountId, @retrofit2.http.Query("manualEntriesOnly") Boolean manualEntriesOnly, @retrofit2.http.Query("fromDate") Object fromDate, @retrofit2.http.Query("toDate") Object toDate, @retrofit2.http.Query("transactionId") String transactionId, @retrofit2.http.Query("entityType") Integer entityType, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("locale") String locale, @retrofit2.http.Query("dateFormat") String dateFormat, @retrofit2.http.Query("loanId") Long loanId, @retrofit2.http.Query("savingsId") Long savingsId, @retrofit2.http.Query("runningBalance") Boolean runningBalance, @retrofit2.http.Query("transactionDetails") Boolean transactionDetails
   );
 
@@ -145,10 +144,10 @@ public interface JournalEntriesApi {
    * @param offset  (optional)
    * @param limit  (optional)
    * @param entryId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("journalentries/provisioning")
-  Call<String> retrieveJournalEntries(
+  Observable<String> retrieveJournalEntries(
     @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("entryId") Long entryId
   );
 
@@ -157,10 +156,10 @@ public interface JournalEntriesApi {
    * 
    * @param officeId  (optional)
    * @param currencyCode  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("journalentries/openingbalance")
-  Call<String> retrieveOpeningBalance(
+  Observable<String> retrieveOpeningBalance(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("currencyCode") String currencyCode
   );
 

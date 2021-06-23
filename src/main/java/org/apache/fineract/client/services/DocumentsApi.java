@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -50,11 +49,11 @@ public interface DocumentsApi {
    * @param file  (optional)
    * @param name name (optional)
    * @param description description (optional)
-   * @return Call&lt;PostEntityTypeEntityIdDocumentsResponse&gt;
+   * @return Observable&lt;PostEntityTypeEntityIdDocumentsResponse&gt;
    */
   @retrofit2.http.Multipart
   @POST("{entityType}/{entityId}/documents")
-  Call<PostEntityTypeEntityIdDocumentsResponse> createDocument(
+  Observable<PostEntityTypeEntityIdDocumentsResponse> createDocument(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part("file") FormDataBodyPart file, @retrofit2.http.Part("name") String name, @retrofit2.http.Part("description") String description
   );
 
@@ -64,10 +63,10 @@ public interface DocumentsApi {
    * @param entityType entityType (required)
    * @param entityId entityId (required)
    * @param documentId documentId (required)
-   * @return Call&lt;DeleteEntityTypeEntityIdDocumentsResponse&gt;
+   * @return Observable&lt;DeleteEntityTypeEntityIdDocumentsResponse&gt;
    */
   @DELETE("{entityType}/{entityId}/documents/{documentId}")
-  Call<DeleteEntityTypeEntityIdDocumentsResponse> deleteDocument(
+  Observable<DeleteEntityTypeEntityIdDocumentsResponse> deleteDocument(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("documentId") Long documentId
   );
 
@@ -77,10 +76,10 @@ public interface DocumentsApi {
    * @param entityType entityType (required)
    * @param entityId entityId (required)
    * @param documentId documentId (required)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("{entityType}/{entityId}/documents/{documentId}/attachment")
-  Call<Void> downloadFile(
+  Completable downloadFile(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("documentId") Long documentId
   );
 
@@ -90,10 +89,10 @@ public interface DocumentsApi {
    * @param entityType entityType (required)
    * @param entityId entityId (required)
    * @param documentId documentId (required)
-   * @return Call&lt;GetEntityTypeEntityIdDocumentsResponse&gt;
+   * @return Observable&lt;GetEntityTypeEntityIdDocumentsResponse&gt;
    */
   @GET("{entityType}/{entityId}/documents/{documentId}")
-  Call<GetEntityTypeEntityIdDocumentsResponse> getDocument(
+  Observable<GetEntityTypeEntityIdDocumentsResponse> getDocument(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("documentId") Long documentId
   );
 
@@ -102,10 +101,10 @@ public interface DocumentsApi {
    * Example Requests:  clients/1/documents  client_identifiers/1/documents  loans/1/documents?fields&#x3D;name,description
    * @param entityType entityType (required)
    * @param entityId entityId (required)
-   * @return Call&lt;List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetEntityTypeEntityIdDocumentsResponse&gt;&gt;
    */
   @GET("{entityType}/{entityId}/documents")
-  Call<List<GetEntityTypeEntityIdDocumentsResponse>> retrieveAllDocuments(
+  Observable<List<GetEntityTypeEntityIdDocumentsResponse>> retrieveAllDocuments(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId
   );
 
@@ -119,11 +118,11 @@ public interface DocumentsApi {
    * @param file  (optional)
    * @param name name (optional)
    * @param description description (optional)
-   * @return Call&lt;PutEntityTypeEntityIdDocumentsResponse&gt;
+   * @return Observable&lt;PutEntityTypeEntityIdDocumentsResponse&gt;
    */
   @retrofit2.http.Multipart
   @PUT("{entityType}/{entityId}/documents/{documentId}")
-  Call<PutEntityTypeEntityIdDocumentsResponse> updateDocument(
+  Observable<PutEntityTypeEntityIdDocumentsResponse> updateDocument(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("documentId") Long documentId, @retrofit2.http.Header("Content-Length") Long contentLength, @retrofit2.http.Part("file") FormDataBodyPart file, @retrofit2.http.Part("name") String name, @retrofit2.http.Part("description") String description
   );
 

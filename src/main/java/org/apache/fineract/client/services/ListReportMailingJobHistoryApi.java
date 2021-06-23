@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -45,10 +44,10 @@ public interface ListReportMailingJobHistoryApi {
    * @param limit limit (optional)
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
-   * @return Call&lt;ReportMailingJobRunHistoryData&gt;
+   * @return Observable&lt;ReportMailingJobRunHistoryData&gt;
    */
   @GET("reportmailingjobrunhistory")
-  Call<ReportMailingJobRunHistoryData> retrieveAllByReportMailingJobId(
+  Observable<ReportMailingJobRunHistoryData> retrieveAllByReportMailingJobId(
     @retrofit2.http.Query("reportMailingJobId") Long reportMailingJobId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder
   );
 

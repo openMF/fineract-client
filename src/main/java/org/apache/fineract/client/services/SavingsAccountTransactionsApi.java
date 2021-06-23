@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,13 +42,13 @@ public interface SavingsAccountTransactionsApi {
    * @param transactionId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts/{savingsId}/transactions/{transactionId}")
-  Call<String> adjustTransaction1(
+  Observable<String> adjustTransaction1(
     @retrofit2.http.Path("savingsId") Long savingsId, @retrofit2.http.Path("transactionId") Long transactionId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 
@@ -58,10 +57,10 @@ public interface SavingsAccountTransactionsApi {
    * 
    * @param savingsId  (required)
    * @param transactionId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("savingsaccounts/{savingsId}/transactions/{transactionId}")
-  Call<String> retrieveOne23(
+  Observable<String> retrieveOne23(
     @retrofit2.http.Path("savingsId") Long savingsId, @retrofit2.http.Path("transactionId") Long transactionId
   );
 
@@ -69,10 +68,10 @@ public interface SavingsAccountTransactionsApi {
    * 
    * 
    * @param savingsId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("savingsaccounts/{savingsId}/transactions/template")
-  Call<String> retrieveTemplate18(
+  Observable<String> retrieveTemplate18(
     @retrofit2.http.Path("savingsId") Long savingsId
   );
 
@@ -82,13 +81,13 @@ public interface SavingsAccountTransactionsApi {
    * @param savingsId  (required)
    * @param command  (optional)
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("savingsaccounts/{savingsId}/transactions")
-  Call<String> transaction2(
+  Observable<String> transaction2(
     @retrofit2.http.Path("savingsId") Long savingsId, @retrofit2.http.Query("command") String command, @retrofit2.http.Body String body
   );
 

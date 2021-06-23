@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,10 +40,10 @@ public interface SelfRunReportApi {
    * Running A Report
    * Example Requests:   self/runreports/Client%20Details?R_officeId&#x3D;1   self/runreports/Client%20Details?R_officeId&#x3D;1&amp;exportCSV&#x3D;true
    * @param reportName reportName (required)
-   * @return Call&lt;GetRunReportResponse&gt;
+   * @return Observable&lt;GetRunReportResponse&gt;
    */
   @GET("self/runreports/{reportName}")
-  Call<GetRunReportResponse> runReport1(
+  Observable<GetRunReportResponse> runReport1(
     @retrofit2.http.Path("reportName") String reportName
   );
 

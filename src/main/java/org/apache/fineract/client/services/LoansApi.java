@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -52,13 +51,13 @@ public interface LoansApi {
    * It calculates the loan repayment Schedule Submits a new loan application Mandatory Fields: clientId, productId, principal, loanTermFrequency, loanTermFrequencyType, loanType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyId, expectedDisbursementDate, submittedOnDate, loanType Optional Fields: graceOnPrincipalPayment, graceOnInterestPayment, graceOnInterestCharged, linkAccountId, allowPartialPeriodInterestCalcualtion, fixedEmiAmount, maxOutstandingLoanBalance, disbursementData, graceOnArrearsAgeing, createStandingInstructionAtDisbursement (requires linkedAccountId if set to true) Additional Mandatory Fields if interest recalculation is enabled for product and Rest frequency not same as repayment period: recalculationRestFrequencyDate Additional Mandatory Fields if interest recalculation with interest/fee compounding is enabled for product and compounding frequency not same as repayment period: recalculationCompoundingFrequencyDate Additional Mandatory Field if Entity-Datatable Check is enabled for the entity of type loan: datatables
    * @param postLoansRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostLoansResponse&gt;
+   * @return Observable&lt;PostLoansResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans")
-  Call<PostLoansResponse> calculateLoanScheduleOrSubmitLoanApplication(
+  Observable<PostLoansResponse> calculateLoanScheduleOrSubmitLoanApplication(
     @retrofit2.http.Body PostLoansRequest postLoansRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -66,10 +65,10 @@ public interface LoansApi {
    * Delete a Loan Application
    * Note: Only loans in \&quot;Submitted and awaiting approval\&quot; status can be deleted.
    * @param loanId loanId (required)
-   * @return Call&lt;DeleteLoansLoanIdResponse&gt;
+   * @return Observable&lt;DeleteLoansLoanIdResponse&gt;
    */
   @DELETE("loans/{loanId}")
-  Call<DeleteLoansLoanIdResponse> deleteLoanApplication(
+  Observable<DeleteLoansLoanIdResponse> deleteLoanApplication(
     @retrofit2.http.Path("loanId") Long loanId
   );
 
@@ -77,10 +76,10 @@ public interface LoansApi {
    * 
    * 
    * @param glimId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/glimAccount/{glimId}")
-  Call<String> getGlimRepaymentTemplate(
+  Observable<String> getGlimRepaymentTemplate(
     @retrofit2.http.Path("glimId") Long glimId
   );
 
@@ -89,10 +88,10 @@ public interface LoansApi {
    * 
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("loans/repayments/downloadtemplate")
-  Call<Void> getLoanRepaymentTemplate(
+  Completable getLoanRepaymentTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -102,10 +101,10 @@ public interface LoansApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("loans/downloadtemplate")
-  Call<Void> getLoansTemplate(
+  Completable getLoansTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -115,13 +114,13 @@ public interface LoansApi {
    * @param glimId  (required)
    * @param postLoansLoanIdRequest  (required)
    * @param command  (optional)
-   * @return Call&lt;PostLoansLoanIdResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/glimAccount/{glimId}")
-  Call<PostLoansLoanIdResponse> glimStateTransitions(
+  Observable<PostLoansLoanIdResponse> glimStateTransitions(
     @retrofit2.http.Path("glimId") Long glimId, @retrofit2.http.Body PostLoansLoanIdRequest postLoansLoanIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -130,13 +129,13 @@ public interface LoansApi {
    * Loan application can only be modified when in &#39;Submitted and pending approval&#39; state. Once the application is approved, the details cannot be changed using this method.
    * @param loanId loanId (required)
    * @param putLoansLoanIdRequest  (required)
-   * @return Call&lt;PutLoansLoanIdResponse&gt;
+   * @return Observable&lt;PutLoansLoanIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("loans/{loanId}")
-  Call<PutLoansLoanIdResponse> modifyLoanApplication(
+  Observable<PutLoansLoanIdResponse> modifyLoanApplication(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PutLoansLoanIdRequest putLoansLoanIdRequest
   );
 
@@ -146,11 +145,11 @@ public interface LoansApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("loans/repayments/uploadtemplate")
-  Call<String> postLoanRepaymentTemplate(
+  Observable<String> postLoanRepaymentTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -160,11 +159,11 @@ public interface LoansApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("loans/uploadtemplate")
-  Call<String> postLoanTemplate(
+  Observable<String> postLoanTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -178,10 +177,10 @@ public interface LoansApi {
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
    * @param accountNo accountNo (optional)
-   * @return Call&lt;GetLoansResponse&gt;
+   * @return Observable&lt;GetLoansResponse&gt;
    */
   @GET("loans")
-  Call<GetLoansResponse> retrieveAll27(
+  Observable<GetLoansResponse> retrieveAll27(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("accountNo") String accountNo
   );
 
@@ -190,10 +189,10 @@ public interface LoansApi {
    * 
    * @param loanId loanId (required)
    * @param templateType templateType (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/{loanId}/template")
-  Call<String> retrieveApprovalTemplate(
+  Observable<String> retrieveApprovalTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("templateType") String templateType
   );
 
@@ -202,10 +201,10 @@ public interface LoansApi {
    * Note: template&#x3D;true parameter doesn&#39;t apply to this resource.Example Requests:  loans/1   loans/1?fields&#x3D;id,principal,annualInterestRate   loans/1?associations&#x3D;all  loans/1?associations&#x3D;all&amp;exclude&#x3D;guarantors   loans/1?fields&#x3D;id,principal,annualInterestRate&amp;associations&#x3D;repaymentSchedule,transactions
    * @param loanId loanId (required)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetLoansLoanIdResponse&gt;
+   * @return Observable&lt;GetLoansLoanIdResponse&gt;
    */
   @GET("loans/{loanId}")
-  Call<GetLoansLoanIdResponse> retrieveLoan(
+  Observable<GetLoansLoanIdResponse> retrieveLoan(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -215,13 +214,13 @@ public interface LoansApi {
    * @param loanId loanId (required)
    * @param postLoansLoanIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostLoansLoanIdResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}")
-  Call<PostLoansLoanIdResponse> stateTransitions(
+  Observable<PostLoansLoanIdResponse> stateTransitions(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body PostLoansLoanIdRequest postLoansLoanIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -234,10 +233,10 @@ public interface LoansApi {
    * @param templateType templateType (optional)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
    * @param activeOnly activeOnly (optional, default to false)
-   * @return Call&lt;GetLoansTemplateResponse&gt;
+   * @return Observable&lt;GetLoansTemplateResponse&gt;
    */
   @GET("loans/template")
-  Call<GetLoansTemplateResponse> template10(
+  Observable<GetLoansTemplateResponse> template10(
     @retrofit2.http.Query("clientId") Long clientId, @retrofit2.http.Query("groupId") Long groupId, @retrofit2.http.Query("productId") Long productId, @retrofit2.http.Query("templateType") String templateType, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly, @retrofit2.http.Query("activeOnly") Boolean activeOnly
   );
 

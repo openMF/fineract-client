@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -54,13 +53,13 @@ public interface ClientApi {
    * @param clientId clientId (required)
    * @param postClientsClientIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostClientsClientIdResponse&gt;
+   * @return Observable&lt;PostClientsClientIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients/{clientId}")
-  Call<PostClientsClientIdResponse> activate1(
+  Observable<PostClientsClientIdResponse> activate1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PostClientsClientIdRequest postClientsClientIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -68,13 +67,13 @@ public interface ClientApi {
    * Create a Client
    * Note:  1. You can enter either:firstname/middlename/lastname - for a person (middlename is optional) OR fullname - for a business or organisation (or person known by one name).  2.If address is enable(enable-address&#x3D;true), then additional field called address has to be passed.  Mandatory Fields: firstname and lastname OR fullname, officeId, active&#x3D;true and activationDate OR active&#x3D;false, if(address enabled) address  Optional Fields: groupId, externalId, accountNo, staffId, mobileNo, savingsProductId, genderId, clientTypeId, clientClassificationId
    * @param postClientsRequest  (required)
-   * @return Call&lt;PostClientsResponse&gt;
+   * @return Observable&lt;PostClientsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients")
-  Call<PostClientsResponse> create6(
+  Observable<PostClientsResponse> create6(
     @retrofit2.http.Body PostClientsRequest postClientsRequest
   );
 
@@ -83,13 +82,13 @@ public interface ClientApi {
    * If a client is in Pending state, you are allowed to Delete it. The delete is a &#39;hard delete&#39; and cannot be recovered from. Once clients become active or have loans or savings associated with them, you cannot delete the client but you may Close the client if they have left the program.
    * @param clientId clientId (required)
    * @param body  (required)
-   * @return Call&lt;DeleteClientsClientIdResponse&gt;
+   * @return Observable&lt;DeleteClientsClientIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @DELETE("clients/{clientId}")
-  Call<DeleteClientsClientIdResponse> delete9(
+  Observable<DeleteClientsClientIdResponse> delete9(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body Object body
   );
 
@@ -100,10 +99,10 @@ public interface ClientApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("clients/downloadtemplate")
-  Call<Void> getClientTemplate(
+  Completable getClientTemplate(
     @retrofit2.http.Query("legalFormType") String legalFormType, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -114,11 +113,11 @@ public interface ClientApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("clients/uploadtemplate")
-  Call<String> postClientTemplate(
+  Observable<String> postClientTemplate(
     @retrofit2.http.Query("legalFormType") String legalFormType, @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -138,10 +137,10 @@ public interface ClientApi {
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
    * @param orphansOnly orphansOnly (optional)
-   * @return Call&lt;GetClientsResponse&gt;
+   * @return Observable&lt;GetClientsResponse&gt;
    */
   @GET("clients")
-  Call<GetClientsResponse> retrieveAll21(
+  Observable<GetClientsResponse> retrieveAll21(
     @retrofit2.http.Query("sqlSearch") String sqlSearch, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("displayName") String displayName, @retrofit2.http.Query("firstName") String firstName, @retrofit2.http.Query("lastName") String lastName, @retrofit2.http.Query("status") String status, @retrofit2.http.Query("underHierarchy") String underHierarchy, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("orphansOnly") Boolean orphansOnly
   );
 
@@ -149,10 +148,10 @@ public interface ClientApi {
    * Retrieve client accounts overview
    * An example of how a loan portfolio summary can be provided. This is requested in a specific use case of the community application. It is quite reasonable to add resources like this to simplify User Interface development.  Example Requests:   clients/1/accounts  clients/1/accounts?fields&#x3D;loanAccounts,savingsAccounts
    * @param clientId clientId (required)
-   * @return Call&lt;GetClientsClientIdAccountsResponse&gt;
+   * @return Observable&lt;GetClientsClientIdAccountsResponse&gt;
    */
   @GET("clients/{clientId}/accounts")
-  Call<GetClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
+  Observable<GetClientsClientIdAccountsResponse> retrieveAssociatedAccounts(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -160,10 +159,10 @@ public interface ClientApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/obligeedetails")
-  Call<String> retrieveObligeeDetails(
+  Observable<String> retrieveObligeeDetails(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -172,10 +171,10 @@ public interface ClientApi {
    * Example Requests:  clients/1   clients/1?template&#x3D;true   clients/1?fields&#x3D;id,displayName,officeName
    * @param clientId clientId (required)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetClientsClientIdResponse&gt;
+   * @return Observable&lt;GetClientsClientIdResponse&gt;
    */
   @GET("clients/{clientId}")
-  Call<GetClientsClientIdResponse> retrieveOne11(
+  Observable<GetClientsClientIdResponse> retrieveOne11(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -185,10 +184,10 @@ public interface ClientApi {
    * @param officeId officeId (optional)
    * @param commandParam commandParam (optional)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetClientsTemplateResponse&gt;
+   * @return Observable&lt;GetClientsTemplateResponse&gt;
    */
   @GET("clients/template")
-  Call<GetClientsTemplateResponse> retrieveTemplate5(
+  Observable<GetClientsTemplateResponse> retrieveTemplate5(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("commandParam") String commandParam, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -196,10 +195,10 @@ public interface ClientApi {
    * 
    * 
    * @param clientId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/transferproposaldate")
-  Call<String> retrieveTransferTemplate(
+  Observable<String> retrieveTransferTemplate(
     @retrofit2.http.Path("clientId") Long clientId
   );
 
@@ -208,13 +207,13 @@ public interface ClientApi {
    * Note: You can update any of the basic attributes of a client (but not its associations) using this API.  Changing the relationship between a client and its office is not supported through this API. An API specific to handling transfers of clients between offices is available for the same.  The relationship between a client and a group must be removed through the Groups API.
    * @param clientId clientId (required)
    * @param putClientsClientIdRequest  (required)
-   * @return Call&lt;PutClientsClientIdResponse&gt;
+   * @return Observable&lt;PutClientsClientIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("clients/{clientId}")
-  Call<PutClientsClientIdResponse> update10(
+  Observable<PutClientsClientIdResponse> update10(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PutClientsClientIdRequest putClientsClientIdRequest
   );
 

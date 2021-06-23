@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,13 +42,13 @@ public interface LoanReschedulingApi {
    * @param loanId loanId (required)
    * @param body  (required)
    * @param command command (optional)
-   * @return Call&lt;PostLoansLoanIdScheduleResponse&gt;
+   * @return Observable&lt;PostLoansLoanIdScheduleResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/{loanId}/schedule")
-  Call<PostLoansLoanIdScheduleResponse> calculateLoanScheduleOrSubmitVariableSchedule(
+  Observable<PostLoansLoanIdScheduleResponse> calculateLoanScheduleOrSubmitVariableSchedule(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Body Object body, @retrofit2.http.Query("command") String command
   );
 

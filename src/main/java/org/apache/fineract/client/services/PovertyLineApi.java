@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,10 +39,10 @@ public interface PovertyLineApi {
    * 
    * 
    * @param ppiName  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("povertyLine/{ppiName}")
-  Call<String> retrieveAll12(
+  Observable<String> retrieveAll12(
     @retrofit2.http.Path("ppiName") String ppiName
   );
 
@@ -52,10 +51,10 @@ public interface PovertyLineApi {
    * 
    * @param ppiName  (required)
    * @param likelihoodId  (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("povertyLine/{ppiName}/{likelihoodId}")
-  Call<String> retrieveAll13(
+  Observable<String> retrieveAll13(
     @retrofit2.http.Path("ppiName") String ppiName, @retrofit2.http.Path("likelihoodId") Long likelihoodId
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,13 +39,13 @@ public interface BulkLoansApi {
    * 
    * 
    * @param body  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("loans/loanreassignment")
-  Call<String> loanReassignment(
+  Observable<String> loanReassignment(
     @retrofit2.http.Body String body
   );
 
@@ -55,10 +54,10 @@ public interface BulkLoansApi {
    * 
    * @param officeId  (optional)
    * @param fromLoanOfficerId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("loans/loanreassignment/template")
-  Call<String> loanReassignmentTemplate(
+  Observable<String> loanReassignmentTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("fromLoanOfficerId") Long fromLoanOfficerId
   );
 

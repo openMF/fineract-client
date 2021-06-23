@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface CodeValuesApi {
    * 
    * @param codeId codeId (required)
    * @param postCodeValuesDataRequest  (required)
-   * @return Call&lt;PostCodeValueDataResponse&gt;
+   * @return Observable&lt;PostCodeValueDataResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("codes/{codeId}/codevalues")
-  Call<PostCodeValueDataResponse> createCodeValue(
+  Observable<PostCodeValueDataResponse> createCodeValue(
     @retrofit2.http.Path("codeId") Long codeId, @retrofit2.http.Body PostCodeValuesDataRequest postCodeValuesDataRequest
   );
 
@@ -62,10 +61,10 @@ public interface CodeValuesApi {
    * Deletes a code description
    * @param codeId codeId (required)
    * @param codeValueId codeValueId (required)
-   * @return Call&lt;DeleteCodeValueDataResponse&gt;
+   * @return Observable&lt;DeleteCodeValueDataResponse&gt;
    */
   @DELETE("codes/{codeId}/codevalues/{codeValueId}")
-  Call<DeleteCodeValueDataResponse> deleteCodeValue(
+  Observable<DeleteCodeValueDataResponse> deleteCodeValue(
     @retrofit2.http.Path("codeId") Long codeId, @retrofit2.http.Path("codeValueId") Long codeValueId
   );
 
@@ -73,10 +72,10 @@ public interface CodeValuesApi {
    * List Code Values
    * Returns the list of Code Values for a given Code  Example Requests:  codes/1/codevalues
    * @param codeId codeId (required)
-   * @return Call&lt;List&lt;GetCodeValuesDataResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetCodeValuesDataResponse&gt;&gt;
    */
   @GET("codes/{codeId}/codevalues")
-  Call<List<GetCodeValuesDataResponse>> retrieveAllCodeValues(
+  Observable<List<GetCodeValuesDataResponse>> retrieveAllCodeValues(
     @retrofit2.http.Path("codeId") Long codeId
   );
 
@@ -85,10 +84,10 @@ public interface CodeValuesApi {
    * Returns the details of a Code Value  Example Requests:  codes/1/codevalues/1
    * @param codeValueId codeValueId (required)
    * @param codeId codeId (required)
-   * @return Call&lt;GetCodeValuesDataResponse&gt;
+   * @return Observable&lt;GetCodeValuesDataResponse&gt;
    */
   @GET("codes/{codeId}/codevalues/{codeValueId}")
-  Call<GetCodeValuesDataResponse> retrieveCodeValue(
+  Observable<GetCodeValuesDataResponse> retrieveCodeValue(
     @retrofit2.http.Path("codeValueId") Long codeValueId, @retrofit2.http.Path("codeId") Long codeId
   );
 
@@ -98,13 +97,13 @@ public interface CodeValuesApi {
    * @param codeId codeId (required)
    * @param codeValueId codeValueId (required)
    * @param putCodeValuesDataRequest  (required)
-   * @return Call&lt;PutCodeValueDataResponse&gt;
+   * @return Observable&lt;PutCodeValueDataResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("codes/{codeId}/codevalues/{codeValueId}")
-  Call<PutCodeValueDataResponse> updateCodeValue(
+  Observable<PutCodeValueDataResponse> updateCodeValue(
     @retrofit2.http.Path("codeId") Long codeId, @retrofit2.http.Path("codeValueId") Long codeValueId, @retrofit2.http.Body PutCodeValuesDataRequest putCodeValuesDataRequest
   );
 

@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -48,13 +47,13 @@ public interface ClientChargesApi {
    *  This API associates a Client charge with an implicit Client account Mandatory Fields :  chargeId and dueDate   Optional Fields :  amount
    * @param clientId clientId (required)
    * @param postClientsClientIdChargesRequest  (required)
-   * @return Call&lt;PostClientsClientIdChargesResponse&gt;
+   * @return Observable&lt;PostClientsClientIdChargesResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients/{clientId}/charges")
-  Call<PostClientsClientIdChargesResponse> applyClientCharge(
+  Observable<PostClientsClientIdChargesResponse> applyClientCharge(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Body PostClientsClientIdChargesRequest postClientsClientIdChargesRequest
   );
 
@@ -63,10 +62,10 @@ public interface ClientChargesApi {
    * Deletes a Client Charge on which no transactions have taken place (either payments or waivers). 
    * @param clientId clientId (required)
    * @param chargeId chargeId (required)
-   * @return Call&lt;DeleteClientsClientIdChargesChargeIdResponse&gt;
+   * @return Observable&lt;DeleteClientsClientIdChargesChargeIdResponse&gt;
    */
   @DELETE("clients/{clientId}/charges/{chargeId}")
-  Call<DeleteClientsClientIdChargesChargeIdResponse> deleteClientCharge(
+  Observable<DeleteClientsClientIdChargesChargeIdResponse> deleteClientCharge(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("chargeId") Long chargeId
   );
 
@@ -77,13 +76,13 @@ public interface ClientChargesApi {
    * @param chargeId chargeId (required)
    * @param postClientsClientIdChargesChargeIdRequest  (required)
    * @param command command (optional)
-   * @return Call&lt;PostClientsClientIdChargesChargeIdResponse&gt;
+   * @return Observable&lt;PostClientsClientIdChargesChargeIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("clients/{clientId}/charges/{chargeId}")
-  Call<PostClientsClientIdChargesChargeIdResponse> payOrWaiveClientCharge(
+  Observable<PostClientsClientIdChargesChargeIdResponse> payOrWaiveClientCharge(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("chargeId") Long chargeId, @retrofit2.http.Body PostClientsClientIdChargesChargeIdRequest postClientsClientIdChargesChargeIdRequest, @retrofit2.http.Query("command") String command
   );
 
@@ -95,10 +94,10 @@ public interface ClientChargesApi {
    * @param pendingPayment pendingPayment (optional)
    * @param limit limit (optional)
    * @param offset offset (optional)
-   * @return Call&lt;GetClientsClientIdChargesResponse&gt;
+   * @return Observable&lt;GetClientsClientIdChargesResponse&gt;
    */
   @GET("clients/{clientId}/charges")
-  Call<GetClientsClientIdChargesResponse> retrieveAllClientCharges(
+  Observable<GetClientsClientIdChargesResponse> retrieveAllClientCharges(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("chargeStatus") String chargeStatus, @retrofit2.http.Query("pendingPayment") Boolean pendingPayment, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("offset") Integer offset
   );
 
@@ -107,10 +106,10 @@ public interface ClientChargesApi {
    * Example Requests: clients/1/charges/1   clients/1/charges/1?fields&#x3D;name,id
    * @param clientId clientId (required)
    * @param chargeId chargeId (required)
-   * @return Call&lt;GetClientsChargesPageItems&gt;
+   * @return Observable&lt;GetClientsChargesPageItems&gt;
    */
   @GET("clients/{clientId}/charges/{chargeId}")
-  Call<GetClientsChargesPageItems> retrieveClientCharge(
+  Observable<GetClientsChargesPageItems> retrieveClientCharge(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Path("chargeId") Long chargeId
   );
 
@@ -118,10 +117,10 @@ public interface ClientChargesApi {
    * 
    * 
    * @param clientId clientId (required)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("clients/{clientId}/charges/template")
-  Call<String> retrieveTemplate4(
+  Observable<String> retrieveTemplate4(
     @retrofit2.http.Path("clientId") Long clientId
   );
 

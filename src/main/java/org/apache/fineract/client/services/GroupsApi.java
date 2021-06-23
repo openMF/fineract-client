@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -57,13 +56,13 @@ public interface GroupsApi {
    * @param postGroupsGroupIdRequest  (required)
    * @param command command (optional)
    * @param roleId roleId (optional)
-   * @return Call&lt;PostGroupsGroupIdResponse&gt;
+   * @return Observable&lt;PostGroupsGroupIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("groups/{groupId}")
-  Call<PostGroupsGroupIdResponse> activateOrGenerateCollectionSheet(
+  Observable<PostGroupsGroupIdResponse> activateOrGenerateCollectionSheet(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Body PostGroupsGroupIdRequest postGroupsGroupIdRequest, @retrofit2.http.Query("command") String command, @retrofit2.http.Query("roleId") Long roleId
   );
 
@@ -71,13 +70,13 @@ public interface GroupsApi {
    * Create a Group
    * Creates a Group  Mandatory Fields: name, officeId, active, activationDate (if active&#x3D;true)  Optional Fields: externalId, staffId, clientMembers
    * @param postGroupsRequest  (required)
-   * @return Call&lt;PostGroupsResponse&gt;
+   * @return Observable&lt;PostGroupsResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("groups")
-  Call<PostGroupsResponse> create8(
+  Observable<PostGroupsResponse> create8(
     @retrofit2.http.Body PostGroupsRequest postGroupsRequest
   );
 
@@ -85,10 +84,10 @@ public interface GroupsApi {
    * Delete a Group
    * A group can be deleted if it is in pending state and has no associations - clients, loans or savings
    * @param groupId groupId (required)
-   * @return Call&lt;DeleteGroupsGroupIdResponse&gt;
+   * @return Observable&lt;DeleteGroupsGroupIdResponse&gt;
    */
   @DELETE("groups/{groupId}")
-  Call<DeleteGroupsGroupIdResponse> delete11(
+  Observable<DeleteGroupsGroupIdResponse> delete11(
     @retrofit2.http.Path("groupId") Long groupId
   );
 
@@ -98,10 +97,10 @@ public interface GroupsApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;Void&gt;
+   * @return Completable
    */
   @GET("groups/downloadtemplate")
-  Call<Void> getGroupsTemplate(
+  Completable getGroupsTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -111,11 +110,11 @@ public interface GroupsApi {
    * @param file  (optional)
    * @param locale  (optional)
    * @param dateFormat  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @retrofit2.http.Multipart
   @POST("groups/uploadtemplate")
-  Call<String> postGroupTemplate(
+  Observable<String> postGroupTemplate(
     @retrofit2.http.Part("file") FormDataContentDisposition file, @retrofit2.http.Part("locale") String locale, @retrofit2.http.Part("dateFormat") String dateFormat
   );
 
@@ -123,10 +122,10 @@ public interface GroupsApi {
    * Retrieve Group accounts overview
    * Retrieves details of all Loan and Savings accounts associated with this group.    Example Requests:    groups/1/accounts      groups/1/accounts?fields&#x3D;loanAccounts,savingsAccounts,memberLoanAccounts,  memberSavingsAccounts
    * @param groupId groupId (required)
-   * @return Call&lt;GetGroupsGroupIdAccountsResponse&gt;
+   * @return Observable&lt;GetGroupsGroupIdAccountsResponse&gt;
    */
   @GET("groups/{groupId}/accounts")
-  Call<GetGroupsGroupIdAccountsResponse> retrieveAccounts(
+  Observable<GetGroupsGroupIdAccountsResponse> retrieveAccounts(
     @retrofit2.http.Path("groupId") Long groupId
   );
 
@@ -144,10 +143,10 @@ public interface GroupsApi {
    * @param orderBy orderBy (optional)
    * @param sortOrder sortOrder (optional)
    * @param orphansOnly orphansOnly (optional)
-   * @return Call&lt;GetGroupsResponse&gt;
+   * @return Observable&lt;GetGroupsResponse&gt;
    */
   @GET("groups")
-  Call<GetGroupsResponse> retrieveAll24(
+  Observable<GetGroupsResponse> retrieveAll24(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("externalId") String externalId, @retrofit2.http.Query("name") String name, @retrofit2.http.Query("underHierarchy") String underHierarchy, @retrofit2.http.Query("paged") Boolean paged, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("orderBy") String orderBy, @retrofit2.http.Query("sortOrder") String sortOrder, @retrofit2.http.Query("orphansOnly") Boolean orphansOnly
   );
 
@@ -157,10 +156,10 @@ public interface GroupsApi {
    * @param groupId  (required)
    * @param parentGSIMAccountNo  (optional)
    * @param parentGSIMId  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("groups/{groupId}/gsimaccounts")
-  Call<String> retrieveGsimAccounts(
+  Observable<String> retrieveGsimAccounts(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Query("parentGSIMAccountNo") String parentGSIMAccountNo, @retrofit2.http.Query("parentGSIMId") Long parentGSIMId
   );
 
@@ -170,10 +169,10 @@ public interface GroupsApi {
    * @param groupId groupId (required)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
    * @param roleId roleId (optional)
-   * @return Call&lt;GetGroupsGroupIdResponse&gt;
+   * @return Observable&lt;GetGroupsGroupIdResponse&gt;
    */
   @GET("groups/{groupId}")
-  Call<GetGroupsGroupIdResponse> retrieveOne14(
+  Observable<GetGroupsGroupIdResponse> retrieveOne14(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly, @retrofit2.http.Query("roleId") Long roleId
   );
 
@@ -185,10 +184,10 @@ public interface GroupsApi {
    * @param centerId centerId (optional)
    * @param command command (optional)
    * @param staffInSelectedOfficeOnly staffInSelectedOfficeOnly (optional, default to false)
-   * @return Call&lt;GetGroupsTemplateResponse&gt;
+   * @return Observable&lt;GetGroupsTemplateResponse&gt;
    */
   @GET("groups/template")
-  Call<GetGroupsTemplateResponse> retrieveTemplate7(
+  Observable<GetGroupsTemplateResponse> retrieveTemplate7(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("center") Boolean center, @retrofit2.http.Query("centerId") Long centerId, @retrofit2.http.Query("command") String command, @retrofit2.http.Query("staffInSelectedOfficeOnly") Boolean staffInSelectedOfficeOnly
   );
 
@@ -197,10 +196,10 @@ public interface GroupsApi {
    * 
    * @param groupId  (required)
    * @param parentLoanAccountNo  (optional)
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("groups/{groupId}/glimaccounts")
-  Call<String> retrieveglimAccounts(
+  Observable<String> retrieveglimAccounts(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Query("parentLoanAccountNo") String parentLoanAccountNo
   );
 
@@ -209,13 +208,13 @@ public interface GroupsApi {
    * Allows you to unassign the Staff.  Mandatory Fields: staffId
    * @param groupId groupId (required)
    * @param postGroupsGroupIdCommandUnassignStaffRequest  (required)
-   * @return Call&lt;PostGroupsGroupIdCommandUnassignStaffResponse&gt;
+   * @return Observable&lt;PostGroupsGroupIdCommandUnassignStaffResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("groups/{groupId}/command/unassign_staff")
-  Call<PostGroupsGroupIdCommandUnassignStaffResponse> unassignLoanOfficer(
+  Observable<PostGroupsGroupIdCommandUnassignStaffResponse> unassignLoanOfficer(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Body PostGroupsGroupIdCommandUnassignStaffRequest postGroupsGroupIdCommandUnassignStaffRequest
   );
 
@@ -224,13 +223,13 @@ public interface GroupsApi {
    * Updates a Group
    * @param groupId groupId (required)
    * @param putGroupsGroupIdRequest  (required)
-   * @return Call&lt;PutGroupsGroupIdResponse&gt;
+   * @return Observable&lt;PutGroupsGroupIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("groups/{groupId}")
-  Call<PutGroupsGroupIdResponse> update12(
+  Observable<PutGroupsGroupIdResponse> update12(
     @retrofit2.http.Path("groupId") Long groupId, @retrofit2.http.Body PutGroupsGroupIdRequest putGroupsGroupIdRequest
   );
 

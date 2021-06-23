@@ -22,7 +22,6 @@ import org.apache.fineract.client.CollectionFormats.*;
 
 import io.reactivex.Observable;
 import io.reactivex.Completable;
-import retrofit2.Call;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -47,13 +46,13 @@ public interface HolidaysApi {
    * Create a Holiday
    * Mandatory Fields: name, description, fromDate, toDate, repaymentsRescheduledTo, offices
    * @param postHolidaysRequest  (required)
-   * @return Call&lt;PostHolidaysResponse&gt;
+   * @return Observable&lt;PostHolidaysResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("holidays")
-  Call<PostHolidaysResponse> createNewHoliday(
+  Observable<PostHolidaysResponse> createNewHoliday(
     @retrofit2.http.Body PostHolidaysRequest postHolidaysRequest
   );
 
@@ -61,10 +60,10 @@ public interface HolidaysApi {
    * Delete a Holiday
    * This API allows to delete a holiday. This is a soft delete the deleted holiday status is marked as deleted.
    * @param holidayId holidayId (required)
-   * @return Call&lt;DeleteHolidaysHolidayIdResponse&gt;
+   * @return Observable&lt;DeleteHolidaysHolidayIdResponse&gt;
    */
   @DELETE("holidays/{holidayId}")
-  Call<DeleteHolidaysHolidayIdResponse> delete7(
+  Observable<DeleteHolidaysHolidayIdResponse> delete7(
     @retrofit2.http.Path("holidayId") Long holidayId
   );
 
@@ -74,13 +73,13 @@ public interface HolidaysApi {
    * @param holidayId holidayId (required)
    * @param body  (required)
    * @param command command (optional)
-   * @return Call&lt;PostHolidaysHolidayIdResponse&gt;
+   * @return Observable&lt;PostHolidaysHolidayIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("holidays/{holidayId}")
-  Call<PostHolidaysHolidayIdResponse> handleCommands1(
+  Observable<PostHolidaysHolidayIdResponse> handleCommands1(
     @retrofit2.http.Path("holidayId") Long holidayId, @retrofit2.http.Body Object body, @retrofit2.http.Query("command") String command
   );
 
@@ -92,10 +91,10 @@ public interface HolidaysApi {
    * @param toDate toDate (optional)
    * @param locale locale (optional)
    * @param dateFormat dateFormat (optional)
-   * @return Call&lt;List&lt;GetHolidaysResponse&gt;&gt;
+   * @return Observable&lt;List&lt;GetHolidaysResponse&gt;&gt;
    */
   @GET("holidays")
-  Call<List<GetHolidaysResponse>> retrieveAllHolidays(
+  Observable<List<GetHolidaysResponse>> retrieveAllHolidays(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("fromDate") Object fromDate, @retrofit2.http.Query("toDate") Object toDate, @retrofit2.http.Query("locale") String locale, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -103,20 +102,20 @@ public interface HolidaysApi {
    * Retrieve a Holiday
    * Example Requests:  holidays/1
    * @param holidayId holidayId (required)
-   * @return Call&lt;GetHolidaysResponse&gt;
+   * @return Observable&lt;GetHolidaysResponse&gt;
    */
   @GET("holidays/{holidayId}")
-  Call<GetHolidaysResponse> retrieveOne7(
+  Observable<GetHolidaysResponse> retrieveOne7(
     @retrofit2.http.Path("holidayId") Long holidayId
   );
 
   /**
    * 
    * 
-   * @return Call&lt;String&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("holidays/template")
-  Call<String> retrieveRepaymentScheduleUpdationTyeOptions();
+  Observable<String> retrieveRepaymentScheduleUpdationTyeOptions();
     
 
   /**
@@ -124,13 +123,13 @@ public interface HolidaysApi {
    * If a holiday is in pending state (created and not activated) then all fields are allowed to modify. Once holidays become active only name and descriptions are allowed to modify.
    * @param holidayId holidayId (required)
    * @param putHolidaysHolidayIdRequest  (required)
-   * @return Call&lt;PutHolidaysHolidayIdResponse&gt;
+   * @return Observable&lt;PutHolidaysHolidayIdResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("holidays/{holidayId}")
-  Call<PutHolidaysHolidayIdResponse> update6(
+  Observable<PutHolidaysHolidayIdResponse> update6(
     @retrofit2.http.Path("holidayId") Long holidayId, @retrofit2.http.Body PutHolidaysHolidayIdRequest putHolidaysHolidayIdRequest
   );
 
