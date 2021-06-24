@@ -24,12 +24,12 @@ Name | Type | Description | Notes
 **passwordNeverExpires** | **Boolean** |  |  [optional]
 **appUserClientMappings** | [**List&lt;AppUserClientMapping&gt;**](AppUserClientMapping.md) |  |  [optional]
 **displayName** | **String** |  |  [optional]
+**authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
 **selfServiceUser** | **Boolean** |  |  [optional]
 **systemUser** | **Boolean** |  |  [optional]
-**authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
-**staffId** | **Long** |  |  [optional]
 **staffDisplayName** | **String** |  |  [optional]
 **notEnabled** | **Boolean** |  |  [optional]
+**staffId** | **Long** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

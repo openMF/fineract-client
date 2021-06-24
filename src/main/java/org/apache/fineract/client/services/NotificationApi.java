@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -53,10 +52,10 @@ public interface NotificationApi {
   /**
    * 
    * 
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @PUT("notifications")
-  Completable update5();
+  Observable<Void> update5();
     
 
 }

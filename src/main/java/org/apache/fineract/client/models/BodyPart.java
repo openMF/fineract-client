@@ -74,13 +74,13 @@ public class BodyPart {
   @SerializedName(SERIALIZED_NAME_PROVIDERS)
   private Object providers;
 
-  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
-  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
-  private ContentDisposition contentDisposition;
-
   public static final String SERIALIZED_NAME_PARAMETERIZED_HEADERS = "parameterizedHeaders";
   @SerializedName(SERIALIZED_NAME_PARAMETERIZED_HEADERS)
   private Map<String, List<ParameterizedHeader>> parameterizedHeaders = null;
+
+  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
+  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
+  private ContentDisposition contentDisposition;
 
 
   public BodyPart entity(Object entity) {
@@ -206,29 +206,6 @@ public class BodyPart {
   }
 
 
-  public BodyPart contentDisposition(ContentDisposition contentDisposition) {
-    
-    this.contentDisposition = contentDisposition;
-    return this;
-  }
-
-   /**
-   * Get contentDisposition
-   * @return contentDisposition
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ContentDisposition getContentDisposition() {
-    return contentDisposition;
-  }
-
-
-  public void setContentDisposition(ContentDisposition contentDisposition) {
-    this.contentDisposition = contentDisposition;
-  }
-
-
   public BodyPart parameterizedHeaders(Map<String, List<ParameterizedHeader>> parameterizedHeaders) {
     
     this.parameterizedHeaders = parameterizedHeaders;
@@ -260,6 +237,29 @@ public class BodyPart {
   }
 
 
+  public BodyPart contentDisposition(ContentDisposition contentDisposition) {
+    
+    this.contentDisposition = contentDisposition;
+    return this;
+  }
+
+   /**
+   * Get contentDisposition
+   * @return contentDisposition
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ContentDisposition getContentDisposition() {
+    return contentDisposition;
+  }
+
+
+  public void setContentDisposition(ContentDisposition contentDisposition) {
+    this.contentDisposition = contentDisposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -274,13 +274,13 @@ public class BodyPart {
         Objects.equals(this.mediaType, bodyPart.mediaType) &&
         Objects.equals(this.parent, bodyPart.parent) &&
         Objects.equals(this.providers, bodyPart.providers) &&
-        Objects.equals(this.contentDisposition, bodyPart.contentDisposition) &&
-        Objects.equals(this.parameterizedHeaders, bodyPart.parameterizedHeaders);
+        Objects.equals(this.parameterizedHeaders, bodyPart.parameterizedHeaders) &&
+        Objects.equals(this.contentDisposition, bodyPart.contentDisposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entity, headers, mediaType, parent, providers, contentDisposition, parameterizedHeaders);
+    return Objects.hash(entity, headers, mediaType, parent, providers, parameterizedHeaders, contentDisposition);
   }
 
 
@@ -293,8 +293,8 @@ public class BodyPart {
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
-    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("    parameterizedHeaders: ").append(toIndentedString(parameterizedHeaders)).append("\n");
+    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

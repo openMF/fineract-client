@@ -125,6 +125,10 @@ public class LoanProduct {
   @SerializedName(SERIALIZED_NAME_CURRENCY)
   private MonetaryCurrency currency;
 
+  public static final String SERIALIZED_NAME_ACCOUNTING_TYPE = "accountingType";
+  @SerializedName(SERIALIZED_NAME_ACCOUNTING_TYPE)
+  private Integer accountingType;
+
   public static final String SERIALIZED_NAME_LINKED_TO_FLOATING_INTEREST_RATE = "linkedToFloatingInterestRate";
   @SerializedName(SERIALIZED_NAME_LINKED_TO_FLOATING_INTEREST_RATE)
   private Boolean linkedToFloatingInterestRate;
@@ -197,6 +201,18 @@ public class LoanProduct {
   @SerializedName(SERIALIZED_NAME_ARREARS_BASED_ON_ORIGINAL_SCHEDULE)
   private Boolean arrearsBasedOnOriginalSchedule;
 
+  public static final String SERIALIZED_NAME_MULTI_DISBURSE_LOAN = "multiDisburseLoan";
+  @SerializedName(SERIALIZED_NAME_MULTI_DISBURSE_LOAN)
+  private Boolean multiDisburseLoan;
+
+  public static final String SERIALIZED_NAME_CASH_BASED_ACCOUNTING_ENABLED = "cashBasedAccountingEnabled";
+  @SerializedName(SERIALIZED_NAME_CASH_BASED_ACCOUNTING_ENABLED)
+  private Boolean cashBasedAccountingEnabled;
+
+  public static final String SERIALIZED_NAME_ACCRUAL_BASED_ACCOUNTING_ENABLED = "accrualBasedAccountingEnabled";
+  @SerializedName(SERIALIZED_NAME_ACCRUAL_BASED_ACCOUNTING_ENABLED)
+  private Boolean accrualBasedAccountingEnabled;
+
   public static final String SERIALIZED_NAME_NOMINAL_INTEREST_RATE_PER_PERIOD = "nominalInterestRatePerPeriod";
   @SerializedName(SERIALIZED_NAME_NOMINAL_INTEREST_RATE_PER_PERIOD)
   private BigDecimal nominalInterestRatePerPeriod;
@@ -263,22 +279,6 @@ public class LoanProduct {
   public static final String SERIALIZED_NAME_NUMBER_OF_REPAYMENTS = "numberOfRepayments";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_REPAYMENTS)
   private Integer numberOfRepayments;
-
-  public static final String SERIALIZED_NAME_ACCOUNTING_TYPE = "accountingType";
-  @SerializedName(SERIALIZED_NAME_ACCOUNTING_TYPE)
-  private Integer accountingType;
-
-  public static final String SERIALIZED_NAME_CASH_BASED_ACCOUNTING_ENABLED = "cashBasedAccountingEnabled";
-  @SerializedName(SERIALIZED_NAME_CASH_BASED_ACCOUNTING_ENABLED)
-  private Boolean cashBasedAccountingEnabled;
-
-  public static final String SERIALIZED_NAME_ACCRUAL_BASED_ACCOUNTING_ENABLED = "accrualBasedAccountingEnabled";
-  @SerializedName(SERIALIZED_NAME_ACCRUAL_BASED_ACCOUNTING_ENABLED)
-  private Boolean accrualBasedAccountingEnabled;
-
-  public static final String SERIALIZED_NAME_MULTI_DISBURSE_LOAN = "multiDisburseLoan";
-  @SerializedName(SERIALIZED_NAME_MULTI_DISBURSE_LOAN)
-  private Boolean multiDisburseLoan;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -658,6 +658,29 @@ public class LoanProduct {
 
   public void setCurrency(MonetaryCurrency currency) {
     this.currency = currency;
+  }
+
+
+  public LoanProduct accountingType(Integer accountingType) {
+    
+    this.accountingType = accountingType;
+    return this;
+  }
+
+   /**
+   * Get accountingType
+   * @return accountingType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getAccountingType() {
+    return accountingType;
+  }
+
+
+  public void setAccountingType(Integer accountingType) {
+    this.accountingType = accountingType;
   }
 
 
@@ -1083,6 +1106,75 @@ public class LoanProduct {
   }
 
 
+  public LoanProduct multiDisburseLoan(Boolean multiDisburseLoan) {
+    
+    this.multiDisburseLoan = multiDisburseLoan;
+    return this;
+  }
+
+   /**
+   * Get multiDisburseLoan
+   * @return multiDisburseLoan
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getMultiDisburseLoan() {
+    return multiDisburseLoan;
+  }
+
+
+  public void setMultiDisburseLoan(Boolean multiDisburseLoan) {
+    this.multiDisburseLoan = multiDisburseLoan;
+  }
+
+
+  public LoanProduct cashBasedAccountingEnabled(Boolean cashBasedAccountingEnabled) {
+    
+    this.cashBasedAccountingEnabled = cashBasedAccountingEnabled;
+    return this;
+  }
+
+   /**
+   * Get cashBasedAccountingEnabled
+   * @return cashBasedAccountingEnabled
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCashBasedAccountingEnabled() {
+    return cashBasedAccountingEnabled;
+  }
+
+
+  public void setCashBasedAccountingEnabled(Boolean cashBasedAccountingEnabled) {
+    this.cashBasedAccountingEnabled = cashBasedAccountingEnabled;
+  }
+
+
+  public LoanProduct accrualBasedAccountingEnabled(Boolean accrualBasedAccountingEnabled) {
+    
+    this.accrualBasedAccountingEnabled = accrualBasedAccountingEnabled;
+    return this;
+  }
+
+   /**
+   * Get accrualBasedAccountingEnabled
+   * @return accrualBasedAccountingEnabled
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getAccrualBasedAccountingEnabled() {
+    return accrualBasedAccountingEnabled;
+  }
+
+
+  public void setAccrualBasedAccountingEnabled(Boolean accrualBasedAccountingEnabled) {
+    this.accrualBasedAccountingEnabled = accrualBasedAccountingEnabled;
+  }
+
+
   public LoanProduct nominalInterestRatePerPeriod(BigDecimal nominalInterestRatePerPeriod) {
     
     this.nominalInterestRatePerPeriod = nominalInterestRatePerPeriod;
@@ -1152,98 +1244,6 @@ public class LoanProduct {
   }
 
 
-  public LoanProduct accountingType(Integer accountingType) {
-    
-    this.accountingType = accountingType;
-    return this;
-  }
-
-   /**
-   * Get accountingType
-   * @return accountingType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Integer getAccountingType() {
-    return accountingType;
-  }
-
-
-  public void setAccountingType(Integer accountingType) {
-    this.accountingType = accountingType;
-  }
-
-
-  public LoanProduct cashBasedAccountingEnabled(Boolean cashBasedAccountingEnabled) {
-    
-    this.cashBasedAccountingEnabled = cashBasedAccountingEnabled;
-    return this;
-  }
-
-   /**
-   * Get cashBasedAccountingEnabled
-   * @return cashBasedAccountingEnabled
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getCashBasedAccountingEnabled() {
-    return cashBasedAccountingEnabled;
-  }
-
-
-  public void setCashBasedAccountingEnabled(Boolean cashBasedAccountingEnabled) {
-    this.cashBasedAccountingEnabled = cashBasedAccountingEnabled;
-  }
-
-
-  public LoanProduct accrualBasedAccountingEnabled(Boolean accrualBasedAccountingEnabled) {
-    
-    this.accrualBasedAccountingEnabled = accrualBasedAccountingEnabled;
-    return this;
-  }
-
-   /**
-   * Get accrualBasedAccountingEnabled
-   * @return accrualBasedAccountingEnabled
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getAccrualBasedAccountingEnabled() {
-    return accrualBasedAccountingEnabled;
-  }
-
-
-  public void setAccrualBasedAccountingEnabled(Boolean accrualBasedAccountingEnabled) {
-    this.accrualBasedAccountingEnabled = accrualBasedAccountingEnabled;
-  }
-
-
-  public LoanProduct multiDisburseLoan(Boolean multiDisburseLoan) {
-    
-    this.multiDisburseLoan = multiDisburseLoan;
-    return this;
-  }
-
-   /**
-   * Get multiDisburseLoan
-   * @return multiDisburseLoan
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getMultiDisburseLoan() {
-    return multiDisburseLoan;
-  }
-
-
-  public void setMultiDisburseLoan(Boolean multiDisburseLoan) {
-    this.multiDisburseLoan = multiDisburseLoan;
-  }
-
-
   public LoanProduct _new(Boolean _new) {
     
     this._new = _new;
@@ -1292,6 +1292,7 @@ public class LoanProduct {
         Objects.equals(this.floatingRates, loanProduct.floatingRates) &&
         Objects.equals(this.syncExpectedWithDisbursementDate, loanProduct.syncExpectedWithDisbursementDate) &&
         Objects.equals(this.currency, loanProduct.currency) &&
+        Objects.equals(this.accountingType, loanProduct.accountingType) &&
         Objects.equals(this.linkedToFloatingInterestRate, loanProduct.linkedToFloatingInterestRate) &&
         Objects.equals(this.equalAmortization, loanProduct.equalAmortization) &&
         Objects.equals(this.interestRecalculationEnabled, loanProduct.interestRecalculationEnabled) &&
@@ -1310,19 +1311,18 @@ public class LoanProduct {
         Objects.equals(this.maxNumberOfRepayments, loanProduct.maxNumberOfRepayments) &&
         Objects.equals(this.holdGuaranteeFundsEnabled, loanProduct.holdGuaranteeFundsEnabled) &&
         Objects.equals(this.arrearsBasedOnOriginalSchedule, loanProduct.arrearsBasedOnOriginalSchedule) &&
+        Objects.equals(this.multiDisburseLoan, loanProduct.multiDisburseLoan) &&
+        Objects.equals(this.cashBasedAccountingEnabled, loanProduct.cashBasedAccountingEnabled) &&
+        Objects.equals(this.accrualBasedAccountingEnabled, loanProduct.accrualBasedAccountingEnabled) &&
         Objects.equals(this.nominalInterestRatePerPeriod, loanProduct.nominalInterestRatePerPeriod) &&
         Objects.equals(this.interestPeriodFrequencyType, loanProduct.interestPeriodFrequencyType) &&
         Objects.equals(this.numberOfRepayments, loanProduct.numberOfRepayments) &&
-        Objects.equals(this.accountingType, loanProduct.accountingType) &&
-        Objects.equals(this.cashBasedAccountingEnabled, loanProduct.cashBasedAccountingEnabled) &&
-        Objects.equals(this.accrualBasedAccountingEnabled, loanProduct.accrualBasedAccountingEnabled) &&
-        Objects.equals(this.multiDisburseLoan, loanProduct.multiDisburseLoan) &&
         Objects.equals(this._new, loanProduct._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, shortName, rates, loanProductRelatedDetail, includeInBorrowerCycle, startDate, closeDate, externalId, minimumDaysBetweenDisbursalAndFirstRepayment, productInterestRecalculationDetails, loanProductGuaranteeDetails, principalThresholdForLastInstallment, installmentAmountInMultiplesOf, floatingRates, syncExpectedWithDisbursementDate, currency, linkedToFloatingInterestRate, equalAmortization, interestRecalculationEnabled, repaymentStrategy, loanProductCharges, loanProductConfigurableAttributes, accountingDisabled, upfrontAccrualAccountingEnabled, periodicAccrualAccountingEnabled, principalAmount, minPrincipalAmount, maxPrincipalAmount, minNominalInterestRatePerPeriod, maxNominalInterestRatePerPeriod, minNumberOfRepayments, maxNumberOfRepayments, holdGuaranteeFundsEnabled, arrearsBasedOnOriginalSchedule, nominalInterestRatePerPeriod, interestPeriodFrequencyType, numberOfRepayments, accountingType, cashBasedAccountingEnabled, accrualBasedAccountingEnabled, multiDisburseLoan, _new);
+    return Objects.hash(id, shortName, rates, loanProductRelatedDetail, includeInBorrowerCycle, startDate, closeDate, externalId, minimumDaysBetweenDisbursalAndFirstRepayment, productInterestRecalculationDetails, loanProductGuaranteeDetails, principalThresholdForLastInstallment, installmentAmountInMultiplesOf, floatingRates, syncExpectedWithDisbursementDate, currency, accountingType, linkedToFloatingInterestRate, equalAmortization, interestRecalculationEnabled, repaymentStrategy, loanProductCharges, loanProductConfigurableAttributes, accountingDisabled, upfrontAccrualAccountingEnabled, periodicAccrualAccountingEnabled, principalAmount, minPrincipalAmount, maxPrincipalAmount, minNominalInterestRatePerPeriod, maxNominalInterestRatePerPeriod, minNumberOfRepayments, maxNumberOfRepayments, holdGuaranteeFundsEnabled, arrearsBasedOnOriginalSchedule, multiDisburseLoan, cashBasedAccountingEnabled, accrualBasedAccountingEnabled, nominalInterestRatePerPeriod, interestPeriodFrequencyType, numberOfRepayments, _new);
   }
 
 
@@ -1346,6 +1346,7 @@ public class LoanProduct {
     sb.append("    floatingRates: ").append(toIndentedString(floatingRates)).append("\n");
     sb.append("    syncExpectedWithDisbursementDate: ").append(toIndentedString(syncExpectedWithDisbursementDate)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    accountingType: ").append(toIndentedString(accountingType)).append("\n");
     sb.append("    linkedToFloatingInterestRate: ").append(toIndentedString(linkedToFloatingInterestRate)).append("\n");
     sb.append("    equalAmortization: ").append(toIndentedString(equalAmortization)).append("\n");
     sb.append("    interestRecalculationEnabled: ").append(toIndentedString(interestRecalculationEnabled)).append("\n");
@@ -1364,13 +1365,12 @@ public class LoanProduct {
     sb.append("    maxNumberOfRepayments: ").append(toIndentedString(maxNumberOfRepayments)).append("\n");
     sb.append("    holdGuaranteeFundsEnabled: ").append(toIndentedString(holdGuaranteeFundsEnabled)).append("\n");
     sb.append("    arrearsBasedOnOriginalSchedule: ").append(toIndentedString(arrearsBasedOnOriginalSchedule)).append("\n");
+    sb.append("    multiDisburseLoan: ").append(toIndentedString(multiDisburseLoan)).append("\n");
+    sb.append("    cashBasedAccountingEnabled: ").append(toIndentedString(cashBasedAccountingEnabled)).append("\n");
+    sb.append("    accrualBasedAccountingEnabled: ").append(toIndentedString(accrualBasedAccountingEnabled)).append("\n");
     sb.append("    nominalInterestRatePerPeriod: ").append(toIndentedString(nominalInterestRatePerPeriod)).append("\n");
     sb.append("    interestPeriodFrequencyType: ").append(toIndentedString(interestPeriodFrequencyType)).append("\n");
     sb.append("    numberOfRepayments: ").append(toIndentedString(numberOfRepayments)).append("\n");
-    sb.append("    accountingType: ").append(toIndentedString(accountingType)).append("\n");
-    sb.append("    cashBasedAccountingEnabled: ").append(toIndentedString(cashBasedAccountingEnabled)).append("\n");
-    sb.append("    accrualBasedAccountingEnabled: ").append(toIndentedString(accrualBasedAccountingEnabled)).append("\n");
-    sb.append("    multiDisburseLoan: ").append(toIndentedString(multiDisburseLoan)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();

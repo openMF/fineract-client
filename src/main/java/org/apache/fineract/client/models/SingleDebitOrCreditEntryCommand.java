@@ -66,13 +66,13 @@ public class SingleDebitOrCreditEntryCommand {
   @SerializedName(SERIALIZED_NAME_PARAMETERS_PASSED_IN_REQUEST)
   private List<String> parametersPassedInRequest = null;
 
-  public static final String SERIALIZED_NAME_GL_ACCOUNT_ID_CHANGED = "glAccountIdChanged";
-  @SerializedName(SERIALIZED_NAME_GL_ACCOUNT_ID_CHANGED)
-  private Boolean glAccountIdChanged;
-
   public static final String SERIALIZED_NAME_GL_AMOUNT_CHANGED = "glAmountChanged";
   @SerializedName(SERIALIZED_NAME_GL_AMOUNT_CHANGED)
   private Boolean glAmountChanged;
+
+  public static final String SERIALIZED_NAME_GL_ACCOUNT_ID_CHANGED = "glAccountIdChanged";
+  @SerializedName(SERIALIZED_NAME_GL_ACCOUNT_ID_CHANGED)
+  private Boolean glAccountIdChanged;
 
   public static final String SERIALIZED_NAME_COMMENTS_CHANGED = "commentsChanged";
   @SerializedName(SERIALIZED_NAME_COMMENTS_CHANGED)
@@ -179,29 +179,6 @@ public class SingleDebitOrCreditEntryCommand {
   }
 
 
-  public SingleDebitOrCreditEntryCommand glAccountIdChanged(Boolean glAccountIdChanged) {
-    
-    this.glAccountIdChanged = glAccountIdChanged;
-    return this;
-  }
-
-   /**
-   * Get glAccountIdChanged
-   * @return glAccountIdChanged
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getGlAccountIdChanged() {
-    return glAccountIdChanged;
-  }
-
-
-  public void setGlAccountIdChanged(Boolean glAccountIdChanged) {
-    this.glAccountIdChanged = glAccountIdChanged;
-  }
-
-
   public SingleDebitOrCreditEntryCommand glAmountChanged(Boolean glAmountChanged) {
     
     this.glAmountChanged = glAmountChanged;
@@ -222,6 +199,29 @@ public class SingleDebitOrCreditEntryCommand {
 
   public void setGlAmountChanged(Boolean glAmountChanged) {
     this.glAmountChanged = glAmountChanged;
+  }
+
+
+  public SingleDebitOrCreditEntryCommand glAccountIdChanged(Boolean glAccountIdChanged) {
+    
+    this.glAccountIdChanged = glAccountIdChanged;
+    return this;
+  }
+
+   /**
+   * Get glAccountIdChanged
+   * @return glAccountIdChanged
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getGlAccountIdChanged() {
+    return glAccountIdChanged;
+  }
+
+
+  public void setGlAccountIdChanged(Boolean glAccountIdChanged) {
+    this.glAccountIdChanged = glAccountIdChanged;
   }
 
 
@@ -261,14 +261,14 @@ public class SingleDebitOrCreditEntryCommand {
         Objects.equals(this.amount, singleDebitOrCreditEntryCommand.amount) &&
         Objects.equals(this.comments, singleDebitOrCreditEntryCommand.comments) &&
         Objects.equals(this.parametersPassedInRequest, singleDebitOrCreditEntryCommand.parametersPassedInRequest) &&
-        Objects.equals(this.glAccountIdChanged, singleDebitOrCreditEntryCommand.glAccountIdChanged) &&
         Objects.equals(this.glAmountChanged, singleDebitOrCreditEntryCommand.glAmountChanged) &&
+        Objects.equals(this.glAccountIdChanged, singleDebitOrCreditEntryCommand.glAccountIdChanged) &&
         Objects.equals(this.commentsChanged, singleDebitOrCreditEntryCommand.commentsChanged);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(glAccountId, amount, comments, parametersPassedInRequest, glAccountIdChanged, glAmountChanged, commentsChanged);
+    return Objects.hash(glAccountId, amount, comments, parametersPassedInRequest, glAmountChanged, glAccountIdChanged, commentsChanged);
   }
 
 
@@ -280,8 +280,8 @@ public class SingleDebitOrCreditEntryCommand {
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    parametersPassedInRequest: ").append(toIndentedString(parametersPassedInRequest)).append("\n");
-    sb.append("    glAccountIdChanged: ").append(toIndentedString(glAccountIdChanged)).append("\n");
     sb.append("    glAmountChanged: ").append(toIndentedString(glAmountChanged)).append("\n");
+    sb.append("    glAccountIdChanged: ").append(toIndentedString(glAccountIdChanged)).append("\n");
     sb.append("    commentsChanged: ").append(toIndentedString(commentsChanged)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -15,12 +15,12 @@ Name | Type | Description | Notes
 **optional** | **Boolean** |  |  [optional]
 **dateDisplayType** | **Boolean** |  |  [optional]
 **dateTimeDisplayType** | **Boolean** |  |  [optional]
+**integerDisplayType** | **Boolean** |  |  [optional]
 **string** | **Boolean** |  |  [optional]
 **decimalDisplayType** | **Boolean** |  |  [optional]
 **booleanDisplayType** | **Boolean** |  |  [optional]
 **codeValueDisplayType** | **Boolean** |  |  [optional]
 **codeLookupDisplayType** | **Boolean** |  |  [optional]
-**integerDisplayType** | **Boolean** |  |  [optional]
 
 
 

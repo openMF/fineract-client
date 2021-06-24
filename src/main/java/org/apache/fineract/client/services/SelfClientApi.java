@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -156,10 +155,10 @@ public interface SelfClientApi {
    * @param maxWidth  (optional)
    * @param maxHeight  (optional)
    * @param output  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("self/clients/{clientId}/images")
-  Completable retrieveImage1(
+  Observable<Void> retrieveImage1(
     @retrofit2.http.Path("clientId") Long clientId, @retrofit2.http.Query("maxWidth") Integer maxWidth, @retrofit2.http.Query("maxHeight") Integer maxHeight, @retrofit2.http.Query("output") String output
   );
 

@@ -73,17 +73,17 @@ public class Money {
   @SerializedName(SERIALIZED_NAME_CURRENCY_IN_MULTIPLES_OF)
   private Integer currencyInMultiplesOf;
 
-  public static final String SERIALIZED_NAME_GREATER_THAN_ZERO = "greaterThanZero";
-  @SerializedName(SERIALIZED_NAME_GREATER_THAN_ZERO)
-  private Boolean greaterThanZero;
+  public static final String SERIALIZED_NAME_AMOUNT_DEFAULTED_TO_NULL_IF_ZERO = "amountDefaultedToNullIfZero";
+  @SerializedName(SERIALIZED_NAME_AMOUNT_DEFAULTED_TO_NULL_IF_ZERO)
+  private BigDecimal amountDefaultedToNullIfZero;
 
   public static final String SERIALIZED_NAME_LESS_THAN_ZERO = "lessThanZero";
   @SerializedName(SERIALIZED_NAME_LESS_THAN_ZERO)
   private Boolean lessThanZero;
 
-  public static final String SERIALIZED_NAME_AMOUNT_DEFAULTED_TO_NULL_IF_ZERO = "amountDefaultedToNullIfZero";
-  @SerializedName(SERIALIZED_NAME_AMOUNT_DEFAULTED_TO_NULL_IF_ZERO)
-  private BigDecimal amountDefaultedToNullIfZero;
+  public static final String SERIALIZED_NAME_GREATER_THAN_ZERO = "greaterThanZero";
+  @SerializedName(SERIALIZED_NAME_GREATER_THAN_ZERO)
+  private Boolean greaterThanZero;
 
 
   public Money currencyCode(String currencyCode) {
@@ -224,26 +224,26 @@ public class Money {
   }
 
 
-  public Money greaterThanZero(Boolean greaterThanZero) {
+  public Money amountDefaultedToNullIfZero(BigDecimal amountDefaultedToNullIfZero) {
     
-    this.greaterThanZero = greaterThanZero;
+    this.amountDefaultedToNullIfZero = amountDefaultedToNullIfZero;
     return this;
   }
 
    /**
-   * Get greaterThanZero
-   * @return greaterThanZero
+   * Get amountDefaultedToNullIfZero
+   * @return amountDefaultedToNullIfZero
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getGreaterThanZero() {
-    return greaterThanZero;
+  public BigDecimal getAmountDefaultedToNullIfZero() {
+    return amountDefaultedToNullIfZero;
   }
 
 
-  public void setGreaterThanZero(Boolean greaterThanZero) {
-    this.greaterThanZero = greaterThanZero;
+  public void setAmountDefaultedToNullIfZero(BigDecimal amountDefaultedToNullIfZero) {
+    this.amountDefaultedToNullIfZero = amountDefaultedToNullIfZero;
   }
 
 
@@ -270,26 +270,26 @@ public class Money {
   }
 
 
-  public Money amountDefaultedToNullIfZero(BigDecimal amountDefaultedToNullIfZero) {
+  public Money greaterThanZero(Boolean greaterThanZero) {
     
-    this.amountDefaultedToNullIfZero = amountDefaultedToNullIfZero;
+    this.greaterThanZero = greaterThanZero;
     return this;
   }
 
    /**
-   * Get amountDefaultedToNullIfZero
-   * @return amountDefaultedToNullIfZero
+   * Get greaterThanZero
+   * @return greaterThanZero
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getAmountDefaultedToNullIfZero() {
-    return amountDefaultedToNullIfZero;
+  public Boolean getGreaterThanZero() {
+    return greaterThanZero;
   }
 
 
-  public void setAmountDefaultedToNullIfZero(BigDecimal amountDefaultedToNullIfZero) {
-    this.amountDefaultedToNullIfZero = amountDefaultedToNullIfZero;
+  public void setGreaterThanZero(Boolean greaterThanZero) {
+    this.greaterThanZero = greaterThanZero;
   }
 
 
@@ -308,14 +308,14 @@ public class Money {
         Objects.equals(this.currency, money.currency) &&
         Objects.equals(this.zero, money.zero) &&
         Objects.equals(this.currencyInMultiplesOf, money.currencyInMultiplesOf) &&
-        Objects.equals(this.greaterThanZero, money.greaterThanZero) &&
+        Objects.equals(this.amountDefaultedToNullIfZero, money.amountDefaultedToNullIfZero) &&
         Objects.equals(this.lessThanZero, money.lessThanZero) &&
-        Objects.equals(this.amountDefaultedToNullIfZero, money.amountDefaultedToNullIfZero);
+        Objects.equals(this.greaterThanZero, money.greaterThanZero);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currencyCode, currencyDigitsAfterDecimal, amount, currency, zero, currencyInMultiplesOf, greaterThanZero, lessThanZero, amountDefaultedToNullIfZero);
+    return Objects.hash(currencyCode, currencyDigitsAfterDecimal, amount, currency, zero, currencyInMultiplesOf, amountDefaultedToNullIfZero, lessThanZero, greaterThanZero);
   }
 
 
@@ -329,9 +329,9 @@ public class Money {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    zero: ").append(toIndentedString(zero)).append("\n");
     sb.append("    currencyInMultiplesOf: ").append(toIndentedString(currencyInMultiplesOf)).append("\n");
-    sb.append("    greaterThanZero: ").append(toIndentedString(greaterThanZero)).append("\n");
-    sb.append("    lessThanZero: ").append(toIndentedString(lessThanZero)).append("\n");
     sb.append("    amountDefaultedToNullIfZero: ").append(toIndentedString(amountDefaultedToNullIfZero)).append("\n");
+    sb.append("    lessThanZero: ").append(toIndentedString(lessThanZero)).append("\n");
+    sb.append("    greaterThanZero: ").append(toIndentedString(greaterThanZero)).append("\n");
     sb.append("}");
     return sb.toString();
   }

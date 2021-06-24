@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -63,10 +62,10 @@ public interface SavingsAccountApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("savingsaccounts/downloadtemplate")
-  Completable getSavingsTemplate(
+  Observable<Void> getSavingsTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 
@@ -75,10 +74,10 @@ public interface SavingsAccountApi {
    * 
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("savingsaccounts/transactions/downloadtemplate")
-  Completable getSavingsTransactionTemplate(
+  Observable<Void> getSavingsTransactionTemplate(
     @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 

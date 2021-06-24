@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,13 +40,13 @@ public interface SpmApiLookUpTableApi {
    * Add a new entry to a survey.  Mandatory Fields key, score, validFrom, validTo
    * @param surveyId Enter surveyId (required)
    * @param lookupTableData  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("surveys/{surveyId}/lookuptables")
-  Completable createLookupTable(
+  Observable<Void> createLookupTable(
     @retrofit2.http.Path("surveyId") Long surveyId, @retrofit2.http.Body LookupTableData lookupTableData
   );
 

@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -53,13 +52,13 @@ public interface ExternalServicesApi {
    * Updates the external Service Configuration for a Service Name.  Example:   externalservice/S3
    * @param servicename servicename (required)
    * @param putExternalServiceRequest  (required)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("externalservice/{servicename}")
-  Completable updateExternalServiceProperties(
+  Observable<Void> updateExternalServiceProperties(
     @retrofit2.http.Path("servicename") String servicename, @retrofit2.http.Body PutExternalServiceRequest putExternalServiceRequest
   );
 

@@ -79,13 +79,13 @@ public class MultiPart {
   @SerializedName(SERIALIZED_NAME_BODY_PARTS)
   private List<BodyPart> bodyParts = null;
 
-  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
-  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
-  private ContentDisposition contentDisposition;
-
   public static final String SERIALIZED_NAME_PARAMETERIZED_HEADERS = "parameterizedHeaders";
   @SerializedName(SERIALIZED_NAME_PARAMETERIZED_HEADERS)
   private Map<String, List<ParameterizedHeader>> parameterizedHeaders = null;
+
+  public static final String SERIALIZED_NAME_CONTENT_DISPOSITION = "contentDisposition";
+  @SerializedName(SERIALIZED_NAME_CONTENT_DISPOSITION)
+  private ContentDisposition contentDisposition;
 
 
   public MultiPart entity(Object entity) {
@@ -242,29 +242,6 @@ public class MultiPart {
   }
 
 
-  public MultiPart contentDisposition(ContentDisposition contentDisposition) {
-    
-    this.contentDisposition = contentDisposition;
-    return this;
-  }
-
-   /**
-   * Get contentDisposition
-   * @return contentDisposition
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ContentDisposition getContentDisposition() {
-    return contentDisposition;
-  }
-
-
-  public void setContentDisposition(ContentDisposition contentDisposition) {
-    this.contentDisposition = contentDisposition;
-  }
-
-
   public MultiPart parameterizedHeaders(Map<String, List<ParameterizedHeader>> parameterizedHeaders) {
     
     this.parameterizedHeaders = parameterizedHeaders;
@@ -296,6 +273,29 @@ public class MultiPart {
   }
 
 
+  public MultiPart contentDisposition(ContentDisposition contentDisposition) {
+    
+    this.contentDisposition = contentDisposition;
+    return this;
+  }
+
+   /**
+   * Get contentDisposition
+   * @return contentDisposition
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ContentDisposition getContentDisposition() {
+    return contentDisposition;
+  }
+
+
+  public void setContentDisposition(ContentDisposition contentDisposition) {
+    this.contentDisposition = contentDisposition;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -311,13 +311,13 @@ public class MultiPart {
         Objects.equals(this.parent, multiPart.parent) &&
         Objects.equals(this.providers, multiPart.providers) &&
         Objects.equals(this.bodyParts, multiPart.bodyParts) &&
-        Objects.equals(this.contentDisposition, multiPart.contentDisposition) &&
-        Objects.equals(this.parameterizedHeaders, multiPart.parameterizedHeaders);
+        Objects.equals(this.parameterizedHeaders, multiPart.parameterizedHeaders) &&
+        Objects.equals(this.contentDisposition, multiPart.contentDisposition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entity, headers, mediaType, parent, providers, bodyParts, contentDisposition, parameterizedHeaders);
+    return Objects.hash(entity, headers, mediaType, parent, providers, bodyParts, parameterizedHeaders, contentDisposition);
   }
 
 
@@ -331,8 +331,8 @@ public class MultiPart {
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("    bodyParts: ").append(toIndentedString(bodyParts)).append("\n");
-    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("    parameterizedHeaders: ").append(toIndentedString(parameterizedHeaders)).append("\n");
+    sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

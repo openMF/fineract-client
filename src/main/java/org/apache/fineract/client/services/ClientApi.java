@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -99,10 +98,10 @@ public interface ClientApi {
    * @param officeId  (optional)
    * @param staffId  (optional)
    * @param dateFormat  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("clients/downloadtemplate")
-  Completable getClientTemplate(
+  Observable<Void> getClientTemplate(
     @retrofit2.http.Query("legalFormType") String legalFormType, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("staffId") Long staffId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 

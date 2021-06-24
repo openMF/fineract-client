@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -82,10 +81,10 @@ public interface GuarantorsApi {
    * @param loanId  (required)
    * @param officeId  (optional)
    * @param dateFormat  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("loans/{loanId}/guarantors/downloadtemplate")
-  Completable getGuarantorTemplate(
+  Observable<Void> getGuarantorTemplate(
     @retrofit2.http.Path("loanId") Long loanId, @retrofit2.http.Query("officeId") Long officeId, @retrofit2.http.Query("dateFormat") String dateFormat
   );
 

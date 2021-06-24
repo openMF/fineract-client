@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -59,13 +58,13 @@ public interface PasswordPreferencesApi {
    * Update password preferences
    * 
    * @param putPasswordPreferencesTemplateRequest  (required)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("passwordpreferences")
-  Completable update23(
+  Observable<Void> update23(
     @retrofit2.http.Body PutPasswordPreferencesTemplateRequest putPasswordPreferencesTemplateRequest
   );
 

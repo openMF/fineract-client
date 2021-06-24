@@ -90,41 +90,25 @@ public class Group {
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER_REQUIRES_AUTO_GENERATION)
   private Boolean accountNumberRequiresAutoGeneration;
 
-  public static final String SERIALIZED_NAME_CLOSED = "closed";
-  @SerializedName(SERIALIZED_NAME_CLOSED)
-  private Boolean closed;
-
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private Boolean active;
 
-  public static final String SERIALIZED_NAME_GROUP = "group";
-  @SerializedName(SERIALIZED_NAME_GROUP)
-  private Boolean group;
+  public static final String SERIALIZED_NAME_CLOSED = "closed";
+  @SerializedName(SERIALIZED_NAME_CLOSED)
+  private Boolean closed;
 
   public static final String SERIALIZED_NAME_PENDING = "pending";
   @SerializedName(SERIALIZED_NAME_PENDING)
   private Boolean pending;
 
-  public static final String SERIALIZED_NAME_NOT_ACTIVE = "notActive";
-  @SerializedName(SERIALIZED_NAME_NOT_ACTIVE)
-  private Boolean notActive;
+  public static final String SERIALIZED_NAME_GROUP = "group";
+  @SerializedName(SERIALIZED_NAME_GROUP)
+  private Boolean group;
 
   public static final String SERIALIZED_NAME_CENTER = "center";
   @SerializedName(SERIALIZED_NAME_CENTER)
   private Boolean center;
-
-  public static final String SERIALIZED_NAME_ACTIVATION_LOCAL_DATE = "activationLocalDate";
-  @SerializedName(SERIALIZED_NAME_ACTIVATION_LOCAL_DATE)
-  private LocalDate activationLocalDate;
-
-  public static final String SERIALIZED_NAME_TRANSFER_IN_PROGRESS = "transferInProgress";
-  @SerializedName(SERIALIZED_NAME_TRANSFER_IN_PROGRESS)
-  private Boolean transferInProgress;
-
-  public static final String SERIALIZED_NAME_TRANSFER_ON_HOLD = "transferOnHold";
-  @SerializedName(SERIALIZED_NAME_TRANSFER_ON_HOLD)
-  private Boolean transferOnHold;
 
   public static final String SERIALIZED_NAME_NOT_PENDING = "notPending";
   @SerializedName(SERIALIZED_NAME_NOT_PENDING)
@@ -141,6 +125,22 @@ public class Group {
   public static final String SERIALIZED_NAME_ACTIVE_CLIENT_MEMBERS = "activeClientMembers";
   @SerializedName(SERIALIZED_NAME_ACTIVE_CLIENT_MEMBERS)
   private List<Client> activeClientMembers = null;
+
+  public static final String SERIALIZED_NAME_ACTIVATION_LOCAL_DATE = "activationLocalDate";
+  @SerializedName(SERIALIZED_NAME_ACTIVATION_LOCAL_DATE)
+  private LocalDate activationLocalDate;
+
+  public static final String SERIALIZED_NAME_NOT_ACTIVE = "notActive";
+  @SerializedName(SERIALIZED_NAME_NOT_ACTIVE)
+  private Boolean notActive;
+
+  public static final String SERIALIZED_NAME_TRANSFER_IN_PROGRESS = "transferInProgress";
+  @SerializedName(SERIALIZED_NAME_TRANSFER_IN_PROGRESS)
+  private Boolean transferInProgress;
+
+  public static final String SERIALIZED_NAME_TRANSFER_ON_HOLD = "transferOnHold";
+  @SerializedName(SERIALIZED_NAME_TRANSFER_ON_HOLD)
+  private Boolean transferOnHold;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -370,29 +370,6 @@ public class Group {
   }
 
 
-  public Group closed(Boolean closed) {
-    
-    this.closed = closed;
-    return this;
-  }
-
-   /**
-   * Get closed
-   * @return closed
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getClosed() {
-    return closed;
-  }
-
-
-  public void setClosed(Boolean closed) {
-    this.closed = closed;
-  }
-
-
   public Group active(Boolean active) {
     
     this.active = active;
@@ -416,26 +393,26 @@ public class Group {
   }
 
 
-  public Group group(Boolean group) {
+  public Group closed(Boolean closed) {
     
-    this.group = group;
+    this.closed = closed;
     return this;
   }
 
    /**
-   * Get group
-   * @return group
+   * Get closed
+   * @return closed
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getGroup() {
-    return group;
+  public Boolean getClosed() {
+    return closed;
   }
 
 
-  public void setGroup(Boolean group) {
-    this.group = group;
+  public void setClosed(Boolean closed) {
+    this.closed = closed;
   }
 
 
@@ -462,26 +439,26 @@ public class Group {
   }
 
 
-  public Group notActive(Boolean notActive) {
+  public Group group(Boolean group) {
     
-    this.notActive = notActive;
+    this.group = group;
     return this;
   }
 
    /**
-   * Get notActive
-   * @return notActive
+   * Get group
+   * @return group
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getNotActive() {
-    return notActive;
+  public Boolean getGroup() {
+    return group;
   }
 
 
-  public void setNotActive(Boolean notActive) {
-    this.notActive = notActive;
+  public void setGroup(Boolean group) {
+    this.group = group;
   }
 
 
@@ -505,75 +482,6 @@ public class Group {
 
   public void setCenter(Boolean center) {
     this.center = center;
-  }
-
-
-  public Group activationLocalDate(LocalDate activationLocalDate) {
-    
-    this.activationLocalDate = activationLocalDate;
-    return this;
-  }
-
-   /**
-   * Get activationLocalDate
-   * @return activationLocalDate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public LocalDate getActivationLocalDate() {
-    return activationLocalDate;
-  }
-
-
-  public void setActivationLocalDate(LocalDate activationLocalDate) {
-    this.activationLocalDate = activationLocalDate;
-  }
-
-
-  public Group transferInProgress(Boolean transferInProgress) {
-    
-    this.transferInProgress = transferInProgress;
-    return this;
-  }
-
-   /**
-   * Get transferInProgress
-   * @return transferInProgress
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getTransferInProgress() {
-    return transferInProgress;
-  }
-
-
-  public void setTransferInProgress(Boolean transferInProgress) {
-    this.transferInProgress = transferInProgress;
-  }
-
-
-  public Group transferOnHold(Boolean transferOnHold) {
-    
-    this.transferOnHold = transferOnHold;
-    return this;
-  }
-
-   /**
-   * Get transferOnHold
-   * @return transferOnHold
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getTransferOnHold() {
-    return transferOnHold;
-  }
-
-
-  public void setTransferOnHold(Boolean transferOnHold) {
-    this.transferOnHold = transferOnHold;
   }
 
 
@@ -677,6 +585,98 @@ public class Group {
   }
 
 
+  public Group activationLocalDate(LocalDate activationLocalDate) {
+    
+    this.activationLocalDate = activationLocalDate;
+    return this;
+  }
+
+   /**
+   * Get activationLocalDate
+   * @return activationLocalDate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LocalDate getActivationLocalDate() {
+    return activationLocalDate;
+  }
+
+
+  public void setActivationLocalDate(LocalDate activationLocalDate) {
+    this.activationLocalDate = activationLocalDate;
+  }
+
+
+  public Group notActive(Boolean notActive) {
+    
+    this.notActive = notActive;
+    return this;
+  }
+
+   /**
+   * Get notActive
+   * @return notActive
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getNotActive() {
+    return notActive;
+  }
+
+
+  public void setNotActive(Boolean notActive) {
+    this.notActive = notActive;
+  }
+
+
+  public Group transferInProgress(Boolean transferInProgress) {
+    
+    this.transferInProgress = transferInProgress;
+    return this;
+  }
+
+   /**
+   * Get transferInProgress
+   * @return transferInProgress
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getTransferInProgress() {
+    return transferInProgress;
+  }
+
+
+  public void setTransferInProgress(Boolean transferInProgress) {
+    this.transferInProgress = transferInProgress;
+  }
+
+
+  public Group transferOnHold(Boolean transferOnHold) {
+    
+    this.transferOnHold = transferOnHold;
+    return this;
+  }
+
+   /**
+   * Get transferOnHold
+   * @return transferOnHold
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getTransferOnHold() {
+    return transferOnHold;
+  }
+
+
+  public void setTransferOnHold(Boolean transferOnHold) {
+    this.transferOnHold = transferOnHold;
+  }
+
+
   public Group _new(Boolean _new) {
     
     this._new = _new;
@@ -718,25 +718,25 @@ public class Group {
         Objects.equals(this.clientMembers, group.clientMembers) &&
         Objects.equals(this.submittedOnDate, group.submittedOnDate) &&
         Objects.equals(this.accountNumberRequiresAutoGeneration, group.accountNumberRequiresAutoGeneration) &&
-        Objects.equals(this.closed, group.closed) &&
         Objects.equals(this.active, group.active) &&
-        Objects.equals(this.group, group.group) &&
+        Objects.equals(this.closed, group.closed) &&
         Objects.equals(this.pending, group.pending) &&
-        Objects.equals(this.notActive, group.notActive) &&
+        Objects.equals(this.group, group.group) &&
         Objects.equals(this.center, group.center) &&
-        Objects.equals(this.activationLocalDate, group.activationLocalDate) &&
-        Objects.equals(this.transferInProgress, group.transferInProgress) &&
-        Objects.equals(this.transferOnHold, group.transferOnHold) &&
         Objects.equals(this.notPending, group.notPending) &&
         Objects.equals(this.transferInProgressOrOnHold, group.transferInProgressOrOnHold) &&
         Objects.equals(this.childGroup, group.childGroup) &&
         Objects.equals(this.activeClientMembers, group.activeClientMembers) &&
+        Objects.equals(this.activationLocalDate, group.activationLocalDate) &&
+        Objects.equals(this.notActive, group.notActive) &&
+        Objects.equals(this.transferInProgress, group.transferInProgress) &&
+        Objects.equals(this.transferOnHold, group.transferOnHold) &&
         Objects.equals(this._new, group._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, office, staff, parent, groupLevel, groupMembers, clientMembers, submittedOnDate, accountNumberRequiresAutoGeneration, closed, active, group, pending, notActive, center, activationLocalDate, transferInProgress, transferOnHold, notPending, transferInProgressOrOnHold, childGroup, activeClientMembers, _new);
+    return Objects.hash(id, office, staff, parent, groupLevel, groupMembers, clientMembers, submittedOnDate, accountNumberRequiresAutoGeneration, active, closed, pending, group, center, notPending, transferInProgressOrOnHold, childGroup, activeClientMembers, activationLocalDate, notActive, transferInProgress, transferOnHold, _new);
   }
 
 
@@ -753,19 +753,19 @@ public class Group {
     sb.append("    clientMembers: ").append(toIndentedString(clientMembers)).append("\n");
     sb.append("    submittedOnDate: ").append(toIndentedString(submittedOnDate)).append("\n");
     sb.append("    accountNumberRequiresAutoGeneration: ").append(toIndentedString(accountNumberRequiresAutoGeneration)).append("\n");
-    sb.append("    closed: ").append(toIndentedString(closed)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    closed: ").append(toIndentedString(closed)).append("\n");
     sb.append("    pending: ").append(toIndentedString(pending)).append("\n");
-    sb.append("    notActive: ").append(toIndentedString(notActive)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    center: ").append(toIndentedString(center)).append("\n");
-    sb.append("    activationLocalDate: ").append(toIndentedString(activationLocalDate)).append("\n");
-    sb.append("    transferInProgress: ").append(toIndentedString(transferInProgress)).append("\n");
-    sb.append("    transferOnHold: ").append(toIndentedString(transferOnHold)).append("\n");
     sb.append("    notPending: ").append(toIndentedString(notPending)).append("\n");
     sb.append("    transferInProgressOrOnHold: ").append(toIndentedString(transferInProgressOrOnHold)).append("\n");
     sb.append("    childGroup: ").append(toIndentedString(childGroup)).append("\n");
     sb.append("    activeClientMembers: ").append(toIndentedString(activeClientMembers)).append("\n");
+    sb.append("    activationLocalDate: ").append(toIndentedString(activationLocalDate)).append("\n");
+    sb.append("    notActive: ").append(toIndentedString(notActive)).append("\n");
+    sb.append("    transferInProgress: ").append(toIndentedString(transferInProgress)).append("\n");
+    sb.append("    transferOnHold: ").append(toIndentedString(transferOnHold)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -62,13 +62,13 @@ public class BodyPartMediaType {
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
   private Map<String, String> parameters = null;
 
-  public static final String SERIALIZED_NAME_WILDCARD_TYPE = "wildcardType";
-  @SerializedName(SERIALIZED_NAME_WILDCARD_TYPE)
-  private Boolean wildcardType;
-
   public static final String SERIALIZED_NAME_WILDCARD_SUBTYPE = "wildcardSubtype";
   @SerializedName(SERIALIZED_NAME_WILDCARD_SUBTYPE)
   private Boolean wildcardSubtype;
+
+  public static final String SERIALIZED_NAME_WILDCARD_TYPE = "wildcardType";
+  @SerializedName(SERIALIZED_NAME_WILDCARD_TYPE)
+  private Boolean wildcardType;
 
 
   public BodyPartMediaType type(String type) {
@@ -148,29 +148,6 @@ public class BodyPartMediaType {
   }
 
 
-  public BodyPartMediaType wildcardType(Boolean wildcardType) {
-    
-    this.wildcardType = wildcardType;
-    return this;
-  }
-
-   /**
-   * Get wildcardType
-   * @return wildcardType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getWildcardType() {
-    return wildcardType;
-  }
-
-
-  public void setWildcardType(Boolean wildcardType) {
-    this.wildcardType = wildcardType;
-  }
-
-
   public BodyPartMediaType wildcardSubtype(Boolean wildcardSubtype) {
     
     this.wildcardSubtype = wildcardSubtype;
@@ -194,6 +171,29 @@ public class BodyPartMediaType {
   }
 
 
+  public BodyPartMediaType wildcardType(Boolean wildcardType) {
+    
+    this.wildcardType = wildcardType;
+    return this;
+  }
+
+   /**
+   * Get wildcardType
+   * @return wildcardType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getWildcardType() {
+    return wildcardType;
+  }
+
+
+  public void setWildcardType(Boolean wildcardType) {
+    this.wildcardType = wildcardType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,13 +206,13 @@ public class BodyPartMediaType {
     return Objects.equals(this.type, bodyPartMediaType.type) &&
         Objects.equals(this.subtype, bodyPartMediaType.subtype) &&
         Objects.equals(this.parameters, bodyPartMediaType.parameters) &&
-        Objects.equals(this.wildcardType, bodyPartMediaType.wildcardType) &&
-        Objects.equals(this.wildcardSubtype, bodyPartMediaType.wildcardSubtype);
+        Objects.equals(this.wildcardSubtype, bodyPartMediaType.wildcardSubtype) &&
+        Objects.equals(this.wildcardType, bodyPartMediaType.wildcardType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, subtype, parameters, wildcardType, wildcardSubtype);
+    return Objects.hash(type, subtype, parameters, wildcardSubtype, wildcardType);
   }
 
 
@@ -223,8 +223,8 @@ public class BodyPartMediaType {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    subtype: ").append(toIndentedString(subtype)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
-    sb.append("    wildcardType: ").append(toIndentedString(wildcardType)).append("\n");
     sb.append("    wildcardSubtype: ").append(toIndentedString(wildcardSubtype)).append("\n");
+    sb.append("    wildcardType: ").append(toIndentedString(wildcardType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

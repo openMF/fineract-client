@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -40,10 +39,10 @@ public interface SchedulerApi {
    * Activate Scheduler Jobs | Suspend Scheduler Jobs
    * Activates the scheduler job service. | Suspends the scheduler job service.
    * @param command command (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @POST("scheduler")
-  Completable changeSchedulerStatus(
+  Observable<Void> changeSchedulerStatus(
     @retrofit2.http.Query("command") String command
   );
 

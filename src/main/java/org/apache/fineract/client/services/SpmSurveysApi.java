@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -41,10 +40,10 @@ public interface SpmSurveysApi {
    * 
    * @param id  (required)
    * @param command  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @POST("surveys/{id}")
-  Completable activateOrDeactivateSurvey(
+  Observable<Void> activateOrDeactivateSurvey(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Query("command") String command
   );
 
@@ -52,13 +51,13 @@ public interface SpmSurveysApi {
    * Create a Survey
    * Adds a new survey to collect client related data.  Mandatory Fields  countryCode, key, name, questions, responses, sequenceNo, text, description
    * @param surveyData Create survey (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("surveys")
-  Completable createSurvey(
+  Observable<Void> createSurvey(
     @retrofit2.http.Body SurveyData surveyData
   );
 

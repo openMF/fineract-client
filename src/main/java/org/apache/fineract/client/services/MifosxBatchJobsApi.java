@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -43,10 +42,10 @@ public interface MifosxBatchJobsApi {
    * Manually Execute Specific Job.
    * @param jobId jobId (required)
    * @param command command (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @POST("jobs/{jobId}")
-  Completable executeJob(
+  Observable<Void> executeJob(
     @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Query("command") String command
   );
 
@@ -90,13 +89,13 @@ public interface MifosxBatchJobsApi {
    * Updates the details of a job.
    * @param jobId jobId (required)
    * @param putJobsJobIDRequest  (required)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("jobs/{jobId}")
-  Completable updateJobDetail(
+  Observable<Void> updateJobDetail(
     @retrofit2.http.Path("jobId") Long jobId, @retrofit2.http.Body PutJobsJobIDRequest putJobsJobIDRequest
   );
 

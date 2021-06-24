@@ -266,6 +266,18 @@ public class LoanProductData {
   @SerializedName(SERIALIZED_NAME_OUTSTANDING_LOAN_BALANCE)
   private BigDecimal outstandingLoanBalance;
 
+  public static final String SERIALIZED_NAME_MINIMUM_GAP_BETWEEN_INSTALLMENTS = "minimumGapBetweenInstallments";
+  @SerializedName(SERIALIZED_NAME_MINIMUM_GAP_BETWEEN_INSTALLMENTS)
+  private Integer minimumGapBetweenInstallments;
+
+  public static final String SERIALIZED_NAME_MAXIMUM_GAP_BETWEEN_INSTALLMENTS = "maximumGapBetweenInstallments";
+  @SerializedName(SERIALIZED_NAME_MAXIMUM_GAP_BETWEEN_INSTALLMENTS)
+  private Integer maximumGapBetweenInstallments;
+
+  public static final String SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES = "getloanProductConfigurableAttributes";
+  @SerializedName(SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES)
+  private LoanProductConfigurableAttributes getloanProductConfigurableAttributes;
+
   public static final String SERIALIZED_NAME_EQUAL_AMORTIZATION = "equalAmortization";
   @SerializedName(SERIALIZED_NAME_EQUAL_AMORTIZATION)
   private Boolean equalAmortization;
@@ -289,18 +301,6 @@ public class LoanProductData {
   public static final String SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION = "compoundingToBePostedAsTransaction";
   @SerializedName(SERIALIZED_NAME_COMPOUNDING_TO_BE_POSTED_AS_TRANSACTION)
   private Boolean compoundingToBePostedAsTransaction;
-
-  public static final String SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES = "getloanProductConfigurableAttributes";
-  @SerializedName(SERIALIZED_NAME_GETLOAN_PRODUCT_CONFIGURABLE_ATTRIBUTES)
-  private LoanProductConfigurableAttributes getloanProductConfigurableAttributes;
-
-  public static final String SERIALIZED_NAME_MINIMUM_GAP_BETWEEN_INSTALLMENTS = "minimumGapBetweenInstallments";
-  @SerializedName(SERIALIZED_NAME_MINIMUM_GAP_BETWEEN_INSTALLMENTS)
-  private Integer minimumGapBetweenInstallments;
-
-  public static final String SERIALIZED_NAME_MAXIMUM_GAP_BETWEEN_INSTALLMENTS = "maximumGapBetweenInstallments";
-  @SerializedName(SERIALIZED_NAME_MAXIMUM_GAP_BETWEEN_INSTALLMENTS)
-  private Integer maximumGapBetweenInstallments;
 
 
   public LoanProductData id(Long id) {
@@ -1579,6 +1579,75 @@ public class LoanProductData {
   }
 
 
+  public LoanProductData minimumGapBetweenInstallments(Integer minimumGapBetweenInstallments) {
+    
+    this.minimumGapBetweenInstallments = minimumGapBetweenInstallments;
+    return this;
+  }
+
+   /**
+   * Get minimumGapBetweenInstallments
+   * @return minimumGapBetweenInstallments
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getMinimumGapBetweenInstallments() {
+    return minimumGapBetweenInstallments;
+  }
+
+
+  public void setMinimumGapBetweenInstallments(Integer minimumGapBetweenInstallments) {
+    this.minimumGapBetweenInstallments = minimumGapBetweenInstallments;
+  }
+
+
+  public LoanProductData maximumGapBetweenInstallments(Integer maximumGapBetweenInstallments) {
+    
+    this.maximumGapBetweenInstallments = maximumGapBetweenInstallments;
+    return this;
+  }
+
+   /**
+   * Get maximumGapBetweenInstallments
+   * @return maximumGapBetweenInstallments
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getMaximumGapBetweenInstallments() {
+    return maximumGapBetweenInstallments;
+  }
+
+
+  public void setMaximumGapBetweenInstallments(Integer maximumGapBetweenInstallments) {
+    this.maximumGapBetweenInstallments = maximumGapBetweenInstallments;
+  }
+
+
+  public LoanProductData getloanProductConfigurableAttributes(LoanProductConfigurableAttributes getloanProductConfigurableAttributes) {
+    
+    this.getloanProductConfigurableAttributes = getloanProductConfigurableAttributes;
+    return this;
+  }
+
+   /**
+   * Get getloanProductConfigurableAttributes
+   * @return getloanProductConfigurableAttributes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public LoanProductConfigurableAttributes getGetloanProductConfigurableAttributes() {
+    return getloanProductConfigurableAttributes;
+  }
+
+
+  public void setGetloanProductConfigurableAttributes(LoanProductConfigurableAttributes getloanProductConfigurableAttributes) {
+    this.getloanProductConfigurableAttributes = getloanProductConfigurableAttributes;
+  }
+
+
   public LoanProductData equalAmortization(Boolean equalAmortization) {
     
     this.equalAmortization = equalAmortization;
@@ -1717,75 +1786,6 @@ public class LoanProductData {
   }
 
 
-  public LoanProductData getloanProductConfigurableAttributes(LoanProductConfigurableAttributes getloanProductConfigurableAttributes) {
-    
-    this.getloanProductConfigurableAttributes = getloanProductConfigurableAttributes;
-    return this;
-  }
-
-   /**
-   * Get getloanProductConfigurableAttributes
-   * @return getloanProductConfigurableAttributes
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public LoanProductConfigurableAttributes getGetloanProductConfigurableAttributes() {
-    return getloanProductConfigurableAttributes;
-  }
-
-
-  public void setGetloanProductConfigurableAttributes(LoanProductConfigurableAttributes getloanProductConfigurableAttributes) {
-    this.getloanProductConfigurableAttributes = getloanProductConfigurableAttributes;
-  }
-
-
-  public LoanProductData minimumGapBetweenInstallments(Integer minimumGapBetweenInstallments) {
-    
-    this.minimumGapBetweenInstallments = minimumGapBetweenInstallments;
-    return this;
-  }
-
-   /**
-   * Get minimumGapBetweenInstallments
-   * @return minimumGapBetweenInstallments
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Integer getMinimumGapBetweenInstallments() {
-    return minimumGapBetweenInstallments;
-  }
-
-
-  public void setMinimumGapBetweenInstallments(Integer minimumGapBetweenInstallments) {
-    this.minimumGapBetweenInstallments = minimumGapBetweenInstallments;
-  }
-
-
-  public LoanProductData maximumGapBetweenInstallments(Integer maximumGapBetweenInstallments) {
-    
-    this.maximumGapBetweenInstallments = maximumGapBetweenInstallments;
-    return this;
-  }
-
-   /**
-   * Get maximumGapBetweenInstallments
-   * @return maximumGapBetweenInstallments
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Integer getMaximumGapBetweenInstallments() {
-    return maximumGapBetweenInstallments;
-  }
-
-
-  public void setMaximumGapBetweenInstallments(Integer maximumGapBetweenInstallments) {
-    this.maximumGapBetweenInstallments = maximumGapBetweenInstallments;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1847,20 +1847,20 @@ public class LoanProductData {
         Objects.equals(this.chargeOptions, loanProductData.chargeOptions) &&
         Objects.equals(this.multiDisburseLoan, loanProductData.multiDisburseLoan) &&
         Objects.equals(this.outstandingLoanBalance, loanProductData.outstandingLoanBalance) &&
+        Objects.equals(this.minimumGapBetweenInstallments, loanProductData.minimumGapBetweenInstallments) &&
+        Objects.equals(this.maximumGapBetweenInstallments, loanProductData.maximumGapBetweenInstallments) &&
+        Objects.equals(this.getloanProductConfigurableAttributes, loanProductData.getloanProductConfigurableAttributes) &&
         Objects.equals(this.equalAmortization, loanProductData.equalAmortization) &&
         Objects.equals(this.floatingInterestRateCalculationAllowed, loanProductData.floatingInterestRateCalculationAllowed) &&
         Objects.equals(this.linkedToFloatingInterestRates, loanProductData.linkedToFloatingInterestRates) &&
         Objects.equals(this.variableInstallmentsAllowed, loanProductData.variableInstallmentsAllowed) &&
         Objects.equals(this.interestRecalculationEnabled, loanProductData.interestRecalculationEnabled) &&
-        Objects.equals(this.compoundingToBePostedAsTransaction, loanProductData.compoundingToBePostedAsTransaction) &&
-        Objects.equals(this.getloanProductConfigurableAttributes, loanProductData.getloanProductConfigurableAttributes) &&
-        Objects.equals(this.minimumGapBetweenInstallments, loanProductData.minimumGapBetweenInstallments) &&
-        Objects.equals(this.maximumGapBetweenInstallments, loanProductData.maximumGapBetweenInstallments);
+        Objects.equals(this.compoundingToBePostedAsTransaction, loanProductData.compoundingToBePostedAsTransaction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyId, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, equalAmortization, floatingInterestRateCalculationAllowed, linkedToFloatingInterestRates, variableInstallmentsAllowed, interestRecalculationEnabled, compoundingToBePostedAsTransaction, getloanProductConfigurableAttributes, minimumGapBetweenInstallments, maximumGapBetweenInstallments);
+    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyId, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, minimumGapBetweenInstallments, maximumGapBetweenInstallments, getloanProductConfigurableAttributes, equalAmortization, floatingInterestRateCalculationAllowed, linkedToFloatingInterestRates, variableInstallmentsAllowed, interestRecalculationEnabled, compoundingToBePostedAsTransaction);
   }
 
 
@@ -1920,15 +1920,15 @@ public class LoanProductData {
     sb.append("    chargeOptions: ").append(toIndentedString(chargeOptions)).append("\n");
     sb.append("    multiDisburseLoan: ").append(toIndentedString(multiDisburseLoan)).append("\n");
     sb.append("    outstandingLoanBalance: ").append(toIndentedString(outstandingLoanBalance)).append("\n");
+    sb.append("    minimumGapBetweenInstallments: ").append(toIndentedString(minimumGapBetweenInstallments)).append("\n");
+    sb.append("    maximumGapBetweenInstallments: ").append(toIndentedString(maximumGapBetweenInstallments)).append("\n");
+    sb.append("    getloanProductConfigurableAttributes: ").append(toIndentedString(getloanProductConfigurableAttributes)).append("\n");
     sb.append("    equalAmortization: ").append(toIndentedString(equalAmortization)).append("\n");
     sb.append("    floatingInterestRateCalculationAllowed: ").append(toIndentedString(floatingInterestRateCalculationAllowed)).append("\n");
     sb.append("    linkedToFloatingInterestRates: ").append(toIndentedString(linkedToFloatingInterestRates)).append("\n");
     sb.append("    variableInstallmentsAllowed: ").append(toIndentedString(variableInstallmentsAllowed)).append("\n");
     sb.append("    interestRecalculationEnabled: ").append(toIndentedString(interestRecalculationEnabled)).append("\n");
     sb.append("    compoundingToBePostedAsTransaction: ").append(toIndentedString(compoundingToBePostedAsTransaction)).append("\n");
-    sb.append("    getloanProductConfigurableAttributes: ").append(toIndentedString(getloanProductConfigurableAttributes)).append("\n");
-    sb.append("    minimumGapBetweenInstallments: ").append(toIndentedString(minimumGapBetweenInstallments)).append("\n");
-    sb.append("    maximumGapBetweenInstallments: ").append(toIndentedString(maximumGapBetweenInstallments)).append("\n");
     sb.append("}");
     return sb.toString();
   }

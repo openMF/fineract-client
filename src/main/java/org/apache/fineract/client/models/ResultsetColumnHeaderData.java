@@ -83,6 +83,10 @@ public class ResultsetColumnHeaderData {
   @SerializedName(SERIALIZED_NAME_DATE_TIME_DISPLAY_TYPE)
   private Boolean dateTimeDisplayType;
 
+  public static final String SERIALIZED_NAME_INTEGER_DISPLAY_TYPE = "integerDisplayType";
+  @SerializedName(SERIALIZED_NAME_INTEGER_DISPLAY_TYPE)
+  private Boolean integerDisplayType;
+
   public static final String SERIALIZED_NAME_STRING = "string";
   @SerializedName(SERIALIZED_NAME_STRING)
   private Boolean string;
@@ -102,10 +106,6 @@ public class ResultsetColumnHeaderData {
   public static final String SERIALIZED_NAME_CODE_LOOKUP_DISPLAY_TYPE = "codeLookupDisplayType";
   @SerializedName(SERIALIZED_NAME_CODE_LOOKUP_DISPLAY_TYPE)
   private Boolean codeLookupDisplayType;
-
-  public static final String SERIALIZED_NAME_INTEGER_DISPLAY_TYPE = "integerDisplayType";
-  @SerializedName(SERIALIZED_NAME_INTEGER_DISPLAY_TYPE)
-  private Boolean integerDisplayType;
 
 
   public ResultsetColumnHeaderData columnName(String columnName) {
@@ -315,6 +315,29 @@ public class ResultsetColumnHeaderData {
   }
 
 
+  public ResultsetColumnHeaderData integerDisplayType(Boolean integerDisplayType) {
+    
+    this.integerDisplayType = integerDisplayType;
+    return this;
+  }
+
+   /**
+   * Get integerDisplayType
+   * @return integerDisplayType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIntegerDisplayType() {
+    return integerDisplayType;
+  }
+
+
+  public void setIntegerDisplayType(Boolean integerDisplayType) {
+    this.integerDisplayType = integerDisplayType;
+  }
+
+
   public ResultsetColumnHeaderData string(Boolean string) {
     
     this.string = string;
@@ -430,29 +453,6 @@ public class ResultsetColumnHeaderData {
   }
 
 
-  public ResultsetColumnHeaderData integerDisplayType(Boolean integerDisplayType) {
-    
-    this.integerDisplayType = integerDisplayType;
-    return this;
-  }
-
-   /**
-   * Get integerDisplayType
-   * @return integerDisplayType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIntegerDisplayType() {
-    return integerDisplayType;
-  }
-
-
-  public void setIntegerDisplayType(Boolean integerDisplayType) {
-    this.integerDisplayType = integerDisplayType;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -471,17 +471,17 @@ public class ResultsetColumnHeaderData {
         Objects.equals(this.optional, resultsetColumnHeaderData.optional) &&
         Objects.equals(this.dateDisplayType, resultsetColumnHeaderData.dateDisplayType) &&
         Objects.equals(this.dateTimeDisplayType, resultsetColumnHeaderData.dateTimeDisplayType) &&
+        Objects.equals(this.integerDisplayType, resultsetColumnHeaderData.integerDisplayType) &&
         Objects.equals(this.string, resultsetColumnHeaderData.string) &&
         Objects.equals(this.decimalDisplayType, resultsetColumnHeaderData.decimalDisplayType) &&
         Objects.equals(this.booleanDisplayType, resultsetColumnHeaderData.booleanDisplayType) &&
         Objects.equals(this.codeValueDisplayType, resultsetColumnHeaderData.codeValueDisplayType) &&
-        Objects.equals(this.codeLookupDisplayType, resultsetColumnHeaderData.codeLookupDisplayType) &&
-        Objects.equals(this.integerDisplayType, resultsetColumnHeaderData.integerDisplayType);
+        Objects.equals(this.codeLookupDisplayType, resultsetColumnHeaderData.codeLookupDisplayType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, columnType, columnLength, columnDisplayType, columnCode, mandatory, optional, dateDisplayType, dateTimeDisplayType, string, decimalDisplayType, booleanDisplayType, codeValueDisplayType, codeLookupDisplayType, integerDisplayType);
+    return Objects.hash(columnName, columnType, columnLength, columnDisplayType, columnCode, mandatory, optional, dateDisplayType, dateTimeDisplayType, integerDisplayType, string, decimalDisplayType, booleanDisplayType, codeValueDisplayType, codeLookupDisplayType);
   }
 
 
@@ -498,12 +498,12 @@ public class ResultsetColumnHeaderData {
     sb.append("    optional: ").append(toIndentedString(optional)).append("\n");
     sb.append("    dateDisplayType: ").append(toIndentedString(dateDisplayType)).append("\n");
     sb.append("    dateTimeDisplayType: ").append(toIndentedString(dateTimeDisplayType)).append("\n");
+    sb.append("    integerDisplayType: ").append(toIndentedString(integerDisplayType)).append("\n");
     sb.append("    string: ").append(toIndentedString(string)).append("\n");
     sb.append("    decimalDisplayType: ").append(toIndentedString(decimalDisplayType)).append("\n");
     sb.append("    booleanDisplayType: ").append(toIndentedString(booleanDisplayType)).append("\n");
     sb.append("    codeValueDisplayType: ").append(toIndentedString(codeValueDisplayType)).append("\n");
     sb.append("    codeLookupDisplayType: ").append(toIndentedString(codeLookupDisplayType)).append("\n");
-    sb.append("    integerDisplayType: ").append(toIndentedString(integerDisplayType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

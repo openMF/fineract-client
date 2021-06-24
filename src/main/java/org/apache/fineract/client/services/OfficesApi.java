@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -60,10 +59,10 @@ public interface OfficesApi {
    * 
    * 
    * @param dateFormat  (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("offices/downloadtemplate")
-  Completable getOfficeTemplate(
+  Observable<Void> getOfficeTemplate(
     @retrofit2.http.Query("dateFormat") String dateFormat
   );
 

@@ -51,21 +51,17 @@ public class LoanTransactionProcessingStrategy {
   @SerializedName(SERIALIZED_NAME_ID)
   private Long id;
 
-  public static final String SERIALIZED_NAME_STANDARD_STRATEGY = "standardStrategy";
-  @SerializedName(SERIALIZED_NAME_STANDARD_STRATEGY)
-  private Boolean standardStrategy;
-
-  public static final String SERIALIZED_NAME_HEAVENSFAMILY_STRATEGY = "heavensfamilyStrategy";
-  @SerializedName(SERIALIZED_NAME_HEAVENSFAMILY_STRATEGY)
-  private Boolean heavensfamilyStrategy;
+  public static final String SERIALIZED_NAME_CREOCORE_STRATEGY = "creocoreStrategy";
+  @SerializedName(SERIALIZED_NAME_CREOCORE_STRATEGY)
+  private Boolean creocoreStrategy;
 
   public static final String SERIALIZED_NAME_EARLY_PAYMENT_STRATEGY = "earlyPaymentStrategy";
   @SerializedName(SERIALIZED_NAME_EARLY_PAYMENT_STRATEGY)
   private Boolean earlyPaymentStrategy;
 
-  public static final String SERIALIZED_NAME_CREOCORE_STRATEGY = "creocoreStrategy";
-  @SerializedName(SERIALIZED_NAME_CREOCORE_STRATEGY)
-  private Boolean creocoreStrategy;
+  public static final String SERIALIZED_NAME_HEAVENSFAMILY_STRATEGY = "heavensfamilyStrategy";
+  @SerializedName(SERIALIZED_NAME_HEAVENSFAMILY_STRATEGY)
+  private Boolean heavensfamilyStrategy;
 
   public static final String SERIALIZED_NAME_INDIAN_R_B_I_STRATEGY = "indianRBIStrategy";
   @SerializedName(SERIALIZED_NAME_INDIAN_R_B_I_STRATEGY)
@@ -78,6 +74,10 @@ public class LoanTransactionProcessingStrategy {
   public static final String SERIALIZED_NAME_INTEREST_PRINCIPAL_PENALTIES_FEES_ORDER_STRATEGY = "interestPrincipalPenaltiesFeesOrderStrategy";
   @SerializedName(SERIALIZED_NAME_INTEREST_PRINCIPAL_PENALTIES_FEES_ORDER_STRATEGY)
   private Boolean interestPrincipalPenaltiesFeesOrderStrategy;
+
+  public static final String SERIALIZED_NAME_STANDARD_STRATEGY = "standardStrategy";
+  @SerializedName(SERIALIZED_NAME_STANDARD_STRATEGY)
+  private Boolean standardStrategy;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -107,49 +107,26 @@ public class LoanTransactionProcessingStrategy {
   }
 
 
-  public LoanTransactionProcessingStrategy standardStrategy(Boolean standardStrategy) {
+  public LoanTransactionProcessingStrategy creocoreStrategy(Boolean creocoreStrategy) {
     
-    this.standardStrategy = standardStrategy;
+    this.creocoreStrategy = creocoreStrategy;
     return this;
   }
 
    /**
-   * Get standardStrategy
-   * @return standardStrategy
+   * Get creocoreStrategy
+   * @return creocoreStrategy
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getStandardStrategy() {
-    return standardStrategy;
+  public Boolean getCreocoreStrategy() {
+    return creocoreStrategy;
   }
 
 
-  public void setStandardStrategy(Boolean standardStrategy) {
-    this.standardStrategy = standardStrategy;
-  }
-
-
-  public LoanTransactionProcessingStrategy heavensfamilyStrategy(Boolean heavensfamilyStrategy) {
-    
-    this.heavensfamilyStrategy = heavensfamilyStrategy;
-    return this;
-  }
-
-   /**
-   * Get heavensfamilyStrategy
-   * @return heavensfamilyStrategy
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getHeavensfamilyStrategy() {
-    return heavensfamilyStrategy;
-  }
-
-
-  public void setHeavensfamilyStrategy(Boolean heavensfamilyStrategy) {
-    this.heavensfamilyStrategy = heavensfamilyStrategy;
+  public void setCreocoreStrategy(Boolean creocoreStrategy) {
+    this.creocoreStrategy = creocoreStrategy;
   }
 
 
@@ -176,26 +153,26 @@ public class LoanTransactionProcessingStrategy {
   }
 
 
-  public LoanTransactionProcessingStrategy creocoreStrategy(Boolean creocoreStrategy) {
+  public LoanTransactionProcessingStrategy heavensfamilyStrategy(Boolean heavensfamilyStrategy) {
     
-    this.creocoreStrategy = creocoreStrategy;
+    this.heavensfamilyStrategy = heavensfamilyStrategy;
     return this;
   }
 
    /**
-   * Get creocoreStrategy
-   * @return creocoreStrategy
+   * Get heavensfamilyStrategy
+   * @return heavensfamilyStrategy
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getCreocoreStrategy() {
-    return creocoreStrategy;
+  public Boolean getHeavensfamilyStrategy() {
+    return heavensfamilyStrategy;
   }
 
 
-  public void setCreocoreStrategy(Boolean creocoreStrategy) {
-    this.creocoreStrategy = creocoreStrategy;
+  public void setHeavensfamilyStrategy(Boolean heavensfamilyStrategy) {
+    this.heavensfamilyStrategy = heavensfamilyStrategy;
   }
 
 
@@ -268,6 +245,29 @@ public class LoanTransactionProcessingStrategy {
   }
 
 
+  public LoanTransactionProcessingStrategy standardStrategy(Boolean standardStrategy) {
+    
+    this.standardStrategy = standardStrategy;
+    return this;
+  }
+
+   /**
+   * Get standardStrategy
+   * @return standardStrategy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getStandardStrategy() {
+    return standardStrategy;
+  }
+
+
+  public void setStandardStrategy(Boolean standardStrategy) {
+    this.standardStrategy = standardStrategy;
+  }
+
+
   public LoanTransactionProcessingStrategy _new(Boolean _new) {
     
     this._new = _new;
@@ -301,19 +301,19 @@ public class LoanTransactionProcessingStrategy {
     }
     LoanTransactionProcessingStrategy loanTransactionProcessingStrategy = (LoanTransactionProcessingStrategy) o;
     return Objects.equals(this.id, loanTransactionProcessingStrategy.id) &&
-        Objects.equals(this.standardStrategy, loanTransactionProcessingStrategy.standardStrategy) &&
-        Objects.equals(this.heavensfamilyStrategy, loanTransactionProcessingStrategy.heavensfamilyStrategy) &&
-        Objects.equals(this.earlyPaymentStrategy, loanTransactionProcessingStrategy.earlyPaymentStrategy) &&
         Objects.equals(this.creocoreStrategy, loanTransactionProcessingStrategy.creocoreStrategy) &&
+        Objects.equals(this.earlyPaymentStrategy, loanTransactionProcessingStrategy.earlyPaymentStrategy) &&
+        Objects.equals(this.heavensfamilyStrategy, loanTransactionProcessingStrategy.heavensfamilyStrategy) &&
         Objects.equals(this.indianRBIStrategy, loanTransactionProcessingStrategy.indianRBIStrategy) &&
         Objects.equals(this.principalInterestPenaltiesFeesOrderStrategy, loanTransactionProcessingStrategy.principalInterestPenaltiesFeesOrderStrategy) &&
         Objects.equals(this.interestPrincipalPenaltiesFeesOrderStrategy, loanTransactionProcessingStrategy.interestPrincipalPenaltiesFeesOrderStrategy) &&
+        Objects.equals(this.standardStrategy, loanTransactionProcessingStrategy.standardStrategy) &&
         Objects.equals(this._new, loanTransactionProcessingStrategy._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, standardStrategy, heavensfamilyStrategy, earlyPaymentStrategy, creocoreStrategy, indianRBIStrategy, principalInterestPenaltiesFeesOrderStrategy, interestPrincipalPenaltiesFeesOrderStrategy, _new);
+    return Objects.hash(id, creocoreStrategy, earlyPaymentStrategy, heavensfamilyStrategy, indianRBIStrategy, principalInterestPenaltiesFeesOrderStrategy, interestPrincipalPenaltiesFeesOrderStrategy, standardStrategy, _new);
   }
 
 
@@ -322,13 +322,13 @@ public class LoanTransactionProcessingStrategy {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoanTransactionProcessingStrategy {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    standardStrategy: ").append(toIndentedString(standardStrategy)).append("\n");
-    sb.append("    heavensfamilyStrategy: ").append(toIndentedString(heavensfamilyStrategy)).append("\n");
-    sb.append("    earlyPaymentStrategy: ").append(toIndentedString(earlyPaymentStrategy)).append("\n");
     sb.append("    creocoreStrategy: ").append(toIndentedString(creocoreStrategy)).append("\n");
+    sb.append("    earlyPaymentStrategy: ").append(toIndentedString(earlyPaymentStrategy)).append("\n");
+    sb.append("    heavensfamilyStrategy: ").append(toIndentedString(heavensfamilyStrategy)).append("\n");
     sb.append("    indianRBIStrategy: ").append(toIndentedString(indianRBIStrategy)).append("\n");
     sb.append("    principalInterestPenaltiesFeesOrderStrategy: ").append(toIndentedString(principalInterestPenaltiesFeesOrderStrategy)).append("\n");
     sb.append("    interestPrincipalPenaltiesFeesOrderStrategy: ").append(toIndentedString(interestPrincipalPenaltiesFeesOrderStrategy)).append("\n");
+    sb.append("    standardStrategy: ").append(toIndentedString(standardStrategy)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -76,10 +75,10 @@ public interface DocumentsApi {
    * @param entityType entityType (required)
    * @param entityId entityId (required)
    * @param documentId documentId (required)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @GET("{entityType}/{entityId}/documents/{documentId}/attachment")
-  Completable downloadFile(
+  Observable<Void> downloadFile(
     @retrofit2.http.Path("entityType") String entityType, @retrofit2.http.Path("entityId") Long entityId, @retrofit2.http.Path("documentId") Long documentId
   );
 

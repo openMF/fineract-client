@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
 **zero** | **Boolean** |  |  [optional]
 **currencyInMultiplesOf** | **Integer** |  |  [optional]
-**greaterThanZero** | **Boolean** |  |  [optional]
-**lessThanZero** | **Boolean** |  |  [optional]
 **amountDefaultedToNullIfZero** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**lessThanZero** | **Boolean** |  |  [optional]
+**greaterThanZero** | **Boolean** |  |  [optional]
 
 
 

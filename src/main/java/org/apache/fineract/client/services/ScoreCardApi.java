@@ -20,8 +20,7 @@ package org.apache.fineract.client.services;
 
 import org.apache.fineract.client.CollectionFormats.*;
 
-import io.reactivex.Observable;
-import io.reactivex.Completable;
+import rx.Observable;
 import retrofit2.http.*;
 
 import okhttp3.RequestBody;
@@ -42,13 +41,13 @@ public interface ScoreCardApi {
    * Add a new entry to a survey.  Mandatory Fields clientId, createdOn, questionId, responseId, staffId
    * @param surveyId Enter surveyId (required)
    * @param scorecardData scorecardData (optional)
-   * @return Completable
+   * @return Observable&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("surveys/scorecards/{surveyId}")
-  Completable createScorecard1(
+  Observable<Void> createScorecard1(
     @retrofit2.http.Path("surveyId") Long surveyId, @retrofit2.http.Body ScorecardData scorecardData
   );
 

@@ -127,6 +127,10 @@ public class AppUser {
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   private String displayName;
 
+  public static final String SERIALIZED_NAME_AUTHORITIES = "authorities";
+  @SerializedName(SERIALIZED_NAME_AUTHORITIES)
+  private List<GrantedAuthority> authorities = null;
+
   public static final String SERIALIZED_NAME_SELF_SERVICE_USER = "selfServiceUser";
   @SerializedName(SERIALIZED_NAME_SELF_SERVICE_USER)
   private Boolean selfServiceUser;
@@ -135,14 +139,6 @@ public class AppUser {
   @SerializedName(SERIALIZED_NAME_SYSTEM_USER)
   private Boolean systemUser;
 
-  public static final String SERIALIZED_NAME_AUTHORITIES = "authorities";
-  @SerializedName(SERIALIZED_NAME_AUTHORITIES)
-  private List<GrantedAuthority> authorities = null;
-
-  public static final String SERIALIZED_NAME_STAFF_ID = "staffId";
-  @SerializedName(SERIALIZED_NAME_STAFF_ID)
-  private Long staffId;
-
   public static final String SERIALIZED_NAME_STAFF_DISPLAY_NAME = "staffDisplayName";
   @SerializedName(SERIALIZED_NAME_STAFF_DISPLAY_NAME)
   private String staffDisplayName;
@@ -150,6 +146,10 @@ public class AppUser {
   public static final String SERIALIZED_NAME_NOT_ENABLED = "notEnabled";
   @SerializedName(SERIALIZED_NAME_NOT_ENABLED)
   private Boolean notEnabled;
+
+  public static final String SERIALIZED_NAME_STAFF_ID = "staffId";
+  @SerializedName(SERIALIZED_NAME_STAFF_ID)
+  private Long staffId;
 
   public static final String SERIALIZED_NAME_NEW = "new";
   @SerializedName(SERIALIZED_NAME_NEW)
@@ -586,6 +586,37 @@ public class AppUser {
   }
 
 
+  public AppUser authorities(List<GrantedAuthority> authorities) {
+    
+    this.authorities = authorities;
+    return this;
+  }
+
+  public AppUser addAuthoritiesItem(GrantedAuthority authoritiesItem) {
+    if (this.authorities == null) {
+      this.authorities = new ArrayList<>();
+    }
+    this.authorities.add(authoritiesItem);
+    return this;
+  }
+
+   /**
+   * Get authorities
+   * @return authorities
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<GrantedAuthority> getAuthorities() {
+    return authorities;
+  }
+
+
+  public void setAuthorities(List<GrantedAuthority> authorities) {
+    this.authorities = authorities;
+  }
+
+
   public AppUser selfServiceUser(Boolean selfServiceUser) {
     
     this.selfServiceUser = selfServiceUser;
@@ -632,60 +663,6 @@ public class AppUser {
   }
 
 
-  public AppUser authorities(List<GrantedAuthority> authorities) {
-    
-    this.authorities = authorities;
-    return this;
-  }
-
-  public AppUser addAuthoritiesItem(GrantedAuthority authoritiesItem) {
-    if (this.authorities == null) {
-      this.authorities = new ArrayList<>();
-    }
-    this.authorities.add(authoritiesItem);
-    return this;
-  }
-
-   /**
-   * Get authorities
-   * @return authorities
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<GrantedAuthority> getAuthorities() {
-    return authorities;
-  }
-
-
-  public void setAuthorities(List<GrantedAuthority> authorities) {
-    this.authorities = authorities;
-  }
-
-
-  public AppUser staffId(Long staffId) {
-    
-    this.staffId = staffId;
-    return this;
-  }
-
-   /**
-   * Get staffId
-   * @return staffId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Long getStaffId() {
-    return staffId;
-  }
-
-
-  public void setStaffId(Long staffId) {
-    this.staffId = staffId;
-  }
-
-
   public AppUser staffDisplayName(String staffDisplayName) {
     
     this.staffDisplayName = staffDisplayName;
@@ -729,6 +706,29 @@ public class AppUser {
 
   public void setNotEnabled(Boolean notEnabled) {
     this.notEnabled = notEnabled;
+  }
+
+
+  public AppUser staffId(Long staffId) {
+    
+    this.staffId = staffId;
+    return this;
+  }
+
+   /**
+   * Get staffId
+   * @return staffId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Long getStaffId() {
+    return staffId;
+  }
+
+
+  public void setStaffId(Long staffId) {
+    this.staffId = staffId;
   }
 
 
@@ -782,18 +782,18 @@ public class AppUser {
         Objects.equals(this.passwordNeverExpires, appUser.passwordNeverExpires) &&
         Objects.equals(this.appUserClientMappings, appUser.appUserClientMappings) &&
         Objects.equals(this.displayName, appUser.displayName) &&
+        Objects.equals(this.authorities, appUser.authorities) &&
         Objects.equals(this.selfServiceUser, appUser.selfServiceUser) &&
         Objects.equals(this.systemUser, appUser.systemUser) &&
-        Objects.equals(this.authorities, appUser.authorities) &&
-        Objects.equals(this.staffId, appUser.staffId) &&
         Objects.equals(this.staffDisplayName, appUser.staffDisplayName) &&
         Objects.equals(this.notEnabled, appUser.notEnabled) &&
+        Objects.equals(this.staffId, appUser.staffId) &&
         Objects.equals(this._new, appUser._new);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, username, firstname, lastname, password, accountNonExpired, accountNonLocked, credentialsNonExpired, enabled, deleted, office, staff, roles, lastTimePasswordUpdated, passwordNeverExpires, appUserClientMappings, displayName, selfServiceUser, systemUser, authorities, staffId, staffDisplayName, notEnabled, _new);
+    return Objects.hash(id, email, username, firstname, lastname, password, accountNonExpired, accountNonLocked, credentialsNonExpired, enabled, deleted, office, staff, roles, lastTimePasswordUpdated, passwordNeverExpires, appUserClientMappings, displayName, authorities, selfServiceUser, systemUser, staffDisplayName, notEnabled, staffId, _new);
   }
 
 
@@ -819,12 +819,12 @@ public class AppUser {
     sb.append("    passwordNeverExpires: ").append(toIndentedString(passwordNeverExpires)).append("\n");
     sb.append("    appUserClientMappings: ").append(toIndentedString(appUserClientMappings)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    authorities: ").append(toIndentedString(authorities)).append("\n");
     sb.append("    selfServiceUser: ").append(toIndentedString(selfServiceUser)).append("\n");
     sb.append("    systemUser: ").append(toIndentedString(systemUser)).append("\n");
-    sb.append("    authorities: ").append(toIndentedString(authorities)).append("\n");
-    sb.append("    staffId: ").append(toIndentedString(staffId)).append("\n");
     sb.append("    staffDisplayName: ").append(toIndentedString(staffDisplayName)).append("\n");
     sb.append("    notEnabled: ").append(toIndentedString(notEnabled)).append("\n");
+    sb.append("    staffId: ").append(toIndentedString(staffId)).append("\n");
     sb.append("    _new: ").append(toIndentedString(_new)).append("\n");
     sb.append("}");
     return sb.toString();
