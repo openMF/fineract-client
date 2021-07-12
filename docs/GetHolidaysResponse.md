@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **name** | **String** |  |  [optional]
-**fromDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**toDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**repaymentsRescheduledTo** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**fromDate** | [**Date**](Date.md) |  |  [optional]
+**toDate** | [**Date**](Date.md) |  |  [optional]
+**repaymentsRescheduledTo** | [**Date**](Date.md) |  |  [optional]
 **officeId** | **Long** |  |  [optional]
 **status** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
 

@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **note** | **String** |  |  [optional]
 **createdById** | **Integer** |  |  [optional]
 **createdByUsername** | **String** |  |  [optional]
-**createdOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**createdOn** | [**Date**](Date.md) |  |  [optional]
 **updatedById** | **Integer** |  |  [optional]
 **updatedByUsername** | **String** |  |  [optional]
-**updatedOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**updatedOn** | [**Date**](Date.md) |  |  [optional]
 
 
 

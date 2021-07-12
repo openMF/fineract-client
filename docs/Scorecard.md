@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **response** | [**Response**](Response.md) |  |  [optional]
 **appUser** | [**AppUser**](AppUser.md) |  |  [optional]
 **client** | [**Client**](Client.md) |  |  [optional]
-**createdOn** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**createdOn** | [**Date**](Date.md) |  |  [optional]
 **value** | **Integer** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 

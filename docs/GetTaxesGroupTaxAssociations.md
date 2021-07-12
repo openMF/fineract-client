@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
 **taxComponent** | [**GetTaxesGroupTaxComponent**](GetTaxesGroupTaxComponent.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

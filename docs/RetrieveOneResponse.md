@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **isLoanOfficer** | **Boolean** |  |  [optional]
 **externalId** | **String** |  |  [optional]
 **isActive** | **Boolean** |  |  [optional]
-**joiningDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**joiningDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

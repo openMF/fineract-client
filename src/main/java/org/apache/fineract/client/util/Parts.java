@@ -42,12 +42,12 @@ public final class Parts {
     private Parts() {}
 
     public static Part fromFile(File file) {
-        RequestBody rb = RequestBody.create(file, mediaType(file.getName()));
+        RequestBody rb = RequestBody.create(mediaType(file.getName()), file);
         return Part.createFormData("file", file.getName(), rb);
     }
 
     public static Part fromBytes(String fileName, byte[] bytes) {
-        RequestBody rb = RequestBody.create(bytes, mediaType(fileName));
+        RequestBody rb = RequestBody.create(mediaType(fileName), bytes);
         return Part.createFormData("file", fileName, rb);
     }
 
@@ -66,30 +66,30 @@ public final class Parts {
         switch (ext) {
             case "jpg":
             case "jpeg":
-                return MediaType.get("image/jpeg");
+                return MediaType.parse("image/jpeg");
             case "png":
-                return MediaType.get("image/png");
+                return MediaType.parse("image/png");
             case "tif":
             case "tiff":
-                return MediaType.get("image/tiff");
+                return MediaType.parse("image/tiff");
             case "gif":
-                return MediaType.get("image/gif");
+                return MediaType.parse("image/gif");
             case "pdf":
-                return MediaType.get("application/pdf");
+                return MediaType.parse("application/pdf");
             case "docx":
-                return MediaType.get("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+                return MediaType.parse("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
             case "doc":
-                return MediaType.get("application/msword");
+                return MediaType.parse("application/msword");
             case "xlsx":
-                return MediaType.get("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                return MediaType.parse("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
             case "xls":
-                return MediaType.get("application/vnd.ms-excel");
+                return MediaType.parse("application/vnd.ms-excel");
             case "odt":
-                return MediaType.get("application/vnd.oasis.opendocument.text");
+                return MediaType.parse("application/vnd.oasis.opendocument.text");
             case "ods":
-                return MediaType.get("application/vnd.oasis.opendocument.spreadsheet");
+                return MediaType.parse("application/vnd.oasis.opendocument.spreadsheet");
             case "txt":
-                return MediaType.get("text/plain");
+                return MediaType.parse("text/plain");
             default:
                 return null;
         }

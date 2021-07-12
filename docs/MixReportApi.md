@@ -42,8 +42,8 @@ public class Example {
         //tenantid.setApiKeyPrefix("Token");
 
         MixReportApi apiInstance = new MixReportApi(defaultClient);
-        OffsetDateTime startDate = new OffsetDateTime(); // OffsetDateTime | 
-        OffsetDateTime endDate = new OffsetDateTime(); // OffsetDateTime | 
+        Date startDate = new Date(); // Date | 
+        Date endDate = new Date(); // Date | 
         String currency = "currency_example"; // String | 
         try {
             String result = apiInstance.retrieveXBRLReport(startDate, endDate, currency);
@@ -64,8 +64,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startDate** | **OffsetDateTime**|  | [optional]
- **endDate** | **OffsetDateTime**|  | [optional]
+ **startDate** | **Date**|  | [optional]
+ **endDate** | **Date**|  | [optional]
  **currency** | **String**|  | [optional]
 
 ### Return type

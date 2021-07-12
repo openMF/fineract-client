@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **chargeId** | **Integer** |  |  [optional]
 **name** | **String** |  |  [optional]
 **chargeTimeType** | [**GetSelfClientsChargeTimeType**](GetSelfClientsChargeTimeType.md) |  |  [optional]
-**dueDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**dueDate** | [**Date**](Date.md) |  |  [optional]
 **chargeCalculationType** | [**GetSelfClientsChargeCalculationType**](GetSelfClientsChargeCalculationType.md) |  |  [optional]
 **currency** | [**GetSelfClientsSavingsAccountsCurrency**](GetSelfClientsSavingsAccountsCurrency.md) |  |  [optional]
 **amount** | **Float** |  |  [optional]

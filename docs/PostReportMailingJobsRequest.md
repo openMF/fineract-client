@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **dateFormat** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**startDateTime** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**startDateTime** | [**Date**](Date.md) |  |  [optional]
 **stretchyReportId** | **Long** |  |  [optional]
 **emailRecipients** | **String** |  |  [optional]
 **emailSubject** | **String** |  |  [optional]

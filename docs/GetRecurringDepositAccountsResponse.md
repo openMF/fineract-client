@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **summary** | [**GetRecurringDepositAccountsSummary**](GetRecurringDepositAccountsSummary.md) |  |  [optional]
 **depositAmount** | **Float** |  |  [optional]
 **maturityAmount** | **Float** |  |  [optional]
-**maturityDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**maturityDate** | [**Date**](Date.md) |  |  [optional]
 **recurringDepositAmount** | **Integer** |  |  [optional]
 **recurringDepositFrequency** | **Integer** |  |  [optional]
 **recurringDepositFrequencyType** | [**GetRecurringDepositAccountsRecurringDepositFrequencyType**](GetRecurringDepositAccountsRecurringDepositFrequencyType.md) |  |  [optional]

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **transactionType** | [**GetRecurringTransactionsTransactionType**](GetRecurringTransactionsTransactionType.md) |  |  [optional]
 **accountId** | **Integer** |  |  [optional]
 **accountNo** | **String** |  |  [optional]
-**date** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**date** | [**Date**](Date.md) |  |  [optional]
 **currency** | [**GetRecurringTransactionsCurrency**](GetRecurringTransactionsCurrency.md) |  |  [optional]
 **paymentDetailData** | [**GetRecurringPaymentDetailData**](GetRecurringPaymentDetailData.md) |  |  [optional]
 **amount** | **Float** |  |  [optional]

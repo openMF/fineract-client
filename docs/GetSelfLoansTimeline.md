@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expectedDisbursementDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**expectedDisbursementDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

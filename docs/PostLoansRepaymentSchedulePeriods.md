@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **period** | **Integer** |  |  [optional]
-**dueDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**dueDate** | [**Date**](Date.md) |  |  [optional]
 **principalDisbursed** | **Long** |  |  [optional]
 **principalLoanBalanceOutstanding** | **Long** |  |  [optional]
 **feeChargesDue** | **Long** |  |  [optional]

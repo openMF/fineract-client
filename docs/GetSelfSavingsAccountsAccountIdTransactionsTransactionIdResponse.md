@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **transactionType** | [**GetSelfSavingsTransactionType**](GetSelfSavingsTransactionType.md) |  |  [optional]
 **accountId** | **Integer** |  |  [optional]
 **accountNo** | **Long** |  |  [optional]
-**date** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**date** | [**Date**](Date.md) |  |  [optional]
 **currency** | [**GetSelfSavingsTransactionCurrency**](GetSelfSavingsTransactionCurrency.md) |  |  [optional]
 **paymentDetailData** | [**GetSelfSavingsPaymentDetailData**](GetSelfSavingsPaymentDetailData.md) |  |  [optional]
 **amount** | **Integer** |  |  [optional]
