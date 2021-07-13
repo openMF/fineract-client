@@ -20,7 +20,7 @@ To use library in your gradle project follow the steps below:
 2. Add the dependency
    ```groovy
    dependencies {
-       implementation 'com.github.openMF:fineract-client:2.0.0-alpha'
+       implementation 'com.github.openMF:fineract-client:2.0.0'
    }
    ```
 
@@ -42,7 +42,7 @@ To use the library in your Maven project, follow the steps below:
     <dependency>
         <groupId>com.github.openMF</groupId>
         <artifactId>fineract-client</artifactId>
-        <version>2.0.0-alpha</version>
+        <version>2.0.0</version>
     </dependency>
     ```
 
@@ -62,7 +62,8 @@ public class Main {
               .basicAuth("mifos", "password")
               .tenant("default")
               .build();
-      client.authentication.authenticate(false, "string")
+      String body = "{\"username\": \"mifos\", \"password\": \"password\"}";
+      client.authentication.authenticate(false, body)
               .observeOn(Schedulers.newThread()) // use scheduler based on different scenarios, in case of android use 'AndroidSchedulers.mainThread()'
               .subscribeOn(Schedulers.io())
               .subscribe(new Subscriber<PostAuthenticationResponse> (){
