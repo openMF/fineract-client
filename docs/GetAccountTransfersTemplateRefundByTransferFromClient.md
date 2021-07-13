@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **accountNo** | **Long** |  |  [optional]
 **status** | [**GetAccountTransfersStatus**](GetAccountTransfersStatus.md) |  |  [optional]
 **active** | **Boolean** |  |  [optional]
-**activationDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**activationDate** | [**Date**](Date.md) |  |  [optional]
 **firstname** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **displayName** | **String** |  |  [optional]

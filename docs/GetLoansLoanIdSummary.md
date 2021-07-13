@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **totalWrittenOff** | **Long** |  |  [optional]
 **totalOutstanding** | **Long** |  |  [optional]
 **totalOverdue** | **Double** |  |  [optional]
-**overdueSinceDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**overdueSinceDate** | [**Date**](Date.md) |  |  [optional]
 **linkedAccount** | [**GetLoansLoanIdLinkedAccount**](GetLoansLoanIdLinkedAccount.md) |  |  [optional]
 **disbursementDetails** | [**List&lt;GetLoansLoanIdDisbursementDetails&gt;**](GetLoansLoanIdDisbursementDetails.md) |  |  [optional]
 **fixedEmiAmount** | **Float** |  |  [optional]

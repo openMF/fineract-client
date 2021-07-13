@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**createdDate** | [**Date**](Date.md) |  |  [optional]
 **lastModifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**lastModifiedDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**lastModifiedDate** | [**Date**](Date.md) |  |  [optional]
 **percentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **debitAccountType** | **Integer** |  |  [optional]
 **debitAcount** | [**GLAccount**](GLAccount.md) |  |  [optional]

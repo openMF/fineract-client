@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **displayName** | **String** |  |  [optional]
 **officeId** | **Long** |  |  [optional]
 **officeName** | **String** |  |  [optional]
-**joiningDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**joiningDate** | [**Date**](Date.md) |  |  [optional]
 **rowIndex** | **Integer** |  |  [optional]
 
 

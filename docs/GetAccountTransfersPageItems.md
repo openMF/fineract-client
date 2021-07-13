@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **reversed** | **Boolean** |  |  [optional]
 **currency** | [**GetAccountTransfersPageItemsCurrency**](GetAccountTransfersPageItemsCurrency.md) |  |  [optional]
 **transferAmount** | **Float** |  |  [optional]
-**transferDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**transferDate** | [**Date**](Date.md) |  |  [optional]
 **transferDescription** | **String** |  |  [optional]
 **fromOffice** | [**GetAccountTransfersPageItemsFromOffice**](GetAccountTransfersPageItemsFromOffice.md) |  |  [optional]
 **fromClient** | [**GetAccountTransfersFromClientOptions**](GetAccountTransfersFromClientOptions.md) |  |  [optional]

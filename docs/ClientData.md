@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **externalId** | **String** |  |  [optional]
-**activationDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**activationDate** | [**Date**](Date.md) |  |  [optional]
 **firstname** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **officeName** | **String** |  |  [optional]

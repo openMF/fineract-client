@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **maxDepositTermType** | [**GetRecurringDepositAccountsMaxDepositTermType**](GetRecurringDepositAccountsMaxDepositTermType.md) |  |  [optional]
 **recurringDepositAmount** | **Integer** |  |  [optional]
 **recurringDepositFrequency** | **Integer** |  |  [optional]
-**expectedFirstDepositOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**expectedFirstDepositOnDate** | [**Date**](Date.md) |  |  [optional]
 **recurringDepositFrequencyType** | [**GetRecurringDepositAccountsRecurringDepositFrequencyType**](GetRecurringDepositAccountsRecurringDepositFrequencyType.md) |  |  [optional]
 **depositPeriod** | **Integer** |  |  [optional]
 **depositPeriodFrequency** | [**GetRecurringDepositAccountsDepositPeriodFrequency**](GetRecurringDepositAccountsDepositPeriodFrequency.md) |  |  [optional]

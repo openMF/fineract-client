@@ -8,7 +8,7 @@ GetAccountTransfersTemplateResponse
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transferAmount** | **Long** |  |  [optional]
-**transferDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**transferDate** | [**Date**](Date.md) |  |  [optional]
 **fromOffice** | [**GetAccountTransfersFromOffice**](GetAccountTransfersFromOffice.md) |  |  [optional]
 **fromAccountType** | [**GetAccountTransfersFromAccountType**](GetAccountTransfersFromAccountType.md) |  |  [optional]
 **fromOfficeOptions** | [**List&lt;GetAccountTransfersFromOfficeOptions&gt;**](GetAccountTransfersFromOfficeOptions.md) |  |  [optional]

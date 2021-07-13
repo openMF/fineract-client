@@ -18,9 +18,7 @@
  */
 package org.apache.fineract.client.util;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapter;
+import com.google.gson.*;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -31,9 +29,7 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -49,132 +45,23 @@ class JSON {
 
     private final Gson gson;
     private final DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
-    private final SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
-    private final OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
-    private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
 
     JSON() {
-        gson = new GsonFireBuilder().createGsonBuilder().registerTypeAdapter(Date.class, dateTypeAdapter)
-                .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
-                .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
-                .registerTypeAdapter(LocalDate.class, localDateTypeAdapter).create();
+        gson = new GsonFireBuilder().createGsonBuilder().registerTypeAdapter(Date.class, new JsonDateSerializer())
+                .create();
     }
 
     Gson getGson() {
         return gson;
     }
 
-    /**
-     * GSON TypeAdapter for JSR-310 OffsetDateTime type.
-     */
-    public static class OffsetDateTimeTypeAdapter extends TypeAdapter<OffsetDateTime> {
-
-        private final DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
+    public class JsonDateSerializer implements JsonSerializer<Date> {
 
         @Override
-        public void write(JsonWriter out, OffsetDateTime date) throws IOException {
-            if (date == null) {
-                out.nullValue();
-            } else {
-                out.value(formatter.format(date));
-            }
-        }
-
-        @Override
-        public OffsetDateTime read(JsonReader in) throws IOException {
-            switch (in.peek()) {
-                case NULL:
-                    in.nextNull();
-                    return null;
-                default:
-                    String date = in.nextString();
-                    if (date.endsWith("+0000")) {
-                        date = date.substring(0, date.length() - 5) + "Z";
-                    }
-                    return OffsetDateTime.parse(date, formatter);
-            }
-        }
-    }
-
-    /**
-     * GSON TypeAdapter for JSR-310 LocalDate type, which Fineract API's RETURNS as JSON array in the
-     * <tt>[2009,1,1]</tt> format, but EXPECTS as String not Array and with a locale and dateFormat. Weird, but so it is
-     * (see FINERACT-1220 & FINERACT-1233).
-     */
-    public static class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
-
-        // NB this format is referenced from org.apache.fineract.client.util.FineractClient.DATE_FORMAT
-        private final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
-
-        @Override
-        public void write(JsonWriter out, LocalDate date) throws IOException {
-            if (date == null) {
-                out.nullValue();
-            } else {
-                out.value(formatter.format(date));
-            }
-        }
-
-        @Override
-        public LocalDate read(JsonReader in) throws IOException {
-            switch (in.peek()) {
-                case NULL:
-                    in.nextNull();
-                    return null;
-                case BEGIN_ARRAY:
-                    in.beginArray();
-                    int year = in.nextInt();
-                    int month = in.nextInt();
-                    int day = in.nextInt();
-                    in.endArray();
-                    return LocalDate.of(year, month, day);
-                default:
-                    throw new JsonParseException(
-                            "Fineract's API normally always sends LocalDate as e.g. [2009,1,1].. or does it not?! (FINERACT-1220)");
-            }
-        }
-    }
-
-    /**
-     * GSON TypeAdapter for java.sql.Date type. If the dateFormat is null, a simple "yyyy-MM-dd" format will be used
-     * (more efficient than SimpleDateFormat).
-     */
-    public static class SqlDateTypeAdapter extends TypeAdapter<java.sql.Date> {
-
-        private final DateFormat dateFormat = null; // TODO FINERACT-1220
-
-        @Override
-        public void write(JsonWriter out, java.sql.Date date) throws IOException {
-            if (date == null) {
-                out.nullValue();
-            } else {
-                String value;
-                if (dateFormat != null) {
-                    value = dateFormat.format(date);
-                } else {
-                    value = date.toString();
-                }
-                out.value(value);
-            }
-        }
-
-        @Override
-        public java.sql.Date read(JsonReader in) throws IOException {
-            switch (in.peek()) {
-                case NULL:
-                    in.nextNull();
-                    return null;
-                default:
-                    String date = in.nextString();
-                    try {
-                        if (dateFormat != null) {
-                            return new java.sql.Date(dateFormat.parse(date).getTime());
-                        }
-                        return new java.sql.Date(ISO8601Utils.parse(date, new ParsePosition(0)).getTime());
-                    } catch (ParseException e) {
-                        throw new JsonParseException(e);
-                    }
-            }
+        public JsonElement serialize(Date src, Type type, JsonSerializationContext jsonSerializationContext) {
+            SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            String formattedTime = output.format(src);
+            return new JsonPrimitive(formattedTime);
         }
     }
 

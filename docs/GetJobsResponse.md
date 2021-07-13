@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **jobId** | **Long** |  |  [optional]
 **displayName** | **String** |  |  [optional]
-**nextRunTime** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**nextRunTime** | [**Date**](Date.md) |  |  [optional]
 **initializingError** | **String** |  |  [optional]
 **cronExpression** | **String** |  |  [optional]
 **active** | **Boolean** |  |  [optional]

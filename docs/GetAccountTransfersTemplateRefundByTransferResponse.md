@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**GetAccountTransfersTemplateRefundByTransferCurrency**](GetAccountTransfersTemplateRefundByTransferCurrency.md) |  |  [optional]
 **transferAmount** | **Float** |  |  [optional]
-**transferDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**transferDate** | [**Date**](Date.md) |  |  [optional]
 **fromOffice** | [**GetAccountTransfersTemplateRefundByTransferFromOffice**](GetAccountTransfersTemplateRefundByTransferFromOffice.md) |  |  [optional]
 **fromClient** | [**GetAccountTransfersTemplateRefundByTransferFromClient**](GetAccountTransfersTemplateRefundByTransferFromClient.md) |  |  [optional]
 **fromAccountType** | [**GetAccountTransfersPageItemsToAccountType**](GetAccountTransfersPageItemsToAccountType.md) |  |  [optional]

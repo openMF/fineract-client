@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **maxDepositTermType** | [**GetFixedDepositAccountsMaxDepositTermType**](GetFixedDepositAccountsMaxDepositTermType.md) |  |  [optional]
 **depositAmount** | **Float** |  |  [optional]
 **maturityAmount** | **Float** |  |  [optional]
-**maturityDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**maturityDate** | [**Date**](Date.md) |  |  [optional]
 **depositPeriod** | **Integer** |  |  [optional]
 **depositPeriodFrequency** | [**GetFixedDepositAccountsDepositPeriodFrequency**](GetFixedDepositAccountsDepositPeriodFrequency.md) |  |  [optional]
 **summary** | [**GetFixedDepositAccountsAccountIdSummary**](GetFixedDepositAccountsAccountIdSummary.md) |  |  [optional]

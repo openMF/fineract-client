@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **nameDecorated** | **String** |  |  [optional]
 **externalId** | **String** |  |  [optional]
-**openingDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**openingDate** | [**Date**](Date.md) |  |  [optional]
 **hierarchy** | **String** |  |  [optional]
 
 

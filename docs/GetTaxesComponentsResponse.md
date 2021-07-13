@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **percentage** | **Float** |  |  [optional]
 **creditAccountType** | [**GetTaxesComponentsCreditAccountType**](GetTaxesComponentsCreditAccountType.md) |  |  [optional]
 **creditAccount** | [**GetTaxesComponentsCreditAccount**](GetTaxesComponentsCreditAccount.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
 **taxComponentsHistories** | **List&lt;Object&gt;** |  |  [optional]
 
 

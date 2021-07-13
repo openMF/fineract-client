@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
-**validFrom** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**validTo** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**validFrom** | [**Date**](Date.md) |  |  [optional]
+**validTo** | [**Date**](Date.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

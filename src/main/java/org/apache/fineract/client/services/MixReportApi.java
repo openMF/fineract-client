@@ -27,7 +27,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
-import java.time.OffsetDateTime;
+import java.util.Date;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +45,7 @@ public interface MixReportApi {
    */
   @GET("mixreport")
   Observable<String> retrieveXBRLReport(
-    @retrofit2.http.Query("startDate") OffsetDateTime startDate, @retrofit2.http.Query("endDate") OffsetDateTime endDate, @retrofit2.http.Query("currency") String currency
+    @retrofit2.http.Query("startDate") Date startDate, @retrofit2.http.Query("endDate") Date endDate, @retrofit2.http.Query("currency") String currency
   );
 
 }

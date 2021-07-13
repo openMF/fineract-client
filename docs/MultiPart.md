@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **parent** | [**MultiPart**](MultiPart.md) |  |  [optional]
 **providers** | [**Object**](.md) |  |  [optional]
 **bodyParts** | [**List&lt;BodyPart&gt;**](BodyPart.md) |  |  [optional]
-**parameterizedHeaders** | [**Map&lt;String, List&lt;ParameterizedHeader&gt;&gt;**](List.md) |  |  [optional]
 **contentDisposition** | [**ContentDisposition**](ContentDisposition.md) |  |  [optional]
+**parameterizedHeaders** | [**Map&lt;String, List&lt;ParameterizedHeader&gt;&gt;**](List.md) |  |  [optional]
 
 
 

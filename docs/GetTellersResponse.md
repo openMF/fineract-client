@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **debitAccountId** | **Long** |  |  [optional]
 **creditAccountId** | **Long** |  |  [optional]
 **name** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **officeName** | **String** |  |  [optional]
 

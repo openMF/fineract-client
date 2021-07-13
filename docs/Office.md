@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **parent** | [**Office**](Office.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **hierarchy** | **String** |  |  [optional]
-**openingLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**openingLocalDate** | [**Date**](Date.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submittedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**submittedOnDate** | [**Date**](Date.md) |  |  [optional]
 **submittedByUsername** | **String** |  |  [optional]
 **submittedByFirstname** | **String** |  |  [optional]
 **submittedByLastname** | **String** |  |  [optional]

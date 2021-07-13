@@ -6,15 +6,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submittedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**submittedOnDate** | [**Date**](Date.md) |  |  [optional]
 **submittedByUsername** | **String** |  |  [optional]
 **submittedByFirstname** | **String** |  |  [optional]
 **submittedByLastname** | **String** |  |  [optional]
-**approvedDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**approvedDate** | [**Date**](Date.md) |  |  [optional]
 **approvedByUsername** | **String** |  |  [optional]
 **approvedByFirstname** | **String** |  |  [optional]
 **approvedByLastname** | **String** |  |  [optional]
-**activatedDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**activatedDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

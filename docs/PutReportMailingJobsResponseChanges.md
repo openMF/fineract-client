@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDateTime** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**startDateTime** | [**Date**](Date.md) |  |  [optional]
 
 
 

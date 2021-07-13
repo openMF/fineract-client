@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]
-**transactionDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**transactionDate** | [**Date**](Date.md) |  |  [optional]
 **comments** | **String** |  |  [optional]
 **referenceNumber** | **String** |  |  [optional]
 **accountingRuleId** | **Long** |  |  [optional]

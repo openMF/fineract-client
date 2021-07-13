@@ -8,7 +8,7 @@ GetLoansLoanIdTransactionsTemplateResponse
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactionType** | [**GetLoansTransactionType**](GetLoansTransactionType.md) |  |  [optional]
-**date** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**date** | [**Date**](Date.md) |  |  [optional]
 **total** | [**GetLoansTotal**](GetLoansTotal.md) |  |  [optional]
 
 

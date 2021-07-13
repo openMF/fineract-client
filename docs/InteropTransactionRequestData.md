@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **transactionType** | [**InteropTransactionTypeData**](InteropTransactionTypeData.md) |  |  [optional]
 **note** | **String** |  |  [optional]
 **geoCode** | [**GeoCodeData**](GeoCodeData.md) |  |  [optional]
-**expiration** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**expiration** | [**Date**](Date.md) |  |  [optional]
 **extensionList** | [**List&lt;ExtensionData&gt;**](ExtensionData.md) |  |  [optional]
-**expirationLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**expirationLocalDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

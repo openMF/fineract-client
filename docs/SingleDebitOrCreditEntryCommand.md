@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **comments** | **String** |  |  [optional]
 **parametersPassedInRequest** | **List&lt;String&gt;** |  |  [optional]
-**glAmountChanged** | **Boolean** |  |  [optional]
-**glAccountIdChanged** | **Boolean** |  |  [optional]
 **commentsChanged** | **Boolean** |  |  [optional]
+**glAccountIdChanged** | **Boolean** |  |  [optional]
+**glAmountChanged** | **Boolean** |  |  [optional]
 
 
 

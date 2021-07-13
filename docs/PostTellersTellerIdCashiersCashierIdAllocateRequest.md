@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **txnNote** | **String** |  |  [optional]
 **locale** | **String** |  |  [optional]
 **dateFormat** | **String** |  |  [optional]
-**txnDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**txnDate** | [**Date**](Date.md) |  |  [optional]
 
 
 
