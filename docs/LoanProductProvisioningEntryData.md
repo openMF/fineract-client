@@ -1,7 +1,9 @@
 
+
 # LoanProductProvisioningEntryData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **historyId** | **Long** |  |  [optional]

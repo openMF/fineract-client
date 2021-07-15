@@ -1,11 +1,13 @@
 
+
 # GetRecurringDepositAccountsAccountChart
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
-**fromDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**fromDate** | [**Date**](Date.md) |  |  [optional]
 **accountId** | **Integer** |  |  [optional]
 **accountNumber** | **Long** |  |  [optional]
 **chartSlabs** | [**List&lt;GetRecurringDepositAccountsChartSlabs&gt;**](GetRecurringDepositAccountsChartSlabs.md) |  |  [optional]

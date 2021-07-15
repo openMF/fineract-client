@@ -1,7 +1,10 @@
 
+
 # PutDataTablesRequest
 
+PutDataTablesRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appTableName** | **String** |  |  [optional]

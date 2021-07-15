@@ -1,6 +1,6 @@
 # MappingFinancialActivitiesToAccountsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,37 +12,64 @@ Method | HTTP request | Description
 [**updateGLAccount**](MappingFinancialActivitiesToAccountsApi.md#updateGLAccount) | **PUT** financialactivityaccounts/{mappingId} | Update a Financial Activity to Account Mapping
 
 
-<a name="createGLAccount"></a>
-# **createGLAccount**
-> PostFinancialActivityAccountsResponse createGLAccount(body)
+
+## createGLAccount
+
+> PostFinancialActivityAccountsResponse createGLAccount(postFinancialActivityAccountsRequest)
 
 Create a new Financial Activity to Accounts Mapping
 
 Mandatory Fields financialActivityId, glAccountId
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-PostFinancialActivityAccountsRequest body = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | Request body
-try {
-    PostFinancialActivityAccountsResponse result = apiInstance.createGLAccount(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#createGLAccount");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        PostFinancialActivityAccountsRequest postFinancialActivityAccountsRequest = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | 
+        try {
+            PostFinancialActivityAccountsResponse result = apiInstance.createGLAccount(postFinancialActivityAccountsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#createGLAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)| Request body | [optional]
+ **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional]
 
 ### Return type
 
@@ -50,40 +77,70 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteGLAccount"></a>
-# **deleteGLAccount**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteGLAccount
+
 > DeleteFinancialActivityAccountsResponse deleteGLAccount(mappingId)
 
 Delete a Financial Activity to Account Mapping
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-try {
-    DeleteFinancialActivityAccountsResponse result = apiInstance.deleteGLAccount(mappingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#deleteGLAccount");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        Long mappingId = 56L; // Long | mappingId
+        try {
+            DeleteFinancialActivityAccountsResponse result = apiInstance.deleteGLAccount(mappingId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#deleteGLAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -95,15 +152,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retreive"></a>
-# **retreive**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retreive
+
 > GetFinancialActivityAccountsResponse retreive(mappingId)
 
 Retrieve a Financial Activity to Account Mapping 
@@ -111,24 +174,50 @@ Retrieve a Financial Activity to Account Mapping
 Example Requests:  financialactivityaccounts/1
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-try {
-    GetFinancialActivityAccountsResponse result = apiInstance.retreive(mappingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retreive");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        Long mappingId = 56L; // Long | mappingId
+        try {
+            GetFinancialActivityAccountsResponse result = apiInstance.retreive(mappingId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retreive");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -140,15 +229,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAll"></a>
-# **retrieveAll**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAll
+
 > List&lt;GetFinancialActivityAccountsResponse&gt; retrieveAll()
 
 List Financial Activities to Accounts Mappings
@@ -156,23 +251,49 @@ List Financial Activities to Accounts Mappings
 Example Requests:  financialactivityaccounts
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-try {
-    List<GetFinancialActivityAccountsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveAll");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        try {
+            List<GetFinancialActivityAccountsResponse> result = apiInstance.retrieveAll();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveAll");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -181,37 +302,69 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveTemplate"></a>
-# **retrieveTemplate**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveTemplate
+
 > String retrieveTemplate()
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-try {
-    String result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        try {
+            String result = apiInstance.retrieveTemplate();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveTemplate");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -220,46 +373,78 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateGLAccount"></a>
-# **updateGLAccount**
-> PutFinancialActivityAccountsResponse updateGLAccount(mappingId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## updateGLAccount
+
+> PutFinancialActivityAccountsResponse updateGLAccount(mappingId, postFinancialActivityAccountsRequest)
 
 Update a Financial Activity to Account Mapping
 
 the API updates the Ledger account linked to a Financial Activity  
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.MappingFinancialActivitiesToAccountsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi();
-Long mappingId = 789L; // Long | mappingId
-PostFinancialActivityAccountsRequest body = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | Request body
-try {
-    PutFinancialActivityAccountsResponse result = apiInstance.updateGLAccount(mappingId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#updateGLAccount");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
+        Long mappingId = 56L; // Long | mappingId
+        PostFinancialActivityAccountsRequest postFinancialActivityAccountsRequest = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | 
+        try {
+            PutFinancialActivityAccountsResponse result = apiInstance.updateGLAccount(mappingId, postFinancialActivityAccountsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#updateGLAccount");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mappingId** | **Long**| mappingId |
- **body** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)| Request body | [optional]
+ **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional]
 
 ### Return type
 
@@ -267,10 +452,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

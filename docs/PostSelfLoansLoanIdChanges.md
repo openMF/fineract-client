@@ -1,7 +1,9 @@
 
+
 # PostSelfLoansLoanIdChanges
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**PostSelfLoansLoanIdStatus**](PostSelfLoansLoanIdStatus.md) |  |  [optional]

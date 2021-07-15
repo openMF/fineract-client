@@ -1,51 +1,78 @@
 # NotesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNewNote**](NotesApi.md#addNewNote) | **POST** {resourceType}/{resourceId}/notes | Add a Resource Note
 [**deleteNote**](NotesApi.md#deleteNote) | **DELETE** {resourceType}/{resourceId}/notes/{noteId} | Delete a Resource Note
 [**retrieveNote**](NotesApi.md#retrieveNote) | **GET** {resourceType}/{resourceId}/notes/{noteId} | Retrieve a Resource Note
-[**retrieveNotesByResource**](NotesApi.md#retrieveNotesByResource) | **GET** {resourceType}/{resourceId}/notes | Retrieve a Resource&#39;s Notes
+[**retrieveNotesByResource**](NotesApi.md#retrieveNotesByResource) | **GET** {resourceType}/{resourceId}/notes | Retrieve a Resource&#39;s description
 [**updateNote**](NotesApi.md#updateNote) | **PUT** {resourceType}/{resourceId}/notes/{noteId} | Update a Resource Note
 
 
-<a name="addNewNote"></a>
-# **addNewNote**
-> PostResourceTypeResourceIdNotesResponse addNewNote(resourceType, resourceId, body)
+
+## addNewNote
+
+> PostResourceTypeResourceIdNotesResponse addNewNote(resourceType, resourceId, postResourceTypeResourceIdNotesRequest)
 
 Add a Resource Note
 
 Adds a new note to a supported resource.  Example Requests:  clients/1/notes   groups/1/notes
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.NotesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-PostResourceTypeResourceIdNotesRequest body = new PostResourceTypeResourceIdNotesRequest(); // PostResourceTypeResourceIdNotesRequest | body
-try {
-    PostResourceTypeResourceIdNotesResponse result = apiInstance.addNewNote(resourceType, resourceId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#addNewNote");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        NotesApi apiInstance = new NotesApi(defaultClient);
+        String resourceType = "resourceType_example"; // String | resourceType
+        Long resourceId = 56L; // Long | resourceId
+        PostResourceTypeResourceIdNotesRequest postResourceTypeResourceIdNotesRequest = new PostResourceTypeResourceIdNotesRequest(); // PostResourceTypeResourceIdNotesRequest | 
+        try {
+            PostResourceTypeResourceIdNotesResponse result = apiInstance.addNewNote(resourceType, resourceId, postResourceTypeResourceIdNotesRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotesApi#addNewNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
- **body** | [**PostResourceTypeResourceIdNotesRequest**](PostResourceTypeResourceIdNotesRequest.md)| body |
+ **postResourceTypeResourceIdNotesRequest** | [**PostResourceTypeResourceIdNotesRequest**](PostResourceTypeResourceIdNotesRequest.md)|  |
 
 ### Return type
 
@@ -53,15 +80,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteNote"></a>
-# **deleteNote**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteNote
+
 > DeleteResourceTypeResourceIdNotesNoteIdResponse deleteNote(resourceType, resourceId, noteId)
 
 Delete a Resource Note
@@ -69,26 +102,52 @@ Delete a Resource Note
 Deletes a Resource Note
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.NotesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-try {
-    DeleteResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.deleteNote(resourceType, resourceId, noteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#deleteNote");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        NotesApi apiInstance = new NotesApi(defaultClient);
+        String resourceType = "resourceType_example"; // String | resourceType
+        Long resourceId = 56L; // Long | resourceId
+        Long noteId = 56L; // Long | noteId
+        try {
+            DeleteResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.deleteNote(resourceType, resourceId, noteId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotesApi#deleteNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,15 +161,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveNote"></a>
-# **retrieveNote**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveNote
+
 > GetResourceTypeResourceIdNotesNoteIdResponse retrieveNote(resourceType, resourceId, noteId)
 
 Retrieve a Resource Note
@@ -118,26 +183,52 @@ Retrieve a Resource Note
 Retrieves a Resource Note  Example Requests:  clients/1/notes/76   groups/1/notes/20   clients/1/notes/76?fields&#x3D;note,createdOn,createdByUsername   groups/1/notes/20?fields&#x3D;note,createdOn,createdByUsername
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.NotesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-try {
-    GetResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.retrieveNote(resourceType, resourceId, noteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#retrieveNote");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        NotesApi apiInstance = new NotesApi(defaultClient);
+        String resourceType = "resourceType_example"; // String | resourceType
+        Long resourceId = 56L; // Long | resourceId
+        Long noteId = 56L; // Long | noteId
+        try {
+            GetResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.retrieveNote(resourceType, resourceId, noteId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotesApi#retrieveNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -151,41 +242,73 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveNotesByResource"></a>
-# **retrieveNotesByResource**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveNotesByResource
+
 > List&lt;GetResourceTypeResourceIdNotesResponse&gt; retrieveNotesByResource(resourceType, resourceId)
 
-Retrieve a Resource&#39;s Notes
+Retrieve a Resource&#39;s description
 
 Retrieves a Resource&#39;s Notes  Note: Notes are returned in descending createOn order.  Example Requests:  clients/2/notes   groups/2/notes?fields&#x3D;note,createdOn,createdByUsername
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.NotesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-try {
-    List<GetResourceTypeResourceIdNotesResponse> result = apiInstance.retrieveNotesByResource(resourceType, resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#retrieveNotesByResource");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        NotesApi apiInstance = new NotesApi(defaultClient);
+        String resourceType = "resourceType_example"; // String | resourceType
+        Long resourceId = 56L; // Long | resourceId
+        try {
+            List<GetResourceTypeResourceIdNotesResponse> result = apiInstance.retrieveNotesByResource(resourceType, resourceId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotesApi#retrieveNotesByResource");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -198,50 +321,82 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateNote"></a>
-# **updateNote**
-> PutResourceTypeResourceIdNotesNoteIdResponse updateNote(resourceType, resourceId, noteId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateNote
+
+> PutResourceTypeResourceIdNotesNoteIdResponse updateNote(resourceType, resourceId, noteId, putResourceTypeResourceIdNotesNoteIdRequest)
 
 Update a Resource Note
 
 Updates a Resource Note
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.NotesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.NotesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-NotesApi apiInstance = new NotesApi();
-String resourceType = "resourceType_example"; // String | resourceType
-Long resourceId = 789L; // Long | resourceId
-Long noteId = 789L; // Long | noteId
-PutResourceTypeResourceIdNotesNoteIdRequest body = new PutResourceTypeResourceIdNotesNoteIdRequest(); // PutResourceTypeResourceIdNotesNoteIdRequest | body
-try {
-    PutResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.updateNote(resourceType, resourceId, noteId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling NotesApi#updateNote");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        NotesApi apiInstance = new NotesApi(defaultClient);
+        String resourceType = "resourceType_example"; // String | resourceType
+        Long resourceId = 56L; // Long | resourceId
+        Long noteId = 56L; // Long | noteId
+        PutResourceTypeResourceIdNotesNoteIdRequest putResourceTypeResourceIdNotesNoteIdRequest = new PutResourceTypeResourceIdNotesNoteIdRequest(); // PutResourceTypeResourceIdNotesNoteIdRequest | 
+        try {
+            PutResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.updateNote(resourceType, resourceId, noteId, putResourceTypeResourceIdNotesNoteIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling NotesApi#updateNote");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resourceType** | **String**| resourceType |
  **resourceId** | **Long**| resourceId |
  **noteId** | **Long**| noteId |
- **body** | [**PutResourceTypeResourceIdNotesNoteIdRequest**](PutResourceTypeResourceIdNotesNoteIdRequest.md)| body |
+ **putResourceTypeResourceIdNotesNoteIdRequest** | [**PutResourceTypeResourceIdNotesNoteIdRequest**](PutResourceTypeResourceIdNotesNoteIdRequest.md)|  |
 
 ### Return type
 
@@ -249,10 +404,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

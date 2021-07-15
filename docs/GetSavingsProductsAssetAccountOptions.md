@@ -1,7 +1,9 @@
 
+
 # GetSavingsProductsAssetAccountOptions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -11,7 +13,7 @@ Name | Type | Description | Notes
 **manualEntriesAllowed** | **Boolean** |  |  [optional]
 **type** | [**GetSavingsAssetLiabilityType**](GetSavingsAssetLiabilityType.md) |  |  [optional]
 **usage** | [**GetSavingsProductsLiabilityUsage**](GetSavingsProductsLiabilityUsage.md) |  |  [optional]
-**tagId** | [**GetSavingsAssetTagId**](GetSavingsAssetTagId.md) |  |  [optional]
+**tagId** | [**Object**](.md) |  |  [optional]
 
 
 

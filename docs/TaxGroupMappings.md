@@ -1,16 +1,18 @@
 
+
 # TaxGroupMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdDate** | **Long** |  |  [optional]
+**createdDate** | [**Date**](Date.md) |  |  [optional]
 **lastModifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**lastModifiedDate** | **Long** |  |  [optional]
+**lastModifiedDate** | [**Date**](Date.md) |  |  [optional]
 **taxComponent** | [**TaxComponent**](TaxComponent.md) |  |  [optional]
-**endDate** | [**DateTime**](DateTime.md) |  |  [optional]
+**endDate** | [**Date**](Date.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

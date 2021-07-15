@@ -1,6 +1,6 @@
 # SavingsChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,43 +9,70 @@ Method | HTTP request | Description
 [**payOrWaiveSavingsAccountCharge**](SavingsChargesApi.md#payOrWaiveSavingsAccountCharge) | **POST** savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId} | Pay a Savings account Charge | Waive off a Savings account Charge | Inactivate a Savings account Charge
 [**retrieveAllSavingsAccountCharges**](SavingsChargesApi.md#retrieveAllSavingsAccountCharges) | **GET** savingsaccounts/{savingsAccountId}/charges | List Savings Charges
 [**retrieveSavingsAccountCharge**](SavingsChargesApi.md#retrieveSavingsAccountCharge) | **GET** savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId} | Retrieve a Savings account Charge
-[**retrieveTemplate**](SavingsChargesApi.md#retrieveTemplate) | **GET** savingsaccounts/{savingsAccountId}/charges/template | Retrieve Savings Charges Template
+[**retrieveTemplate17**](SavingsChargesApi.md#retrieveTemplate17) | **GET** savingsaccounts/{savingsAccountId}/charges/template | Retrieve Savings Charges Template
 [**updateSavingsAccountCharge**](SavingsChargesApi.md#updateSavingsAccountCharge) | **PUT** savingsaccounts/{savingsAccountId}/charges/{savingsAccountChargeId} | Update a Savings account Charge
 
 
-<a name="addSavingsAccountCharge"></a>
-# **addSavingsAccountCharge**
-> PostSavingsAccountsSavingsAccountIdChargesResponse addSavingsAccountCharge(savingsAccountId, body)
+
+## addSavingsAccountCharge
+
+> PostSavingsAccountsSavingsAccountIdChargesResponse addSavingsAccountCharge(savingsAccountId, postSavingsAccountsSavingsAccountIdChargesRequest)
 
 Create a Savings account Charge
 
 Creates a Savings account Charge  Mandatory Fields for Savings account Charges: chargeId, amount  chargeId, amount, dueDate, dateFormat, locale  chargeId, amount, feeOnMonthDay, monthDayFormat, locale
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-PostSavingsAccountsSavingsAccountIdChargesRequest body = new PostSavingsAccountsSavingsAccountIdChargesRequest(); // PostSavingsAccountsSavingsAccountIdChargesRequest | body
-try {
-    PostSavingsAccountsSavingsAccountIdChargesResponse result = apiInstance.addSavingsAccountCharge(savingsAccountId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#addSavingsAccountCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        PostSavingsAccountsSavingsAccountIdChargesRequest postSavingsAccountsSavingsAccountIdChargesRequest = new PostSavingsAccountsSavingsAccountIdChargesRequest(); // PostSavingsAccountsSavingsAccountIdChargesRequest | 
+        try {
+            PostSavingsAccountsSavingsAccountIdChargesResponse result = apiInstance.addSavingsAccountCharge(savingsAccountId, postSavingsAccountsSavingsAccountIdChargesRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#addSavingsAccountCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
- **body** | [**PostSavingsAccountsSavingsAccountIdChargesRequest**](PostSavingsAccountsSavingsAccountIdChargesRequest.md)| body |
+ **postSavingsAccountsSavingsAccountIdChargesRequest** | [**PostSavingsAccountsSavingsAccountIdChargesRequest**](PostSavingsAccountsSavingsAccountIdChargesRequest.md)|  |
 
 ### Return type
 
@@ -53,15 +80,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteSavingsAccountCharge"></a>
-# **deleteSavingsAccountCharge**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteSavingsAccountCharge
+
 > DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse deleteSavingsAccountCharge(savingsAccountId, savingsAccountChargeId)
 
 Delete a Savings account Charge
@@ -69,25 +102,51 @@ Delete a Savings account Charge
 Note: Currently, A Savings account Charge may only be removed from Savings that are not yet approved.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-try {
-    DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.deleteSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#deleteSavingsAccountCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        Long savingsAccountChargeId = 56L; // Long | savingsAccountChargeId
+        try {
+            DeleteSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.deleteSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#deleteSavingsAccountCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,49 +159,81 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="payOrWaiveSavingsAccountCharge"></a>
-# **payOrWaiveSavingsAccountCharge**
-> PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body, command)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## payOrWaiveSavingsAccountCharge
+
+> PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, postSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest, command)
 
 Pay a Savings account Charge | Waive off a Savings account Charge | Inactivate a Savings account Charge
 
 Pay a Savings account Charge:  An active charge will be paid when savings account is active and having sufficient balance.  Waive off a Savings account Charge:  Outstanding charge amount will be waived off.  Inactivate a Savings account Charge:  A charge will be allowed to inactivate when savings account is active and not having any dues as of today. If charge is overpaid, corresponding charge payment transactions will be reversed.  Showing request/response for &#39;Pay a Savings account Charge&#39;
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body = new PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | body
-String command = "command_example"; // String | command
-try {
-    PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body, command);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#payOrWaiveSavingsAccountCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        Long savingsAccountChargeId = 56L; // Long | savingsAccountChargeId
+        PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest postSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest = new PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | 
+        String command = "command_example"; // String | command
+        try {
+            PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.payOrWaiveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, postSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest, command);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#payOrWaiveSavingsAccountCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
- **body** | [**PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)| body |
+ **postSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest** | [**PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PostSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)|  |
  **command** | **String**| command | [optional]
 
 ### Return type
@@ -151,15 +242,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="retrieveAllSavingsAccountCharges"></a>
-# **retrieveAllSavingsAccountCharges**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAllSavingsAccountCharges
+
 > List&lt;GetSavingsAccountsSavingsAccountIdChargesResponse&gt; retrieveAllSavingsAccountCharges(savingsAccountId, chargeStatus)
 
 List Savings Charges
@@ -167,30 +264,56 @@ List Savings Charges
 Lists Savings Charges  Example Requests:  savingsaccounts/1/charges  savingsaccounts/1/charges?chargeStatus&#x3D;all  savingsaccounts/1/charges?chargeStatus&#x3D;inactive  savingsaccounts/1/charges?chargeStatus&#x3D;active  savingsaccounts/1/charges?fields&#x3D;name,amountOrPercentage
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-String chargeStatus = "all"; // String | chargeStatus
-try {
-    List<GetSavingsAccountsSavingsAccountIdChargesResponse> result = apiInstance.retrieveAllSavingsAccountCharges(savingsAccountId, chargeStatus);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveAllSavingsAccountCharges");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        String chargeStatus = "\"all\""; // String | chargeStatus
+        try {
+            List<GetSavingsAccountsSavingsAccountIdChargesResponse> result = apiInstance.retrieveAllSavingsAccountCharges(savingsAccountId, chargeStatus);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#retrieveAllSavingsAccountCharges");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
- **chargeStatus** | **String**| chargeStatus | [optional] [default to all]
+ **chargeStatus** | **String**| chargeStatus | [optional] [default to &quot;all&quot;]
 
 ### Return type
 
@@ -198,15 +321,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveSavingsAccountCharge"></a>
-# **retrieveSavingsAccountCharge**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveSavingsAccountCharge
+
 > GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse retrieveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId)
 
 Retrieve a Savings account Charge
@@ -214,25 +343,51 @@ Retrieve a Savings account Charge
 Retrieves a Savings account Charge  Example Requests:  /savingsaccounts/1/charges/5   /savingsaccounts/1/charges/5?fields&#x3D;name,amountOrPercentage
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-try {
-    GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.retrieveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveSavingsAccountCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        Long savingsAccountChargeId = 56L; // Long | savingsAccountChargeId
+        try {
+            GetSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.retrieveSavingsAccountCharge(savingsAccountId, savingsAccountChargeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#retrieveSavingsAccountCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -245,40 +400,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveTemplate"></a>
-# **retrieveTemplate**
-> GetSavingsAccountsSavingsAccountIdChargesTemplateResponse retrieveTemplate(savingsAccountId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveTemplate17
+
+> GetSavingsAccountsSavingsAccountIdChargesTemplateResponse retrieveTemplate17(savingsAccountId)
 
 Retrieve Savings Charges Template
 
-This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  savingsaccounts/1/charges/template
+This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  savingsaccounts/1/charges/template
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-try {
-    GetSavingsAccountsSavingsAccountIdChargesTemplateResponse result = apiInstance.retrieveTemplate(savingsAccountId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#retrieveTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        try {
+            GetSavingsAccountsSavingsAccountIdChargesTemplateResponse result = apiInstance.retrieveTemplate17(savingsAccountId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#retrieveTemplate17");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -290,48 +477,80 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateSavingsAccountCharge"></a>
-# **updateSavingsAccountCharge**
-> PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateSavingsAccountCharge
+
+> PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, putSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest)
 
 Update a Savings account Charge
 
 Currently Savings account Charges may be updated only if the Savings account is not yet approved.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsChargesApi apiInstance = new SavingsChargesApi();
-Long savingsAccountId = 789L; // Long | savingsAccountId
-Long savingsAccountChargeId = 789L; // Long | savingsAccountChargeId
-PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest body = new PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | body
-try {
-    PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsChargesApi#updateSavingsAccountCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsChargesApi apiInstance = new SavingsChargesApi(defaultClient);
+        Long savingsAccountId = 56L; // Long | savingsAccountId
+        Long savingsAccountChargeId = 56L; // Long | savingsAccountChargeId
+        PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest putSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest = new PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest(); // PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest | 
+        try {
+            PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdResponse result = apiInstance.updateSavingsAccountCharge(savingsAccountId, savingsAccountChargeId, putSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsChargesApi#updateSavingsAccountCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **savingsAccountId** | **Long**| savingsAccountId |
  **savingsAccountChargeId** | **Long**| savingsAccountChargeId |
- **body** | [**PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)| body |
+ **putSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest** | [**PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest**](PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest.md)|  |
 
 ### Return type
 
@@ -339,10 +558,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

@@ -1,7 +1,10 @@
 
+
 # PostTellersRequest
 
+PostTellersRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]
@@ -10,11 +13,12 @@ Name | Type | Description | Notes
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **locale** | **String** |  |  [optional]
 **dateFormat** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;

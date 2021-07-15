@@ -1,7 +1,10 @@
 
+
 # GetTellersTellerIdCashiersResponse
 
+GetTellersTellerIdCashiersResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tellerId** | **Long** |  |  [optional]

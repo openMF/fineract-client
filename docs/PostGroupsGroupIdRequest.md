@@ -1,7 +1,10 @@
 
+
 # PostGroupsGroupIdRequest
 
+PostGroupsGroupIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **destinationGroupId** | **Integer** |  |  [optional]

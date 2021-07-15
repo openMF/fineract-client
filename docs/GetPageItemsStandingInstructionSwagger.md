@@ -1,7 +1,9 @@
 
+
 # GetPageItemsStandingInstructionSwagger
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -20,11 +22,11 @@ Name | Type | Description | Notes
 **instructionType** | [**GetInstructionTypeStandingInstructionSwagger**](GetInstructionTypeStandingInstructionSwagger.md) |  |  [optional]
 **status** | [**GetStatusStandingInstructionSwagger**](GetStatusStandingInstructionSwagger.md) |  |  [optional]
 **amount** | **Float** |  |  [optional]
-**validFrom** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**validFrom** | [**Date**](Date.md) |  |  [optional]
 **recurrenceType** | [**GetRecurrenceTypeStandingInstructionSwagger**](GetRecurrenceTypeStandingInstructionSwagger.md) |  |  [optional]
 **recurrenceFrequency** | [**GetRecurrenceFrequencyStandingInstructionSwagger**](GetRecurrenceFrequencyStandingInstructionSwagger.md) |  |  [optional]
 **recurrenceInterval** | **Integer** |  |  [optional]
-**recurrenceOnMonthDay** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**recurrenceOnMonthDay** | [**Date**](Date.md) |  |  [optional]
 
 
 

@@ -1,7 +1,10 @@
 
+
 # PostRecurringDepositAccountsRequest
 
+PostRecurringDepositAccountsRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientId** | **Integer** |  |  [optional]

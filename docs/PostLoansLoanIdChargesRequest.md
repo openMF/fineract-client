@@ -1,7 +1,10 @@
 
+
 # PostLoansLoanIdChargesRequest
 
+ PostLoansLoanIdChargesRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chargeId** | **Integer** |  |  [optional]

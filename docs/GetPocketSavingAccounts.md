@@ -1,7 +1,9 @@
 
+
 # GetPocketSavingAccounts
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pocketId** | **Integer** |  |  [optional]

@@ -1,14 +1,17 @@
 
+
 # GetClientsClientIdResponse
 
+GetClientsClientIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
 **accountNo** | **Long** |  |  [optional]
 **status** | [**GetClientsClientIdStatus**](GetClientsClientIdStatus.md) |  |  [optional]
 **active** | **Boolean** |  |  [optional]
-**activationDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**activationDate** | [**Date**](Date.md) |  |  [optional]
 **firstname** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **displayName** | **String** |  |  [optional]

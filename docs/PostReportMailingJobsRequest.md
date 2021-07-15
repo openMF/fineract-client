@@ -1,14 +1,17 @@
 
+
 # PostReportMailingJobsRequest
 
+PostReportMailingJobsRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locale** | **String** |  |  [optional]
 **dateFormat** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**startDateTime** | [**DateTime**](DateTime.md) |  |  [optional]
+**startDateTime** | [**Date**](Date.md) |  |  [optional]
 **stretchyReportId** | **Long** |  |  [optional]
 **emailRecipients** | **String** |  |  [optional]
 **emailSubject** | **String** |  |  [optional]

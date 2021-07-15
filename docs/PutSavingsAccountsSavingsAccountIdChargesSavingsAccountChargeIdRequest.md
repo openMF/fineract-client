@@ -1,7 +1,10 @@
 
+
 # PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest
 
+PutSavingsAccountsSavingsAccountIdChargesSavingsAccountChargeIdRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dateFormat** | **String** |  |  [optional]

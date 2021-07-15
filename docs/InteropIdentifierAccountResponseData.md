@@ -1,7 +1,9 @@
 
+
 # InteropIdentifierAccountResponseData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]
@@ -13,8 +15,11 @@ Name | Type | Description | Notes
 **transactionId** | **String** |  |  [optional]
 **changes** | **Map&lt;String, Object&gt;** |  |  [optional]
 **productId** | **Long** |  |  [optional]
+**gsimId** | **Long** |  |  [optional]
+**glimId** | **Long** |  |  [optional]
 **rollbackTransaction** | **Boolean** |  |  [optional]
 **accountId** | **String** |  | 
+**creditReport** | [**Object**](.md) |  |  [optional]
 
 
 

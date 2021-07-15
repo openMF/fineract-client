@@ -1,6 +1,6 @@
 # AccountingClosureApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,37 +11,64 @@ Method | HTTP request | Description
 [**updateGLClosure**](AccountingClosureApi.md#updateGLClosure) | **PUT** glclosures/{glClosureId} | Update an Accounting closure
 
 
-<a name="createGLClosure"></a>
-# **createGLClosure**
-> PostGlClosuresResponse createGLClosure(body)
+
+## createGLClosure
+
+> PostGlClosuresResponse createGLClosure(postGlClosuresRequest)
 
 Create an Accounting Closure
 
 Mandatory Fields officeId,closingDate
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.AccountingClosureApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-PostGLCLosuresRequest body = new PostGLCLosuresRequest(); // PostGLCLosuresRequest | Request Body
-try {
-    PostGlClosuresResponse result = apiInstance.createGLClosure(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#createGLClosure");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        AccountingClosureApi apiInstance = new AccountingClosureApi(defaultClient);
+        PostGlClosuresRequest postGlClosuresRequest = new PostGlClosuresRequest(); // PostGlClosuresRequest | 
+        try {
+            PostGlClosuresResponse result = apiInstance.createGLClosure(postGlClosuresRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountingClosureApi#createGLClosure");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostGLCLosuresRequest**](PostGLCLosuresRequest.md)| Request Body |
+ **postGlClosuresRequest** | [**PostGlClosuresRequest**](PostGlClosuresRequest.md)|  |
 
 ### Return type
 
@@ -49,15 +76,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteGLClosure"></a>
-# **deleteGLClosure**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteGLClosure
+
 > DeleteGlClosuresResponse deleteGLClosure(glClosureId)
 
 Delete an accounting closure
@@ -65,24 +98,50 @@ Delete an accounting closure
 Note: Only the latest accounting closure associated with a branch may be deleted.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.AccountingClosureApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glclosureId
-try {
-    DeleteGlClosuresResponse result = apiInstance.deleteGLClosure(glClosureId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#deleteGLClosure");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        AccountingClosureApi apiInstance = new AccountingClosureApi(defaultClient);
+        Long glClosureId = 56L; // Long | glclosureId
+        try {
+            DeleteGlClosuresResponse result = apiInstance.deleteGLClosure(glClosureId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountingClosureApi#deleteGLClosure");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -94,40 +153,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retreiveClosure"></a>
-# **retreiveClosure**
-> GetGLClosureResponse retreiveClosure(glClosureId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retreiveClosure
+
+> GetGlClosureResponse retreiveClosure(glClosureId)
 
 Retrieve an Accounting Closure
 
 Example Requests:  glclosures/1   /glclosures/1?fields&#x3D;officeName,closingDate
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.AccountingClosureApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glClosureId
-try {
-    GetGLClosureResponse result = apiInstance.retreiveClosure(glClosureId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#retreiveClosure");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        AccountingClosureApi apiInstance = new AccountingClosureApi(defaultClient);
+        Long glClosureId = 56L; // Long | glClosureId
+        try {
+            GetGlClosureResponse result = apiInstance.retreiveClosure(glClosureId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountingClosureApi#retreiveClosure");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -135,95 +226,159 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetGLClosureResponse**](GetGLClosureResponse.md)
+[**GetGlClosureResponse**](GetGlClosureResponse.md)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAllClosures"></a>
-# **retrieveAllClosures**
-> List&lt;GetGLClosureResponse&gt; retrieveAllClosures(officeId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAllClosures
+
+> List&lt;GetGlClosureResponse&gt; retrieveAllClosures(officeId)
 
 List Accounting closures
 
 Example Requests:  glclosures
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.AccountingClosureApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long officeId = 789L; // Long | officeId
-try {
-    List<GetGLClosureResponse> result = apiInstance.retrieveAllClosures(officeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#retrieveAllClosures");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        AccountingClosureApi apiInstance = new AccountingClosureApi(defaultClient);
+        Long officeId = 56L; // Long | 
+        try {
+            List<GetGlClosureResponse> result = apiInstance.retrieveAllClosures(officeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountingClosureApi#retrieveAllClosures");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **officeId** | **Long**| officeId | [optional]
+ **officeId** | **Long**|  | [optional]
 
 ### Return type
 
-[**List&lt;GetGLClosureResponse&gt;**](GetGLClosureResponse.md)
+[**List&lt;GetGlClosureResponse&gt;**](GetGlClosureResponse.md)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateGLClosure"></a>
-# **updateGLClosure**
-> PutGlClosuresResponse updateGLClosure(glClosureId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateGLClosure
+
+> PutGlClosuresResponse updateGLClosure(glClosureId, putGlClosuresRequest)
 
 Update an Accounting closure
 
 Once an accounting closure is created, only the comments associated with it may be edited
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.AccountingClosureApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.AccountingClosureApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-AccountingClosureApi apiInstance = new AccountingClosureApi();
-Long glClosureId = 789L; // Long | glClosureId
-PutGlClosuresRequest body = new PutGlClosuresRequest(); // PutGlClosuresRequest | Request body
-try {
-    PutGlClosuresResponse result = apiInstance.updateGLClosure(glClosureId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountingClosureApi#updateGLClosure");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        AccountingClosureApi apiInstance = new AccountingClosureApi(defaultClient);
+        Long glClosureId = 56L; // Long | glClosureId
+        PutGlClosuresRequest putGlClosuresRequest = new PutGlClosuresRequest(); // PutGlClosuresRequest | 
+        try {
+            PutGlClosuresResponse result = apiInstance.updateGLClosure(glClosureId, putGlClosuresRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AccountingClosureApi#updateGLClosure");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **glClosureId** | **Long**| glClosureId |
- **body** | [**PutGlClosuresRequest**](PutGlClosuresRequest.md)| Request body |
+ **putGlClosuresRequest** | [**PutGlClosuresRequest**](PutGlClosuresRequest.md)|  | [optional]
 
 ### Return type
 
@@ -231,10 +386,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

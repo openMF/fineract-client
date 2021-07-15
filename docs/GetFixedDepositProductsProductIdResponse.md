@@ -1,7 +1,10 @@
 
+
 # GetFixedDepositProductsProductIdResponse
 
+GetFixedDepositProductsProductIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]

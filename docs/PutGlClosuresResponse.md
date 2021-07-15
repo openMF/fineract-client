@@ -1,7 +1,10 @@
 
+
 # PutGlClosuresResponse
 
+PutGlClosuresResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Long** |  |  [optional]

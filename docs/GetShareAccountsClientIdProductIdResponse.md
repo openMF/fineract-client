@@ -1,7 +1,10 @@
 
+
 # GetShareAccountsClientIdProductIdResponse
 
+GetShareAccountsClientIdProductIdResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **productOptions** | [**List&lt;GetClientIdProductIdProductOptions&gt;**](GetClientIdProductIdProductOptions.md) |  |  [optional]

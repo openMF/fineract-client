@@ -1,7 +1,10 @@
 
+
 # PostLoansResponse
 
+PostLoansResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**GetLoansLoanIdCurrency**](GetLoansLoanIdCurrency.md) |  |  [optional]

@@ -1,7 +1,10 @@
 
+
 # GetGroupsGroupIdAccountsResponse
 
+GetGroupsGroupIdAccountsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loanAccounts** | [**List&lt;GetGroupsGroupIdAccountsLoanAccounts&gt;**](GetGroupsGroupIdAccountsLoanAccounts.md) |  |  [optional]

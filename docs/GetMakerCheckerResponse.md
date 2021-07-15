@@ -1,7 +1,10 @@
 
+
 # GetMakerCheckerResponse
 
+GetMakerCheckerResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -10,9 +13,9 @@ Name | Type | Description | Notes
 **resourceId** | **Long** |  |  [optional]
 **subresourceId** | **Long** |  |  [optional]
 **maker** | **String** |  |  [optional]
-**madeOnDate** | [**DateTime**](DateTime.md) |  |  [optional]
+**madeOnDate** | [**Date**](Date.md) |  |  [optional]
 **checker** | **String** |  |  [optional]
-**checkedOnDate** | [**DateTime**](DateTime.md) |  |  [optional]
+**checkedOnDate** | [**Date**](Date.md) |  |  [optional]
 **processingResult** | **String** |  |  [optional]
 **commandAsJson** | **String** |  |  [optional]
 **officeName** | **String** |  |  [optional]

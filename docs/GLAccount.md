@@ -1,7 +1,9 @@
 
+
 # GLAccount
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -12,8 +14,8 @@ Name | Type | Description | Notes
 **manualEntriesAllowed** | **Boolean** |  |  [optional]
 **type** | **Integer** |  |  [optional]
 **usage** | **Integer** |  |  [optional]
-**headerAccount** | **Boolean** |  |  [optional]
 **detailAccount** | **Boolean** |  |  [optional]
+**headerAccount** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

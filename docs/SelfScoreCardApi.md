@@ -1,6 +1,6 @@
 # SelfScoreCardApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,36 +8,63 @@ Method | HTTP request | Description
 [**findByClient**](SelfScoreCardApi.md#findByClient) | **GET** self/surveys/scorecards/clients/{clientId} | 
 
 
-<a name="createScorecard"></a>
-# **createScorecard**
-> createScorecard(surveyId, body)
+
+## createScorecard
+
+> createScorecard(surveyId, scorecardData)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfScoreCardApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SelfScoreCardApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SelfScoreCardApi apiInstance = new SelfScoreCardApi();
-Long surveyId = 789L; // Long | 
-ScorecardData body = new ScorecardData(); // ScorecardData | 
-try {
-    apiInstance.createScorecard(surveyId, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfScoreCardApi#createScorecard");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SelfScoreCardApi apiInstance = new SelfScoreCardApi(defaultClient);
+        Long surveyId = 56L; // Long | 
+        ScorecardData scorecardData = new ScorecardData(); // ScorecardData | 
+        try {
+            apiInstance.createScorecard(surveyId, scorecardData);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SelfScoreCardApi#createScorecard");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **surveyId** | **Long**|  |
- **body** | [**ScorecardData**](ScorecardData.md)|  | [optional]
+ **scorecardData** | [**ScorecardData**](ScorecardData.md)|  | [optional]
 
 ### Return type
 
@@ -45,38 +72,70 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="findByClient"></a>
-# **findByClient**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## findByClient
+
 > List&lt;ScorecardData&gt; findByClient(clientId)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SelfScoreCardApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SelfScoreCardApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SelfScoreCardApi apiInstance = new SelfScoreCardApi();
-Long clientId = 789L; // Long | 
-try {
-    List<ScorecardData> result = apiInstance.findByClient(clientId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SelfScoreCardApi#findByClient");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SelfScoreCardApi apiInstance = new SelfScoreCardApi(defaultClient);
+        Long clientId = 56L; // Long | 
+        try {
+            List<ScorecardData> result = apiInstance.findByClient(clientId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SelfScoreCardApi#findByClient");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -88,10 +147,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
 

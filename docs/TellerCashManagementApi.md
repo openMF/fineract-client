@@ -1,6 +1,6 @@
 # TellerCashManagementApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**findCashierData**](TellerCashManagementApi.md#findCashierData) | **GET** tellers/{tellerId}/cashiers/{cashierId} | Retrieve a cashier
 [**findTeller**](TellerCashManagementApi.md#findTeller) | **GET** tellers/{tellerId} | Retrieve tellers
 [**findTransactionData**](TellerCashManagementApi.md#findTransactionData) | **GET** tellers/{tellerId}/transactions/{transactionId} | 
-[**getCashierData**](TellerCashManagementApi.md#getCashierData) | **GET** tellers/{tellerId}/cashiers | List Cashiers
+[**getCashierData1**](TellerCashManagementApi.md#getCashierData1) | **GET** tellers/{tellerId}/cashiers | List Cashiers
 [**getCashierTemplate**](TellerCashManagementApi.md#getCashierTemplate) | **GET** tellers/{tellerId}/cashiers/template | Find Cashiers
 [**getCashierTxnTemplate**](TellerCashManagementApi.md#getCashierTxnTemplate) | **GET** tellers/{tellerId}/cashiers/{cashierId}/transactions/template | Retrieve Cashier Transaction Template
 [**getJournalData**](TellerCashManagementApi.md#getJournalData) | **GET** tellers/{tellerId}/journals | 
@@ -25,41 +25,68 @@ Method | HTTP request | Description
 [**updateTeller**](TellerCashManagementApi.md#updateTeller) | **PUT** tellers/{tellerId} | Update teller
 
 
-<a name="allocateCashToCashier"></a>
-# **allocateCashToCashier**
-> PostTellersTellerIdCashiersCashierIdAllocateResponse allocateCashToCashier(tellerId, cashierId, body)
+
+## allocateCashToCashier
+
+> PostTellersTellerIdCashiersCashierIdAllocateResponse allocateCashToCashier(tellerId, cashierId, postTellersTellerIdCashiersCashierIdAllocateRequest)
 
 Allocate Cash To Cashier
 
 Mandatory Fields:  Date, Amount, Currency, Notes/Comments
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PostTellersTellerIdCashiersCashierIdAllocateRequest body = new PostTellersTellerIdCashiersCashierIdAllocateRequest(); // PostTellersTellerIdCashiersCashierIdAllocateRequest | body
-try {
-    PostTellersTellerIdCashiersCashierIdAllocateResponse result = apiInstance.allocateCashToCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#allocateCashToCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        PostTellersTellerIdCashiersCashierIdAllocateRequest postTellersTellerIdCashiersCashierIdAllocateRequest = new PostTellersTellerIdCashiersCashierIdAllocateRequest(); // PostTellersTellerIdCashiersCashierIdAllocateRequest | 
+        try {
+            PostTellersTellerIdCashiersCashierIdAllocateResponse result = apiInstance.allocateCashToCashier(tellerId, cashierId, postTellersTellerIdCashiersCashierIdAllocateRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#allocateCashToCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
- **body** | [**PostTellersTellerIdCashiersCashierIdAllocateRequest**](PostTellersTellerIdCashiersCashierIdAllocateRequest.md)| body |
+ **postTellersTellerIdCashiersCashierIdAllocateRequest** | [**PostTellersTellerIdCashiersCashierIdAllocateRequest**](PostTellersTellerIdCashiersCashierIdAllocateRequest.md)|  |
 
 ### Return type
 
@@ -67,46 +94,78 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: text/htmlapplication/json, 
+- **Accept**: application/json
 
-<a name="createCashier"></a>
-# **createCashier**
-> PostTellersTellerIdCashiersResponse createCashier(tellerId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## createCashier
+
+> PostTellersTellerIdCashiersResponse createCashier(tellerId, postTellersTellerIdCashiersRequest)
 
 Create Cashiers
 
 Mandatory Fields:  Cashier/staff, Fromm Date, To Date, Full Day or From time and To time    Optional Fields:  Description/Notes
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-PostTellersTellerIdCashiersRequest body = new PostTellersTellerIdCashiersRequest(); // PostTellersTellerIdCashiersRequest | body
-try {
-    PostTellersTellerIdCashiersResponse result = apiInstance.createCashier(tellerId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#createCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        PostTellersTellerIdCashiersRequest postTellersTellerIdCashiersRequest = new PostTellersTellerIdCashiersRequest(); // PostTellersTellerIdCashiersRequest | 
+        try {
+            PostTellersTellerIdCashiersResponse result = apiInstance.createCashier(tellerId, postTellersTellerIdCashiersRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#createCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
- **body** | [**PostTellersTellerIdCashiersRequest**](PostTellersTellerIdCashiersRequest.md)| body |
+ **postTellersTellerIdCashiersRequest** | [**PostTellersTellerIdCashiersRequest**](PostTellersTellerIdCashiersRequest.md)|  |
 
 ### Return type
 
@@ -114,44 +173,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createTeller"></a>
-# **createTeller**
-> PostTellersResponse createTeller(body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## createTeller
+
+> PostTellersResponse createTeller(postTellersRequest)
 
 Create teller
 
 Mandatory Fields Teller name, OfficeId, Description, Start Date, Status Optional Fields End Date
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-PostTellersRequest body = new PostTellersRequest(); // PostTellersRequest | body
-try {
-    PostTellersResponse result = apiInstance.createTeller(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#createTeller");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        PostTellersRequest postTellersRequest = new PostTellersRequest(); // PostTellersRequest | 
+        try {
+            PostTellersResponse result = apiInstance.createTeller(postTellersRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#createTeller");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostTellersRequest**](PostTellersRequest.md)| body |
+ **postTellersRequest** | [**PostTellersRequest**](PostTellersRequest.md)|  |
 
 ### Return type
 
@@ -159,41 +250,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteCashier"></a>
-# **deleteCashier**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteCashier
+
 > DeleteTellersTellerIdCashiersCashierIdResponse deleteCashier(tellerId, cashierId)
 
 Delete Cashier
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    DeleteTellersTellerIdCashiersCashierIdResponse result = apiInstance.deleteCashier(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#deleteCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        try {
+            DeleteTellersTellerIdCashiersCashierIdResponse result = apiInstance.deleteCashier(tellerId, cashierId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#deleteCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -206,38 +327,70 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="deleteTeller"></a>
-# **deleteTeller**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteTeller
+
 > String deleteTeller(tellerId)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    String result = apiInstance.deleteTeller(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#deleteTeller");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        try {
+            String result = apiInstance.deleteTeller(tellerId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#deleteTeller");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -249,41 +402,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="findCashierData"></a>
-# **findCashierData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## findCashierData
+
 > GetTellersTellerIdCashiersCashierIdResponse findCashierData(tellerId, cashierId)
 
 Retrieve a cashier
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    GetTellersTellerIdCashiersCashierIdResponse result = apiInstance.findCashierData(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findCashierData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        try {
+            GetTellersTellerIdCashiersCashierIdResponse result = apiInstance.findCashierData(tellerId, cashierId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#findCashierData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -296,40 +479,70 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="findTeller"></a>
-# **findTeller**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## findTeller
+
 > GetTellersResponse findTeller(tellerId)
 
 Retrieve tellers
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    GetTellersResponse result = apiInstance.findTeller(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findTeller");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        try {
+            GetTellersResponse result = apiInstance.findTeller(tellerId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#findTeller");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -341,39 +554,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="findTransactionData"></a>
-# **findTransactionData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## findTransactionData
+
 > String findTransactionData(tellerId, transactionId)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long transactionId = 789L; // Long | transactionId
-try {
-    String result = apiInstance.findTransactionData(tellerId, transactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#findTransactionData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long transactionId = 56L; // Long | transactionId
+        try {
+            String result = apiInstance.findTransactionData(tellerId, transactionId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#findTransactionData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -386,42 +631,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCashierData"></a>
-# **getCashierData**
-> GetTellersTellerIdCashiersResponse getCashierData(tellerId, fromdate, todate)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## getCashierData1
+
+> GetTellersTellerIdCashiersResponse getCashierData1(tellerId, fromdate, todate)
 
 List Cashiers
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-String fromdate = "fromdate_example"; // String | fromdate
-String todate = "todate_example"; // String | todate
-try {
-    GetTellersTellerIdCashiersResponse result = apiInstance.getCashierData(tellerId, fromdate, todate);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        String fromdate = "fromdate_example"; // String | fromdate
+        String todate = "todate_example"; // String | todate
+        try {
+            GetTellersTellerIdCashiersResponse result = apiInstance.getCashierData1(tellerId, fromdate, todate);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getCashierData1");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -435,40 +710,70 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCashierTemplate"></a>
-# **getCashierTemplate**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getCashierTemplate
+
 > GetTellersTellerIdCashiersTemplateResponse getCashierTemplate(tellerId)
 
 Find Cashiers
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-try {
-    GetTellersTellerIdCashiersTemplateResponse result = apiInstance.getCashierTemplate(tellerId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        try {
+            GetTellersTellerIdCashiersTemplateResponse result = apiInstance.getCashierTemplate(tellerId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getCashierTemplate");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -480,41 +785,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCashierTxnTemplate"></a>
-# **getCashierTxnTemplate**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getCashierTxnTemplate
+
 > GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse getCashierTxnTemplate(tellerId, cashierId)
 
 Retrieve Cashier Transaction Template
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-try {
-    GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse result = apiInstance.getCashierTxnTemplate(tellerId, cashierId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getCashierTxnTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        try {
+            GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse result = apiInstance.getCashierTxnTemplate(tellerId, cashierId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getCashierTxnTemplate");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -527,40 +862,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getJournalData"></a>
-# **getJournalData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getJournalData
+
 > String getJournalData(tellerId, cashierId, dateRange)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String dateRange = "dateRange_example"; // String | dateRange
-try {
-    String result = apiInstance.getJournalData(tellerId, cashierId, dateRange);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getJournalData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        String dateRange = "dateRange_example"; // String | dateRange
+        try {
+            String result = apiInstance.getJournalData(tellerId, cashierId, dateRange);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getJournalData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -574,15 +941,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTellerData"></a>
-# **getTellerData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## getTellerData
+
 > List&lt;GetTellersResponse&gt; getTellerData(officeId)
 
 List all tellers
@@ -590,24 +963,50 @@ List all tellers
 Retrieves list tellers
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long officeId = 789L; // Long | officeId
-try {
-    List<GetTellersResponse> result = apiInstance.getTellerData(officeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTellerData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long officeId = 56L; // Long | officeId
+        try {
+            List<GetTellersResponse> result = apiInstance.getTellerData(officeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getTellerData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -619,39 +1018,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTransactionData"></a>
-# **getTransactionData**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getTransactionData
+
 > String getTransactionData(tellerId, dateRange)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-String dateRange = "dateRange_example"; // String | dateRange
-try {
-    String result = apiInstance.getTransactionData(tellerId, dateRange);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionData");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        String dateRange = "dateRange_example"; // String | dateRange
+        try {
+            String result = apiInstance.getTransactionData(tellerId, dateRange);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getTransactionData");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -664,46 +1095,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTransactionsForCashier"></a>
-# **getTransactionsForCashier**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## getTransactionsForCashier
+
 > List&lt;GetTellersTellerIdCashiersCashiersIdTransactionsResponse&gt; getTransactionsForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder)
 
 Retrieve Cashier Transaction
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String currencyCode = "currencyCode_example"; // String | currencyCode
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    List<GetTellersTellerIdCashiersCashiersIdTransactionsResponse> result = apiInstance.getTransactionsForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionsForCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        String currencyCode = "currencyCode_example"; // String | currencyCode
+        Integer offset = 56; // Integer | offset
+        Integer limit = 56; // Integer | limit
+        String orderBy = "orderBy_example"; // String | orderBy
+        String sortOrder = "sortOrder_example"; // String | sortOrder
+        try {
+            List<GetTellersTellerIdCashiersCashiersIdTransactionsResponse> result = apiInstance.getTransactionsForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getTransactionsForCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -721,46 +1182,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTransactionsWtihSummaryForCashier"></a>
-# **getTransactionsWtihSummaryForCashier**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getTransactionsWtihSummaryForCashier
+
 > GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse getTransactionsWtihSummaryForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder)
 
 Transactions Wtih Summary For Cashier
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-String currencyCode = "currencyCode_example"; // String | currencyCode
-Integer offset = 56; // Integer | offset
-Integer limit = 56; // Integer | limit
-String orderBy = "orderBy_example"; // String | orderBy
-String sortOrder = "sortOrder_example"; // String | sortOrder
-try {
-    GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse result = apiInstance.getTransactionsWtihSummaryForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#getTransactionsWtihSummaryForCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        String currencyCode = "currencyCode_example"; // String | currencyCode
+        Integer offset = 56; // Integer | offset
+        Integer limit = 56; // Integer | limit
+        String orderBy = "orderBy_example"; // String | orderBy
+        String sortOrder = "sortOrder_example"; // String | sortOrder
+        try {
+            GetTellersTellerIdCashiersCashiersIdSummaryAndTransactionsResponse result = apiInstance.getTransactionsWtihSummaryForCashier(tellerId, cashierId, currencyCode, offset, limit, orderBy, sortOrder);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#getTransactionsWtihSummaryForCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -778,48 +1269,80 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="settleCashFromCashier"></a>
-# **settleCashFromCashier**
-> PostTellersTellerIdCashiersCashierIdSettleResponse settleCashFromCashier(tellerId, cashierId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## settleCashFromCashier
+
+> PostTellersTellerIdCashiersCashierIdSettleResponse settleCashFromCashier(tellerId, cashierId, postTellersTellerIdCashiersCashierIdSettleRequest)
 
 Settle Cash From Cashier
 
 Mandatory Fields Date, Amount, Currency, Notes/Comments
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PostTellersTellerIdCashiersCashierIdSettleRequest body = new PostTellersTellerIdCashiersCashierIdSettleRequest(); // PostTellersTellerIdCashiersCashierIdSettleRequest | body
-try {
-    PostTellersTellerIdCashiersCashierIdSettleResponse result = apiInstance.settleCashFromCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#settleCashFromCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        PostTellersTellerIdCashiersCashierIdSettleRequest postTellersTellerIdCashiersCashierIdSettleRequest = new PostTellersTellerIdCashiersCashierIdSettleRequest(); // PostTellersTellerIdCashiersCashierIdSettleRequest | 
+        try {
+            PostTellersTellerIdCashiersCashierIdSettleResponse result = apiInstance.settleCashFromCashier(tellerId, cashierId, postTellersTellerIdCashiersCashierIdSettleRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#settleCashFromCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
- **body** | [**PostTellersTellerIdCashiersCashierIdSettleRequest**](PostTellersTellerIdCashiersCashierIdSettleRequest.md)| body |
+ **postTellersTellerIdCashiersCashierIdSettleRequest** | [**PostTellersTellerIdCashiersCashierIdSettleRequest**](PostTellersTellerIdCashiersCashierIdSettleRequest.md)|  |
 
 ### Return type
 
@@ -827,48 +1350,78 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: text/htmlapplication/json, 
- - **Accept**: application/json
+- **Content-Type**: text/htmlapplication/json, 
+- **Accept**: application/json
 
-<a name="updateCashier"></a>
-# **updateCashier**
-> PutTellersTellerIdCashiersCashierIdResponse updateCashier(tellerId, cashierId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateCashier
+
+> PutTellersTellerIdCashiersCashierIdResponse updateCashier(tellerId, cashierId, putTellersTellerIdCashiersCashierIdRequest)
 
 Update Cashier
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-Long cashierId = 789L; // Long | cashierId
-PutTellersTellerIdCashiersCashierIdRequest body = new PutTellersTellerIdCashiersCashierIdRequest(); // PutTellersTellerIdCashiersCashierIdRequest | body
-try {
-    PutTellersTellerIdCashiersCashierIdResponse result = apiInstance.updateCashier(tellerId, cashierId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#updateCashier");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        Long cashierId = 56L; // Long | cashierId
+        PutTellersTellerIdCashiersCashierIdRequest putTellersTellerIdCashiersCashierIdRequest = new PutTellersTellerIdCashiersCashierIdRequest(); // PutTellersTellerIdCashiersCashierIdRequest | 
+        try {
+            PutTellersTellerIdCashiersCashierIdResponse result = apiInstance.updateCashier(tellerId, cashierId, putTellersTellerIdCashiersCashierIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#updateCashier");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
  **cashierId** | **Long**| cashierId |
- **body** | [**PutTellersTellerIdCashiersCashierIdRequest**](PutTellersTellerIdCashiersCashierIdRequest.md)| body |
+ **putTellersTellerIdCashiersCashierIdRequest** | [**PutTellersTellerIdCashiersCashierIdRequest**](PutTellersTellerIdCashiersCashierIdRequest.md)|  |
 
 ### Return type
 
@@ -876,46 +1429,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="updateTeller"></a>
-# **updateTeller**
-> PutTellersResponse updateTeller(tellerId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateTeller
+
+> PutTellersResponse updateTeller(tellerId, putTellersRequest)
 
 Update teller
 
-
-
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.TellerCashManagementApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.TellerCashManagementApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-TellerCashManagementApi apiInstance = new TellerCashManagementApi();
-Long tellerId = 789L; // Long | tellerId
-PutTellersRequest body = new PutTellersRequest(); // PutTellersRequest | body
-try {
-    PutTellersResponse result = apiInstance.updateTeller(tellerId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TellerCashManagementApi#updateTeller");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        TellerCashManagementApi apiInstance = new TellerCashManagementApi(defaultClient);
+        Long tellerId = 56L; // Long | tellerId
+        PutTellersRequest putTellersRequest = new PutTellersRequest(); // PutTellersRequest | 
+        try {
+            PutTellersResponse result = apiInstance.updateTeller(tellerId, putTellersRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TellerCashManagementApi#updateTeller");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tellerId** | **Long**| tellerId |
- **body** | [**PutTellersRequest**](PutTellersRequest.md)| body |
+ **putTellersRequest** | [**PutTellersRequest**](PutTellersRequest.md)|  |
 
 ### Return type
 
@@ -923,10 +1506,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

@@ -1,7 +1,10 @@
 
+
 # GetReportsResponse
 
+GetReportsResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -13,7 +16,7 @@ Name | Type | Description | Notes
 **reportSql** | **String** |  |  [optional]
 **coreReport** | **Boolean** |  |  [optional]
 **useReport** | **Boolean** |  |  [optional]
-**reportParameters** | [**List&lt;ReportParameterData&gt;**](ReportParameterData.md) |  |  [optional]
+**reportParameters** | **List&lt;Object&gt;** |  |  [optional]
 
 
 

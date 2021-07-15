@@ -1,7 +1,10 @@
 
+
 # GetGroupsTemplateResponse
 
+GetGroupsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **officeId** | **Integer** |  |  [optional]

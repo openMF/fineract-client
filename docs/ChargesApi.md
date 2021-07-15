@@ -1,6 +1,6 @@
 # ChargesApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,37 +12,64 @@ Method | HTTP request | Description
 [**updateCharge**](ChargesApi.md#updateCharge) | **PUT** charges/{chargeId} | Update a Charge
 
 
-<a name="createCharge"></a>
-# **createCharge**
-> PostChargesResponse createCharge(body)
+
+## createCharge
+
+> PostChargesResponse createCharge(postChargesRequest)
 
 Create/Define a Charge
 
 Define a new charge that can later be associated with loans and savings through their respective product definitions or directly on each account instance.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-PostChargesRequest body = new PostChargesRequest(); // PostChargesRequest | body
-try {
-    PostChargesResponse result = apiInstance.createCharge(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#createCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        PostChargesRequest postChargesRequest = new PostChargesRequest(); // PostChargesRequest | 
+        try {
+            PostChargesResponse result = apiInstance.createCharge(postChargesRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#createCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostChargesRequest**](PostChargesRequest.md)| body |
+ **postChargesRequest** | [**PostChargesRequest**](PostChargesRequest.md)|  |
 
 ### Return type
 
@@ -50,15 +77,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteCharge"></a>
-# **deleteCharge**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## deleteCharge
+
 > DeleteChargesChargeIdResponse deleteCharge(chargeId)
 
 Delete a Charge
@@ -66,24 +99,50 @@ Delete a Charge
 Deletes a Charge.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-try {
-    DeleteChargesChargeIdResponse result = apiInstance.deleteCharge(chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#deleteCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        Long chargeId = 56L; // Long | chargeId
+        try {
+            DeleteChargesChargeIdResponse result = apiInstance.deleteCharge(chargeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#deleteCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -95,15 +154,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAllCharges"></a>
-# **retrieveAllCharges**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAllCharges
+
 > List&lt;GetChargesResponse&gt; retrieveAllCharges()
 
 Retrieve Charges
@@ -111,23 +176,49 @@ Retrieve Charges
 Returns the list of defined charges.  Example Requests:  charges
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-try {
-    List<GetChargesResponse> result = apiInstance.retrieveAllCharges();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveAllCharges");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        try {
+            List<GetChargesResponse> result = apiInstance.retrieveAllCharges();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#retrieveAllCharges");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -136,15 +227,21 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveCharge"></a>
-# **retrieveCharge**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveCharge
+
 > GetChargesResponse retrieveCharge(chargeId)
 
 Retrieve a Charge
@@ -152,24 +249,50 @@ Retrieve a Charge
 Returns the details of a defined Charge.  Example Requests:  charges/1
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-try {
-    GetChargesResponse result = apiInstance.retrieveCharge(chargeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        Long chargeId = 56L; // Long | chargeId
+        try {
+            GetChargesResponse result = apiInstance.retrieveCharge(chargeId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#retrieveCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -181,39 +304,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveNewChargeDetails"></a>
-# **retrieveNewChargeDetails**
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveNewChargeDetails
+
 > GetChargesTemplateResponse retrieveNewChargeDetails()
 
 Retrieve Charge Template
 
-This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  charges/template 
+This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  charges/template 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-try {
-    GetChargesTemplateResponse result = apiInstance.retrieveNewChargeDetails();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#retrieveNewChargeDetails");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        try {
+            GetChargesTemplateResponse result = apiInstance.retrieveNewChargeDetails();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#retrieveNewChargeDetails");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -222,46 +377,78 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateCharge"></a>
-# **updateCharge**
-> PutChargesChargeIdResponse updateCharge(chargeId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## updateCharge
+
+> PutChargesChargeIdResponse updateCharge(chargeId, putChargesChargeIdRequest)
 
 Update a Charge
 
 Updates the details of a Charge.
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.ChargesApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.ChargesApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-ChargesApi apiInstance = new ChargesApi();
-Long chargeId = 789L; // Long | chargeId
-PutChargesChargeIdRequest body = new PutChargesChargeIdRequest(); // PutChargesChargeIdRequest | body
-try {
-    PutChargesChargeIdResponse result = apiInstance.updateCharge(chargeId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChargesApi#updateCharge");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        Long chargeId = 56L; // Long | chargeId
+        PutChargesChargeIdRequest putChargesChargeIdRequest = new PutChargesChargeIdRequest(); // PutChargesChargeIdRequest | 
+        try {
+            PutChargesChargeIdResponse result = apiInstance.updateCharge(chargeId, putChargesChargeIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#updateCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chargeId** | **Long**| chargeId |
- **body** | [**PutChargesChargeIdRequest**](PutChargesChargeIdRequest.md)| body |
+ **putChargesChargeIdRequest** | [**PutChargesChargeIdRequest**](PutChargesChargeIdRequest.md)|  |
 
 ### Return type
 
@@ -269,10 +456,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

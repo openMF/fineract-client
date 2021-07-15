@@ -1,7 +1,9 @@
 
+
 # CommandWrapper
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **groupId** | **Long** |  |  [optional]
@@ -18,6 +20,7 @@ Name | Type | Description | Notes
 **productId** | **Long** |  |  [optional]
 **creditBureauId** | **Long** |  |  [optional]
 **organisationCreditBureauId** | **Long** |  |  [optional]
+**update** | **Boolean** |  |  [optional]
 **create** | **Boolean** |  |  [optional]
 **createDatatable** | **Boolean** |  |  [optional]
 **deleteDatatable** | **Boolean** |  |  [optional]
@@ -29,7 +32,6 @@ Name | Type | Description | Notes
 **updateMultiple** | **Boolean** |  |  [optional]
 **registerDatatable** | **Boolean** |  |  [optional]
 **noteResource** | **Boolean** |  |  [optional]
-**update** | **Boolean** |  |  [optional]
 **cacheResource** | **Boolean** |  |  [optional]
 **updateOperation** | **Boolean** |  |  [optional]
 **delete** | **Boolean** |  |  [optional]

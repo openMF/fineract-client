@@ -1,7 +1,9 @@
 
+
 # LoanProductInterestRecalculationDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -22,8 +24,9 @@ Name | Type | Description | Notes
 **_new** | **Boolean** |  |  [optional]
 
 
-<a name="RestFrequencyTypeEnum"></a>
+
 ## Enum: RestFrequencyTypeEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;
@@ -33,8 +36,9 @@ WEEKLY | &quot;WEEKLY&quot;
 MONTHLY | &quot;MONTHLY&quot;
 
 
-<a name="CompoundingFrequencyTypeEnum"></a>
+
 ## Enum: CompoundingFrequencyTypeEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;

@@ -1,7 +1,9 @@
 
+
 # FinancialActivityData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -9,8 +11,9 @@ Name | Type | Description | Notes
 **mappedGLAccountType** | [**MappedGLAccountTypeEnum**](#MappedGLAccountTypeEnum) |  |  [optional]
 
 
-<a name="MappedGLAccountTypeEnum"></a>
+
 ## Enum: MappedGLAccountTypeEnum
+
 Name | Value
 ---- | -----
 ASSET | &quot;ASSET&quot;

@@ -1,7 +1,10 @@
 
+
 # GetTellersResponse
 
+GetTellersResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -9,13 +12,14 @@ Name | Type | Description | Notes
 **debitAccountId** | **Long** |  |  [optional]
 **creditAccountId** | **Long** |  |  [optional]
 **name** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **officeName** | **String** |  |  [optional]
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
+
 Name | Value
 ---- | -----
 INVALID | &quot;INVALID&quot;

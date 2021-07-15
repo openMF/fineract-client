@@ -1,7 +1,9 @@
 
+
 # LoanProductRelatedDetail
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
@@ -20,14 +22,15 @@ Name | Type | Description | Notes
 **amortizationMethod** | [**AmortizationMethodEnum**](#AmortizationMethodEnum) |  |  [optional]
 **inArrearsTolerance** | [**Money**](Money.md) |  |  [optional]
 **graceOnArrearsAgeing** | **Integer** |  |  [optional]
-**equalAmortization** | **Boolean** |  |  [optional]
 **graceOnDueDate** | **Integer** |  |  [optional]
-**arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **interestRecalculationEnabled** | **Boolean** |  |  [optional]
+**equalAmortization** | **Boolean** |  |  [optional]
+**arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 
 
-<a name="InterestPeriodFrequencyTypeEnum"></a>
+
 ## Enum: InterestPeriodFrequencyTypeEnum
+
 Name | Value
 ---- | -----
 DAYS | &quot;DAYS&quot;
@@ -38,8 +41,9 @@ WHOLE_TERM | &quot;WHOLE_TERM&quot;
 INVALID | &quot;INVALID&quot;
 
 
-<a name="InterestMethodEnum"></a>
+
 ## Enum: InterestMethodEnum
+
 Name | Value
 ---- | -----
 DECLINING_BALANCE | &quot;DECLINING_BALANCE&quot;
@@ -47,8 +51,9 @@ FLAT | &quot;FLAT&quot;
 INVALID | &quot;INVALID&quot;
 
 
-<a name="InterestCalculationPeriodMethodEnum"></a>
+
 ## Enum: InterestCalculationPeriodMethodEnum
+
 Name | Value
 ---- | -----
 DAILY | &quot;DAILY&quot;
@@ -56,8 +61,9 @@ SAME_AS_REPAYMENT_PERIOD | &quot;SAME_AS_REPAYMENT_PERIOD&quot;
 INVALID | &quot;INVALID&quot;
 
 
-<a name="RepaymentPeriodFrequencyTypeEnum"></a>
+
 ## Enum: RepaymentPeriodFrequencyTypeEnum
+
 Name | Value
 ---- | -----
 DAYS | &quot;DAYS&quot;
@@ -68,8 +74,9 @@ WHOLE_TERM | &quot;WHOLE_TERM&quot;
 INVALID | &quot;INVALID&quot;
 
 
-<a name="AmortizationMethodEnum"></a>
+
 ## Enum: AmortizationMethodEnum
+
 Name | Value
 ---- | -----
 EQUAL_PRINCIPAL | &quot;EQUAL_PRINCIPAL&quot;

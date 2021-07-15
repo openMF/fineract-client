@@ -1,7 +1,9 @@
 
+
 # GetFixedDepositAccountsSummary
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | [**GetFixedDepositAccountsCurrency**](GetFixedDepositAccountsCurrency.md) |  |  [optional]

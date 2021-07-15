@@ -1,7 +1,9 @@
 
+
 # GetStandingInstructionHistoryPageItemsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **standingInstructionId** | **Long** |  |  [optional]
@@ -16,7 +18,7 @@ Name | Type | Description | Notes
 **toClient** | [**GetStandingInstructionHistoryToClient**](GetStandingInstructionHistoryToClient.md) |  |  [optional]
 **amount** | **Float** |  |  [optional]
 **status** | **String** |  |  [optional]
-**executionTime** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**executionTime** | [**Date**](Date.md) |  |  [optional]
 **errorLog** | **String** |  |  [optional]
 
 

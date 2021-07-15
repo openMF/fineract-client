@@ -1,7 +1,10 @@
 
+
 # PostClientsClientIdIdentifiersRequest
 
+PostClientsClientIdIdentifiersRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **documentTypeId** | **Integer** |  |  [optional]

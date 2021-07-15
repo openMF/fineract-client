@@ -1,23 +1,25 @@
 
+
 # GetLoansLoanIdTimeline
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submittedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**submittedOnDate** | [**Date**](Date.md) |  |  [optional]
 **submittedByUsername** | **String** |  |  [optional]
 **submittedByFirstname** | **String** |  |  [optional]
 **submittedByLastname** | **String** |  |  [optional]
-**approvedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**approvedOnDate** | [**Date**](Date.md) |  |  [optional]
 **approvedByUsername** | **String** |  |  [optional]
 **approvedByFirstname** | **String** |  |  [optional]
 **approvedByLastname** | **String** |  |  [optional]
-**expectedDisbursementDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**actualDisbursementDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**expectedDisbursementDate** | [**Date**](Date.md) |  |  [optional]
+**actualDisbursementDate** | [**Date**](Date.md) |  |  [optional]
 **disbursedByUsername** | **String** |  |  [optional]
 **disbursedByFirstname** | **String** |  |  [optional]
 **disbursedByLastname** | **String** |  |  [optional]
-**expectedMaturityDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**expectedMaturityDate** | [**Date**](Date.md) |  |  [optional]
 
 
 

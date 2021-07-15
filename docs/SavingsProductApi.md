@@ -1,48 +1,75 @@
 # SavingsProductApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](SavingsProductApi.md#create) | **POST** savingsproducts | Create a Savings Product
-[**delete**](SavingsProductApi.md#delete) | **DELETE** savingsproducts/{productId} | Delete a Savings Product
-[**retrieveAll**](SavingsProductApi.md#retrieveAll) | **GET** savingsproducts | List Savings Products
-[**retrieveOne**](SavingsProductApi.md#retrieveOne) | **GET** savingsproducts/{productId} | Retrieve a Savings Product
-[**retrieveTemplate**](SavingsProductApi.md#retrieveTemplate) | **GET** savingsproducts/template | Retrieve Savings Product Template
-[**update**](SavingsProductApi.md#update) | **PUT** savingsproducts/{productId} | Update a Savings Product
+[**create13**](SavingsProductApi.md#create13) | **POST** savingsproducts | Create a Savings Product
+[**delete19**](SavingsProductApi.md#delete19) | **DELETE** savingsproducts/{productId} | Delete a Savings Product
+[**retrieveAll34**](SavingsProductApi.md#retrieveAll34) | **GET** savingsproducts | List Savings Products
+[**retrieveOne25**](SavingsProductApi.md#retrieveOne25) | **GET** savingsproducts/{productId} | Retrieve a Savings Product
+[**retrieveTemplate19**](SavingsProductApi.md#retrieveTemplate19) | **GET** savingsproducts/template | Retrieve Savings Product Template
+[**update20**](SavingsProductApi.md#update20) | **PUT** savingsproducts/{productId} | Update a Savings Product
 
 
-<a name="create"></a>
-# **create**
-> PostSavingsProductsResponse create(body)
+
+## create13
+
+> PostSavingsProductsResponse create13(postSavingsProductsRequest)
 
 Create a Savings Product
 
 Creates a Savings Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, nominalAnnualInterestRate, interestCompoundingPeriodType, interestCalculationType, interestCalculationDaysInYearType,accountingRule  Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): savingsReferenceAccountId, savingsControlAccountId, interestOnSavingsAccountId, incomeFromFeeAccountId, transfersInSuspenseAccountId, incomeFromPenaltyAccountId  Optional Fields: minRequiredOpeningBalance, lockinPeriodFrequency, lockinPeriodFrequencyType, withdrawalFeeForTransfers, paymentChannelToFundSourceMappings, feeToIncomeAccountMappings, penaltyToIncomeAccountMappings, charges, allowOverdraft, overdraftLimit, minBalanceForInterestCalculation,withHoldTax,taxGroupId
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-PostSavingsProductsRequest body = new PostSavingsProductsRequest(); // PostSavingsProductsRequest | body
-try {
-    PostSavingsProductsResponse result = apiInstance.create(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#create");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        PostSavingsProductsRequest postSavingsProductsRequest = new PostSavingsProductsRequest(); // PostSavingsProductsRequest | 
+        try {
+            PostSavingsProductsResponse result = apiInstance.create13(postSavingsProductsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#create13");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PostSavingsProductsRequest**](PostSavingsProductsRequest.md)| body |
+ **postSavingsProductsRequest** | [**PostSavingsProductsRequest**](PostSavingsProductsRequest.md)|  |
 
 ### Return type
 
@@ -50,40 +77,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="delete"></a>
-# **delete**
-> DeleteSavingsProductsProductIdResponse delete(productId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## delete19
+
+> DeleteSavingsProductsProductIdResponse delete19(productId)
 
 Delete a Savings Product
 
 Deletes a Savings Product
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-try {
-    DeleteSavingsProductsProductIdResponse result = apiInstance.delete(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#delete");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        Long productId = 56L; // Long | productId
+        try {
+            DeleteSavingsProductsProductIdResponse result = apiInstance.delete19(productId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#delete19");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -95,39 +154,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAll"></a>
-# **retrieveAll**
-> List&lt;GetSavingsProductsResponse&gt; retrieveAll()
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAll34
+
+> List&lt;GetSavingsProductsResponse&gt; retrieveAll34()
 
 List Savings Products
 
 Lists Savings Products  Example Requests:  savingsproducts  savingsproducts?fields&#x3D;name
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-try {
-    List<GetSavingsProductsResponse> result = apiInstance.retrieveAll();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveAll");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        try {
+            List<GetSavingsProductsResponse> result = apiInstance.retrieveAll34();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#retrieveAll34");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -136,40 +227,72 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveOne"></a>
-# **retrieveOne**
-> GetSavingsProductsProductIdResponse retrieveOne(productId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveOne25
+
+> GetSavingsProductsProductIdResponse retrieveOne25(productId)
 
 Retrieve a Savings Product
 
 Retrieves a Savings Product  Example Requests:  savingsproducts/1  savingsproducts/1?template&#x3D;true  savingsproducts/1?fields&#x3D;name,description
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-try {
-    GetSavingsProductsProductIdResponse result = apiInstance.retrieveOne(productId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveOne");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        Long productId = 56L; // Long | productId
+        try {
+            GetSavingsProductsProductIdResponse result = apiInstance.retrieveOne25(productId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#retrieveOne25");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -181,39 +304,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveTemplate"></a>
-# **retrieveTemplate**
-> GetSavingsProductsTemplateResponse retrieveTemplate()
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveTemplate19
+
+> GetSavingsProductsTemplateResponse retrieveTemplate19()
 
 Retrieve Savings Product Template
 
-This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  savingsproducts/template
+This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  savingsproducts/template
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-try {
-    GetSavingsProductsTemplateResponse result = apiInstance.retrieveTemplate();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#retrieveTemplate");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        try {
+            GetSavingsProductsTemplateResponse result = apiInstance.retrieveTemplate19();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#retrieveTemplate19");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -222,46 +377,78 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="update"></a>
-# **update**
-> PutSavingsProductsProductIdResponse update(productId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## update20
+
+> PutSavingsProductsProductIdResponse update20(productId, putSavingsProductsProductIdRequest)
 
 Update a Savings Product
 
 Updates a Savings Product
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.SavingsProductApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.SavingsProductApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-SavingsProductApi apiInstance = new SavingsProductApi();
-Long productId = 789L; // Long | productId
-PutSavingsProductsProductIdRequest body = new PutSavingsProductsProductIdRequest(); // PutSavingsProductsProductIdRequest | body
-try {
-    PutSavingsProductsProductIdResponse result = apiInstance.update(productId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SavingsProductApi#update");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        SavingsProductApi apiInstance = new SavingsProductApi(defaultClient);
+        Long productId = 56L; // Long | productId
+        PutSavingsProductsProductIdRequest putSavingsProductsProductIdRequest = new PutSavingsProductsProductIdRequest(); // PutSavingsProductsProductIdRequest | 
+        try {
+            PutSavingsProductsProductIdResponse result = apiInstance.update20(productId, putSavingsProductsProductIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SavingsProductApi#update20");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Long**| productId |
- **body** | [**PutSavingsProductsProductIdRequest**](PutSavingsProductsProductIdRequest.md)| body |
+ **putSavingsProductsProductIdRequest** | [**PutSavingsProductsProductIdRequest**](PutSavingsProductsProductIdRequest.md)|  |
 
 ### Return type
 
@@ -269,10 +456,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

@@ -1,7 +1,10 @@
 
+
 # GetRunReportResponse
 
+GetRunReportResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **columnHeaders** | [**List&lt;GetRunReportColumnHeaders&gt;**](GetRunReportColumnHeaders.md) |  |  [optional]

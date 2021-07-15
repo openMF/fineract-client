@@ -1,7 +1,10 @@
 
+
 # GetSavingsAccountsSavingsAccountIdChargesTemplateResponse
 
+GetSavingsAccountsSavingsAccountIdChargesTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amountPaid** | **Float** |  |  [optional]

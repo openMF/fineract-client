@@ -1,7 +1,9 @@
 
+
 # Scorecard
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -10,7 +12,7 @@ Name | Type | Description | Notes
 **response** | [**Response**](Response.md) |  |  [optional]
 **appUser** | [**AppUser**](AppUser.md) |  |  [optional]
 **client** | [**Client**](Client.md) |  |  [optional]
-**createdOn** | [**DateTime**](DateTime.md) |  |  [optional]
+**createdOn** | [**Date**](Date.md) |  |  [optional]
 **value** | **Integer** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 

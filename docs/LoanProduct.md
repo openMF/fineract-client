@@ -1,15 +1,18 @@
 
+
 # LoanProduct
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
 **shortName** | **String** |  |  [optional]
+**rates** | [**List&lt;Rate&gt;**](Rate.md) |  |  [optional]
 **loanProductRelatedDetail** | [**LoanProductRelatedDetail**](LoanProductRelatedDetail.md) |  |  [optional]
 **includeInBorrowerCycle** | **Boolean** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**closeDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
+**closeDate** | [**Date**](Date.md) |  |  [optional]
 **externalId** | **String** |  |  [optional]
 **minimumDaysBetweenDisbursalAndFirstRepayment** | **Integer** |  |  [optional]
 **productInterestRecalculationDetails** | [**LoanProductInterestRecalculationDetails**](LoanProductInterestRecalculationDetails.md) |  |  [optional]
@@ -17,11 +20,13 @@ Name | Type | Description | Notes
 **principalThresholdForLastInstallment** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **installmentAmountInMultiplesOf** | **Integer** |  |  [optional]
 **floatingRates** | [**LoanProductFloatingRates**](LoanProductFloatingRates.md) |  |  [optional]
+**syncExpectedWithDisbursementDate** | **Boolean** |  |  [optional]
+**currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
+**multiDisburseLoan** | **Boolean** |  |  [optional]
 **accountingType** | **Integer** |  |  [optional]
-**cashBasedAccountingEnabled** | **Boolean** |  |  [optional]
-**accrualBasedAccountingEnabled** | **Boolean** |  |  [optional]
-**linkedToFloatingInterestRate** | **Boolean** |  |  [optional]
-**equalAmortization** | **Boolean** |  |  [optional]
+**nominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**interestPeriodFrequencyType** | [**InterestPeriodFrequencyTypeEnum**](#InterestPeriodFrequencyTypeEnum) |  |  [optional]
+**numberOfRepayments** | **Integer** |  |  [optional]
 **interestRecalculationEnabled** | **Boolean** |  |  [optional]
 **repaymentStrategy** | [**LoanTransactionProcessingStrategy**](LoanTransactionProcessingStrategy.md) |  |  [optional]
 **loanProductCharges** | [**List&lt;Charge&gt;**](Charge.md) |  |  [optional]
@@ -32,22 +37,22 @@ Name | Type | Description | Notes
 **principalAmount** | [**Money**](Money.md) |  |  [optional]
 **minPrincipalAmount** | [**Money**](Money.md) |  |  [optional]
 **maxPrincipalAmount** | [**Money**](Money.md) |  |  [optional]
-**nominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**interestPeriodFrequencyType** | [**InterestPeriodFrequencyTypeEnum**](#InterestPeriodFrequencyTypeEnum) |  |  [optional]
 **minNominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **maxNominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**numberOfRepayments** | **Integer** |  |  [optional]
 **minNumberOfRepayments** | **Integer** |  |  [optional]
 **maxNumberOfRepayments** | **Integer** |  |  [optional]
-**multiDisburseLoan** | **Boolean** |  |  [optional]
 **holdGuaranteeFundsEnabled** | **Boolean** |  |  [optional]
 **arrearsBasedOnOriginalSchedule** | **Boolean** |  |  [optional]
-**currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
+**equalAmortization** | **Boolean** |  |  [optional]
+**cashBasedAccountingEnabled** | **Boolean** |  |  [optional]
+**accrualBasedAccountingEnabled** | **Boolean** |  |  [optional]
+**linkedToFloatingInterestRate** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 
-<a name="InterestPeriodFrequencyTypeEnum"></a>
+
 ## Enum: InterestPeriodFrequencyTypeEnum
+
 Name | Value
 ---- | -----
 DAYS | &quot;DAYS&quot;

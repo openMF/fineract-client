@@ -1,12 +1,14 @@
 
+
 # JobDetailHistoryDataSwagger
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | **Long** |  |  [optional]
-**jobRunStartTime** | [**DateTime**](DateTime.md) |  |  [optional]
-**jobRunEndTime** | [**DateTime**](DateTime.md) |  |  [optional]
+**jobRunStartTime** | [**Date**](Date.md) |  |  [optional]
+**jobRunEndTime** | [**Date**](Date.md) |  |  [optional]
 **status** | **String** |  |  [optional]
 **triggerType** | **String** |  |  [optional]
 

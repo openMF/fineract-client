@@ -1,7 +1,9 @@
 
+
 # Survey
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -11,8 +13,8 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
-**validFrom** | [**DateTime**](DateTime.md) |  |  [optional]
-**validTo** | [**DateTime**](DateTime.md) |  |  [optional]
+**validFrom** | [**Date**](Date.md) |  |  [optional]
+**validTo** | [**Date**](Date.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

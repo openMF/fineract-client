@@ -1,7 +1,9 @@
 
+
 # PostTaxesGroupTaxComponents
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taxComponentId** | **Integer** |  |  [optional]

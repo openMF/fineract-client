@@ -1,7 +1,9 @@
 
+
 # GetFixedDepositProductsProductIdAccountingMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **savingsReferenceAccount** | [**GetFixedDepositProductsProductIdSavingsReferenceAccount**](GetFixedDepositProductsProductIdSavingsReferenceAccount.md) |  |  [optional]

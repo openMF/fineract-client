@@ -1,7 +1,9 @@
 
+
 # GetSavingsProductsAccountingMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **savingsReferenceAccount** | [**GetSavingsProductsSavingsReferenceAccount**](GetSavingsProductsSavingsReferenceAccount.md) |  |  [optional]

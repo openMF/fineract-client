@@ -1,7 +1,9 @@
 
+
 # GetClientIdProductIdAccountingMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shareReferenceId** | [**GetShareAccountsShareReferenceId**](GetShareAccountsShareReferenceId.md) |  |  [optional]

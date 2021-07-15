@@ -1,7 +1,10 @@
 
+
 # GetLoansTemplateResponse
 
+GetLoansTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientId** | **Long** |  |  [optional]

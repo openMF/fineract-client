@@ -1,7 +1,9 @@
 
+
 # Client
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -13,30 +15,32 @@ Name | Type | Description | Notes
 **middlename** | **String** |  |  [optional]
 **lastname** | **String** |  |  [optional]
 **displayName** | **String** |  |  [optional]
+**mobileNo** | **String** |  |  [optional]
+**emailAddress** | **String** |  |  [optional]
 **externalId** | **String** |  |  [optional]
 **staff** | [**Staff**](Staff.md) |  |  [optional]
 **groups** | [**List&lt;Group&gt;**](Group.md) |  |  [optional]
 **accountNumberRequiresAutoGeneration** | **Boolean** |  |  [optional]
-**closureDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**withdrawalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**submittedOnDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**closureDate** | [**Date**](Date.md) |  |  [optional]
+**withdrawalDate** | [**Date**](Date.md) |  |  [optional]
+**submittedOnDate** | [**Date**](Date.md) |  |  [optional]
 **legalForm** | **Integer** |  |  [optional]
-**reopenedDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**proposedTransferDate** | [**DateTime**](DateTime.md) |  |  [optional]
-**notActive** | **Boolean** |  |  [optional]
-**transferOnHold** | **Boolean** |  |  [optional]
+**reopenedDate** | [**Date**](Date.md) |  |  [optional]
+**proposedTransferDate** | [**Date**](Date.md) |  |  [optional]
+**closed** | **Boolean** |  |  [optional]
+**active** | **Boolean** |  |  [optional]
+**pending** | **Boolean** |  |  [optional]
+**rejected** | **Boolean** |  |  [optional]
+**activationLocalDate** | [**Date**](Date.md) |  |  [optional]
 **transferInProgress** | **Boolean** |  |  [optional]
-**activationLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**officeJoiningLocalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**withdrawn** | **Boolean** |  |  [optional]
+**transferOnHold** | **Boolean** |  |  [optional]
 **notPending** | **Boolean** |  |  [optional]
 **transferInProgressOrOnHold** | **Boolean** |  |  [optional]
+**notActive** | **Boolean** |  |  [optional]
+**officeJoiningLocalDate** | [**Date**](Date.md) |  |  [optional]
+**withdrawn** | **Boolean** |  |  [optional]
 **notStaff** | **Boolean** |  |  [optional]
-**rejectedDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**rejected** | **Boolean** |  |  [optional]
-**pending** | **Boolean** |  |  [optional]
-**closed** | **Boolean** |  |  [optional]
+**rejectedDate** | [**Date**](Date.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

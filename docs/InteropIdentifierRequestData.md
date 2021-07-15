@@ -1,17 +1,20 @@
 
+
 # InteropIdentifierRequestData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**idType** | [**IdTypeEnum**](#IdTypeEnum) |  |  [optional]
-**idValue** | **String** |  |  [optional]
+**idType** | [**IdTypeEnum**](#IdTypeEnum) |  | 
+**idValue** | **String** |  | 
 **subIdOrType** | **String** |  |  [optional]
-**accountId** | **String** |  |  [optional]
+**accountId** | **String** |  | 
 
 
-<a name="IdTypeEnum"></a>
+
 ## Enum: IdTypeEnum
+
 Name | Value
 ---- | -----
 MSISDN | &quot;MSISDN&quot;

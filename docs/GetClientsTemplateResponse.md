@@ -1,10 +1,13 @@
 
+
 # GetClientsTemplateResponse
 
+GetClientsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activationDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**activationDate** | [**Date**](Date.md) |  |  [optional]
 **officeId** | **Integer** |  |  [optional]
 **officeOptions** | [**List&lt;GetClientsOfficeOptions&gt;**](GetClientsOfficeOptions.md) |  |  [optional]
 **staffOptions** | [**List&lt;GetClientsStaffOptions&gt;**](GetClientsStaffOptions.md) |  |  [optional]

@@ -1,7 +1,9 @@
 
+
 # PostSelfLoansDatatables
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **registeredTableName** | **String** |  |  [optional]

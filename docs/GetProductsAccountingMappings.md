@@ -1,7 +1,9 @@
 
+
 # GetProductsAccountingMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shareReferenceId** | [**GetShareReferenceId**](GetShareReferenceId.md) |  |  [optional]

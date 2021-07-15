@@ -1,7 +1,9 @@
 
+
 # GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **charge** | [**GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappingsCharge**](GetRecurringDepositProductsProductIdPenaltyToIncomeAccountMappingsCharge.md) |  |  [optional]

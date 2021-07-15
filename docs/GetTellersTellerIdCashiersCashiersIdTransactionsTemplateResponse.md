@@ -1,7 +1,10 @@
 
+
 # GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse
 
+GetTellersTellerIdCashiersCashiersIdTransactionsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cashierId** | **Long** |  |  [optional]
@@ -10,8 +13,8 @@ Name | Type | Description | Notes
 **tellerName** | **String** |  |  [optional]
 **cashierName** | **String** |  |  [optional]
 **cashierData** | [**CashierData**](CashierData.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**Date**](Date.md) |  |  [optional]
+**endDate** | [**Date**](Date.md) |  |  [optional]
 **currencyOptions** | [**List&lt;CurrencyData&gt;**](CurrencyData.md) |  |  [optional]
 
 

@@ -1,7 +1,10 @@
 
+
 # GetStandingInstructionsTemplateResponse
 
+GetStandingInstructionsTemplateResponse
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fromOffice** | [**GetFromOfficeResponseStandingInstructionSwagger**](GetFromOfficeResponseStandingInstructionSwagger.md) |  |  [optional]

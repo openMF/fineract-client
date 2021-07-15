@@ -1,50 +1,77 @@
 # InterestRateSlabAKAInterestBandsApi
 
-All URIs are relative to *https://https://demo.openmf.org/fineract-provider/api/v1*
+All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](InterestRateSlabAKAInterestBandsApi.md#create) | **POST** interestratecharts/{chartId}/chartslabs | Create a Slab
-[**delete**](InterestRateSlabAKAInterestBandsApi.md#delete) | **DELETE** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Delete a Slab
-[**retrieveAll**](InterestRateSlabAKAInterestBandsApi.md#retrieveAll) | **GET** interestratecharts/{chartId}/chartslabs | Retrieve all Slabs
-[**retrieveOne**](InterestRateSlabAKAInterestBandsApi.md#retrieveOne) | **GET** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Retrieve a Slab
-[**template**](InterestRateSlabAKAInterestBandsApi.md#template) | **GET** interestratecharts/{chartId}/chartslabs/template | 
-[**update**](InterestRateSlabAKAInterestBandsApi.md#update) | **PUT** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Update a Slab
+[**create9**](InterestRateSlabAKAInterestBandsApi.md#create9) | **POST** interestratecharts/{chartId}/chartslabs | Create a Slab
+[**delete12**](InterestRateSlabAKAInterestBandsApi.md#delete12) | **DELETE** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Delete a Slab
+[**retrieveAll25**](InterestRateSlabAKAInterestBandsApi.md#retrieveAll25) | **GET** interestratecharts/{chartId}/chartslabs | Retrieve all Slabs
+[**retrieveOne15**](InterestRateSlabAKAInterestBandsApi.md#retrieveOne15) | **GET** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Retrieve a Slab
+[**template8**](InterestRateSlabAKAInterestBandsApi.md#template8) | **GET** interestratecharts/{chartId}/chartslabs/template | 
+[**update13**](InterestRateSlabAKAInterestBandsApi.md#update13) | **PUT** interestratecharts/{chartId}/chartslabs/{chartSlabId} | Update a Slab
 
 
-<a name="create"></a>
-# **create**
-> PostInterestRateChartsChartIdChartSlabsResponse create(chartId, body)
+
+## create9
+
+> PostInterestRateChartsChartIdChartSlabsResponse create9(chartId, postInterestRateChartsChartIdChartSlabsRequest)
 
 Create a Slab
 
 Creates a new interest rate slab for an interest rate chart. Mandatory Fields periodType, fromPeriod, annualInterestRate Optional Fields toPeriod and description Example Requests:  interestratecharts/1/chartslabs
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-PostInterestRateChartsChartIdChartSlabsRequest body = new PostInterestRateChartsChartIdChartSlabsRequest(); // PostInterestRateChartsChartIdChartSlabsRequest | body
-try {
-    PostInterestRateChartsChartIdChartSlabsResponse result = apiInstance.create(chartId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#create");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        PostInterestRateChartsChartIdChartSlabsRequest postInterestRateChartsChartIdChartSlabsRequest = new PostInterestRateChartsChartIdChartSlabsRequest(); // PostInterestRateChartsChartIdChartSlabsRequest | 
+        try {
+            PostInterestRateChartsChartIdChartSlabsResponse result = apiInstance.create9(chartId, postInterestRateChartsChartIdChartSlabsRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#create9");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
- **body** | [**PostInterestRateChartsChartIdChartSlabsRequest**](PostInterestRateChartsChartIdChartSlabsRequest.md)| body |
+ **postInterestRateChartsChartIdChartSlabsRequest** | [**PostInterestRateChartsChartIdChartSlabsRequest**](PostInterestRateChartsChartIdChartSlabsRequest.md)|  |
 
 ### Return type
 
@@ -52,41 +79,73 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="delete"></a>
-# **delete**
-> DeleteInterestRateChartsChartIdChartSlabsResponse delete(chartId, chartSlabId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## delete12
+
+> DeleteInterestRateChartsChartIdChartSlabsResponse delete12(chartId, chartSlabId)
 
 Delete a Slab
 
 Delete a Slab from a chart
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-try {
-    DeleteInterestRateChartsChartIdChartSlabsResponse result = apiInstance.delete(chartId, chartSlabId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#delete");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        Long chartSlabId = 56L; // Long | chartSlabId
+        try {
+            DeleteInterestRateChartsChartIdChartSlabsResponse result = apiInstance.delete12(chartId, chartSlabId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#delete12");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -99,40 +158,72 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveAll"></a>
-# **retrieveAll**
-> List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt; retrieveAll(chartId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveAll25
+
+> List&lt;GetInterestRateChartsChartIdChartSlabsResponse&gt; retrieveAll25(chartId)
 
 Retrieve all Slabs
 
 Retrieve list of slabs associated with a chart  Example Requests:  interestratecharts/1/chartslabs
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-try {
-    List<GetInterestRateChartsChartIdChartSlabsResponse> result = apiInstance.retrieveAll(chartId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveAll");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        try {
+            List<GetInterestRateChartsChartIdChartSlabsResponse> result = apiInstance.retrieveAll25(chartId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveAll25");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -144,41 +235,73 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="retrieveOne"></a>
-# **retrieveOne**
-> GetInterestRateChartsChartIdChartSlabsResponse retrieveOne(chartId, chartSlabId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## retrieveOne15
+
+> GetInterestRateChartsChartIdChartSlabsResponse retrieveOne15(chartId, chartSlabId)
 
 Retrieve a Slab
 
 Retrieve a slab associated with an Interest rate chart  Example Requests:  interestratecharts/1/chartslabs/1 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-try {
-    GetInterestRateChartsChartIdChartSlabsResponse result = apiInstance.retrieveOne(chartId, chartSlabId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveOne");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        Long chartSlabId = 56L; // Long | chartSlabId
+        try {
+            GetInterestRateChartsChartIdChartSlabsResponse result = apiInstance.retrieveOne15(chartId, chartSlabId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#retrieveOne15");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,38 +314,74 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="template"></a>
-# **template**
-> String template()
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## template8
+
+> String template8(chartId)
 
 
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-try {
-    String result = apiInstance.template();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#template");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        try {
+            String result = apiInstance.template8(chartId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#template8");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chartId** | **Long**| chartId |
 
 ### Return type
 
@@ -230,48 +389,80 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="update"></a>
-# **update**
-> PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse update(chartId, chartSlabId, body)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+
+## update13
+
+> PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse update13(chartId, chartSlabId, putInterestRateChartsChartIdChartSlabsChartSlabIdRequest)
 
 Update a Slab
 
 It updates the Slab from chart
 
 ### Example
+
 ```java
 // Import classes:
-//import org.mifos.fineract.ApiException;
-//import org.mifos.fineract.services.InterestRateSlabAKAInterestBandsApi;
+import org.apache.fineract.client.ApiClient;
+import org.apache.fineract.client.ApiException;
+import org.apache.fineract.client.Configuration;
+import org.apache.fineract.client.auth.*;
+import org.apache.fineract.client.models.*;
+import org.apache.fineract.client.services.InterestRateSlabAKAInterestBandsApi;
 
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
+        
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR USERNAME");
+        basicAuth.setPassword("YOUR PASSWORD");
 
-InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi();
-Long chartId = 789L; // Long | chartId
-Long chartSlabId = 789L; // Long | chartSlabId
-PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest body = new PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest(); // PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest | body
-try {
-    PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse result = apiInstance.update(chartId, chartSlabId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#update");
-    e.printStackTrace();
+        // Configure API key authorization: tenantid
+        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
+        tenantid.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //tenantid.setApiKeyPrefix("Token");
+
+        InterestRateSlabAKAInterestBandsApi apiInstance = new InterestRateSlabAKAInterestBandsApi(defaultClient);
+        Long chartId = 56L; // Long | chartId
+        Long chartSlabId = 56L; // Long | chartSlabId
+        PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest putInterestRateChartsChartIdChartSlabsChartSlabIdRequest = new PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest(); // PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest | 
+        try {
+            PutInterestRateChartsChartIdChartSlabsChartSlabIdResponse result = apiInstance.update13(chartId, chartSlabId, putInterestRateChartsChartIdChartSlabsChartSlabIdRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InterestRateSlabAKAInterestBandsApi#update13");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chartId** | **Long**| chartId |
  **chartSlabId** | **Long**| chartSlabId |
- **body** | [**PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest**](PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest.md)| body |
+ **putInterestRateChartsChartIdChartSlabsChartSlabIdRequest** | [**PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest**](PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest.md)|  |
 
 ### Return type
 
@@ -279,10 +470,15 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 

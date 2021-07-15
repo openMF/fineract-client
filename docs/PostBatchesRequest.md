@@ -1,7 +1,10 @@
 
+
 # PostBatchesRequest
 
+PostBatchesRequest
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestId** | **Long** |  |  [optional]

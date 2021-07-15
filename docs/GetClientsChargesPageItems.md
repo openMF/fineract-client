@@ -1,7 +1,9 @@
 
+
 # GetClientsChargesPageItems
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -9,7 +11,7 @@ Name | Type | Description | Notes
 **chargeId** | **Integer** |  |  [optional]
 **name** | **String** |  |  [optional]
 **chargeTimeType** | [**GetClientChargeTimeType**](GetClientChargeTimeType.md) |  |  [optional]
-**dueDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**dueDate** | [**Date**](Date.md) |  |  [optional]
 **chargeCalculationType** | [**GetClientChargeCalculationType**](GetClientChargeCalculationType.md) |  |  [optional]
 **currency** | [**GetClientChargeCurrency**](GetClientChargeCurrency.md) |  |  [optional]
 **amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

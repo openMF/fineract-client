@@ -1,7 +1,9 @@
 
+
 # ResultsetColumnHeaderData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **columnName** | **String** |  |  [optional]
@@ -9,6 +11,8 @@ Name | Type | Description | Notes
 **columnLength** | **Long** |  |  [optional]
 **columnDisplayType** | **String** |  |  [optional]
 **columnCode** | **String** |  |  [optional]
+**mandatory** | **Boolean** |  |  [optional]
+**optional** | **Boolean** |  |  [optional]
 **dateDisplayType** | **Boolean** |  |  [optional]
 **dateTimeDisplayType** | **Boolean** |  |  [optional]
 **integerDisplayType** | **Boolean** |  |  [optional]
@@ -17,8 +21,6 @@ Name | Type | Description | Notes
 **codeValueDisplayType** | **Boolean** |  |  [optional]
 **codeLookupDisplayType** | **Boolean** |  |  [optional]
 **string** | **Boolean** |  |  [optional]
-**mandatory** | **Boolean** |  |  [optional]
-**optional** | **Boolean** |  |  [optional]
 
 
 

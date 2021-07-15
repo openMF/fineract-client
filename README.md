@@ -20,7 +20,7 @@ To use library in your gradle project follow the steps below:
 2. Add the dependency
    ```groovy
    dependencies {
-       implementation 'com.github.openMF:fineract-client:1.0.1'
+       implementation 'com.github.openMF:fineract-client:2.0.0'
    }
    ```
 
@@ -42,7 +42,7 @@ To use the library in your Maven project, follow the steps below:
     <dependency>
         <groupId>com.github.openMF</groupId>
         <artifactId>fineract-client</artifactId>
-        <version>1.0.1</version>
+        <version>2.0.0</version>
     </dependency>
     ```
 
@@ -51,37 +51,41 @@ To use the library in your Maven project, follow the steps below:
 Example code to use the **Authentication API**:
 
 ```java
-import org.mifos.fineract.models.PostAuthenticationResponse;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.schedulers.Schedulers;
+import org.apache.fineract.client.models.PostAuthenticationResponse;
+import org.apache.fineract.client.util.FineractClient;
+import org.reactivestreams.Subscriber;
 
 public class Main {
+   public static void main(String[] args) {
+      FineractClient client = FineractClient.builder()
+              .basicAuth("mifos", "password")
+              .tenant("default")
+              .build();
+      String body = "{\"username\": \"mifos\", \"password\": \"password\"}";
+      client.authentication.authenticate(false, body)
+              .observeOn(Schedulers.newThread()) // use scheduler based on different scenarios, in case of android use 'AndroidSchedulers.mainThread()'
+              .subscribeOn(Schedulers.io())
+              .subscribe(new Subscriber<PostAuthenticationResponse> (){
+                 @Override
+                 public void onNext(PostAuthenticationResponse postAuthenticationResponse) {
+                    // handle next events here
+                 }
 
-    public static void main(String[] args) {
+                 @Override
+                 public void onError(Throwable t) {
+                    // handle error events here
+                 }
 
-        new FineractApiClient().getAuthApi().authenticate("mifos", "password").enqueue(
-                new Callback<PostAuthenticationResponse>() {
-                    @Override
-                    public void onResponse(Call<PostAuthenticationResponse> call, Response<PostAuthenticationResponse> response) {
-                        System.out.println(response.toString());
-                        PostAuthenticationResponse body = response.body();
-                        if (body != null) {
-                            System.out.println(body.toString());
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<PostAuthenticationResponse> call, Throwable t) {
-                        System.out.println(t.toString());
-                    }
-                }
-        );
-    }
+                 @Override
+                 public void onComplete() {
+                    // handle on completed events here
+                 }
+              });
+   }
 }
-```
 
-Refer [Main.java](https://github.com/openMF/fineract-client/blob/master/src/main/java/org/mifos/fineract/Main.java) for full example.
+```
 
 ## Build Project
 

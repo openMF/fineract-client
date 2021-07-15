@@ -1,7 +1,9 @@
 
+
 # GetClientIdProductIdProductOptions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
@@ -29,7 +31,7 @@ Name | Type | Description | Notes
 **chargeOptions** | [**GetShareAccountsChargeOptions**](GetShareAccountsChargeOptions.md) |  |  [optional]
 **minimumActivePeriodFrequencyTypeOptions** | [**GetClientIdProductIdMinimumActivePeriodFrequencyTypeOptions**](GetClientIdProductIdMinimumActivePeriodFrequencyTypeOptions.md) |  |  [optional]
 **lockinPeriodFrequencyTypeOptions** | [**GetClientIdProductIdLockinPeriodFrequencyTypeOptions**](GetClientIdProductIdLockinPeriodFrequencyTypeOptions.md) |  |  [optional]
-**accountingMappingOptions** | [**GetAccountingMappingOptions**](GetAccountingMappingOptions.md) |  |  [optional]
+**accountingMappingOptions** | [**Object**](.md) |  |  [optional]
 
 
 

@@ -1,7 +1,9 @@
 
+
 # AppUser
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Long** |  |  [optional]
@@ -18,14 +20,16 @@ Name | Type | Description | Notes
 **office** | [**Office**](Office.md) |  |  [optional]
 **staff** | [**Staff**](Staff.md) |  |  [optional]
 **roles** | [**List&lt;Role&gt;**](Role.md) |  |  [optional]
-**lastTimePasswordUpdated** | [**DateTime**](DateTime.md) |  |  [optional]
+**lastTimePasswordUpdated** | [**Date**](Date.md) |  |  [optional]
 **passwordNeverExpires** | **Boolean** |  |  [optional]
 **appUserClientMappings** | [**List&lt;AppUserClientMapping&gt;**](AppUserClientMapping.md) |  |  [optional]
+**authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
+**displayName** | **String** |  |  [optional]
 **selfServiceUser** | **Boolean** |  |  [optional]
+**systemUser** | **Boolean** |  |  [optional]
 **staffId** | **Long** |  |  [optional]
 **staffDisplayName** | **String** |  |  [optional]
 **notEnabled** | **Boolean** |  |  [optional]
-**authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 
