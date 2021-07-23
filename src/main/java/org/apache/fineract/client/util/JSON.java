@@ -1,34 +1,30 @@
-/**
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements. See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership. The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the
- * specific language governing permissions and limitations
- * under the License.
+/*
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements. See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership. The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations
+  under the License.
  */
 package org.apache.fineract.client.util;
 
 import com.google.gson.*;
-import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gsonfire.GsonFireBuilder;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import okhttp3.RequestBody;
@@ -44,10 +40,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 class JSON {
 
     private final Gson gson;
-    private final DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
 
     JSON() {
-        gson = new GsonFireBuilder().createGsonBuilder().registerTypeAdapter(Date.class, new JsonDateSerializer())
+        DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
+        gson = new GsonFireBuilder().createGsonBuilder().registerTypeAdapter(Date.class, dateTypeAdapter)
                 .create();
     }
 
@@ -55,58 +51,41 @@ class JSON {
         return gson;
     }
 
-    public class JsonDateSerializer implements JsonSerializer<Date> {
-
-        @Override
-        public JsonElement serialize(Date src, Type type, JsonSerializationContext jsonSerializationContext) {
-            SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-            String formattedTime = output.format(src);
-            return new JsonPrimitive(formattedTime);
-        }
-    }
-
     /**
-     * GSON TypeAdapter for java.util.Date type. If the dateFormat is null, ISO8601Utils will be used.
+     * GSON TypeAdapter for JSR-310 LocalDate type, which Fineract API's RETURNS as JSON array in the
+     * <tt>[2009,1,1]</tt> format, but EXPECTS as String not Array and with a locale and dateFormat. Weird, but so it is
+     * (see FINERACT-1220 & FINERACT-1233).
      */
     public static class DateTypeAdapter extends TypeAdapter<Date> {
 
-        private final DateFormat dateFormat = null; // TODO FINERACT-1220
+        // NB this format is referenced from org.apache.fineract.client.util.FineractClient.DATE_FORMAT
+        private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
         @Override
         public void write(JsonWriter out, Date date) throws IOException {
             if (date == null) {
                 out.nullValue();
             } else {
-                String value;
-                if (dateFormat != null) {
-                    value = dateFormat.format(date);
-                } else {
-                    value = ISO8601Utils.format(date, true);
-                }
-                out.value(value);
+                out.value(formatter.format(date));
             }
         }
 
         @Override
         public Date read(JsonReader in) throws IOException {
-            try {
-                switch (in.peek()) {
-                    case NULL:
-                        in.nextNull();
-                        return null;
-                    default:
-                        String date = in.nextString();
-                        try {
-                            if (dateFormat != null) {
-                                return dateFormat.parse(date);
-                            }
-                            return ISO8601Utils.parse(date, new ParsePosition(0));
-                        } catch (ParseException e) {
-                            throw new JsonParseException(e);
-                        }
-                }
-            } catch (IllegalArgumentException e) {
-                throw new JsonParseException(e);
+            switch (in.peek()) {
+                case NULL:
+                    in.nextNull();
+                    return null;
+                case BEGIN_ARRAY:
+                    in.beginArray();
+                    int year = in.nextInt();
+                    int month = in.nextInt();
+                    int day = in.nextInt();
+                    in.endArray();
+                    return new Date(year, month, day);
+                default:
+                    throw new JsonParseException(
+                            "Fineract's API normally always sends LocalDate as e.g. [2009,1,1].. or does it not?! (FINERACT-1220)");
             }
         }
     }
