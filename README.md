@@ -20,7 +20,8 @@ To use library in your gradle project follow the steps below:
 2. Add the dependency
    ```groovy
    dependencies {
-       implementation 'com.github.openMF:fineract-client:2.0.0'
+       def client_Version = "replace with version number"
+       implementation "com.github.openMF:fineract-client:$client_Version"
    }
    ```
 
