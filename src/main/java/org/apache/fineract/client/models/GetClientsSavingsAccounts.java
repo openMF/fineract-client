@@ -55,7 +55,7 @@ public class GetClientsSavingsAccounts {
 
   public static final String SERIALIZED_NAME_ACCOUNT_NO = "accountNo";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NO)
-  private Long accountNo;
+  private String accountNo;
 
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
@@ -97,7 +97,7 @@ public class GetClientsSavingsAccounts {
   }
 
 
-  public GetClientsSavingsAccounts accountNo(Long accountNo) {
+  public GetClientsSavingsAccounts accountNo(String accountNo) {
     
     this.accountNo = accountNo;
     return this;
@@ -110,12 +110,12 @@ public class GetClientsSavingsAccounts {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "7", value = "")
 
-  public Long getAccountNo() {
+  public String getAccountNo() {
     return accountNo;
   }
 
 
-  public void setAccountNo(Long accountNo) {
+  public void setAccountNo(String accountNo) {
     this.accountNo = accountNo;
   }
 
