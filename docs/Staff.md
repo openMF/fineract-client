@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **loanOfficer** | **Boolean** |  |  [optional]
 **active** | **Boolean** |  |  [optional]
 **image** | [**Image**](Image.md) |  |  [optional]
-**notActive** | **Boolean** |  |  [optional]
 **notLoanOfficer** | **Boolean** |  |  [optional]
+**notActive** | **Boolean** |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

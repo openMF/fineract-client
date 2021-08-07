@@ -7,7 +7,9 @@ PostClientsClientIdRequest
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**note** | **String** |  |  [optional]
+**activationDate** | **String** |  |  [optional]
+**dateFormat** | **String** |  |  [optional]
+**locale** | **String** |  |  [optional]
 
 
 

@@ -8,7 +8,7 @@ GetClientsClientIdResponse
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
+**accountNo** | **String** |  |  [optional]
 **status** | [**GetClientsClientIdStatus**](GetClientsClientIdStatus.md) |  |  [optional]
 **active** | **Boolean** |  |  [optional]
 **activationDate** | [**Date**](Date.md) |  |  [optional]
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **timeline** | [**GetClientsTimeline**](GetClientsTimeline.md) |  |  [optional]
 **savingsProductId** | **Integer** |  |  [optional]
 **savingsProductName** | **String** |  |  [optional]
-**groups** | **List&lt;String&gt;** |  |  [optional]
+**groups** | [**List&lt;GetClientsGroups&gt;**](GetClientsGroups.md) |  |  [optional]
 
 
 

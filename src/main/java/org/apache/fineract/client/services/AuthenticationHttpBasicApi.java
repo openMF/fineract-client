@@ -27,6 +27,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
+import org.apache.fineract.client.models.PostAuthenticationRequest;
 import org.apache.fineract.client.models.PostAuthenticationResponse;
 
 import java.util.ArrayList;
@@ -38,8 +39,8 @@ public interface AuthenticationHttpBasicApi {
   /**
    * Verify authentication
    * Authenticates the credentials provided and returns the set roles and permissions allowed.
+   * @param postAuthenticationRequest  (required)
    * @param returnClientList  (optional, default to false)
-   * @param body  (optional)
    * @return Observable&lt;PostAuthenticationResponse&gt;
    */
   @Headers({
@@ -47,7 +48,7 @@ public interface AuthenticationHttpBasicApi {
   })
   @POST("authentication")
   Observable<PostAuthenticationResponse> authenticate(
-    @retrofit2.http.Query("returnClientList") Boolean returnClientList, @retrofit2.http.Body String body
+    @retrofit2.http.Body PostAuthenticationRequest postAuthenticationRequest, @retrofit2.http.Query("returnClientList") Boolean returnClientList
   );
 
 }

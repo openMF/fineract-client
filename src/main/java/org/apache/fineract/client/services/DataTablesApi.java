@@ -32,7 +32,6 @@ import org.apache.fineract.client.models.DeleteDataTablesDatatableAppTableIdResp
 import org.apache.fineract.client.models.DeleteDataTablesResponse;
 import org.apache.fineract.client.models.GetDataTablesAppTableIdResponse;
 import org.apache.fineract.client.models.GetDataTablesResponse;
-import org.apache.fineract.client.models.PostDataTablesAppTableIdRequest;
 import org.apache.fineract.client.models.PostDataTablesAppTableIdResponse;
 import org.apache.fineract.client.models.PostDataTablesRequest;
 import org.apache.fineract.client.models.PostDataTablesResponse;
@@ -68,7 +67,7 @@ public interface DataTablesApi {
    * Adds a row to the data table.  Note that the default datatable UI functionality converts any field name containing spaces to underscores when using the API. This means the field name \&quot;Business Description\&quot; is considered the same as \&quot;Business_Description\&quot;. So you shouldn&#39;t have both \&quot;versions\&quot; in any data table.
    * @param datatable datatable (required)
    * @param apptableId apptableId (required)
-   * @param postDataTablesAppTableIdRequest  (required)
+   * @param body {   \&quot;BusinessDescription\&quot;: \&quot;Livestock sales\&quot;,   \&quot;Comment\&quot;: \&quot;First comment made\&quot;,   \&quot;Education_cv\&quot;: \&quot;Primary\&quot;,   \&quot;Gender_cd\&quot;: 6,   \&quot;HighestRatePaid\&quot;: 8.5,   \&quot;NextVisit\&quot;: \&quot;01 October 2012\&quot;,   \&quot;YearsinBusiness\&quot;: 5,   \&quot;dateFormat\&quot;: \&quot;dd MMMM yyyy\&quot;,   \&quot;locale\&quot;: \&quot;en\&quot; } (required)
    * @return Observable&lt;PostDataTablesAppTableIdResponse&gt;
    */
   @Headers({
@@ -76,7 +75,7 @@ public interface DataTablesApi {
   })
   @POST("datatables/{datatable}/{apptableId}")
   Observable<PostDataTablesAppTableIdResponse> createDatatableEntry(
-    @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Body PostDataTablesAppTableIdRequest postDataTablesAppTableIdRequest
+    @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Body String body
   );
 
   /**
