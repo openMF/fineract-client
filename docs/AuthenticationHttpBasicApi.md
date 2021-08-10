@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## authenticate
 
-> PostAuthenticationResponse authenticate(returnClientList, body)
+> PostAuthenticationResponse authenticate(postAuthenticationRequest, returnClientList)
 
 Verify authentication
 
@@ -44,10 +44,10 @@ public class Example {
         //tenantid.setApiKeyPrefix("Token");
 
         AuthenticationHttpBasicApi apiInstance = new AuthenticationHttpBasicApi(defaultClient);
+        PostAuthenticationRequest postAuthenticationRequest = new PostAuthenticationRequest(); // PostAuthenticationRequest | 
         Boolean returnClientList = false; // Boolean | 
-        String body = "body_example"; // String | 
         try {
-            PostAuthenticationResponse result = apiInstance.authenticate(returnClientList, body);
+            PostAuthenticationResponse result = apiInstance.authenticate(postAuthenticationRequest, returnClientList);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthenticationHttpBasicApi#authenticate");
@@ -65,8 +65,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **postAuthenticationRequest** | [**PostAuthenticationRequest**](PostAuthenticationRequest.md)|  |
  **returnClientList** | **Boolean**|  | [optional] [default to false]
- **body** | **String**|  | [optional]
 
 ### Return type
 

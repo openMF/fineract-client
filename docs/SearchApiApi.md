@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## advancedSearch
 
-> PostAdhocQuerySearchResponse advancedSearch(postAdhocQuerySearchRequest)
+> List&lt;PostAdhocQuerySearchResponse&gt; advancedSearch(postAdhocQuerySearchRequest)
 
 Adhoc query search
 
@@ -48,7 +48,7 @@ public class Example {
         SearchApiApi apiInstance = new SearchApiApi(defaultClient);
         PostAdhocQuerySearchRequest postAdhocQuerySearchRequest = new PostAdhocQuerySearchRequest(); // PostAdhocQuerySearchRequest | 
         try {
-            PostAdhocQuerySearchResponse result = apiInstance.advancedSearch(postAdhocQuerySearchRequest);
+            List<PostAdhocQuerySearchResponse> result = apiInstance.advancedSearch(postAdhocQuerySearchRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SearchApiApi#advancedSearch");
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostAdhocQuerySearchResponse**](PostAdhocQuerySearchResponse.md)
+[**List&lt;PostAdhocQuerySearchResponse&gt;**](PostAdhocQuerySearchResponse.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 
 ## searchData
 
-> GetSearchResponse searchData(query, resource, exactMatch)
+> List&lt;GetSearchResponse&gt; searchData(query, resource, exactMatch)
 
 Search Resources
 
@@ -200,7 +200,7 @@ public class Example {
         String resource = "resource_example"; // String | resource
         Boolean exactMatch = false; // Boolean | exactMatch
         try {
-            GetSearchResponse result = apiInstance.searchData(query, resource, exactMatch);
+            List<GetSearchResponse> result = apiInstance.searchData(query, resource, exactMatch);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SearchApiApi#searchData");
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSearchResponse**](GetSearchResponse.md)
+[**List&lt;GetSearchResponse&gt;**](GetSearchResponse.md)
 
 ### Authorization
 

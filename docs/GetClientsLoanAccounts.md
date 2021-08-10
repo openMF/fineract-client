@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
+**accountNo** | **String** |  |  [optional]
 **externalId** | **Integer** |  |  [optional]
 **productId** | **Integer** |  |  [optional]
 **productName** | **String** |  |  [optional]

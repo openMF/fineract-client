@@ -41,13 +41,13 @@ public interface SearchApiApi {
    * Adhoc query search
    * AdHocQuery search has more search options, it is a POST request, it uses request body to send search parameters   Mandatory fields:entities  Optional fields:loanStatus, loanProducts, offices, loanDateOption, loanFromDate, loanToDate,  includeOutStandingAmountPercentage, outStandingAmountPercentageCondition,  minOutStandingAmountPercentage and maxOutStandingAmountPercentage OR outStandingAmountPercentage,  includeOutstandingAmount, outstandingAmountCondition,  minOutstandingAmount and maxOutstandingAmount OR outstandingAmount
    * @param postAdhocQuerySearchRequest  (required)
-   * @return Observable&lt;PostAdhocQuerySearchResponse&gt;
+   * @return Observable&lt;List&lt;PostAdhocQuerySearchResponse&gt;&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("search/advance")
-  Observable<PostAdhocQuerySearchResponse> advancedSearch(
+  Observable<List<PostAdhocQuerySearchResponse>> advancedSearch(
     @retrofit2.http.Body PostAdhocQuerySearchRequest postAdhocQuerySearchRequest
   );
 
@@ -66,10 +66,10 @@ public interface SearchApiApi {
    * @param query query (optional)
    * @param resource resource (optional)
    * @param exactMatch exactMatch (optional, default to false)
-   * @return Observable&lt;GetSearchResponse&gt;
+   * @return Observable&lt;List&lt;GetSearchResponse&gt;&gt;
    */
   @GET("search")
-  Observable<GetSearchResponse> searchData(
+  Observable<List<GetSearchResponse>> searchData(
     @retrofit2.http.Query("query") String query, @retrofit2.http.Query("resource") String resource, @retrofit2.http.Query("exactMatch") Boolean exactMatch
   );
 

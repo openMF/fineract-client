@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## createDatatableEntry
 
-> PostDataTablesAppTableIdResponse createDatatableEntry(datatable, apptableId, postDataTablesAppTableIdRequest)
+> PostDataTablesAppTableIdResponse createDatatableEntry(datatable, apptableId, body)
 
 Create Entry in Data Table
 
@@ -136,9 +136,9 @@ public class Example {
         DataTablesApi apiInstance = new DataTablesApi(defaultClient);
         String datatable = "datatable_example"; // String | datatable
         Long apptableId = 56L; // Long | apptableId
-        PostDataTablesAppTableIdRequest postDataTablesAppTableIdRequest = new PostDataTablesAppTableIdRequest(); // PostDataTablesAppTableIdRequest | 
+        String body = "body_example"; // String | {   \"BusinessDescription\": \"Livestock sales\",   \"Comment\": \"First comment made\",   \"Education_cv\": \"Primary\",   \"Gender_cd\": 6,   \"HighestRatePaid\": 8.5,   \"NextVisit\": \"01 October 2012\",   \"YearsinBusiness\": 5,   \"dateFormat\": \"dd MMMM yyyy\",   \"locale\": \"en\" }
         try {
-            PostDataTablesAppTableIdResponse result = apiInstance.createDatatableEntry(datatable, apptableId, postDataTablesAppTableIdRequest);
+            PostDataTablesAppTableIdResponse result = apiInstance.createDatatableEntry(datatable, apptableId, body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DataTablesApi#createDatatableEntry");
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datatable** | **String**| datatable |
  **apptableId** | **Long**| apptableId |
- **postDataTablesAppTableIdRequest** | [**PostDataTablesAppTableIdRequest**](PostDataTablesAppTableIdRequest.md)|  |
+ **body** | **String**| {   \&quot;BusinessDescription\&quot;: \&quot;Livestock sales\&quot;,   \&quot;Comment\&quot;: \&quot;First comment made\&quot;,   \&quot;Education_cv\&quot;: \&quot;Primary\&quot;,   \&quot;Gender_cd\&quot;: 6,   \&quot;HighestRatePaid\&quot;: 8.5,   \&quot;NextVisit\&quot;: \&quot;01 October 2012\&quot;,   \&quot;YearsinBusiness\&quot;: 5,   \&quot;dateFormat\&quot;: \&quot;dd MMMM yyyy\&quot;,   \&quot;locale\&quot;: \&quot;en\&quot; } |
 
 ### Return type
 

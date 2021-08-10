@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **locale** | **String** |  |  [optional]
 **active** | **Boolean** |  |  [optional]
 **activationDate** | **String** |  |  [optional]
+**datatables** | [**List&lt;PostClientsDatatable&gt;**](PostClientsDatatable.md) | List of PostClientsDatatable |  [optional]
 
 
 
