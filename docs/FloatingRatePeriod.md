@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **createdOn** | [**Date**](Date.md) |  |  [optional]
 **modifiedOn** | [**Date**](Date.md) |  |  [optional]
 **active** | **Boolean** |  |  [optional]
-**floatingRatesId** | [**FloatingRate**](FloatingRate.md) |  |  [optional]
 **differentialToBaseLendingRate** | **Boolean** |  |  [optional]
+**floatingRatesId** | [**FloatingRate**](FloatingRate.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
 

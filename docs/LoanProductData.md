@@ -58,15 +58,15 @@ Name | Type | Description | Notes
 **chargeOptions** | [**List&lt;ChargeData&gt;**](ChargeData.md) |  |  [optional]
 **multiDisburseLoan** | **Boolean** |  |  [optional]
 **outstandingLoanBalance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**equalAmortization** | **Boolean** |  |  [optional]
-**floatingInterestRateCalculationAllowed** | **Boolean** |  |  [optional]
-**linkedToFloatingInterestRates** | **Boolean** |  |  [optional]
 **variableInstallmentsAllowed** | **Boolean** |  |  [optional]
-**interestRecalculationEnabled** | **Boolean** |  |  [optional]
+**equalAmortization** | **Boolean** |  |  [optional]
+**linkedToFloatingInterestRates** | **Boolean** |  |  [optional]
+**floatingInterestRateCalculationAllowed** | **Boolean** |  |  [optional]
 **compoundingToBePostedAsTransaction** | **Boolean** |  |  [optional]
-**maximumGapBetweenInstallments** | **Integer** |  |  [optional]
-**minimumGapBetweenInstallments** | **Integer** |  |  [optional]
+**interestRecalculationEnabled** | **Boolean** |  |  [optional]
 **getloanProductConfigurableAttributes** | [**LoanProductConfigurableAttributes**](LoanProductConfigurableAttributes.md) |  |  [optional]
+**minimumGapBetweenInstallments** | **Integer** |  |  [optional]
+**maximumGapBetweenInstallments** | **Integer** |  |  [optional]
 
 
 

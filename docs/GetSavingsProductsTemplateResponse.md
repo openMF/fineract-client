@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **withdrawalFeeTypeOptions** | [**List&lt;GetSavingsProductsWithdrawalFeeTypeOptions&gt;**](GetSavingsProductsWithdrawalFeeTypeOptions.md) |  |  [optional]
 **paymentTypeOptions** | [**List&lt;GetSavingsProductsPaymentTypeOptions&gt;**](GetSavingsProductsPaymentTypeOptions.md) |  |  [optional]
 **accountingRuleOptions** | [**List&lt;GetSavingsProductsTemplateAccountingRule&gt;**](GetSavingsProductsTemplateAccountingRule.md) |  |  [optional]
-**accountingMappingOptions** | [**List&lt;GetSavingsProductsAccountingMappingOptions&gt;**](GetSavingsProductsAccountingMappingOptions.md) |  |  [optional]
+**accountingMappingOptions** | [**GetSavingsProductsAccountingMappingOptions**](GetSavingsProductsAccountingMappingOptions.md) |  |  [optional]
 **chargeOptions** | [**List&lt;GetSavingsProductsChargeOptions&gt;**](GetSavingsProductsChargeOptions.md) |  |  [optional]
 
 

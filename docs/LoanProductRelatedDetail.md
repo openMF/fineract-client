@@ -23,9 +23,9 @@ Name | Type | Description | Notes
 **inArrearsTolerance** | [**Money**](Money.md) |  |  [optional]
 **graceOnArrearsAgeing** | **Integer** |  |  [optional]
 **equalAmortization** | **Boolean** |  |  [optional]
-**interestRecalculationEnabled** | **Boolean** |  |  [optional]
 **graceOnDueDate** | **Integer** |  |  [optional]
 **arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**interestRecalculationEnabled** | **Boolean** |  |  [optional]
 
 
 

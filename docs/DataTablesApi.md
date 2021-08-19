@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ## getDatatable1
 
-> GetDataTablesAppTableIdResponse getDatatable1(datatable, apptableId, order)
+> String getDatatable1(datatable, apptableId, order)
 
 Retrieve Entry(s) from Data Table
 
@@ -610,7 +610,7 @@ public class Example {
         Long apptableId = 56L; // Long | apptableId
         String order = "order_example"; // String | order
         try {
-            GetDataTablesAppTableIdResponse result = apiInstance.getDatatable1(datatable, apptableId, order);
+            String result = apiInstance.getDatatable1(datatable, apptableId, order);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DataTablesApi#getDatatable1");
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDataTablesAppTableIdResponse**](GetDataTablesAppTableIdResponse.md)
+**String**
 
 ### Authorization
 

@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dateFormat** | **String** |  |  [optional]
 **locale** | **String** |  |  [optional]
-**unassignedDate** | **String** |  |  [optional]
+**approvedOnDate** | **String** |  |  [optional]
+**activatedOnDate** | **String** |  |  [optional]
 
 
 

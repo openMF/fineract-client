@@ -30,7 +30,6 @@ import okhttp3.MultipartBody;
 import org.apache.fineract.client.models.DeleteDataTablesDatatableAppTableIdDatatableIdResponse;
 import org.apache.fineract.client.models.DeleteDataTablesDatatableAppTableIdResponse;
 import org.apache.fineract.client.models.DeleteDataTablesResponse;
-import org.apache.fineract.client.models.GetDataTablesAppTableIdResponse;
 import org.apache.fineract.client.models.GetDataTablesResponse;
 import org.apache.fineract.client.models.PostDataTablesAppTableIdResponse;
 import org.apache.fineract.client.models.PostDataTablesRequest;
@@ -142,10 +141,10 @@ public interface DataTablesApi {
    * @param datatable datatable (required)
    * @param apptableId apptableId (required)
    * @param order order (optional)
-   * @return Observable&lt;GetDataTablesAppTableIdResponse&gt;
+   * @return Observable&lt;String&gt;
    */
   @GET("datatables/{datatable}/{apptableId}")
-  Observable<GetDataTablesAppTableIdResponse> getDatatable1(
+  Observable<String> getDatatable1(
     @retrofit2.http.Path("datatable") String datatable, @retrofit2.http.Path("apptableId") Long apptableId, @retrofit2.http.Query("order") String order
   );
 

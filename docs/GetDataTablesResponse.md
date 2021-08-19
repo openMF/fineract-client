@@ -7,9 +7,9 @@ GetDataTablesResponse
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**appTableName** | **String** |  |  [optional]
-**datatableName** | **String** |  |  [optional]
-**column** | [**List&lt;ResultsetColumnHeaderData&gt;**](ResultsetColumnHeaderData.md) |  |  [optional]
+**applicationTableName** | **String** |  |  [optional]
+**registeredTableName** | **String** |  |  [optional]
+**columnHeaderData** | [**List&lt;ResultsetColumnHeaderData&gt;**](ResultsetColumnHeaderData.md) |  |  [optional]
 
 
 

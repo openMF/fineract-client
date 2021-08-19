@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **lastTimePasswordUpdated** | [**Date**](Date.md) |  |  [optional]
 **passwordNeverExpires** | **Boolean** |  |  [optional]
 **appUserClientMappings** | [**List&lt;AppUserClientMapping&gt;**](AppUserClientMapping.md) |  |  [optional]
+**displayName** | **String** |  |  [optional]
 **staffId** | **Long** |  |  [optional]
 **staffDisplayName** | **String** |  |  [optional]
 **notEnabled** | **Boolean** |  |  [optional]
 **selfServiceUser** | **Boolean** |  |  [optional]
 **systemUser** | **Boolean** |  |  [optional]
-**displayName** | **String** |  |  [optional]
 **authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
 **_new** | **Boolean** |  |  [optional]
 
