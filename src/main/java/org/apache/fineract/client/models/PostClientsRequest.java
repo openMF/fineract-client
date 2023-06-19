@@ -54,6 +54,19 @@ public class PostClientsRequest {
   public static final String SERIALIZED_NAME_OFFICE_ID = "officeId";
   @SerializedName(SERIALIZED_NAME_OFFICE_ID)
   private Integer officeId;
+  public static final String SERIALIZED_NAME_LEGAL_FORM_ID = "legalFormId";
+  @SerializedName(SERIALIZED_NAME_LEGAL_FORM_ID)
+  private Integer legalFormId;
+
+  public static final String SERIALIZED_NAME_FIRSTNAME = "firstname";
+  @SerializedName(SERIALIZED_NAME_FIRSTNAME)
+  private String firstname;
+  public static final String SERIALIZED_NAME_LASTNAME = "lastname";
+  @SerializedName(SERIALIZED_NAME_LASTNAME)
+  private String lastname;
+  public static final String SERIALIZED_NAME_SUBMITTED_ON_DATE = "submittedOnDate";
+  @SerializedName(SERIALIZED_NAME_SUBMITTED_ON_DATE)
+  private String submittedOnDate;
 
   public static final String SERIALIZED_NAME_FULLNAME = "fullname";
   @SerializedName(SERIALIZED_NAME_FULLNAME)
@@ -105,7 +118,58 @@ public class PostClientsRequest {
   public void setOfficeId(Integer officeId) {
     this.officeId = officeId;
   }
+    /**
+   * Get legalFormId
+   * @return legalFormId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getLegalFormId() {
+    return legalFormId;
+  }
 
+  public void setLegalFormId(Integer legalFormId) {
+    this.legalFormId = legalFormId;
+  }
+  /**
+   * Get firstname
+   * @return firstname
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "firstname", value = "")
+  public String getFirstname() {
+    return firstname;
+  }
+
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
+  }
+  /**
+   * Get lastname
+   * @return lastname
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "lastname", value = "")
+  public String getLastname() {
+    return lastname;
+  }
+
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
+  /**
+   * Get submittedOnDate
+   * @return submittedOnDate
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "19 November 2015", value = "")
+  public String getSubmittedOnDate() {
+    return submittedOnDate;
+  }
+
+  public void setSubmittedOnDate(String submittedOnDate) {
+    this.submittedOnDate = submittedOnDate;
+  }
 
   public PostClientsRequest fullname(String fullname) {
     
@@ -287,6 +351,10 @@ public class PostClientsRequest {
     PostClientsRequest postClientsRequest = (PostClientsRequest) o;
     return Objects.equals(this.officeId, postClientsRequest.officeId) &&
         Objects.equals(this.fullname, postClientsRequest.fullname) &&
+        Objects.equals(this.legalFormId, postClientsRequest.legalFormId) &&
+        Objects.equals(this.firstname, postClientsRequest.firstname) &&
+        Objects.equals(this.lastname, postClientsRequest.lastname) &&
+        Objects.equals(this.submittedOnDate, postClientsRequest.submittedOnDate) &&
         Objects.equals(this.groupId, postClientsRequest.groupId) &&
         Objects.equals(this.dateFormat, postClientsRequest.dateFormat) &&
         Objects.equals(this.locale, postClientsRequest.locale) &&
@@ -297,7 +365,7 @@ public class PostClientsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(officeId, fullname, groupId, dateFormat, locale, active, activationDate, datatables);
+    return Objects.hash(officeId, legalFormId, firstname, lastname, submittedOnDate, fullname, groupId, dateFormat, locale, active, activationDate, datatables);
   }
 
 
@@ -306,6 +374,10 @@ public class PostClientsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostClientsRequest {\n");
     sb.append("    officeId: ").append(toIndentedString(officeId)).append("\n");
+    sb.append("    legalFormId: ").append(toIndentedString(legalFormId)).append("\n");
+    sb.append("    firstname: ").append(toIndentedString(firstname)).append("\n");
+    sb.append("    lastname: ").append(toIndentedString(lastname)).append("\n");
+    sb.append("    submittedOnDate: ").append(toIndentedString(submittedOnDate)).append("\n");
     sb.append("    fullname: ").append(toIndentedString(fullname)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
