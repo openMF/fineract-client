@@ -98,7 +98,7 @@ public class PostSelfLoansRequest {
 
   public static final String SERIALIZED_NAME_INTEREST_RATE_PER_PERIOD = "interestRatePerPeriod";
   @SerializedName(SERIALIZED_NAME_INTEREST_RATE_PER_PERIOD)
-  private Integer interestRatePerPeriod;
+  private Double interestRatePerPeriod;
 
   public static final String SERIALIZED_NAME_AMORTIZATION_TYPE = "amortizationType";
   @SerializedName(SERIALIZED_NAME_AMORTIZATION_TYPE)
@@ -398,7 +398,7 @@ public class PostSelfLoansRequest {
   }
 
 
-  public PostSelfLoansRequest interestRatePerPeriod(Integer interestRatePerPeriod) {
+  public PostSelfLoansRequest interestRatePerPeriod(Double interestRatePerPeriod) {
     
     this.interestRatePerPeriod = interestRatePerPeriod;
     return this;
@@ -409,14 +409,14 @@ public class PostSelfLoansRequest {
    * @return interestRatePerPeriod
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "10", value = "")
+  @ApiModelProperty(example = "10.0", value = "")
 
-  public Integer getInterestRatePerPeriod() {
+  public Double getInterestRatePerPeriod() {
     return interestRatePerPeriod;
   }
 
 
-  public void setInterestRatePerPeriod(Integer interestRatePerPeriod) {
+  public void setInterestRatePerPeriod(Double interestRatePerPeriod) {
     this.interestRatePerPeriod = interestRatePerPeriod;
   }
 

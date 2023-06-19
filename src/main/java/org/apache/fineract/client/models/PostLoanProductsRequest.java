@@ -63,7 +63,9 @@ public class PostLoanProductsRequest {
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)
   private String locale;
-
+  public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
+  @SerializedName(SERIALIZED_NAME_DATE_FORMAT)
+  private String dateFormat;
   public static final String SERIALIZED_NAME_DIGITS_AFTER_DECIMAL = "digitsAfterDecimal";
   @SerializedName(SERIALIZED_NAME_DIGITS_AFTER_DECIMAL)
   private Integer digitsAfterDecimal;
@@ -191,6 +193,21 @@ public class PostLoanProductsRequest {
     this.name = name;
   }
 
+  /**
+   * Get dateFormat
+   * @return dateFormat
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "dd MMMM yyyy", value = "")
+
+  public String getDateFormat() {
+    return dateFormat;
+  }
+
+
+  public void setDateFormat(String dateFormat) {
+    this.dateFormat = dateFormat;
+  }
 
   public PostLoanProductsRequest shortName(String shortName) {
     
