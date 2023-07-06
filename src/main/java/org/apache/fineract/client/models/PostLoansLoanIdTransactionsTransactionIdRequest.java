@@ -55,7 +55,9 @@ public class PostLoansLoanIdTransactionsTransactionIdRequest {
   public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
   @SerializedName(SERIALIZED_NAME_DATE_FORMAT)
   private String dateFormat;
-
+  public static final String SERIALIZED_NAME_PAYMENT_TYPE_ID = "paymentTypeId";
+  @SerializedName(SERIALIZED_NAME_PAYMENT_TYPE_ID)
+  private Integer paymentTypeId;
   public static final String SERIALIZED_NAME_TRANSACTION_DATE = "transactionDate";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_DATE)
   private String transactionDate;
@@ -113,7 +115,19 @@ public class PostLoansLoanIdTransactionsTransactionIdRequest {
   public void setDateFormat(String dateFormat) {
     this.dateFormat = dateFormat;
   }
+  /**
+   * Get paymentTypeId
+   * @return paymentTypeId
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getPaymentTypeId() {
+    return paymentTypeId;
+  }
 
+  public void setPaymentTypeId(Integer paymentTypeId) {
+    this.paymentTypeId = paymentTypeId;
+  }
 
   public PostLoansLoanIdTransactionsTransactionIdRequest transactionDate(String transactionDate) {
     
@@ -213,6 +227,7 @@ public class PostLoansLoanIdTransactionsTransactionIdRequest {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
     sb.append("    transactionDate: ").append(toIndentedString(transactionDate)).append("\n");
+    sb.append("    paymentTypeId ").append(toIndentedString(paymentTypeId)).append("\n");
     sb.append("    transactionAmount: ").append(toIndentedString(transactionAmount)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("}");

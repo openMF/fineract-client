@@ -55,6 +55,10 @@ public class PostSavingsAccountsRequest {
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
   private Integer productId;
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "externalId";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  private String externalId;
+
 
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)
@@ -114,6 +118,14 @@ public class PostSavingsAccountsRequest {
     this.productId = productId;
   }
 
+
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
 
   public PostSavingsAccountsRequest locale(String locale) {
     
