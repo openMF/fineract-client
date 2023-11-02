@@ -435,6 +435,38 @@ public class InteropIdentifiersResponseData {
 
 
   @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    InteropIdentifiersResponseData interopIdentifiersResponseData = (InteropIdentifiersResponseData) o;
+    return Objects.equals(this.officeId, interopIdentifiersResponseData.officeId) &&
+        Objects.equals(this.groupId, interopIdentifiersResponseData.groupId) &&
+        Objects.equals(this.clientId, interopIdentifiersResponseData.clientId) &&
+        Objects.equals(this.loanId, interopIdentifiersResponseData.loanId) &&
+        Objects.equals(this.savingsId, interopIdentifiersResponseData.savingsId) &&
+        Objects.equals(this.subResourceId, interopIdentifiersResponseData.subResourceId) &&
+        Objects.equals(this.transactionId, interopIdentifiersResponseData.transactionId) &&
+        Objects.equals(this.changes, interopIdentifiersResponseData.changes) &&
+        Objects.equals(this.productId, interopIdentifiersResponseData.productId) &&
+        Objects.equals(this.gsimId, interopIdentifiersResponseData.gsimId) &&
+        Objects.equals(this.glimId, interopIdentifiersResponseData.glimId) &&
+        Objects.equals(this.rollbackTransaction, interopIdentifiersResponseData.rollbackTransaction) &&
+        Objects.equals(this.creditReport, interopIdentifiersResponseData.creditReport) &&
+        Objects.equals(this.resourceId, interopIdentifiersResponseData.resourceId) &&
+        Objects.equals(this.resourceIdentifier, interopIdentifiersResponseData.resourceIdentifier);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(officeId, groupId, clientId, loanId, savingsId, subResourceId, transactionId, changes, productId, gsimId, glimId, rollbackTransaction, creditReport, resourceId, resourceIdentifier);
+  }
+
+
+  @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InteropIdentifiersResponseData {\n");
