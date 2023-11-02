@@ -102,6 +102,14 @@ public class InteropIdentifiersResponseData {
   @SerializedName(SERIALIZED_NAME_CREDIT_REPORT)
   private Object creditReport;
 
+  public static final String SERIALIZED_NAME_RESOURCE_ID = "resourceId";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  private Long resourceId;
+
+  public static final String SERIALIZED_NAME_RESOURCE_IDENTIFIER = "resourceIdentifier";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_IDENTIFIER)
+  private String resourceIdentifier;
+
 
   public InteropIdentifiersResponseData officeId(Long officeId) {
     
@@ -240,6 +248,22 @@ public class InteropIdentifiersResponseData {
     this.subResourceId = subResourceId;
   }
 
+
+  public Long getResourceId() {
+    return resourceId;
+  }
+
+  public void setResourceId(Long resourceId) {
+    this.resourceId = resourceId;
+  }
+
+  public String getResourceIdentifier() {
+    return resourceIdentifier;
+  }
+
+  public void setResourceIdentifier(String resourceIdentifier) {
+    this.resourceIdentifier = resourceIdentifier;
+  }
 
   public InteropIdentifiersResponseData transactionId(String transactionId) {
     
@@ -431,12 +455,14 @@ public class InteropIdentifiersResponseData {
         Objects.equals(this.gsimId, interopIdentifiersResponseData.gsimId) &&
         Objects.equals(this.glimId, interopIdentifiersResponseData.glimId) &&
         Objects.equals(this.rollbackTransaction, interopIdentifiersResponseData.rollbackTransaction) &&
-        Objects.equals(this.creditReport, interopIdentifiersResponseData.creditReport);
+        Objects.equals(this.creditReport, interopIdentifiersResponseData.creditReport) &&
+        Objects.equals(this.resourceId, interopIdentifiersResponseData.resourceId) &&
+        Objects.equals(this.resourceIdentifier, interopIdentifiersResponseData.resourceIdentifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(officeId, groupId, clientId, loanId, savingsId, subResourceId, transactionId, changes, productId, gsimId, glimId, rollbackTransaction, creditReport);
+    return Objects.hash(officeId, groupId, clientId, loanId, savingsId, subResourceId, transactionId, changes, productId, gsimId, glimId, rollbackTransaction, creditReport, resourceId, resourceIdentifier);
   }
 
 
@@ -457,6 +483,8 @@ public class InteropIdentifiersResponseData {
     sb.append("    glimId: ").append(toIndentedString(glimId)).append("\n");
     sb.append("    rollbackTransaction: ").append(toIndentedString(rollbackTransaction)).append("\n");
     sb.append("    creditReport: ").append(toIndentedString(creditReport)).append("\n");
+    sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+    sb.append("    resourceIdentifier: ").append(toIndentedString(resourceIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
