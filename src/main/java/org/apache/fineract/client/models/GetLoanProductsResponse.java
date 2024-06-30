@@ -153,9 +153,9 @@ public class GetLoanProductsResponse {
   @SerializedName(SERIALIZED_NAME_INTEREST_CALCULATION_PERIOD_TYPE)
   private GetLoansProductsInterestCalculationPeriodType interestCalculationPeriodType;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
   public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_NAME = "transactionProcessingStrategyName";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_NAME)
@@ -727,26 +727,26 @@ public class GetLoanProductsResponse {
   }
 
 
-  public GetLoanProductsResponse transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
+  public GetLoanProductsResponse transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "")
+  @ApiModelProperty(example = "mifos-standard-strategy", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -1036,7 +1036,7 @@ public class GetLoanProductsResponse {
         Objects.equals(this.amortizationType, getLoanProductsResponse.amortizationType) &&
         Objects.equals(this.interestType, getLoanProductsResponse.interestType) &&
         Objects.equals(this.interestCalculationPeriodType, getLoanProductsResponse.interestCalculationPeriodType) &&
-        Objects.equals(this.transactionProcessingStrategyId, getLoanProductsResponse.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, getLoanProductsResponse.transactionProcessingStrategyCode) &&
         Objects.equals(this.transactionProcessingStrategyName, getLoanProductsResponse.transactionProcessingStrategyName) &&
         Objects.equals(this.principalVariationsForBorrowerCycle, getLoanProductsResponse.principalVariationsForBorrowerCycle) &&
         Objects.equals(this.interestRateVariationsForBorrowerCycle, getLoanProductsResponse.interestRateVariationsForBorrowerCycle) &&
@@ -1051,7 +1051,7 @@ public class GetLoanProductsResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, shortName, includeInBorrowerCycle, useBorrowerCycle, startDate, endDate, status, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestRateFrequencyType, annualInterestRate, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyId, transactionProcessingStrategyName, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, daysInMonthType, daysInYearType, isInterestRecalculationEnabled, interestRecalculationData, accountingRule, principalThresholdForLastInstalment);
+    return Objects.hash(id, name, shortName, includeInBorrowerCycle, useBorrowerCycle, startDate, endDate, status, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestRateFrequencyType, annualInterestRate, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyCode, transactionProcessingStrategyName, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, daysInMonthType, daysInYearType, isInterestRecalculationEnabled, interestRecalculationData, accountingRule, principalThresholdForLastInstalment);
   }
 
 
@@ -1082,7 +1082,7 @@ public class GetLoanProductsResponse {
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");
     sb.append("    interestType: ").append(toIndentedString(interestType)).append("\n");
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    transactionProcessingStrategyName: ").append(toIndentedString(transactionProcessingStrategyName)).append("\n");
     sb.append("    principalVariationsForBorrowerCycle: ").append(toIndentedString(principalVariationsForBorrowerCycle)).append("\n");
     sb.append("    interestRateVariationsForBorrowerCycle: ").append(toIndentedString(interestRateVariationsForBorrowerCycle)).append("\n");

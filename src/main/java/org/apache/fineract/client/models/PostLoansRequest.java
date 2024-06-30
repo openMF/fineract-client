@@ -104,9 +104,9 @@ public class PostLoansRequest {
   @SerializedName(SERIALIZED_NAME_EXPECTED_DISBURSEMENT_DATE)
   private String expectedDisbursementDate;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
   /**
    * Gets or Sets daysInYearType
@@ -480,26 +480,26 @@ public class PostLoansRequest {
   }
 
 
-  public PostLoansRequest transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
+  public PostLoansRequest transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "2", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -549,13 +549,13 @@ public class PostLoansRequest {
         Objects.equals(this.interestType, postLoansRequest.interestType) &&
         Objects.equals(this.interestCalculationPeriodType, postLoansRequest.interestCalculationPeriodType) &&
         Objects.equals(this.expectedDisbursementDate, postLoansRequest.expectedDisbursementDate) &&
-        Objects.equals(this.transactionProcessingStrategyId, postLoansRequest.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, postLoansRequest.transactionProcessingStrategyCode) &&
         Objects.equals(this.daysInYearType, postLoansRequest.daysInYearType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateFormat, locale, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, expectedDisbursementDate, transactionProcessingStrategyId, daysInYearType);
+    return Objects.hash(dateFormat, locale, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, expectedDisbursementDate, transactionProcessingStrategyCode, daysInYearType);
   }
 
 
@@ -577,7 +577,7 @@ public class PostLoansRequest {
     sb.append("    interestType: ").append(toIndentedString(interestType)).append("\n");
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
     sb.append("    expectedDisbursementDate: ").append(toIndentedString(expectedDisbursementDate)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    daysInYearType: ").append(toIndentedString(daysInYearType)).append("\n");
     sb.append("}");
     return sb.toString();

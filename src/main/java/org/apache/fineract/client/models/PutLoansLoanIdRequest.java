@@ -104,9 +104,9 @@ public class PutLoansLoanIdRequest {
   @SerializedName(SERIALIZED_NAME_EXPECTED_DISBURSEMENT_DATE)
   private String expectedDisbursementDate;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
 
   public PutLoansLoanIdRequest locale(String locale) {
@@ -431,26 +431,26 @@ public class PutLoansLoanIdRequest {
   }
 
 
-  public PutLoansLoanIdRequest transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
+  public PutLoansLoanIdRequest transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "")
+  @ApiModelProperty(example = "mifos-standard-strategy", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -477,12 +477,12 @@ public class PutLoansLoanIdRequest {
         Objects.equals(this.interestCalculationPeriodType, putLoansLoanIdRequest.interestCalculationPeriodType) &&
         Objects.equals(this.amortizationType, putLoansLoanIdRequest.amortizationType) &&
         Objects.equals(this.expectedDisbursementDate, putLoansLoanIdRequest.expectedDisbursementDate) &&
-        Objects.equals(this.transactionProcessingStrategyId, putLoansLoanIdRequest.transactionProcessingStrategyId);
+        Objects.equals(this.transactionProcessingStrategyCode, putLoansLoanIdRequest.transactionProcessingStrategyCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locale, dateFormat, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestType, interestCalculationPeriodType, amortizationType, expectedDisbursementDate, transactionProcessingStrategyId);
+    return Objects.hash(locale, dateFormat, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestType, interestCalculationPeriodType, amortizationType, expectedDisbursementDate, transactionProcessingStrategyCode);
   }
 
 
@@ -504,7 +504,7 @@ public class PutLoansLoanIdRequest {
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");
     sb.append("    expectedDisbursementDate: ").append(toIndentedString(expectedDisbursementDate)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

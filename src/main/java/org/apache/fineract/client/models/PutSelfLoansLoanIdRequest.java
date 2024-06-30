@@ -104,9 +104,9 @@ public class PutSelfLoansLoanIdRequest {
   @SerializedName(SERIALIZED_NAME_EXPECTED_DISBURSEMENT_DATE)
   private String expectedDisbursementDate;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
 
   public PutSelfLoansLoanIdRequest locale(String locale) {
@@ -431,26 +431,26 @@ public class PutSelfLoansLoanIdRequest {
   }
 
 
-  public PutSelfLoansLoanIdRequest transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public PutSelfLoansLoanIdRequest transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -477,12 +477,12 @@ public class PutSelfLoansLoanIdRequest {
         Objects.equals(this.interestCalculationPeriodType, putSelfLoansLoanIdRequest.interestCalculationPeriodType) &&
         Objects.equals(this.amortizationType, putSelfLoansLoanIdRequest.amortizationType) &&
         Objects.equals(this.expectedDisbursementDate, putSelfLoansLoanIdRequest.expectedDisbursementDate) &&
-        Objects.equals(this.transactionProcessingStrategyId, putSelfLoansLoanIdRequest.transactionProcessingStrategyId);
+        Objects.equals(this.transactionProcessingStrategyCode, putSelfLoansLoanIdRequest.transactionProcessingStrategyCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locale, dateFormat, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestType, interestCalculationPeriodType, amortizationType, expectedDisbursementDate, transactionProcessingStrategyId);
+    return Objects.hash(locale, dateFormat, productId, principal, loanTermFrequency, loanTermFrequencyType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, interestType, interestCalculationPeriodType, amortizationType, expectedDisbursementDate, transactionProcessingStrategyCode);
   }
 
 
@@ -504,7 +504,7 @@ public class PutSelfLoansLoanIdRequest {
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");
     sb.append("    expectedDisbursementDate: ").append(toIndentedString(expectedDisbursementDate)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
