@@ -90,9 +90,9 @@ public class PostLoanProductsRequest {
   @SerializedName(SERIALIZED_NAME_REPAYMENT_FREQUENCY_TYPE)
   private Integer repaymentFrequencyType;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
   public static final String SERIALIZED_NAME_INTEREST_RATE_PER_PERIOD = "interestRatePerPeriod";
   @SerializedName(SERIALIZED_NAME_INTEREST_RATE_PER_PERIOD)
@@ -416,26 +416,26 @@ public class PostLoanProductsRequest {
   }
 
 
-  public PostLoanProductsRequest transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
+  public PostLoanProductsRequest transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -895,7 +895,7 @@ public class PostLoanProductsRequest {
         Objects.equals(this.numberOfRepayments, postLoanProductsRequest.numberOfRepayments) &&
         Objects.equals(this.repaymentEvery, postLoanProductsRequest.repaymentEvery) &&
         Objects.equals(this.repaymentFrequencyType, postLoanProductsRequest.repaymentFrequencyType) &&
-        Objects.equals(this.transactionProcessingStrategyId, postLoanProductsRequest.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, postLoanProductsRequest.transactionProcessingStrategyCode) &&
         Objects.equals(this.interestRatePerPeriod, postLoanProductsRequest.interestRatePerPeriod) &&
         Objects.equals(this.interestRateFrequencyType, postLoanProductsRequest.interestRateFrequencyType) &&
         Objects.equals(this.amortizationType, postLoanProductsRequest.amortizationType) &&
@@ -919,7 +919,7 @@ public class PostLoanProductsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, shortName, currencyCode, locale, digitsAfterDecimal, inMultiplesOf, principal, numberOfRepayments, repaymentEvery, repaymentFrequencyType, transactionProcessingStrategyId, interestRatePerPeriod, interestRateFrequencyType, amortizationType, interestType, interestCalculationPeriodType, daysInMonthType, daysInYearType, isInterestRecalculationEnabled, accountingRule, fundSourceAccountId, loanPortfolioAccountId, receivableInterestAccountId, receivableFeeAccountId, receivablePenaltyAccountId, interestOnLoanAccountId, incomeFromFeeAccountId, incomeFromPenaltyAccountId, overpaymentLiabilityAccountId, writeOffAccountId);
+    return Objects.hash(name, shortName, currencyCode, locale, digitsAfterDecimal, inMultiplesOf, principal, numberOfRepayments, repaymentEvery, repaymentFrequencyType, transactionProcessingStrategyCode, interestRatePerPeriod, interestRateFrequencyType, amortizationType, interestType, interestCalculationPeriodType, daysInMonthType, daysInYearType, isInterestRecalculationEnabled, accountingRule, fundSourceAccountId, loanPortfolioAccountId, receivableInterestAccountId, receivableFeeAccountId, receivablePenaltyAccountId, interestOnLoanAccountId, incomeFromFeeAccountId, incomeFromPenaltyAccountId, overpaymentLiabilityAccountId, writeOffAccountId);
   }
 
 
@@ -937,7 +937,7 @@ public class PostLoanProductsRequest {
     sb.append("    numberOfRepayments: ").append(toIndentedString(numberOfRepayments)).append("\n");
     sb.append("    repaymentEvery: ").append(toIndentedString(repaymentEvery)).append("\n");
     sb.append("    repaymentFrequencyType: ").append(toIndentedString(repaymentFrequencyType)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    interestRatePerPeriod: ").append(toIndentedString(interestRatePerPeriod)).append("\n");
     sb.append("    interestRateFrequencyType: ").append(toIndentedString(interestRateFrequencyType)).append("\n");
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");

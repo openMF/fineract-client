@@ -112,9 +112,9 @@ public class PostSelfLoansRequest {
   @SerializedName(SERIALIZED_NAME_INTEREST_CALCULATION_PERIOD_TYPE)
   private Integer interestCalculationPeriodType;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Integer transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
   public static final String SERIALIZED_NAME_EXPECTED_DISBURSEMENT_DATE = "expectedDisbursementDate";
   @SerializedName(SERIALIZED_NAME_EXPECTED_DISBURSEMENT_DATE)
@@ -490,26 +490,32 @@ public class PostSelfLoansRequest {
   }
 
 
-  public PostSelfLoansRequest transactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
+  public PostSelfLoansRequest transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "")
+  @ApiModelProperty(example = "mifos-standard-strategy", value = "")
 
-  public Integer getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String transactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
+  }
+
+  @ApiModelProperty(example = "mifos-standard-strategy", value = "")
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Integer transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -714,7 +720,7 @@ public class PostSelfLoansRequest {
         Objects.equals(this.amortizationType, postSelfLoansRequest.amortizationType) &&
         Objects.equals(this.interestType, postSelfLoansRequest.interestType) &&
         Objects.equals(this.interestCalculationPeriodType, postSelfLoansRequest.interestCalculationPeriodType) &&
-        Objects.equals(this.transactionProcessingStrategyId, postSelfLoansRequest.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, postSelfLoansRequest.transactionProcessingStrategyCode) &&
         Objects.equals(this.expectedDisbursementDate, postSelfLoansRequest.expectedDisbursementDate) &&
         Objects.equals(this.submittedOnDate, postSelfLoansRequest.submittedOnDate) &&
         Objects.equals(this.linkAccountId, postSelfLoansRequest.linkAccountId) &&
@@ -726,7 +732,7 @@ public class PostSelfLoansRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateFormat, locale, clientId, productId, principal, loanTermFrequency, loanTermFrequencyType, loanType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyId, expectedDisbursementDate, submittedOnDate, linkAccountId, fixedEmiAmount, maxOutstandingLoanBalance, disbursementData, datatables);
+    return Objects.hash(dateFormat, locale, clientId, productId, principal, loanTermFrequency, loanTermFrequencyType, loanType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyCode, expectedDisbursementDate, submittedOnDate, linkAccountId, fixedEmiAmount, maxOutstandingLoanBalance, disbursementData, datatables);
   }
 
 
@@ -749,7 +755,7 @@ public class PostSelfLoansRequest {
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");
     sb.append("    interestType: ").append(toIndentedString(interestType)).append("\n");
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    expectedDisbursementDate: ").append(toIndentedString(expectedDisbursementDate)).append("\n");
     sb.append("    submittedOnDate: ").append(toIndentedString(submittedOnDate)).append("\n");
     sb.append("    linkAccountId: ").append(toIndentedString(linkAccountId)).append("\n");

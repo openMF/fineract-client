@@ -178,9 +178,9 @@ public class LoanProductData {
   @SerializedName(SERIALIZED_NAME_IN_ARREARS_TOLERANCE)
   private BigDecimal inArrearsTolerance;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Long transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private String transactionProcessingStrategyCode;
 
   public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_NAME = "transactionProcessingStrategyName";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_NAME)
@@ -993,26 +993,26 @@ public class LoanProductData {
   }
 
 
-  public LoanProductData transactionProcessingStrategyId(Long transactionProcessingStrategyId) {
+  public LoanProductData transactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Long getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Long transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -1825,7 +1825,7 @@ public class LoanProductData {
         Objects.equals(this.interestCalculationPeriodType, loanProductData.interestCalculationPeriodType) &&
         Objects.equals(this.allowPartialPeriodInterestCalcualtion, loanProductData.allowPartialPeriodInterestCalcualtion) &&
         Objects.equals(this.inArrearsTolerance, loanProductData.inArrearsTolerance) &&
-        Objects.equals(this.transactionProcessingStrategyId, loanProductData.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, loanProductData.transactionProcessingStrategyCode) &&
         Objects.equals(this.transactionProcessingStrategyName, loanProductData.transactionProcessingStrategyName) &&
         Objects.equals(this.graceOnPrincipalPayment, loanProductData.graceOnPrincipalPayment) &&
         Objects.equals(this.recurringMoratoriumOnPrincipalPeriods, loanProductData.recurringMoratoriumOnPrincipalPeriods) &&
@@ -1860,7 +1860,7 @@ public class LoanProductData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyId, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, variableInstallmentsAllowed, equalAmortization, linkedToFloatingInterestRates, floatingInterestRateCalculationAllowed, compoundingToBePostedAsTransaction, interestRecalculationEnabled, getloanProductConfigurableAttributes, minimumGapBetweenInstallments, maximumGapBetweenInstallments);
+    return Objects.hash(id, name, description, fundId, fundName, startDate, closeDate, currency, principal, minPrincipal, maxPrincipal, numberOfRepayments, minNumberOfRepayments, maxNumberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, minInterestRatePerPeriod, maxInterestRatePerPeriod, interestRateFrequencyType, annualInterestRate, interestRateDifferential, minDifferentialLendingRate, defaultDifferentialLendingRate, maxDifferentialLendingRate, amortizationType, interestType, interestCalculationPeriodType, allowPartialPeriodInterestCalcualtion, inArrearsTolerance, transactionProcessingStrategyCode, transactionProcessingStrategyName, graceOnPrincipalPayment, recurringMoratoriumOnPrincipalPeriods, graceOnInterestPayment, graceOnInterestCharged, graceOnArrearsAgeing, daysInMonthType, daysInYearType, interestRecalculationData, principalVariationsForBorrowerCycle, interestRateVariationsForBorrowerCycle, numberOfRepaymentVariationsForBorrowerCycle, fundOptions, repaymentFrequencyTypeOptions, interestRateFrequencyTypeOptions, amortizationTypeOptions, interestTypeOptions, interestCalculationPeriodTypeOptions, chargeOptions, multiDisburseLoan, outstandingLoanBalance, variableInstallmentsAllowed, equalAmortization, linkedToFloatingInterestRates, floatingInterestRateCalculationAllowed, compoundingToBePostedAsTransaction, interestRecalculationEnabled, getloanProductConfigurableAttributes, minimumGapBetweenInstallments, maximumGapBetweenInstallments);
   }
 
 
@@ -1898,7 +1898,7 @@ public class LoanProductData {
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
     sb.append("    allowPartialPeriodInterestCalcualtion: ").append(toIndentedString(allowPartialPeriodInterestCalcualtion)).append("\n");
     sb.append("    inArrearsTolerance: ").append(toIndentedString(inArrearsTolerance)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    transactionProcessingStrategyName: ").append(toIndentedString(transactionProcessingStrategyName)).append("\n");
     sb.append("    graceOnPrincipalPayment: ").append(toIndentedString(graceOnPrincipalPayment)).append("\n");
     sb.append("    recurringMoratoriumOnPrincipalPeriods: ").append(toIndentedString(recurringMoratoriumOnPrincipalPeriods)).append("\n");

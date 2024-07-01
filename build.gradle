@@ -6,7 +6,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
 
 group = 'org.mifos'
-version = '2.0.3-SNAPSHOT'
+version = '2.0.4-SNAPSHOT'
 
 buildscript {
 repositories {
@@ -128,7 +128,7 @@ testImplementation "junit:junit:$junit_version"
 }
 
 group = 'org.mifos'
-version = '2.0.3-SNAPSHOT'
+version = '2.0.4-SNAPSHOT'
 sourceCompatibility = '1.8'
 def artifactId = 'fineract-client'
 def versionNumber = version

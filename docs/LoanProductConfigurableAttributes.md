@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **loanProduct** | [**LoanProduct**](LoanProduct.md) |  |  [optional]
 **amortizationType** | **Boolean** |  |  [optional]
 **interestType** | **Boolean** |  |  [optional]
-**transactionProcessingStrategyId** | **Boolean** |  |  [optional]
+**transactionProcessingStrategyCode** | **Boolean** |  |  [optional]
 **interestCalculationPeriodType** | **Boolean** |  |  [optional]
 **inArrearsTolerance** | **Boolean** |  |  [optional]
 **repaymentEvery** | **Boolean** |  |  [optional]

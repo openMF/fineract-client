@@ -64,9 +64,9 @@ public class LoanProductConfigurableAttributes {
   @SerializedName(SERIALIZED_NAME_INTEREST_TYPE)
   private Boolean interestType;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID = "transactionProcessingStrategyId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_ID)
-  private Boolean transactionProcessingStrategyId;
+  public static final String SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE = "transactionProcessingStrategyCode";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_PROCESSING_STRATEGY_CODE)
+  private Boolean transactionProcessingStrategyCode;
 
   public static final String SERIALIZED_NAME_INTEREST_CALCULATION_PERIOD_TYPE = "interestCalculationPeriodType";
   @SerializedName(SERIALIZED_NAME_INTEREST_CALCULATION_PERIOD_TYPE)
@@ -217,26 +217,26 @@ public class LoanProductConfigurableAttributes {
   }
 
 
-  public LoanProductConfigurableAttributes transactionProcessingStrategyId(Boolean transactionProcessingStrategyId) {
+  public LoanProductConfigurableAttributes transactionProcessingStrategyCode(Boolean transactionProcessingStrategyCode) {
     
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
     return this;
   }
 
    /**
-   * Get transactionProcessingStrategyId
-   * @return transactionProcessingStrategyId
+   * Get transactionProcessingStrategyCode
+   * @return transactionProcessingStrategyCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Boolean getTransactionProcessingStrategyId() {
-    return transactionProcessingStrategyId;
+  public Boolean getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
   }
 
 
-  public void setTransactionProcessingStrategyId(Boolean transactionProcessingStrategyId) {
-    this.transactionProcessingStrategyId = transactionProcessingStrategyId;
+  public void setTransactionProcessingStrategyCode(Boolean transactionProcessingStrategyCode) {
+    this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
   }
 
 
@@ -575,7 +575,7 @@ public class LoanProductConfigurableAttributes {
         Objects.equals(this.loanProduct, loanProductConfigurableAttributes.loanProduct) &&
         Objects.equals(this.amortizationType, loanProductConfigurableAttributes.amortizationType) &&
         Objects.equals(this.interestType, loanProductConfigurableAttributes.interestType) &&
-        Objects.equals(this.transactionProcessingStrategyId, loanProductConfigurableAttributes.transactionProcessingStrategyId) &&
+        Objects.equals(this.transactionProcessingStrategyCode, loanProductConfigurableAttributes.transactionProcessingStrategyCode) &&
         Objects.equals(this.interestCalculationPeriodType, loanProductConfigurableAttributes.interestCalculationPeriodType) &&
         Objects.equals(this.inArrearsTolerance, loanProductConfigurableAttributes.inArrearsTolerance) &&
         Objects.equals(this.repaymentEvery, loanProductConfigurableAttributes.repaymentEvery) &&
@@ -594,7 +594,7 @@ public class LoanProductConfigurableAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, loanProduct, amortizationType, interestType, transactionProcessingStrategyId, interestCalculationPeriodType, inArrearsTolerance, repaymentEvery, graceOnPrincipalAndInterestPayment, graceOnArrearsAgeing, graceOnPrincipalAndInterestPaymentBoolean, repaymentEveryBoolean, graceOnArrearsAgingBoolean, arrearsToleranceBoolean, amortizationBoolean, interestMethodBoolean, interestCalcPeriodBoolean, transactionProcessingStrategyBoolean, _new);
+    return Objects.hash(id, loanProduct, amortizationType, interestType, transactionProcessingStrategyCode, interestCalculationPeriodType, inArrearsTolerance, repaymentEvery, graceOnPrincipalAndInterestPayment, graceOnArrearsAgeing, graceOnPrincipalAndInterestPaymentBoolean, repaymentEveryBoolean, graceOnArrearsAgingBoolean, arrearsToleranceBoolean, amortizationBoolean, interestMethodBoolean, interestCalcPeriodBoolean, transactionProcessingStrategyBoolean, _new);
   }
 
 
@@ -606,7 +606,7 @@ public class LoanProductConfigurableAttributes {
     sb.append("    loanProduct: ").append(toIndentedString(loanProduct)).append("\n");
     sb.append("    amortizationType: ").append(toIndentedString(amortizationType)).append("\n");
     sb.append("    interestType: ").append(toIndentedString(interestType)).append("\n");
-    sb.append("    transactionProcessingStrategyId: ").append(toIndentedString(transactionProcessingStrategyId)).append("\n");
+    sb.append("    transactionProcessingStrategyCode: ").append(toIndentedString(transactionProcessingStrategyCode)).append("\n");
     sb.append("    interestCalculationPeriodType: ").append(toIndentedString(interestCalculationPeriodType)).append("\n");
     sb.append("    inArrearsTolerance: ").append(toIndentedString(inArrearsTolerance)).append("\n");
     sb.append("    repaymentEvery: ").append(toIndentedString(repaymentEvery)).append("\n");
