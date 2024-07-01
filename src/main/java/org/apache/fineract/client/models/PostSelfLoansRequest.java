@@ -507,6 +507,12 @@ public class PostSelfLoansRequest {
     return transactionProcessingStrategyCode;
   }
 
+  @ApiModelProperty(example = "mifos-standard-strategy", value = "")
+  public String getTransactionProcessingStrategyCode() {
+    return transactionProcessingStrategyCode;
+  }
+
+
 
   public void setTransactionProcessingStrategyCode(String transactionProcessingStrategyCode) {
     this.transactionProcessingStrategyCode = transactionProcessingStrategyCode;
