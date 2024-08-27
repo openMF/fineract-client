@@ -1,7 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
 
@@ -9,7 +10,8 @@ group = 'org.mifos'
 version = '2.0.4-SNAPSHOT'
 
 buildscript {
-repositories {
+    ext.kotlin_version = '1.9.22'
+    repositories {
 maven { url "https://repo1.maven.org/maven2" }
 jcenter()
 }
@@ -17,6 +19,7 @@ dependencies {
 classpath 'com.android.tools.build:gradle:2.3.+'
 classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
 classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.24.23'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 }
 }
 
@@ -82,16 +85,16 @@ archives sourcesJar
 } else {
 
 apply plugin: 'java'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 
-install {
-repositories.mavenInstaller {
-pom.artifactId = 'openapi-java-client'
-}
-}
+//install {
+//repositories.mavenInstaller {
+//pom.artifactId = 'openapi-java-client'
+//}
+//}
 
 task execute(type:JavaExec) {
 main = System.getProperty('mainClass')
@@ -125,6 +128,7 @@ exclude group:'org.apache.oltu.oauth2' , module: 'org.apache.oltu.oauth2.common'
 implementation "io.gsonfire:gson-fire:$json_fire_version"
 implementation 'javax.annotation:javax.annotation-api:1.3.2'
 testImplementation "junit:junit:$junit_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 group = 'org.mifos'
@@ -169,4 +173,14 @@ artifactory {
 
 artifactoryPublish {
     dependsOn jar
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
