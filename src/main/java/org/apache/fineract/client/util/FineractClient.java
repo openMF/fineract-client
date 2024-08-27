@@ -34,6 +34,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import org.apache.fineract.client.auth.ApiKeyAuth;
 import org.apache.fineract.client.auth.HttpBasicAuth;
+import org.apache.fineract.client.models.ClientService;
 import org.apache.fineract.client.services.AccountNumberFormatApi;
 import org.apache.fineract.client.services.AccountTransfersApi;
 import org.apache.fineract.client.services.AccountingClosureApi;
@@ -176,6 +177,7 @@ public final class FineractClient {
     public final CentersApi centers;
     public final ChargesApi charges;
     public final ClientApi clients;
+    public final ClientService newClients;
     public final ClientChargesApi clientCharges;
     public final ClientIdentifierApi clientIdentifiers;
     public final ClientsAddressApi clientAddresses;
@@ -286,6 +288,7 @@ public final class FineractClient {
         centers = retrofit.create(CentersApi.class);
         charges = retrofit.create(ChargesApi.class);
         clients = retrofit.create(ClientApi.class);
+        newClients = retrofit.create(ClientService.class);
         clientCharges = retrofit.create(ClientChargesApi.class);
         clientIdentifiers = retrofit.create(ClientIdentifierApi.class);
         clientAddresses = retrofit.create(ClientsAddressApi.class);
