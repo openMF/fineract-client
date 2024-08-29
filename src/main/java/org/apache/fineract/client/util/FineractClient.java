@@ -34,7 +34,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import org.apache.fineract.client.auth.ApiKeyAuth;
 import org.apache.fineract.client.auth.HttpBasicAuth;
-import org.apache.fineract.client.models.ClientService;
+import org.apache.fineract.client.service.ClientService;
 import org.apache.fineract.client.services.AccountNumberFormatApi;
 import org.apache.fineract.client.services.AccountTransfersApi;
 import org.apache.fineract.client.services.AccountingClosureApi;
@@ -177,7 +177,6 @@ public final class FineractClient {
     public final CentersApi centers;
     public final ChargesApi charges;
     public final ClientApi clients;
-    public final ClientService newClients;
     public final ClientChargesApi clientCharges;
     public final ClientIdentifierApi clientIdentifiers;
     public final ClientsAddressApi clientAddresses;
@@ -270,6 +269,12 @@ public final class FineractClient {
     public final UsersApi users;
     public final WorkingDaysApi workingDays;
 
+    // Services
+
+    public final ClientService clientService;
+
+
+
     private FineractClient(OkHttpClient okHttpClient, Retrofit retrofit) {
         this.okHttpClient = okHttpClient;
         this.retrofit = retrofit;
@@ -288,7 +293,6 @@ public final class FineractClient {
         centers = retrofit.create(CentersApi.class);
         charges = retrofit.create(ChargesApi.class);
         clients = retrofit.create(ClientApi.class);
-        newClients = retrofit.create(ClientService.class);
         clientCharges = retrofit.create(ClientChargesApi.class);
         clientIdentifiers = retrofit.create(ClientIdentifierApi.class);
         clientAddresses = retrofit.create(ClientsAddressApi.class);
@@ -380,6 +384,9 @@ public final class FineractClient {
         templates = retrofit.create(UserGeneratedDocumentsApi.class);
         users = retrofit.create(UsersApi.class);
         workingDays = retrofit.create(WorkingDaysApi.class);
+
+        //
+        clientService = retrofit.create(ClientService.class);
     }
 
     public static Builder builder() {
