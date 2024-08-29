@@ -34,6 +34,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import org.apache.fineract.client.auth.ApiKeyAuth;
 import org.apache.fineract.client.auth.HttpBasicAuth;
+import org.apache.fineract.client.service.ClientService;
 import org.apache.fineract.client.services.AccountNumberFormatApi;
 import org.apache.fineract.client.services.AccountTransfersApi;
 import org.apache.fineract.client.services.AccountingClosureApi;
@@ -268,6 +269,12 @@ public final class FineractClient {
     public final UsersApi users;
     public final WorkingDaysApi workingDays;
 
+    // Services
+
+    public final ClientService clientService;
+
+
+
     private FineractClient(OkHttpClient okHttpClient, Retrofit retrofit) {
         this.okHttpClient = okHttpClient;
         this.retrofit = retrofit;
@@ -377,6 +384,9 @@ public final class FineractClient {
         templates = retrofit.create(UserGeneratedDocumentsApi.class);
         users = retrofit.create(UsersApi.class);
         workingDays = retrofit.create(WorkingDaysApi.class);
+
+        //
+        clientService = retrofit.create(ClientService.class);
     }
 
     public static Builder builder() {
