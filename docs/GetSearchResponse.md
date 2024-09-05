@@ -1,20 +1,17 @@
 
-
 # GetSearchResponse
 
-GetSearchResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**entityId** | **Long** |  |  [optional]
-**entityAccountNo** | **Long** |  |  [optional]
-**entityExternalId** | **String** |  |  [optional]
-**entityName** | **String** |  |  [optional]
-**entityType** | **String** |  |  [optional]
-**parentId** | **Long** |  |  [optional]
-**parentName** | **String** |  |  [optional]
-**entityStatus** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entityAccountNo** | **kotlin.Long** |  |  [optional] |
+| **entityExternalId** | **kotlin.String** |  |  [optional] |
+| **entityId** | **kotlin.Long** |  |  [optional] |
+| **entityName** | **kotlin.String** |  |  [optional] |
+| **entityStatus** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **entityType** | **kotlin.String** |  |  [optional] |
+| **parentId** | **kotlin.Long** |  |  [optional] |
+| **parentName** | **kotlin.String** |  |  [optional] |
 
 
 

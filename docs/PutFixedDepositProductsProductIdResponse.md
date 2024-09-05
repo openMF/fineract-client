@@ -1,14 +1,11 @@
 
-
 # PutFixedDepositProductsProductIdResponse
 
-PutFixedDepositProductsProductIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutFixedDepositProductsChanges**](PutFixedDepositProductsChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutFixedDepositProductsChanges**](PutFixedDepositProductsChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

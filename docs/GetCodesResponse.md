@@ -1,15 +1,12 @@
 
-
 # GetCodesResponse
 
-GetCodesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**systemDefined** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **systemDefined** | **kotlin.Boolean** |  |  [optional] |
 
 
 

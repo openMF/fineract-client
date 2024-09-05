@@ -1,17 +1,14 @@
 
-
 # GetLoansTemplateResponse
 
-GetLoansTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**clientId** | **Long** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**clientOfficeId** | **Integer** |  |  [optional]
-**timeline** | [**GetLoansTemplateTimeline**](GetLoansTemplateTimeline.md) |  |  [optional]
-**productOptions** | [**List&lt;GetLoansTemplateProductOptions&gt;**](GetLoansTemplateProductOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **clientOfficeId** | **kotlin.Long** |  |  [optional] |
+| **productOptions** | [**kotlin.collections.Set&lt;GetLoansTemplateProductOptions&gt;**](GetLoansTemplateProductOptions.md) |  |  [optional] |
+| **timeline** | [**GetLoansTemplateTimeline**](GetLoansTemplateTimeline.md) |  |  [optional] |
 
 
 

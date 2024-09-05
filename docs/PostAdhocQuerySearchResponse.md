@@ -1,16 +1,13 @@
 
-
 # PostAdhocQuerySearchResponse
 
-PostAdhocQuerySearchResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeName** | **String** |  |  [optional]
-**loanProductName** | **String** |  |  [optional]
-**loanOutStanding** | **Long** |  |  [optional]
-**percentage** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **loanOutStanding** | **kotlin.Long** |  |  [optional] |
+| **loanProductName** | **kotlin.String** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **percentage** | **kotlin.Long** |  |  [optional] |
 
 
 

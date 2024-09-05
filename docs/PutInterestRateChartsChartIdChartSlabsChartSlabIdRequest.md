@@ -1,14 +1,11 @@
 
-
 # PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest
 
-PutInterestRateChartsChartIdChartSlabsChartSlabIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**annualInterestRate** | **Double** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **annualInterestRate** | **kotlin.Double** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
 
 
 

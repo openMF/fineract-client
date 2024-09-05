@@ -1,17 +1,14 @@
 
-
 # PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse
 
-PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsTransactionIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**savingsId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PostRecurringChanges**](PostRecurringChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PostRecurringChanges**](PostRecurringChanges.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **savingsId** | **kotlin.Long** |  |  [optional] |
 
 
 

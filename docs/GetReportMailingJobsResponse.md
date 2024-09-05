@@ -1,28 +1,25 @@
 
-
 # GetReportMailingJobsResponse
 
-GetReportMailingJobsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**startDateTime** | [**Date**](Date.md) |  |  [optional]
-**recurrence** | **String** |  |  [optional]
-**timeline** | [**Object**](.md) |  |  [optional]
-**emailRecipients** | **String** |  |  [optional]
-**emailSubject** | **String** |  |  [optional]
-**emailMessage** | **String** |  |  [optional]
-**emailAttachmentFileFormat** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**stretchyReport** | [**Object**](.md) |  |  [optional]
-**stretchyReportParamMap** | **String** |  |  [optional]
-**nextRunDateTime** | [**Date**](Date.md) |  |  [optional]
-**numberOfRuns** | **Integer** |  |  [optional]
-**isActive** | **Boolean** |  |  [optional]
-**runAsUserId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **emailAttachmentFileFormat** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **emailMessage** | **kotlin.String** |  |  [optional] |
+| **emailRecipients** | **kotlin.String** |  |  [optional] |
+| **emailSubject** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nextRunDateTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **numberOfRuns** | **kotlin.Int** |  |  [optional] |
+| **recurrence** | **kotlin.String** |  |  [optional] |
+| **runAsUserId** | **kotlin.Long** |  |  [optional] |
+| **startDateTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **stretchyReport** | [**kotlin.Any**](.md) |  |  [optional] |
+| **stretchyReportParamMap** | **kotlin.String** |  |  [optional] |
+| **timeline** | [**ReportMailingJobTimelineData**](ReportMailingJobTimelineData.md) |  |  [optional] |
 
 
 

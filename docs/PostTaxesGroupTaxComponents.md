@@ -1,13 +1,11 @@
 
-
 # PostTaxesGroupTaxComponents
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**taxComponentId** | **Integer** |  |  [optional]
-**startDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **startDate** | **kotlin.String** |  |  [optional] |
+| **taxComponentId** | **kotlin.Long** |  |  [optional] |
 
 
 

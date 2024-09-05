@@ -1,15 +1,13 @@
 
-
 # BatchResponse
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**requestId** | **Long** |  |  [optional]
-**statusCode** | **Integer** |  |  [optional]
-**headers** | [**List&lt;Header&gt;**](Header.md) |  |  [optional]
-**body** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String** |  |  [optional] |
+| **headers** | [**kotlin.collections.Set&lt;Header&gt;**](Header.md) |  |  [optional] |
+| **requestId** | **kotlin.Long** |  |  [optional] |
+| **statusCode** | **kotlin.Int** |  |  [optional] |
 
 
 

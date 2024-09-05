@@ -1,15 +1,12 @@
 
-
 # GetDataTablesResponse
 
-GetDataTablesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**applicationTableName** | **String** |  |  [optional]
-**registeredTableName** | **String** |  |  [optional]
-**columnHeaderData** | [**List&lt;ResultsetColumnHeaderData&gt;**](ResultsetColumnHeaderData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **applicationTableName** | **kotlin.String** |  |  [optional] |
+| **columnHeaderData** | [**kotlin.collections.List&lt;ResultsetColumnHeaderData&gt;**](ResultsetColumnHeaderData.md) |  |  [optional] |
+| **registeredTableName** | **kotlin.String** |  |  [optional] |
 
 
 

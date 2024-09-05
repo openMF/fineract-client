@@ -1,75 +1,43 @@
 # MappingFinancialActivitiesToAccountsApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createGLAccount**](MappingFinancialActivitiesToAccountsApi.md#createGLAccount) | **POST** financialactivityaccounts | Create a new Financial Activity to Accounts Mapping
-[**deleteGLAccount**](MappingFinancialActivitiesToAccountsApi.md#deleteGLAccount) | **DELETE** financialactivityaccounts/{mappingId} | Delete a Financial Activity to Account Mapping
-[**retreive**](MappingFinancialActivitiesToAccountsApi.md#retreive) | **GET** financialactivityaccounts/{mappingId} | Retrieve a Financial Activity to Account Mapping 
-[**retrieveAll**](MappingFinancialActivitiesToAccountsApi.md#retrieveAll) | **GET** financialactivityaccounts | List Financial Activities to Accounts Mappings
-[**retrieveTemplate**](MappingFinancialActivitiesToAccountsApi.md#retrieveTemplate) | **GET** financialactivityaccounts/template | 
-[**updateGLAccount**](MappingFinancialActivitiesToAccountsApi.md#updateGLAccount) | **PUT** financialactivityaccounts/{mappingId} | Update a Financial Activity to Account Mapping
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createGLAccount**](MappingFinancialActivitiesToAccountsApi.md#createGLAccount) | **POST** v1/financialactivityaccounts | Create a new Financial Activity to Accounts Mapping |
+| [**deleteGLAccount**](MappingFinancialActivitiesToAccountsApi.md#deleteGLAccount) | **DELETE** v1/financialactivityaccounts/{mappingId} | Delete a Financial Activity to Account Mapping |
+| [**retreive**](MappingFinancialActivitiesToAccountsApi.md#retreive) | **GET** v1/financialactivityaccounts/{mappingId} | Retrieve a Financial Activity to Account Mapping  |
+| [**retrieveAll**](MappingFinancialActivitiesToAccountsApi.md#retrieveAll) | **GET** v1/financialactivityaccounts | List Financial Activities to Accounts Mappings |
+| [**retrieveTemplate**](MappingFinancialActivitiesToAccountsApi.md#retrieveTemplate) | **GET** v1/financialactivityaccounts/template |  |
+| [**updateGLAccount**](MappingFinancialActivitiesToAccountsApi.md#updateGLAccount) | **PUT** v1/financialactivityaccounts/{mappingId} | Update a Financial Activity to Account Mapping |
 
 
-
-## createGLAccount
-
-> PostFinancialActivityAccountsResponse createGLAccount(postFinancialActivityAccountsRequest)
 
 Create a new Financial Activity to Accounts Mapping
 
 Mandatory Fields financialActivityId, glAccountId
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
+val postFinancialActivityAccountsRequest : PostFinancialActivityAccountsRequest =  // PostFinancialActivityAccountsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        PostFinancialActivityAccountsRequest postFinancialActivityAccountsRequest = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | 
-        try {
-            PostFinancialActivityAccountsResponse result = apiInstance.createGLAccount(postFinancialActivityAccountsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#createGLAccount");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostFinancialActivityAccountsResponse = webService.createGLAccount(postFinancialActivityAccountsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -77,74 +45,39 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## deleteGLAccount
-
-> DeleteFinancialActivityAccountsResponse deleteGLAccount(mappingId)
 
 Delete a Financial Activity to Account Mapping
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
+val mappingId : kotlin.Long = 789 // kotlin.Long | mappingId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        Long mappingId = 56L; // Long | mappingId
-        try {
-            DeleteFinancialActivityAccountsResponse result = apiInstance.deleteGLAccount(mappingId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#deleteGLAccount");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteFinancialActivityAccountsResponse = webService.deleteGLAccount(mappingId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mappingId** | **Long**| mappingId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **mappingId** | **kotlin.Long**| mappingId | |
 
 ### Return type
 
@@ -152,76 +85,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retreive
-
-> GetFinancialActivityAccountsResponse retreive(mappingId)
 
 Retrieve a Financial Activity to Account Mapping 
 
 Example Requests:  financialactivityaccounts/1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
+val mappingId : kotlin.Long = 789 // kotlin.Long | mappingId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        Long mappingId = 56L; // Long | mappingId
-        try {
-            GetFinancialActivityAccountsResponse result = apiInstance.retreive(mappingId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retreive");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetFinancialActivityAccountsResponse = webService.retreive(mappingId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mappingId** | **Long**| mappingId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **mappingId** | **kotlin.Long**| mappingId | |
 
 ### Return type
 
@@ -229,222 +127,119 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveAll
-
-> List&lt;GetFinancialActivityAccountsResponse&gt; retrieveAll()
 
 List Financial Activities to Accounts Mappings
 
 Example Requests:  financialactivityaccounts
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        try {
-            List<GetFinancialActivityAccountsResponse> result = apiInstance.retrieveAll();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveAll");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetFinancialActivityAccountsResponse> = webService.retrieveAll()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;GetFinancialActivityAccountsResponse&gt;**](GetFinancialActivityAccountsResponse.md)
+[**kotlin.collections.List&lt;GetFinancialActivityAccountsResponse&gt;**](GetFinancialActivityAccountsResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveTemplate
-
-> String retrieveTemplate()
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveTemplate();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#retrieveTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveTemplate()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateGLAccount
-
-> PutFinancialActivityAccountsResponse updateGLAccount(mappingId, postFinancialActivityAccountsRequest)
 
 Update a Financial Activity to Account Mapping
 
 the API updates the Ledger account linked to a Financial Activity  
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.MappingFinancialActivitiesToAccountsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(MappingFinancialActivitiesToAccountsApi::class.java)
+val mappingId : kotlin.Long = 789 // kotlin.Long | mappingId
+val postFinancialActivityAccountsRequest : PostFinancialActivityAccountsRequest =  // PostFinancialActivityAccountsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        MappingFinancialActivitiesToAccountsApi apiInstance = new MappingFinancialActivitiesToAccountsApi(defaultClient);
-        Long mappingId = 56L; // Long | mappingId
-        PostFinancialActivityAccountsRequest postFinancialActivityAccountsRequest = new PostFinancialActivityAccountsRequest(); // PostFinancialActivityAccountsRequest | 
-        try {
-            PutFinancialActivityAccountsResponse result = apiInstance.updateGLAccount(mappingId, postFinancialActivityAccountsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MappingFinancialActivitiesToAccountsApi#updateGLAccount");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutFinancialActivityAccountsResponse = webService.updateGLAccount(mappingId, postFinancialActivityAccountsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mappingId** | **Long**| mappingId |
- **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional]
+| **mappingId** | **kotlin.Long**| mappingId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postFinancialActivityAccountsRequest** | [**PostFinancialActivityAccountsRequest**](PostFinancialActivityAccountsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -452,15 +247,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

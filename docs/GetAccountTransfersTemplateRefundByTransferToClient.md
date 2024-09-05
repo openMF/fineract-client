@@ -1,15 +1,13 @@
 
-
 # GetAccountTransfersTemplateRefundByTransferToClient
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
 
 
 

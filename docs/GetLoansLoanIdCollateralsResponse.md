@@ -1,17 +1,14 @@
 
-
 # GetLoansLoanIdCollateralsResponse
 
-GetLoansLoanIdCollateralsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**type** | [**GetCollateralTypeResponse**](GetCollateralTypeResponse.md) |  |  [optional]
-**value** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
-**currency** | [**GetCollateralCurrencyResponse**](GetCollateralCurrencyResponse.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **currency** | [**GetCollateralCurrencyResponse**](GetCollateralCurrencyResponse.md) |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **type** | [**GetCollateralTypeResponse**](GetCollateralTypeResponse.md) |  |  [optional] |
+| **&#x60;value&#x60;** | **kotlin.Long** |  |  [optional] |
 
 
 

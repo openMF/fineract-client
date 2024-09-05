@@ -1,74 +1,42 @@
 # SelfThirdPartyTransferApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**add**](SelfThirdPartyTransferApi.md#add) | **POST** self/beneficiaries/tpt | Add TPT Beneficiary
-[**delete20**](SelfThirdPartyTransferApi.md#delete20) | **DELETE** self/beneficiaries/tpt/{beneficiaryId} | Delete TPT Beneficiary
-[**retrieveAll35**](SelfThirdPartyTransferApi.md#retrieveAll35) | **GET** self/beneficiaries/tpt | Get All TPT Beneficiary
-[**template16**](SelfThirdPartyTransferApi.md#template16) | **GET** self/beneficiaries/tpt/template | Beneficiary Third Party Transfer Template
-[**update21**](SelfThirdPartyTransferApi.md#update21) | **PUT** self/beneficiaries/tpt/{beneficiaryId} | Update TPT Beneficiary
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**add**](SelfThirdPartyTransferApi.md#add) | **POST** v1/self/beneficiaries/tpt | Add TPT Beneficiary |
+| [**delete22**](SelfThirdPartyTransferApi.md#delete22) | **DELETE** v1/self/beneficiaries/tpt/{beneficiaryId} | Delete TPT Beneficiary |
+| [**retrieveAll35**](SelfThirdPartyTransferApi.md#retrieveAll35) | **GET** v1/self/beneficiaries/tpt | Get All TPT Beneficiary |
+| [**template16**](SelfThirdPartyTransferApi.md#template16) | **GET** v1/self/beneficiaries/tpt/template | Beneficiary Third Party Transfer Template |
+| [**update23**](SelfThirdPartyTransferApi.md#update23) | **PUT** v1/self/beneficiaries/tpt/{beneficiaryId} | Update TPT Beneficiary |
 
 
-
-## add
-
-> PostSelfBeneficiariesTPTResponse add(postSelfBeneficiariesTPTRequest)
 
 Add TPT Beneficiary
 
 Api to add third party beneficiary linked to current user.  Parameter Definitions  name : Nick name for beneficiary, should be unique for an self service user  officeName : Office Name of beneficiary(not id)  accountNumber : Account Number of beneficiary(not id)  transferLimit : Each transfer initiated to this account will not exceed this amount  Example Requests:  /self/beneficiaries/tpt  Mandatory Fields: name, officeName, accountNumber, accountType  Optional Fields: transferLimit
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SelfThirdPartyTransferApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SelfThirdPartyTransferApi::class.java)
+val postSelfBeneficiariesTPTRequest : PostSelfBeneficiariesTPTRequest =  // PostSelfBeneficiariesTPTRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi(defaultClient);
-        PostSelfBeneficiariesTPTRequest postSelfBeneficiariesTPTRequest = new PostSelfBeneficiariesTPTRequest(); // PostSelfBeneficiariesTPTRequest | 
-        try {
-            PostSelfBeneficiariesTPTResponse result = apiInstance.add(postSelfBeneficiariesTPTRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SelfThirdPartyTransferApi#add");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostSelfBeneficiariesTPTResponse = webService.add(postSelfBeneficiariesTPTRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postSelfBeneficiariesTPTRequest** | [**PostSelfBeneficiariesTPTRequest**](PostSelfBeneficiariesTPTRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postSelfBeneficiariesTPTRequest** | [**PostSelfBeneficiariesTPTRequest**](PostSelfBeneficiariesTPTRequest.md)|  | |
 
 ### Return type
 
@@ -76,76 +44,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## delete20
-
-> DeleteSelfBeneficiariesTPTBeneficiaryIdResponse delete20(beneficiaryId)
 
 Delete TPT Beneficiary
 
 Api to delete third party beneficiary linked to current user.  Example Requests:  /self/beneficiaries/tpt/{beneficiaryId}
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SelfThirdPartyTransferApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SelfThirdPartyTransferApi::class.java)
+val beneficiaryId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi(defaultClient);
-        Long beneficiaryId = 56L; // Long | 
-        try {
-            DeleteSelfBeneficiariesTPTBeneficiaryIdResponse result = apiInstance.delete20(beneficiaryId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SelfThirdPartyTransferApi#delete20");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteSelfBeneficiariesTPTBeneficiaryIdResponse = webService.delete22(beneficiaryId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **beneficiaryId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **beneficiaryId** | **kotlin.Long**|  | |
 
 ### Return type
 
@@ -153,144 +86,76 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveAll35
-
-> List&lt;GetSelfBeneficiariesTPTResponse&gt; retrieveAll35()
 
 Get All TPT Beneficiary
 
 Api to get all third party beneficiary linked to current user.  Example Requests:  /self/beneficiaries/tpt
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SelfThirdPartyTransferApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SelfThirdPartyTransferApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi(defaultClient);
-        try {
-            List<GetSelfBeneficiariesTPTResponse> result = apiInstance.retrieveAll35();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SelfThirdPartyTransferApi#retrieveAll35");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetSelfBeneficiariesTPTResponse> = webService.retrieveAll35()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;GetSelfBeneficiariesTPTResponse&gt;**](GetSelfBeneficiariesTPTResponse.md)
+[**kotlin.collections.List&lt;GetSelfBeneficiariesTPTResponse&gt;**](GetSelfBeneficiariesTPTResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## template16
-
-> GetSelfBeneficiariesTPTTemplateResponse template16()
 
 Beneficiary Third Party Transfer Template
 
 Returns Account Type enumerations. Self User is expected to know office name and account number to be able to add beneficiary.  Example Requests:  /self/beneficiaries/tpt/template
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SelfThirdPartyTransferApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SelfThirdPartyTransferApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi(defaultClient);
-        try {
-            GetSelfBeneficiariesTPTTemplateResponse result = apiInstance.template16();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SelfThirdPartyTransferApi#template16");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetSelfBeneficiariesTPTTemplateResponse = webService.template16()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -299,78 +164,43 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## update21
-
-> PutSelfBeneficiariesTPTBeneficiaryIdResponse update21(beneficiaryId, putSelfBeneficiariesTPTBeneficiaryIdRequest)
 
 Update TPT Beneficiary
 
 Api to update third party beneficiary linked to current user.  Example Requests:  /self/beneficiaries/tpt/{beneficiaryId}  Optional Fields: name, transferLimit
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SelfThirdPartyTransferApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SelfThirdPartyTransferApi::class.java)
+val beneficiaryId : kotlin.Long = 789 // kotlin.Long | beneficiaryId
+val putSelfBeneficiariesTPTBeneficiaryIdRequest : PutSelfBeneficiariesTPTBeneficiaryIdRequest =  // PutSelfBeneficiariesTPTBeneficiaryIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SelfThirdPartyTransferApi apiInstance = new SelfThirdPartyTransferApi(defaultClient);
-        Long beneficiaryId = 56L; // Long | beneficiaryId
-        PutSelfBeneficiariesTPTBeneficiaryIdRequest putSelfBeneficiariesTPTBeneficiaryIdRequest = new PutSelfBeneficiariesTPTBeneficiaryIdRequest(); // PutSelfBeneficiariesTPTBeneficiaryIdRequest | 
-        try {
-            PutSelfBeneficiariesTPTBeneficiaryIdResponse result = apiInstance.update21(beneficiaryId, putSelfBeneficiariesTPTBeneficiaryIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SelfThirdPartyTransferApi#update21");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutSelfBeneficiariesTPTBeneficiaryIdResponse = webService.update23(beneficiaryId, putSelfBeneficiariesTPTBeneficiaryIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **beneficiaryId** | **Long**| beneficiaryId |
- **putSelfBeneficiariesTPTBeneficiaryIdRequest** | [**PutSelfBeneficiariesTPTBeneficiaryIdRequest**](PutSelfBeneficiariesTPTBeneficiaryIdRequest.md)|  |
+| **beneficiaryId** | **kotlin.Long**| beneficiaryId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putSelfBeneficiariesTPTBeneficiaryIdRequest** | [**PutSelfBeneficiariesTPTBeneficiaryIdRequest**](PutSelfBeneficiariesTPTBeneficiaryIdRequest.md)|  | |
 
 ### Return type
 
@@ -378,15 +208,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

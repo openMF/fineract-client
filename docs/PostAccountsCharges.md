@@ -1,13 +1,11 @@
 
-
 # PostAccountsCharges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**chargeId** | **Integer** |  |  [optional]
-**amount** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Int** |  |  [optional] |
+| **chargeId** | **kotlin.Long** |  |  [optional] |
 
 
 

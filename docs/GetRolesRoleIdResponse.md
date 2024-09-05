@@ -1,15 +1,12 @@
 
-
 # GetRolesRoleIdResponse
 
-GetRolesRoleIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,14 +1,11 @@
 
-
 # GetSelfClientsClientIdChargesResponse
 
-GetSelfClientsClientIdChargesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetSelfClientsChargesPageItems&gt;**](GetSelfClientsChargesPageItems.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetSelfClientsChargesPageItems&gt;**](GetSelfClientsChargesPageItems.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

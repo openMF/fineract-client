@@ -1,17 +1,15 @@
 
-
 # GetFromOfficeResponseStandingInstructionSwagger
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**decoratedName** | **String** |  |  [optional]
-**externalId** | **Integer** |  |  [optional]
-**openingDate** | [**Date**](Date.md) |  |  [optional]
-**hierarchy** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **decoratedName** | **kotlin.String** |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **hierarchy** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **openingDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

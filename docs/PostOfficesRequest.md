@@ -1,18 +1,15 @@
 
-
 # PostOfficesRequest
 
-PostOfficesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**openingDate** | [**Date**](Date.md) |  |  [optional]
-**parentId** | **Long** |  |  [optional]
-**externalId** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **openingDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **parentId** | **kotlin.Long** |  |  [optional] |
 
 
 

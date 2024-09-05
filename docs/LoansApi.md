@@ -1,85 +1,64 @@
 # LoansApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**calculateLoanScheduleOrSubmitLoanApplication**](LoansApi.md#calculateLoanScheduleOrSubmitLoanApplication) | **POST** loans | Calculate loan repayment schedule | Submit a new Loan Application
-[**deleteLoanApplication**](LoansApi.md#deleteLoanApplication) | **DELETE** loans/{loanId} | Delete a Loan Application
-[**getGlimRepaymentTemplate**](LoansApi.md#getGlimRepaymentTemplate) | **GET** loans/glimAccount/{glimId} | 
-[**getLoanRepaymentTemplate**](LoansApi.md#getLoanRepaymentTemplate) | **GET** loans/repayments/downloadtemplate | 
-[**getLoansTemplate**](LoansApi.md#getLoansTemplate) | **GET** loans/downloadtemplate | 
-[**glimStateTransitions**](LoansApi.md#glimStateTransitions) | **POST** loans/glimAccount/{glimId} | Approve GLIM Application | Undo GLIM Application Approval | Reject GLIM Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal
-[**modifyLoanApplication**](LoansApi.md#modifyLoanApplication) | **PUT** loans/{loanId} | Modify a loan application
-[**postLoanRepaymentTemplate**](LoansApi.md#postLoanRepaymentTemplate) | **POST** loans/repayments/uploadtemplate | 
-[**postLoanTemplate**](LoansApi.md#postLoanTemplate) | **POST** loans/uploadtemplate | 
-[**retrieveAll27**](LoansApi.md#retrieveAll27) | **GET** loans | List Loans
-[**retrieveApprovalTemplate**](LoansApi.md#retrieveApprovalTemplate) | **GET** loans/{loanId}/template | 
-[**retrieveLoan**](LoansApi.md#retrieveLoan) | **GET** loans/{loanId} | Retrieve a Loan
-[**stateTransitions**](LoansApi.md#stateTransitions) | **POST** loans/{loanId} | Approve Loan Application | Recover Loan Guarantee | Undo Loan Application Approval | Assign a Loan Officer | Unassign a Loan Officer | Reject Loan Application | Applicant Withdraws from Loan Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal
-[**template10**](LoansApi.md#template10) | **GET** loans/template | Retrieve Loan Details Template
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**calculateLoanScheduleOrSubmitLoanApplication**](LoansApi.md#calculateLoanScheduleOrSubmitLoanApplication) | **POST** v1/loans | Calculate loan repayment schedule | Submit a new Loan Application |
+| [**createLoanDelinquencyAction**](LoansApi.md#createLoanDelinquencyAction) | **POST** v1/loans/{loanId}/delinquency-actions | Adds a new delinquency action for a loan |
+| [**createLoanDelinquencyAction1**](LoansApi.md#createLoanDelinquencyAction1) | **POST** v1/loans/external-id/{loanExternalId}/delinquency-actions | Adds a new delinquency action for a loan |
+| [**deleteLoanApplication**](LoansApi.md#deleteLoanApplication) | **DELETE** v1/loans/{loanId} | Delete a Loan Application |
+| [**deleteLoanApplication1**](LoansApi.md#deleteLoanApplication1) | **DELETE** v1/loans/external-id/{loanExternalId} | Delete a Loan Application |
+| [**getDelinquencyTagHistory**](LoansApi.md#getDelinquencyTagHistory) | **GET** v1/loans/{loanId}/delinquencytags | Retrieve the Loan Delinquency Tag history using the Loan Id |
+| [**getDelinquencyTagHistory1**](LoansApi.md#getDelinquencyTagHistory1) | **GET** v1/loans/external-id/{loanExternalId}/delinquencytags | Retrieve the Loan Delinquency Tag history using the Loan Id |
+| [**getGlimRepaymentTemplate**](LoansApi.md#getGlimRepaymentTemplate) | **GET** v1/loans/glimAccount/{glimId} |  |
+| [**getLoanDelinquencyActions**](LoansApi.md#getLoanDelinquencyActions) | **GET** v1/loans/{loanId}/delinquency-actions | Retrieve delinquency actions related to the loan |
+| [**getLoanDelinquencyActions1**](LoansApi.md#getLoanDelinquencyActions1) | **GET** v1/loans/external-id/{loanExternalId}/delinquency-actions | Retrieve delinquency actions related to the loan |
+| [**getLoanRepaymentTemplate**](LoansApi.md#getLoanRepaymentTemplate) | **GET** v1/loans/repayments/downloadtemplate |  |
+| [**getLoansTemplate**](LoansApi.md#getLoansTemplate) | **GET** v1/loans/downloadtemplate |  |
+| [**glimStateTransitions**](LoansApi.md#glimStateTransitions) | **POST** v1/loans/glimAccount/{glimId} | Approve GLIM Application | Undo GLIM Application Approval | Reject GLIM Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal |
+| [**modifyLoanApplication**](LoansApi.md#modifyLoanApplication) | **PUT** v1/loans/{loanId} | Modify a loan application |
+| [**modifyLoanApplication1**](LoansApi.md#modifyLoanApplication1) | **PUT** v1/loans/external-id/{loanExternalId} | Modify a loan application |
+| [**postLoanRepaymentTemplate**](LoansApi.md#postLoanRepaymentTemplate) | **POST** v1/loans/repayments/uploadtemplate |  |
+| [**postLoanTemplate**](LoansApi.md#postLoanTemplate) | **POST** v1/loans/uploadtemplate |  |
+| [**retrieveAll27**](LoansApi.md#retrieveAll27) | **GET** v1/loans | List Loans |
+| [**retrieveApprovalTemplate**](LoansApi.md#retrieveApprovalTemplate) | **GET** v1/loans/{loanId}/template |  |
+| [**retrieveApprovalTemplate1**](LoansApi.md#retrieveApprovalTemplate1) | **GET** v1/loans/external-id/{loanExternalId}/template |  |
+| [**retrieveLoan**](LoansApi.md#retrieveLoan) | **GET** v1/loans/{loanId} | Retrieve a Loan |
+| [**retrieveLoan1**](LoansApi.md#retrieveLoan1) | **GET** v1/loans/external-id/{loanExternalId} | Retrieve a Loan |
+| [**stateTransitions**](LoansApi.md#stateTransitions) | **POST** v1/loans/{loanId} | Approve Loan Application | Recover Loan Guarantee | Undo Loan Application Approval | Assign a Loan Officer | Unassign a Loan Officer | Reject Loan Application | Applicant Withdraws from Loan Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal |
+| [**stateTransitions1**](LoansApi.md#stateTransitions1) | **POST** v1/loans/external-id/{loanExternalId} | Approve Loan Application | Recover Loan Guarantee | Undo Loan Application Approval | Assign a Loan Officer | Unassign a Loan Officer | Reject Loan Application | Applicant Withdraws from Loan Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal |
+| [**template10**](LoansApi.md#template10) | **GET** v1/loans/template | Retrieve Loan Details Template |
 
 
-
-## calculateLoanScheduleOrSubmitLoanApplication
-
-> PostLoansResponse calculateLoanScheduleOrSubmitLoanApplication(postLoansRequest, command)
 
 Calculate loan repayment schedule | Submit a new Loan Application
 
 It calculates the loan repayment Schedule Submits a new loan application Mandatory Fields: clientId, productId, principal, loanTermFrequency, loanTermFrequencyType, loanType, numberOfRepayments, repaymentEvery, repaymentFrequencyType, interestRatePerPeriod, amortizationType, interestType, interestCalculationPeriodType, transactionProcessingStrategyCode, expectedDisbursementDate, submittedOnDate, loanType Optional Fields: graceOnPrincipalPayment, graceOnInterestPayment, graceOnInterestCharged, linkAccountId, allowPartialPeriodInterestCalcualtion, fixedEmiAmount, maxOutstandingLoanBalance, disbursementData, graceOnArrearsAgeing, createStandingInstructionAtDisbursement (requires linkedAccountId if set to true) Additional Mandatory Fields if interest recalculation is enabled for product and Rest frequency not same as repayment period: recalculationRestFrequencyDate Additional Mandatory Fields if interest recalculation with interest/fee compounding is enabled for product and compounding frequency not same as repayment period: recalculationCompoundingFrequencyDate Additional Mandatory Field if Entity-Datatable Check is enabled for the entity of type loan: datatables
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val postLoansRequest : PostLoansRequest =  // PostLoansRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        PostLoansRequest postLoansRequest = new PostLoansRequest(); // PostLoansRequest | 
-        String command = "command_example"; // String | command
-        try {
-            PostLoansResponse result = apiInstance.calculateLoanScheduleOrSubmitLoanApplication(postLoansRequest, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#calculateLoanScheduleOrSubmitLoanApplication");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostLoansResponse = webService.calculateLoanScheduleOrSubmitLoanApplication(postLoansRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postLoansRequest** | [**PostLoansRequest**](PostLoansRequest.md)|  |
- **command** | **String**| command | [optional]
+| **postLoansRequest** | [**PostLoansRequest**](PostLoansRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
@@ -87,76 +66,125 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## deleteLoanApplication
+Adds a new delinquency action for a loan
 
-> DeleteLoansLoanIdResponse deleteLoanApplication(loanId)
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val postLoansDelinquencyActionRequest : PostLoansDelinquencyActionRequest =  // PostLoansDelinquencyActionRequest | 
+
+launch(Dispatchers.IO) {
+    val result : PostLoansDelinquencyActionResponse = webService.createLoanDelinquencyAction(loanId, postLoansDelinquencyActionRequest)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postLoansDelinquencyActionRequest** | [**PostLoansDelinquencyActionRequest**](PostLoansDelinquencyActionRequest.md)|  | |
+
+### Return type
+
+[**PostLoansDelinquencyActionResponse**](PostLoansDelinquencyActionResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Adds a new delinquency action for a loan
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val postLoansDelinquencyActionRequest : PostLoansDelinquencyActionRequest =  // PostLoansDelinquencyActionRequest | 
+
+launch(Dispatchers.IO) {
+    val result : PostLoansDelinquencyActionResponse = webService.createLoanDelinquencyAction1(loanExternalId, postLoansDelinquencyActionRequest)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postLoansDelinquencyActionRequest** | [**PostLoansDelinquencyActionRequest**](PostLoansDelinquencyActionRequest.md)|  | |
+
+### Return type
+
+[**PostLoansDelinquencyActionResponse**](PostLoansDelinquencyActionResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 Delete a Loan Application
 
 Note: Only loans in \&quot;Submitted and awaiting approval\&quot; status can be deleted.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        try {
-            DeleteLoansLoanIdResponse result = apiInstance.deleteLoanApplication(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#deleteLoanApplication");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdResponse = webService.deleteLoanApplication(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
 
 ### Return type
 
@@ -164,150 +192,283 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## getGlimRepaymentTemplate
+Delete a Loan Application
 
-> String getGlimRepaymentTemplate(glimId)
-
-
+Note: Only loans in \&quot;Submitted and awaiting approval\&quot; status can be deleted.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long glimId = 56L; // Long | 
-        try {
-            String result = apiInstance.getGlimRepaymentTemplate(glimId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#getGlimRepaymentTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdResponse = webService.deleteLoanApplication1(loanExternalId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **glimId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
 
 ### Return type
 
-**String**
+[**DeleteLoansLoanIdResponse**](DeleteLoansLoanIdResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## getLoanRepaymentTemplate
-
-> getLoanRepaymentTemplate(officeId, dateFormat)
-
-
+Retrieve the Loan Delinquency Tag history using the Loan Id
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long officeId = 56L; // Long | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            apiInstance.getLoanRepaymentTemplate(officeId, dateFormat);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#getLoanRepaymentTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetDelinquencyTagHistoryResponse> = webService.getDelinquencyTagHistory(loanId)
 }
 ```
 
 ### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
+
+### Return type
+
+[**kotlin.collections.List&lt;GetDelinquencyTagHistoryResponse&gt;**](GetDelinquencyTagHistoryResponse.md)
+
+### Authorization
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **officeId** | **Long**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve the Loan Delinquency Tag history using the Loan Id
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetDelinquencyTagHistoryResponse> = webService.getDelinquencyTagHistory1(loanExternalId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+
+### Return type
+
+[**kotlin.collections.List&lt;GetDelinquencyTagHistoryResponse&gt;**](GetDelinquencyTagHistoryResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val glimId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getGlimRepaymentTemplate(glimId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **glimId** | **kotlin.Long**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve delinquency actions related to the loan
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetDelinquencyActionsResponse> = webService.getLoanDelinquencyActions(loanId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
+
+### Return type
+
+[**kotlin.collections.List&lt;GetDelinquencyActionsResponse&gt;**](GetDelinquencyActionsResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve delinquency actions related to the loan
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetDelinquencyActionsResponse> = webService.getLoanDelinquencyActions1(loanExternalId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+
+### Return type
+
+[**kotlin.collections.List&lt;GetDelinquencyActionsResponse&gt;**](GetDelinquencyActionsResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val officeId : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    webService.getLoanRepaymentTemplate(officeId, dateFormat)
+}
+```
+
+### Parameters
+| **officeId** | **kotlin.Long**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
@@ -315,77 +476,43 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.ms-excel
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ms-excel
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## getLoansTemplate
-
-> getLoansTemplate(officeId, staffId, dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val officeId : kotlin.Long = 789 // kotlin.Long | 
+val staffId : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long officeId = 56L; // Long | 
-        Long staffId = 56L; // Long | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            apiInstance.getLoansTemplate(officeId, staffId, dateFormat);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#getLoansTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    webService.getLoansTemplate(officeId, staffId, dateFormat)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **officeId** | **Long**|  | [optional]
- **staffId** | **Long**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **officeId** | **kotlin.Long**|  | [optional] |
+| **staffId** | **kotlin.Long**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
@@ -393,80 +520,45 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.ms-excel
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ms-excel
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## glimStateTransitions
-
-> PostLoansLoanIdResponse glimStateTransitions(glimId, postLoansLoanIdRequest, command)
 
 Approve GLIM Application | Undo GLIM Application Approval | Reject GLIM Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal
 
 Approve GLIM Application: Mandatory Fields: approvedOnDate Optional Fields: approvedLoanAmount and expectedDisbursementDate Approves the GLIM application  Undo GLIM Application Approval: Undoes the GLIM Application Approval  Reject GLIM Application: Mandatory Fields: rejectedOnDate Allows you to reject the GLIM application  Disburse Loan: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the Loan  Disburse Loan To Savings Account: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the loan to Saving Account  Undo Loan Disbursal: Undoes the Loan Disbursal 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val glimId : kotlin.Long = 789 // kotlin.Long | 
+val postLoansLoanIdRequest : PostLoansLoanIdRequest =  // PostLoansLoanIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long glimId = 56L; // Long | 
-        PostLoansLoanIdRequest postLoansLoanIdRequest = new PostLoansLoanIdRequest(); // PostLoansLoanIdRequest | 
-        String command = "command_example"; // String | 
-        try {
-            PostLoansLoanIdResponse result = apiInstance.glimStateTransitions(glimId, postLoansLoanIdRequest, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#glimStateTransitions");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdResponse = webService.glimStateTransitions(glimId, postLoansLoanIdRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **glimId** | **Long**|  |
- **postLoansLoanIdRequest** | [**PostLoansLoanIdRequest**](PostLoansLoanIdRequest.md)|  |
- **command** | **String**|  | [optional]
+| **glimId** | **kotlin.Long**|  | |
+| **postLoansLoanIdRequest** | [**PostLoansLoanIdRequest**](PostLoansLoanIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
@@ -474,78 +566,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## modifyLoanApplication
-
-> PutLoansLoanIdResponse modifyLoanApplication(loanId, putLoansLoanIdRequest)
 
 Modify a loan application
 
 Loan application can only be modified when in &#39;Submitted and pending approval&#39; state. Once the application is approved, the details cannot be changed using this method.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val putLoansLoanIdRequest : PutLoansLoanIdRequest =  // PutLoansLoanIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        PutLoansLoanIdRequest putLoansLoanIdRequest = new PutLoansLoanIdRequest(); // PutLoansLoanIdRequest | 
-        try {
-            PutLoansLoanIdResponse result = apiInstance.modifyLoanApplication(loanId, putLoansLoanIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#modifyLoanApplication");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdResponse = webService.modifyLoanApplication(loanId, putLoansLoanIdRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **putLoansLoanIdRequest** | [**PutLoansLoanIdRequest**](PutLoansLoanIdRequest.md)|  |
+| **loanId** | **kotlin.Long**| loanId | |
+| **putLoansLoanIdRequest** | [**PutLoansLoanIdRequest**](PutLoansLoanIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
@@ -553,246 +612,187 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## postLoanRepaymentTemplate
+Modify a loan application
 
-> String postLoanRepaymentTemplate(file, locale, dateFormat)
-
-
+Loan application can only be modified when in &#39;Submitted and pending approval&#39; state. Once the application is approved, the details cannot be changed using this method.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val putLoansLoanIdRequest : PutLoansLoanIdRequest =  // PutLoansLoanIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        FormDataContentDisposition file = new FormDataContentDisposition(); // FormDataContentDisposition | 
-        String locale = "locale_example"; // String | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            String result = apiInstance.postLoanRepaymentTemplate(file, locale, dateFormat);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#postLoanRepaymentTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdResponse = webService.modifyLoanApplication1(loanExternalId, putLoansLoanIdRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md)|  | [optional]
- **locale** | **String**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **putLoansLoanIdRequest** | [**PutLoansLoanIdRequest**](PutLoansLoanIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
-**String**
+[**PutLoansLoanIdResponse**](PutLoansLoanIdResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## postLoanTemplate
-
-> String postLoanTemplate(file, locale, dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        FormDataContentDisposition file = new FormDataContentDisposition(); // FormDataContentDisposition | 
-        String locale = "locale_example"; // String | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            String result = apiInstance.postLoanTemplate(file, locale, dateFormat);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#postLoanTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.postLoanRepaymentTemplate(dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md)|  | [optional]
- **locale** | **String**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
 
 
-## retrieveAll27
 
-> GetLoansResponse retrieveAll27(sqlSearch, externalId, offset, limit, orderBy, sortOrder, accountNo)
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.postLoanTemplate(dateFormat, locale, uploadedInputStream)
+}
+```
+
+### Parameters
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
+
 
 List Loans
 
 The list capability of loans can support pagination and sorting. Example Requests:  loans  loans?fields&#x3D;accountNo  loans?offset&#x3D;10&amp;limit&#x3D;50  loans?orderBy&#x3D;accountNo&amp;sortOrder&#x3D;DESC
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val externalId : kotlin.String = externalId_example // kotlin.String | externalId
+val offset : kotlin.Int = 56 // kotlin.Int | offset
+val limit : kotlin.Int = 56 // kotlin.Int | limit
+val orderBy : kotlin.String = orderBy_example // kotlin.String | orderBy
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | sortOrder
+val accountNo : kotlin.String = accountNo_example // kotlin.String | accountNo
+val status : kotlin.String = status_example // kotlin.String | status
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-        String externalId = "externalId_example"; // String | externalId
-        Integer offset = 56; // Integer | offset
-        Integer limit = 56; // Integer | limit
-        String orderBy = "orderBy_example"; // String | orderBy
-        String sortOrder = "sortOrder_example"; // String | sortOrder
-        String accountNo = "accountNo_example"; // String | accountNo
-        try {
-            GetLoansResponse result = apiInstance.retrieveAll27(sqlSearch, externalId, offset, limit, orderBy, sortOrder, accountNo);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#retrieveAll27");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansResponse = webService.retrieveAll27(externalId, offset, limit, orderBy, sortOrder, accountNo, status)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**| sqlSearch | [optional]
- **externalId** | **String**| externalId | [optional]
- **offset** | **Integer**| offset | [optional]
- **limit** | **Integer**| limit | [optional]
- **orderBy** | **String**| orderBy | [optional]
- **sortOrder** | **String**| sortOrder | [optional]
- **accountNo** | **String**| accountNo | [optional]
+| **externalId** | **kotlin.String**| externalId | [optional] |
+| **offset** | **kotlin.Int**| offset | [optional] |
+| **limit** | **kotlin.Int**| limit | [optional] |
+| **orderBy** | **kotlin.String**| orderBy | [optional] |
+| **sortOrder** | **kotlin.String**| sortOrder | [optional] |
+| **accountNo** | **kotlin.String**| accountNo | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **status** | **kotlin.String**| status | [optional] |
 
 ### Return type
 
@@ -800,155 +800,133 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveApprovalTemplate
-
-> String retrieveApprovalTemplate(loanId, templateType)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val templateType : kotlin.String = templateType_example // kotlin.String | templateType
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        String templateType = "templateType_example"; // String | templateType
-        try {
-            String result = apiInstance.retrieveApprovalTemplate(loanId, templateType);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#retrieveApprovalTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansApprovalTemplateResponse = webService.retrieveApprovalTemplate(loanId, templateType)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **templateType** | **String**| templateType | [optional]
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **templateType** | **kotlin.String**| templateType | [optional] |
 
 ### Return type
 
-**String**
+[**GetLoansApprovalTemplateResponse**](GetLoansApprovalTemplateResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## retrieveLoan
 
-> GetLoansLoanIdResponse retrieveLoan(loanId, staffInSelectedOfficeOnly)
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val templateType : kotlin.String = templateType_example // kotlin.String | templateType
+
+launch(Dispatchers.IO) {
+    val result : GetLoansApprovalTemplateResponse = webService.retrieveApprovalTemplate1(loanExternalId, templateType)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **templateType** | **kotlin.String**| templateType | [optional] |
+
+### Return type
+
+[**GetLoansApprovalTemplateResponse**](GetLoansApprovalTemplateResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Retrieve a Loan
 
 Note: template&#x3D;true parameter doesn&#39;t apply to this resource.Example Requests:  loans/1   loans/1?fields&#x3D;id,principal,annualInterestRate   loans/1?associations&#x3D;all  loans/1?associations&#x3D;all&amp;exclude&#x3D;guarantors   loans/1?fields&#x3D;id,principal,annualInterestRate&amp;associations&#x3D;repaymentSchedule,transactions
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val staffInSelectedOfficeOnly : kotlin.Boolean = true // kotlin.Boolean | staffInSelectedOfficeOnly
+val associations : kotlin.String = associations_example // kotlin.String | Loan object relations to be included in the response
+val exclude : kotlin.String = guarantors,futureSchedule // kotlin.String | Optional Loan object relation list to be filtered in the response
+val fields : kotlin.String = id,principal,annualInterestRate // kotlin.String | Optional Loan attribute list to be in the response
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-        try {
-            GetLoansLoanIdResponse result = apiInstance.retrieveLoan(loanId, staffInSelectedOfficeOnly);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#retrieveLoan");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdResponse = webService.retrieveLoan(loanId, staffInSelectedOfficeOnly, associations, exclude, fields)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
+| **loanId** | **kotlin.Long**| loanId | |
+| **staffInSelectedOfficeOnly** | **kotlin.Boolean**| staffInSelectedOfficeOnly | [optional] [default to false] |
+| **associations** | **kotlin.String**| Loan object relations to be included in the response | [optional] [default to &quot;all&quot;] |
+| **exclude** | **kotlin.String**| Optional Loan object relation list to be filtered in the response | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fields** | **kotlin.String**| Optional Loan attribute list to be in the response | [optional] |
 
 ### Return type
 
@@ -956,80 +934,95 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## stateTransitions
+Retrieve a Loan
 
-> PostLoansLoanIdResponse stateTransitions(loanId, postLoansLoanIdRequest, command)
+Note: template&#x3D;true parameter doesn&#39;t apply to this resource.Example Requests:  loans/external-id/7dd80a7c-ycba-a446-t378-91eb6f53e854   loans/external-id/7dd80a7c-ycba-a446-t378-91eb6f53e854?fields&#x3D;id,principal,annualInterestRate   loans/external-id/7dd80a7c-ycba-a446-t378-91eb6f53e854?associations&#x3D;all  loans/external-id/7dd80a7c-ycba-a446-t378-91eb6f53e854?associations&#x3D;all&amp;exclude&#x3D;guarantors   loans/external-id/7dd80a7c-ycba-a446-t378-91eb6f53e854?fields&#x3D;id,principal,annualInterestRate&amp;associations&#x3D;repaymentSchedule,transactions
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val staffInSelectedOfficeOnly : kotlin.Boolean = true // kotlin.Boolean | staffInSelectedOfficeOnly
+val associations : kotlin.String = associations_example // kotlin.String | Loan object relations to be included in the response
+val exclude : kotlin.String = guarantors,futureSchedule // kotlin.String | Optional Loan object relation list to be filtered in the response
+val fields : kotlin.String = id,principal,annualInterestRate // kotlin.String | Optional Loan attribute list to be in the response
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdResponse = webService.retrieveLoan1(loanExternalId, staffInSelectedOfficeOnly, associations, exclude, fields)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **staffInSelectedOfficeOnly** | **kotlin.Boolean**| staffInSelectedOfficeOnly | [optional] [default to false] |
+| **associations** | **kotlin.String**| Loan object relations to be included in the response | [optional] [default to &quot;all&quot;] |
+| **exclude** | **kotlin.String**| Optional Loan object relation list to be filtered in the response | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fields** | **kotlin.String**| Optional Loan attribute list to be in the response | [optional] |
+
+### Return type
+
+[**GetLoansLoanIdResponse**](GetLoansLoanIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Approve Loan Application | Recover Loan Guarantee | Undo Loan Application Approval | Assign a Loan Officer | Unassign a Loan Officer | Reject Loan Application | Applicant Withdraws from Loan Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal
 
 Approve Loan Application: Mandatory Fields: approvedOnDate Optional Fields: approvedLoanAmount and expectedDisbursementDate Approves the loan application  Recover Loan Guarantee: Recovers the loan guarantee  Undo Loan Application Approval: Undoes the Loan Application Approval  Assign a Loan Officer: Allows you to assign Loan Officer for existing Loan.  Unassign a Loan Officer: Allows you to unassign the Loan Officer.  Reject Loan Application: Mandatory Fields: rejectedOnDate Allows you to reject the loan application  Applicant Withdraws from Loan Application: Mandatory Fields: withdrawnOnDate Allows the applicant to withdraw the loan application  Disburse Loan: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the Loan  Disburse Loan To Savings Account: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the loan to Saving Account  Undo Loan Disbursal: Undoes the Loan Disbursal Showing request and response for Assign a Loan Officer
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val postLoansLoanIdRequest : PostLoansLoanIdRequest =  // PostLoansLoanIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        PostLoansLoanIdRequest postLoansLoanIdRequest = new PostLoansLoanIdRequest(); // PostLoansLoanIdRequest | 
-        String command = "command_example"; // String | command
-        try {
-            PostLoansLoanIdResponse result = apiInstance.stateTransitions(loanId, postLoansLoanIdRequest, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#stateTransitions");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdResponse = webService.stateTransitions(loanId, postLoansLoanIdRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **postLoansLoanIdRequest** | [**PostLoansLoanIdRequest**](PostLoansLoanIdRequest.md)|  |
- **command** | **String**| command | [optional]
+| **loanId** | **kotlin.Long**| loanId | |
+| **postLoansLoanIdRequest** | [**PostLoansLoanIdRequest**](PostLoansLoanIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
@@ -1037,86 +1030,97 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## template10
+Approve Loan Application | Recover Loan Guarantee | Undo Loan Application Approval | Assign a Loan Officer | Unassign a Loan Officer | Reject Loan Application | Applicant Withdraws from Loan Application | Disburse Loan Disburse Loan To Savings Account | Undo Loan Disbursal
 
-> GetLoansTemplateResponse template10(clientId, groupId, productId, templateType, staffInSelectedOfficeOnly, activeOnly)
+Approve Loan Application: Mandatory Fields: approvedOnDate Optional Fields: approvedLoanAmount and expectedDisbursementDate Approves the loan application  Recover Loan Guarantee: Recovers the loan guarantee  Undo Loan Application Approval: Undoes the Loan Application Approval  Assign a Loan Officer: Allows you to assign Loan Officer for existing Loan.  Unassign a Loan Officer: Allows you to unassign the Loan Officer.  Reject Loan Application: Mandatory Fields: rejectedOnDate Allows you to reject the loan application  Applicant Withdraws from Loan Application: Mandatory Fields: withdrawnOnDate Allows the applicant to withdraw the loan application  Disburse Loan: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the Loan  Disburse Loan To Savings Account: Mandatory Fields: actualDisbursementDate Optional Fields: transactionAmount and fixedEmiAmount Disburses the loan to Saving Account  Undo Loan Disbursal: Undoes the Loan Disbursal Showing request and response for Assign a Loan Officer
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val postLoansLoanIdRequest : PostLoansLoanIdRequest =  // PostLoansLoanIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdResponse = webService.stateTransitions1(loanExternalId, postLoansLoanIdRequest, command)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **postLoansLoanIdRequest** | [**PostLoansLoanIdRequest**](PostLoansLoanIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
+
+### Return type
+
+[**PostLoansLoanIdResponse**](PostLoansLoanIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 Retrieve Loan Details Template
 
 This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Requests:  loans/template?templateType&#x3D;individual&amp;clientId&#x3D;1   loans/template?templateType&#x3D;individual&amp;clientId&#x3D;1&amp;productId&#x3D;1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoansApi::class.java)
+val clientId : kotlin.Long = 789 // kotlin.Long | clientId
+val groupId : kotlin.Long = 789 // kotlin.Long | groupId
+val productId : kotlin.Long = 789 // kotlin.Long | productId
+val templateType : kotlin.String = templateType_example // kotlin.String | templateType
+val staffInSelectedOfficeOnly : kotlin.Boolean = true // kotlin.Boolean | staffInSelectedOfficeOnly
+val activeOnly : kotlin.Boolean = true // kotlin.Boolean | activeOnly
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoansApi apiInstance = new LoansApi(defaultClient);
-        Long clientId = 56L; // Long | clientId
-        Long groupId = 56L; // Long | groupId
-        Long productId = 56L; // Long | productId
-        String templateType = "templateType_example"; // String | templateType
-        Boolean staffInSelectedOfficeOnly = false; // Boolean | staffInSelectedOfficeOnly
-        Boolean activeOnly = false; // Boolean | activeOnly
-        try {
-            GetLoansTemplateResponse result = apiInstance.template10(clientId, groupId, productId, templateType, staffInSelectedOfficeOnly, activeOnly);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoansApi#template10");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansTemplateResponse = webService.template10(clientId, groupId, productId, templateType, staffInSelectedOfficeOnly, activeOnly)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientId** | **Long**| clientId | [optional]
- **groupId** | **Long**| groupId | [optional]
- **productId** | **Long**| productId | [optional]
- **templateType** | **String**| templateType | [optional]
- **staffInSelectedOfficeOnly** | **Boolean**| staffInSelectedOfficeOnly | [optional] [default to false]
- **activeOnly** | **Boolean**| activeOnly | [optional] [default to false]
+| **clientId** | **kotlin.Long**| clientId | [optional] |
+| **groupId** | **kotlin.Long**| groupId | [optional] |
+| **productId** | **kotlin.Long**| productId | [optional] |
+| **templateType** | **kotlin.String**| templateType | [optional] |
+| **staffInSelectedOfficeOnly** | **kotlin.Boolean**| staffInSelectedOfficeOnly | [optional] [default to false] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **activeOnly** | **kotlin.Boolean**| activeOnly | [optional] [default to false] |
 
 ### Return type
 
@@ -1124,15 +1128,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

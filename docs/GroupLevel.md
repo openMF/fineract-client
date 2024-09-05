@@ -1,19 +1,17 @@
 
-
 # GroupLevel
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**parentId** | **Long** |  |  [optional]
-**superParent** | **Boolean** |  |  [optional]
-**levelName** | **String** |  |  [optional]
-**recursable** | **Boolean** |  |  [optional]
-**group** | **Boolean** |  |  [optional]
-**center** | **Boolean** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **center** | **kotlin.Boolean** |  |  [optional] |
+| **group** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **levelName** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **parentId** | **kotlin.Long** |  |  [optional] |
+| **recursable** | **kotlin.Boolean** |  |  [optional] |
+| **superParent** | **kotlin.Boolean** |  |  [optional] |
 
 
 

@@ -1,15 +1,12 @@
 
-
 # PostCollectionSheetResponse
 
-PostCollectionSheetResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**groupId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PostCollectionSheetChanges**](PostCollectionSheetChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PostCollectionSheetChanges**](PostCollectionSheetChanges.md) |  |  [optional] |
+| **groupId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

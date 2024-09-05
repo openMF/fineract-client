@@ -1,18 +1,15 @@
 
-
 # PostSelfBeneficiariesTPTRequest
 
-PostSelfBeneficiariesTPTRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**accountNumber** | **Long** |  |  [optional]
-**accountType** | **Integer** |  |  [optional]
-**transferLimit** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNumber** | **kotlin.Long** |  |  [optional] |
+| **accountType** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **transferLimit** | **kotlin.Int** |  |  [optional] |
 
 
 

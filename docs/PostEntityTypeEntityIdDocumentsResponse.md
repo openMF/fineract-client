@@ -1,14 +1,11 @@
 
-
 # PostEntityTypeEntityIdDocumentsResponse
 
-PostEntityTypeEntityIdDocumentsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**resourceIdentifier** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **resourceIdentifier** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,34 +1,31 @@
 
-
 # PostStandingInstructionsRequest
 
-PostStandingInstructionsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fromOfficeId** | **Long** |  |  [optional]
-**fromClientId** | **Long** |  |  [optional]
-**fromAccountType** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**transferType** | **Integer** |  |  [optional]
-**priority** | **Integer** |  |  [optional]
-**status** | **Integer** |  |  [optional]
-**fromAccountId** | **Long** |  |  [optional]
-**toOfficeId** | **Long** |  |  [optional]
-**toClientId** | **Long** |  |  [optional]
-**toAccountType** | **Integer** |  |  [optional]
-**toAccountId** | **Long** |  |  [optional]
-**instructionType** | **Integer** |  |  [optional]
-**amount** | **Integer** |  |  [optional]
-**validFrom** | **String** |  |  [optional]
-**recurrenceType** | **Integer** |  |  [optional]
-**recurrenceInterval** | **Integer** |  |  [optional]
-**recurrenceFrequency** | **Integer** |  |  [optional]
-**locale** | **String** | en |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**recurrenceOnMonthDay** | **String** |  |  [optional]
-**monthDayFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Int** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **fromAccountId** | **kotlin.Long** |  |  [optional] |
+| **fromAccountType** | **kotlin.Int** |  |  [optional] |
+| **fromClientId** | **kotlin.Long** |  |  [optional] |
+| **fromOfficeId** | **kotlin.Long** |  |  [optional] |
+| **instructionType** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** | en |  [optional] |
+| **monthDayFormat** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **priority** | **kotlin.Int** |  |  [optional] |
+| **recurrenceFrequency** | **kotlin.Int** |  |  [optional] |
+| **recurrenceInterval** | **kotlin.Int** |  |  [optional] |
+| **recurrenceOnMonthDay** | **kotlin.String** |  |  [optional] |
+| **recurrenceType** | **kotlin.Int** |  |  [optional] |
+| **status** | **kotlin.Int** |  |  [optional] |
+| **toAccountId** | **kotlin.Long** |  |  [optional] |
+| **toAccountType** | **kotlin.Int** |  |  [optional] |
+| **toClientId** | **kotlin.Long** |  |  [optional] |
+| **toOfficeId** | **kotlin.Long** |  |  [optional] |
+| **transferType** | **kotlin.Int** |  |  [optional] |
+| **validFrom** | **kotlin.String** |  |  [optional] |
 
 
 

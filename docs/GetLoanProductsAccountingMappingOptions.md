@@ -1,15 +1,13 @@
 
-
 # GetLoanProductsAccountingMappingOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**liabilityAccountOptions** | [**List&lt;GetLoanProductsLiabilityAccountOptions&gt;**](GetLoanProductsLiabilityAccountOptions.md) |  |  [optional]
-**assetAccountOptions** | [**List&lt;GetLoanProductsAssetAccountOptions&gt;**](GetLoanProductsAssetAccountOptions.md) |  |  [optional]
-**expenseAccountOptions** | [**List&lt;GetLoanProductsExpenseAccountOptions&gt;**](GetLoanProductsExpenseAccountOptions.md) |  |  [optional]
-**incomeAccountOptions** | [**List&lt;GetLoanProductsIncomeAccountOptions&gt;**](GetLoanProductsIncomeAccountOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **assetAccountOptions** | [**kotlin.collections.Set&lt;GetLoanProductsAssetAccountOptions&gt;**](GetLoanProductsAssetAccountOptions.md) |  |  [optional] |
+| **expenseAccountOptions** | [**kotlin.collections.Set&lt;GetLoanProductsExpenseAccountOptions&gt;**](GetLoanProductsExpenseAccountOptions.md) |  |  [optional] |
+| **incomeAccountOptions** | [**kotlin.collections.Set&lt;GetLoanProductsIncomeAccountOptions&gt;**](GetLoanProductsIncomeAccountOptions.md) |  |  [optional] |
+| **liabilityAccountOptions** | [**kotlin.collections.Set&lt;GetLoanProductsLiabilityAccountOptions&gt;**](GetLoanProductsLiabilityAccountOptions.md) |  |  [optional] |
 
 
 

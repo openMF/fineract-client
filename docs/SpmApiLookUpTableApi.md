@@ -1,73 +1,42 @@
-# SpmApiLookUpTableApi
+# SPMAPILookUpTableApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createLookupTable**](SpmApiLookUpTableApi.md#createLookupTable) | **POST** surveys/{surveyId}/lookuptables | Create a Lookup Table entry
-[**fetchLookupTables**](SpmApiLookUpTableApi.md#fetchLookupTables) | **GET** surveys/{surveyId}/lookuptables | List all Lookup Table entries
-[**findLookupTable**](SpmApiLookUpTableApi.md#findLookupTable) | **GET** surveys/{surveyId}/lookuptables/{key} | Retrieve a Lookup Table entry
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createLookupTable**](SPMAPILookUpTableApi.md#createLookupTable) | **POST** v1/surveys/{surveyId}/lookuptables | Create a Lookup Table entry |
+| [**fetchLookupTables**](SPMAPILookUpTableApi.md#fetchLookupTables) | **GET** v1/surveys/{surveyId}/lookuptables | List all Lookup Table entries |
+| [**findLookupTable**](SPMAPILookUpTableApi.md#findLookupTable) | **GET** v1/surveys/{surveyId}/lookuptables/{key} | Retrieve a Lookup Table entry |
 
 
-
-## createLookupTable
-
-> createLookupTable(surveyId, lookupTableData)
 
 Create a Lookup Table entry
 
 Add a new entry to a survey.  Mandatory Fields key, score, validFrom, validTo
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SpmApiLookUpTableApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SPMAPILookUpTableApi::class.java)
+val surveyId : kotlin.Long = 789 // kotlin.Long | Enter surveyId
+val lookupTableData : LookupTableData =  // LookupTableData | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi(defaultClient);
-        Long surveyId = 56L; // Long | Enter surveyId
-        LookupTableData lookupTableData = new LookupTableData(); // LookupTableData | 
-        try {
-            apiInstance.createLookupTable(surveyId, lookupTableData);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SpmApiLookUpTableApi#createLookupTable");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    webService.createLookupTable(surveyId, lookupTableData)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **surveyId** | **Long**| Enter surveyId |
- **lookupTableData** | [**LookupTableData**](LookupTableData.md)|  | [optional]
+| **surveyId** | **kotlin.Long**| Enter surveyId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **lookupTableData** | [**LookupTableData**](LookupTableData.md)|  | [optional] |
 
 ### Return type
 
@@ -75,155 +44,85 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## fetchLookupTables
-
-> List&lt;LookupTableData&gt; fetchLookupTables(surveyId)
 
 List all Lookup Table entries
 
 List all Lookup Table entries for a survey.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SpmApiLookUpTableApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SPMAPILookUpTableApi::class.java)
+val surveyId : kotlin.Long = 789 // kotlin.Long | Enter surveyId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi(defaultClient);
-        Long surveyId = 56L; // Long | Enter surveyId
-        try {
-            List<LookupTableData> result = apiInstance.fetchLookupTables(surveyId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SpmApiLookUpTableApi#fetchLookupTables");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<LookupTableData> = webService.fetchLookupTables(surveyId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **surveyId** | **Long**| Enter surveyId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **surveyId** | **kotlin.Long**| Enter surveyId | |
 
 ### Return type
 
-[**List&lt;LookupTableData&gt;**](LookupTableData.md)
+[**kotlin.collections.List&lt;LookupTableData&gt;**](LookupTableData.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## findLookupTable
-
-> LookupTableData findLookupTable(surveyId, key)
 
 Retrieve a Lookup Table entry
 
 Retrieve a Lookup Table entry for a survey.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SpmApiLookUpTableApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SPMAPILookUpTableApi::class.java)
+val surveyId : kotlin.Long = 789 // kotlin.Long | Enter surveyId
+val key : kotlin.String = key_example // kotlin.String | Enter key
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SpmApiLookUpTableApi apiInstance = new SpmApiLookUpTableApi(defaultClient);
-        Long surveyId = 56L; // Long | Enter surveyId
-        String key = "key_example"; // String | Enter key
-        try {
-            LookupTableData result = apiInstance.findLookupTable(surveyId, key);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SpmApiLookUpTableApi#findLookupTable");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : LookupTableData = webService.findLookupTable(surveyId, key)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **surveyId** | **Long**| Enter surveyId |
- **key** | **String**| Enter key |
+| **surveyId** | **kotlin.Long**| Enter surveyId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **kotlin.String**| Enter key | |
 
 ### Return type
 
@@ -231,15 +130,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

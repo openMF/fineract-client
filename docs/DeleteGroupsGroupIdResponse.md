@@ -1,15 +1,12 @@
 
-
 # DeleteGroupsGroupIdResponse
 
-DeleteGroupsGroupIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**groupId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **groupId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

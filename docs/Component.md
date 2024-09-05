@@ -1,18 +1,16 @@
 
-
 # Component
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**survey** | [**Survey**](Survey.md) |  |  [optional]
-**key** | **String** |  |  [optional]
-**text** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**sequenceNo** | **Integer** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **key** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **sequenceNo** | **kotlin.Int** |  |  [optional] |
+| **survey** | [**Survey**](Survey.md) |  |  [optional] |
+| **text** | **kotlin.String** |  |  [optional] |
 
 
 

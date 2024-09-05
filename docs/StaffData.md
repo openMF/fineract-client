@@ -1,19 +1,17 @@
 
-
 # StaffData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**firstname** | **String** |  |  [optional]
-**lastname** | **String** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**joiningDate** | [**Date**](Date.md) |  |  [optional]
-**rowIndex** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **joiningDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **lastname** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **rowIndex** | **kotlin.Int** |  |  [optional] |
 
 
 

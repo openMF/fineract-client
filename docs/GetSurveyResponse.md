@@ -1,14 +1,11 @@
 
-
 # GetSurveyResponse
 
-GetSurveyResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**datatableData** | [**GetSurveyResponseDatatableData**](GetSurveyResponseDatatableData.md) |  |  [optional]
-**enabled** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **datatableData** | [**GetSurveyResponseDatatableData**](GetSurveyResponseDatatableData.md) |  |  [optional] |
+| **enabled** | **kotlin.Boolean** |  |  [optional] |
 
 
 

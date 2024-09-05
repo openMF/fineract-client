@@ -1,15 +1,13 @@
 
-
 # GetFromAccountStandingInstructionSwagger
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
-**productId** | **Long** |  |  [optional]
-**productName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **productName** | **kotlin.String** |  |  [optional] |
 
 
 

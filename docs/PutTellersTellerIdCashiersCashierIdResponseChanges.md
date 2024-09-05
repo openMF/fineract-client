@@ -1,15 +1,13 @@
 
-
 # PutTellersTellerIdCashiersCashierIdResponseChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**description** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

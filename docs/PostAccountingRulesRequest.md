@@ -1,17 +1,14 @@
 
-
 # PostAccountingRulesRequest
 
-PostAccountingRulesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**accountToDebit** | **Long** |  |  [optional]
-**accountToCredit** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountToCredit** | **kotlin.Long** |  |  [optional] |
+| **accountToDebit** | **kotlin.Long** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
 
 
 

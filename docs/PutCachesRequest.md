@@ -1,13 +1,10 @@
 
-
 # PutCachesRequest
 
-PutCachesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cacheType** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **cacheType** | **kotlin.Long** |  |  [optional] |
 
 
 

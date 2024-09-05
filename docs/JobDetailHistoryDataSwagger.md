@@ -1,16 +1,14 @@
 
-
 # JobDetailHistoryDataSwagger
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**version** | **Long** |  |  [optional]
-**jobRunStartTime** | [**Date**](Date.md) |  |  [optional]
-**jobRunEndTime** | [**Date**](Date.md) |  |  [optional]
-**status** | **String** |  |  [optional]
-**triggerType** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **jobRunEndTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **jobRunStartTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **status** | **kotlin.String** |  |  [optional] |
+| **triggerType** | **kotlin.String** |  |  [optional] |
+| **version** | **kotlin.Long** |  |  [optional] |
 
 
 

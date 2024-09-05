@@ -1,17 +1,17 @@
 
-
 # PostLoansLoanIdTransactionsTransactionIdRequest
 
-PostLoansLoanIdTransactionsTransactionIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**transactionDate** | **String** |  |  [optional]
-**transactionAmount** | **Double** |  |  [optional]
-**note** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **note** | **kotlin.String** |  |  [optional] |
+| **paymentTypeId** | **kotlin.Long** |  |  [optional] |
+| **reversalExternalId** | **kotlin.String** |  |  [optional] |
+| **transactionAmount** | **kotlin.Double** |  |  [optional] |
+| **transactionDate** | **kotlin.String** |  |  [optional] |
 
 
 

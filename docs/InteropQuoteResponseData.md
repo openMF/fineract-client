@@ -1,40 +1,41 @@
 
-
 # InteropQuoteResponseData
 
 ## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **quoteCode** | **kotlin.String** |  |  |
+| **state** | [**inline**](#State) |  |  |
+| **transactionCode** | **kotlin.String** |  |  |
+| **changes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **commandId** | **kotlin.Long** |  |  [optional] |
+| **creditBureauReportData** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional] |
+| **expiration** | **kotlin.String** |  |  [optional] |
+| **extensionList** | [**kotlin.collections.List&lt;ExtensionData&gt;**](ExtensionData.md) |  |  [optional] |
+| **fspCommission** | [**MoneyData**](MoneyData.md) |  |  [optional] |
+| **fspFee** | [**MoneyData**](MoneyData.md) |  |  [optional] |
+| **glimId** | **kotlin.Long** |  |  [optional] |
+| **groupId** | **kotlin.Long** |  |  [optional] |
+| **gsimId** | **kotlin.Long** |  |  [optional] |
+| **loanId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **resourceExternalId** | [**ExternalId**](ExternalId.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **resourceIdentifier** | **kotlin.String** |  |  [optional] |
+| **rollbackTransaction** | **kotlin.Boolean** |  |  [optional] |
+| **savingsId** | **kotlin.Long** |  |  [optional] |
+| **subResourceExternalId** | [**ExternalId**](ExternalId.md) |  |  [optional] |
+| **subResourceId** | **kotlin.Long** |  |  [optional] |
+| **transactionId** | **kotlin.String** |  |  [optional] |
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** |  |  [optional]
-**groupId** | **Long** |  |  [optional]
-**clientId** | **Long** |  |  [optional]
-**loanId** | **Long** |  |  [optional]
-**savingsId** | **Long** |  |  [optional]
-**subResourceId** | **Long** |  |  [optional]
-**transactionId** | **String** |  |  [optional]
-**changes** | **Map&lt;String, Object&gt;** |  |  [optional]
-**productId** | **Long** |  |  [optional]
-**gsimId** | **Long** |  |  [optional]
-**glimId** | **Long** |  |  [optional]
-**rollbackTransaction** | **Boolean** |  |  [optional]
-**transactionCode** | **String** |  | 
-**state** | [**StateEnum**](#StateEnum) |  | 
-**expiration** | **String** |  |  [optional]
-**extensionList** | [**List&lt;ExtensionData&gt;**](ExtensionData.md) |  |  [optional]
-**quoteCode** | **String** |  | 
-**fspFee** | [**MoneyData**](MoneyData.md) |  |  [optional]
-**fspCommission** | [**MoneyData**](MoneyData.md) |  |  [optional]
-**creditReport** | [**Object**](.md) |  |  [optional]
 
-
-
-## Enum: StateEnum
-
-Name | Value
----- | -----
-ACCEPTED | &quot;ACCEPTED&quot;
-REJECTED | &quot;REJECTED&quot;
+<a id="State"></a>
+## Enum: state
+| Name | Value |
+| ---- | ----- |
+| state | ACCEPTED, REJECTED |
 
 
 

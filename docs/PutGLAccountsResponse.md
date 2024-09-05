@@ -1,14 +1,11 @@
 
-
 # PutGLAccountsResponse
 
-PutGLAccountsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutGLAccountsResponsechangesSwagger**](PutGLAccountsResponsechangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutGLAccountsResponsechangesSwagger**](PutGLAccountsResponsechangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

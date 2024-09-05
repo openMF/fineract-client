@@ -1,14 +1,11 @@
 
-
 # PutSelfUserRequest
 
-PutSelfUserRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**password** | **String** |  |  [optional]
-**repeatPassword** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **password** | **kotlin.String** |  |  [optional] |
+| **repeatPassword** | **kotlin.String** |  |  [optional] |
 
 
 

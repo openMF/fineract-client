@@ -1,13 +1,10 @@
 
-
 # GetWorkingDaysTemplateResponse
 
-GetWorkingDaysTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**repaymentRescheduleOptions** | [**List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **repaymentRescheduleOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
 
 
 

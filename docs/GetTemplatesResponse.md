@@ -1,18 +1,15 @@
 
-
 # GetTemplatesResponse
 
-GetTemplatesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**entity** | **Long** |  |  [optional]
-**type** | **Long** |  |  [optional]
-**text** | **String** |  |  [optional]
-**mappers** | [**List&lt;TemplateMapper&gt;**](TemplateMapper.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entity** | **kotlin.Long** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **mappers** | [**kotlin.collections.List&lt;TemplateMapper&gt;**](TemplateMapper.md) |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **text** | **kotlin.String** |  |  [optional] |
+| **type** | **kotlin.Long** |  |  [optional] |
 
 
 

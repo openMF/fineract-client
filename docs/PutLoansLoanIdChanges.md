@@ -1,13 +1,12 @@
 
-
 # PutLoansLoanIdChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**principal** | **Long** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **fraud** | **kotlin.Boolean** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **principal** | **kotlin.Long** |  |  [optional] |
 
 
 

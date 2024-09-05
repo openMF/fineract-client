@@ -1,24 +1,21 @@
 
-
 # PostReportMailingJobsRequest
 
-PostReportMailingJobsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**startDateTime** | [**Date**](Date.md) |  |  [optional]
-**stretchyReportId** | **Long** |  |  [optional]
-**emailRecipients** | **String** |  |  [optional]
-**emailSubject** | **String** |  |  [optional]
-**emailMessage** | **String** |  |  [optional]
-**recurrence** | **String** |  |  [optional]
-**isActive** | **Boolean** |  |  [optional]
-**stretchyReportParamMap** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **emailMessage** | **kotlin.String** |  |  [optional] |
+| **emailRecipients** | **kotlin.String** |  |  [optional] |
+| **emailSubject** | **kotlin.String** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **recurrence** | **kotlin.String** |  |  [optional] |
+| **startDateTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **stretchyReportId** | **kotlin.Long** |  |  [optional] |
+| **stretchyReportParamMap** | **kotlin.String** |  |  [optional] |
 
 
 

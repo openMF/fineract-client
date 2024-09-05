@@ -1,13 +1,10 @@
 
-
 # PutCurrenciesRequest
 
-PutCurrenciesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currencies** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **currencies** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
 
 
 

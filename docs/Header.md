@@ -1,13 +1,11 @@
 
-
 # Header
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**value** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String** |  |  [optional] |
+| **&#x60;value&#x60;** | **kotlin.String** |  |  [optional] |
 
 
 

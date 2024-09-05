@@ -1,36 +1,35 @@
 
-
 # AppUser
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**email** | **String** |  |  [optional]
-**username** | **String** |  |  [optional]
-**firstname** | **String** |  |  [optional]
-**lastname** | **String** |  |  [optional]
-**password** | **String** |  |  [optional]
-**accountNonExpired** | **Boolean** |  |  [optional]
-**accountNonLocked** | **Boolean** |  |  [optional]
-**credentialsNonExpired** | **Boolean** |  |  [optional]
-**enabled** | **Boolean** |  |  [optional]
-**deleted** | **Boolean** |  |  [optional]
-**office** | [**Office**](Office.md) |  |  [optional]
-**staff** | [**Staff**](Staff.md) |  |  [optional]
-**roles** | [**List&lt;Role&gt;**](Role.md) |  |  [optional]
-**lastTimePasswordUpdated** | [**Date**](Date.md) |  |  [optional]
-**passwordNeverExpires** | **Boolean** |  |  [optional]
-**appUserClientMappings** | [**List&lt;AppUserClientMapping&gt;**](AppUserClientMapping.md) |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**staffId** | **Long** |  |  [optional]
-**staffDisplayName** | **String** |  |  [optional]
-**notEnabled** | **Boolean** |  |  [optional]
-**selfServiceUser** | **Boolean** |  |  [optional]
-**systemUser** | **Boolean** |  |  [optional]
-**authorities** | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNonExpired** | **kotlin.Boolean** |  |  [optional] |
+| **accountNonLocked** | **kotlin.Boolean** |  |  [optional] |
+| **appUserClientMappings** | [**kotlin.collections.Set&lt;AppUserClientMapping&gt;**](AppUserClientMapping.md) |  |  [optional] |
+| **authorities** | [**kotlin.collections.List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |  |  [optional] |
+| **bypassUser** | **kotlin.Boolean** |  |  [optional] |
+| **credentialsNonExpired** | **kotlin.Boolean** |  |  [optional] |
+| **deleted** | **kotlin.Boolean** |  |  [optional] |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **email** | **kotlin.String** |  |  [optional] |
+| **enabled** | **kotlin.Boolean** |  |  [optional] |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lastTimePasswordUpdated** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **lastname** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **notEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **office** | [**Office**](Office.md) |  |  [optional] |
+| **password** | **kotlin.String** |  |  [optional] |
+| **passwordNeverExpires** | **kotlin.Boolean** |  |  [optional] |
+| **roles** | [**kotlin.collections.Set&lt;Role&gt;**](Role.md) |  |  [optional] |
+| **selfServiceUser** | **kotlin.Boolean** |  |  [optional] |
+| **staff** | [**Staff**](Staff.md) |  |  [optional] |
+| **staffDisplayName** | **kotlin.String** |  |  [optional] |
+| **staffId** | **kotlin.Long** |  |  [optional] |
+| **systemUser** | **kotlin.Boolean** |  |  [optional] |
+| **username** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,14 +1,11 @@
 
-
 # PutHookResponse
 
-PutHookResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutHookResponseChangesSwagger**](PutHookResponseChangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutHookResponseChangesSwagger**](PutHookResponseChangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

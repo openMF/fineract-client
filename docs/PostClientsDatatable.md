@@ -1,14 +1,11 @@
 
-
 # PostClientsDatatable
 
-List of PostClientsDatatable
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**registeredTableName** | **String** |  |  [optional]
-**data** | **Map&lt;String, Object&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **&#x60;data&#x60;** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional] |
+| **registeredTableName** | **kotlin.String** |  |  [optional] |
 
 
 

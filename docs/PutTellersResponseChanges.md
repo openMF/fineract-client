@@ -1,16 +1,14 @@
 
-
 # PutTellersResponseChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

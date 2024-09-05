@@ -1,15 +1,12 @@
 
-
 # GetReportMailingJobsTemplate
 
-GetReportMailingJobsTemplate
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**isActive** | **Boolean** |  |  [optional]
-**emailAttachmentFileFormatOptions** | [**List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional]
-**stretchyReportParamDateOptions** | [**List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **emailAttachmentFileFormatOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **stretchyReportParamDateOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
 
 
 

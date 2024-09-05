@@ -1,18 +1,16 @@
 
-
 # GetFromAccountOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**accountId** | **Integer** |  |  [optional]
-**accountNo** | **Integer** |  |  [optional]
-**accountType** | [**GetAccountOptions**](GetAccountOptions.md) |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountId** | **kotlin.Long** |  |  [optional] |
+| **accountNo** | **kotlin.Int** |  |  [optional] |
+| **accountType** | [**GetAccountOptions**](GetAccountOptions.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,18 +1,15 @@
 
-
 # PutHookRequest
 
-PutHookRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**isActive** | **Boolean** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**templateId** | **Long** |  |  [optional]
-**events** | [**List&lt;Event&gt;**](Event.md) |  |  [optional]
-**config** | [**List&lt;Field&gt;**](Field.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **config** | [**kotlin.collections.List&lt;Field&gt;**](Field.md) |  |  [optional] |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **events** | [**kotlin.collections.List&lt;Event&gt;**](Event.md) |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **templateId** | **kotlin.Long** |  |  [optional] |
 
 
 

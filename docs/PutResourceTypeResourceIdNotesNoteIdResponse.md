@@ -1,16 +1,13 @@
 
-
 # PutResourceTypeResourceIdNotesNoteIdResponse
 
-PutResourceTypeResourceIdNotesNoteIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutNotesChanges**](PutNotesChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutNotesChanges**](PutNotesChanges.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

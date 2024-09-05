@@ -1,35 +1,32 @@
 
-
 # PostSelfLoansRequest
 
-PostSelfLoansRequest
 ## Properties
-
-Name | Type                                                                              | Description | Notes
------------- |-----------------------------------------------------------------------------------| ------------- | -------------
-**dateFormat** | **String**                                                                        |  |  [optional]
-**locale** | **String**                                                                        |  |  [optional]
-**clientId** | **Integer**                                                                       |  |  [optional]
-**productId** | **Integer**                                                                       |  |  [optional]
-**principal** | **Double**                                                                        |  |  [optional]
-**loanTermFrequency** | **Integer**                                                                       |  |  [optional]
-**loanTermFrequencyType** | **Integer**                                                                       |  |  [optional]
-**loanType** | **String**                                                                        |  |  [optional]
-**numberOfRepayments** | **Integer**                                                                       |  |  [optional]
-**repaymentEvery** | **Integer**                                                                       |  |  [optional]
-**repaymentFrequencyType** | **Integer**                                                                       |  |  [optional]
-**interestRatePerPeriod** | **Integer**                                                                       |  |  [optional]
-**amortizationType** | **Integer**                                                                       |  |  [optional]
-**interestType** | **Integer**                                                                       |  |  [optional]
-**interestCalculationPeriodType** | **Integer**                                                                       |  |  [optional]
-**transactionProcessingStrategyCode** | **String**                                                                        |  |  [optional]
-**expectedDisbursementDate** | **String**                                                                        |  |  [optional]
-**submittedOnDate** | **String**                                                                        |  |  [optional]
-**linkAccountId** | **Integer**                                                                       |  |  [optional]
-**fixedEmiAmount** | **Integer**                                                                       |  |  [optional]
-**maxOutstandingLoanBalance** | **Long**                                                                          |  |  [optional]
-**disbursementData** | [**List&lt;PostSelfLoansDisbursementData&gt;**](PostSelfLoansDisbursementData.md) |  |  [optional]
-**datatables** | [**List&lt;PostSelfLoansDatatables&gt;**](PostSelfLoansDatatables.md)             |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amortizationType** | **kotlin.Int** |  |  [optional] |
+| **clientId** | **kotlin.Int** |  |  [optional] |
+| **datatables** | [**kotlin.collections.Set&lt;PostSelfLoansDatatables&gt;**](PostSelfLoansDatatables.md) |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **disbursementData** | [**kotlin.collections.Set&lt;PostSelfLoansDisbursementData&gt;**](PostSelfLoansDisbursementData.md) |  |  [optional] |
+| **expectedDisbursementDate** | **kotlin.String** |  |  [optional] |
+| **fixedEmiAmount** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationPeriodType** | **kotlin.Int** |  |  [optional] |
+| **interestRatePerPeriod** | **kotlin.Int** |  |  [optional] |
+| **interestType** | **kotlin.Int** |  |  [optional] |
+| **linkAccountId** | **kotlin.Int** |  |  [optional] |
+| **loanTermFrequency** | **kotlin.Int** |  |  [optional] |
+| **loanTermFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **loanType** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **maxOutstandingLoanBalance** | **kotlin.Long** |  |  [optional] |
+| **numberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **principal** | **kotlin.Double** |  |  [optional] |
+| **productId** | **kotlin.Int** |  |  [optional] |
+| **repaymentEvery** | **kotlin.Int** |  |  [optional] |
+| **repaymentFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **submittedOnDate** | **kotlin.String** |  |  [optional] |
+| **transactionProcessingStrategyCode** | **kotlin.String** |  |  [optional] |
 
 
 

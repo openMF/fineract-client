@@ -1,15 +1,13 @@
 
-
 # PostRecurringDepositProductsCharts
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fromDate** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**chartSlabs** | [**List&lt;PostRecurringDepositProductsChartSlabs&gt;**](PostRecurringDepositProductsChartSlabs.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **chartSlabs** | [**kotlin.collections.Set&lt;PostRecurringDepositProductsChartSlabs&gt;**](PostRecurringDepositProductsChartSlabs.md) |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **fromDate** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

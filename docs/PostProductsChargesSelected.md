@@ -1,12 +1,10 @@
 
-
 # PostProductsChargesSelected
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
 
 
 

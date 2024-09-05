@@ -1,144 +1,78 @@
-# SearchApiApi
+# SearchAPIApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**advancedSearch**](SearchApiApi.md#advancedSearch) | **POST** search/advance | Adhoc query search
-[**retrieveAdHocSearchQueryTemplate**](SearchApiApi.md#retrieveAdHocSearchQueryTemplate) | **GET** search/template | Retrive Adhoc Search query template
-[**searchData**](SearchApiApi.md#searchData) | **GET** search | Search Resources
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**advancedSearch**](SearchAPIApi.md#advancedSearch) | **POST** v1/search/advance | Adhoc query search |
+| [**retrieveAdHocSearchQueryTemplate**](SearchAPIApi.md#retrieveAdHocSearchQueryTemplate) | **GET** v1/search/template | Retrive Adhoc Search query template |
+| [**searchData**](SearchAPIApi.md#searchData) | **GET** v1/search | Search Resources |
 
 
-
-## advancedSearch
-
-> List&lt;PostAdhocQuerySearchResponse&gt; advancedSearch(postAdhocQuerySearchRequest)
 
 Adhoc query search
 
 AdHocQuery search has more search options, it is a POST request, it uses request body to send search parameters   Mandatory fields:entities  Optional fields:loanStatus, loanProducts, offices, loanDateOption, loanFromDate, loanToDate,  includeOutStandingAmountPercentage, outStandingAmountPercentageCondition,  minOutStandingAmountPercentage and maxOutStandingAmountPercentage OR outStandingAmountPercentage,  includeOutstandingAmount, outstandingAmountCondition,  minOutstandingAmount and maxOutstandingAmount OR outstandingAmount
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SearchApiApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SearchAPIApi::class.java)
+val postAdhocQuerySearchRequest : PostAdhocQuerySearchRequest =  // PostAdhocQuerySearchRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
-        PostAdhocQuerySearchRequest postAdhocQuerySearchRequest = new PostAdhocQuerySearchRequest(); // PostAdhocQuerySearchRequest | 
-        try {
-            List<PostAdhocQuerySearchResponse> result = apiInstance.advancedSearch(postAdhocQuerySearchRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SearchApiApi#advancedSearch");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<PostAdhocQuerySearchResponse> = webService.advancedSearch(postAdhocQuerySearchRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postAdhocQuerySearchRequest** | [**PostAdhocQuerySearchRequest**](PostAdhocQuerySearchRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postAdhocQuerySearchRequest** | [**PostAdhocQuerySearchRequest**](PostAdhocQuerySearchRequest.md)|  | |
 
 ### Return type
 
-[**List&lt;PostAdhocQuerySearchResponse&gt;**](PostAdhocQuerySearchResponse.md)
+[**kotlin.collections.List&lt;PostAdhocQuerySearchResponse&gt;**](PostAdhocQuerySearchResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveAdHocSearchQueryTemplate
-
-> GetSearchResponse retrieveAdHocSearchQueryTemplate()
 
 Retrive Adhoc Search query template
 
 Mandatory Fields  search?query&#x3D;000000001 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SearchApiApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SearchAPIApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
-        try {
-            GetSearchResponse result = apiInstance.retrieveAdHocSearchQueryTemplate();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SearchApiApi#retrieveAdHocSearchQueryTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetSearchResponse = webService.retrieveAdHocSearchQueryTemplate()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -147,96 +81,58 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## searchData
-
-> List&lt;GetSearchResponse&gt; searchData(query, resource, exactMatch)
 
 Search Resources
 
 Example Requests:  search?query&#x3D;000000001   search?query&#x3D;Petra&amp;resource&#x3D;clients,groups   search?query&#x3D;Petra&amp;resource&#x3D;clients,groups&amp;exactMatch&#x3D;true
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.SearchApiApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(SearchAPIApi::class.java)
+val query : kotlin.String = query_example // kotlin.String | query
+val resource : kotlin.String = resource_example // kotlin.String | resource
+val exactMatch : kotlin.Boolean = true // kotlin.Boolean | exactMatch
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        SearchApiApi apiInstance = new SearchApiApi(defaultClient);
-        String query = "query_example"; // String | query
-        String resource = "resource_example"; // String | resource
-        Boolean exactMatch = false; // Boolean | exactMatch
-        try {
-            List<GetSearchResponse> result = apiInstance.searchData(query, resource, exactMatch);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling SearchApiApi#searchData");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetSearchResponse> = webService.searchData(query, resource, exactMatch)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **String**| query | [optional]
- **resource** | **String**| resource | [optional]
- **exactMatch** | **Boolean**| exactMatch | [optional] [default to false]
+| **query** | **kotlin.String**| query | [optional] |
+| **resource** | **kotlin.String**| resource | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exactMatch** | **kotlin.Boolean**| exactMatch | [optional] [default to false] |
 
 ### Return type
 
-[**List&lt;GetSearchResponse&gt;**](GetSearchResponse.md)
+[**kotlin.collections.List&lt;GetSearchResponse&gt;**](GetSearchResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

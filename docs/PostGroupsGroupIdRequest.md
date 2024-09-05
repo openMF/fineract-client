@@ -1,14 +1,11 @@
 
-
 # PostGroupsGroupIdRequest
 
-PostGroupsGroupIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**destinationGroupId** | **Integer** |  |  [optional]
-**clients** | [**List&lt;PostGroupsGroupIdClients&gt;**](PostGroupsGroupIdClients.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clients** | [**kotlin.collections.Set&lt;PostGroupsGroupIdClients&gt;**](PostGroupsGroupIdClients.md) |  |  [optional] |
+| **destinationGroupId** | **kotlin.Long** |  |  [optional] |
 
 
 

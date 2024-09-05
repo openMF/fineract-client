@@ -1,12 +1,10 @@
 
-
 # PostHolidaysRequestOffices
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **officeId** | **kotlin.Long** |  |  [optional] |
 
 
 

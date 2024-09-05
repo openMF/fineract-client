@@ -1,19 +1,18 @@
 
-
 # TaxGroupMappings
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdDate** | [**Date**](Date.md) |  |  [optional]
-**lastModifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**lastModifiedDate** | [**Date**](Date.md) |  |  [optional]
-**taxComponent** | [**TaxComponent**](TaxComponent.md) |  |  [optional]
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **createdBy** | **kotlin.Long** |  |  [optional] |
+| **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lastModifiedBy** | **kotlin.Long** |  |  [optional] |
+| **lastModifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **taxComponent** | [**TaxComponent**](TaxComponent.md) |  |  [optional] |
+| **taxGroup** | [**TaxGroup**](TaxGroup.md) |  |  [optional] |
 
 
 

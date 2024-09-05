@@ -1,16 +1,14 @@
 
-
 # GetPocketSavingAccounts
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pocketId** | **Integer** |  |  [optional]
-**accountId** | **Integer** |  |  [optional]
-**accountType** | **Integer** |  |  [optional]
-**accountNumber** | **Integer** |  |  [optional]
-**id** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountId** | **kotlin.Long** |  |  [optional] |
+| **accountNumber** | **kotlin.Int** |  |  [optional] |
+| **accountType** | **kotlin.Int** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **pocketId** | **kotlin.Long** |  |  [optional] |
 
 
 

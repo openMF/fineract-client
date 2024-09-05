@@ -1,21 +1,19 @@
 
-
 # GetProductsIncomeAccountOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**glCode** | **String** |  |  [optional]
-**disabled** | **Boolean** |  |  [optional]
-**manualEntriesAllowed** | **Boolean** |  |  [optional]
-**type** | [**GetIncomeType**](GetIncomeType.md) |  |  [optional]
-**usage** | [**GetProductsLiabilityUsage**](GetProductsLiabilityUsage.md) |  |  [optional]
-**description** | **String** |  |  [optional]
-**nameDecorated** | **String** |  |  [optional]
-**tagId** | [**GetProductsTagId**](GetProductsTagId.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **disabled** | **kotlin.Boolean** |  |  [optional] |
+| **glCode** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **manualEntriesAllowed** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nameDecorated** | **kotlin.String** |  |  [optional] |
+| **tagId** | [**GetProductsTagId**](GetProductsTagId.md) |  |  [optional] |
+| **type** | [**GetIncomeType**](GetIncomeType.md) |  |  [optional] |
+| **usage** | [**GetProductsLiabilityUsage**](GetProductsLiabilityUsage.md) |  |  [optional] |
 
 
 

@@ -1,13 +1,11 @@
 
-
 # GetAccountTransfersPageItemsFromOffice
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
 
 
 

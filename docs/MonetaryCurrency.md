@@ -1,14 +1,12 @@
 
-
 # MonetaryCurrency
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | **String** |  |  [optional]
-**digitsAfterDecimal** | **Integer** |  |  [optional]
-**currencyInMultiplesOf** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.String** |  |  [optional] |
+| **currencyInMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **digitsAfterDecimal** | **kotlin.Int** |  |  [optional] |
 
 
 

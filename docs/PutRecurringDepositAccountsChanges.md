@@ -1,13 +1,11 @@
 
-
 # PutRecurringDepositAccountsChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**depositAmount** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **depositAmount** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,13 +1,11 @@
 
-
 # PutSelfLoansChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**principal** | **Long** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **principal** | **kotlin.Long** |  |  [optional] |
 
 
 

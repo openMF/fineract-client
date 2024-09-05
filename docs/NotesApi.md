@@ -1,78 +1,46 @@
 # NotesApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addNewNote**](NotesApi.md#addNewNote) | **POST** {resourceType}/{resourceId}/notes | Add a Resource Note
-[**deleteNote**](NotesApi.md#deleteNote) | **DELETE** {resourceType}/{resourceId}/notes/{noteId} | Delete a Resource Note
-[**retrieveNote**](NotesApi.md#retrieveNote) | **GET** {resourceType}/{resourceId}/notes/{noteId} | Retrieve a Resource Note
-[**retrieveNotesByResource**](NotesApi.md#retrieveNotesByResource) | **GET** {resourceType}/{resourceId}/notes | Retrieve a Resource&#39;s description
-[**updateNote**](NotesApi.md#updateNote) | **PUT** {resourceType}/{resourceId}/notes/{noteId} | Update a Resource Note
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addNewNote**](NotesApi.md#addNewNote) | **POST** v1/{resourceType}/{resourceId}/notes | Add a Resource Note |
+| [**deleteNote**](NotesApi.md#deleteNote) | **DELETE** v1/{resourceType}/{resourceId}/notes/{noteId} | Delete a Resource Note |
+| [**retrieveNote**](NotesApi.md#retrieveNote) | **GET** v1/{resourceType}/{resourceId}/notes/{noteId} | Retrieve a Resource Note |
+| [**retrieveNotesByResource**](NotesApi.md#retrieveNotesByResource) | **GET** v1/{resourceType}/{resourceId}/notes | Retrieve a Resource&#39;s description |
+| [**updateNote**](NotesApi.md#updateNote) | **PUT** v1/{resourceType}/{resourceId}/notes/{noteId} | Update a Resource Note |
 
 
-
-## addNewNote
-
-> PostResourceTypeResourceIdNotesResponse addNewNote(resourceType, resourceId, postResourceTypeResourceIdNotesRequest)
 
 Add a Resource Note
 
 Adds a new note to a supported resource.  Example Requests:  clients/1/notes   groups/1/notes
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.NotesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(NotesApi::class.java)
+val resourceType : kotlin.String = resourceType_example // kotlin.String | resourceType
+val resourceId : kotlin.Long = 789 // kotlin.Long | resourceId
+val postResourceTypeResourceIdNotesRequest : PostResourceTypeResourceIdNotesRequest =  // PostResourceTypeResourceIdNotesRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        NotesApi apiInstance = new NotesApi(defaultClient);
-        String resourceType = "resourceType_example"; // String | resourceType
-        Long resourceId = 56L; // Long | resourceId
-        PostResourceTypeResourceIdNotesRequest postResourceTypeResourceIdNotesRequest = new PostResourceTypeResourceIdNotesRequest(); // PostResourceTypeResourceIdNotesRequest | 
-        try {
-            PostResourceTypeResourceIdNotesResponse result = apiInstance.addNewNote(resourceType, resourceId, postResourceTypeResourceIdNotesRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling NotesApi#addNewNote");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostResourceTypeResourceIdNotesResponse = webService.addNewNote(resourceType, resourceId, postResourceTypeResourceIdNotesRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceType** | **String**| resourceType |
- **resourceId** | **Long**| resourceId |
- **postResourceTypeResourceIdNotesRequest** | [**PostResourceTypeResourceIdNotesRequest**](PostResourceTypeResourceIdNotesRequest.md)|  |
+| **resourceType** | **kotlin.String**| resourceType | |
+| **resourceId** | **kotlin.Long**| resourceId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postResourceTypeResourceIdNotesRequest** | [**PostResourceTypeResourceIdNotesRequest**](PostResourceTypeResourceIdNotesRequest.md)|  | |
 
 ### Return type
 
@@ -80,80 +48,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## deleteNote
-
-> DeleteResourceTypeResourceIdNotesNoteIdResponse deleteNote(resourceType, resourceId, noteId)
 
 Delete a Resource Note
 
 Deletes a Resource Note
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.NotesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(NotesApi::class.java)
+val resourceType : kotlin.String = resourceType_example // kotlin.String | resourceType
+val resourceId : kotlin.Long = 789 // kotlin.Long | resourceId
+val noteId : kotlin.Long = 789 // kotlin.Long | noteId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        NotesApi apiInstance = new NotesApi(defaultClient);
-        String resourceType = "resourceType_example"; // String | resourceType
-        Long resourceId = 56L; // Long | resourceId
-        Long noteId = 56L; // Long | noteId
-        try {
-            DeleteResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.deleteNote(resourceType, resourceId, noteId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling NotesApi#deleteNote");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteResourceTypeResourceIdNotesNoteIdResponse = webService.deleteNote(resourceType, resourceId, noteId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceType** | **String**| resourceType |
- **resourceId** | **Long**| resourceId |
- **noteId** | **Long**| noteId |
+| **resourceType** | **kotlin.String**| resourceType | |
+| **resourceId** | **kotlin.Long**| resourceId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **noteId** | **kotlin.Long**| noteId | |
 
 ### Return type
 
@@ -161,80 +94,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveNote
-
-> GetResourceTypeResourceIdNotesNoteIdResponse retrieveNote(resourceType, resourceId, noteId)
 
 Retrieve a Resource Note
 
 Retrieves a Resource Note  Example Requests:  clients/1/notes/76   groups/1/notes/20   clients/1/notes/76?fields&#x3D;note,createdOn,createdByUsername   groups/1/notes/20?fields&#x3D;note,createdOn,createdByUsername
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.NotesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(NotesApi::class.java)
+val resourceType : kotlin.String = resourceType_example // kotlin.String | resourceType
+val resourceId : kotlin.Long = 789 // kotlin.Long | resourceId
+val noteId : kotlin.Long = 789 // kotlin.Long | noteId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        NotesApi apiInstance = new NotesApi(defaultClient);
-        String resourceType = "resourceType_example"; // String | resourceType
-        Long resourceId = 56L; // Long | resourceId
-        Long noteId = 56L; // Long | noteId
-        try {
-            GetResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.retrieveNote(resourceType, resourceId, noteId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling NotesApi#retrieveNote");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetResourceTypeResourceIdNotesNoteIdResponse = webService.retrieveNote(resourceType, resourceId, noteId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceType** | **String**| resourceType |
- **resourceId** | **Long**| resourceId |
- **noteId** | **Long**| noteId |
+| **resourceType** | **kotlin.String**| resourceType | |
+| **resourceId** | **kotlin.Long**| resourceId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **noteId** | **kotlin.Long**| noteId | |
 
 ### Return type
 
@@ -242,161 +140,91 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveNotesByResource
-
-> List&lt;GetResourceTypeResourceIdNotesResponse&gt; retrieveNotesByResource(resourceType, resourceId)
 
 Retrieve a Resource&#39;s description
 
 Retrieves a Resource&#39;s Notes  Note: Notes are returned in descending createOn order.  Example Requests:  clients/2/notes   groups/2/notes?fields&#x3D;note,createdOn,createdByUsername
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.NotesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(NotesApi::class.java)
+val resourceType : kotlin.String = resourceType_example // kotlin.String | resourceType
+val resourceId : kotlin.Long = 789 // kotlin.Long | resourceId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        NotesApi apiInstance = new NotesApi(defaultClient);
-        String resourceType = "resourceType_example"; // String | resourceType
-        Long resourceId = 56L; // Long | resourceId
-        try {
-            List<GetResourceTypeResourceIdNotesResponse> result = apiInstance.retrieveNotesByResource(resourceType, resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling NotesApi#retrieveNotesByResource");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetResourceTypeResourceIdNotesResponse> = webService.retrieveNotesByResource(resourceType, resourceId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceType** | **String**| resourceType |
- **resourceId** | **Long**| resourceId |
+| **resourceType** | **kotlin.String**| resourceType | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**| resourceId | |
 
 ### Return type
 
-[**List&lt;GetResourceTypeResourceIdNotesResponse&gt;**](GetResourceTypeResourceIdNotesResponse.md)
+[**kotlin.collections.List&lt;GetResourceTypeResourceIdNotesResponse&gt;**](GetResourceTypeResourceIdNotesResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## updateNote
-
-> PutResourceTypeResourceIdNotesNoteIdResponse updateNote(resourceType, resourceId, noteId, putResourceTypeResourceIdNotesNoteIdRequest)
 
 Update a Resource Note
 
 Updates a Resource Note
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.NotesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(NotesApi::class.java)
+val resourceType : kotlin.String = resourceType_example // kotlin.String | resourceType
+val resourceId : kotlin.Long = 789 // kotlin.Long | resourceId
+val noteId : kotlin.Long = 789 // kotlin.Long | noteId
+val putResourceTypeResourceIdNotesNoteIdRequest : PutResourceTypeResourceIdNotesNoteIdRequest =  // PutResourceTypeResourceIdNotesNoteIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        NotesApi apiInstance = new NotesApi(defaultClient);
-        String resourceType = "resourceType_example"; // String | resourceType
-        Long resourceId = 56L; // Long | resourceId
-        Long noteId = 56L; // Long | noteId
-        PutResourceTypeResourceIdNotesNoteIdRequest putResourceTypeResourceIdNotesNoteIdRequest = new PutResourceTypeResourceIdNotesNoteIdRequest(); // PutResourceTypeResourceIdNotesNoteIdRequest | 
-        try {
-            PutResourceTypeResourceIdNotesNoteIdResponse result = apiInstance.updateNote(resourceType, resourceId, noteId, putResourceTypeResourceIdNotesNoteIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling NotesApi#updateNote");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutResourceTypeResourceIdNotesNoteIdResponse = webService.updateNote(resourceType, resourceId, noteId, putResourceTypeResourceIdNotesNoteIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceType** | **String**| resourceType |
- **resourceId** | **Long**| resourceId |
- **noteId** | **Long**| noteId |
- **putResourceTypeResourceIdNotesNoteIdRequest** | [**PutResourceTypeResourceIdNotesNoteIdRequest**](PutResourceTypeResourceIdNotesNoteIdRequest.md)|  |
+| **resourceType** | **kotlin.String**| resourceType | |
+| **resourceId** | **kotlin.Long**| resourceId | |
+| **noteId** | **kotlin.Long**| noteId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putResourceTypeResourceIdNotesNoteIdRequest** | [**PutResourceTypeResourceIdNotesNoteIdRequest**](PutResourceTypeResourceIdNotesNoteIdRequest.md)|  | |
 
 ### Return type
 
@@ -404,15 +232,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

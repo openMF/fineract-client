@@ -1,15 +1,13 @@
 
-
 # GetAccountsTypePurchasedShares
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**purchasedDate** | **String** |  |  [optional]
-**numberOfShares** | **Integer** |  |  [optional]
-**purchasedPrice** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **numberOfShares** | **kotlin.Int** |  |  [optional] |
+| **purchasedDate** | **kotlin.String** |  |  [optional] |
+| **purchasedPrice** | **kotlin.Int** |  |  [optional] |
 
 
 

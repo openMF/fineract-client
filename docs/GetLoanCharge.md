@@ -1,15 +1,13 @@
 
-
 # GetLoanCharge
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**penalty** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **penalty** | **kotlin.Boolean** |  |  [optional] |
 
 
 

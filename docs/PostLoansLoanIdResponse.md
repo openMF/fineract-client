@@ -1,16 +1,17 @@
 
-
 # PostLoansLoanIdResponse
 
-PostLoansLoanIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**loanId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PostLoansLoanIdChanges**](PostLoansLoanIdChanges.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **loanId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Int** |  |  [optional] |
+| **resourceExternalId** | **kotlin.String** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **subResourceExternalId** | **kotlin.String** |  |  [optional] |
+| **subResourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

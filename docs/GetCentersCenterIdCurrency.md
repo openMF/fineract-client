@@ -1,18 +1,16 @@
 
-
 # GetCentersCenterIdCurrency
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**decimalPlaces** | **Integer** |  |  [optional]
-**inMultiplesOf** | **Integer** |  |  [optional]
-**displaySymbol** | **String** |  |  [optional]
-**nameCode** | **String** |  |  [optional]
-**displayLabel** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.String** |  |  [optional] |
+| **decimalPlaces** | **kotlin.Int** |  |  [optional] |
+| **displayLabel** | **kotlin.String** |  |  [optional] |
+| **displaySymbol** | **kotlin.String** |  |  [optional] |
+| **inMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nameCode** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,15 +1,12 @@
 
-
 # DeleteSavingsAccountsAccountIdResponse
 
-DeleteSavingsAccountsAccountIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Int** |  |  [optional] |
+| **officeId** | **kotlin.Int** |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

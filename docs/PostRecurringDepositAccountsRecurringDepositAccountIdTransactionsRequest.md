@@ -1,22 +1,19 @@
 
-
 # PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest
 
-PostRecurringDepositAccountsRecurringDepositAccountIdTransactionsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**transactionDate** | **String** |  |  [optional]
-**transactionAmount** | **Double** |  |  [optional]
-**paymentTypeId** | **Integer** |  |  [optional]
-**accountNumber** | **String** |  |  [optional]
-**checkNumber** | **String** |  |  [optional]
-**routingCode** | **String** |  |  [optional]
-**receiptNumber** | **String** |  |  [optional]
-**bankNumber** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNumber** | **kotlin.String** |  |  [optional] |
+| **bankNumber** | **kotlin.String** |  |  [optional] |
+| **checkNumber** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **paymentTypeId** | **kotlin.Int** |  |  [optional] |
+| **receiptNumber** | **kotlin.String** |  |  [optional] |
+| **routingCode** | **kotlin.String** |  |  [optional] |
+| **transactionAmount** | **kotlin.Double** |  |  [optional] |
+| **transactionDate** | **kotlin.String** |  |  [optional] |
 
 
 

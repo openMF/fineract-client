@@ -1,15 +1,12 @@
 
-
 # PutOfficesOfficeIdResponse
 
-PutOfficesOfficeIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** |  |  [optional]
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutOfficesOfficeIdResponseChanges**](PutOfficesOfficeIdResponseChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutOfficesOfficeIdResponseChanges**](PutOfficesOfficeIdResponseChanges.md) |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

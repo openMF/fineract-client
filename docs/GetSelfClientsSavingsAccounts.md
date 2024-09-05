@@ -1,17 +1,15 @@
 
-
 # GetSelfClientsSavingsAccounts
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**productName** | **String** |  |  [optional]
-**status** | [**GetSelfClientsSavingsAccountsStatus**](GetSelfClientsSavingsAccountsStatus.md) |  |  [optional]
-**currency** | [**GetSelfClientsSavingsAccountsCurrency**](GetSelfClientsSavingsAccountsCurrency.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **currency** | [**GetSelfClientsSavingsAccountsCurrency**](GetSelfClientsSavingsAccountsCurrency.md) |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **productId** | **kotlin.Int** |  |  [optional] |
+| **productName** | **kotlin.String** |  |  [optional] |
+| **status** | [**GetSelfClientsSavingsAccountsStatus**](GetSelfClientsSavingsAccountsStatus.md) |  |  [optional] |
 
 
 

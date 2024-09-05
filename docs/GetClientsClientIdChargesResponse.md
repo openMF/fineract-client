@@ -1,14 +1,11 @@
 
-
 # GetClientsClientIdChargesResponse
 
-GetClientsClientIdChargesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetClientsChargesPageItems&gt;**](GetClientsChargesPageItems.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetClientsChargesPageItems&gt;**](GetClientsChargesPageItems.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,87 +1,84 @@
 
-
 # LoanProductRelatedDetail
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
-**principal** | [**Money**](Money.md) |  |  [optional]
-**nominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**interestPeriodFrequencyType** | [**InterestPeriodFrequencyTypeEnum**](#InterestPeriodFrequencyTypeEnum) |  |  [optional]
-**annualNominalInterestRate** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**interestMethod** | [**InterestMethodEnum**](#InterestMethodEnum) |  |  [optional]
-**interestCalculationPeriodMethod** | [**InterestCalculationPeriodMethodEnum**](#InterestCalculationPeriodMethodEnum) |  |  [optional]
-**allowPartialPeriodInterestCalcualtion** | **Boolean** |  |  [optional]
-**repayEvery** | **Integer** |  |  [optional]
-**repaymentPeriodFrequencyType** | [**RepaymentPeriodFrequencyTypeEnum**](#RepaymentPeriodFrequencyTypeEnum) |  |  [optional]
-**numberOfRepayments** | **Integer** |  |  [optional]
-**graceOnPrincipalPayment** | **Integer** |  |  [optional]
-**graceOnInterestPayment** | **Integer** |  |  [optional]
-**amortizationMethod** | [**AmortizationMethodEnum**](#AmortizationMethodEnum) |  |  [optional]
-**inArrearsTolerance** | [**Money**](Money.md) |  |  [optional]
-**graceOnArrearsAgeing** | **Integer** |  |  [optional]
-**equalAmortization** | **Boolean** |  |  [optional]
-**graceOnDueDate** | **Integer** |  |  [optional]
-**arrearsTolerance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**interestRecalculationEnabled** | **Boolean** |  |  [optional]
-
-
-
-## Enum: InterestPeriodFrequencyTypeEnum
-
-Name | Value
----- | -----
-DAYS | &quot;DAYS&quot;
-WEEKS | &quot;WEEKS&quot;
-MONTHS | &quot;MONTHS&quot;
-YEARS | &quot;YEARS&quot;
-WHOLE_TERM | &quot;WHOLE_TERM&quot;
-INVALID | &quot;INVALID&quot;
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **allowPartialPeriodInterestCalcualtion** | **kotlin.Boolean** |  |  [optional] |
+| **amortizationMethod** | [**inline**](#AmortizationMethod) |  |  [optional] |
+| **annualNominalInterestRate** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **arrearsTolerance** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional] |
+| **disableScheduleExtensionForDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **disbursedAmountPercentageForDownPayment** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **enableAutoRepaymentForDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **enableDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **equalAmortization** | **kotlin.Boolean** |  |  [optional] |
+| **graceOnArrearsAgeing** | **kotlin.Int** |  |  [optional] |
+| **graceOnDueDate** | **kotlin.Int** |  |  [optional] |
+| **graceOnInterestPayment** | **kotlin.Int** |  |  [optional] |
+| **graceOnPrincipalPayment** | **kotlin.Int** |  |  [optional] |
+| **inArrearsTolerance** | [**Money**](Money.md) |  |  [optional] |
+| **interestCalculationPeriodMethod** | [**inline**](#InterestCalculationPeriodMethod) |  |  [optional] |
+| **interestMethod** | [**inline**](#InterestMethod) |  |  [optional] |
+| **interestPeriodFrequencyType** | [**inline**](#InterestPeriodFrequencyType) |  |  [optional] |
+| **interestRecalculationEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **loanScheduleProcessingType** | [**inline**](#LoanScheduleProcessingType) |  |  [optional] |
+| **loanScheduleType** | [**inline**](#LoanScheduleType) |  |  [optional] |
+| **nominalInterestRatePerPeriod** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **numberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **principal** | [**Money**](Money.md) |  |  [optional] |
+| **repayEvery** | **kotlin.Int** |  |  [optional] |
+| **repaymentPeriodFrequencyType** | [**inline**](#RepaymentPeriodFrequencyType) |  |  [optional] |
 
 
-
-## Enum: InterestMethodEnum
-
-Name | Value
----- | -----
-DECLINING_BALANCE | &quot;DECLINING_BALANCE&quot;
-FLAT | &quot;FLAT&quot;
-INVALID | &quot;INVALID&quot;
+<a id="AmortizationMethod"></a>
+## Enum: amortizationMethod
+| Name | Value |
+| ---- | ----- |
+| amortizationMethod | EQUAL_PRINCIPAL, EQUAL_INSTALLMENTS, INVALID |
 
 
-
-## Enum: InterestCalculationPeriodMethodEnum
-
-Name | Value
----- | -----
-DAILY | &quot;DAILY&quot;
-SAME_AS_REPAYMENT_PERIOD | &quot;SAME_AS_REPAYMENT_PERIOD&quot;
-INVALID | &quot;INVALID&quot;
+<a id="InterestCalculationPeriodMethod"></a>
+## Enum: interestCalculationPeriodMethod
+| Name | Value |
+| ---- | ----- |
+| interestCalculationPeriodMethod | DAILY, SAME_AS_REPAYMENT_PERIOD, INVALID |
 
 
-
-## Enum: RepaymentPeriodFrequencyTypeEnum
-
-Name | Value
----- | -----
-DAYS | &quot;DAYS&quot;
-WEEKS | &quot;WEEKS&quot;
-MONTHS | &quot;MONTHS&quot;
-YEARS | &quot;YEARS&quot;
-WHOLE_TERM | &quot;WHOLE_TERM&quot;
-INVALID | &quot;INVALID&quot;
+<a id="InterestMethod"></a>
+## Enum: interestMethod
+| Name | Value |
+| ---- | ----- |
+| interestMethod | DECLINING_BALANCE, FLAT, INVALID |
 
 
+<a id="InterestPeriodFrequencyType"></a>
+## Enum: interestPeriodFrequencyType
+| Name | Value |
+| ---- | ----- |
+| interestPeriodFrequencyType | DAYS, WEEKS, MONTHS, YEARS, WHOLE_TERM, INVALID |
 
-## Enum: AmortizationMethodEnum
 
-Name | Value
----- | -----
-EQUAL_PRINCIPAL | &quot;EQUAL_PRINCIPAL&quot;
-EQUAL_INSTALLMENTS | &quot;EQUAL_INSTALLMENTS&quot;
-INVALID | &quot;INVALID&quot;
+<a id="LoanScheduleProcessingType"></a>
+## Enum: loanScheduleProcessingType
+| Name | Value |
+| ---- | ----- |
+| loanScheduleProcessingType | HORIZONTAL, VERTICAL |
+
+
+<a id="LoanScheduleType"></a>
+## Enum: loanScheduleType
+| Name | Value |
+| ---- | ----- |
+| loanScheduleType | CUMULATIVE, PROGRESSIVE |
+
+
+<a id="RepaymentPeriodFrequencyType"></a>
+## Enum: repaymentPeriodFrequencyType
+| Name | Value |
+| ---- | ----- |
+| repaymentPeriodFrequencyType | DAYS, WEEKS, MONTHS, YEARS, WHOLE_TERM, INVALID |
 
 
 

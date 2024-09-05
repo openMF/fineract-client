@@ -1,32 +1,24 @@
 
-
 # PutTellersRequest
 
-PutTellersRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
-**status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **status** | [**inline**](#Status) |  |  [optional] |
 
 
-## Enum: StatusEnum
-
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-PENDING | &quot;PENDING&quot;
-ACTIVE | &quot;ACTIVE&quot;
-INACTIVE | &quot;INACTIVE&quot;
-CLOSED | &quot;CLOSED&quot;
+<a id="Status"></a>
+## Enum: status
+| Name | Value |
+| ---- | ----- |
+| status | INVALID, PENDING, ACTIVE, INACTIVE, CLOSED |
 
 
 

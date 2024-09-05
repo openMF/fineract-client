@@ -1,26 +1,24 @@
 
-
 # GetAccountTransfersTemplateRefundByTransferFromClient
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
-**status** | [**GetAccountTransfersStatus**](GetAccountTransfersStatus.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**activationDate** | [**Date**](Date.md) |  |  [optional]
-**firstname** | **String** |  |  [optional]
-**lastname** | **String** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**gender** | [**Object**](.md) |  |  [optional]
-**clientType** | [**Object**](.md) |  |  [optional]
-**clientClassification** | [**Object**](.md) |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**timeline** | [**GetAccountTransfersTimeline**](GetAccountTransfersTimeline.md) |  |  [optional]
-**groups** | [**Object**](.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **activationDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **clientClassification** | [**kotlin.Any**](.md) |  |  [optional] |
+| **clientType** | [**kotlin.Any**](.md) |  |  [optional] |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **gender** | [**kotlin.Any**](.md) |  |  [optional] |
+| **groups** | [**kotlin.Any**](.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lastname** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **status** | [**GetAccountTransfersStatus**](GetAccountTransfersStatus.md) |  |  [optional] |
+| **timeline** | [**GetAccountTransfersTimeline**](GetAccountTransfersTimeline.md) |  |  [optional] |
 
 
 

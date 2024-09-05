@@ -1,12 +1,10 @@
 
-
 # PutFinancialActivityAccountscommentsSwagger
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**glAccountId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **glAccountId** | **kotlin.Long** |  |  [optional] |
 
 
 

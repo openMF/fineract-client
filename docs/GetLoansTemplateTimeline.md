@@ -1,12 +1,10 @@
 
-
 # GetLoansTemplateTimeline
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**expectedDisbursementDate** | [**Date**](Date.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **expectedDisbursementDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

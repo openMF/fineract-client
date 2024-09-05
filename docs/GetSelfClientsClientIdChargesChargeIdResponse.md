@@ -1,29 +1,26 @@
 
-
 # GetSelfClientsClientIdChargesChargeIdResponse
 
-GetSelfClientsClientIdChargesChargeIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**chargeId** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**chargeTimeType** | [**GetSelfClientsChargeTimeType**](GetSelfClientsChargeTimeType.md) |  |  [optional]
-**dueDate** | [**Date**](Date.md) |  |  [optional]
-**chargeCalculationType** | [**GetSelfClientsChargeCalculationType**](GetSelfClientsChargeCalculationType.md) |  |  [optional]
-**currency** | [**GetSelfClientsSavingsAccountsCurrency**](GetSelfClientsSavingsAccountsCurrency.md) |  |  [optional]
-**amount** | **Float** |  |  [optional]
-**amountPaid** | **Float** |  |  [optional]
-**amountWaived** | **Float** |  |  [optional]
-**amountWrittenOff** | **Float** |  |  [optional]
-**amountOutstanding** | **Float** |  |  [optional]
-**penalty** | **Boolean** |  |  [optional]
-**isActive** | **Boolean** |  |  [optional]
-**isPaid** | **Boolean** |  |  [optional]
-**isWaived** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Float** |  |  [optional] |
+| **amountOutstanding** | **kotlin.Float** |  |  [optional] |
+| **amountPaid** | **kotlin.Float** |  |  [optional] |
+| **amountWaived** | **kotlin.Float** |  |  [optional] |
+| **amountWrittenOff** | **kotlin.Float** |  |  [optional] |
+| **chargeCalculationType** | [**GetSelfClientsChargeCalculationType**](GetSelfClientsChargeCalculationType.md) |  |  [optional] |
+| **chargeId** | **kotlin.Int** |  |  [optional] |
+| **chargeTimeType** | [**GetSelfClientsChargeTimeType**](GetSelfClientsChargeTimeType.md) |  |  [optional] |
+| **clientId** | **kotlin.Int** |  |  [optional] |
+| **currency** | [**GetSelfClientsSavingsAccountsCurrency**](GetSelfClientsSavingsAccountsCurrency.md) |  |  [optional] |
+| **dueDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **isPaid** | **kotlin.Boolean** |  |  [optional] |
+| **isWaived** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **penalty** | **kotlin.Boolean** |  |  [optional] |
 
 
 

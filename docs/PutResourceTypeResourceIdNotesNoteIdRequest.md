@@ -1,13 +1,10 @@
 
-
 # PutResourceTypeResourceIdNotesNoteIdRequest
 
-PutResourceTypeResourceIdNotesNoteIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**note** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **note** | **kotlin.String** |  |  [optional] |
 
 
 

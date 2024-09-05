@@ -1,24 +1,21 @@
 
-
 # PostRecurringDepositAccountsRequest
 
-PostRecurringDepositAccountsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**clientId** | **Integer** |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**submittedOnDate** | **String** |  |  [optional]
-**depositPeriod** | **Integer** |  |  [optional]
-**depositPeriodFrequencyId** | **Integer** |  |  [optional]
-**depositAmount** | **Float** |  |  [optional]
-**isCalendarInherited** | **Boolean** |  |  [optional]
-**recurringFrequency** | **Integer** |  |  [optional]
-**recurringFrequencyType** | **Integer** |  |  [optional]
-**mandatoryRecommendedDepositAmount** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **depositAmount** | **kotlin.Float** |  |  [optional] |
+| **depositPeriod** | **kotlin.Int** |  |  [optional] |
+| **depositPeriodFrequencyId** | **kotlin.Int** |  |  [optional] |
+| **isCalendarInherited** | **kotlin.Boolean** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **mandatoryRecommendedDepositAmount** | **kotlin.Long** |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **recurringFrequency** | **kotlin.Int** |  |  [optional] |
+| **recurringFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **submittedOnDate** | **kotlin.String** |  |  [optional] |
 
 
 

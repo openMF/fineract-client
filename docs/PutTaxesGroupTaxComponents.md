@@ -1,14 +1,12 @@
 
-
 # PutTaxesGroupTaxComponents
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**taxComponentId** | **Integer** |  |  [optional]
-**endDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **endDate** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **taxComponentId** | **kotlin.Long** |  |  [optional] |
 
 
 

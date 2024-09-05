@@ -1,19 +1,16 @@
 
-
 # PostCollectionSheetRequest
 
-PostCollectionSheetRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**dateFormat** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**transactionDate** | **String** |  |  [optional]
-**actualDisbursementDate** | **String** |  |  [optional]
-**bulkDisbursementTransactions** | **List&lt;Integer&gt;** |  |  [optional]
-**bulkRepaymentTransactions** | [**PostCollectionSheetBulkRepaymentTransactions**](PostCollectionSheetBulkRepaymentTransactions.md) |  |  [optional]
-**bulkSavingsDueTransactions** | **List&lt;Integer&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **actualDisbursementDate** | **kotlin.String** |  |  [optional] |
+| **bulkDisbursementTransactions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **bulkRepaymentTransactions** | [**PostCollectionSheetBulkRepaymentTransactions**](PostCollectionSheetBulkRepaymentTransactions.md) |  |  [optional] |
+| **bulkSavingsDueTransactions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **transactionDate** | **kotlin.String** |  |  [optional] |
 
 
 

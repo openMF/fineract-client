@@ -1,13 +1,10 @@
 
-
 # PostJournalEntriesTransactionIdResponse
 
-PostJournalEntriesTransactionIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** | 1 |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **officeId** | **kotlin.Long** | 1 |  [optional] |
 
 
 

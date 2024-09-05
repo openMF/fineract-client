@@ -1,0 +1,10 @@
+
+# PostDelinquencyRangeResponse
+
+## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
+
+
+

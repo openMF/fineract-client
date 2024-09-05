@@ -1,13 +1,11 @@
 
-
 # GeoCodeData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**latitude** | **String** |  | 
-**longitude** | **String** |  | 
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **latitude** | **kotlin.String** |  |  |
+| **longitude** | **kotlin.String** |  |  |
 
 
 

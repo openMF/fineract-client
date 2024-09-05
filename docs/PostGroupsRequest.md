@@ -1,15 +1,12 @@
 
-
 # PostGroupsRequest
 
-PostGroupsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
 
 
 

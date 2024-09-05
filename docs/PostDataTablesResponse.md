@@ -1,13 +1,10 @@
 
-
 # PostDataTablesResponse
 
-PostDataTablesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceIdentifier** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceIdentifier** | **kotlin.String** |  |  [optional] |
 
 
 

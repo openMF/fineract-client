@@ -1,21 +1,22 @@
 
-
 # PostUsersRequest
 
-PostUsersRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | **String** |  |  [optional]
-**firstname** | **String** |  |  [optional]
-**lastname** | **String** |  |  [optional]
-**email** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**staffId** | **Long** |  |  [optional]
-**roles** | **String** |  |  [optional]
-**sendPasswordToEmail** | **Boolean** |  |  [optional]
-**isSelfServiceUser** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clients** | **kotlin.collections.List&lt;kotlin.Long&gt;** |  |  [optional] |
+| **email** | **kotlin.String** |  |  [optional] |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **isSelfServiceUser** | **kotlin.Boolean** |  |  [optional] |
+| **lastname** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **password** | **kotlin.String** |  |  [optional] |
+| **passwordNeverExpires** | **kotlin.Boolean** |  |  [optional] |
+| **repeatPassword** | **kotlin.String** |  |  [optional] |
+| **roles** | **kotlin.collections.List&lt;kotlin.Long&gt;** |  |  [optional] |
+| **sendPasswordToEmail** | **kotlin.Boolean** |  |  [optional] |
+| **staffId** | **kotlin.Long** |  |  [optional] |
+| **username** | **kotlin.String** |  |  [optional] |
 
 
 

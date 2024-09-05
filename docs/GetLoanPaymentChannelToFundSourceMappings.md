@@ -1,13 +1,11 @@
 
-
 # GetLoanPaymentChannelToFundSourceMappings
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**paymentType** | [**GetLoanPaymentType**](GetLoanPaymentType.md) |  |  [optional]
-**fundSourceAccount** | [**GetLoanFundSourceAccount**](GetLoanFundSourceAccount.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **fundSourceAccountId** | **kotlin.Long** |  |  [optional] |
+| **paymentTypeId** | **kotlin.Long** |  |  [optional] |
 
 
 

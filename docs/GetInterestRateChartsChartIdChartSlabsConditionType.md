@@ -1,14 +1,12 @@
 
-
 # GetInterestRateChartsChartIdChartSlabsConditionType
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**code** | **Integer** |  |  [optional]
-**description** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.Int** |  |  [optional] |
+| **description** | **kotlin.Int** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
 
 
 

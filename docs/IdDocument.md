@@ -1,15 +1,13 @@
 
-
 # IdDocument
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**idType** | **String** |  |  [optional]
-**idNumber** | **String** |  |  [optional]
-**issuerCountry** | **String** |  |  [optional]
-**otherIdDescription** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **idNumber** | **kotlin.String** |  |  [optional] |
+| **idType** | **kotlin.String** |  |  [optional] |
+| **issuerCountry** | **kotlin.String** |  |  [optional] |
+| **otherIdDescription** | **kotlin.String** |  |  [optional] |
 
 
 

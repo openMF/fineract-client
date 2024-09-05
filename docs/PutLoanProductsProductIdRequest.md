@@ -1,14 +1,114 @@
 
-
 # PutLoanProductsProductIdRequest
 
-PutLoanProductsProductIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**principal** | **Double** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountMovesOutOfNPAOnlyOnArrearsCompletion** | **kotlin.Boolean** |  |  [optional] |
+| **accountingRule** | **kotlin.Int** |  |  [optional] |
+| **allowApprovedDisbursedAmountsOverApplied** | **kotlin.Boolean** |  |  [optional] |
+| **allowAttributeOverrides** | [**AllowAttributeOverrides**](AllowAttributeOverrides.md) |  |  [optional] |
+| **allowPartialPeriodInterestCalcualtion** | **kotlin.Boolean** |  |  [optional] |
+| **allowVariableInstallments** | **kotlin.Boolean** |  |  [optional] |
+| **amortizationType** | **kotlin.Int** |  |  [optional] |
+| **canDefineInstallmentAmount** | **kotlin.Boolean** |  |  [optional] |
+| **canUseForTopup** | **kotlin.Boolean** |  |  [optional] |
+| **chargeOffExpenseAccountId** | **kotlin.Long** |  |  [optional] |
+| **chargeOffFraudExpenseAccountId** | **kotlin.Long** |  |  [optional] |
+| **charges** | [**kotlin.collections.List&lt;ChargeData&gt;**](ChargeData.md) |  |  [optional] |
+| **closeDate** | **kotlin.String** |  |  [optional] |
+| **currencyCode** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **daysInMonthType** | **kotlin.Long** |  |  [optional] |
+| **daysInYearType** | **kotlin.Long** |  |  [optional] |
+| **delinquencyBucketId** | **kotlin.Long** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **digitsAfterDecimal** | **kotlin.Int** |  |  [optional] |
+| **disableScheduleExtensionForDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **disallowExpectedDisbursements** | **kotlin.Boolean** |  |  [optional] |
+| **disbursedAmountPercentageForDownPayment** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **dueDaysForRepaymentEvent** | **kotlin.Int** |  |  [optional] |
+| **enableAutoRepaymentForDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **enableDownPayment** | **kotlin.Boolean** |  |  [optional] |
+| **enableInstallmentLevelDelinquency** | **kotlin.Boolean** |  |  [optional] |
+| **feeToIncomeAccountMappings** | [**kotlin.collections.List&lt;GetLoanFeeToIncomeAccountMappings&gt;**](GetLoanFeeToIncomeAccountMappings.md) |  |  [optional] |
+| **fixedPrincipalPercentagePerInstallment** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **fundId** | **kotlin.Long** |  |  [optional] |
+| **fundSourceAccountId** | **kotlin.Long** |  |  [optional] |
+| **goodwillCreditAccountId** | **kotlin.Long** |  |  [optional] |
+| **graceOnArrearsAgeing** | **kotlin.Int** |  |  [optional] |
+| **graceOnInterestPayment** | **kotlin.Int** |  |  [optional] |
+| **graceOnPrincipalPayment** | **kotlin.Int** |  |  [optional] |
+| **holdGuaranteeFunds** | **kotlin.Boolean** |  |  [optional] |
+| **inArrearsTolerance** | **kotlin.Int** |  |  [optional] |
+| **inMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **includeInBorrowerCycle** | **kotlin.Boolean** |  |  [optional] |
+| **incomeFromChargeOffFeesAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromChargeOffInterestAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromChargeOffPenaltyAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromFeeAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromGoodwillCreditFeesAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromGoodwillCreditInterestAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromGoodwillCreditPenaltyAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromPenaltyAccountId** | **kotlin.Long** |  |  [optional] |
+| **incomeFromRecoveryAccountId** | **kotlin.Long** |  |  [optional] |
+| **installmentAmountInMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationPeriodType** | **kotlin.Int** |  |  [optional] |
+| **interestOnLoanAccountId** | **kotlin.Long** |  |  [optional] |
+| **interestRateFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **interestRatePerPeriod** | **kotlin.Double** |  |  [optional] |
+| **interestRateVariationsForBorrowerCycle** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **interestRecalculationCompoundingMethod** | **kotlin.Int** |  |  [optional] |
+| **interestType** | **kotlin.Int** |  |  [optional] |
+| **isEqualAmortization** | **kotlin.Boolean** |  |  [optional] |
+| **isInterestRecalculationEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **isLinkedToFloatingInterestRates** | **kotlin.Boolean** |  |  [optional] |
+| **loanPortfolioAccountId** | **kotlin.Long** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **maxInterestRatePerPeriod** | **kotlin.Double** |  |  [optional] |
+| **maxNumberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **maxPrincipal** | **kotlin.Double** |  |  [optional] |
+| **maxTrancheCount** | **kotlin.Int** |  |  [optional] |
+| **minInterestRatePerPeriod** | **kotlin.Double** |  |  [optional] |
+| **minNumberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **minPrincipal** | **kotlin.Double** |  |  [optional] |
+| **minimumDaysBetweenDisbursalAndFirstRepayment** | **kotlin.Int** |  |  [optional] |
+| **multiDisburseLoan** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **numberOfRepaymentVariationsForBorrowerCycle** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **numberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **outstandingLoanBalance** | **kotlin.Double** |  |  [optional] |
+| **overAppliedCalculationType** | **kotlin.String** |  |  [optional] |
+| **overAppliedNumber** | **kotlin.Int** |  |  [optional] |
+| **overDueDaysForRepaymentEvent** | **kotlin.Int** |  |  [optional] |
+| **overdueDaysForNPA** | **kotlin.Int** |  |  [optional] |
+| **overpaymentLiabilityAccountId** | **kotlin.Long** |  |  [optional] |
+| **paymentAllocation** | [**kotlin.collections.List&lt;AdvancedPaymentData&gt;**](AdvancedPaymentData.md) |  |  [optional] |
+| **paymentChannelToFundSourceMappings** | [**kotlin.collections.List&lt;GetLoanPaymentChannelToFundSourceMappings&gt;**](GetLoanPaymentChannelToFundSourceMappings.md) |  |  [optional] |
+| **penaltyToIncomeAccountMappings** | [**kotlin.collections.List&lt;ChargeToGLAccountMapper&gt;**](ChargeToGLAccountMapper.md) |  |  [optional] |
+| **preClosureInterestCalculationStrategy** | **kotlin.Int** |  |  [optional] |
+| **principal** | **kotlin.Double** |  |  [optional] |
+| **principalThresholdForLastInstallment** | **kotlin.Int** |  |  [optional] |
+| **principalVariationsForBorrowerCycle** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **rates** | [**kotlin.collections.List&lt;RateData&gt;**](RateData.md) |  |  [optional] |
+| **recalculationCompoundingFrequencyInterval** | **kotlin.Int** |  |  [optional] |
+| **recalculationCompoundingFrequencyOnDayType** | **kotlin.Int** |  |  [optional] |
+| **recalculationCompoundingFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **recalculationRestFrequencyInterval** | **kotlin.Int** |  |  [optional] |
+| **recalculationRestFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **receivableFeeAccountId** | **kotlin.Long** |  |  [optional] |
+| **receivableInterestAccountId** | **kotlin.Long** |  |  [optional] |
+| **receivablePenaltyAccountId** | **kotlin.Long** |  |  [optional] |
+| **repaymentEvery** | **kotlin.Int** |  |  [optional] |
+| **repaymentFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **repaymentStartDateType** | **kotlin.Int** |  |  [optional] |
+| **rescheduleStrategyMethod** | **kotlin.Int** |  |  [optional] |
+| **shortName** | **kotlin.String** |  |  [optional] |
+| **startDate** | **kotlin.String** |  |  [optional] |
+| **transactionProcessingStrategyCode** | **kotlin.String** |  |  [optional] |
+| **transfersInSuspenseAccountId** | **kotlin.Long** |  |  [optional] |
+| **useBorrowerCycle** | **kotlin.Boolean** |  |  [optional] |
+| **writeOffAccountId** | **kotlin.Long** |  |  [optional] |
 
 
 

@@ -1,15 +1,13 @@
 
-
 # PostCollectionSheetChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**loanTransactions** | **List&lt;Integer&gt;** |  |  [optional]
-**savingsTransactions** | **List&lt;Integer&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **savingsTransactions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **loanTransactions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

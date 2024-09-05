@@ -1,16 +1,13 @@
 
-
 # GetPasswordPreferencesTemplateResponse
 
-GetPasswordPreferencesTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**key** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **key** | **kotlin.String** |  |  [optional] |
 
 
 

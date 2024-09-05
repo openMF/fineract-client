@@ -1,17 +1,15 @@
 
-
 # GetFixedDepositAccountsChartSlabs
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**periodType** | [**GetFixedDepositAccountsPeriodType**](GetFixedDepositAccountsPeriodType.md) |  |  [optional]
-**fromPeriod** | **Integer** |  |  [optional]
-**toPeriod** | **Integer** |  |  [optional]
-**annualInterestRate** | **Double** |  |  [optional]
-**currency** | [**GetFixedDepositAccountsAccountChartCurrency**](GetFixedDepositAccountsAccountChartCurrency.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **annualInterestRate** | **kotlin.Double** |  |  [optional] |
+| **currency** | [**GetFixedDepositAccountsAccountChartCurrency**](GetFixedDepositAccountsAccountChartCurrency.md) |  |  [optional] |
+| **fromPeriod** | **kotlin.Int** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **periodType** | [**GetFixedDepositAccountsPeriodType**](GetFixedDepositAccountsPeriodType.md) |  |  [optional] |
+| **toPeriod** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,18 +1,16 @@
 
-
 # GetFixedDepositProductsProductIdChartSlabs
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**description** | **String** |  |  [optional]
-**periodType** | [**GetFixedDepositProductsProductIdPeriodType**](GetFixedDepositProductsProductIdPeriodType.md) |  |  [optional]
-**fromPeriod** | **Integer** |  |  [optional]
-**toPeriod** | **Integer** |  |  [optional]
-**annualInterestRate** | **Double** |  |  [optional]
-**currency** | [**GetFixedDepositProductsProductIdCurrency**](GetFixedDepositProductsProductIdCurrency.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **annualInterestRate** | **kotlin.Double** |  |  [optional] |
+| **currency** | [**GetFixedDepositProductsProductIdCurrency**](GetFixedDepositProductsProductIdCurrency.md) |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **fromPeriod** | **kotlin.Int** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **periodType** | [**GetFixedDepositProductsProductIdPeriodType**](GetFixedDepositProductsProductIdPeriodType.md) |  |  [optional] |
+| **toPeriod** | **kotlin.Int** |  |  [optional] |
 
 
 

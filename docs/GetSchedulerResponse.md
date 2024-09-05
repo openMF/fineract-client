@@ -1,13 +1,10 @@
 
-
 # GetSchedulerResponse
 
-GetSchedulerResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**active** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
 
 
 

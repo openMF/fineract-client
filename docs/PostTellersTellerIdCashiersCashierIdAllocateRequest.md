@@ -1,18 +1,15 @@
 
-
 # PostTellersTellerIdCashiersCashierIdAllocateRequest
 
-PostTellersTellerIdCashiersCashierIdAllocateRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currencyCode** | **String** |  |  [optional]
-**txnAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**txnNote** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**txnDate** | [**Date**](Date.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **currencyCode** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **txnAmount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **txnDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **txnNote** | **kotlin.String** |  |  [optional] |
 
 
 

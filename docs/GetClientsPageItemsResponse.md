@@ -1,19 +1,18 @@
 
-
 # GetClientsPageItemsResponse
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **String** |  |  [optional]
-**status** | [**GetClientStatus**](GetClientStatus.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**fullname** | **String** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.String** |  |  [optional] |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **emailAddress** | **kotlin.String** |  |  [optional] |
+| **fullname** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **status** | [**GetClientStatus**](GetClientStatus.md) |  |  [optional] |
 
 
 

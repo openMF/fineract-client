@@ -1,500 +1,310 @@
 # DefaultApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activate**](DefaultApi.md#activate) | **POST** email/campaign/{resourceId} | 
-[**addCreditReport**](DefaultApi.md#addCreditReport) | **POST** creditBureauIntegration/addCreditReport | 
-[**addNewClientImage1**](DefaultApi.md#addNewClientImage1) | **POST** {entity}/{entityId}/images | 
-[**create1**](DefaultApi.md#create1) | **POST** email | 
-[**createCampaign**](DefaultApi.md#createCampaign) | **POST** email/campaign | 
-[**createCampaign1**](DefaultApi.md#createCampaign1) | **POST** smscampaigns | Create a SMS Campaign
-[**delete1**](DefaultApi.md#delete1) | **DELETE** email/{resourceId} | 
-[**delete2**](DefaultApi.md#delete2) | **DELETE** email/campaign/{resourceId} | 
-[**delete3**](DefaultApi.md#delete3) | **DELETE** smscampaigns/{campaignId} | Delete a SMS Campaign
-[**delete8**](DefaultApi.md#delete8) | **DELETE** officetransactions/{transactionId} | 
-[**deleteClientImage**](DefaultApi.md#deleteClientImage) | **DELETE** {entity}/{entityId}/images | 
-[**deleteCreditReport**](DefaultApi.md#deleteCreditReport) | **DELETE** creditBureauIntegration/deleteCreditReport/{creditBureauId} | 
-[**fetchCreditReport**](DefaultApi.md#fetchCreditReport) | **POST** creditBureauIntegration/creditReport | 
-[**get**](DefaultApi.md#get) | **GET** echo | 
-[**getSavedCreditReport**](DefaultApi.md#getSavedCreditReport) | **GET** creditBureauIntegration/creditReport/{creditBureauId} | 
-[**handleCommands**](DefaultApi.md#handleCommands) | **POST** smscampaigns/{campaignId} | SMS Campaign
-[**newOfficeTransactionDetails**](DefaultApi.md#newOfficeTransactionDetails) | **GET** officetransactions/template | 
-[**preview**](DefaultApi.md#preview) | **POST** email/campaign/preview | 
-[**preview1**](DefaultApi.md#preview1) | **POST** smscampaigns/preview | 
-[**retrieveAll5**](DefaultApi.md#retrieveAll5) | **GET** email/configuration | 
-[**retrieveAll9**](DefaultApi.md#retrieveAll9) | **GET** twofactor/configure | 
-[**retrieveAllCampaign**](DefaultApi.md#retrieveAllCampaign) | **GET** email/campaign | 
-[**retrieveAllEmailByStatus**](DefaultApi.md#retrieveAllEmailByStatus) | **GET** email/messageByStatus | 
-[**retrieveAllEmails**](DefaultApi.md#retrieveAllEmails) | **GET** email | 
-[**retrieveAllEmails1**](DefaultApi.md#retrieveAllEmails1) | **GET** smscampaigns | List SMS Campaigns
-[**retrieveCampaign**](DefaultApi.md#retrieveCampaign) | **GET** smscampaigns/{resourceId} | Retrieve a SMS Campaign
-[**retrieveFailedEmail**](DefaultApi.md#retrieveFailedEmail) | **GET** email/failedEmail | 
-[**retrieveImage**](DefaultApi.md#retrieveImage) | **GET** {entity}/{entityId}/images | 
-[**retrieveOfficeTransactions**](DefaultApi.md#retrieveOfficeTransactions) | **GET** officetransactions | 
-[**retrieveOne1**](DefaultApi.md#retrieveOne1) | **GET** email/{resourceId} | 
-[**retrieveOneCampaign**](DefaultApi.md#retrieveOneCampaign) | **GET** email/campaign/{resourceId} | 
-[**retrieveOneTemplate**](DefaultApi.md#retrieveOneTemplate) | **GET** email/campaign/template/{resourceId} | 
-[**retrievePendingEmail**](DefaultApi.md#retrievePendingEmail) | **GET** email/pendingEmail | 
-[**retrieveSentEmail**](DefaultApi.md#retrieveSentEmail) | **GET** email/sentEmail | 
-[**saveCreditReport**](DefaultApi.md#saveCreditReport) | **POST** creditBureauIntegration/saveCreditReport | 
-[**template1**](DefaultApi.md#template1) | **GET** email/campaign/template | 
-[**template2**](DefaultApi.md#template2) | **GET** smscampaigns/template | Retrieve a SMS Campaign
-[**transferMoneyFrom**](DefaultApi.md#transferMoneyFrom) | **POST** officetransactions | 
-[**update2**](DefaultApi.md#update2) | **PUT** email/{resourceId} | 
-[**updateCampaign**](DefaultApi.md#updateCampaign) | **PUT** email/campaign/{resourceId} | 
-[**updateCampaign1**](DefaultApi.md#updateCampaign1) | **PUT** smscampaigns/{campaignId} | Update a Campaign
-[**updateClientImage1**](DefaultApi.md#updateClientImage1) | **PUT** {entity}/{entityId}/images | 
-[**updateConfiguration**](DefaultApi.md#updateConfiguration) | **PUT** email/configuration | 
-[**updateConfiguration3**](DefaultApi.md#updateConfiguration3) | **PUT** twofactor/configure | 
-
-
-
-## activate
-
-> String activate(resourceId, command, body)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        String command = "command_example"; // String | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.activate(resourceId, command, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#activate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**activate**](DefaultApi.md#activate) | **POST** v1/email/campaign/{resourceId} |  |
+| [**addCreditReport**](DefaultApi.md#addCreditReport) | **POST** v1/creditBureauIntegration/addCreditReport |  |
+| [**addNewClientImage1**](DefaultApi.md#addNewClientImage1) | **POST** v1/{entity}/{entityId}/images |  |
+| [**create1**](DefaultApi.md#create1) | **POST** v1/email |  |
+| [**createCampaign**](DefaultApi.md#createCampaign) | **POST** v1/email/campaign |  |
+| [**createCampaign1**](DefaultApi.md#createCampaign1) | **POST** v1/smscampaigns | Create a SMS Campaign |
+| [**delete1**](DefaultApi.md#delete1) | **DELETE** v1/email/{resourceId} |  |
+| [**delete2**](DefaultApi.md#delete2) | **DELETE** v1/email/campaign/{resourceId} |  |
+| [**delete3**](DefaultApi.md#delete3) | **DELETE** v1/smscampaigns/{campaignId} | Delete a SMS Campaign |
+| [**delete8**](DefaultApi.md#delete8) | **DELETE** v1/officetransactions/{transactionId} |  |
+| [**deleteClientImage**](DefaultApi.md#deleteClientImage) | **DELETE** v1/{entity}/{entityId}/images |  |
+| [**deleteCreditReport**](DefaultApi.md#deleteCreditReport) | **DELETE** v1/creditBureauIntegration/deleteCreditReport/{creditBureauId} |  |
+| [**fetchCreditReport**](DefaultApi.md#fetchCreditReport) | **POST** v1/creditBureauIntegration/creditReport |  |
+| [**get**](DefaultApi.md#get) | **GET** v1/echo |  |
+| [**getAdvancedPaymentAllocationRulesOfLoan**](DefaultApi.md#getAdvancedPaymentAllocationRulesOfLoan) | **GET** v1/internal/loan/{loanId}/advanced-payment-allocation-rules |  |
+| [**getClientAuditFields**](DefaultApi.md#getClientAuditFields) | **GET** v1/internal/client/{clientId}/audit |  |
+| [**getCobPartitions**](DefaultApi.md#getCobPartitions) | **GET** v1/internal/cob/partitions/{partitionSize} |  |
+| [**getExternalGrammar**](DefaultApi.md#getExternalGrammar) | **GET** application.wadl/{path} |  |
+| [**getLoanAuditFields**](DefaultApi.md#getLoanAuditFields) | **GET** v1/internal/loan/{loanId}/audit |  |
+| [**getLoanTransactionAuditFields**](DefaultApi.md#getLoanTransactionAuditFields) | **GET** v1/internal/loan/{loanId}/transaction/{transactionId}/audit |  |
+| [**getLoansByStatus**](DefaultApi.md#getLoansByStatus) | **GET** v1/internal/loan/status/{statusId} |  |
+| [**getSavedCreditReport**](DefaultApi.md#getSavedCreditReport) | **GET** v1/creditBureauIntegration/creditReport/{creditBureauId} |  |
+| [**getWadl**](DefaultApi.md#getWadl) | **GET** application.wadl |  |
+| [**handleCommands**](DefaultApi.md#handleCommands) | **POST** v1/smscampaigns/{campaignId} | SMS Campaign |
+| [**newOfficeTransactionDetails**](DefaultApi.md#newOfficeTransactionDetails) | **GET** v1/officetransactions/template |  |
+| [**placeLockOnLoanAccount**](DefaultApi.md#placeLockOnLoanAccount) | **POST** v1/internal/loans/{loanId}/place-lock/{lockOwner} |  |
+| [**preview**](DefaultApi.md#preview) | **POST** v1/email/campaign/preview |  |
+| [**preview1**](DefaultApi.md#preview1) | **POST** v1/smscampaigns/preview |  |
+| [**retrieveAll5**](DefaultApi.md#retrieveAll5) | **GET** v1/email/configuration |  |
+| [**retrieveAll9**](DefaultApi.md#retrieveAll9) | **GET** v1/twofactor/configure |  |
+| [**retrieveAllCampaign**](DefaultApi.md#retrieveAllCampaign) | **GET** v1/email/campaign |  |
+| [**retrieveAllEmailByStatus**](DefaultApi.md#retrieveAllEmailByStatus) | **GET** v1/email/messageByStatus |  |
+| [**retrieveAllEmails**](DefaultApi.md#retrieveAllEmails) | **GET** v1/email |  |
+| [**retrieveAllEmails1**](DefaultApi.md#retrieveAllEmails1) | **GET** v1/smscampaigns | List SMS Campaigns |
+| [**retrieveCampaign**](DefaultApi.md#retrieveCampaign) | **GET** v1/smscampaigns/{resourceId} | Retrieve a SMS Campaign |
+| [**retrieveFailedEmail**](DefaultApi.md#retrieveFailedEmail) | **GET** v1/email/failedEmail |  |
+| [**retrieveImage**](DefaultApi.md#retrieveImage) | **GET** v1/{entity}/{entityId}/images |  |
+| [**retrieveOfficeTransactions**](DefaultApi.md#retrieveOfficeTransactions) | **GET** v1/officetransactions |  |
+| [**retrieveOne1**](DefaultApi.md#retrieveOne1) | **GET** v1/email/{resourceId} |  |
+| [**retrieveOneCampaign**](DefaultApi.md#retrieveOneCampaign) | **GET** v1/email/campaign/{resourceId} |  |
+| [**retrieveOneTemplate**](DefaultApi.md#retrieveOneTemplate) | **GET** v1/email/campaign/template/{resourceId} |  |
+| [**retrievePendingEmail**](DefaultApi.md#retrievePendingEmail) | **GET** v1/email/pendingEmail |  |
+| [**retrieveSentEmail**](DefaultApi.md#retrieveSentEmail) | **GET** v1/email/sentEmail |  |
+| [**saveCreditReport**](DefaultApi.md#saveCreditReport) | **POST** v1/creditBureauIntegration/saveCreditReport |  |
+| [**template1**](DefaultApi.md#template1) | **GET** v1/email/campaign/template |  |
+| [**template2**](DefaultApi.md#template2) | **GET** v1/smscampaigns/template | Retrieve a SMS Campaign |
+| [**transferMoneyFrom**](DefaultApi.md#transferMoneyFrom) | **POST** v1/officetransactions |  |
+| [**update2**](DefaultApi.md#update2) | **PUT** v1/email/{resourceId} |  |
+| [**updateCampaign**](DefaultApi.md#updateCampaign) | **PUT** v1/email/campaign/{resourceId} |  |
+| [**updateCampaign1**](DefaultApi.md#updateCampaign1) | **PUT** v1/smscampaigns/{campaignId} | Update a Campaign |
+| [**updateClientImage1**](DefaultApi.md#updateClientImage1) | **PUT** v1/{entity}/{entityId}/images |  |
+| [**updateConfiguration**](DefaultApi.md#updateConfiguration) | **PUT** v1/email/configuration |  |
+| [**updateConfiguration3**](DefaultApi.md#updateConfiguration3) | **PUT** v1/twofactor/configure |  |
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
- **command** | **String**|  | [optional]
- **body** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## addCreditReport
-
-> String addCreditReport(creditBureauId, file)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+val command : kotlin.String = command_example // kotlin.String | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long creditBureauId = 56L; // Long | creditBureauId
-        FormDataContentDisposition file = new FormDataContentDisposition(); // FormDataContentDisposition | 
-        try {
-            String result = apiInstance.addCreditReport(creditBureauId, file);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#addCreditReport");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.activate(resourceId, command, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creditBureauId** | **Long**| creditBureauId | [optional]
- **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md)|  | [optional]
+| **resourceId** | **kotlin.Long**|  | |
+| **command** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: */*
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## addNewClientImage1
-
-> String addNewClientImage1(entity, entityId, contentLength, file)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val creditBureauId : kotlin.Long = 789 // kotlin.Long | creditBureauId
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String entity = "entity_example"; // String | 
-        Long entityId = 56L; // Long | 
-        Long contentLength = 56L; // Long | 
-        FormDataBodyPart file = new FormDataBodyPart(); // FormDataBodyPart | 
-        try {
-            String result = apiInstance.addNewClientImage1(entity, entityId, contentLength, file);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#addNewClientImage1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.addCreditReport(creditBureauId, dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entity** | **String**|  |
- **entityId** | **Long**|  |
- **contentLength** | **Long**|  | [optional]
- **file** | [**FormDataBodyPart**](FormDataBodyPart.md)|  | [optional]
+| **creditBureauId** | **kotlin.Long**| creditBureauId | [optional] |
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## create1
-
-> String create1(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val entity : kotlin.String = entity_example // kotlin.String | 
+val entityId : kotlin.Long = 789 // kotlin.Long | 
+val contentLength : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.create1(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#create1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.addNewClientImage1(entity, entityId, contentLength, dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| **entity** | **kotlin.String**|  | |
+| **entityId** | **kotlin.Long**|  | |
+| **contentLength** | **kotlin.Long**|  | [optional] |
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## createCampaign
-
-> String createCampaign(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.createCampaign(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#createCampaign");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.create1(body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## createCampaign1
 
-> CommandProcessingResult createCampaign1(commandWrapper)
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.createCampaign(body)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 Create a SMS Campaign
 
 Mandatory Fields campaignName, campaignType, triggerType, providerId, runReportId, message  Mandatory Fields for Cash based on selected report id paramValue in json format
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val commandWrapper : CommandWrapper =  // CommandWrapper | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        CommandWrapper commandWrapper = new CommandWrapper(); // CommandWrapper | 
-        try {
-            CommandProcessingResult result = apiInstance.createCampaign1(commandWrapper);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#createCampaign1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : CommandProcessingResult = webService.createCampaign1(commandWrapper)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **commandWrapper** | [**CommandWrapper**](CommandWrapper.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **commandWrapper** | [**CommandWrapper**](CommandWrapper.md)|  | |
 
 ### Return type
 
@@ -502,226 +312,121 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## delete1
-
-> String delete1(resourceId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            String result = apiInstance.delete1(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#delete1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.delete1(resourceId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## delete2
-
-> String delete2(resourceId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            String result = apiInstance.delete2(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#delete2");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.delete2(resourceId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## delete3
-
-> CommandProcessingResult delete3(campaignId)
 
 Delete a SMS Campaign
 
 Note: Only closed SMS Campaigns can be deleted
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val campaignId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long campaignId = 56L; // Long | 
-        try {
-            CommandProcessingResult result = apiInstance.delete3(campaignId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#delete3");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : CommandProcessingResult = webService.delete3(campaignId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaignId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **kotlin.Long**|  | |
 
 ### Return type
 
@@ -729,1453 +434,358 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: */*
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## delete8
-
-> String delete8(transactionId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val transactionId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long transactionId = 56L; // Long | 
-        try {
-            String result = apiInstance.delete8(transactionId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#delete8");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.delete8(transactionId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **transactionId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## deleteClientImage
-
-> String deleteClientImage(entity, entityId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val entity : kotlin.String = entity_example // kotlin.String | 
+val entityId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String entity = "entity_example"; // String | 
-        Long entityId = 56L; // Long | 
-        try {
-            String result = apiInstance.deleteClientImage(entity, entityId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#deleteClientImage");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.deleteClientImage(entity, entityId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entity** | **String**|  |
- **entityId** | **Long**|  |
+| **entity** | **kotlin.String**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **entityId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## deleteCreditReport
-
-> String deleteCreditReport(creditBureauId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val creditBureauId : kotlin.Long = 789 // kotlin.Long | creditBureauId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long creditBureauId = 56L; // Long | creditBureauId
-        try {
-            String result = apiInstance.deleteCreditReport(creditBureauId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#deleteCreditReport");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.deleteCreditReport(creditBureauId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creditBureauId** | **Long**| creditBureauId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **creditBureauId** | **kotlin.Long**| creditBureauId | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## fetchCreditReport
-
-> String fetchCreditReport(requestBody)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.Any = Object // kotlin.Any | Fetch credit report
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Map<String, Object> requestBody = null; // Map<String, Object> | 
-        try {
-            String result = apiInstance.fetchCreditReport(requestBody);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#fetchCreditReport");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.fetchCreditReport(body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **requestBody** | [**Map&lt;String, Object&gt;**](Object.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.Any**| Fetch credit report | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## get
-
-> String get()
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.get();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#get");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.get()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## getSavedCreditReport
-
-> String getSavedCreditReport(creditBureauId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long creditBureauId = 56L; // Long | creditBureauId
-        try {
-            String result = apiInstance.getSavedCreditReport(creditBureauId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getSavedCreditReport");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<AdvancedPaymentData> = webService.getAdvancedPaymentAllocationRulesOfLoan(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creditBureauId** | **Long**| creditBureauId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+[**kotlin.collections.List&lt;AdvancedPaymentData&gt;**](AdvancedPaymentData.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## handleCommands
 
-> CommandProcessingResult handleCommands(campaignId, command)
-
-SMS Campaign
-
-Activates | Deactivates | Reactivates
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val clientId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long campaignId = 56L; // Long | 
-        String command = "command_example"; // String | 
-        try {
-            CommandProcessingResult result = apiInstance.handleCommands(campaignId, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#handleCommands");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getClientAuditFields(clientId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaignId** | **Long**|  |
- **command** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Long**|  | |
 
 ### Return type
 
-[**CommandProcessingResult**](CommandProcessingResult.md)
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## newOfficeTransactionDetails
-
-> String newOfficeTransactionDetails()
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val partitionSize : kotlin.Int = 56 // kotlin.Int | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.newOfficeTransactionDetails();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#newOfficeTransactionDetails");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getCobPartitions(partitionSize)
 }
 ```
 
 ### Parameters
-
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **partitionSize** | **kotlin.Int**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## preview
-
-> String preview(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val path : kotlin.String = path_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.preview(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#preview");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    webService.getExternalGrammar(path)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## preview1
-
-> String preview1(body)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.preview1(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#preview1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAll5
-
-> String retrieveAll5()
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveAll5();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAll5");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAll9
-
-> String retrieveAll9()
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveAll9();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAll9");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAllCampaign
-
-> String retrieveAllCampaign()
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveAllCampaign();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAllCampaign");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAllEmailByStatus
-
-> String retrieveAllEmailByStatus(sqlSearch, offset, limit, status, orderBy, sortOrder, fromDate, toDate, locale, dateFormat)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
-        Integer status = 56; // Integer | 
-        String orderBy = "orderBy_example"; // String | 
-        String sortOrder = "sortOrder_example"; // String | 
-        Object fromDate = null; // Object | 
-        Object toDate = null; // Object | 
-        String locale = "locale_example"; // String | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            String result = apiInstance.retrieveAllEmailByStatus(sqlSearch, offset, limit, status, orderBy, sortOrder, fromDate, toDate, locale, dateFormat);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAllEmailByStatus");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**|  | [optional]
- **offset** | **Integer**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **status** | **Integer**|  | [optional]
- **orderBy** | **String**|  | [optional]
- **sortOrder** | **String**|  | [optional]
- **fromDate** | [**Object**](.md)|  | [optional]
- **toDate** | [**Object**](.md)|  | [optional]
- **locale** | **String**|  | [optional]
- **dateFormat** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAllEmails
-
-> String retrieveAllEmails()
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveAllEmails();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAllEmails");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAllEmails1
-
-> SmsCampaignData retrieveAllEmails1(sqlSearch, offset, limit, orderBy, sortOrder)
-
-List SMS Campaigns
-
-Example Requests:  smscampaigns
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
-        String orderBy = "orderBy_example"; // String | 
-        String sortOrder = "sortOrder_example"; // String | 
-        try {
-            SmsCampaignData result = apiInstance.retrieveAllEmails1(sqlSearch, offset, limit, orderBy, sortOrder);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveAllEmails1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**|  | [optional]
- **offset** | **Integer**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **orderBy** | **String**|  | [optional]
- **sortOrder** | **String**|  | [optional]
-
-### Return type
-
-[**SmsCampaignData**](SmsCampaignData.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveCampaign
-
-> SmsCampaignData retrieveCampaign(resourceId)
-
-Retrieve a SMS Campaign
-
-Example Requests:  smscampaigns/1 
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            SmsCampaignData result = apiInstance.retrieveCampaign(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveCampaign");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
-
-### Return type
-
-[**SmsCampaignData**](SmsCampaignData.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveFailedEmail
-
-> String retrieveFailedEmail(sqlSearch, offset, limit, orderBy, sortOrder)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
-        String orderBy = "orderBy_example"; // String | 
-        String sortOrder = "sortOrder_example"; // String | 
-        try {
-            String result = apiInstance.retrieveFailedEmail(sqlSearch, offset, limit, orderBy, sortOrder);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveFailedEmail");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**|  | [optional]
- **offset** | **Integer**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **orderBy** | **String**|  | [optional]
- **sortOrder** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveImage
-
-> retrieveImage(entity, entityId, maxWidth, maxHeight, output, accept)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String entity = "entity_example"; // String | 
-        Long entityId = 56L; // Long | 
-        Integer maxWidth = 56; // Integer | 
-        Integer maxHeight = 56; // Integer | 
-        String output = "output_example"; // String | 
-        String accept = "accept_example"; // String | 
-        try {
-            apiInstance.retrieveImage(entity, entityId, maxWidth, maxHeight, output, accept);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveImage");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entity** | **String**|  |
- **entityId** | **Long**|  |
- **maxWidth** | **Integer**|  | [optional]
- **maxHeight** | **Integer**|  | [optional]
- **output** | **String**|  | [optional]
- **accept** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **path** | **kotlin.String**|  | |
 
 ### Return type
 
@@ -2183,681 +793,1163 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: application/xml
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveOfficeTransactions
-
-> String retrieveOfficeTransactions()
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveOfficeTransactions();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveOfficeTransactions");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getLoanAuditFields(loanId)
 }
 ```
 
 ### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**|  | |
 
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val transactionId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getLoanTransactionAuditFields(loanId, transactionId)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **transactionId** | **kotlin.Long**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val statusId : kotlin.Int = 56 // kotlin.Int | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getLoansByStatus(statusId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **statusId** | **kotlin.Int**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val creditBureauId : kotlin.Long = 789 // kotlin.Long | creditBureauId
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getSavedCreditReport(creditBureauId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **creditBureauId** | **kotlin.Long**| creditBureauId | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    webService.getWadl()
+}
+```
+
+### Parameters
 This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.sun.wadl+xml, application/xml
 
 
-## retrieveOne1
+SMS Campaign
 
-> String retrieveOne1(resourceId)
-
-
+Activates | Deactivates | Reactivates
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val campaignId : kotlin.Long = 789 // kotlin.Long | 
+val command : kotlin.String = command_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            String result = apiInstance.retrieveOne1(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveOne1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : CommandProcessingResult = webService.handleCommands(campaignId, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
+| **campaignId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+[**CommandProcessingResult**](CommandProcessingResult.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveOneCampaign
-
-> String retrieveOneCampaign(resourceId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            String result = apiInstance.retrieveOneCampaign(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveOneCampaign");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.newOfficeTransactionDetails()
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveOneTemplate
-
-> String retrieveOneTemplate(resourceId)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        try {
-            String result = apiInstance.retrieveOneTemplate(resourceId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveOneTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrievePendingEmail
-
-> String retrievePendingEmail(sqlSearch, offset, limit, orderBy, sortOrder)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
-        String orderBy = "orderBy_example"; // String | 
-        String sortOrder = "sortOrder_example"; // String | 
-        try {
-            String result = apiInstance.retrievePendingEmail(sqlSearch, offset, limit, orderBy, sortOrder);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrievePendingEmail");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**|  | [optional]
- **offset** | **Integer**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **orderBy** | **String**|  | [optional]
- **sortOrder** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveSentEmail
-
-> String retrieveSentEmail(sqlSearch, offset, limit, orderBy, sortOrder)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
-        String orderBy = "orderBy_example"; // String | 
-        String sortOrder = "sortOrder_example"; // String | 
-        try {
-            String result = apiInstance.retrieveSentEmail(sqlSearch, offset, limit, orderBy, sortOrder);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#retrieveSentEmail");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**|  | [optional]
- **offset** | **Integer**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **orderBy** | **String**|  | [optional]
- **sortOrder** | **String**|  | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## saveCreditReport
-
-> String saveCreditReport(creditBureauId, nationalId)
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long creditBureauId = 56L; // Long | creditBureauId
-        String nationalId = "nationalId_example"; // String | nationalId
-        try {
-            String result = apiInstance.saveCreditReport(creditBureauId, nationalId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#saveCreditReport");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creditBureauId** | **Long**| creditBureauId | [optional]
- **nationalId** | **String**| nationalId | [optional]
-
-### Return type
-
-**String**
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## template1
-
-> String template1()
-
-
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            String result = apiInstance.template1();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#template1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## template2
 
-> SmsCampaignData template2()
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val lockOwner : kotlin.String = lockOwner_example // kotlin.String | 
+val body : kotlin.String = body_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    webService.placeLockOnLoanAccount(loanId, lockOwner, body)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**|  | |
+| **lockOwner** | **kotlin.String**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.preview(body)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.preview1(body)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveAll5()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveAll9()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveAllCampaign()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val sqlSearch : kotlin.String = sqlSearch_example // kotlin.String | 
+val offset : kotlin.Int = 56 // kotlin.Int | 
+val limit : kotlin.Int = 56 // kotlin.Int | 
+val status : kotlin.Int = 56 // kotlin.Int | 
+val orderBy : kotlin.String = orderBy_example // kotlin.String | 
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | 
+val fromDate : kotlin.Any = Object // kotlin.Any | 
+val toDate : kotlin.Any = Object // kotlin.Any | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveAllEmailByStatus(sqlSearch, offset, limit, status, orderBy, sortOrder, fromDate, toDate, locale, dateFormat)
+}
+```
+
+### Parameters
+| **sqlSearch** | **kotlin.String**|  | [optional] |
+| **offset** | **kotlin.Int**|  | [optional] |
+| **limit** | **kotlin.Int**|  | [optional] |
+| **status** | **kotlin.Int**|  | [optional] |
+| **orderBy** | **kotlin.String**|  | [optional] |
+| **sortOrder** | **kotlin.String**|  | [optional] |
+| **fromDate** | [**kotlin.Any**](.md)|  | [optional] |
+| **toDate** | [**kotlin.Any**](.md)|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveAllEmails()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+List SMS Campaigns
+
+Example Requests:  smscampaigns
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val offset : kotlin.Int = 56 // kotlin.Int | 
+val limit : kotlin.Int = 56 // kotlin.Int | 
+val orderBy : kotlin.String = orderBy_example // kotlin.String | 
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : SmsCampaignData = webService.retrieveAllEmails1(offset, limit, orderBy, sortOrder)
+}
+```
+
+### Parameters
+| **offset** | **kotlin.Int**|  | [optional] |
+| **limit** | **kotlin.Int**|  | [optional] |
+| **orderBy** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortOrder** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+[**SmsCampaignData**](SmsCampaignData.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve a SMS Campaign
+
+Example Requests:  smscampaigns/1 
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : SmsCampaignData = webService.retrieveCampaign(resourceId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
+
+### Return type
+
+[**SmsCampaignData**](SmsCampaignData.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val sqlSearch : kotlin.String = sqlSearch_example // kotlin.String | 
+val offset : kotlin.Int = 56 // kotlin.Int | 
+val limit : kotlin.Int = 56 // kotlin.Int | 
+val orderBy : kotlin.String = orderBy_example // kotlin.String | 
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveFailedEmail(sqlSearch, offset, limit, orderBy, sortOrder)
+}
+```
+
+### Parameters
+| **sqlSearch** | **kotlin.String**|  | [optional] |
+| **offset** | **kotlin.Int**|  | [optional] |
+| **limit** | **kotlin.Int**|  | [optional] |
+| **orderBy** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortOrder** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val entity : kotlin.String = entity_example // kotlin.String | 
+val entityId : kotlin.Long = 789 // kotlin.Long | 
+val maxWidth : kotlin.Int = 56 // kotlin.Int | 
+val maxHeight : kotlin.Int = 56 // kotlin.Int | 
+val output : kotlin.String = output_example // kotlin.String | 
+val accept : kotlin.String = accept_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    webService.retrieveImage(entity, entityId, maxWidth, maxHeight, output, accept)
+}
+```
+
+### Parameters
+| **entity** | **kotlin.String**|  | |
+| **entityId** | **kotlin.Long**|  | |
+| **maxWidth** | **kotlin.Int**|  | [optional] |
+| **maxHeight** | **kotlin.Int**|  | [optional] |
+| **output** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accept** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveOfficeTransactions()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveOne1(resourceId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveOneCampaign(resourceId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveOneTemplate(resourceId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long**|  | |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val offset : kotlin.Int = 56 // kotlin.Int | 
+val limit : kotlin.Int = 56 // kotlin.Int | 
+val orderBy : kotlin.String = orderBy_example // kotlin.String | 
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrievePendingEmail(offset, limit, orderBy, sortOrder)
+}
+```
+
+### Parameters
+| **offset** | **kotlin.Int**|  | [optional] |
+| **limit** | **kotlin.Int**|  | [optional] |
+| **orderBy** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortOrder** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val offset : kotlin.Int = 56 // kotlin.Int | 
+val limit : kotlin.Int = 56 // kotlin.Int | 
+val orderBy : kotlin.String = orderBy_example // kotlin.String | 
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | 
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveSentEmail(offset, limit, orderBy, sortOrder)
+}
+```
+
+### Parameters
+| **offset** | **kotlin.Int**|  | [optional] |
+| **limit** | **kotlin.Int**|  | [optional] |
+| **orderBy** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortOrder** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val creditBureauId : kotlin.Long = 789 // kotlin.Long | creditBureauId
+val nationalId : kotlin.String = nationalId_example // kotlin.String | nationalId
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.saveCreditReport(creditBureauId, nationalId)
+}
+```
+
+### Parameters
+| **creditBureauId** | **kotlin.Long**| creditBureauId | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nationalId** | **kotlin.String**| nationalId | [optional] |
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.template1()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Retrieve a SMS Campaign
 
 Example Requests:  smscampaigns/1   smscampaigns/1?template&#x3D;true   smscampaigns/template
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            SmsCampaignData result = apiInstance.template2();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#template2");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : SmsCampaignData = webService.template2()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -2866,305 +1958,165 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: */*
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## transferMoneyFrom
-
-> String transferMoneyFrom(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.transferMoneyFrom(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#transferMoneyFrom");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.transferMoneyFrom(body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## update2
-
-> String update2(resourceId, body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.update2(resourceId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#update2");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.update2(resourceId, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
- **body** | **String**|  | [optional]
+| **resourceId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateCampaign
-
-> String updateCampaign(resourceId, body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val resourceId : kotlin.Long = 789 // kotlin.Long | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long resourceId = 56L; // Long | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.updateCampaign(resourceId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#updateCampaign");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.updateCampaign(resourceId, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **Long**|  |
- **body** | **String**|  | [optional]
+| **resourceId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateCampaign1
-
-> CommandProcessingResult updateCampaign1(campaignId, commandWrapper)
 
 Update a Campaign
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val campaignId : kotlin.Long = 789 // kotlin.Long | 
+val commandWrapper : CommandWrapper =  // CommandWrapper | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        Long campaignId = 56L; // Long | 
-        CommandWrapper commandWrapper = new CommandWrapper(); // CommandWrapper | 
-        try {
-            CommandProcessingResult result = apiInstance.updateCampaign1(campaignId, commandWrapper);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#updateCampaign1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : CommandProcessingResult = webService.updateCampaign1(campaignId, commandWrapper)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaignId** | **Long**|  |
- **commandWrapper** | [**CommandWrapper**](CommandWrapper.md)|  |
+| **campaignId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **commandWrapper** | [**CommandWrapper**](CommandWrapper.md)|  | |
 
 ### Return type
 
@@ -3172,246 +2124,142 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## updateClientImage1
-
-> String updateClientImage1(entity, entityId, contentLength, file)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val entity : kotlin.String = entity_example // kotlin.String | 
+val entityId : kotlin.Long = 789 // kotlin.Long | 
+val contentLength : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String entity = "entity_example"; // String | 
-        Long entityId = 56L; // Long | 
-        Long contentLength = 56L; // Long | 
-        FormDataBodyPart file = new FormDataBodyPart(); // FormDataBodyPart | 
-        try {
-            String result = apiInstance.updateClientImage1(entity, entityId, contentLength, file);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#updateClientImage1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.updateClientImage1(entity, entityId, contentLength, dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entity** | **String**|  |
- **entityId** | **Long**|  |
- **contentLength** | **Long**|  | [optional]
- **file** | [**FormDataBodyPart**](FormDataBodyPart.md)|  | [optional]
+| **entity** | **kotlin.String**|  | |
+| **entityId** | **kotlin.Long**|  | |
+| **contentLength** | **kotlin.Long**|  | [optional] |
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateConfiguration
-
-> String updateConfiguration(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.updateConfiguration(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#updateConfiguration");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.updateConfiguration(body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateConfiguration3
-
-> String updateConfiguration3(body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.DefaultApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(DefaultApi::class.java)
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.updateConfiguration3(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#updateConfiguration3");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.updateConfiguration3(body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

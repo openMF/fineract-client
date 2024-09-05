@@ -1,18 +1,17 @@
 
-
 # GlobalConfigurationPropertyData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**enabled** | **Boolean** |  |  [optional]
-**value** | **Long** |  |  [optional]
-**dateValue** | [**Date**](Date.md) |  |  [optional]
-**id** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
-**trapDoor** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateValue** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **enabled** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **stringValue** | **kotlin.String** |  |  [optional] |
+| **trapDoor** | **kotlin.Boolean** |  |  [optional] |
+| **&#x60;value&#x60;** | **kotlin.Long** |  |  [optional] |
 
 
 

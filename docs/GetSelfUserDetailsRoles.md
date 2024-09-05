@@ -1,14 +1,12 @@
 
-
 # GetSelfUserDetailsRoles
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
 
 
 

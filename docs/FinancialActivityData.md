@@ -1,26 +1,19 @@
 
-
 # FinancialActivityData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**mappedGLAccountType** | [**MappedGLAccountTypeEnum**](#MappedGLAccountTypeEnum) |  |  [optional]
-
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **mappedGLAccountType** | [**inline**](#MappedGLAccountType) |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
 
 
-## Enum: MappedGLAccountTypeEnum
-
-Name | Value
----- | -----
-ASSET | &quot;ASSET&quot;
-LIABILITY | &quot;LIABILITY&quot;
-EQUITY | &quot;EQUITY&quot;
-INCOME | &quot;INCOME&quot;
-EXPENSE | &quot;EXPENSE&quot;
+<a id="MappedGLAccountType"></a>
+## Enum: mappedGLAccountType
+| Name | Value |
+| ---- | ----- |
+| mappedGLAccountType | ASSET, LIABILITY, EQUITY, INCOME, EXPENSE |
 
 
 

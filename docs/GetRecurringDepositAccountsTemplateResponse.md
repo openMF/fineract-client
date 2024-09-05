@@ -1,15 +1,12 @@
 
-
 # GetRecurringDepositAccountsTemplateResponse
 
-GetRecurringDepositAccountsTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**clientId** | **Integer** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**productOptions** | [**List&lt;GetRecurringProductOptions&gt;**](GetRecurringProductOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **productOptions** | [**kotlin.collections.Set&lt;GetRecurringProductOptions&gt;**](GetRecurringProductOptions.md) |  |  [optional] |
 
 
 

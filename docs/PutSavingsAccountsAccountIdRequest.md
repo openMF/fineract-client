@@ -1,14 +1,11 @@
 
-
 # PutSavingsAccountsAccountIdRequest
 
-PutSavingsAccountsAccountIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**nominalAnnualInterestRate** | **Double** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **nominalAnnualInterestRate** | **kotlin.Double** |  |  [optional] |
 
 
 

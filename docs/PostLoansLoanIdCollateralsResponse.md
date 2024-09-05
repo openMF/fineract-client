@@ -1,14 +1,10 @@
 
-
 # PostLoansLoanIdCollateralsResponse
 
-PostLoansLoanIdCollateralsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**loanId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

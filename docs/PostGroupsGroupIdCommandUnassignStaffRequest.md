@@ -1,13 +1,10 @@
 
-
 # PostGroupsGroupIdCommandUnassignStaffRequest
 
-PostGroupsGroupIdCommandUnassignStaffRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**staffId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **staffId** | **kotlin.Long** |  |  [optional] |
 
 
 

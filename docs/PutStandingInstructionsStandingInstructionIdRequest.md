@@ -1,13 +1,10 @@
 
-
 # PutStandingInstructionsStandingInstructionIdRequest
 
-PutStandingInstructionsStandingInstructionIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**recurrenceInterval** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **recurrenceInterval** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,17 +1,14 @@
 
-
 # PostSavingsAccountsSavingsAccountIdChargesRequest
 
-PostSavingsAccountsSavingsAccountIdChargesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**chargeId** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**amount** | **Float** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**dueDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Float** |  |  [optional] |
+| **chargeId** | **kotlin.Long** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **dueDate** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

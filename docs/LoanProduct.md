@@ -1,66 +1,79 @@
 
-
 # LoanProduct
 
 ## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountingDisabled** | **kotlin.Boolean** |  |  [optional] |
+| **accountingType** | **kotlin.Int** |  |  [optional] |
+| **accrualBasedAccountingEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **allowApprovedDisbursedAmountsOverApplied** | **kotlin.Boolean** |  |  [optional] |
+| **arrearsBasedOnOriginalSchedule** | **kotlin.Boolean** |  |  [optional] |
+| **cashBasedAccountingEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **closeDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional] |
+| **delinquencyBucket** | [**DelinquencyBucket**](DelinquencyBucket.md) |  |  [optional] |
+| **disallowExpectedDisbursements** | **kotlin.Boolean** |  |  [optional] |
+| **dueDaysForRepaymentEvent** | **kotlin.Int** |  |  [optional] |
+| **enableInstallmentLevelDelinquency** | **kotlin.Boolean** |  |  [optional] |
+| **equalAmortization** | **kotlin.Boolean** |  |  [optional] |
+| **externalId** | [**ExternalId**](ExternalId.md) |  |  [optional] |
+| **fixedPrincipalPercentagePerInstallment** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **floatingRates** | [**LoanProductFloatingRates**](LoanProductFloatingRates.md) |  |  [optional] |
+| **holdGuaranteeFundsEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **includeInBorrowerCycle** | **kotlin.Boolean** |  |  [optional] |
+| **installmentAmountInMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **interestPeriodFrequencyType** | [**inline**](#InterestPeriodFrequencyType) |  |  [optional] |
+| **interestRecalculationEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **linkedToFloatingInterestRate** | **kotlin.Boolean** |  |  [optional] |
+| **loanProductCharges** | [**kotlin.collections.List&lt;Charge&gt;**](Charge.md) |  |  [optional] |
+| **loanProductConfigurableAttributes** | [**LoanProductConfigurableAttributes**](LoanProductConfigurableAttributes.md) |  |  [optional] |
+| **loanProductGuaranteeDetails** | [**LoanProductGuaranteeDetails**](LoanProductGuaranteeDetails.md) |  |  [optional] |
+| **loanProductRelatedDetail** | [**LoanProductRelatedDetail**](LoanProductRelatedDetail.md) |  |  [optional] |
+| **loanProductTrancheDetails** | [**LoanProductTrancheDetails**](LoanProductTrancheDetails.md) |  |  [optional] |
+| **maxNominalInterestRatePerPeriod** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **maxNumberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **maxPrincipalAmount** | [**Money**](Money.md) |  |  [optional] |
+| **minNominalInterestRatePerPeriod** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minNumberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **minPrincipalAmount** | [**Money**](Money.md) |  |  [optional] |
+| **minimumDaysBetweenDisbursalAndFirstRepayment** | **kotlin.Int** |  |  [optional] |
+| **multiDisburseLoan** | **kotlin.Boolean** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **nominalInterestRatePerPeriod** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **numberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **overAppliedCalculationType** | **kotlin.String** |  |  [optional] |
+| **overAppliedNumber** | **kotlin.Int** |  |  [optional] |
+| **overDueDaysForRepaymentEvent** | **kotlin.Int** |  |  [optional] |
+| **paymentAllocationRules** | [**kotlin.collections.List&lt;LoanProductPaymentAllocationRule&gt;**](LoanProductPaymentAllocationRule.md) |  |  [optional] |
+| **periodicAccrualAccountingEnabled** | **kotlin.Boolean** |  |  [optional] |
+| **principalAmount** | [**Money**](Money.md) |  |  [optional] |
+| **principalThresholdForLastInstallment** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **productInterestRecalculationDetails** | [**LoanProductInterestRecalculationDetails**](LoanProductInterestRecalculationDetails.md) |  |  [optional] |
+| **rates** | [**kotlin.collections.List&lt;Rate&gt;**](Rate.md) |  |  [optional] |
+| **repaymentStartDateType** | [**inline**](#RepaymentStartDateType) |  |  [optional] |
+| **repaymentStrategy** | **kotlin.String** |  |  [optional] |
+| **shortName** | **kotlin.String** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **syncExpectedWithDisbursementDate** | **kotlin.Boolean** |  |  [optional] |
+| **transactionProcessingStrategyCode** | **kotlin.String** |  |  [optional] |
+| **transactionProcessingStrategyName** | **kotlin.String** |  |  [optional] |
+| **upfrontAccrualAccountingEnabled** | **kotlin.Boolean** |  |  [optional] |
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**shortName** | **String** |  |  [optional]
-**rates** | [**List&lt;Rate&gt;**](Rate.md) |  |  [optional]
-**loanProductRelatedDetail** | [**LoanProductRelatedDetail**](LoanProductRelatedDetail.md) |  |  [optional]
-**includeInBorrowerCycle** | **Boolean** |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
-**closeDate** | [**Date**](Date.md) |  |  [optional]
-**externalId** | **String** |  |  [optional]
-**minimumDaysBetweenDisbursalAndFirstRepayment** | **Integer** |  |  [optional]
-**productInterestRecalculationDetails** | [**LoanProductInterestRecalculationDetails**](LoanProductInterestRecalculationDetails.md) |  |  [optional]
-**loanProductGuaranteeDetails** | [**LoanProductGuaranteeDetails**](LoanProductGuaranteeDetails.md) |  |  [optional]
-**principalThresholdForLastInstallment** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**installmentAmountInMultiplesOf** | **Integer** |  |  [optional]
-**floatingRates** | [**LoanProductFloatingRates**](LoanProductFloatingRates.md) |  |  [optional]
-**syncExpectedWithDisbursementDate** | **Boolean** |  |  [optional]
-**currency** | [**MonetaryCurrency**](MonetaryCurrency.md) |  |  [optional]
-**holdGuaranteeFundsEnabled** | **Boolean** |  |  [optional]
-**equalAmortization** | **Boolean** |  |  [optional]
-**arrearsBasedOnOriginalSchedule** | **Boolean** |  |  [optional]
-**accountingDisabled** | **Boolean** |  |  [optional]
-**principalAmount** | [**Money**](Money.md) |  |  [optional]
-**minPrincipalAmount** | [**Money**](Money.md) |  |  [optional]
-**maxPrincipalAmount** | [**Money**](Money.md) |  |  [optional]
-**loanProductConfigurableAttributes** | [**LoanProductConfigurableAttributes**](LoanProductConfigurableAttributes.md) |  |  [optional]
-**linkedToFloatingInterestRate** | **Boolean** |  |  [optional]
-**repaymentStrategy** | [**LoanTransactionProcessingStrategy**](LoanTransactionProcessingStrategy.md) |  |  [optional]
-**loanProductCharges** | [**List&lt;Charge&gt;**](Charge.md) |  |  [optional]
-**cashBasedAccountingEnabled** | **Boolean** |  |  [optional]
-**accrualBasedAccountingEnabled** | **Boolean** |  |  [optional]
-**numberOfRepayments** | **Integer** |  |  [optional]
-**nominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**interestPeriodFrequencyType** | [**InterestPeriodFrequencyTypeEnum**](#InterestPeriodFrequencyTypeEnum) |  |  [optional]
-**minNumberOfRepayments** | **Integer** |  |  [optional]
-**maxNumberOfRepayments** | **Integer** |  |  [optional]
-**accountingType** | **Integer** |  |  [optional]
-**interestRecalculationEnabled** | **Boolean** |  |  [optional]
-**multiDisburseLoan** | **Boolean** |  |  [optional]
-**upfrontAccrualAccountingEnabled** | **Boolean** |  |  [optional]
-**periodicAccrualAccountingEnabled** | **Boolean** |  |  [optional]
-**minNominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**maxNominalInterestRatePerPeriod** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+
+<a id="InterestPeriodFrequencyType"></a>
+## Enum: interestPeriodFrequencyType
+| Name | Value |
+| ---- | ----- |
+| interestPeriodFrequencyType | DAYS, WEEKS, MONTHS, YEARS, WHOLE_TERM, INVALID |
 
 
-
-## Enum: InterestPeriodFrequencyTypeEnum
-
-Name | Value
----- | -----
-DAYS | &quot;DAYS&quot;
-WEEKS | &quot;WEEKS&quot;
-MONTHS | &quot;MONTHS&quot;
-YEARS | &quot;YEARS&quot;
-WHOLE_TERM | &quot;WHOLE_TERM&quot;
-INVALID | &quot;INVALID&quot;
+<a id="RepaymentStartDateType"></a>
+## Enum: repaymentStartDateType
+| Name | Value |
+| ---- | ----- |
+| repaymentStartDateType | INVALID, DISBURSEMENT_DATE, SUBMITTED_ON_DATE |
 
 
 

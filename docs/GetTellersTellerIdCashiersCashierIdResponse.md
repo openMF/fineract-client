@@ -1,23 +1,20 @@
 
-
 # GetTellersTellerIdCashiersCashierIdResponse
 
-GetTellersTellerIdCashiersCashierIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**tellerId** | **Long** |  |  [optional]
-**staffId** | **Long** |  |  [optional]
-**description** | **String** |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**isFullDay** | **Boolean** |  |  [optional]
-**startTime** | **String** |  |  [optional]
-**endTime** | **String** |  |  [optional]
-**tellerName** | **String** |  |  [optional]
-**staffName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **endTime** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **isFullDay** | **kotlin.Boolean** |  |  [optional] |
+| **staffId** | **kotlin.Long** |  |  [optional] |
+| **staffName** | **kotlin.String** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **startTime** | **kotlin.String** |  |  [optional] |
+| **tellerId** | **kotlin.Long** |  |  [optional] |
+| **tellerName** | **kotlin.String** |  |  [optional] |
 
 
 

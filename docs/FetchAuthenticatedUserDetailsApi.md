@@ -1,70 +1,35 @@
 # FetchAuthenticatedUserDetailsApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fetchAuthenticatedUserData**](FetchAuthenticatedUserDetailsApi.md#fetchAuthenticatedUserData) | **GET** userdetails | Fetch authenticated user details 
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fetchAuthenticatedUserData**](FetchAuthenticatedUserDetailsApi.md#fetchAuthenticatedUserData) | **GET** v1/userdetails | Fetch authenticated user details  |
 
 
-
-## fetchAuthenticatedUserData
-
-> GetUserDetailsResponse fetchAuthenticatedUserData(accessToken)
 
 Fetch authenticated user details 
 
 checks the Authentication and returns the set roles and permissions allowed.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.FetchAuthenticatedUserDetailsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(FetchAuthenticatedUserDetailsApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        FetchAuthenticatedUserDetailsApi apiInstance = new FetchAuthenticatedUserDetailsApi(defaultClient);
-        String accessToken = "accessToken_example"; // String | access_token
-        try {
-            GetUserDetailsResponse result = apiInstance.fetchAuthenticatedUserData(accessToken);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FetchAuthenticatedUserDetailsApi#fetchAuthenticatedUserData");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetUserDetailsResponse = webService.fetchAuthenticatedUserData()
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| access_token | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -72,15 +37,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

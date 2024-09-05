@@ -1,21 +1,19 @@
 
-
 # GetAccountsPurchasedShares
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountId** | **Integer** |  |  [optional]
-**purchasedDate** | [**Date**](Date.md) |  |  [optional]
-**numberOfShares** | **Integer** |  |  [optional]
-**purchasedPrice** | **Double** |  |  [optional]
-**status** | [**GetAccountsPurchasedSharesStatus**](GetAccountsPurchasedSharesStatus.md) |  |  [optional]
-**type** | [**GetAccountsPurchasedSharesType**](GetAccountsPurchasedSharesType.md) |  |  [optional]
-**amount** | **Double** |  |  [optional]
-**chargeAmount** | **Double** |  |  [optional]
-**amountPaid** | **Double** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountId** | **kotlin.Long** |  |  [optional] |
+| **amount** | **kotlin.Double** |  |  [optional] |
+| **amountPaid** | **kotlin.Double** |  |  [optional] |
+| **chargeAmount** | **kotlin.Double** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **numberOfShares** | **kotlin.Int** |  |  [optional] |
+| **purchasedDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **purchasedPrice** | **kotlin.Double** |  |  [optional] |
+| **status** | [**GetAccountsPurchasedSharesStatus**](GetAccountsPurchasedSharesStatus.md) |  |  [optional] |
+| **type** | [**GetAccountsPurchasedSharesType**](GetAccountsPurchasedSharesType.md) |  |  [optional] |
 
 
 

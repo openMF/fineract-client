@@ -1,14 +1,12 @@
 
-
 # GetShareAccountsClientIdProductIdLockPeriodTypeEnum
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**code** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
 
 
 

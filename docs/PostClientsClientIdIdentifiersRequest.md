@@ -1,15 +1,12 @@
 
-
 # PostClientsClientIdIdentifiersRequest
 
-PostClientsClientIdIdentifiersRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**documentTypeId** | **Integer** |  |  [optional]
-**documentKey** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **documentKey** | **kotlin.String** |  |  [optional] |
+| **documentTypeId** | **kotlin.Long** |  |  [optional] |
 
 
 

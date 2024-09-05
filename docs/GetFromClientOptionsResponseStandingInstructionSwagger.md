@@ -1,15 +1,13 @@
 
-
 # GetFromClientOptionsResponseStandingInstructionSwagger
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**officeName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
 
 
 

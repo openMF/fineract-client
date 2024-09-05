@@ -1,15 +1,12 @@
 
-
 # GetUsersTemplateResponse
 
-GetUsersTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**allowedOffices** | [**List&lt;OfficeData&gt;**](OfficeData.md) |  |  [optional]
-**availableRoles** | [**List&lt;RoleData&gt;**](RoleData.md) |  |  [optional]
-**selfServiceRoles** | [**List&lt;RoleData&gt;**](RoleData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **allowedOffices** | [**kotlin.collections.List&lt;OfficeData&gt;**](OfficeData.md) |  |  [optional] |
+| **availableRoles** | [**kotlin.collections.List&lt;RoleData&gt;**](RoleData.md) |  |  [optional] |
+| **selfServiceRoles** | [**kotlin.collections.List&lt;RoleData&gt;**](RoleData.md) |  |  [optional] |
 
 
 

@@ -1,12 +1,10 @@
 
-
 # GrantedAuthority
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**authority** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **authority** | **kotlin.String** |  |  [optional] |
 
 
 

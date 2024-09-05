@@ -1,15 +1,12 @@
 
-
 # PutGlClosuresResponse
 
-PutGlClosuresResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** |  |  [optional]
-**resourceId** | **Long** |  |  [optional]
-**comments** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **comments** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

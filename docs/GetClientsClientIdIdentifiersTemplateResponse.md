@@ -1,13 +1,10 @@
 
-
 # GetClientsClientIdIdentifiersTemplateResponse
 
-GetClientsClientIdIdentifiersTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**allowedDocumentTypes** | [**List&lt;GetClientsAllowedDocumentTypes&gt;**](GetClientsAllowedDocumentTypes.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **allowedDocumentTypes** | [**kotlin.collections.Set&lt;GetClientsAllowedDocumentTypes&gt;**](GetClientsAllowedDocumentTypes.md) |  |  [optional] |
 
 
 

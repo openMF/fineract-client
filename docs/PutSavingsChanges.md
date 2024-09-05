@@ -1,14 +1,12 @@
 
-
 # PutSavingsChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**interestRate** | **Double** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **interestRate** | **kotlin.Double** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

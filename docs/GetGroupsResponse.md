@@ -1,14 +1,11 @@
 
-
 # GetGroupsResponse
 
-GetGroupsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetGroupsPageItems&gt;**](GetGroupsPageItems.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetGroupsPageItems&gt;**](GetGroupsPageItems.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

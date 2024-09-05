@@ -1,17 +1,15 @@
 
-
 # Response
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**question** | [**Question**](Question.md) |  |  [optional]
-**text** | **String** |  |  [optional]
-**value** | **Integer** |  |  [optional]
-**sequenceNo** | **Integer** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **question** | [**Question**](Question.md) |  |  [optional] |
+| **sequenceNo** | **kotlin.Int** |  |  [optional] |
+| **text** | **kotlin.String** |  |  [optional] |
+| **&#x60;value&#x60;** | **kotlin.Int** |  |  [optional] |
 
 
 

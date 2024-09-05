@@ -1,16 +1,14 @@
 
-
 # GetRunReportColumnHeaders
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**columnName** | **String** |  |  [optional]
-**columnType** | **String** |  |  [optional]
-**isColumnNullable** | **Boolean** |  |  [optional]
-**isColumnPrimaryKey** | **Boolean** |  |  [optional]
-**columnValues** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **columnName** | **kotlin.String** |  |  [optional] |
+| **columnType** | **kotlin.String** |  |  [optional] |
+| **columnValues** | **kotlin.String** |  |  [optional] |
+| **isColumnNullable** | **kotlin.Boolean** |  |  [optional] |
+| **isColumnPrimaryKey** | **kotlin.Boolean** |  |  [optional] |
 
 
 

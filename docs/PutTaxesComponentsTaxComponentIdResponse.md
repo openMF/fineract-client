@@ -1,14 +1,11 @@
 
-
 # PutTaxesComponentsTaxComponentIdResponse
 
-PutTaxesComponentsTaxComponentIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutTaxesComponentsChanges**](PutTaxesComponentsChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutTaxesComponentsChanges**](PutTaxesComponentsChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

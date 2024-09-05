@@ -1,27 +1,24 @@
 
-
 # PutSelfLoansLoanIdRequest
 
-PutSelfLoansLoanIdRequest
 ## Properties
-
-Name | Type        | Description | Notes
------------- |-------------| ------------- | -------------
-**locale** | **String**  |  |  [optional]
-**dateFormat** | **String**  |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**principal** | **Long**    |  |  [optional]
-**loanTermFrequency** | **Integer** |  |  [optional]
-**loanTermFrequencyType** | **Integer** |  |  [optional]
-**numberOfRepayments** | **Integer** |  |  [optional]
-**repaymentEvery** | **Integer** |  |  [optional]
-**repaymentFrequencyType** | **Integer** |  |  [optional]
-**interestRatePerPeriod** | **Integer** |  |  [optional]
-**interestType** | **Integer** |  |  [optional]
-**interestCalculationPeriodType** | **Integer** |  |  [optional]
-**amortizationType** | **Integer** |  |  [optional]
-**expectedDisbursementDate** | **String**  |  |  [optional]
-**transactionProcessingStrategyCode** | **String**  |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amortizationType** | **kotlin.Int** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **expectedDisbursementDate** | **kotlin.String** |  |  [optional] |
+| **interestCalculationPeriodType** | **kotlin.Int** |  |  [optional] |
+| **interestRatePerPeriod** | **kotlin.Int** |  |  [optional] |
+| **interestType** | **kotlin.Int** |  |  [optional] |
+| **loanTermFrequency** | **kotlin.Int** |  |  [optional] |
+| **loanTermFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **numberOfRepayments** | **kotlin.Int** |  |  [optional] |
+| **principal** | **kotlin.Long** |  |  [optional] |
+| **productId** | **kotlin.Int** |  |  [optional] |
+| **repaymentEvery** | **kotlin.Int** |  |  [optional] |
+| **repaymentFrequencyType** | **kotlin.Int** |  |  [optional] |
+| **transactionProcessingStrategyCode** | **kotlin.String** |  |  [optional] |
 
 
 

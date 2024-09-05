@@ -1,19 +1,16 @@
 
-
 # GetFieldConfigurationEntityResponse
 
-GetFieldConfigurationEntityResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fieldConfigurationId** | **Integer** |  |  [optional]
-**entity** | **String** |  |  [optional]
-**subentity** | **String** |  |  [optional]
-**field** | **String** |  |  [optional]
-**isEnabled** | **String** |  |  [optional]
-**isMandatory** | **String** |  |  [optional]
-**validationRegex** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entity** | **kotlin.String** |  |  [optional] |
+| **&#x60;field&#x60;** | **kotlin.String** |  |  [optional] |
+| **fieldConfigurationId** | **kotlin.Long** |  |  [optional] |
+| **isEnabled** | **kotlin.String** |  |  [optional] |
+| **isMandatory** | **kotlin.String** |  |  [optional] |
+| **subentity** | **kotlin.String** |  |  [optional] |
+| **validationRegex** | **kotlin.String** |  |  [optional] |
 
 
 

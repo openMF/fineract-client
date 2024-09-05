@@ -1,17 +1,15 @@
 
-
 # PostSavingsAccountsRequest
 
-PostSavingsAccountsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**clientId** | **Integer** |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**submittedOnDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Int** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **productId** | **kotlin.Int** |  |  [optional] |
+| **submittedOnDate** | **kotlin.String** |  |  [optional] |
 
 
 

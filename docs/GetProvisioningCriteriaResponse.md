@@ -1,15 +1,12 @@
 
-
 # GetProvisioningCriteriaResponse
 
-GetProvisioningCriteriaResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**criteriaId** | **Long** |  |  [optional]
-**criteriaName** | **String** |  |  [optional]
-**createdBy** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **createdBy** | **kotlin.String** |  |  [optional] |
+| **criteriaId** | **kotlin.Long** |  |  [optional] |
+| **criteriaName** | **kotlin.String** |  |  [optional] |
 
 
 

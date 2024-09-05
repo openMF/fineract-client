@@ -1,15 +1,12 @@
 
-
 # PostClientsClientIdRequest
 
-PostClientsClientIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**activationDate** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **activationDate** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,13 +1,11 @@
 
-
 # PutUsersUserIdResponseChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**firstname** | **String** |  |  [optional]
-**passwordEncoded** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **passwordEncoded** | **kotlin.String** |  |  [optional] |
 
 
 

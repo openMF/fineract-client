@@ -1,77 +1,45 @@
 # ProductsApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createProduct**](ProductsApi.md#createProduct) | **POST** products/{type} | Create a Share Product
-[**handleCommands3**](ProductsApi.md#handleCommands3) | **POST** products/{type}/{productId} | 
-[**retrieveAllProducts**](ProductsApi.md#retrieveAllProducts) | **GET** products/{type} | List Share Products
-[**retrieveProduct**](ProductsApi.md#retrieveProduct) | **GET** products/{type}/{productId} | Retrieve a Share Product
-[**retrieveTemplate12**](ProductsApi.md#retrieveTemplate12) | **GET** products/{type}/template | 
-[**updateProduct**](ProductsApi.md#updateProduct) | **PUT** products/{type}/{productId} | Update a Share Product
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createProduct**](ProductsApi.md#createProduct) | **POST** v1/products/{type} | Create a Share Product |
+| [**handleCommands3**](ProductsApi.md#handleCommands3) | **POST** v1/products/{type}/{productId} |  |
+| [**retrieveAllProducts**](ProductsApi.md#retrieveAllProducts) | **GET** v1/products/{type} | List Share Products |
+| [**retrieveProduct**](ProductsApi.md#retrieveProduct) | **GET** v1/products/{type}/{productId} | Retrieve a Share Product |
+| [**retrieveTemplate13**](ProductsApi.md#retrieveTemplate13) | **GET** v1/products/{type}/template |  |
+| [**updateProduct**](ProductsApi.md#updateProduct) | **PUT** v1/products/{type}/{productId} | Update a Share Product |
 
 
-
-## createProduct
-
-> PostProductsTypeResponse createProduct(type, postProductsTypeRequest)
 
 Create a Share Product
 
 Creates a Share Product  Mandatory Fields: name, shortName, description, currencyCode, digitsAfterDecimal,inMultiplesOf, locale, totalShares, unitPrice, nominalShares,allowDividendCalculationForInactiveClients,accountingRule  Mandatory Fields for Cash based accounting (accountingRule &#x3D; 2): shareReferenceId, shareSuspenseId, shareEquityId, incomeFromFeeAccountId  Optional Fields: sharesIssued, minimumShares, maximumShares, minimumActivePeriodForDividends, minimumactiveperiodFrequencyType, lockinPeriodFrequency, lockinPeriodFrequencyType, marketPricePeriods, chargesSelected
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val type : kotlin.String = type_example // kotlin.String | type
+val postProductsTypeRequest : PostProductsTypeRequest =  // PostProductsTypeRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        String type = "type_example"; // String | type
-        PostProductsTypeRequest postProductsTypeRequest = new PostProductsTypeRequest(); // PostProductsTypeRequest | 
-        try {
-            PostProductsTypeResponse result = apiInstance.createProduct(type, postProductsTypeRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#createProduct");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostProductsTypeResponse = webService.createProduct(type, postProductsTypeRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| type |
- **postProductsTypeRequest** | [**PostProductsTypeRequest**](PostProductsTypeRequest.md)|  |
+| **type** | **kotlin.String**| type | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postProductsTypeRequest** | [**PostProductsTypeRequest**](PostProductsTypeRequest.md)|  | |
 
 ### Return type
 
@@ -79,159 +47,89 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## handleCommands3
-
-> String handleCommands3(type, productId, command)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val type : kotlin.String = type_example // kotlin.String | type
+val productId : kotlin.Long = 789 // kotlin.Long | productId
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        String type = "type_example"; // String | type
-        Long productId = 56L; // Long | productId
-        String command = "command_example"; // String | command
-        try {
-            String result = apiInstance.handleCommands3(type, productId, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#handleCommands3");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.handleCommands3(type, productId, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| type |
- **productId** | **Long**| productId |
- **command** | **String**| command | [optional]
+| **type** | **kotlin.String**| type | |
+| **productId** | **kotlin.Long**| productId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAllProducts
-
-> GetProductsTypeResponse retrieveAllProducts(type, offset, limit)
 
 List Share Products
 
 Lists Share Products  Mandatory Fields: limit, offset  Example Requests:  shareproducts
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val type : kotlin.String = type_example // kotlin.String | type
+val offset : kotlin.Int = 56 // kotlin.Int | offset
+val limit : kotlin.Int = 56 // kotlin.Int | limit
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        String type = "type_example"; // String | type
-        Integer offset = 56; // Integer | offset
-        Integer limit = 56; // Integer | limit
-        try {
-            GetProductsTypeResponse result = apiInstance.retrieveAllProducts(type, offset, limit);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#retrieveAllProducts");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetProductsTypeResponse = webService.retrieveAllProducts(type, offset, limit)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| type |
- **offset** | **Integer**| offset | [optional]
- **limit** | **Integer**| limit | [optional]
+| **type** | **kotlin.String**| type | |
+| **offset** | **kotlin.Int**| offset | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **kotlin.Int**| limit | [optional] |
 
 ### Return type
 
@@ -239,78 +137,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveProduct
-
-> GetProductsTypeProductIdResponse retrieveProduct(productId, type)
 
 Retrieve a Share Product
 
 Retrieves a Share Product  Example Requests:  products/share/1   products/share/1?template&#x3D;true
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val productId : kotlin.Long = 789 // kotlin.Long | productId
+val type : kotlin.String = type_example // kotlin.String | type
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        Long productId = 56L; // Long | productId
-        String type = "type_example"; // String | type
-        try {
-            GetProductsTypeProductIdResponse result = apiInstance.retrieveProduct(productId, type);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#retrieveProduct");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetProductsTypeProductIdResponse = webService.retrieveProduct(productId, type)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Long**| productId |
- **type** | **String**| type |
+| **productId** | **kotlin.Long**| productId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **kotlin.String**| type | |
 
 ### Return type
 
@@ -318,155 +181,85 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveTemplate12
-
-> String retrieveTemplate12(type)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val type : kotlin.String = type_example // kotlin.String | type
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        String type = "type_example"; // String | type
-        try {
-            String result = apiInstance.retrieveTemplate12(type);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#retrieveTemplate12");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveTemplate13(type)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| type |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **kotlin.String**| type | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateProduct
-
-> PutProductsTypeProductIdResponse updateProduct(type, productId, putProductsTypeProductIdRequest)
 
 Update a Share Product
 
 Updates a Share Product
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ProductsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ProductsApi::class.java)
+val type : kotlin.String = type_example // kotlin.String | type
+val productId : kotlin.Long = 789 // kotlin.Long | productId
+val putProductsTypeProductIdRequest : PutProductsTypeProductIdRequest =  // PutProductsTypeProductIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ProductsApi apiInstance = new ProductsApi(defaultClient);
-        String type = "type_example"; // String | type
-        Long productId = 56L; // Long | productId
-        PutProductsTypeProductIdRequest putProductsTypeProductIdRequest = new PutProductsTypeProductIdRequest(); // PutProductsTypeProductIdRequest | 
-        try {
-            PutProductsTypeProductIdResponse result = apiInstance.updateProduct(type, productId, putProductsTypeProductIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ProductsApi#updateProduct");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutProductsTypeProductIdResponse = webService.updateProduct(type, productId, putProductsTypeProductIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| type |
- **productId** | **Long**| productId |
- **putProductsTypeProductIdRequest** | [**PutProductsTypeProductIdRequest**](PutProductsTypeProductIdRequest.md)|  |
+| **type** | **kotlin.String**| type | |
+| **productId** | **kotlin.Long**| productId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putProductsTypeProductIdRequest** | [**PutProductsTypeProductIdRequest**](PutProductsTypeProductIdRequest.md)|  | |
 
 ### Return type
 
@@ -474,15 +267,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

@@ -1,19 +1,17 @@
 
-
 # GetClientsStaffOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**firstname** | **String** |  |  [optional]
-**lastname** | **String** |  |  [optional]
-**displayName** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**isLoanOfficer** | **Boolean** |  |  [optional]
-**isActive** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **displayName** | **kotlin.String** |  |  [optional] |
+| **firstname** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **isLoanOfficer** | **kotlin.Boolean** |  |  [optional] |
+| **lastname** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
 
 
 

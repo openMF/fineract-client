@@ -1,14 +1,12 @@
 
-
 # PostSelfLoansData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**activationDate** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **activationDate** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

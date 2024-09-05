@@ -1,15 +1,12 @@
 
-
 # GetLoansLoanIdTransactionsTemplateResponse
 
-GetLoansLoanIdTransactionsTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**transactionType** | [**GetLoansTransactionType**](GetLoansTransactionType.md) |  |  [optional]
-**date** | [**Date**](Date.md) |  |  [optional]
-**total** | [**GetLoansTotal**](GetLoansTotal.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **date** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **total** | [**GetLoansTotal**](GetLoansTotal.md) |  |  [optional] |
+| **transactionType** | [**GetLoansTransactionType**](GetLoansTransactionType.md) |  |  [optional] |
 
 
 

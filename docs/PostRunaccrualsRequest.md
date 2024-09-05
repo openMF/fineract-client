@@ -1,15 +1,12 @@
 
-
 # PostRunaccrualsRequest
 
-runaccrualsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**tillDate** | **String** | which specifies periodic accruals should happen till the given Date | 
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **tillDate** | **kotlin.String** | which specifies periodic accruals should happen till the given Date |  |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

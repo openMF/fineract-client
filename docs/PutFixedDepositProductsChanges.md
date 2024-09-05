@@ -1,13 +1,11 @@
 
-
 # PutFixedDepositProductsChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**minDepositTerm** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **minDepositTerm** | **kotlin.Int** |  |  [optional] |
 
 
 

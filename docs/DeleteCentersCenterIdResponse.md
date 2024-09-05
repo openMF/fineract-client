@@ -1,14 +1,11 @@
 
-
 # DeleteCentersCenterIdResponse
 
-DeleteCentersCenterIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**Object**](.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**kotlin.Any**](.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

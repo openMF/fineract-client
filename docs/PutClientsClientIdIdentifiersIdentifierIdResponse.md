@@ -1,16 +1,13 @@
 
-
 # PutClientsClientIdIdentifiersIdentifierIdResponse
 
-PutClientsClientIdIdentifiersIdentifierIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutClientsClientIdIdentifiersIdentifierIdRequest**](PutClientsClientIdIdentifiersIdentifierIdRequest.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutClientsClientIdIdentifiersIdentifierIdRequest**](PutClientsClientIdIdentifiersIdentifierIdRequest.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

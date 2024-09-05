@@ -1,14 +1,11 @@
 
-
 # GetAccountsTypeResponse
 
-GetAccountsTypeResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetAccountsPageItems&gt;**](GetAccountsPageItems.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetAccountsPageItems&gt;**](GetAccountsPageItems.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

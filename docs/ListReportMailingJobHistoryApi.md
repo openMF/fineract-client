@@ -1,78 +1,46 @@
 # ListReportMailingJobHistoryApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**retrieveAllByReportMailingJobId**](ListReportMailingJobHistoryApi.md#retrieveAllByReportMailingJobId) | **GET** reportmailingjobrunhistory | List Report Mailing Job History
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**retrieveAllByReportMailingJobId**](ListReportMailingJobHistoryApi.md#retrieveAllByReportMailingJobId) | **GET** v1/reportmailingjobrunhistory | List Report Mailing Job History |
 
 
-
-## retrieveAllByReportMailingJobId
-
-> ReportMailingJobRunHistoryData retrieveAllByReportMailingJobId(reportMailingJobId, offset, limit, orderBy, sortOrder)
 
 List Report Mailing Job History
 
 The list capability of report mailing job history can support pagination and sorting.  Example Requests:  reportmailingjobrunhistory/1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.ListReportMailingJobHistoryApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(ListReportMailingJobHistoryApi::class.java)
+val reportMailingJobId : kotlin.Long = 789 // kotlin.Long | reportMailingJobId
+val offset : kotlin.Int = 56 // kotlin.Int | offset
+val limit : kotlin.Int = 56 // kotlin.Int | limit
+val orderBy : kotlin.String = orderBy_example // kotlin.String | orderBy
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | sortOrder
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        ListReportMailingJobHistoryApi apiInstance = new ListReportMailingJobHistoryApi(defaultClient);
-        Long reportMailingJobId = 56L; // Long | reportMailingJobId
-        Integer offset = 56; // Integer | offset
-        Integer limit = 56; // Integer | limit
-        String orderBy = "orderBy_example"; // String | orderBy
-        String sortOrder = "sortOrder_example"; // String | sortOrder
-        try {
-            ReportMailingJobRunHistoryData result = apiInstance.retrieveAllByReportMailingJobId(reportMailingJobId, offset, limit, orderBy, sortOrder);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ListReportMailingJobHistoryApi#retrieveAllByReportMailingJobId");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : ReportMailingJobRunHistoryData = webService.retrieveAllByReportMailingJobId(reportMailingJobId, offset, limit, orderBy, sortOrder)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reportMailingJobId** | **Long**| reportMailingJobId | [optional]
- **offset** | **Integer**| offset | [optional]
- **limit** | **Integer**| limit | [optional]
- **orderBy** | **String**| orderBy | [optional]
- **sortOrder** | **String**| sortOrder | [optional]
+| **reportMailingJobId** | **kotlin.Long**| reportMailingJobId | [optional] |
+| **offset** | **kotlin.Int**| offset | [optional] |
+| **limit** | **kotlin.Int**| limit | [optional] |
+| **orderBy** | **kotlin.String**| orderBy | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortOrder** | **kotlin.String**| sortOrder | [optional] |
 
 ### Return type
 
@@ -80,15 +48,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

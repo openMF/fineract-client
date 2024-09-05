@@ -1,22 +1,19 @@
 
-
 # GetAccountRulesResponse
 
-GetAccountRulesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**systemDefined** | **Boolean** |  |  [optional]
-**allowMultipleDebitEntries** | **Boolean** |  |  [optional]
-**allowMultipleCreditEntries** | **Boolean** |  |  [optional]
-**creditTags** | [**List&lt;AccountingTagRuleData&gt;**](AccountingTagRuleData.md) |  |  [optional]
-**debitTags** | [**List&lt;AccountingTagRuleData&gt;**](AccountingTagRuleData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **allowMultipleCreditEntries** | **kotlin.Boolean** |  |  [optional] |
+| **allowMultipleDebitEntries** | **kotlin.Boolean** |  |  [optional] |
+| **creditTags** | [**kotlin.collections.List&lt;AccountingTagRuleData&gt;**](AccountingTagRuleData.md) |  |  [optional] |
+| **debitTags** | [**kotlin.collections.List&lt;AccountingTagRuleData&gt;**](AccountingTagRuleData.md) |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **systemDefined** | **kotlin.Boolean** |  |  [optional] |
 
 
 

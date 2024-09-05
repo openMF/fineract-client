@@ -1,13 +1,11 @@
 
-
 # ProcessingResultLookup
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**processingResult** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **processingResult** | **kotlin.String** |  |  [optional] |
 
 
 

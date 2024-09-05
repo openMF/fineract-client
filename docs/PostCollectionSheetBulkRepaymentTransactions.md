@@ -1,15 +1,13 @@
 
-
 # PostCollectionSheetBulkRepaymentTransactions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**loanId** | **Integer** |  |  [optional]
-**transactionAmount** | **Double** |  |  [optional]
-**paymentTypeId** | **Integer** |  |  [optional]
-**receiptNumber** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long** |  |  [optional] |
+| **paymentTypeId** | **kotlin.Long** |  |  [optional] |
+| **receiptNumber** | **kotlin.Long** |  |  [optional] |
+| **transactionAmount** | **kotlin.Double** |  |  [optional] |
 
 
 

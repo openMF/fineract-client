@@ -1,13 +1,11 @@
 
-
 # GetSelfLoansProductOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
 
 
 

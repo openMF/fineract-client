@@ -1,19 +1,16 @@
 
-
 # GetSelfBeneficiariesTPTResponse
 
-GetSelfBeneficiariesTPTResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**accountType** | [**GetSelfBeneficiariesAccountOptions**](GetSelfBeneficiariesAccountOptions.md) |  |  [optional]
-**accountNumber** | **Long** |  |  [optional]
-**transferLimit** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNumber** | **kotlin.Long** |  |  [optional] |
+| **accountType** | [**GetSelfBeneficiariesAccountOptions**](GetSelfBeneficiariesAccountOptions.md) |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **transferLimit** | **kotlin.Int** |  |  [optional] |
 
 
 

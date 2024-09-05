@@ -1,15 +1,13 @@
 
-
 # GetGroupsGroupIdTimeline
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**activatedOnDate** | [**Date**](Date.md) |  |  [optional]
-**activatedByUsername** | **String** |  |  [optional]
-**activatedByFirstname** | **String** |  |  [optional]
-**activatedByLastname** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **activatedByFirstname** | **kotlin.String** |  |  [optional] |
+| **activatedByLastname** | **kotlin.String** |  |  [optional] |
+| **activatedByUsername** | **kotlin.String** |  |  [optional] |
+| **activatedOnDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

@@ -1,24 +1,22 @@
 
-
 # SmsCampaignData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**campaignName** | **String** |  |  [optional]
-**campaignType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**runReportId** | **Long** |  |  [optional]
-**reportName** | **String** |  |  [optional]
-**paramValue** | **String** |  |  [optional]
-**campaignStatus** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**nextTriggerDate** | [**Date**](Date.md) |  |  [optional]
-**lastTriggerDate** | [**Date**](Date.md) |  |  [optional]
-**recurrenceStartDate** | [**Date**](Date.md) |  |  [optional]
-**recurrence** | **String** |  |  [optional]
-**message** | **String** |  |  [optional]
-**notification** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **campaignName** | **kotlin.String** |  |  [optional] |
+| **campaignStatus** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **campaignType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lastTriggerDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **message** | **kotlin.String** |  |  [optional] |
+| **nextTriggerDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **notification** | **kotlin.Boolean** |  |  [optional] |
+| **paramValue** | **kotlin.String** |  |  [optional] |
+| **recurrence** | **kotlin.String** |  |  [optional] |
+| **recurrenceStartDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **reportName** | **kotlin.String** |  |  [optional] |
+| **runReportId** | **kotlin.Long** |  |  [optional] |
 
 
 

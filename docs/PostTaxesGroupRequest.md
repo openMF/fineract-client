@@ -1,16 +1,13 @@
 
-
 # PostTaxesGroupRequest
 
-PostTaxesGroupRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**taxComponents** | [**List&lt;PostTaxesGroupTaxComponents&gt;**](PostTaxesGroupTaxComponents.md) |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **taxComponents** | [**kotlin.collections.Set&lt;PostTaxesGroupTaxComponents&gt;**](PostTaxesGroupTaxComponents.md) |  |  [optional] |
 
 
 

@@ -1,22 +1,20 @@
 
-
 # GetGroupsGroupIdAccountsMemberLoanStatus
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**code** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**pendingApproval** | **Boolean** |  |  [optional]
-**waitingForDisbursal** | **Boolean** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**closedObligationsMet** | **Boolean** |  |  [optional]
-**closedWrittenOff** | **Boolean** |  |  [optional]
-**closedRescheduled** | **Boolean** |  |  [optional]
-**closed** | **Boolean** |  |  [optional]
-**overpaid** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **closed** | **kotlin.Boolean** |  |  [optional] |
+| **closedObligationsMet** | **kotlin.Boolean** |  |  [optional] |
+| **closedRescheduled** | **kotlin.Boolean** |  |  [optional] |
+| **closedWrittenOff** | **kotlin.Boolean** |  |  [optional] |
+| **code** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **overpaid** | **kotlin.Boolean** |  |  [optional] |
+| **pendingApproval** | **kotlin.Boolean** |  |  [optional] |
+| **waitingForDisbursal** | **kotlin.Boolean** |  |  [optional] |
 
 
 
