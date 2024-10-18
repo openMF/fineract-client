@@ -6,7 +6,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
 
 group = 'org.mifos'
-version = '2.0.4-SNAPSHOT'
+version = 'master-gazelle-1'
 
 buildscript {
 repositories {
@@ -127,8 +127,8 @@ implementation 'javax.annotation:javax.annotation-api:1.3.2'
 testImplementation "junit:junit:$junit_version"
 }
 
-group = 'org.mifos'
-version = '2.0.4-SNAPSHOT'
+// group = 'org.mifos'
+// version = '2.0.4-SNAPSHOT'
 sourceCompatibility = '1.8'
 def artifactId = 'fineract-client'
 def versionNumber = version
@@ -150,21 +150,28 @@ jar {
 }
 
 artifactory {
-    contextUrl = 'https://jfrog.sandbox.fynarfin.io/artifactory' // base artifactory url
+    //contextUrl = 'http://40.82.204.22:8082/artifactory'
+    contextUrl = 'https://mifos.jfrog.io/artifactory'
     publish {
         repository {
-            repoKey = 'fyn-libs-snapshot'    //Artifactory repository key to publish to
-            // username = 'avik@fynarfin.io'    publisher user name
-            // password = '****'                publisher password
-            username = "<admin>"
-            password = "<password>"
-            maven = true
+            repoKey = 'mifosx-gradle-local' // Use 'oss-release-local' for release versions
+            username = System.getenv('MIFOS_ARTIFACTORY_USER') 
+            password = System.getenv('MIFOS_ARTIFACTORY_TOKEN') 
+            // repoKey = 'mifos-gradle-local' // Use 'oss-release-local' for release versions
+            // username = 'mifos'
+            // password = 'Ei+$c:)f4n"#JbS'
         }
         defaults {
             publications('mavenJava')
+            publishArtifacts = true
+            publishPom = true
+            publishBuildInfo = false  //  build info publishing
         }
     }
-
+    clientConfig.info.setBuildName('mifosx-build-info')
+    clientConfig.info.setBuildNumber(System.currentTimeMillis().toString())
+    clientConfig.setIncludeEnvVars(false)
+    //clientConfig.logLevel = org.jfrog.build.extractor.clientConfiguration.ArtifactoryClientConfiguration.LogLevel.DEBUG
 }
 
 artifactoryPublish {
