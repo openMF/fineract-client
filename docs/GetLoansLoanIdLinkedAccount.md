@@ -1,13 +1,11 @@
 
-
 # GetLoansLoanIdLinkedAccount
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
 
 
 

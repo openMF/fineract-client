@@ -1,14 +1,11 @@
 
-
 # PutSavingsProductsProductIdResponse
 
-PutSavingsProductsProductIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutSavingsChanges**](PutSavingsChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutSavingsChanges**](PutSavingsChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

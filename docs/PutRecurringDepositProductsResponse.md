@@ -1,14 +1,11 @@
 
-
 # PutRecurringDepositProductsResponse
 
-PutRecurringDepositProductsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutRecurringDepositProductsChanges**](PutRecurringDepositProductsChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutRecurringDepositProductsChanges**](PutRecurringDepositProductsChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,13 +1,10 @@
 
-
 # GetInterestRateChartsTemplateResponse
 
-GetInterestRateChartsTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**periodTypes** | [**List&lt;GetInterestRateChartsTemplatePeriodTypes&gt;**](GetInterestRateChartsTemplatePeriodTypes.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **periodTypes** | [**kotlin.collections.Set&lt;GetInterestRateChartsTemplatePeriodTypes&gt;**](GetInterestRateChartsTemplatePeriodTypes.md) |  |  [optional] |
 
 
 

@@ -1,22 +1,28 @@
 
-
 # LoanProductProvisioningEntryData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**historyId** | **Long** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
-**productId** | **Long** |  |  [optional]
-**categoryId** | **Long** |  |  [optional]
-**overdueInDays** | **Long** |  |  [optional]
-**percentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**liablityAccount** | **Long** |  |  [optional]
-**expenseAccount** | **Long** |  |  [optional]
-**criteriaId** | **Long** |  |  [optional]
-**outstandingBalance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amountreserved** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **balance** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **categoryId** | **kotlin.Long** |  |  [optional] |
+| **categoryName** | **kotlin.String** |  |  [optional] |
+| **criteriaId** | **kotlin.Long** |  |  [optional] |
+| **currencyCode** | **kotlin.String** |  |  [optional] |
+| **expenseAccount** | **kotlin.Long** |  |  [optional] |
+| **expenseAccountCode** | **kotlin.String** |  |  [optional] |
+| **expenseAccountName** | **kotlin.String** |  |  [optional] |
+| **historyId** | **kotlin.Long** |  |  [optional] |
+| **liabilityAccountCode** | **kotlin.String** |  |  [optional] |
+| **liabilityAccountName** | **kotlin.String** |  |  [optional] |
+| **liablityAccount** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **overdueInDays** | **kotlin.Long** |  |  [optional] |
+| **percentage** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **productName** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,12 +1,10 @@
 
-
 # PutSelfUserChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**passwordEncoded** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **passwordEncoded** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,17 +1,14 @@
 
-
 # PostGlClosuresRequest
 
-PostGLCLosuresRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Long** |  |  [optional]
-**closingDate** | [**Date**](Date.md) |  |  [optional]
-**comments** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **closingDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **comments** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
 
 
 

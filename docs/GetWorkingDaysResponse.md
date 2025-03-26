@@ -1,16 +1,13 @@
 
-
 # GetWorkingDaysResponse
 
-GetWorkingDaysResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**recurrence** | **String** |  |  [optional]
-**repaymentRescheduleType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**extendTermForDailyRepayments** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **extendTermForDailyRepayments** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **recurrence** | **kotlin.String** |  |  [optional] |
+| **repaymentRescheduleType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
 
 
 

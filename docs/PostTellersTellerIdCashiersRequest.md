@@ -1,19 +1,16 @@
 
-
 # PostTellersTellerIdCashiersRequest
 
-PostTellersTellerIdCashiersRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**endDate** | [**Date**](Date.md) |  |  [optional]
-**description** | **String** |  |  [optional]
-**isFullDay** | **Boolean** |  |  [optional]
-**staffId** | **Long** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **endDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **isFullDay** | **kotlin.Boolean** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **staffId** | **kotlin.Long** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

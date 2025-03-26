@@ -1,14 +1,11 @@
 
-
 # GetSavingsAccountsResponse
 
-GetSavingsAccountsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetSavingsPageItems&gt;**](GetSavingsPageItems.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetSavingsPageItems&gt;**](GetSavingsPageItems.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

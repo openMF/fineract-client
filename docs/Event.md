@@ -1,13 +1,11 @@
 
-
 # Event
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**actionName** | **String** |  |  [optional]
-**entityName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **actionName** | **kotlin.String** |  |  [optional] |
+| **entityName** | **kotlin.String** |  |  [optional] |
 
 
 

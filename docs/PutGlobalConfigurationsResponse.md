@@ -1,14 +1,11 @@
 
-
 # PutGlobalConfigurationsResponse
 
-PutGlobalConfigurationsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutGlobalConfigurationsResponsechangesSwagger**](PutGlobalConfigurationsResponsechangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutGlobalConfigurationsResponsechangesSwagger**](PutGlobalConfigurationsResponsechangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

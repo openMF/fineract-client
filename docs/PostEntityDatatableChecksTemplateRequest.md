@@ -1,16 +1,13 @@
 
-
 # PostEntityDatatableChecksTemplateRequest
 
-PostEntityDatatableChecksTemplateRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**entity** | **String** |  |  [optional]
-**status** | **Long** |  |  [optional]
-**datatableName** | **String** |  |  [optional]
-**productId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **datatableName** | **kotlin.String** |  |  [optional] |
+| **entity** | **kotlin.String** |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **status** | **kotlin.Long** |  |  [optional] |
 
 
 

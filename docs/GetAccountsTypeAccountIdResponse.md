@@ -1,33 +1,30 @@
 
-
 # GetAccountsTypeAccountIdResponse
 
-GetAccountsTypeAccountIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
-**savingsAccountNumber** | **Long** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**productName** | **String** |  |  [optional]
-**status** | [**GetAccountsStatus**](GetAccountsStatus.md) |  |  [optional]
-**timeline** | [**GetAccountsTimeline**](GetAccountsTimeline.md) |  |  [optional]
-**currency** | [**GetAccountsCurrency**](GetAccountsCurrency.md) |  |  [optional]
-**summary** | [**GetAccountsSummary**](GetAccountsSummary.md) |  |  [optional]
-**purchasedShares** | [**List&lt;GetAccountsPurchasedShares&gt;**](GetAccountsPurchasedShares.md) |  |  [optional]
-**savingsAccountId** | **Integer** |  |  [optional]
-**currentMarketPrice** | **Integer** |  |  [optional]
-**lockinPeriod** | **Integer** |  |  [optional]
-**lockPeriodTypeEnum** | [**GetAccountsLockPeriodTypeEnum**](GetAccountsLockPeriodTypeEnum.md) |  |  [optional]
-**minimumActivePeriod** | **Integer** |  |  [optional]
-**minimumActivePeriodTypeEnum** | [**GetAccountsLockPeriodTypeEnum**](GetAccountsLockPeriodTypeEnum.md) |  |  [optional]
-**allowDividendCalculationForInactiveClients** | **Boolean** |  |  [optional]
-**charges** | [**List&lt;GetAccountsCharges&gt;**](GetAccountsCharges.md) |  |  [optional]
-**dividends** | **List&lt;String&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **allowDividendCalculationForInactiveClients** | **kotlin.Boolean** |  |  [optional] |
+| **charges** | [**kotlin.collections.Set&lt;GetAccountsCharges&gt;**](GetAccountsCharges.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **currency** | [**GetAccountsCurrency**](GetAccountsCurrency.md) |  |  [optional] |
+| **currentMarketPrice** | **kotlin.Int** |  |  [optional] |
+| **dividends** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lockPeriodTypeEnum** | [**GetAccountsLockPeriodTypeEnum**](GetAccountsLockPeriodTypeEnum.md) |  |  [optional] |
+| **lockinPeriod** | **kotlin.Int** |  |  [optional] |
+| **minimumActivePeriod** | **kotlin.Int** |  |  [optional] |
+| **minimumActivePeriodTypeEnum** | [**GetAccountsLockPeriodTypeEnum**](GetAccountsLockPeriodTypeEnum.md) |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **productName** | **kotlin.String** |  |  [optional] |
+| **purchasedShares** | [**kotlin.collections.Set&lt;GetAccountsPurchasedShares&gt;**](GetAccountsPurchasedShares.md) |  |  [optional] |
+| **savingsAccountId** | **kotlin.Long** |  |  [optional] |
+| **savingsAccountNumber** | **kotlin.Long** |  |  [optional] |
+| **status** | [**GetAccountsStatus**](GetAccountsStatus.md) |  |  [optional] |
+| **summary** | [**GetAccountsSummary**](GetAccountsSummary.md) |  |  [optional] |
+| **timeline** | [**GetAccountsTimeline**](GetAccountsTimeline.md) |  |  [optional] |
 
 
 

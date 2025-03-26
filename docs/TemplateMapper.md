@@ -1,16 +1,14 @@
 
-
 # TemplateMapper
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**mapperorder** | **Integer** |  |  [optional]
-**mapperkey** | **String** |  |  [optional]
-**mappervalue** | **String** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **mapperkey** | **kotlin.String** |  |  [optional] |
+| **mapperorder** | **kotlin.Int** |  |  [optional] |
+| **mappervalue** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
 
 
 

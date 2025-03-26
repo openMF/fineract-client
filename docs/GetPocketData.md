@@ -1,12 +1,10 @@
 
-
 # GetPocketData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**row** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **row** | **kotlin.String** |  |  [optional] |
 
 
 

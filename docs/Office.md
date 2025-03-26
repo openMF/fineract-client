@@ -1,17 +1,18 @@
 
-
 # Office
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**parent** | [**Office**](Office.md) |  |  [optional]
-**name** | **String** |  |  [optional]
-**hierarchy** | **String** |  |  [optional]
-**openingLocalDate** | [**Date**](Date.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **children** | [**kotlin.collections.List&lt;Office&gt;**](Office.md) |  |  [optional] |
+| **externalId** | [**ExternalId**](ExternalId.md) |  |  [optional] |
+| **hierarchy** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **openingDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **openingLocalDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **parent** | [**Office**](Office.md) |  |  [optional] |
 
 
 

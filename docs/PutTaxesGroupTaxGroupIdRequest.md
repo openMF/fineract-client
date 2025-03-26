@@ -1,16 +1,13 @@
 
-
 # PutTaxesGroupTaxGroupIdRequest
 
-PutTaxesGroupTaxGroupIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**taxComponents** | [**List&lt;PutTaxesGroupTaxComponents&gt;**](PutTaxesGroupTaxComponents.md) |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **taxComponents** | [**kotlin.collections.Set&lt;PutTaxesGroupTaxComponents&gt;**](PutTaxesGroupTaxComponents.md) |  |  [optional] |
 
 
 

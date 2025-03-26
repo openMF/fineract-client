@@ -1,74 +1,42 @@
 # CodeValuesApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createCodeValue**](CodeValuesApi.md#createCodeValue) | **POST** codes/{codeId}/codevalues | Create a Code description
-[**deleteCodeValue**](CodeValuesApi.md#deleteCodeValue) | **DELETE** codes/{codeId}/codevalues/{codeValueId} | Delete a Code description
-[**retrieveAllCodeValues**](CodeValuesApi.md#retrieveAllCodeValues) | **GET** codes/{codeId}/codevalues | List Code Values
-[**retrieveCodeValue**](CodeValuesApi.md#retrieveCodeValue) | **GET** codes/{codeId}/codevalues/{codeValueId} | Retrieve a Code description
-[**updateCodeValue**](CodeValuesApi.md#updateCodeValue) | **PUT** codes/{codeId}/codevalues/{codeValueId} | Update a Code description
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createCodeValue**](CodeValuesApi.md#createCodeValue) | **POST** v1/codes/{codeId}/codevalues | Create a Code description |
+| [**deleteCodeValue**](CodeValuesApi.md#deleteCodeValue) | **DELETE** v1/codes/{codeId}/codevalues/{codeValueId} | Delete a Code description |
+| [**retrieveAllCodeValues**](CodeValuesApi.md#retrieveAllCodeValues) | **GET** v1/codes/{codeId}/codevalues | List Code Values |
+| [**retrieveCodeValue**](CodeValuesApi.md#retrieveCodeValue) | **GET** v1/codes/{codeId}/codevalues/{codeValueId} | Retrieve a Code description |
+| [**updateCodeValue**](CodeValuesApi.md#updateCodeValue) | **PUT** v1/codes/{codeId}/codevalues/{codeValueId} | Update a Code description |
 
 
-
-## createCodeValue
-
-> PostCodeValueDataResponse createCodeValue(codeId, postCodeValuesDataRequest)
 
 Create a Code description
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.CodeValuesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(CodeValuesApi::class.java)
+val codeId : kotlin.Long = 789 // kotlin.Long | codeId
+val postCodeValuesDataRequest : PostCodeValuesDataRequest =  // PostCodeValuesDataRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        CodeValuesApi apiInstance = new CodeValuesApi(defaultClient);
-        Long codeId = 56L; // Long | codeId
-        PostCodeValuesDataRequest postCodeValuesDataRequest = new PostCodeValuesDataRequest(); // PostCodeValuesDataRequest | 
-        try {
-            PostCodeValueDataResponse result = apiInstance.createCodeValue(codeId, postCodeValuesDataRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CodeValuesApi#createCodeValue");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostCodeValueDataResponse = webService.createCodeValue(codeId, postCodeValuesDataRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **codeId** | **Long**| codeId |
- **postCodeValuesDataRequest** | [**PostCodeValuesDataRequest**](PostCodeValuesDataRequest.md)|  |
+| **codeId** | **kotlin.Long**| codeId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postCodeValuesDataRequest** | [**PostCodeValuesDataRequest**](PostCodeValuesDataRequest.md)|  | |
 
 ### Return type
 
@@ -76,78 +44,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## deleteCodeValue
-
-> DeleteCodeValueDataResponse deleteCodeValue(codeId, codeValueId)
 
 Delete a Code description
 
 Deletes a code description
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.CodeValuesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(CodeValuesApi::class.java)
+val codeId : kotlin.Long = 789 // kotlin.Long | codeId
+val codeValueId : kotlin.Long = 789 // kotlin.Long | codeValueId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        CodeValuesApi apiInstance = new CodeValuesApi(defaultClient);
-        Long codeId = 56L; // Long | codeId
-        Long codeValueId = 56L; // Long | codeValueId
-        try {
-            DeleteCodeValueDataResponse result = apiInstance.deleteCodeValue(codeId, codeValueId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CodeValuesApi#deleteCodeValue");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteCodeValueDataResponse = webService.deleteCodeValue(codeId, codeValueId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **codeId** | **Long**| codeId |
- **codeValueId** | **Long**| codeValueId |
+| **codeId** | **kotlin.Long**| codeId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **codeValueId** | **kotlin.Long**| codeValueId | |
 
 ### Return type
 
@@ -155,155 +88,85 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveAllCodeValues
-
-> List&lt;GetCodeValuesDataResponse&gt; retrieveAllCodeValues(codeId)
 
 List Code Values
 
 Returns the list of Code Values for a given Code  Example Requests:  codes/1/codevalues
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.CodeValuesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(CodeValuesApi::class.java)
+val codeId : kotlin.Long = 789 // kotlin.Long | codeId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        CodeValuesApi apiInstance = new CodeValuesApi(defaultClient);
-        Long codeId = 56L; // Long | codeId
-        try {
-            List<GetCodeValuesDataResponse> result = apiInstance.retrieveAllCodeValues(codeId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CodeValuesApi#retrieveAllCodeValues");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetCodeValuesDataResponse> = webService.retrieveAllCodeValues(codeId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **codeId** | **Long**| codeId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **codeId** | **kotlin.Long**| codeId | |
 
 ### Return type
 
-[**List&lt;GetCodeValuesDataResponse&gt;**](GetCodeValuesDataResponse.md)
+[**kotlin.collections.List&lt;GetCodeValuesDataResponse&gt;**](GetCodeValuesDataResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | A List of code values for a given code |  -  |
-
-
-## retrieveCodeValue
-
-> GetCodeValuesDataResponse retrieveCodeValue(codeValueId, codeId)
 
 Retrieve a Code description
 
 Returns the details of a Code Value  Example Requests:  codes/1/codevalues/1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.CodeValuesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(CodeValuesApi::class.java)
+val codeValueId : kotlin.Long = 789 // kotlin.Long | codeValueId
+val codeId : kotlin.Long = 789 // kotlin.Long | codeId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        CodeValuesApi apiInstance = new CodeValuesApi(defaultClient);
-        Long codeValueId = 56L; // Long | codeValueId
-        Long codeId = 56L; // Long | codeId
-        try {
-            GetCodeValuesDataResponse result = apiInstance.retrieveCodeValue(codeValueId, codeId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CodeValuesApi#retrieveCodeValue");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetCodeValuesDataResponse = webService.retrieveCodeValue(codeValueId, codeId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **codeValueId** | **Long**| codeValueId |
- **codeId** | **Long**| codeId |
+| **codeValueId** | **kotlin.Long**| codeValueId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **codeId** | **kotlin.Long**| codeId | |
 
 ### Return type
 
@@ -311,80 +174,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## updateCodeValue
-
-> PutCodeValueDataResponse updateCodeValue(codeId, codeValueId, putCodeValuesDataRequest)
 
 Update a Code description
 
 Updates the details of a code description.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.CodeValuesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(CodeValuesApi::class.java)
+val codeId : kotlin.Long = 789 // kotlin.Long | codeId
+val codeValueId : kotlin.Long = 789 // kotlin.Long | codeValueId
+val putCodeValuesDataRequest : PutCodeValuesDataRequest =  // PutCodeValuesDataRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        CodeValuesApi apiInstance = new CodeValuesApi(defaultClient);
-        Long codeId = 56L; // Long | codeId
-        Long codeValueId = 56L; // Long | codeValueId
-        PutCodeValuesDataRequest putCodeValuesDataRequest = new PutCodeValuesDataRequest(); // PutCodeValuesDataRequest | 
-        try {
-            PutCodeValueDataResponse result = apiInstance.updateCodeValue(codeId, codeValueId, putCodeValuesDataRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CodeValuesApi#updateCodeValue");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutCodeValueDataResponse = webService.updateCodeValue(codeId, codeValueId, putCodeValuesDataRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **codeId** | **Long**| codeId |
- **codeValueId** | **Long**| codeValueId |
- **putCodeValuesDataRequest** | [**PutCodeValuesDataRequest**](PutCodeValuesDataRequest.md)|  |
+| **codeId** | **kotlin.Long**| codeId | |
+| **codeValueId** | **kotlin.Long**| codeValueId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putCodeValuesDataRequest** | [**PutCodeValuesDataRequest**](PutCodeValuesDataRequest.md)|  | |
 
 ### Return type
 
@@ -392,15 +220,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

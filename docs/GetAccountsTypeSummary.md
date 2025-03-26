@@ -1,12 +1,10 @@
 
-
 # GetAccountsTypeSummary
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currency** | [**GetAccountsChargesCurrency**](GetAccountsChargesCurrency.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **currency** | [**GetAccountsChargesCurrency**](GetAccountsChargesCurrency.md) |  |  [optional] |
 
 
 

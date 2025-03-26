@@ -1,21 +1,18 @@
 
-
 # GetAccountTransfersTemplateResponse
 
-GetAccountTransfersTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**transferAmount** | **Long** |  |  [optional]
-**transferDate** | [**Date**](Date.md) |  |  [optional]
-**fromOffice** | [**GetAccountTransfersFromOffice**](GetAccountTransfersFromOffice.md) |  |  [optional]
-**fromAccountType** | [**GetAccountTransfersFromAccountType**](GetAccountTransfersFromAccountType.md) |  |  [optional]
-**fromOfficeOptions** | [**List&lt;GetAccountTransfersFromOfficeOptions&gt;**](GetAccountTransfersFromOfficeOptions.md) |  |  [optional]
-**fromClientOptions** | [**List&lt;GetAccountTransfersFromClientOptions&gt;**](GetAccountTransfersFromClientOptions.md) |  |  [optional]
-**fromAccountTypeOptions** | [**List&lt;GetAccountTransfersFromAccountTypeOptions&gt;**](GetAccountTransfersFromAccountTypeOptions.md) |  |  [optional]
-**toOfficeOptions** | [**List&lt;GetAccountTransfersToOfficeOptions&gt;**](GetAccountTransfersToOfficeOptions.md) |  |  [optional]
-**toAccountTypeOptions** | [**List&lt;GetAccountTransfersToAccountTypeOptions&gt;**](GetAccountTransfersToAccountTypeOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **fromAccountType** | [**GetAccountTransfersFromAccountType**](GetAccountTransfersFromAccountType.md) |  |  [optional] |
+| **fromAccountTypeOptions** | [**kotlin.collections.Set&lt;GetAccountTransfersFromAccountTypeOptions&gt;**](GetAccountTransfersFromAccountTypeOptions.md) |  |  [optional] |
+| **fromClientOptions** | [**kotlin.collections.Set&lt;GetAccountTransfersFromClientOptions&gt;**](GetAccountTransfersFromClientOptions.md) |  |  [optional] |
+| **fromOffice** | [**GetAccountTransfersFromOffice**](GetAccountTransfersFromOffice.md) |  |  [optional] |
+| **fromOfficeOptions** | [**kotlin.collections.Set&lt;GetAccountTransfersFromOfficeOptions&gt;**](GetAccountTransfersFromOfficeOptions.md) |  |  [optional] |
+| **toAccountTypeOptions** | [**kotlin.collections.Set&lt;GetAccountTransfersToAccountTypeOptions&gt;**](GetAccountTransfersToAccountTypeOptions.md) |  |  [optional] |
+| **toOfficeOptions** | [**kotlin.collections.Set&lt;GetAccountTransfersToOfficeOptions&gt;**](GetAccountTransfersToOfficeOptions.md) |  |  [optional] |
+| **transferAmount** | **kotlin.Long** |  |  [optional] |
+| **transferDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

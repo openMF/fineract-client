@@ -1,17 +1,14 @@
 
-
 # PutFixedDepositAccountsAccountIdResponse
 
-PutFixedDepositAccountsAccountIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**savingsId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutFixedDepositAccountsChanges**](PutFixedDepositAccountsChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutFixedDepositAccountsChanges**](PutFixedDepositAccountsChanges.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **savingsId** | **kotlin.Long** |  |  [optional] |
 
 
 

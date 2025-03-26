@@ -1,15 +1,13 @@
 
-
 # Permission
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**grouping** | **String** |  |  [optional]
-**code** | **String** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.String** |  |  [optional] |
+| **grouping** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
 
 
 

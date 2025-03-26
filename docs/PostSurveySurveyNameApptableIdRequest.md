@@ -1,25 +1,22 @@
 
-
 # PostSurveySurveyNameApptableIdRequest
 
-PostSurveySurveyNameApptableIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**ppiHouseholdMembersCdQ1Householdmembers** | **Long** |  |  [optional]
-**ppiHighestschoolCdQ2Highestschool** | **Long** |  |  [optional]
-**ppiBusinessoccupationCdQ3Businessoccupation** | **Long** |  |  [optional]
-**ppiHabitableroomsCdQ4Habitablerooms** | **Long** |  |  [optional]
-**ppiFloortypeCdQ5Floortype** | **Long** |  |  [optional]
-**ppiLightingsourceCdQ6Lightingsource** | **Long** |  |  [optional]
-**ppiIronsCdQ7Irons** | **Long** |  |  [optional]
-**ppiMosquitonetsCdQ8Mosquitonets** | **Long** |  |  [optional]
-**ppiTowelsCdQ9Towels** | **Long** |  |  [optional]
-**ppiFryingpansCdQ10Fryingpans** | **Long** |  |  [optional]
-**date** | [**Date**](Date.md) |  |  [optional]
-**dateFormat** | [**Date**](Date.md) |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **date** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **dateFormat** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **ppiBusinessoccupationCdQ3Businessoccupation** | **kotlin.Long** |  |  [optional] |
+| **ppiFloortypeCdQ5Floortype** | **kotlin.Long** |  |  [optional] |
+| **ppiFryingpansCdQ10Fryingpans** | **kotlin.Long** |  |  [optional] |
+| **ppiHabitableroomsCdQ4Habitablerooms** | **kotlin.Long** |  |  [optional] |
+| **ppiHighestschoolCdQ2Highestschool** | **kotlin.Long** |  |  [optional] |
+| **ppiHouseholdMembersCdQ1Householdmembers** | **kotlin.Long** |  |  [optional] |
+| **ppiIronsCdQ7Irons** | **kotlin.Long** |  |  [optional] |
+| **ppiLightingsourceCdQ6Lightingsource** | **kotlin.Long** |  |  [optional] |
+| **ppiMosquitonetsCdQ8Mosquitonets** | **kotlin.Long** |  |  [optional] |
+| **ppiTowelsCdQ9Towels** | **kotlin.Long** |  |  [optional] |
 
 
 

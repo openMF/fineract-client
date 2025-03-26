@@ -1,21 +1,19 @@
 
-
 # Survey
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**components** | [**List&lt;Component&gt;**](Component.md) |  |  [optional]
-**questions** | [**List&lt;Question&gt;**](Question.md) |  |  [optional]
-**key** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**countryCode** | **String** |  |  [optional]
-**validFrom** | [**Date**](Date.md) |  |  [optional]
-**validTo** | [**Date**](Date.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **components** | [**kotlin.collections.List&lt;Component&gt;**](Component.md) |  |  [optional] |
+| **countryCode** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **key** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **questions** | [**kotlin.collections.List&lt;Question&gt;**](Question.md) |  |  [optional] |
+| **validFrom** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **validTo** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

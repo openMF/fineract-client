@@ -1,19 +1,16 @@
 
-
 # GetGroupsGroupIdResponse
 
-GetGroupsGroupIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**externalId** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**hierarchy** | **String** |  |  [optional]
-**timeline** | [**GetGroupsGroupIdTimeline**](GetGroupsGroupIdTimeline.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **hierarchy** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **timeline** | [**GetGroupsGroupIdTimeline**](GetGroupsGroupIdTimeline.md) |  |  [optional] |
 
 
 

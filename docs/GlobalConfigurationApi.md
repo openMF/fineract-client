@@ -1,149 +1,41 @@
 # GlobalConfigurationApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**retrieveConfiguration**](GlobalConfigurationApi.md#retrieveConfiguration) | **GET** configurations | Retrieve Global Configuration | Retrieve Global Configuration for surveys
-[**retrieveOne3**](GlobalConfigurationApi.md#retrieveOne3) | **GET** configurations/{configId} | Retrieve Global Configuration
-[**updateConfiguration1**](GlobalConfigurationApi.md#updateConfiguration1) | **PUT** configurations/{configId} | Update Global Configuration
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**retrieveConfiguration**](GlobalConfigurationApi.md#retrieveConfiguration) | **GET** v1/configurations | Retrieve Global Configuration | Retrieve Global Configuration for surveys |
+| [**retrieveOne3**](GlobalConfigurationApi.md#retrieveOne3) | **GET** v1/configurations/{configId} | Retrieve Global Configuration |
+| [**retrieveOneByName**](GlobalConfigurationApi.md#retrieveOneByName) | **GET** v1/configurations/name/{name} | Retrieve Global Configuration |
+| [**updateConfiguration1**](GlobalConfigurationApi.md#updateConfiguration1) | **PUT** v1/configurations/{configId} | Update Global Configuration |
 
 
-
-## retrieveConfiguration
-
-> List&lt;GetGlobalConfigurationsResponse&gt; retrieveConfiguration(survey)
 
 Retrieve Global Configuration | Retrieve Global Configuration for surveys
 
 Returns the list global enable/disable configurations.  Example Requests:  configurations   Returns the list global enable/disable survey configurations.  Example Requests:  configurations/survey
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GlobalConfigurationApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GlobalConfigurationApi::class.java)
+val survey : kotlin.Boolean = true // kotlin.Boolean | survey
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GlobalConfigurationApi apiInstance = new GlobalConfigurationApi(defaultClient);
-        Boolean survey = false; // Boolean | survey
-        try {
-            List<GetGlobalConfigurationsResponse> result = apiInstance.retrieveConfiguration(survey);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GlobalConfigurationApi#retrieveConfiguration");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetGlobalConfigurationsResponse = webService.retrieveConfiguration(survey)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **survey** | **Boolean**| survey | [optional] [default to false]
-
-### Return type
-
-[**List&lt;GetGlobalConfigurationsResponse&gt;**](GetGlobalConfigurationsResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | List of example \\n response \\nsurveys response   \\ngiven below |  -  |
-
-
-## retrieveOne3
-
-> GetGlobalConfigurationsResponse retrieveOne3(configId)
-
-Retrieve Global Configuration
-
-Returns a global enable/disable configurations.  Example Requests:  configurations/1
-
-### Example
-
-```java
-// Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GlobalConfigurationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
-
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GlobalConfigurationApi apiInstance = new GlobalConfigurationApi(defaultClient);
-        Long configId = 56L; // Long | configId
-        try {
-            GetGlobalConfigurationsResponse result = apiInstance.retrieveOne3(configId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GlobalConfigurationApi#retrieveOne3");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **configId** | **Long**| configId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **survey** | **kotlin.Boolean**| survey | [optional] [default to false] |
 
 ### Return type
 
@@ -151,78 +43,127 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## updateConfiguration1
+Retrieve Global Configuration
 
-> PutGlobalConfigurationsResponse updateConfiguration1(configId, putGlobalConfigurationsRequest)
+Returns a global enable/disable configurations.  Example Requests:  configurations/1
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GlobalConfigurationApi::class.java)
+val configId : kotlin.Long = 789 // kotlin.Long | configId
+
+launch(Dispatchers.IO) {
+    val result : GetGlobalConfigurationsResponse = webService.retrieveOne3(configId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **configId** | **kotlin.Long**| configId | |
+
+### Return type
+
+[**GetGlobalConfigurationsResponse**](GetGlobalConfigurationsResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve Global Configuration
+
+Returns a global enable/disable configuration.  Example Requests:  configurations/name/Enable-Address
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GlobalConfigurationApi::class.java)
+val name : kotlin.String = name_example // kotlin.String | name
+
+launch(Dispatchers.IO) {
+    val result : GlobalConfigurationPropertyData = webService.retrieveOneByName(name)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String**| name | |
+
+### Return type
+
+[**GlobalConfigurationPropertyData**](GlobalConfigurationPropertyData.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Update Global Configuration
 
 Updates an enable/disable global configuration item.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GlobalConfigurationApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GlobalConfigurationApi::class.java)
+val configId : kotlin.Long = 789 // kotlin.Long | configId
+val putGlobalConfigurationsRequest : PutGlobalConfigurationsRequest =  // PutGlobalConfigurationsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GlobalConfigurationApi apiInstance = new GlobalConfigurationApi(defaultClient);
-        Long configId = 56L; // Long | configId
-        PutGlobalConfigurationsRequest putGlobalConfigurationsRequest = new PutGlobalConfigurationsRequest(); // PutGlobalConfigurationsRequest | 
-        try {
-            PutGlobalConfigurationsResponse result = apiInstance.updateConfiguration1(configId, putGlobalConfigurationsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GlobalConfigurationApi#updateConfiguration1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutGlobalConfigurationsResponse = webService.updateConfiguration1(configId, putGlobalConfigurationsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **configId** | **Long**| configId |
- **putGlobalConfigurationsRequest** | [**PutGlobalConfigurationsRequest**](PutGlobalConfigurationsRequest.md)|  |
+| **configId** | **kotlin.Long**| configId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putGlobalConfigurationsRequest** | [**PutGlobalConfigurationsRequest**](PutGlobalConfigurationsRequest.md)|  | |
 
 ### Return type
 
@@ -230,15 +171,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

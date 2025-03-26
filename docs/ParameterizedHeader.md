@@ -1,13 +1,11 @@
 
-
 # ParameterizedHeader
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | **String** |  |  [optional]
-**parameters** | **Map&lt;String, String&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **parameters** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional] |
+| **&#x60;value&#x60;** | **kotlin.String** |  |  [optional] |
 
 
 

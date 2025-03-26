@@ -1,14 +1,12 @@
 
-
 # PostSelfLoansDisbursementData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**expectedDisbursementDate** | **String** |  |  [optional]
-**principal** | **Long** |  |  [optional]
-**approvedPrincipal** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **approvedPrincipal** | **kotlin.Long** |  |  [optional] |
+| **expectedDisbursementDate** | **kotlin.String** |  |  [optional] |
+| **principal** | **kotlin.Long** |  |  [optional] |
 
 
 

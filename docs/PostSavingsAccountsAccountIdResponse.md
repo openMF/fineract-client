@@ -1,16 +1,13 @@
 
-
 # PostSavingsAccountsAccountIdResponse
 
-PostSavingsAccountsAccountIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**officeId** | **Integer** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**Object**](.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**kotlin.Any**](.md) |  |  [optional] |
+| **clientId** | **kotlin.Int** |  |  [optional] |
+| **officeId** | **kotlin.Int** |  |  [optional] |
+| **resourceId** | **kotlin.Int** |  |  [optional] |
 
 
 

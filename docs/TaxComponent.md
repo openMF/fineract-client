@@ -1,24 +1,22 @@
 
-
 # TaxComponent
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdDate** | [**Date**](Date.md) |  |  [optional]
-**lastModifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**lastModifiedDate** | [**Date**](Date.md) |  |  [optional]
-**percentage** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**debitAccountType** | **Integer** |  |  [optional]
-**debitAcount** | [**GLAccount**](GLAccount.md) |  |  [optional]
-**creditAccountType** | **Integer** |  |  [optional]
-**creditAcount** | [**GLAccount**](GLAccount.md) |  |  [optional]
-**taxComponentHistories** | [**List&lt;TaxComponentHistory&gt;**](TaxComponentHistory.md) |  |  [optional]
-**taxGroupMappings** | [**List&lt;TaxGroupMappings&gt;**](TaxGroupMappings.md) |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **createdBy** | **kotlin.Long** |  |  [optional] |
+| **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **creditAccountType** | **kotlin.Int** |  |  [optional] |
+| **creditAcount** | [**GLAccount**](GLAccount.md) |  |  [optional] |
+| **debitAccountType** | **kotlin.Int** |  |  [optional] |
+| **debitAcount** | [**GLAccount**](GLAccount.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **lastModifiedBy** | **kotlin.Long** |  |  [optional] |
+| **lastModifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **percentage** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **taxComponentHistories** | [**kotlin.collections.Set&lt;TaxComponentHistory&gt;**](TaxComponentHistory.md) |  |  [optional] |
+| **taxGroupMappings** | [**kotlin.collections.Set&lt;TaxGroupMappings&gt;**](TaxGroupMappings.md) |  |  [optional] |
 
 
 

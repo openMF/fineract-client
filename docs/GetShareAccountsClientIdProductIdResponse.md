@@ -1,14 +1,11 @@
 
-
 # GetShareAccountsClientIdProductIdResponse
 
-GetShareAccountsClientIdProductIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**productOptions** | [**List&lt;GetClientIdProductIdProductOptions&gt;**](GetClientIdProductIdProductOptions.md) |  |  [optional]
-**chargeOptions** | [**List&lt;GetClientIdProductIdChargeOptions&gt;**](GetClientIdProductIdChargeOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **chargeOptions** | [**kotlin.collections.Set&lt;GetClientIdProductIdChargeOptions&gt;**](GetClientIdProductIdChargeOptions.md) |  |  [optional] |
+| **productOptions** | [**kotlin.collections.Set&lt;GetClientIdProductIdProductOptions&gt;**](GetClientIdProductIdProductOptions.md) |  |  [optional] |
 
 
 

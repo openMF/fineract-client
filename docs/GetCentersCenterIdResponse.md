@@ -1,19 +1,16 @@
 
-
 # GetCentersCenterIdResponse
 
-GetCentersCenterIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**status** | [**GetCentersStatus**](GetCentersStatus.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**name** | **String** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**hierarchy** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **hierarchy** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **status** | [**GetCentersStatus**](GetCentersStatus.md) |  |  [optional] |
 
 
 

@@ -1,32 +1,24 @@
 
-
 # GetTellersResponse
 
-GetTellersResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**debitAccountId** | **Long** |  |  [optional]
-**creditAccountId** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**startDate** | [**Date**](Date.md) |  |  [optional]
-**status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
-**officeName** | **String** |  |  [optional]
-
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **creditAccountId** | **kotlin.Long** |  |  [optional] |
+| **debitAccountId** | **kotlin.Long** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **startDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **status** | [**inline**](#Status) |  |  [optional] |
 
 
-## Enum: StatusEnum
-
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-PENDING | &quot;PENDING&quot;
-ACTIVE | &quot;ACTIVE&quot;
-INACTIVE | &quot;INACTIVE&quot;
-CLOSED | &quot;CLOSED&quot;
+<a id="Status"></a>
+## Enum: status
+| Name | Value |
+| ---- | ----- |
+| status | INVALID, PENDING, ACTIVE, INACTIVE, CLOSED |
 
 
 

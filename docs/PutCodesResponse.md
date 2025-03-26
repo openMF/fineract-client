@@ -1,14 +1,11 @@
 
-
 # PutCodesResponse
 
-PutCodesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutCodesApichangesSwagger**](PutCodesApichangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutCodesApichangesSwagger**](PutCodesApichangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

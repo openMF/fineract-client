@@ -1,28 +1,25 @@
 
-
 # GetFixedDepositProductsResponse
 
-GetFixedDepositProductsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**shortName** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**currency** | [**GetFixedDepositProductsCurrency**](GetFixedDepositProductsCurrency.md) |  |  [optional]
-**preClosurePenalApplicable** | **Boolean** |  |  [optional]
-**minDepositTerm** | **Integer** |  |  [optional]
-**maxDepositTerm** | **Integer** |  |  [optional]
-**minDepositTermType** | [**GetFixedDepositProductsMinDepositTermType**](GetFixedDepositProductsMinDepositTermType.md) |  |  [optional]
-**maxDepositTermType** | [**GetFixedDepositProductsMaxDepositTermType**](GetFixedDepositProductsMaxDepositTermType.md) |  |  [optional]
-**nominalAnnualInterestRate** | **Double** |  |  [optional]
-**interestCompoundingPeriodType** | [**GetFixedDepositProductsInterestCompoundingPeriodType**](GetFixedDepositProductsInterestCompoundingPeriodType.md) |  |  [optional]
-**interestPostingPeriodType** | [**GetFixedDepositProductsInterestPostingPeriodType**](GetFixedDepositProductsInterestPostingPeriodType.md) |  |  [optional]
-**interestCalculationType** | [**GetFixedDepositProductsInterestCalculationType**](GetFixedDepositProductsInterestCalculationType.md) |  |  [optional]
-**interestCalculationDaysInYearType** | [**GetFixedDepositProductsInterestCalculationDaysInYearType**](GetFixedDepositProductsInterestCalculationDaysInYearType.md) |  |  [optional]
-**accountingRule** | [**GetFixedDepositProductsAccountingRule**](GetFixedDepositProductsAccountingRule.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountingRule** | [**GetFixedDepositProductsAccountingRule**](GetFixedDepositProductsAccountingRule.md) |  |  [optional] |
+| **currency** | [**GetFixedDepositProductsCurrency**](GetFixedDepositProductsCurrency.md) |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **interestCalculationDaysInYearType** | [**GetFixedDepositProductsInterestCalculationDaysInYearType**](GetFixedDepositProductsInterestCalculationDaysInYearType.md) |  |  [optional] |
+| **interestCalculationType** | [**GetFixedDepositProductsInterestCalculationType**](GetFixedDepositProductsInterestCalculationType.md) |  |  [optional] |
+| **interestCompoundingPeriodType** | [**GetFixedDepositProductsInterestCompoundingPeriodType**](GetFixedDepositProductsInterestCompoundingPeriodType.md) |  |  [optional] |
+| **interestPostingPeriodType** | [**GetFixedDepositProductsInterestPostingPeriodType**](GetFixedDepositProductsInterestPostingPeriodType.md) |  |  [optional] |
+| **maxDepositTerm** | **kotlin.Int** |  |  [optional] |
+| **maxDepositTermType** | [**GetFixedDepositProductsMaxDepositTermType**](GetFixedDepositProductsMaxDepositTermType.md) |  |  [optional] |
+| **minDepositTerm** | **kotlin.Int** |  |  [optional] |
+| **minDepositTermType** | [**GetFixedDepositProductsMinDepositTermType**](GetFixedDepositProductsMinDepositTermType.md) |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nominalAnnualInterestRate** | **kotlin.Double** |  |  [optional] |
+| **preClosurePenalApplicable** | **kotlin.Boolean** |  |  [optional] |
+| **shortName** | **kotlin.String** |  |  [optional] |
 
 
 

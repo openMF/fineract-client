@@ -1,98 +1,64 @@
 # StandingInstructionsHistoryApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**retrieveAll20**](StandingInstructionsHistoryApi.md#retrieveAll20) | **GET** standinginstructionrunhistory | Standing Instructions Logged History
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**retrieveAll20**](StandingInstructionsHistoryApi.md#retrieveAll20) | **GET** v1/standinginstructionrunhistory | Standing Instructions Logged History |
 
 
-
-## retrieveAll20
-
-> GetStandingInstructionRunHistoryResponse retrieveAll20(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType, locale, dateFormat, fromDate, toDate)
 
 Standing Instructions Logged History
 
 The list capability of history can support pagination and sorting   Example Requests :  standinginstructionrunhistory  standinginstructionrunhistory?orderBy&#x3D;name&amp;sortOrder&#x3D;DESC  standinginstructionrunhistory?offset&#x3D;10&amp;limit&#x3D;50
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.StandingInstructionsHistoryApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(StandingInstructionsHistoryApi::class.java)
+val externalId : kotlin.String = externalId_example // kotlin.String | externalId
+val offset : kotlin.Int = 56 // kotlin.Int | offset
+val limit : kotlin.Int = 56 // kotlin.Int | limit
+val orderBy : kotlin.String = orderBy_example // kotlin.String | orderBy
+val sortOrder : kotlin.String = sortOrder_example // kotlin.String | sortOrder
+val transferType : kotlin.Int = 56 // kotlin.Int | transferType
+val clientName : kotlin.String = clientName_example // kotlin.String | clientName
+val clientId : kotlin.Long = 789 // kotlin.Long | clientId
+val fromAccountId : kotlin.Long = 789 // kotlin.Long | fromAccountId
+val fromAccountType : kotlin.Int = 56 // kotlin.Int | fromAccountType
+val locale : kotlin.String = locale_example // kotlin.String | locale
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | dateFormat
+val fromDate : kotlin.Any = Object // kotlin.Any | fromDate
+val toDate : kotlin.Any = Object // kotlin.Any | toDate
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        StandingInstructionsHistoryApi apiInstance = new StandingInstructionsHistoryApi(defaultClient);
-        String sqlSearch = "sqlSearch_example"; // String | sqlSearch
-        String externalId = "externalId_example"; // String | externalId
-        Integer offset = 56; // Integer | offset
-        Integer limit = 56; // Integer | limit
-        String orderBy = "orderBy_example"; // String | orderBy
-        String sortOrder = "sortOrder_example"; // String | sortOrder
-        Integer transferType = 56; // Integer | transferType
-        String clientName = "clientName_example"; // String | clientName
-        Long clientId = 56L; // Long | clientId
-        Long fromAccountId = 56L; // Long | fromAccountId
-        Integer fromAccountType = 56; // Integer | fromAccountType
-        String locale = "locale_example"; // String | locale
-        String dateFormat = "dateFormat_example"; // String | dateFormat
-        Object fromDate = null; // Object | fromDate
-        Object toDate = null; // Object | toDate
-        try {
-            GetStandingInstructionRunHistoryResponse result = apiInstance.retrieveAll20(sqlSearch, externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType, locale, dateFormat, fromDate, toDate);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling StandingInstructionsHistoryApi#retrieveAll20");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetStandingInstructionRunHistoryResponse = webService.retrieveAll20(externalId, offset, limit, orderBy, sortOrder, transferType, clientName, clientId, fromAccountId, fromAccountType, locale, dateFormat, fromDate, toDate)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sqlSearch** | **String**| sqlSearch | [optional]
- **externalId** | **String**| externalId | [optional]
- **offset** | **Integer**| offset | [optional]
- **limit** | **Integer**| limit | [optional]
- **orderBy** | **String**| orderBy | [optional]
- **sortOrder** | **String**| sortOrder | [optional]
- **transferType** | **Integer**| transferType | [optional]
- **clientName** | **String**| clientName | [optional]
- **clientId** | **Long**| clientId | [optional]
- **fromAccountId** | **Long**| fromAccountId | [optional]
- **fromAccountType** | **Integer**| fromAccountType | [optional]
- **locale** | **String**| locale | [optional]
- **dateFormat** | **String**| dateFormat | [optional]
- **fromDate** | [**Object**](.md)| fromDate | [optional]
- **toDate** | [**Object**](.md)| toDate | [optional]
+| **externalId** | **kotlin.String**| externalId | [optional] |
+| **offset** | **kotlin.Int**| offset | [optional] |
+| **limit** | **kotlin.Int**| limit | [optional] |
+| **orderBy** | **kotlin.String**| orderBy | [optional] |
+| **sortOrder** | **kotlin.String**| sortOrder | [optional] |
+| **transferType** | **kotlin.Int**| transferType | [optional] |
+| **clientName** | **kotlin.String**| clientName | [optional] |
+| **clientId** | **kotlin.Long**| clientId | [optional] |
+| **fromAccountId** | **kotlin.Long**| fromAccountId | [optional] |
+| **fromAccountType** | **kotlin.Int**| fromAccountType | [optional] |
+| **locale** | **kotlin.String**| locale | [optional] |
+| **dateFormat** | **kotlin.String**| dateFormat | [optional] |
+| **fromDate** | [**kotlin.Any**](.md)| fromDate | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **toDate** | [**kotlin.Any**](.md)| toDate | [optional] |
 
 ### Return type
 
@@ -100,15 +66,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

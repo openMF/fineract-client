@@ -1,17 +1,15 @@
 
-
 # GetAccountTransfersTemplateRefundByTransferFromOffice
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**nameDecorated** | **String** |  |  [optional]
-**externalId** | **Integer** |  |  [optional]
-**openingDate** | [**Date**](Date.md) |  |  [optional]
-**hierarchy** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **hierarchy** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nameDecorated** | **kotlin.String** |  |  [optional] |
+| **openingDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
 
 
 

@@ -1,18 +1,16 @@
 
-
 # GetSelfSavingsTransactionType
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**code** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**deposit** | **Boolean** |  |  [optional]
-**withdrawal** | **Boolean** |  |  [optional]
-**interestPosting** | **Boolean** |  |  [optional]
-**feeDeduction** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **code** | **kotlin.String** |  |  [optional] |
+| **deposit** | **kotlin.Boolean** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **feeDeduction** | **kotlin.Boolean** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **interestPosting** | **kotlin.Boolean** |  |  [optional] |
+| **withdrawal** | **kotlin.Boolean** |  |  [optional] |
 
 
 

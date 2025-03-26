@@ -1,18 +1,15 @@
 
-
 # PostProvisioningEntriesRequest
 
-PostProvisioningEntriesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**createjournalentries** | **String** |  |  [optional]
-**provisioningentry** | **String** |  |  [optional]
-**entries** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **createjournalentries** | **kotlin.String** |  |  [optional] |
+| **date** | **kotlin.String** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **propertyEntries** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **provisioningentry** | **kotlin.String** |  |  [optional] |
 
 
 

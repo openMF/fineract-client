@@ -1,12 +1,10 @@
 
-
 # GetClientIdProductIdChargeOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**chargeOptions** | [**GetShareAccountsChargeOptions**](GetShareAccountsChargeOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **chargeOptions** | [**GetShareAccountsChargeOptions**](GetShareAccountsChargeOptions.md) |  |  [optional] |
 
 
 

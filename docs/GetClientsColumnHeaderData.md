@@ -1,18 +1,16 @@
 
-
 # GetClientsColumnHeaderData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**columnName** | **String** |  |  [optional]
-**columnType** | **String** |  |  [optional]
-**columnLength** | **Integer** |  |  [optional]
-**columnDisplayType** | **String** |  |  [optional]
-**isColumnNullable** | **Boolean** |  |  [optional]
-**isColumnPrimaryKey** | **Boolean** |  |  [optional]
-**columnValues** | **List&lt;String&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **columnDisplayType** | **kotlin.String** |  |  [optional] |
+| **columnLength** | **kotlin.Int** |  |  [optional] |
+| **columnName** | **kotlin.String** |  |  [optional] |
+| **columnType** | **kotlin.String** |  |  [optional] |
+| **columnValues** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
+| **isColumnNullable** | **kotlin.Boolean** |  |  [optional] |
+| **isColumnPrimaryKey** | **kotlin.Boolean** |  |  [optional] |
 
 
 

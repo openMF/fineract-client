@@ -1,14 +1,12 @@
 
-
 # LookupTableData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**key** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**entries** | [**List&lt;LookupTableEntry&gt;**](LookupTableEntry.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **propertyEntries** | [**kotlin.collections.List&lt;LookupTableEntry&gt;**](LookupTableEntry.md) |  |  [optional] |
+| **key** | **kotlin.String** |  |  [optional] |
 
 
 

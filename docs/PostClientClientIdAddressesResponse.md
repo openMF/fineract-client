@@ -1,13 +1,10 @@
 
-
 # PostClientClientIdAddressesResponse
 
-PostClientClientIdAddressesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

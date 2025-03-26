@@ -1,20 +1,18 @@
 
-
 # PostClientClientIdAddressesRequest
 
-PostClientClientIdAddressesRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**street** | **String** |  |  [optional]
-**addressLine1** | **String** |  |  [optional]
-**addressLine2** | **String** |  |  [optional]
-**addressLine3** | **String** |  |  [optional]
-**city** | **String** |  |  [optional]
-**stateProvinceId** | **Integer** |  |  [optional]
-**countryId** | **Integer** |  |  [optional]
-**postalCode** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **addressLine1** | **kotlin.String** |  |  [optional] |
+| **addressLine2** | **kotlin.String** |  |  [optional] |
+| **addressLine3** | **kotlin.String** |  |  [optional] |
+| **city** | **kotlin.String** |  |  [optional] |
+| **countryId** | **kotlin.Long** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **postalCode** | **kotlin.Long** |  |  [optional] |
+| **stateProvinceId** | **kotlin.Long** |  |  [optional] |
+| **street** | **kotlin.String** |  |  [optional] |
 
 
 

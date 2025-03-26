@@ -1,17 +1,14 @@
 
-
 # GetTellersTellerIdCashiersTemplateResponse
 
-GetTellersTellerIdCashiersTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**tellerId** | **Long** |  |  [optional]
-**tellerName** | **String** |  |  [optional]
-**officeId** | **Long** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**staffOptions** | [**List&lt;StaffData&gt;**](StaffData.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **staffOptions** | [**kotlin.collections.List&lt;StaffData&gt;**](StaffData.md) |  |  [optional] |
+| **tellerId** | **kotlin.Long** |  |  [optional] |
+| **tellerName** | **kotlin.String** |  |  [optional] |
 
 
 

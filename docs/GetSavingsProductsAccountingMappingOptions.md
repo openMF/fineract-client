@@ -1,15 +1,13 @@
 
-
 # GetSavingsProductsAccountingMappingOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**liabilityAccountOptions** | [**List&lt;GetSavingsProductsLiabilityAccountOptions&gt;**](GetSavingsProductsLiabilityAccountOptions.md) |  |  [optional]
-**assetAccountOptions** | [**List&lt;GetSavingsProductsAssetAccountOptions&gt;**](GetSavingsProductsAssetAccountOptions.md) |  |  [optional]
-**expenseAccountOptions** | [**List&lt;GetSavingsProductsExpenseAccountOptions&gt;**](GetSavingsProductsExpenseAccountOptions.md) |  |  [optional]
-**incomeAccountOptions** | [**List&lt;GetSavingsProductsIncomeAccountOptions&gt;**](GetSavingsProductsIncomeAccountOptions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **assetAccountOptions** | [**kotlin.collections.Set&lt;GetSavingsProductsAssetAccountOptions&gt;**](GetSavingsProductsAssetAccountOptions.md) |  |  [optional] |
+| **expenseAccountOptions** | [**kotlin.collections.Set&lt;GetSavingsProductsExpenseAccountOptions&gt;**](GetSavingsProductsExpenseAccountOptions.md) |  |  [optional] |
+| **incomeAccountOptions** | [**kotlin.collections.Set&lt;GetSavingsProductsIncomeAccountOptions&gt;**](GetSavingsProductsIncomeAccountOptions.md) |  |  [optional] |
+| **liabilityAccountOptions** | [**kotlin.collections.Set&lt;GetSavingsProductsLiabilityAccountOptions&gt;**](GetSavingsProductsLiabilityAccountOptions.md) |  |  [optional] |
 
 
 

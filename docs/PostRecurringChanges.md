@@ -1,16 +1,14 @@
 
-
 # PostRecurringChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**accountNumber** | **String** |  |  [optional]
-**checkNumber** | **String** |  |  [optional]
-**routingCode** | **String** |  |  [optional]
-**receiptNumber** | **String** |  |  [optional]
-**bankNumber** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNumber** | **kotlin.String** |  |  [optional] |
+| **bankNumber** | **kotlin.String** |  |  [optional] |
+| **checkNumber** | **kotlin.String** |  |  [optional] |
+| **receiptNumber** | **kotlin.String** |  |  [optional] |
+| **routingCode** | **kotlin.String** |  |  [optional] |
 
 
 

@@ -1,21 +1,18 @@
 
-
 # GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse
 
-GetRecurringDepositAccountsRecurringDepositAccountIdTransactionsTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**transactionType** | [**GetRecurringTransactionType**](GetRecurringTransactionType.md) |  |  [optional]
-**accountId** | **Integer** |  |  [optional]
-**accountNo** | **String** |  |  [optional]
-**date** | [**Date**](Date.md) |  |  [optional]
-**currency** | [**GetRecurringCurrency**](GetRecurringCurrency.md) |  |  [optional]
-**amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**reversed** | **Boolean** |  |  [optional]
-**paymentTypeOptions** | **List&lt;Integer&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountId** | **kotlin.Long** |  |  [optional] |
+| **accountNo** | **kotlin.String** |  |  [optional] |
+| **amount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **currency** | [**GetRecurringCurrency**](GetRecurringCurrency.md) |  |  [optional] |
+| **date** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **paymentTypeOptions** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **reversed** | **kotlin.Boolean** |  |  [optional] |
+| **transactionType** | [**GetRecurringTransactionType**](GetRecurringTransactionType.md) |  |  [optional] |
 
 
 

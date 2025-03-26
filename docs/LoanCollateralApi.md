@@ -1,77 +1,45 @@
 # LoanCollateralApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createCollateral**](LoanCollateralApi.md#createCollateral) | **POST** loans/{loanId}/collaterals | Create a Collateral
-[**deleteCollateral**](LoanCollateralApi.md#deleteCollateral) | **DELETE** loans/{loanId}/collaterals/{collateralId} | Remove a Collateral
-[**newCollateralTemplate**](LoanCollateralApi.md#newCollateralTemplate) | **GET** loans/{loanId}/collaterals/template | Retrieve Collateral Details Template
-[**retrieveCollateralDetails**](LoanCollateralApi.md#retrieveCollateralDetails) | **GET** loans/{loanId}/collaterals | List Loan Collaterals
-[**retrieveCollateralDetails1**](LoanCollateralApi.md#retrieveCollateralDetails1) | **GET** loans/{loanId}/collaterals/{collateralId} | Retrieve a Collateral
-[**updateCollateral**](LoanCollateralApi.md#updateCollateral) | **PUT** loans/{loanId}/collaterals/{collateralId} | Update a Collateral
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createCollateral**](LoanCollateralApi.md#createCollateral) | **POST** v1/loans/{loanId}/collaterals | Create a Collateral |
+| [**deleteCollateral**](LoanCollateralApi.md#deleteCollateral) | **DELETE** v1/loans/{loanId}/collaterals/{collateralId} | Remove a Collateral |
+| [**newCollateralTemplate**](LoanCollateralApi.md#newCollateralTemplate) | **GET** v1/loans/{loanId}/collaterals/template | Retrieve Collateral Details Template |
+| [**retrieveCollateralDetails**](LoanCollateralApi.md#retrieveCollateralDetails) | **GET** v1/loans/{loanId}/collaterals | List Loan Collaterals |
+| [**retrieveCollateralDetails1**](LoanCollateralApi.md#retrieveCollateralDetails1) | **GET** v1/loans/{loanId}/collaterals/{collateralId} | Retrieve a Collateral |
+| [**updateCollateral**](LoanCollateralApi.md#updateCollateral) | **PUT** v1/loans/{loanId}/collaterals/{collateralId} | Update a Collateral |
 
 
-
-## createCollateral
-
-> PostLoansLoanIdCollateralsResponse createCollateral(loanId, postLoansLoanIdCollateralsRequest)
 
 Create a Collateral
 
 Note: Currently, Collaterals may be added only before a Loan is approved
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val postLoansLoanIdCollateralsRequest : PostLoansLoanIdCollateralsRequest =  // PostLoansLoanIdCollateralsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        PostLoansLoanIdCollateralsRequest postLoansLoanIdCollateralsRequest = new PostLoansLoanIdCollateralsRequest(); // PostLoansLoanIdCollateralsRequest | 
-        try {
-            PostLoansLoanIdCollateralsResponse result = apiInstance.createCollateral(loanId, postLoansLoanIdCollateralsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#createCollateral");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdCollateralsResponse = webService.createCollateral(loanId, postLoansLoanIdCollateralsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **postLoansLoanIdCollateralsRequest** | [**PostLoansLoanIdCollateralsRequest**](PostLoansLoanIdCollateralsRequest.md)|  |
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postLoansLoanIdCollateralsRequest** | [**PostLoansLoanIdCollateralsRequest**](PostLoansLoanIdCollateralsRequest.md)|  | |
 
 ### Return type
 
@@ -79,78 +47,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## deleteCollateral
-
-> DeleteLoansLoanIdCollateralsCollateralIdResponse deleteCollateral(loanId, collateralId)
 
 Remove a Collateral
 
 Note: A collateral can only be removed from Loans that are not yet approved.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val collateralId : kotlin.Long = 789 // kotlin.Long | collateralId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long collateralId = 56L; // Long | collateralId
-        try {
-            DeleteLoansLoanIdCollateralsCollateralIdResponse result = apiInstance.deleteCollateral(loanId, collateralId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#deleteCollateral");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdCollateralsCollateralIdResponse = webService.deleteCollateral(loanId, collateralId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **collateralId** | **Long**| collateralId |
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **collateralId** | **kotlin.Long**| collateralId | |
 
 ### Return type
 
@@ -158,76 +91,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## newCollateralTemplate
-
-> GetLoansLoanIdCollateralsTemplateResponse newCollateralTemplate(loanId)
 
 Retrieve Collateral Details Template
 
 This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  loans/1/collaterals/template
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        try {
-            GetLoansLoanIdCollateralsTemplateResponse result = apiInstance.newCollateralTemplate(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#newCollateralTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdCollateralsTemplateResponse = webService.newCollateralTemplate(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
 
 ### Return type
 
@@ -235,155 +133,85 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveCollateralDetails
-
-> List&lt;GetLoansLoanIdCollateralsResponse&gt; retrieveCollateralDetails(loanId)
 
 List Loan Collaterals
 
 Example Requests:  loans/1/collaterals   loans/1/collaterals?fields&#x3D;value,description
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        try {
-            List<GetLoansLoanIdCollateralsResponse> result = apiInstance.retrieveCollateralDetails(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#retrieveCollateralDetails");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetLoansLoanIdCollateralsResponse> = webService.retrieveCollateralDetails(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
 
 ### Return type
 
-[**List&lt;GetLoansLoanIdCollateralsResponse&gt;**](GetLoansLoanIdCollateralsResponse.md)
+[**kotlin.collections.List&lt;GetLoansLoanIdCollateralsResponse&gt;**](GetLoansLoanIdCollateralsResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveCollateralDetails1
-
-> GetLoansLoanIdCollateralsResponse retrieveCollateralDetails1(loanId, collateralId)
 
 Retrieve a Collateral
 
 Example Requests:  /loans/1/collaterals/1   /loans/1/collaterals/1?fields&#x3D;description,description
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val collateralId : kotlin.Long = 789 // kotlin.Long | collateralId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long collateralId = 56L; // Long | collateralId
-        try {
-            GetLoansLoanIdCollateralsResponse result = apiInstance.retrieveCollateralDetails1(loanId, collateralId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#retrieveCollateralDetails1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdCollateralsResponse = webService.retrieveCollateralDetails1(loanId, collateralId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **collateralId** | **Long**| collateralId |
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **collateralId** | **kotlin.Long**| collateralId | |
 
 ### Return type
 
@@ -391,78 +219,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## updateCollateral
-
-> PutLoansLoanIdCollateralsCollateralIdResponse updateCollateral(loanId, collateralId, putLoansLoandIdCollateralsCollateralIdRequest)
 
 Update a Collateral
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanCollateralApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanCollateralApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val collateralId : kotlin.Long = 789 // kotlin.Long | collateralId
+val putLoansLoandIdCollateralsCollateralIdRequest : PutLoansLoandIdCollateralsCollateralIdRequest =  // PutLoansLoandIdCollateralsCollateralIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanCollateralApi apiInstance = new LoanCollateralApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long collateralId = 56L; // Long | collateralId
-        PutLoansLoandIdCollateralsCollateralIdRequest putLoansLoandIdCollateralsCollateralIdRequest = new PutLoansLoandIdCollateralsCollateralIdRequest(); // PutLoansLoandIdCollateralsCollateralIdRequest | 
-        try {
-            PutLoansLoanIdCollateralsCollateralIdResponse result = apiInstance.updateCollateral(loanId, collateralId, putLoansLoandIdCollateralsCollateralIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanCollateralApi#updateCollateral");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdCollateralsCollateralIdResponse = webService.updateCollateral(loanId, collateralId, putLoansLoandIdCollateralsCollateralIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **collateralId** | **Long**| collateralId |
- **putLoansLoandIdCollateralsCollateralIdRequest** | [**PutLoansLoandIdCollateralsCollateralIdRequest**](PutLoansLoandIdCollateralsCollateralIdRequest.md)|  |
+| **loanId** | **kotlin.Long**| loanId | |
+| **collateralId** | **kotlin.Long**| collateralId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putLoansLoandIdCollateralsCollateralIdRequest** | [**PutLoansLoandIdCollateralsCollateralIdRequest**](PutLoansLoandIdCollateralsCollateralIdRequest.md)|  | |
 
 ### Return type
 
@@ -470,15 +263,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

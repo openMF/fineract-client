@@ -1,14 +1,11 @@
 
-
 # PutAccountNumberFormatsResponse
 
-PutAccountNumberFormatsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutAccountNumberFormatschangesSwagger**](PutAccountNumberFormatschangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutAccountNumberFormatschangesSwagger**](PutAccountNumberFormatschangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

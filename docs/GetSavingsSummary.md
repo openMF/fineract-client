@@ -1,13 +1,11 @@
 
-
 # GetSavingsSummary
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currency** | [**GetSavingsCurrency**](GetSavingsCurrency.md) |  |  [optional]
-**accountBalance** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountBalance** | **kotlin.Int** |  |  [optional] |
+| **currency** | [**GetSavingsCurrency**](GetSavingsCurrency.md) |  |  [optional] |
 
 
 

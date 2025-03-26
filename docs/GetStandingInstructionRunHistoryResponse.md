@@ -1,14 +1,11 @@
 
-
 # GetStandingInstructionRunHistoryResponse
 
-GetStandingInstructionRunHistoryResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetStandingInstructionHistoryPageItemsResponse&gt;**](GetStandingInstructionHistoryPageItemsResponse.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetStandingInstructionHistoryPageItemsResponse&gt;**](GetStandingInstructionHistoryPageItemsResponse.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

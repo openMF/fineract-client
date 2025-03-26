@@ -1,18 +1,16 @@
 
-
 # QuestionData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**responseDatas** | [**List&lt;ResponseData&gt;**](ResponseData.md) |  |  [optional]
-**componentKey** | **String** |  |  [optional]
-**key** | **String** |  |  [optional]
-**text** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**sequenceNo** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **componentKey** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **key** | **kotlin.String** |  |  [optional] |
+| **responseDatas** | [**kotlin.collections.List&lt;ResponseData&gt;**](ResponseData.md) |  |  [optional] |
+| **sequenceNo** | **kotlin.Int** |  |  [optional] |
+| **text** | **kotlin.String** |  |  [optional] |
 
 
 

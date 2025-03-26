@@ -1,20 +1,18 @@
 
-
 # GetSavingsProductsLiabilityAccountOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**glCode** | **Integer** |  |  [optional]
-**disabled** | **Boolean** |  |  [optional]
-**manualEntriesAllowed** | **Boolean** |  |  [optional]
-**type** | [**GetSavingsProductsLiabilityType**](GetSavingsProductsLiabilityType.md) |  |  [optional]
-**usage** | [**GetSavingsProductsLiabilityUsage**](GetSavingsProductsLiabilityUsage.md) |  |  [optional]
-**nameDecorated** | **String** |  |  [optional]
-**tagId** | [**GetSavingsProductsLiabilityTagId**](GetSavingsProductsLiabilityTagId.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **disabled** | **kotlin.Boolean** |  |  [optional] |
+| **glCode** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **manualEntriesAllowed** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nameDecorated** | **kotlin.String** |  |  [optional] |
+| **tagId** | [**GetSavingsProductsLiabilityTagId**](GetSavingsProductsLiabilityTagId.md) |  |  [optional] |
+| **type** | [**GetSavingsProductsLiabilityType**](GetSavingsProductsLiabilityType.md) |  |  [optional] |
+| **usage** | [**GetSavingsProductsLiabilityUsage**](GetSavingsProductsLiabilityUsage.md) |  |  [optional] |
 
 
 

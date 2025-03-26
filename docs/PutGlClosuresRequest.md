@@ -1,13 +1,10 @@
 
-
 # PutGlClosuresRequest
 
-PutGlClosuresRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**comments** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **comments** | **kotlin.String** |  |  [optional] |
 
 
 

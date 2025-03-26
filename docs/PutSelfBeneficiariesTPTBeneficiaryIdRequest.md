@@ -1,14 +1,11 @@
 
-
 # PutSelfBeneficiariesTPTBeneficiaryIdRequest
 
-PutSelfBeneficiariesTPTBeneficiaryIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**transferLimit** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String** |  |  [optional] |
+| **transferLimit** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,12 +1,10 @@
 
-
 # PutProvisioningCriteriaResponseChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**criteriaName** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **criteriaName** | **kotlin.String** |  |  [optional] |
 
 
 

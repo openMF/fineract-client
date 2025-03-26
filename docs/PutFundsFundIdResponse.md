@@ -1,14 +1,11 @@
 
-
 # PutFundsFundIdResponse
 
-PutFundsFundIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Integer** |  |  [optional]
-**changes** | [**PutFundsFundIdRequest**](PutFundsFundIdRequest.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutFundsFundIdRequest**](PutFundsFundIdRequest.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

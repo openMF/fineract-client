@@ -1,14 +1,11 @@
 
-
 # PutReportResponse
 
-PutReportResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutReportResponseChanges**](PutReportResponseChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutReportResponseChanges**](PutReportResponseChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

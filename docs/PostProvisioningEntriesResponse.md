@@ -1,13 +1,10 @@
 
-
 # PostProvisioningEntriesResponse
 
-PostProvisioningEntriesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

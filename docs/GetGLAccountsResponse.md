@@ -1,24 +1,21 @@
 
-
 # GetGLAccountsResponse
 
-GetGLAccountsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**parentId** | **Long** |  |  [optional]
-**glCode** | **String** |  |  [optional]
-**disabled** | **Boolean** |  |  [optional]
-**manualEntriesAllowed** | **Boolean** |  |  [optional]
-**type** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**usage** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional]
-**description** | **String** |  |  [optional]
-**nameDecorated** | **String** |  |  [optional]
-**tagId** | [**CodeValueData**](CodeValueData.md) |  |  [optional]
-**organizationRunningBalance** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **disabled** | **kotlin.Boolean** |  |  [optional] |
+| **glCode** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **manualEntriesAllowed** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **nameDecorated** | **kotlin.String** |  |  [optional] |
+| **organizationRunningBalance** | **kotlin.Long** |  |  [optional] |
+| **parentId** | **kotlin.Long** |  |  [optional] |
+| **tagId** | [**CodeValueData**](CodeValueData.md) |  |  [optional] |
+| **type** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **usage** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
 
 
 

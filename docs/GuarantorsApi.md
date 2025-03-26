@@ -1,312 +1,176 @@
 # GuarantorsApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**accountsTemplate**](GuarantorsApi.md#accountsTemplate) | **GET** loans/{loanId}/guarantors/accounts/template | 
-[**createGuarantor**](GuarantorsApi.md#createGuarantor) | **POST** loans/{loanId}/guarantors | 
-[**deleteGuarantor**](GuarantorsApi.md#deleteGuarantor) | **DELETE** loans/{loanId}/guarantors/{guarantorId} | 
-[**getGuarantorTemplate**](GuarantorsApi.md#getGuarantorTemplate) | **GET** loans/{loanId}/guarantors/downloadtemplate | 
-[**newGuarantorTemplate**](GuarantorsApi.md#newGuarantorTemplate) | **GET** loans/{loanId}/guarantors/template | 
-[**postGuarantorTemplate**](GuarantorsApi.md#postGuarantorTemplate) | **POST** loans/{loanId}/guarantors/uploadtemplate | 
-[**retrieveGuarantorDetails**](GuarantorsApi.md#retrieveGuarantorDetails) | **GET** loans/{loanId}/guarantors | 
-[**retrieveGuarantorDetails1**](GuarantorsApi.md#retrieveGuarantorDetails1) | **GET** loans/{loanId}/guarantors/{guarantorId} | 
-[**updateGuarantor**](GuarantorsApi.md#updateGuarantor) | **PUT** loans/{loanId}/guarantors/{guarantorId} | 
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**accountsTemplate**](GuarantorsApi.md#accountsTemplate) | **GET** v1/loans/{loanId}/guarantors/accounts/template |  |
+| [**createGuarantor**](GuarantorsApi.md#createGuarantor) | **POST** v1/loans/{loanId}/guarantors |  |
+| [**deleteGuarantor**](GuarantorsApi.md#deleteGuarantor) | **DELETE** v1/loans/{loanId}/guarantors/{guarantorId} |  |
+| [**getGuarantorTemplate**](GuarantorsApi.md#getGuarantorTemplate) | **GET** v1/loans/{loanId}/guarantors/downloadtemplate |  |
+| [**newGuarantorTemplate**](GuarantorsApi.md#newGuarantorTemplate) | **GET** v1/loans/{loanId}/guarantors/template |  |
+| [**postGuarantorTemplate**](GuarantorsApi.md#postGuarantorTemplate) | **POST** v1/loans/{loanId}/guarantors/uploadtemplate |  |
+| [**retrieveGuarantorDetails**](GuarantorsApi.md#retrieveGuarantorDetails) | **GET** v1/loans/{loanId}/guarantors |  |
+| [**retrieveGuarantorDetails1**](GuarantorsApi.md#retrieveGuarantorDetails1) | **GET** v1/loans/{loanId}/guarantors/{guarantorId} |  |
+| [**updateGuarantor**](GuarantorsApi.md#updateGuarantor) | **PUT** v1/loans/{loanId}/guarantors/{guarantorId} |  |
 
 
-
-## accountsTemplate
-
-> String accountsTemplate(loanId, clientId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val clientId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        Long clientId = 56L; // Long | 
-        try {
-            String result = apiInstance.accountsTemplate(loanId, clientId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#accountsTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.accountsTemplate(loanId, clientId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **clientId** | **Long**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **kotlin.Long**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## createGuarantor
-
-> String createGuarantor(loanId, body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.createGuarantor(loanId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#createGuarantor");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.createGuarantor(loanId, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **body** | **String**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## deleteGuarantor
-
-> String deleteGuarantor(loanId, guarantorId, guarantorFundingId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val guarantorId : kotlin.Long = 789 // kotlin.Long | 
+val guarantorFundingId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        Long guarantorId = 56L; // Long | 
-        Long guarantorFundingId = 56L; // Long | 
-        try {
-            String result = apiInstance.deleteGuarantor(loanId, guarantorId, guarantorFundingId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#deleteGuarantor");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.deleteGuarantor(loanId, guarantorId, guarantorFundingId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **guarantorId** | **Long**|  |
- **guarantorFundingId** | **Long**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| **guarantorId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guarantorFundingId** | **kotlin.Long**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## getGuarantorTemplate
-
-> getGuarantorTemplate(loanId, officeId, dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val officeId : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        Long officeId = 56L; // Long | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            apiInstance.getGuarantorTemplate(loanId, officeId, dateFormat);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#getGuarantorTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    webService.getGuarantorTemplate(loanId, officeId, dateFormat)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **officeId** | **Long**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| **officeId** | **kotlin.Long**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
@@ -314,402 +178,224 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.ms-excel
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ms-excel
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## newGuarantorTemplate
-
-> String newGuarantorTemplate(loanId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        try {
-            String result = apiInstance.newGuarantorTemplate(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#newGuarantorTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.newGuarantorTemplate(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## postGuarantorTemplate
-
-> String postGuarantorTemplate(loanId, file, locale, dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        FormDataContentDisposition file = new FormDataContentDisposition(); // FormDataContentDisposition | 
-        String locale = "locale_example"; // String | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            String result = apiInstance.postGuarantorTemplate(loanId, file, locale, dateFormat);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#postGuarantorTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.postGuarantorTemplate(loanId, dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md)|  | [optional]
- **locale** | **String**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: */*
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveGuarantorDetails
-
-> String retrieveGuarantorDetails(loanId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        try {
-            String result = apiInstance.retrieveGuarantorDetails(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#retrieveGuarantorDetails");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveGuarantorDetails(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveGuarantorDetails1
-
-> String retrieveGuarantorDetails1(loanId, guarantorId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val guarantorId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        Long guarantorId = 56L; // Long | 
-        try {
-            String result = apiInstance.retrieveGuarantorDetails1(loanId, guarantorId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#retrieveGuarantorDetails1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.retrieveGuarantorDetails1(loanId, guarantorId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **guarantorId** | **Long**|  |
+| **loanId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **guarantorId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## updateGuarantor
-
-> String updateGuarantor(loanId, guarantorId, body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GuarantorsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GuarantorsApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | 
+val guarantorId : kotlin.Long = 789 // kotlin.Long | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GuarantorsApi apiInstance = new GuarantorsApi(defaultClient);
-        Long loanId = 56L; // Long | 
-        Long guarantorId = 56L; // Long | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.updateGuarantor(loanId, guarantorId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GuarantorsApi#updateGuarantor");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.updateGuarantor(loanId, guarantorId, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**|  |
- **guarantorId** | **Long**|  |
- **body** | **String**|  | [optional]
+| **loanId** | **kotlin.Long**|  | |
+| **guarantorId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

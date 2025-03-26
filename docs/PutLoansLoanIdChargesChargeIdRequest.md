@@ -1,16 +1,13 @@
 
-
 # PutLoansLoanIdChargesChargeIdRequest
 
- PutLoansLoanIdChargesChargeIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**dateFormat** | **String** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**amount** | **Float** |  |  [optional]
-**dueDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Double** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **dueDate** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

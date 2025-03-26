@@ -1,14 +1,11 @@
 
-
 # PutReportMailingJobsResponse
 
-PutReportMailingJobsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutReportMailingJobsResponseChanges**](PutReportMailingJobsResponseChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutReportMailingJobsResponseChanges**](PutReportMailingJobsResponseChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

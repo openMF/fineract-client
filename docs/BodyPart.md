@@ -1,18 +1,17 @@
 
-
 # BodyPart
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**entity** | [**Object**](.md) |  |  [optional]
-**headers** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) |  |  [optional]
-**mediaType** | [**BodyPartMediaType**](BodyPartMediaType.md) |  |  [optional]
-**parent** | [**MultiPart**](MultiPart.md) |  |  [optional]
-**providers** | [**Object**](.md) |  |  [optional]
-**contentDisposition** | [**ContentDisposition**](ContentDisposition.md) |  |  [optional]
-**parameterizedHeaders** | [**Map&lt;String, List&lt;ParameterizedHeader&gt;&gt;**](List.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **contentDisposition** | [**ContentDisposition**](ContentDisposition.md) |  |  [optional] |
+| **entity** | [**kotlin.Any**](.md) |  |  [optional] |
+| **headers** | [**BodyPartHeaders**](BodyPartHeaders.md) |  |  [optional] |
+| **mediaType** | [**MediaType**](MediaType.md) |  |  [optional] |
+| **messageBodyWorkers** | [**kotlin.Any**](.md) |  |  [optional] |
+| **parameterizedHeaders** | [**BodyPartParameterizedHeaders**](BodyPartParameterizedHeaders.md) |  |  [optional] |
+| **parent** | [**MultiPart**](MultiPart.md) |  |  [optional] |
+| **providers** | [**kotlin.Any**](.md) |  |  [optional] |
 
 
 

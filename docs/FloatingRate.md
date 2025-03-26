@@ -1,21 +1,21 @@
 
-
 # FloatingRate
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**name** | **String** |  |  [optional]
-**floatingRatePeriods** | [**List&lt;FloatingRatePeriod&gt;**](FloatingRatePeriod.md) |  |  [optional]
-**createdBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**modifiedBy** | [**AppUser**](AppUser.md) |  |  [optional]
-**createdOn** | [**Date**](Date.md) |  |  [optional]
-**modifiedOn** | [**Date**](Date.md) |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**baseLendingRate** | **Boolean** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **createdBy** | **kotlin.Long** |  |  |
+| **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
+| **createdDateTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
+| **lastModifiedBy** | **kotlin.Long** |  |  |
+| **lastModifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
+| **lastModifiedDateTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **baseLendingRate** | **kotlin.Boolean** |  |  [optional] |
+| **floatingRatePeriods** | [**kotlin.collections.List&lt;FloatingRatePeriod&gt;**](FloatingRatePeriod.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
 
 
 

@@ -1,25 +1,22 @@
 
-
 # GetStandingInstructionsTemplateResponse
 
-GetStandingInstructionsTemplateResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fromOffice** | [**GetFromOfficeResponseStandingInstructionSwagger**](GetFromOfficeResponseStandingInstructionSwagger.md) |  |  [optional]
-**fromAccountType** | [**GetFromAccountTypeResponseStandingInstructionSwagger**](GetFromAccountTypeResponseStandingInstructionSwagger.md) |  |  [optional]
-**fromOfficeOptions** | [**List&lt;GetFromOfficeOptionsResponseStandingInstructionSwagger&gt;**](GetFromOfficeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**fromClientOptions** | [**List&lt;GetFromClientOptionsResponseStandingInstructionSwagger&gt;**](GetFromClientOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**fromAccountTypeOptions** | [**List&lt;GetFromAccountTypeOptionsResponseStandingInstructionSwagger&gt;**](GetFromAccountTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**toOfficeOptions** | [**List&lt;GetToOfficeOptionsResponseStandingInstructionSwagger&gt;**](GetToOfficeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**toAccountTypeOptions** | [**List&lt;GetToAccountTypeOptionsResponseStandingInstructionSwagger&gt;**](GetToAccountTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**transferTypeOptions** | [**List&lt;GetTransferTypeOptionsResponseStandingInstructionSwagger&gt;**](GetTransferTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**statusOptions** | [**List&lt;GetStatusOptionsResponseStandingInstructionSwagger&gt;**](GetStatusOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**instructionTypeOptions** | [**List&lt;GetInstructionTypeOptionsResponseStandingInstructionSwagger&gt;**](GetInstructionTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**priorityOptions** | [**List&lt;GetPriorityOptionsResponseStandingInstructionSwagger&gt;**](GetPriorityOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**recurrenceTypeOptions** | [**List&lt;GetRecurrenceTypeOptionsResponseStandingInstructionSwagger&gt;**](GetRecurrenceTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
-**recurrenceFrequencyOptions** | [**List&lt;GetRecurrenceFrequencyOptionsResponseStandingInstructionSwagger&gt;**](GetRecurrenceFrequencyOptionsResponseStandingInstructionSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **fromAccountType** | [**GetFromAccountTypeResponseStandingInstructionSwagger**](GetFromAccountTypeResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **fromAccountTypeOptions** | [**kotlin.collections.Set&lt;GetFromAccountTypeOptionsResponseStandingInstructionSwagger&gt;**](GetFromAccountTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **fromClientOptions** | [**kotlin.collections.Set&lt;GetFromClientOptionsResponseStandingInstructionSwagger&gt;**](GetFromClientOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **fromOffice** | [**GetFromOfficeResponseStandingInstructionSwagger**](GetFromOfficeResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **fromOfficeOptions** | [**kotlin.collections.Set&lt;GetFromOfficeOptionsResponseStandingInstructionSwagger&gt;**](GetFromOfficeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **instructionTypeOptions** | [**kotlin.collections.Set&lt;GetInstructionTypeOptionsResponseStandingInstructionSwagger&gt;**](GetInstructionTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **priorityOptions** | [**kotlin.collections.Set&lt;GetPriorityOptionsResponseStandingInstructionSwagger&gt;**](GetPriorityOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **recurrenceFrequencyOptions** | [**kotlin.collections.Set&lt;GetRecurrenceFrequencyOptionsResponseStandingInstructionSwagger&gt;**](GetRecurrenceFrequencyOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **recurrenceTypeOptions** | [**kotlin.collections.Set&lt;GetRecurrenceTypeOptionsResponseStandingInstructionSwagger&gt;**](GetRecurrenceTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **statusOptions** | [**kotlin.collections.Set&lt;GetStatusOptionsResponseStandingInstructionSwagger&gt;**](GetStatusOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **toAccountTypeOptions** | [**kotlin.collections.Set&lt;GetToAccountTypeOptionsResponseStandingInstructionSwagger&gt;**](GetToAccountTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **toOfficeOptions** | [**kotlin.collections.Set&lt;GetToOfficeOptionsResponseStandingInstructionSwagger&gt;**](GetToOfficeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
+| **transferTypeOptions** | [**kotlin.collections.Set&lt;GetTransferTypeOptionsResponseStandingInstructionSwagger&gt;**](GetTransferTypeOptionsResponseStandingInstructionSwagger.md) |  |  [optional] |
 
 
 

@@ -1,14 +1,11 @@
 
-
 # GetJobsJobIDJobRunHistoryResponse
 
-GetJobsJobIDJobRunHistoryResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;JobDetailHistoryDataSwagger&gt;**](JobDetailHistoryDataSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.List&lt;JobDetailHistoryDataSwagger&gt;**](JobDetailHistoryDataSwagger.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

@@ -1,13 +1,11 @@
 
-
 # GetFixedDepositAccountsSummary
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currency** | [**GetFixedDepositAccountsCurrency**](GetFixedDepositAccountsCurrency.md) |  |  [optional]
-**accountBalance** | **Float** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountBalance** | **kotlin.Float** |  |  [optional] |
+| **currency** | [**GetFixedDepositAccountsCurrency**](GetFixedDepositAccountsCurrency.md) |  |  [optional] |
 
 
 

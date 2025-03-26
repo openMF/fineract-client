@@ -1,15 +1,13 @@
 
-
 # PostCodeValuesDataRequest
 
-PostCodeValuesDataRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**position** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **description** | **kotlin.String** |  |  [optional] |
+| **isActive** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **position** | **kotlin.Int** |  |  [optional] |
 
 
 

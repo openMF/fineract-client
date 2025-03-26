@@ -1,14 +1,11 @@
 
-
 # PutRolesRoleIdPermissionsResponse
 
-PutRolesRoleIdPermissionsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**permissions** | [**PostRolesRoleIdPermissionsResponsePermissions**](PostRolesRoleIdPermissionsResponsePermissions.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutRolesRoleIdPermissionsResponsePermissionsChanges**](PutRolesRoleIdPermissionsResponsePermissionsChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

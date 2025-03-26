@@ -1,13 +1,11 @@
 
-
 # PutSelfBeneficiariesChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**transferLimit** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String** |  |  [optional] |
+| **transferLimit** | **kotlin.Int** |  |  [optional] |
 
 
 

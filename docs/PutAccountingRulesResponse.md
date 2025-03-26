@@ -1,14 +1,11 @@
 
-
 # PutAccountingRulesResponse
 
-PutAccountingRulesResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutAccountingRulesResponsechangesSwagger**](PutAccountingRulesResponsechangesSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutAccountingRulesResponsechangesSwagger**](PutAccountingRulesResponsechangesSwagger.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

@@ -1,78 +1,61 @@
 # LoanChargesApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteLoanCharge**](LoanChargesApi.md#deleteLoanCharge) | **DELETE** loans/{loanId}/charges/{chargeId} | Delete a Loan Charge
-[**executeLoanCharge**](LoanChargesApi.md#executeLoanCharge) | **POST** loans/{loanId}/charges | Create a Loan Charge
-[**executeLoanCharge1**](LoanChargesApi.md#executeLoanCharge1) | **POST** loans/{loanId}/charges/{chargeId} | Pay Loan Charge
-[**retrieveAllLoanCharges**](LoanChargesApi.md#retrieveAllLoanCharges) | **GET** loans/{loanId}/charges | List Loan Charges
-[**retrieveLoanCharge**](LoanChargesApi.md#retrieveLoanCharge) | **GET** loans/{loanId}/charges/{chargeId} | Retrieve a Loan Charge
-[**retrieveTemplate8**](LoanChargesApi.md#retrieveTemplate8) | **GET** loans/{loanId}/charges/template | Retrieve Loan Charges Template
-[**updateLoanCharge**](LoanChargesApi.md#updateLoanCharge) | **PUT** loans/{loanId}/charges/{chargeId} | Update a Loan Charge
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**deleteLoanCharge**](LoanChargesApi.md#deleteLoanCharge) | **DELETE** v1/loans/{loanId}/charges/{loanChargeId} | Delete a Loan Charge |
+| [**deleteLoanCharge1**](LoanChargesApi.md#deleteLoanCharge1) | **DELETE** v1/loans/{loanId}/charges/external-id/{loanChargeExternalId} | Delete a Loan Charge |
+| [**deleteLoanCharge2**](LoanChargesApi.md#deleteLoanCharge2) | **DELETE** v1/loans/external-id/{loanExternalId}/charges/{loanChargeId} | Delete a Loan Charge |
+| [**deleteLoanCharge3**](LoanChargesApi.md#deleteLoanCharge3) | **DELETE** v1/loans/external-id/{loanExternalId}/charges/external-id/{loanChargeExternalId} | Delete a Loan Charge |
+| [**executeLoanCharge**](LoanChargesApi.md#executeLoanCharge) | **POST** v1/loans/{loanId}/charges | Create a Loan Charge (no command provided) or Pay a charge (command&#x3D;pay) |
+| [**executeLoanCharge1**](LoanChargesApi.md#executeLoanCharge1) | **POST** v1/loans/external-id/{loanExternalId}/charges | Create a Loan Charge (no command provided) or Pay a charge (command&#x3D;pay) |
+| [**executeLoanCharge2**](LoanChargesApi.md#executeLoanCharge2) | **POST** v1/loans/{loanId}/charges/{loanChargeId} | Pay / Waive / Adjustment for Loan Charge |
+| [**executeLoanCharge3**](LoanChargesApi.md#executeLoanCharge3) | **POST** v1/loans/{loanId}/charges/external-id/{loanChargeExternalId} | Pay / Waive / Adjustment for Loan Charge |
+| [**executeLoanCharge4**](LoanChargesApi.md#executeLoanCharge4) | **POST** v1/loans/external-id/{loanExternalId}/charges/{loanChargeId} | Pay / Waive / Adjustment for Loan Charge |
+| [**executeLoanCharge5**](LoanChargesApi.md#executeLoanCharge5) | **POST** v1/loans/external-id/{loanExternalId}/charges/external-id/{loanChargeExternalId} | Pay / Waive / Adjustment for Loan Charge |
+| [**retrieveAllLoanCharges**](LoanChargesApi.md#retrieveAllLoanCharges) | **GET** v1/loans/{loanId}/charges | List Loan Charges |
+| [**retrieveAllLoanCharges1**](LoanChargesApi.md#retrieveAllLoanCharges1) | **GET** v1/loans/external-id/{loanExternalId}/charges | List Loan Charges |
+| [**retrieveLoanCharge**](LoanChargesApi.md#retrieveLoanCharge) | **GET** v1/loans/{loanId}/charges/{loanChargeId} | Retrieve a Loan Charge |
+| [**retrieveLoanCharge1**](LoanChargesApi.md#retrieveLoanCharge1) | **GET** v1/loans/{loanId}/charges/external-id/{loanChargeExternalId} | Retrieve a Loan Charge |
+| [**retrieveLoanCharge2**](LoanChargesApi.md#retrieveLoanCharge2) | **GET** v1/loans/external-id/{loanExternalId}/charges/{loanChargeId} | Retrieve a Loan Charge |
+| [**retrieveLoanCharge3**](LoanChargesApi.md#retrieveLoanCharge3) | **GET** v1/loans/external-id/{loanExternalId}/charges/external-id/{loanChargeExternalId} | Retrieve a Loan Charge |
+| [**retrieveTemplate8**](LoanChargesApi.md#retrieveTemplate8) | **GET** v1/loans/{loanId}/charges/template | Retrieve Loan Charges Template |
+| [**retrieveTemplate9**](LoanChargesApi.md#retrieveTemplate9) | **GET** v1/loans/external-id/{loanExternalId}/charges/template | Retrieve Loan Charges Template |
+| [**updateLoanCharge**](LoanChargesApi.md#updateLoanCharge) | **PUT** v1/loans/{loanId}/charges/{loanChargeId} | Update a Loan Charge |
+| [**updateLoanCharge1**](LoanChargesApi.md#updateLoanCharge1) | **PUT** v1/loans/{loanId}/charges/external-id/{loanChargeExternalId} | Update a Loan Charge |
+| [**updateLoanCharge2**](LoanChargesApi.md#updateLoanCharge2) | **PUT** v1/loans/external-id/{loanExternalId}/charges/{loanChargeId} | Update a Loan Charge |
+| [**updateLoanCharge3**](LoanChargesApi.md#updateLoanCharge3) | **PUT** v1/loans/external-id/{loanExternalId}/charges/external-id/{loanChargeExternalId} | Update a Loan Charge |
 
 
-
-## deleteLoanCharge
-
-> DeleteLoansLoanIdChargesChargeIdResponse deleteLoanCharge(loanId, chargeId)
 
 Delete a Loan Charge
 
 Note: Currently, A Loan Charge may only be removed from Loans that are not yet approved.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long chargeId = 56L; // Long | chargeId
-        try {
-            DeleteLoansLoanIdChargesChargeIdResponse result = apiInstance.deleteLoanCharge(loanId, chargeId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#deleteLoanCharge");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdChargesChargeIdResponse = webService.deleteLoanCharge(loanId, loanChargeId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **chargeId** | **Long**| chargeId |
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
 
 ### Return type
 
@@ -80,80 +63,177 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## executeLoanCharge
+Delete a Loan Charge
 
-> PostLoansLoanIdChargesResponse executeLoanCharge(loanId, postLoansLoanIdChargesRequest, command)
-
-Create a Loan Charge
-
-It Creates a Loan Charge
+Note: Currently, A Loan Charge may only be removed from Loans that are not yet approved.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        PostLoansLoanIdChargesRequest postLoansLoanIdChargesRequest = new PostLoansLoanIdChargesRequest(); // PostLoansLoanIdChargesRequest | 
-        String command = "command_example"; // String | command
-        try {
-            PostLoansLoanIdChargesResponse result = apiInstance.executeLoanCharge(loanId, postLoansLoanIdChargesRequest, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#executeLoanCharge");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdChargesChargeIdResponse = webService.deleteLoanCharge1(loanId, loanChargeExternalId)
 }
 ```
 
 ### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+
+### Return type
+
+[**DeleteLoansLoanIdChargesChargeIdResponse**](DeleteLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **postLoansLoanIdChargesRequest** | [**PostLoansLoanIdChargesRequest**](PostLoansLoanIdChargesRequest.md)|  |
- **command** | **String**| command | [optional]
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Delete a Loan Charge
+
+Note: Currently, A Loan Charge may only be removed from Loans that are not yet approved.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdChargesChargeIdResponse = webService.deleteLoanCharge2(loanExternalId, loanChargeId)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+
+### Return type
+
+[**DeleteLoansLoanIdChargesChargeIdResponse**](DeleteLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Delete a Loan Charge
+
+Note: Currently, A Loan Charge may only be removed from Loans that are not yet approved.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+
+launch(Dispatchers.IO) {
+    val result : DeleteLoansLoanIdChargesChargeIdResponse = webService.deleteLoanCharge3(loanExternalId, loanChargeExternalId)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+
+### Return type
+
+[**DeleteLoansLoanIdChargesChargeIdResponse**](DeleteLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Create a Loan Charge (no command provided) or Pay a charge (command&#x3D;pay)
+
+Creates a Loan Charge | Pay a Loan Charge
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val postLoansLoanIdChargesRequest : PostLoansLoanIdChargesRequest =  // PostLoansLoanIdChargesRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesResponse = webService.executeLoanCharge(loanId, postLoansLoanIdChargesRequest, command)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| **postLoansLoanIdChargesRequest** | [**PostLoansLoanIdChargesRequest**](PostLoansLoanIdChargesRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
@@ -161,82 +241,93 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## executeLoanCharge1
+Create a Loan Charge (no command provided) or Pay a charge (command&#x3D;pay)
 
-> PostLoansLoanIdChargesChargeIdResponse executeLoanCharge1(loanId, chargeId, postLoansLoanIdChargesChargeIdRequest, command)
-
-Pay Loan Charge
-
-Loan Charge will be paid if the loan is linked with a savings account
+Creates a Loan Charge | Pay a Loan Charge
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val postLoansLoanIdChargesRequest : PostLoansLoanIdChargesRequest =  // PostLoansLoanIdChargesRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long chargeId = 56L; // Long | chargeId
-        PostLoansLoanIdChargesChargeIdRequest postLoansLoanIdChargesChargeIdRequest = new PostLoansLoanIdChargesChargeIdRequest(); // PostLoansLoanIdChargesChargeIdRequest | 
-        String command = "command_example"; // String | command
-        try {
-            PostLoansLoanIdChargesChargeIdResponse result = apiInstance.executeLoanCharge1(loanId, chargeId, postLoansLoanIdChargesChargeIdRequest, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#executeLoanCharge1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesResponse = webService.executeLoanCharge1(loanExternalId, postLoansLoanIdChargesRequest, command)
 }
 ```
 
 ### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **postLoansLoanIdChargesRequest** | [**PostLoansLoanIdChargesRequest**](PostLoansLoanIdChargesRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
+
+### Return type
+
+[**PostLoansLoanIdChargesResponse**](PostLoansLoanIdChargesResponse.md)
+
+### Authorization
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **chargeId** | **Long**| chargeId |
- **postLoansLoanIdChargesChargeIdRequest** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)|  |
- **command** | **String**| command | [optional]
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Pay / Waive / Adjustment for Loan Charge
+
+Loan Charge will be paid if the loan is linked with a savings account | Waive Loan Charge | Add Charge Adjustment
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+val postLoansLoanIdChargesChargeIdRequest : PostLoansLoanIdChargesChargeIdRequest =  // PostLoansLoanIdChargesChargeIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesChargeIdResponse = webService.executeLoanCharge2(loanId, loanChargeId, postLoansLoanIdChargesChargeIdRequest, command)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+| **postLoansLoanIdChargesChargeIdRequest** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
 
 ### Return type
 
@@ -244,155 +335,271 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## retrieveAllLoanCharges
+Pay / Waive / Adjustment for Loan Charge
 
-> List&lt;GetLoansLoanIdChargesChargeIdResponse&gt; retrieveAllLoanCharges(loanId)
+Loan Charge will be paid if the loan is linked with a savings account | Waive Loan Charge | Add Charge Adjustment
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+val postLoansLoanIdChargesChargeIdRequest : PostLoansLoanIdChargesChargeIdRequest =  // PostLoansLoanIdChargesChargeIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesChargeIdResponse = webService.executeLoanCharge3(loanId, loanChargeExternalId, postLoansLoanIdChargesChargeIdRequest, command)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+| **postLoansLoanIdChargesChargeIdRequest** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
+
+### Return type
+
+[**PostLoansLoanIdChargesChargeIdResponse**](PostLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Pay / Waive / Adjustment for Loan Charge
+
+Loan Charge will be paid if the loan is linked with a savings account | Waive Loan Charge | Add Charge Adjustment
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+val postLoansLoanIdChargesChargeIdRequest : PostLoansLoanIdChargesChargeIdRequest =  // PostLoansLoanIdChargesChargeIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesChargeIdResponse = webService.executeLoanCharge4(loanExternalId, loanChargeId, postLoansLoanIdChargesChargeIdRequest, command)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+| **postLoansLoanIdChargesChargeIdRequest** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
+
+### Return type
+
+[**PostLoansLoanIdChargesChargeIdResponse**](PostLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Pay / Waive / Adjustment for Loan Charge
+
+Loan Charge will be paid if the loan is linked with a savings account | Waive Loan Charge | Add Charge Adjustment
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+val postLoansLoanIdChargesChargeIdRequest : PostLoansLoanIdChargesChargeIdRequest =  // PostLoansLoanIdChargesChargeIdRequest | 
+val command : kotlin.String = command_example // kotlin.String | command
+
+launch(Dispatchers.IO) {
+    val result : PostLoansLoanIdChargesChargeIdResponse = webService.executeLoanCharge5(loanExternalId, loanChargeExternalId, postLoansLoanIdChargesChargeIdRequest, command)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+| **postLoansLoanIdChargesChargeIdRequest** | [**PostLoansLoanIdChargesChargeIdRequest**](PostLoansLoanIdChargesChargeIdRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**| command | [optional] |
+
+### Return type
+
+[**PostLoansLoanIdChargesChargeIdResponse**](PostLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 
 List Loan Charges
 
 It lists all the Loan Charges specific to a Loan   Example Requests:  loans/1/charges   loans/1/charges?fields&#x3D;name,amountOrPercentage
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        try {
-            List<GetLoansLoanIdChargesChargeIdResponse> result = apiInstance.retrieveAllLoanCharges(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#retrieveAllLoanCharges");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetLoansLoanIdChargesChargeIdResponse> = webService.retrieveAllLoanCharges(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
 
 ### Return type
 
-[**List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;**](GetLoansLoanIdChargesChargeIdResponse.md)
+[**kotlin.collections.List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;**](GetLoansLoanIdChargesChargeIdResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## retrieveLoanCharge
+List Loan Charges
 
-> GetLoansLoanIdChargesChargeIdResponse retrieveLoanCharge(loanId, chargeId)
-
-Retrieve a Loan Charge
-
-Retrieves Loan Charge according to the Loan ID and Charge IDExample Requests:  /loans/1/charges/1   /loans/1/charges/1?fields&#x3D;name,amountOrPercentage
+It lists all the Loan Charges specific to a Loan   Example Requests:  loans/1/charges   loans/1/charges?fields&#x3D;name,amountOrPercentage
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long chargeId = 56L; // Long | chargeId
-        try {
-            GetLoansLoanIdChargesChargeIdResponse result = apiInstance.retrieveLoanCharge(loanId, chargeId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#retrieveLoanCharge");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetLoansLoanIdChargesChargeIdResponse> = webService.retrieveAllLoanCharges1(loanExternalId)
 }
 ```
 
 ### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+
+### Return type
+
+[**kotlin.collections.List&lt;GetLoansLoanIdChargesChargeIdResponse&gt;**](GetLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **chargeId** | **Long**| chargeId |
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve a Loan Charge
+
+Retrieves Loan Charge according to the Loan ID and Loan Charge IDExample Requests:  /loans/1/charges/1   /loans/1/charges/1?fields&#x3D;name,amountOrPercentage
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesChargeIdResponse = webService.retrieveLoanCharge(loanId, loanChargeId)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
 
 ### Return type
 
@@ -400,76 +607,173 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## retrieveTemplate8
+Retrieve a Loan Charge
 
-> GetLoansLoanIdChargesTemplateResponse retrieveTemplate8(loanId)
+Retrieves Loan Charge according to the Loan ID and Loan Charge External IDExample Requests:  /loans/1/charges/1   /loans/1/charges/external-id/1?fields&#x3D;name,amountOrPercentage
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesChargeIdResponse = webService.retrieveLoanCharge1(loanId, loanChargeExternalId)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+
+### Return type
+
+[**GetLoansLoanIdChargesChargeIdResponse**](GetLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve a Loan Charge
+
+Retrieves Loan Charge according to the Loan external ID and Loan Charge IDExample Requests:  /loans/1/charges/1   /loans/1/charges/1?fields&#x3D;name,amountOrPercentage
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesChargeIdResponse = webService.retrieveLoanCharge2(loanExternalId, loanChargeId)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+
+### Return type
+
+[**GetLoansLoanIdChargesChargeIdResponse**](GetLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+Retrieve a Loan Charge
+
+Retrieves Loan Charge according to the Loan External ID and Loan Charge External IDExample Requests:  /loans/1/charges/1   /loans/1/charges/1?fields&#x3D;name,amountOrPercentage
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesChargeIdResponse = webService.retrieveLoanCharge3(loanExternalId, loanChargeExternalId)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+
+### Return type
+
+[**GetLoansLoanIdChargesChargeIdResponse**](GetLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Retrieve Loan Charges Template
 
 This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  loans/1/charges/template  
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        try {
-            GetLoansLoanIdChargesTemplateResponse result = apiInstance.retrieveTemplate8(loanId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#retrieveTemplate8");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesTemplateResponse = webService.retrieveTemplate8(loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**| loanId | |
 
 ### Return type
 
@@ -477,80 +781,87 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## updateLoanCharge
+Retrieve Loan Charges Template
 
-> PutLoansLoanIdChargesChargeIdResponse updateLoanCharge(loanId, chargeId, putLoansLoanIdChargesChargeIdRequest)
+This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed description Lists Example Request:  loans/1/charges/template  
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+
+launch(Dispatchers.IO) {
+    val result : GetLoansLoanIdChargesTemplateResponse = webService.retrieveTemplate9(loanExternalId)
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+
+### Return type
+
+[**GetLoansLoanIdChargesTemplateResponse**](GetLoansLoanIdChargesTemplateResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 
 Update a Loan Charge
 
 Currently Loan Charges may be updated only if the Loan is not yet approved
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.LoanChargesApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+val putLoansLoanIdChargesChargeIdRequest : PutLoansLoanIdChargesChargeIdRequest =  // PutLoansLoanIdChargesChargeIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        LoanChargesApi apiInstance = new LoanChargesApi(defaultClient);
-        Long loanId = 56L; // Long | loanId
-        Long chargeId = 56L; // Long | chargeId
-        PutLoansLoanIdChargesChargeIdRequest putLoansLoanIdChargesChargeIdRequest = new PutLoansLoanIdChargesChargeIdRequest(); // PutLoansLoanIdChargesChargeIdRequest | 
-        try {
-            PutLoansLoanIdChargesChargeIdResponse result = apiInstance.updateLoanCharge(loanId, chargeId, putLoansLoanIdChargesChargeIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling LoanChargesApi#updateLoanCharge");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdChargesChargeIdResponse = webService.updateLoanCharge(loanId, loanChargeId, putLoansLoanIdChargesChargeIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loanId** | **Long**| loanId |
- **chargeId** | **Long**| chargeId |
- **putLoansLoanIdChargesChargeIdRequest** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)|  |
+| **loanId** | **kotlin.Long**| loanId | |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putLoansLoanIdChargesChargeIdRequest** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)|  | |
 
 ### Return type
 
@@ -558,15 +869,150 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+
+Update a Loan Charge
+
+Currently Loan Charges may be updated only if the Loan is not yet approved
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanId : kotlin.Long = 789 // kotlin.Long | loanId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+val putLoansLoanIdChargesChargeIdRequest : PutLoansLoanIdChargesChargeIdRequest =  // PutLoansLoanIdChargesChargeIdRequest | 
+
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdChargesChargeIdResponse = webService.updateLoanCharge1(loanId, loanChargeExternalId, putLoansLoanIdChargesChargeIdRequest)
+}
+```
+
+### Parameters
+| **loanId** | **kotlin.Long**| loanId | |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putLoansLoanIdChargesChargeIdRequest** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)|  | |
+
+### Return type
+
+[**PutLoansLoanIdChargesChargeIdResponse**](PutLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Update a Loan Charge
+
+Currently Loan Charges may be updated only if the Loan is not yet approved
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeId : kotlin.Long = 789 // kotlin.Long | loanChargeId
+val putLoansLoanIdChargesChargeIdRequest : PutLoansLoanIdChargesChargeIdRequest =  // PutLoansLoanIdChargesChargeIdRequest | 
+
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdChargesChargeIdResponse = webService.updateLoanCharge2(loanExternalId, loanChargeId, putLoansLoanIdChargesChargeIdRequest)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **loanChargeId** | **kotlin.Long**| loanChargeId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putLoansLoanIdChargesChargeIdRequest** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)|  | |
+
+### Return type
+
+[**PutLoansLoanIdChargesChargeIdResponse**](PutLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+Update a Loan Charge
+
+Currently Loan Charges may be updated only if the Loan is not yet approved
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(LoanChargesApi::class.java)
+val loanExternalId : kotlin.String = loanExternalId_example // kotlin.String | loanExternalId
+val loanChargeExternalId : kotlin.String = loanChargeExternalId_example // kotlin.String | loanChargeExternalId
+val putLoansLoanIdChargesChargeIdRequest : PutLoansLoanIdChargesChargeIdRequest =  // PutLoansLoanIdChargesChargeIdRequest | 
+
+launch(Dispatchers.IO) {
+    val result : PutLoansLoanIdChargesChargeIdResponse = webService.updateLoanCharge3(loanExternalId, loanChargeExternalId, putLoansLoanIdChargesChargeIdRequest)
+}
+```
+
+### Parameters
+| **loanExternalId** | **kotlin.String**| loanExternalId | |
+| **loanChargeExternalId** | **kotlin.String**| loanChargeExternalId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putLoansLoanIdChargesChargeIdRequest** | [**PutLoansLoanIdChargesChargeIdRequest**](PutLoansLoanIdChargesChargeIdRequest.md)|  | |
+
+### Return type
+
+[**PutLoansLoanIdChargesChargeIdResponse**](PutLoansLoanIdChargesChargeIdResponse.md)
+
+### Authorization
+
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

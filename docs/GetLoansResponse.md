@@ -1,14 +1,11 @@
 
-
 # GetLoansResponse
 
-GetLoansResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetLoansLoanIdResponse&gt;**](GetLoansLoanIdResponse.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetLoansLoanIdResponse&gt;**](GetLoansLoanIdResponse.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

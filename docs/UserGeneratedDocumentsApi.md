@@ -1,77 +1,45 @@
 # UserGeneratedDocumentsApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createTemplate**](UserGeneratedDocumentsApi.md#createTemplate) | **POST** templates | Add a UGD
-[**deleteTemplate**](UserGeneratedDocumentsApi.md#deleteTemplate) | **DELETE** templates/{templateId} | Delete a UGD
-[**getTemplateByTemplate**](UserGeneratedDocumentsApi.md#getTemplateByTemplate) | **GET** templates/{templateId}/template | 
-[**mergeTemplate**](UserGeneratedDocumentsApi.md#mergeTemplate) | **POST** templates/{templateId} | 
-[**retrieveAll40**](UserGeneratedDocumentsApi.md#retrieveAll40) | **GET** templates | Retrieve all UGDs
-[**retrieveOne28**](UserGeneratedDocumentsApi.md#retrieveOne28) | **GET** templates/{templateId} | Retrieve a UGD
-[**saveTemplate**](UserGeneratedDocumentsApi.md#saveTemplate) | **PUT** templates/{templateId} | Update a UGD
-[**template20**](UserGeneratedDocumentsApi.md#template20) | **GET** templates/template | Retrieve UGD Details Template
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createTemplate**](UserGeneratedDocumentsApi.md#createTemplate) | **POST** v1/templates | Add a UGD |
+| [**deleteTemplate**](UserGeneratedDocumentsApi.md#deleteTemplate) | **DELETE** v1/templates/{templateId} | Delete a UGD |
+| [**getTemplateByTemplate**](UserGeneratedDocumentsApi.md#getTemplateByTemplate) | **GET** v1/templates/{templateId}/template |  |
+| [**mergeTemplate**](UserGeneratedDocumentsApi.md#mergeTemplate) | **POST** v1/templates/{templateId} |  |
+| [**retrieveAll40**](UserGeneratedDocumentsApi.md#retrieveAll40) | **GET** v1/templates | Retrieve all UGDs |
+| [**retrieveOne30**](UserGeneratedDocumentsApi.md#retrieveOne30) | **GET** v1/templates/{templateId} | Retrieve a UGD |
+| [**saveTemplate**](UserGeneratedDocumentsApi.md#saveTemplate) | **PUT** v1/templates/{templateId} | Update a UGD |
+| [**template20**](UserGeneratedDocumentsApi.md#template20) | **GET** v1/templates/template | Retrieve UGD Details Template |
 
 
-
-## createTemplate
-
-> PostTemplatesResponse createTemplate(postTemplatesRequest)
 
 Add a UGD
 
 Adds a new UGD.  Mandatory Fields name    Example Requests:  templates/1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val postTemplatesRequest : PostTemplatesRequest =  // PostTemplatesRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        PostTemplatesRequest postTemplatesRequest = new PostTemplatesRequest(); // PostTemplatesRequest | 
-        try {
-            PostTemplatesResponse result = apiInstance.createTemplate(postTemplatesRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#createTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostTemplatesResponse = webService.createTemplate(postTemplatesRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postTemplatesRequest** | [**PostTemplatesRequest**](PostTemplatesRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postTemplatesRequest** | [**PostTemplatesRequest**](PostTemplatesRequest.md)|  | |
 
 ### Return type
 
@@ -79,74 +47,39 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## deleteTemplate
-
-> DeleteTemplatesTemplateIdResponse deleteTemplate(templateId)
 
 Delete a UGD
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val templateId : kotlin.Long = 789 // kotlin.Long | templateId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Long templateId = 56L; // Long | templateId
-        try {
-            DeleteTemplatesTemplateIdResponse result = apiInstance.deleteTemplate(templateId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#deleteTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteTemplatesTemplateIdResponse = webService.deleteTemplate(templateId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **Long**| templateId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **templateId** | **kotlin.Long**| templateId | |
 
 ### Return type
 
@@ -154,230 +87,125 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## getTemplateByTemplate
-
-> String getTemplateByTemplate(templateId)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val templateId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Long templateId = 56L; // Long | 
-        try {
-            String result = apiInstance.getTemplateByTemplate(templateId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#getTemplateByTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.getTemplateByTemplate(templateId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **Long**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **templateId** | **kotlin.Long**|  | |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## mergeTemplate
-
-> String mergeTemplate(templateId, body)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val templateId : kotlin.Long = 789 // kotlin.Long | 
+val body : kotlin.String = body_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Long templateId = 56L; // Long | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.mergeTemplate(templateId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#mergeTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.mergeTemplate(templateId, body)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **Long**|  |
- **body** | **String**|  | [optional]
+| **templateId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: text/html
+ - **Content-Type**: application/json
+ - **Accept**: text/html
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retrieveAll40
-
-> GetTemplatesResponse retrieveAll40(typeId, entityId)
 
 Retrieve all UGDs
 
 Example Requests:  templates  It is also possible to get specific UGDs by entity and type:  templates?type&#x3D;0&amp;entity&#x3D;0 [Entity: Id]      client: 0, loan: 1  [Type: Id]    Document: 0, E-Mail (not yet): 1,  SMS: 2
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val typeId : kotlin.Int = 56 // kotlin.Int | typeId
+val entityId : kotlin.Int = 56 // kotlin.Int | entityId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Integer typeId = -1; // Integer | typeId
-        Integer entityId = -1; // Integer | entityId
-        try {
-            GetTemplatesResponse result = apiInstance.retrieveAll40(typeId, entityId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#retrieveAll40");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetTemplatesResponse = webService.retrieveAll40(typeId, entityId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeId** | **Integer**| typeId | [optional] [default to -1]
- **entityId** | **Integer**| entityId | [optional] [default to -1]
+| **typeId** | **kotlin.Int**| typeId | [optional] [default to -1] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **entityId** | **kotlin.Int**| entityId | [optional] [default to -1] |
 
 ### Return type
 
@@ -385,76 +213,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveOne28
-
-> GetTemplatesTemplateIdResponse retrieveOne28(templateId)
 
 Retrieve a UGD
 
 Example Requests:  templates/1
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val templateId : kotlin.Long = 789 // kotlin.Long | templateId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Long templateId = 56L; // Long | templateId
-        try {
-            GetTemplatesTemplateIdResponse result = apiInstance.retrieveOne28(templateId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#retrieveOne28");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetTemplatesTemplateIdResponse = webService.retrieveOne30(templateId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **Long**| templateId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **templateId** | **kotlin.Long**| templateId | |
 
 ### Return type
 
@@ -462,76 +255,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## saveTemplate
-
-> PutTemplatesTemplateIdResponse saveTemplate(templateId, putTemplatesTemplateIdRequest)
 
 Update a UGD
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
+val templateId : kotlin.Long = 789 // kotlin.Long | templateId
+val putTemplatesTemplateIdRequest : PutTemplatesTemplateIdRequest =  // PutTemplatesTemplateIdRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        Long templateId = 56L; // Long | templateId
-        PutTemplatesTemplateIdRequest putTemplatesTemplateIdRequest = new PutTemplatesTemplateIdRequest(); // PutTemplatesTemplateIdRequest | 
-        try {
-            PutTemplatesTemplateIdResponse result = apiInstance.saveTemplate(templateId, putTemplatesTemplateIdRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#saveTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutTemplatesTemplateIdResponse = webService.saveTemplate(templateId, putTemplatesTemplateIdRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **Long**| templateId |
- **putTemplatesTemplateIdRequest** | [**PutTemplatesTemplateIdRequest**](PutTemplatesTemplateIdRequest.md)|  |
+| **templateId** | **kotlin.Long**| templateId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putTemplatesTemplateIdRequest** | [**PutTemplatesTemplateIdRequest**](PutTemplatesTemplateIdRequest.md)|  | |
 
 ### Return type
 
@@ -539,71 +297,37 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## template20
-
-> GetTemplatesTemplateResponse template20()
 
 Retrieve UGD Details Template
 
 This is a convenience resource. It can be useful when building maintenance user interface screens for UGDs. The UGD data returned consists of any or all of:  ARGUMENTS name String entity String type String text String optional mappers Mapper optional Example Request:  templates/template
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.UserGeneratedDocumentsApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(UserGeneratedDocumentsApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        UserGeneratedDocumentsApi apiInstance = new UserGeneratedDocumentsApi(defaultClient);
-        try {
-            GetTemplatesTemplateResponse result = apiInstance.template20();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling UserGeneratedDocumentsApi#template20");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetTemplatesTemplateResponse = webService.template20()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -612,15 +336,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

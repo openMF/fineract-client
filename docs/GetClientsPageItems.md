@@ -1,20 +1,18 @@
 
-
 # GetClientsPageItems
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**officeId** | **Integer** |  |  [optional]
-**officeName** | **String** |  |  [optional]
-**type** | [**GetClientsClientIdTransactionsType**](GetClientsClientIdTransactionsType.md) |  |  [optional]
-**date** | [**Date**](Date.md) |  |  [optional]
-**currency** | [**GetClientTransactionsCurrency**](GetClientTransactionsCurrency.md) |  |  [optional]
-**amount** | **Double** |  |  [optional]
-**submittedOnDate** | [**Date**](Date.md) |  |  [optional]
-**reversed** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **amount** | **kotlin.Double** |  |  [optional] |
+| **currency** | [**GetClientTransactionsCurrency**](GetClientTransactionsCurrency.md) |  |  [optional] |
+| **date** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **officeName** | **kotlin.String** |  |  [optional] |
+| **reversed** | **kotlin.Boolean** |  |  [optional] |
+| **submittedOnDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **type** | [**GetClientsClientIdTransactionsType**](GetClientsClientIdTransactionsType.md) |  |  [optional] |
 
 
 

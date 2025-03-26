@@ -1,14 +1,11 @@
 
-
 # PutRolesRoleIdResponse
 
-PutRolesRoleIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**changes** | [**PutRolesRoleIdResponseChanges**](PutRolesRoleIdResponseChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutRolesRoleIdResponseChanges**](PutRolesRoleIdResponseChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

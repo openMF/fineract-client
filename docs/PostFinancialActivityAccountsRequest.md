@@ -1,14 +1,11 @@
 
-
 # PostFinancialActivityAccountsRequest
 
-PostFinancialActivityAccountsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**financialActivityId** | **Long** |  |  [optional]
-**glAccountId** | **Long** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **financialActivityId** | **kotlin.Long** |  |  [optional] |
+| **glAccountId** | **kotlin.Long** |  |  [optional] |
 
 
 

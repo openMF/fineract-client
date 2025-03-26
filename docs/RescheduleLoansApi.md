@@ -1,390 +1,228 @@
 # RescheduleLoansApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createLoanRescheduleRequest**](RescheduleLoansApi.md#createLoanRescheduleRequest) | **POST** rescheduleloans | 
-[**readLoanRescheduleRequest**](RescheduleLoansApi.md#readLoanRescheduleRequest) | **GET** rescheduleloans/{scheduleId} | 
-[**retrieveAllRescheduleRequest**](RescheduleLoansApi.md#retrieveAllRescheduleRequest) | **GET** rescheduleloans | 
-[**retrieveTemplate9**](RescheduleLoansApi.md#retrieveTemplate9) | **GET** rescheduleloans/template | 
-[**updateLoanRescheduleRequest**](RescheduleLoansApi.md#updateLoanRescheduleRequest) | **POST** rescheduleloans/{scheduleId} | 
-
-
-
-## createLoanRescheduleRequest
-
-> String createLoanRescheduleRequest(body)
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createLoanRescheduleRequest**](RescheduleLoansApi.md#createLoanRescheduleRequest) | **POST** v1/rescheduleloans | Create loan reschedule request |
+| [**readLoanRescheduleRequest**](RescheduleLoansApi.md#readLoanRescheduleRequest) | **GET** v1/rescheduleloans/{scheduleId} | Retrieve loan reschedule request by schedule id |
+| [**retrieveAllRescheduleRequest**](RescheduleLoansApi.md#retrieveAllRescheduleRequest) | **GET** v1/rescheduleloans | Retrieve all reschedule requests |
+| [**retrieveTemplate10**](RescheduleLoansApi.md#retrieveTemplate10) | **GET** v1/rescheduleloans/template | Retrieve all reschedule loan reasons |
+| [**updateLoanRescheduleRequest**](RescheduleLoansApi.md#updateLoanRescheduleRequest) | **POST** v1/rescheduleloans/{scheduleId} | Update loan reschedule request |
 
 
+
+Create loan reschedule request
+
+Create a loan reschedule request.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.RescheduleLoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(RescheduleLoansApi::class.java)
+val postCreateRescheduleLoansRequest : PostCreateRescheduleLoansRequest =  // PostCreateRescheduleLoansRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        RescheduleLoansApi apiInstance = new RescheduleLoansApi(defaultClient);
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.createLoanRescheduleRequest(body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RescheduleLoansApi#createLoanRescheduleRequest");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostCreateRescheduleLoansResponse = webService.createLoanRescheduleRequest(postCreateRescheduleLoansRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postCreateRescheduleLoansRequest** | [**PostCreateRescheduleLoansRequest**](PostCreateRescheduleLoansRequest.md)|  | |
 
 ### Return type
 
-**String**
+[**PostCreateRescheduleLoansResponse**](PostCreateRescheduleLoansResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## readLoanRescheduleRequest
+Retrieve loan reschedule request by schedule id
 
-> String readLoanRescheduleRequest(scheduleId, command)
-
-
+Retrieve loan reschedule request by schedule id
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.RescheduleLoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(RescheduleLoansApi::class.java)
+val scheduleId : kotlin.Long = 789 // kotlin.Long | 
+val command : kotlin.String = command_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        RescheduleLoansApi apiInstance = new RescheduleLoansApi(defaultClient);
-        Long scheduleId = 56L; // Long | 
-        String command = "command_example"; // String | 
-        try {
-            String result = apiInstance.readLoanRescheduleRequest(scheduleId, command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RescheduleLoansApi#readLoanRescheduleRequest");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetLoanRescheduleRequestResponse = webService.readLoanRescheduleRequest(scheduleId, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scheduleId** | **Long**|  |
- **command** | **String**|  | [optional]
+| **scheduleId** | **kotlin.Long**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+[**GetLoanRescheduleRequestResponse**](GetLoanRescheduleRequestResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## retrieveAllRescheduleRequest
+Retrieve all reschedule requests
 
-> String retrieveAllRescheduleRequest(command)
-
-
+Retrieve all reschedule requests.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.RescheduleLoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(RescheduleLoansApi::class.java)
+val command : kotlin.String = command_example // kotlin.String | 
+val loanId : kotlin.Long = 789 // kotlin.Long | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        RescheduleLoansApi apiInstance = new RescheduleLoansApi(defaultClient);
-        String command = "command_example"; // String | 
-        try {
-            String result = apiInstance.retrieveAllRescheduleRequest(command);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RescheduleLoansApi#retrieveAllRescheduleRequest");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetLoanRescheduleRequestResponse> = webService.retrieveAllRescheduleRequest(command, loanId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **command** | **String**|  | [optional]
+| **command** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **loanId** | **kotlin.Long**|  | [optional] |
 
 ### Return type
 
-**String**
+[**kotlin.collections.List&lt;GetLoanRescheduleRequestResponse&gt;**](GetLoanRescheduleRequestResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## retrieveTemplate9
+Retrieve all reschedule loan reasons
 
-> String retrieveTemplate9()
-
-
+Retrieve all reschedule loan reasons as a template
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.RescheduleLoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(RescheduleLoansApi::class.java)
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        RescheduleLoansApi apiInstance = new RescheduleLoansApi(defaultClient);
-        try {
-            String result = apiInstance.retrieveTemplate9();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RescheduleLoansApi#retrieveTemplate9");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetRescheduleReasonsTemplateResponse = webService.retrieveTemplate10()
 }
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+[**GetRescheduleReasonsTemplateResponse**](GetRescheduleReasonsTemplateResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## updateLoanRescheduleRequest
+Update loan reschedule request
 
-> String updateLoanRescheduleRequest(scheduleId, command, body)
-
-
+Update a loan reschedule request by either approving/rejecting it.
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.RescheduleLoansApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(RescheduleLoansApi::class.java)
+val scheduleId : kotlin.Long = 789 // kotlin.Long | 
+val postUpdateRescheduleLoansRequest : PostUpdateRescheduleLoansRequest =  // PostUpdateRescheduleLoansRequest | 
+val command : kotlin.String = command_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        RescheduleLoansApi apiInstance = new RescheduleLoansApi(defaultClient);
-        Long scheduleId = 56L; // Long | 
-        String command = "command_example"; // String | 
-        String body = "body_example"; // String | 
-        try {
-            String result = apiInstance.updateLoanRescheduleRequest(scheduleId, command, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RescheduleLoansApi#updateLoanRescheduleRequest");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostUpdateRescheduleLoansResponse = webService.updateLoanRescheduleRequest(scheduleId, postUpdateRescheduleLoansRequest, command)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scheduleId** | **Long**|  |
- **command** | **String**|  | [optional]
- **body** | **String**|  | [optional]
+| **scheduleId** | **kotlin.Long**|  | |
+| **postUpdateRescheduleLoansRequest** | [**PostUpdateRescheduleLoansRequest**](PostUpdateRescheduleLoansRequest.md)|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **command** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
-**String**
+[**PostUpdateRescheduleLoansResponse**](PostUpdateRescheduleLoansResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

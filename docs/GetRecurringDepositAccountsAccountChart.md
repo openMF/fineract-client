@@ -1,17 +1,15 @@
 
-
 # GetRecurringDepositAccountsAccountChart
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**fromDate** | [**Date**](Date.md) |  |  [optional]
-**accountId** | **Integer** |  |  [optional]
-**accountNumber** | **Long** |  |  [optional]
-**chartSlabs** | [**List&lt;GetRecurringDepositAccountsChartSlabs&gt;**](GetRecurringDepositAccountsChartSlabs.md) |  |  [optional]
-**periodTypes** | [**List&lt;GetRecurringDepositAccountsPeriodTypes&gt;**](GetRecurringDepositAccountsPeriodTypes.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountId** | **kotlin.Long** |  |  [optional] |
+| **accountNumber** | **kotlin.Long** |  |  [optional] |
+| **chartSlabs** | [**kotlin.collections.Set&lt;GetRecurringDepositAccountsChartSlabs&gt;**](GetRecurringDepositAccountsChartSlabs.md) |  |  [optional] |
+| **fromDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **periodTypes** | [**kotlin.collections.Set&lt;GetRecurringDepositAccountsPeriodTypes&gt;**](GetRecurringDepositAccountsPeriodTypes.md) |  |  [optional] |
 
 
 

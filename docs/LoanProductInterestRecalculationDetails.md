@@ -1,51 +1,39 @@
 
-
 # LoanProductInterestRecalculationDetails
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Long** |  |  [optional]
-**interestRecalculationCompoundingMethod** | **Integer** |  |  [optional]
-**rescheduleStrategyMethod** | **Integer** |  |  [optional]
-**restFrequencyType** | [**RestFrequencyTypeEnum**](#RestFrequencyTypeEnum) |  |  [optional]
-**restInterval** | **Integer** |  |  [optional]
-**restFrequencyNthDay** | **Integer** |  |  [optional]
-**restFrequencyWeekday** | **Integer** |  |  [optional]
-**restFrequencyOnDay** | **Integer** |  |  [optional]
-**compoundingFrequencyType** | [**CompoundingFrequencyTypeEnum**](#CompoundingFrequencyTypeEnum) |  |  [optional]
-**compoundingInterval** | **Integer** |  |  [optional]
-**compoundingFrequencyNthDay** | **Integer** |  |  [optional]
-**compoundingFrequencyWeekday** | **Integer** |  |  [optional]
-**compoundingFrequencyOnDay** | **Integer** |  |  [optional]
-**isCompoundingToBePostedAsTransaction** | **Boolean** |  |  [optional]
-**arrearsBasedOnOriginalSchedule** | **Boolean** |  |  [optional]
-**_new** | **Boolean** |  |  [optional]
-
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **arrearsBasedOnOriginalSchedule** | **kotlin.Boolean** |  |  [optional] |
+| **compoundingFrequencyNthDay** | **kotlin.Int** |  |  [optional] |
+| **compoundingFrequencyOnDay** | **kotlin.Int** |  |  [optional] |
+| **compoundingFrequencyType** | [**inline**](#CompoundingFrequencyType) |  |  [optional] |
+| **compoundingFrequencyWeekday** | **kotlin.Int** |  |  [optional] |
+| **compoundingInterval** | **kotlin.Int** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **interestRecalculationCompoundingMethod** | **kotlin.Int** |  |  [optional] |
+| **isCompoundingToBePostedAsTransaction** | **kotlin.Boolean** |  |  [optional] |
+| **new** | **kotlin.Boolean** |  |  [optional] |
+| **rescheduleStrategyMethod** | **kotlin.Int** |  |  [optional] |
+| **restFrequencyNthDay** | **kotlin.Int** |  |  [optional] |
+| **restFrequencyOnDay** | **kotlin.Int** |  |  [optional] |
+| **restFrequencyType** | [**inline**](#RestFrequencyType) |  |  [optional] |
+| **restFrequencyWeekday** | **kotlin.Int** |  |  [optional] |
+| **restInterval** | **kotlin.Int** |  |  [optional] |
 
 
-## Enum: RestFrequencyTypeEnum
-
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-SAME_AS_REPAYMENT_PERIOD | &quot;SAME_AS_REPAYMENT_PERIOD&quot;
-DAILY | &quot;DAILY&quot;
-WEEKLY | &quot;WEEKLY&quot;
-MONTHLY | &quot;MONTHLY&quot;
+<a id="CompoundingFrequencyType"></a>
+## Enum: compoundingFrequencyType
+| Name | Value |
+| ---- | ----- |
+| compoundingFrequencyType | INVALID, SAME_AS_REPAYMENT_PERIOD, DAILY, WEEKLY, MONTHLY |
 
 
-
-## Enum: CompoundingFrequencyTypeEnum
-
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-SAME_AS_REPAYMENT_PERIOD | &quot;SAME_AS_REPAYMENT_PERIOD&quot;
-DAILY | &quot;DAILY&quot;
-WEEKLY | &quot;WEEKLY&quot;
-MONTHLY | &quot;MONTHLY&quot;
+<a id="RestFrequencyType"></a>
+## Enum: restFrequencyType
+| Name | Value |
+| ---- | ----- |
+| restFrequencyType | INVALID, SAME_AS_REPAYMENT_PERIOD, DAILY, WEEKLY, MONTHLY |
 
 
 

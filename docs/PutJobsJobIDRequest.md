@@ -1,15 +1,12 @@
 
-
 # PutJobsJobIDRequest
 
-PutJobsJobsIDRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**displayName** | **String** |  |  [optional]
-**cronExpression** | **String** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **kotlin.Boolean** |  |  [optional] |
+| **cronExpression** | **kotlin.String** |  |  [optional] |
+| **displayName** | **kotlin.String** |  |  [optional] |
 
 
 

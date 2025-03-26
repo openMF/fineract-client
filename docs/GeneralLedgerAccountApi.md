@@ -1,77 +1,45 @@
 # GeneralLedgerAccountApi
 
-All URIs are relative to *https://localhost:8443/fineract-provider/api/v1*
+All URIs are relative to *http://localhost/fineract-provider/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createGLAccount1**](GeneralLedgerAccountApi.md#createGLAccount1) | **POST** glaccounts | Create a General Ledger Account
-[**deleteGLAccount1**](GeneralLedgerAccountApi.md#deleteGLAccount1) | **DELETE** glaccounts/{glAccountId} | Delete an accounting closure
-[**getGlAccountsTemplate**](GeneralLedgerAccountApi.md#getGlAccountsTemplate) | **GET** glaccounts/downloadtemplate | 
-[**postGlAccountsTemplate**](GeneralLedgerAccountApi.md#postGlAccountsTemplate) | **POST** glaccounts/uploadtemplate | 
-[**retreiveAccount**](GeneralLedgerAccountApi.md#retreiveAccount) | **GET** glaccounts/{glAccountId} | Retrieve a General Ledger Account
-[**retrieveAllAccounts**](GeneralLedgerAccountApi.md#retrieveAllAccounts) | **GET** glaccounts | List General Ledger Accounts
-[**retrieveNewAccountDetails**](GeneralLedgerAccountApi.md#retrieveNewAccountDetails) | **GET** glaccounts/template | Retrieve GL Accounts Template
-[**updateGLAccount1**](GeneralLedgerAccountApi.md#updateGLAccount1) | **PUT** glaccounts/{glAccountId} | Update an Accounting closure
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createGLAccount1**](GeneralLedgerAccountApi.md#createGLAccount1) | **POST** v1/glaccounts | Create a General Ledger Account |
+| [**deleteGLAccount1**](GeneralLedgerAccountApi.md#deleteGLAccount1) | **DELETE** v1/glaccounts/{glAccountId} | Delete a GL Account |
+| [**getGlAccountsTemplate**](GeneralLedgerAccountApi.md#getGlAccountsTemplate) | **GET** v1/glaccounts/downloadtemplate |  |
+| [**postGlAccountsTemplate**](GeneralLedgerAccountApi.md#postGlAccountsTemplate) | **POST** v1/glaccounts/uploadtemplate |  |
+| [**retreiveAccount**](GeneralLedgerAccountApi.md#retreiveAccount) | **GET** v1/glaccounts/{glAccountId} | Retrieve a General Ledger Account |
+| [**retrieveAllAccounts**](GeneralLedgerAccountApi.md#retrieveAllAccounts) | **GET** v1/glaccounts | List General Ledger Accounts |
+| [**retrieveNewAccountDetails**](GeneralLedgerAccountApi.md#retrieveNewAccountDetails) | **GET** v1/glaccounts/template | Retrieve GL Accounts Template |
+| [**updateGLAccount1**](GeneralLedgerAccountApi.md#updateGLAccount1) | **PUT** v1/glaccounts/{glAccountId} | Update a GL Account |
 
 
-
-## createGLAccount1
-
-> PostGLAccountsResponse createGLAccount1(postGLAccountsRequest)
 
 Create a General Ledger Account
 
 Note: You may optionally create Hierarchical Chart of Accounts by using the \&quot;parentId\&quot; property of an Account Mandatory Fields:  name, glCode, type, usage and manualEntriesAllowed
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val postGLAccountsRequest : PostGLAccountsRequest =  // PostGLAccountsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        PostGLAccountsRequest postGLAccountsRequest = new PostGLAccountsRequest(); // PostGLAccountsRequest | 
-        try {
-            PostGLAccountsResponse result = apiInstance.createGLAccount1(postGLAccountsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#createGLAccount1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PostGLAccountsResponse = webService.createGLAccount1(postGLAccountsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postGLAccountsRequest** | [**PostGLAccountsRequest**](PostGLAccountsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postGLAccountsRequest** | [**PostGLAccountsRequest**](PostGLAccountsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -79,76 +47,41 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
-## deleteGLAccount1
+Delete a GL Account
 
-> DeleteGLAccountsRequest deleteGLAccount1(glAccountId)
-
-Delete an accounting closure
-
-Note: Only the latest accounting closure associated with a branch may be deleted.
+Deletes a GL Account
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val glAccountId : kotlin.Long = 789 // kotlin.Long | glAccountId
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        Long glAccountId = 56L; // Long | glAccountId
-        try {
-            DeleteGLAccountsRequest result = apiInstance.deleteGLAccount1(glAccountId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#deleteGLAccount1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : DeleteGLAccountsRequest = webService.deleteGLAccount1(glAccountId)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **glAccountId** | **Long**| glAccountId |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **glAccountId** | **kotlin.Long**| glAccountId | |
 
 ### Return type
 
@@ -156,73 +89,39 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## getGlAccountsTemplate
-
-> getGlAccountsTemplate(dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            apiInstance.getGlAccountsTemplate(dateFormat);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#getGlAccountsTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    webService.getGlAccountsTemplate(dateFormat)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dateFormat** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dateFormat** | **kotlin.String**|  | [optional] |
 
 ### Return type
 
@@ -230,157 +129,87 @@ null (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.ms-excel
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ms-excel
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## postGlAccountsTemplate
-
-> String postGlAccountsTemplate(file, locale, dateFormat)
 
 
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val dateFormat : kotlin.String = dateFormat_example // kotlin.String | 
+val locale : kotlin.String = locale_example // kotlin.String | 
+val uploadedInputStream : java.io.File = BINARY_DATA_HERE // java.io.File | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        FormDataContentDisposition file = new FormDataContentDisposition(); // FormDataContentDisposition | 
-        String locale = "locale_example"; // String | 
-        String dateFormat = "dateFormat_example"; // String | 
-        try {
-            String result = apiInstance.postGlAccountsTemplate(file, locale, dateFormat);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#postGlAccountsTemplate");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.String = webService.postGlAccountsTemplate(dateFormat, locale, uploadedInputStream)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file** | [**FormDataContentDisposition**](FormDataContentDisposition.md)|  | [optional]
- **locale** | **String**|  | [optional]
- **dateFormat** | **String**|  | [optional]
+| **dateFormat** | **kotlin.String**|  | [optional] |
+| **locale** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadedInputStream** | **java.io.File**|  | [optional] |
 
 ### Return type
 
-**String**
+**kotlin.String**
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: */*
+ - **Content-Type**: multipart/form-data
+ - **Accept**: */*
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **0** | default response |  -  |
-
-
-## retreiveAccount
-
-> GetGLAccountsResponse retreiveAccount(glAccountId, fetchRunningBalance)
 
 Retrieve a General Ledger Account
 
 Example Requests:  glaccounts/1   glaccounts/1?template&#x3D;true   glaccounts/1?fields&#x3D;name,glCode   glaccounts/1?fetchRunningBalance&#x3D;true
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val glAccountId : kotlin.Long = 789 // kotlin.Long | glAccountId
+val fetchRunningBalance : kotlin.Boolean = true // kotlin.Boolean | fetchRunningBalance
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        Long glAccountId = 56L; // Long | glAccountId
-        Boolean fetchRunningBalance = true; // Boolean | fetchRunningBalance
-        try {
-            GetGLAccountsResponse result = apiInstance.retreiveAccount(glAccountId, fetchRunningBalance);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#retreiveAccount");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetGLAccountsResponse = webService.retreiveAccount(glAccountId, fetchRunningBalance)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **glAccountId** | **Long**| glAccountId |
- **fetchRunningBalance** | **Boolean**| fetchRunningBalance | [optional]
+| **glAccountId** | **kotlin.Long**| glAccountId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fetchRunningBalance** | **kotlin.Boolean**| fetchRunningBalance | [optional] |
 
 ### Return type
 
@@ -388,163 +217,93 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveAllAccounts
-
-> List&lt;GetGLAccountsResponse&gt; retrieveAllAccounts(type, searchParam, usage, manualEntriesAllowed, disabled, fetchRunningBalance)
 
 List General Ledger Accounts
 
 ARGUMENTS type Integer optional manualEntriesAllowed boolean optional usage Integer optional disabled boolean optional parentId Long optional tagId Long optional Example Requests:  glaccounts   glaccounts?type&#x3D;1&amp;manualEntriesAllowed&#x3D;true&amp;usage&#x3D;1&amp;disabled&#x3D;false  glaccounts?fetchRunningBalance&#x3D;true
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val type : kotlin.Int = 56 // kotlin.Int | type
+val searchParam : kotlin.String = searchParam_example // kotlin.String | searchParam
+val usage : kotlin.Int = 56 // kotlin.Int | usage
+val manualEntriesAllowed : kotlin.Boolean = true // kotlin.Boolean | manualEntriesAllowed
+val disabled : kotlin.Boolean = true // kotlin.Boolean | disabled
+val fetchRunningBalance : kotlin.Boolean = true // kotlin.Boolean | fetchRunningBalance
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        Integer type = 56; // Integer | type
-        String searchParam = "searchParam_example"; // String | searchParam
-        Integer usage = 56; // Integer | usage
-        Boolean manualEntriesAllowed = true; // Boolean | manualEntriesAllowed
-        Boolean disabled = true; // Boolean | disabled
-        Boolean fetchRunningBalance = true; // Boolean | fetchRunningBalance
-        try {
-            List<GetGLAccountsResponse> result = apiInstance.retrieveAllAccounts(type, searchParam, usage, manualEntriesAllowed, disabled, fetchRunningBalance);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#retrieveAllAccounts");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : kotlin.collections.List<GetGLAccountsResponse> = webService.retrieveAllAccounts(type, searchParam, usage, manualEntriesAllowed, disabled, fetchRunningBalance)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **Integer**| type | [optional]
- **searchParam** | **String**| searchParam | [optional]
- **usage** | **Integer**| usage | [optional]
- **manualEntriesAllowed** | **Boolean**| manualEntriesAllowed | [optional]
- **disabled** | **Boolean**| disabled | [optional]
- **fetchRunningBalance** | **Boolean**| fetchRunningBalance | [optional]
+| **type** | **kotlin.Int**| type | [optional] |
+| **searchParam** | **kotlin.String**| searchParam | [optional] |
+| **usage** | **kotlin.Int**| usage | [optional] |
+| **manualEntriesAllowed** | **kotlin.Boolean**| manualEntriesAllowed | [optional] |
+| **disabled** | **kotlin.Boolean**| disabled | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fetchRunningBalance** | **kotlin.Boolean**| fetchRunningBalance | [optional] |
 
 ### Return type
 
-[**List&lt;GetGLAccountsResponse&gt;**](GetGLAccountsResponse.md)
+[**kotlin.collections.List&lt;GetGLAccountsResponse&gt;**](GetGLAccountsResponse.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## retrieveNewAccountDetails
-
-> GetGLAccountsTemplateResponse retrieveNewAccountDetails(type)
 
 Retrieve GL Accounts Template
 
 This is a convenience resource. It can be useful when building maintenance user interface screens for client applications. The template data returned consists of any or all of:  Field Defaults Allowed Value Lists Example Request:  glaccounts/template glaccounts/template?type&#x3D;1  type is optional and integer value from 1 to 5.  1.Assets  2.Liabilities  3.Equity  4.Income  5.Expenses
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val type : kotlin.Int = 56 // kotlin.Int | type
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        Integer type = 56; // Integer | type
-        try {
-            GetGLAccountsTemplateResponse result = apiInstance.retrieveNewAccountDetails(type);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#retrieveNewAccountDetails");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : GetGLAccountsTemplateResponse = webService.retrieveNewAccountDetails(type)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **Integer**| type | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **kotlin.Int**| type | [optional] |
 
 ### Return type
 
@@ -552,78 +311,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
-## updateGLAccount1
+Update a GL Account
 
-> PutGLAccountsResponse updateGLAccount1(glAccountId, putGLAccountsRequest)
-
-Update an Accounting closure
-
-Once an accounting closure is created, only the comments associated with it may be edited  
+Updates a GL Account
 
 ### Example
-
-```java
+```kotlin
 // Import classes:
-import org.apache.fineract.client.ApiClient;
-import org.apache.fineract.client.ApiException;
-import org.apache.fineract.client.Configuration;
-import org.apache.fineract.client.auth.*;
-import org.apache.fineract.client.models.*;
-import org.apache.fineract.client.services.GeneralLedgerAccountApi;
+//import org.openapitools.client.*
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://localhost:8443/fineract-provider/api/v1");
-        
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("YOUR USERNAME");
-        basicAuth.setPassword("YOUR PASSWORD");
+val apiClient = ApiClient()
+apiClient.setCredentials("USERNAME", "PASSWORD")
+val webService = apiClient.createWebservice(GeneralLedgerAccountApi::class.java)
+val glAccountId : kotlin.Long = 789 // kotlin.Long | glAccountId
+val putGLAccountsRequest : PutGLAccountsRequest =  // PutGLAccountsRequest | 
 
-        // Configure API key authorization: tenantid
-        ApiKeyAuth tenantid = (ApiKeyAuth) defaultClient.getAuthentication("tenantid");
-        tenantid.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //tenantid.setApiKeyPrefix("Token");
-
-        GeneralLedgerAccountApi apiInstance = new GeneralLedgerAccountApi(defaultClient);
-        Long glAccountId = 56L; // Long | glAccountId
-        PutGLAccountsRequest putGLAccountsRequest = new PutGLAccountsRequest(); // PutGLAccountsRequest | 
-        try {
-            PutGLAccountsResponse result = apiInstance.updateGLAccount1(glAccountId, putGLAccountsRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling GeneralLedgerAccountApi#updateGLAccount1");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+launch(Dispatchers.IO) {
+    val result : PutGLAccountsResponse = webService.updateGLAccount1(glAccountId, putGLAccountsRequest)
 }
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **glAccountId** | **Long**| glAccountId |
- **putGLAccountsRequest** | [**PutGLAccountsRequest**](PutGLAccountsRequest.md)|  | [optional]
+| **glAccountId** | **kotlin.Long**| glAccountId | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **putGLAccountsRequest** | [**PutGLAccountsRequest**](PutGLAccountsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -631,15 +355,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [tenantid](../README.md#tenantid)
+
+Configure basicAuth:
+    ApiClient().setCredentials("USERNAME", "PASSWORD")
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

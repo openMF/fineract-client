@@ -1,19 +1,16 @@
 
-
 # PostTaxesComponentsRequest
 
-PostTaxesComponentsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**percentage** | **Float** |  |  [optional]
-**creditAccountType** | **Integer** |  |  [optional]
-**creditAcountId** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**dateFormat** | **String** |  |  [optional]
-**startDate** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **creditAccountType** | **kotlin.Int** |  |  [optional] |
+| **creditAcountId** | **kotlin.Int** |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **percentage** | **kotlin.Float** |  |  [optional] |
+| **startDate** | **kotlin.String** |  |  [optional] |
 
 
 

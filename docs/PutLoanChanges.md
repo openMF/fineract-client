@@ -1,13 +1,11 @@
 
-
 # PutLoanChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**principal** | **Double** |  |  [optional]
-**locale** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **principal** | **kotlin.Double** |  |  [optional] |
 
 
 

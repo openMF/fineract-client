@@ -1,14 +1,11 @@
 
-
 # PutReportRequest
 
-PutReportRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reportName** | **String** |  |  [optional]
-**reportParameters** | **List&lt;Object&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **reportName** | **kotlin.String** |  |  [optional] |
+| **reportParameters** | [**kotlin.collections.List&lt;kotlin.Any&gt;**](kotlin.Any.md) |  |  [optional] |
 
 
 

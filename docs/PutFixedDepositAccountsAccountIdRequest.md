@@ -1,14 +1,11 @@
 
-
 # PutFixedDepositAccountsAccountIdRequest
 
-PutFixedDepositAccountsAccountIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**depositAmount** | **Float** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **depositAmount** | **kotlin.Float** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

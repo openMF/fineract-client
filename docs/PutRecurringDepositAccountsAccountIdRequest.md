@@ -1,14 +1,11 @@
 
-
 # PutRecurringDepositAccountsAccountIdRequest
 
-PutRecurringDepositAccountsAccountIdRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**locale** | **String** |  |  [optional]
-**depositAmount** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **depositAmount** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
 
 
 

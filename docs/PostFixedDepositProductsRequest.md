@@ -1,32 +1,29 @@
 
-
 # PostFixedDepositProductsRequest
 
-PostFixedDepositProductsRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**shortName** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
-**digitsAfterDecimal** | **Integer** |  |  [optional]
-**inMultiplesOf** | **Integer** |  |  [optional]
-**locale** | **String** |  |  [optional]
-**interestCompoundingPeriodType** | **Integer** |  |  [optional]
-**interestPostingPeriodType** | **Integer** |  |  [optional]
-**interestCalculationType** | **Integer** |  |  [optional]
-**interestCalculationDaysInYearType** | **Integer** |  |  [optional]
-**accountingRule** | **Integer** |  |  [optional]
-**preClosurePenalApplicable** | **Boolean** |  |  [optional]
-**preClosurePenalInterest** | **Double** |  |  [optional]
-**preClosurePenalInterestOnTypeId** | **Integer** |  |  [optional]
-**minDepositTerm** | **Integer** |  |  [optional]
-**minDepositTermTypeId** | **Integer** |  |  [optional]
-**maxDepositTerm** | **Integer** |  |  [optional]
-**maxDepositTermTypeId** | **Integer** |  |  [optional]
-**charts** | [**List&lt;PostFixedDepositProductsCharts&gt;**](PostFixedDepositProductsCharts.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountingRule** | **kotlin.Int** |  |  [optional] |
+| **charts** | [**kotlin.collections.Set&lt;PostFixedDepositProductsCharts&gt;**](PostFixedDepositProductsCharts.md) |  |  [optional] |
+| **currencyCode** | **kotlin.String** |  |  [optional] |
+| **description** | **kotlin.String** |  |  [optional] |
+| **digitsAfterDecimal** | **kotlin.Int** |  |  [optional] |
+| **inMultiplesOf** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationDaysInYearType** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationType** | **kotlin.Int** |  |  [optional] |
+| **interestCompoundingPeriodType** | **kotlin.Int** |  |  [optional] |
+| **interestPostingPeriodType** | **kotlin.Int** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **maxDepositTerm** | **kotlin.Int** |  |  [optional] |
+| **maxDepositTermTypeId** | **kotlin.Int** |  |  [optional] |
+| **minDepositTerm** | **kotlin.Int** |  |  [optional] |
+| **minDepositTermTypeId** | **kotlin.Int** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **preClosurePenalApplicable** | **kotlin.Boolean** |  |  [optional] |
+| **preClosurePenalInterest** | **kotlin.Double** |  |  [optional] |
+| **preClosurePenalInterestOnTypeId** | **kotlin.Int** |  |  [optional] |
+| **shortName** | **kotlin.String** |  |  [optional] |
 
 
 

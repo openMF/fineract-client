@@ -1,20 +1,18 @@
 
-
 # GetAccountTransfersTemplateRefundByTransferFromAccount
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**accountNo** | **Long** |  |  [optional]
-**clientId** | **Integer** |  |  [optional]
-**clientName** | **String** |  |  [optional]
-**productId** | **Integer** |  |  [optional]
-**productName** | **String** |  |  [optional]
-**fieldOfficerId** | **Integer** |  |  [optional]
-**currency** | [**GetAccountTransfersTemplateRefundByTransferCurrency**](GetAccountTransfersTemplateRefundByTransferCurrency.md) |  |  [optional]
-**amtForTransfer** | **Float** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.Long** |  |  [optional] |
+| **amtForTransfer** | **kotlin.Float** |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **currency** | [**GetAccountTransfersTemplateRefundByTransferCurrency**](GetAccountTransfersTemplateRefundByTransferCurrency.md) |  |  [optional] |
+| **fieldOfficerId** | **kotlin.Long** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **productName** | **kotlin.String** |  |  [optional] |
 
 
 

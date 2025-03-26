@@ -1,15 +1,12 @@
 
-
 # PutTellersTellerIdCashiersCashierIdResponse
 
-PutTellersTellerIdCashiersCashierIdResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**resourceId** | **Long** |  |  [optional]
-**subResourceId** | **Long** |  |  [optional]
-**changes** | [**PutTellersTellerIdCashiersCashierIdResponseChanges**](PutTellersTellerIdCashiersCashierIdResponseChanges.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **changes** | [**PutTellersTellerIdCashiersCashierIdResponseChanges**](PutTellersTellerIdCashiersCashierIdResponseChanges.md) |  |  [optional] |
+| **resourceId** | **kotlin.Long** |  |  [optional] |
+| **subResourceId** | **kotlin.Long** |  |  [optional] |
 
 
 

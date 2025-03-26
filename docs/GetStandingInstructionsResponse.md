@@ -1,14 +1,11 @@
 
-
 # GetStandingInstructionsResponse
 
-GetStandingInstructionsResponse
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalFilteredRecords** | **Integer** |  |  [optional]
-**pageItems** | [**List&lt;GetPageItemsStandingInstructionSwagger&gt;**](GetPageItemsStandingInstructionSwagger.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **pageItems** | [**kotlin.collections.Set&lt;GetPageItemsStandingInstructionSwagger&gt;**](GetPageItemsStandingInstructionSwagger.md) |  |  [optional] |
+| **totalFilteredRecords** | **kotlin.Int** |  |  [optional] |
 
 
 

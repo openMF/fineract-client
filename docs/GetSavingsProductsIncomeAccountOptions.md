@@ -1,19 +1,17 @@
 
-
 # GetSavingsProductsIncomeAccountOptions
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Integer** |  |  [optional]
-**name** | **String** |  |  [optional]
-**glCode** | **Integer** |  |  [optional]
-**disabled** | **Boolean** |  |  [optional]
-**manualEntriesAllowed** | **Boolean** |  |  [optional]
-**type** | [**GetSavingsProductsIncomeType**](GetSavingsProductsIncomeType.md) |  |  [optional]
-**usage** | [**GetSavingsProductsLiabilityUsage**](GetSavingsProductsLiabilityUsage.md) |  |  [optional]
-**tagId** | [**Object**](.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **disabled** | **kotlin.Boolean** |  |  [optional] |
+| **glCode** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Int** |  |  [optional] |
+| **manualEntriesAllowed** | **kotlin.Boolean** |  |  [optional] |
+| **name** | **kotlin.String** |  |  [optional] |
+| **tagId** | [**kotlin.Any**](.md) |  |  [optional] |
+| **type** | [**GetSavingsProductsIncomeType**](GetSavingsProductsIncomeType.md) |  |  [optional] |
+| **usage** | [**GetSavingsProductsLiabilityUsage**](GetSavingsProductsLiabilityUsage.md) |  |  [optional] |
 
 
 

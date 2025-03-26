@@ -1,36 +1,32 @@
 
-
 # LoanProductBorrowerCycleVariationData
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**borrowerCycleNumber** | **Integer** |  |  [optional]
-**paramType** | [**ParamTypeEnum**](#ParamTypeEnum) |  |  [optional]
-**valueConditionType** | [**ValueConditionTypeEnum**](#ValueConditionTypeEnum) |  |  [optional]
-**defaultValue** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-
-## Enum: ParamTypeEnum
-
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-PRINCIPAL | &quot;PRINCIPAL&quot;
-INTERESTRATE | &quot;INTERESTRATE&quot;
-REPAYMENT | &quot;REPAYMENT&quot;
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **borrowerCycleNumber** | **kotlin.Int** |  |  [optional] |
+| **defaultValue** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **loanProductParamType** | [**inline**](#LoanProductParamType) |  |  [optional] |
+| **loanProductValueConditionType** | [**inline**](#LoanProductValueConditionType) |  |  [optional] |
+| **maxValue** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minValue** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **paramType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **valueConditionType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
 
 
+<a id="LoanProductParamType"></a>
+## Enum: loanProductParamType
+| Name | Value |
+| ---- | ----- |
+| loanProductParamType | INVALID, PRINCIPAL, INTERESTRATE, REPAYMENT |
 
-## Enum: ValueConditionTypeEnum
 
-Name | Value
----- | -----
-INVALID | &quot;INVALID&quot;
-EQUAL | &quot;EQUAL&quot;
-GREATERTHAN | &quot;GREATERTHAN&quot;
+<a id="LoanProductValueConditionType"></a>
+## Enum: loanProductValueConditionType
+| Name | Value |
+| ---- | ----- |
+| loanProductValueConditionType | INVALID, EQUAL, GREATERTHAN |
 
 
 

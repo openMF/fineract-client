@@ -1,12 +1,10 @@
 
-
 # PostLoanChanges
 
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**removedEntityIds** | **List&lt;Integer&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **removedEntityIds** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
 
 
 

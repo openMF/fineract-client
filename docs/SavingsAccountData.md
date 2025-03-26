@@ -1,0 +1,102 @@
+
+# SavingsAccountData
+
+## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **accountNo** | **kotlin.String** |  |  [optional] |
+| **accrualBasedAccountingEnabledOnSavingsProduct** | **kotlin.Boolean** |  |  [optional] |
+| **activatedOnDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **activationLocalDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **allowOverdraft** | **kotlin.Boolean** |  |  [optional] |
+| **annualFee** | [**SavingsAccountChargeData**](SavingsAccountChargeData.md) |  |  [optional] |
+| **cashBasedAccountingEnabledOnSavingsProduct** | **kotlin.Boolean** |  |  [optional] |
+| **chargeOptions** | [**kotlin.collections.List&lt;ChargeData&gt;**](ChargeData.md) |  |  [optional] |
+| **charges** | [**kotlin.collections.List&lt;SavingsAccountChargeData&gt;**](SavingsAccountChargeData.md) |  |  [optional] |
+| **clientData** | [**ClientData**](ClientData.md) |  |  [optional] |
+| **clientId** | **kotlin.Long** |  |  [optional] |
+| **clientName** | **kotlin.String** |  |  [optional] |
+| **currency** | [**CurrencyData**](CurrencyData.md) |  |  [optional] |
+| **datatables** | [**kotlin.collections.List&lt;DatatableData&gt;**](DatatableData.md) |  |  [optional] |
+| **dateFormat** | **kotlin.String** |  |  [optional] |
+| **daysToDormancy** | **kotlin.Int** |  |  [optional] |
+| **daysToEscheat** | **kotlin.Int** |  |  [optional] |
+| **daysToInactive** | **kotlin.Int** |  |  [optional] |
+| **depositType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **depositTypeId** | **kotlin.Int** |  |  [optional] |
+| **enforceMinRequiredBalance** | **kotlin.Boolean** |  |  [optional] |
+| **existingReversedTransactionIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** |  |  [optional] |
+| **existingTransactionIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
+| **fieldOfficerId** | **kotlin.Long** |  |  [optional] |
+| **fieldOfficerName** | **kotlin.String** |  |  [optional] |
+| **fieldOfficerOptions** | [**kotlin.collections.List&lt;StaffData&gt;**](StaffData.md) |  |  [optional] |
+| **glAccountIdForInterestOnSavings** | **kotlin.Long** |  |  [optional] |
+| **glAccountIdForSavingsControl** | **kotlin.Long** |  |  [optional] |
+| **groupGeneralData** | [**GroupGeneralData**](GroupGeneralData.md) |  |  [optional] |
+| **groupId** | **kotlin.Long** |  |  [optional] |
+| **groupName** | **kotlin.String** |  |  [optional] |
+| **id** | **kotlin.Long** |  |  [optional] |
+| **interestCalculationDaysInYearType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **interestCalculationDaysInYearTypeId** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationDaysInYearTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **interestCalculationType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **interestCalculationTypeId** | **kotlin.Int** |  |  [optional] |
+| **interestCalculationTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **interestCompoundingPeriodType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **interestCompoundingPeriodTypeId** | **kotlin.Int** |  |  [optional] |
+| **interestCompoundingPeriodTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **interestPostingPeriodType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **interestPostingPeriodTypeId** | **kotlin.Int** |  |  [optional] |
+| **interestPostingPeriodTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **isDormancyTrackingActive** | **kotlin.Boolean** |  |  [optional] |
+| **lastActiveTransactionDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **lastSavingsAccountTransaction** | [**SavingsAccountTransactionData**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **lienAllowed** | **kotlin.Boolean** |  |  [optional] |
+| **locale** | **kotlin.String** |  |  [optional] |
+| **lockedInUntilDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **lockinPeriodFrequency** | **kotlin.Int** |  |  [optional] |
+| **lockinPeriodFrequencyType** | [**EnumOptionData**](EnumOptionData.md) |  |  [optional] |
+| **lockinPeriodFrequencyTypeId** | **kotlin.Int** |  |  [optional] |
+| **lockinPeriodFrequencyTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+| **maxAllowedLienLimit** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minBalanceForInterestCalculation** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minOverdraftForInterestCalculation** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minRequiredBalance** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **minRequiredOpeningBalance** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **newSavingsAccountTransactionData** | [**kotlin.collections.List&lt;SavingsAccountTransactionData&gt;**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **nominalAnnualInterestRate** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **nominalAnnualInterestRateOverdraft** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **officeId** | **kotlin.Long** |  |  [optional] |
+| **onHoldFunds** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **overdraftLimit** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **productId** | **kotlin.Long** |  |  [optional] |
+| **productOptions** | [**kotlin.collections.List&lt;SavingsProductData&gt;**](SavingsProductData.md) |  |  [optional] |
+| **reasonForBlock** | **kotlin.String** |  |  [optional] |
+| **rowIndex** | **kotlin.Int** |  |  [optional] |
+| **savingsAccountSummaryData** | [**SavingsAccountSummaryData**](SavingsAccountSummaryData.md) |  |  [optional] |
+| **savingsAccountTransactionData** | [**kotlin.collections.List&lt;SavingsAccountTransactionData&gt;**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **savingsAccountTransactionSummaryWrapper** | [**kotlin.Any**](.md) |  |  [optional] |
+| **savingsAccountTransactionsWithPivotConfig** | [**kotlin.collections.List&lt;SavingsAccountTransactionData&gt;**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **savingsAmountOnHold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **savingsHelper** | [**kotlin.Any**](.md) |  |  [optional] |
+| **savingsProduct** | [**SavingsProductData**](SavingsProductData.md) |  |  [optional] |
+| **savingsProductData** | [**SavingsProductData**](SavingsProductData.md) |  |  [optional] |
+| **savingsProductId** | **kotlin.Long** |  |  [optional] |
+| **savingsProductName** | **kotlin.String** |  |  [optional] |
+| **startInterestCalculationDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **status** | [**SavingsAccountStatusEnumData**](SavingsAccountStatusEnumData.md) |  |  [optional] |
+| **subStatus** | [**SavingsAccountSubStatusEnumData**](SavingsAccountSubStatusEnumData.md) |  |  [optional] |
+| **submittedOnDate** | [**java.time.LocalDate**](java.time.LocalDate.md) |  |  [optional] |
+| **summary** | [**SavingsAccountSummaryData**](SavingsAccountSummaryData.md) |  |  [optional] |
+| **taxGroup** | [**TaxGroupData**](TaxGroupData.md) |  |  [optional] |
+| **timeline** | [**SavingsAccountApplicationTimelineData**](SavingsAccountApplicationTimelineData.md) |  |  [optional] |
+| **transactions** | [**kotlin.collections.List&lt;SavingsAccountTransactionData&gt;**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **updatedTransactions** | [**kotlin.collections.List&lt;SavingsAccountTransactionData&gt;**](SavingsAccountTransactionData.md) |  |  [optional] |
+| **withHoldTax** | **kotlin.Boolean** |  |  [optional] |
+| **withdrawalFee** | [**SavingsAccountChargeData**](SavingsAccountChargeData.md) |  |  [optional] |
+| **withdrawalFeeForTransfers** | **kotlin.Boolean** |  |  [optional] |
+| **withdrawalFeeTypeOptions** | [**kotlin.collections.List&lt;EnumOptionData&gt;**](EnumOptionData.md) |  |  [optional] |
+
+
+

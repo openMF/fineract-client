@@ -1,14 +1,11 @@
 
-
 # PostAuthenticationRequest
 
-PostAuthenticationRequest
 ## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | **String** |  | 
-**password** | **String** |  | 
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **password** | **kotlin.String** |  |  |
+| **username** | **kotlin.String** |  |  |
 
 
 
